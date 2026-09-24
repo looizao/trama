@@ -6,3 +6,5 @@ web/dist
 web/*.tsbuildinfo
 bin
 .env*
+backups
+.secrets

@@ -5,3 +5,5 @@ web/*.tsbuildinfo
 .env
 .env.*
 !.env.example
+backups/
+.secrets/
