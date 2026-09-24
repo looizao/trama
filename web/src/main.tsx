@@ -1,0 +1,120 @@
+import React, { useEffect, useState } from 'react'
+import { createRoot } from 'react-dom/client'
+import { QueryClient, QueryClientProvider, useQuery, useQueryClient } from '@tanstack/react-query'
+import { createRootRoute, createRoute, createRouter, Link, Outlet, RouterProvider, useNavigate } from '@tanstack/react-router'
+import { api, json, imageURL, dateLabel, type User, type Client, type Case, type Milestone, type Asset, type Run, type AdminUser, type AuditEvent } from './api'
+import './style.css'
+
+const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: 20_000, retry: false } } })
+
+function useAction() {
+  const cache = useQueryClient()
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+  async function run<T>(fn: () => Promise<T>, after?: (result: T) => void) {
+    setBusy(true); setError('')
+    try { const result = await fn(); await cache.invalidateQueries(); after?.(result); return result }
+    catch (e) { setError((e as Error).message); return undefined }
+    finally { setBusy(false) }
+  }
+  return { busy, error, run, setError }
+}
+
+function Banner({ text }: { text?: string }) { return text ? <div className="error" role="alert">{text}</div> : null }
+function Empty({ title, text }: { title: string; text: string }) { return <div className="empty"><div className="empty-mark">✳</div><h3>{title}</h3><p>{text}</p></div> }
+function Loading() { return <div className="loading">Loading workspace…</div> }
+
+function Login() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const action = useAction()
+  const nav = useNavigate()
+  const cache = useQueryClient()
+  async function submit(e: React.FormEvent) {
+    e.preventDefault()
+    await action.run(() => api('/login', json('POST', { email, password })), async () => { await cache.invalidateQueries({ queryKey: ['me'] }); nav({ to: '/clients' }) })
+  }
+  return <div className="login-page"><div className="login-art"><div className="brand brand-light"><span className="brand-mark">T</span><span>trama</span></div><div className="login-art-copy"><span className="eyebrow">A space for possibility</span><h1>Shape a look.<br/>Show the journey.</h1><p>A considered workspace for visagism professionals and the people behind every transformation.</p></div><div className="art-lines" /></div><div className="login-panel"><div className="login-card"><div className="mobile-brand brand"><span className="brand-mark">T</span><span>trama</span></div><span className="eyebrow">Welcome back</span><h2>Sign in to your studio</h2><p>Continue working with your clients and their visual journeys.</p><form onSubmit={submit}><label>Email address<input type="email" autoComplete="username" value={email} onChange={e => setEmail(e.target.value)} required /></label><label>Password<input type="password" autoComplete="current-password" value={password} onChange={e => setPassword(e.target.value)} required /></label><Banner text={action.error} /><button className="button primary full" disabled={action.busy}>{action.busy ? 'Signing in…' : 'Sign in'}</button></form></div></div></div>
+}
+
+function Root() {
+  const { data: user, isPending } = useQuery({ queryKey: ['me'], queryFn: () => api<User>('/me') })
+  const cache = useQueryClient()
+  if (isPending) return <Loading />
+  if (!user) return <Login />
+  return <div className="shell"><aside className="sidebar"><div className="brand"><span className="brand-mark">T</span><span>trama</span></div><div className="sidebar-section">WORKSPACE</div><nav><Link to="/clients" activeProps={{ className: 'active' }} className="nav-link"><span>◫</span> Clients</Link>{user.role === 'admin' && <Link to="/admin" activeProps={{ className: 'active' }} className="nav-link"><span>⚙</span> Administration</Link>}</nav><div className="sidebar-bottom"><div className="avatar">{user.name.charAt(0).toUpperCase()}</div><div className="account"><strong>{user.name}</strong><small>{user.role}</small></div><button className="icon-button" title="Sign out" onClick={async () => { await api('/logout', { method: 'POST' }); cache.clear(); window.location.href = '/' }}>↗</button></div></aside><main className="main"><div className="mobile-top"><div className="brand"><span className="brand-mark">T</span><span>trama</span></div><div><Link to="/clients">Clients</Link>{user.role === 'admin' && <Link to="/admin">Admin</Link>}</div></div><Outlet /></main></div>
+}
+
+const rootRoute = createRootRoute({ component: Root })
+const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: () => { const nav = useNavigate(); useEffect(() => { nav({ to: '/clients' }) }, [nav]); return <Loading /> } })
+const clientsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/clients', component: ClientsPage })
+const clientRoute = createRoute({ getParentRoute: () => rootRoute, path: '/clients/$clientId', component: ClientPage })
+const caseRoute = createRoute({ getParentRoute: () => rootRoute, path: '/cases/$caseId', component: CasePage })
+const adminRoute = createRoute({ getParentRoute: () => rootRoute, path: '/admin', component: AdminPage })
+const routeTree = rootRoute.addChildren([indexRoute, clientsRoute, clientRoute, caseRoute, adminRoute])
+const router = createRouter({ routeTree })
+declare module '@tanstack/react-router' { interface Register { router: typeof router } }
+
+function ClientsPage() {
+  const clients = useQuery({ queryKey: ['clients'], queryFn: () => api<Client[]>('/clients') })
+  const [search, setSearch] = useState('')
+  const [showForm, setShowForm] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [notes, setNotes] = useState('')
+  const action = useAction()
+  const nav = useNavigate()
+  const filtered = clients.data?.filter(c => `${c.name} ${c.email}`.toLowerCase().includes(search.toLowerCase())) ?? []
+  async function add(e: React.FormEvent) { e.preventDefault(); await action.run(() => api<Client>('/clients', json('POST', { name, email, notes })), c => { if (c) nav({ to: '/clients/$clientId', params: { clientId: c.id } }) }) }
+  return <div className="page"><div className="page-heading"><div><span className="eyebrow">YOUR STUDIO</span><h1>Clients</h1><p>Every person, every possibility, all in one place.</p></div><button className="button primary" onClick={() => setShowForm(v => !v)}>+ New client</button></div>{showForm && <section className="card form-card"><h2>Add a client</h2><form onSubmit={add} className="form-grid"><label>Name<input value={name} onChange={e => setName(e.target.value)} required minLength={2} maxLength={160} /></label><label>Email (optional)<input type="email" value={email} onChange={e => setEmail(e.target.value)} /></label><label className="wide">Private notes<textarea value={notes} onChange={e => setNotes(e.target.value)} rows={3} /></label><Banner text={action.error} /><div className="form-actions"><button type="button" className="button ghost" onClick={() => setShowForm(false)}>Cancel</button><button className="button primary" disabled={action.busy}>Create client</button></div></form></section>}<div className="section-toolbar"><h2>Client directory <span className="count">{clients.data?.length ?? 0}</span></h2><input className="search" placeholder="Search clients" value={search} onChange={e => setSearch(e.target.value)} /></div>{clients.isPending ? <Loading /> : clients.error ? <Banner text={clients.error.message} /> : filtered.length ? <div className="client-grid">{filtered.map(c => <Link key={c.id} to="/clients/$clientId" params={{ clientId: c.id }} className="client-card"><div className="client-avatar">{c.name.charAt(0).toUpperCase()}</div><div><h3>{c.name}</h3><p>{c.email || 'No email added'}</p><small>Added {dateLabel(c.createdAt)}</small></div><span className="arrow">↗</span></Link>)}</div> : <Empty title={search ? 'No matching clients' : 'Your first client starts here'} text={search ? 'Try another name or email.' : 'Create a client to begin a visual journey.'} />}</div>
+}
+
+function ClientPage() {
+  const { clientId } = clientRoute.useParams()
+  const client = useQuery({ queryKey: ['client', clientId], queryFn: () => api<Client>(`/clients/${clientId}`) })
+  const cases = useQuery({ queryKey: ['cases', clientId], queryFn: () => api<Case[]>(`/clients/${clientId}/cases`) })
+  const [showForm, setShowForm] = useState(false)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const action = useAction()
+  const nav = useNavigate()
+  async function add(e: React.FormEvent) { e.preventDefault(); await action.run(() => api<Case>(`/clients/${clientId}/cases`, json('POST', { title, description })), c => { if (c) nav({ to: '/cases/$caseId', params: { caseId: c.id } }) }) }
+  return <div className="page"><Link to="/clients" className="back">← All clients</Link>{client.isPending ? <Loading /> : client.error ? <Banner text={client.error.message} /> : <><div className="page-heading"><div><span className="eyebrow">CLIENT WORKSPACE</span><h1>{client.data.name}</h1><p>{client.data.email || 'A private space for this client’s look and hair journey.'}</p></div><button className="button primary" onClick={() => setShowForm(v => !v)}>+ New journey</button></div>{client.data.notes && <div className="note"><strong>Private notes</strong><p>{client.data.notes}</p></div>}{showForm && <section className="card form-card"><h2>Start a journey</h2><form onSubmit={add} className="form-grid"><label className="wide">Journey name<input value={title} onChange={e => setTitle(e.target.value)} placeholder="Spring transformation" required minLength={2} /></label><label className="wide">Description<textarea value={description} onChange={e => setDescription(e.target.value)} rows={3} placeholder="Your goals for this consultation" /></label><Banner text={action.error} /><div className="form-actions"><button type="button" className="button ghost" onClick={() => setShowForm(false)}>Cancel</button><button className="button primary" disabled={action.busy}>Create journey</button></div></form></section>}<div className="section-toolbar"><h2>Journeys <span className="count">{cases.data?.length ?? 0}</span></h2></div>{cases.isPending ? <Loading /> : cases.data?.length ? <div className="journey-list">{cases.data.map(c => <Link key={c.id} to="/cases/$caseId" params={{ caseId: c.id }} className="journey-card"><div className="journey-symbol">✳</div><div><h3>{c.title}</h3><p>{c.description || 'Explore looks and document progress'}</p><small>Started {dateLabel(c.createdAt)}</small></div><span className="arrow">↗</span></Link>)}</div> : <Empty title="No journeys yet" text="Create a journey to collect photos, generate looks, and show progress." />}</>}</div>
+}
+
+function CasePage() {
+  const { caseId } = caseRoute.useParams()
+  const details = useQuery({ queryKey: ['case', caseId], queryFn: () => api<Case>(`/cases/${caseId}`) })
+  const assets = useQuery({ queryKey: ['assets', caseId], queryFn: () => api<Asset[]>(`/cases/${caseId}/assets`), refetchInterval: 8000 })
+  const milestones = useQuery({ queryKey: ['milestones', caseId], queryFn: () => api<Milestone[]>(`/cases/${caseId}/milestones`) })
+  const runs = useQuery({ queryKey: ['runs', caseId], queryFn: () => api<Run[]>(`/cases/${caseId}/runs`), refetchInterval: query => query.state.data?.some(r => r.status === 'queued' || r.status === 'running') ? 3000 : false })
+  const models = useQuery({ queryKey: ['models'], queryFn: () => api<{ enabled: boolean; models: { id: string; name: string }[] }>('/models') })
+  const [tab, setTab] = useState<'gallery' | 'timeline'>('gallery')
+  const [sourceAssetId, setSourceAssetId] = useState('')
+  const [prompt, setPrompt] = useState('')
+  const [quantity, setQuantity] = useState(2)
+  const [milestoneName, setMilestoneName] = useState('')
+  const upload = useAction(), generation = useAction(), progress = useAction(), place = useAction()
+  const sourceImages = assets.data?.filter(a => a.kind === 'source') ?? []
+  useEffect(() => { if (!sourceAssetId && sourceImages.length) setSourceAssetId(sourceImages[0].id) }, [sourceAssetId, sourceImages])
+  async function uploadImage(file?: File) { if (!file) return; const form = new FormData(); form.append('image', file); await upload.run(() => api(`/cases/${caseId}/assets`, { method: 'POST', body: form })) }
+  async function generate(e: React.FormEvent) { e.preventDefault(); await generation.run(() => api(`/cases/${caseId}/runs`, json('POST', { sourceAssetId, prompt, quantity, modelId: 'fal-ai/flux-pro/kontext' })), () => setPrompt('')) }
+  async function addMilestone(e: React.FormEvent) { e.preventDefault(); await progress.run(() => api(`/cases/${caseId}/milestones`, json('POST', { title: milestoneName })), () => setMilestoneName('')) }
+  async function placeAsset(assetId: string, milestoneId: string) { await place.run(() => api(`/assets/${assetId}/place`, json('POST', { milestoneId }))) }
+  return <div className="page"><Link to="/clients/$clientId" params={{ clientId: details.data?.clientId ?? '' }} className="back">← Client workspace</Link>{details.isPending ? <Loading /> : details.error ? <Banner text={details.error.message} /> : <><div className="page-heading"><div><span className="eyebrow">VISUAL JOURNEY</span><h1>{details.data.title}</h1><p>{details.data.description || 'Explore, compare, and curate each step.'}</p></div></div><div className="workspace-grid"><div className="workspace-main"><div className="tabs"><button className={tab === 'gallery' ? 'selected' : ''} onClick={() => setTab('gallery')}>Image gallery</button><button className={tab === 'timeline' ? 'selected' : ''} onClick={() => setTab('timeline')}>Progression</button></div>{tab === 'gallery' ? <><div className="section-toolbar"><h2>Images <span className="count">{assets.data?.length ?? 0}</span></h2></div>{assets.data?.length ? <div className="image-grid">{assets.data.map(asset => <div key={asset.id} className="image-card"><img src={imageURL(asset.id)} alt={asset.kind === 'source' ? 'Client source portrait' : 'Generated look'} /><div className="image-meta"><span className={`tag ${asset.kind}`}>{asset.kind === 'source' ? 'Original' : 'Generated'}</span><small>{dateLabel(asset.createdAt)}</small></div><select aria-label="Place image in milestone" value={asset.milestoneId} onChange={e => placeAsset(asset.id, e.target.value)}><option value="">Not in progression</option>{milestones.data?.map(m => <option key={m.id} value={m.id}>{m.position}. {m.title}</option>)}</select></div>)}</div> : <Empty title="No images yet" text="Upload a portrait to begin exploring looks." />}<Banner text={place.error} /></> : <><div className="section-toolbar"><h2>Progression</h2></div>{milestones.data?.length ? <div className="timeline">{milestones.data.map(m => { const chosen = assets.data?.filter(a => a.milestoneId === m.id) ?? []; return <div className="milestone" key={m.id}><div className="milestone-index">{m.position}</div><div className="milestone-content"><h3>{m.title}</h3><small>{dateLabel(m.createdAt)}</small>{chosen.length ? <div className="milestone-images">{chosen.map(a => <img src={imageURL(a.id)} alt={`${m.title} look`} key={a.id} />)}</div> : <p>No images selected yet. Use the gallery to add one.</p>}</div></div> })}</div> : <Empty title="Build the progression" text="Add milestones and choose which images tell this client’s story." />}</>}{runs.data?.length ? <section className="runs"><h2>Generation activity</h2>{runs.data.map(run => <div className="run" key={run.id}><span className={`status ${run.status}`}>{run.status}</span><span>{run.prompt}</span><small>{dateLabel(run.createdAt)}</small>{run.error && <p className="run-error">{run.error}</p>}</div>)}</section> : null}</div><div className="workspace-side"><section className="card tool-card"><span className="eyebrow">01 / SOURCE</span><h2>Add a portrait</h2><p>Upload a clear image to use as the starting point for new looks.</p><label className="upload-box"><span>↑</span><strong>Choose an image</strong><small>JPEG, PNG, or WebP · 10 MB max</small><input type="file" accept="image/jpeg,image/png,image/webp" onChange={e => { uploadImage(e.target.files?.[0]); e.target.value = '' }} disabled={upload.busy} /></label><Banner text={upload.error} /></section><section className="card tool-card"><span className="eyebrow">02 / EXPLORE</span><h2>Generate looks</h2><p>Describe a hairstyle, color, or visual direction to explore.</p><form onSubmit={generate}><label>Source portrait<select value={sourceAssetId} onChange={e => setSourceAssetId(e.target.value)} required><option value="">Select an image</option>{sourceImages.map((a, i) => <option key={a.id} value={a.id}>Portrait {sourceImages.length - i}</option>)}</select></label><label>Creative direction<textarea value={prompt} onChange={e => setPrompt(e.target.value)} placeholder="Try a shoulder-length bob with warm chestnut highlights. Keep facial features, expression, and pose unchanged." rows={5} minLength={10} maxLength={1500} required /></label><label>Variations<select value={quantity} onChange={e => setQuantity(Number(e.target.value))}>{[1,2,3,4].map(n => <option key={n} value={n}>{n} image{n > 1 ? 's' : ''}</option>)}</select></label><Banner text={generation.error} />{models.data && !models.data.enabled && <div className="notice">Generation will be available when model, storage, and worker credentials are configured.</div>}<button className="button primary full" disabled={generation.busy || !sourceAssetId || !models.data?.enabled}>{generation.busy ? 'Starting…' : 'Generate images'}</button></form></section><section className="card tool-card"><span className="eyebrow">03 / CURATE</span><h2>Add a milestone</h2><p>Mark a step in the client’s progression, then select images from the gallery.</p><form onSubmit={addMilestone}><label>Milestone name<input value={milestoneName} onChange={e => setMilestoneName(e.target.value)} placeholder="First consultation" minLength={2} required /></label><Banner text={progress.error} /><button className="button secondary full" disabled={progress.busy}>Add milestone</button></form></section></div></div></>}</div>
+}
+
+function AdminPage() {
+  const me = useQuery({ queryKey: ['me'], queryFn: () => api<User>('/me') })
+  const users = useQuery({ queryKey: ['users'], queryFn: () => api<AdminUser[]>('/admin/users'), enabled: me.data?.role === 'admin' })
+  const audit = useQuery({ queryKey: ['audit'], queryFn: () => api<AuditEvent[]>('/admin/audit'), enabled: me.data?.role === 'admin' })
+  const [name, setName] = useState(''), [email, setEmail] = useState(''), [password, setPassword] = useState(''), [role, setRole] = useState('professional')
+  const action = useAction(), passwordAction = useAction()
+  const [current, setCurrent] = useState(''), [next, setNext] = useState('')
+  async function add(e: React.FormEvent) { e.preventDefault(); await action.run(() => api('/admin/users', json('POST', { name, email, password, role })), () => { setName(''); setEmail(''); setPassword('') }) }
+  async function change(e: React.FormEvent) { e.preventDefault(); await passwordAction.run(() => api('/password', json('POST', { current, next })), () => { window.location.href = '/' }) }
+  if (me.data && me.data.role !== 'admin') return <div className="page"><Banner text="Admin access required" /></div>
+  return <div className="page"><div className="page-heading"><div><span className="eyebrow">STUDIO SETTINGS</span><h1>Administration</h1><p>Manage your team and review workspace activity.</p></div></div><div className="admin-grid"><section className="card form-card"><h2>Invite a team member</h2><p>Create an account and share its initial password directly with the person.</p><form onSubmit={add} className="stack-form"><label>Full name<input value={name} onChange={e => setName(e.target.value)} required /></label><label>Email<input type="email" value={email} onChange={e => setEmail(e.target.value)} required /></label><label>Initial password<input type="password" value={password} onChange={e => setPassword(e.target.value)} minLength={12} required /></label><label>Role<select value={role} onChange={e => setRole(e.target.value)}><option value="professional">Professional</option><option value="admin">Administrator</option></select></label><Banner text={action.error} /><button className="button primary" disabled={action.busy}>Create account</button></form></section><section className="card form-card"><h2>Change your password</h2><form onSubmit={change} className="stack-form"><label>Current password<input type="password" value={current} onChange={e => setCurrent(e.target.value)} required /></label><label>New password<input type="password" value={next} onChange={e => setNext(e.target.value)} minLength={12} required /></label><Banner text={passwordAction.error} /><button className="button secondary" disabled={passwordAction.busy}>Update password</button></form></section></div><div className="section-toolbar"><h2>Team members <span className="count">{users.data?.length ?? 0}</span></h2></div>{users.data?.length ? <div className="table-wrap"><table><thead><tr><th>Member</th><th>Role</th><th>Status</th><th>Added</th></tr></thead><tbody>{users.data.map(u => <tr key={u.id}><td><strong>{u.name}</strong><small>{u.email}</small></td><td>{u.role}</td><td><span className={`status ${u.active ? 'completed' : 'failed'}`}>{u.active ? 'Active' : 'Inactive'}</span></td><td>{dateLabel(u.createdAt)}</td></tr>)}</tbody></table></div> : <Loading />}<div className="section-toolbar"><h2>Recent activity</h2></div><div className="activity-list">{audit.data?.map(e => <div key={e.id}><span className="activity-dot" /><strong>{e.actorName}</strong><span>{e.action}d a {e.subjectType}</span><small>{dateLabel(e.createdAt)}</small></div>) ?? <Loading />}</div></div>
+}
+
+createRoot(document.getElementById('root')!).render(<React.StrictMode><QueryClientProvider client={queryClient}><RouterProvider router={router} /></QueryClientProvider></React.StrictMode>)
