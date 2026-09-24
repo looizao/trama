@@ -29,6 +29,9 @@ trama_close_access
 printf 'Restored users|clients|assets: %s\n' "$counts"
 
 internal_url=$(trama_connection_url "$db_id" internal)
+if [[ -z "${RENDER_API_KEY:-}" && -s "$TRAMA_ROOT/.secrets/render-api-key" ]]; then
+  RENDER_API_KEY=$(cat "$TRAMA_ROOT/.secrets/render-api-key")
+fi
 if [[ -n "${RENDER_API_KEY:-}" ]]; then
   payload=$(mktemp)
   trap 'rm -f "$payload"' EXIT
