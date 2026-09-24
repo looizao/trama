@@ -3,16 +3,19 @@ package app
 import (
 	"bytes"
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
 	"net/url"
+	"path"
+	"strconv"
 	"strings"
 	"time"
 
-	"go.temporal.io/sdk/activity"
 	"go.temporal.io/sdk/temporal"
 	"go.temporal.io/sdk/workflow"
 )
@@ -20,8 +23,10 @@ import (
 func GenerateWorkflow(ctx workflow.Context, runID string) error {
 	ctx = workflow.WithActivityOptions(ctx, workflow.ActivityOptions{
 		StartToCloseTimeout: 20 * time.Minute,
-		HeartbeatTimeout:    time.Minute,
-		RetryPolicy:         &temporal.RetryPolicy{InitialInterval: time.Second * 3, BackoffCoefficient: 2, MaximumInterval: time.Minute, MaximumAttempts: 3},
+		RetryPolicy: &temporal.RetryPolicy{
+			InitialInterval: 3 * time.Second, BackoffCoefficient: 2,
+			MaximumInterval: time.Minute, MaximumAttempts: 3,
+		},
 	})
 	if err := workflow.ExecuteActivity(ctx, "GenerateImages", runID).Get(ctx, nil); err != nil {
 		_ = workflow.ExecuteActivity(ctx, "FailRun", runID, err.Error()).Get(ctx, nil)
@@ -38,129 +43,141 @@ func (a *App) FailRun(ctx context.Context, runID, reason string) error {
 	return err
 }
 
-type falSubmit struct {
-	RequestID string `json:"request_id"`
-}
-type falStatus struct {
-	Status string `json:"status"`
-	Error  string `json:"error"`
-}
-type falResult struct {
-	Images []struct {
-		URL string `json:"url"`
-	} `json:"images"`
+type imageEditResponse struct {
+	Data []struct {
+		Base64 string `json:"b64_json"`
+	} `json:"data"`
 }
 
-func falRequest(ctx context.Context, method, endpoint, key string, body any, target any) error {
-	var reader io.Reader
-	if body != nil {
-		data, err := json.Marshal(body)
-		if err != nil {
-			return err
+// editImages uses the OpenAI Images API edit shape. The proxy must accept an
+// idempotency key so an activity retry cannot charge for a second generation.
+func (a *App) editImages(ctx context.Context, runID, sourceKey, contentType, prompt string, quantity int) ([][]byte, error) {
+	base, err := url.Parse(a.ImageAPIBaseURL)
+	if err != nil || base.Host == "" || base.User != nil || (base.Scheme != "https" && !(base.Scheme == "http" && (base.Hostname() == "localhost" || base.Hostname() == "127.0.0.1"))) {
+		return nil, errors.New("IMAGE_API_BASE_URL must be HTTPS")
+	}
+	endpoint := strings.TrimSuffix(base.String(), "/") + "/images/edits"
+	source, err := a.Storage.Get(ctx, sourceKey)
+	if err != nil {
+		return nil, err
+	}
+	defer source.Close()
+	var body bytes.Buffer
+	form := multipart.NewWriter(&body)
+	file, err := form.CreateFormFile("image", "portrait"+imageExt(contentType))
+	if err != nil {
+		return nil, err
+	}
+	if _, err = io.Copy(file, io.LimitReader(source, (10<<20)+1)); err != nil {
+		return nil, err
+	}
+	for name, value := range map[string]string{
+		"model": a.ImageModel, "prompt": prompt,
+		"n": strconv.Itoa(quantity), "output_format": "jpeg",
+	} {
+		if err = form.WriteField(name, value); err != nil {
+			return nil, err
 		}
-		reader = bytes.NewReader(data)
 	}
-	req, err := http.NewRequestWithContext(ctx, method, endpoint, reader)
+	if err = form.Close(); err != nil {
+		return nil, err
+	}
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint, &body)
 	if err != nil {
-		return err
+		return nil, err
 	}
-	req.Header.Set("Authorization", "Key "+key)
-	if body != nil {
-		req.Header.Set("Content-Type", "application/json")
-	}
-	client := http.Client{Timeout: 30 * time.Second}
-	resp, err := client.Do(req)
+	req.Header.Set("Authorization", "Bearer "+a.ImageAPIKey)
+	req.Header.Set("Content-Type", form.FormDataContentType())
+	req.Header.Set("Idempotency-Key", runID)
+	resp, err := (&http.Client{Timeout: 18 * time.Minute}).Do(req)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		text, _ := io.ReadAll(io.LimitReader(resp.Body, 500))
-		return fmt.Errorf("model API returned %d: %s", resp.StatusCode, string(text))
+		message, _ := io.ReadAll(io.LimitReader(resp.Body, 500))
+		return nil, fmt.Errorf("image proxy returned %d: %s", resp.StatusCode, string(message))
 	}
-	return json.NewDecoder(io.LimitReader(resp.Body, 1<<20)).Decode(target)
+	var result imageEditResponse
+	if err = json.NewDecoder(io.LimitReader(resp.Body, 120<<20)).Decode(&result); err != nil {
+		return nil, err
+	}
+	if len(result.Data) != quantity {
+		return nil, fmt.Errorf("image proxy returned %d images, expected %d", len(result.Data), quantity)
+	}
+	images := make([][]byte, 0, quantity)
+	for _, item := range result.Data {
+		if len(item.Base64) == 0 || len(item.Base64) > 28<<20 {
+			return nil, errors.New("image proxy returned an empty or oversized image")
+		}
+		data, err := base64.StdEncoding.DecodeString(item.Base64)
+		if err != nil {
+			return nil, err
+		}
+		if _, err = imageType(data); err != nil {
+			return nil, err
+		}
+		images = append(images, data)
+	}
+	return images, nil
+}
+
+func imageType(data []byte) (string, error) {
+	if len(data) == 0 || len(data) > 20<<20 {
+		return "", errors.New("generated image is empty or too large")
+	}
+	contentType := http.DetectContentType(data)
+	switch contentType {
+	case "image/jpeg", "image/png", "image/webp":
+		return contentType, nil
+	default:
+		return "", errors.New("image proxy returned a non-image file")
+	}
+}
+
+func imageExt(contentType string) string {
+	switch contentType {
+	case "image/jpeg":
+		return ".jpg"
+	case "image/png":
+		return ".png"
+	case "image/webp":
+		return ".webp"
+	default:
+		return ""
+	}
 }
 
 func (a *App) GenerateImages(ctx context.Context, runID string) error {
-	if a.FalKey == "" || a.Storage.mode == "local" {
-		return errors.New("model or storage is not configured")
+	if a.ImageAPIBaseURL == "" || a.ImageAPIKey == "" || a.ImageModel == "" {
+		return errors.New("image proxy is not configured")
 	}
-	var orgID, caseID, sourceID, prompt, modelID, providerID, sourceKey string
+	var orgID, caseID, sourceID, prompt, modelID, sourceKey, sourceContentType string
 	var quantity int
-	err := a.DB.QueryRow(ctx, `SELECT r.organization_id,r.case_id,r.source_asset_id,r.prompt,r.model_id,r.provider_request_id,a.storage_key,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1`, runID).Scan(&orgID, &caseID, &sourceID, &prompt, &modelID, &providerID, &sourceKey, &quantity)
+	err := a.DB.QueryRow(ctx, `SELECT r.organization_id,r.case_id,r.source_asset_id,r.prompt,r.model_id,a.storage_key,a.content_type,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1`, runID).Scan(&orgID, &caseID, &sourceID, &prompt, &modelID, &sourceKey, &sourceContentType, &quantity)
 	if err != nil {
 		return err
 	}
-	if modelID != "fal-ai/flux-pro/kontext" {
-		return errors.New("unsupported model")
+	if modelID != a.ImageModel {
+		return errors.New("configured image model does not match run")
 	}
-	_, err = a.DB.Exec(ctx, "UPDATE generation_runs SET status='running' WHERE id=$1 AND status IN ('queued','running')", runID)
+	if _, err = a.DB.Exec(ctx, "UPDATE generation_runs SET status='running' WHERE id=$1 AND status IN ('queued','running')", runID); err != nil {
+		return err
+	}
+	images, err := a.editImages(ctx, runID, sourceKey, sourceContentType, prompt, quantity)
 	if err != nil {
 		return err
 	}
-	base := "https://queue.fal.run/" + modelID
-	if providerID == "" {
-		sourceURL, err := a.Storage.PresignGet(ctx, sourceKey, 2*time.Hour)
-		if err != nil {
+	for i, data := range images {
+		if err = a.storeGeneratedImage(ctx, orgID, caseID, runID, sourceID, i, data); err != nil {
 			return err
 		}
-		var submitted falSubmit
-		err = falRequest(ctx, "POST", base, a.FalKey, map[string]any{"prompt": prompt, "image_url": sourceURL, "num_images": quantity, "output_format": "jpeg"}, &submitted)
-		if err != nil {
-			return err
-		}
-		if submitted.RequestID == "" {
-			return errors.New("model API did not return a request ID")
-		}
-		providerID = submitted.RequestID
-		if _, err = a.DB.Exec(ctx, "UPDATE generation_runs SET provider_request_id=$1 WHERE id=$2", providerID, runID); err != nil {
-			return err
-		}
-	}
-	requestURL := base + "/requests/" + url.PathEscape(providerID)
-	deadline := time.Now().Add(15 * time.Minute)
-	for {
-		if time.Now().After(deadline) {
-			return errors.New("model generation timed out")
-		}
-		var status falStatus
-		if err = falRequest(ctx, "GET", requestURL+"/status", a.FalKey, nil, &status); err != nil {
-			return err
-		}
-		activity.RecordHeartbeat(ctx, status.Status)
-		if status.Status == "COMPLETED" {
-			if status.Error != "" {
-				return errors.New(status.Error)
-			}
-			break
-		}
-		if status.Status != "IN_QUEUE" && status.Status != "IN_PROGRESS" {
-			return fmt.Errorf("unexpected model status: %s", status.Status)
-		}
-		select {
-		case <-ctx.Done():
-			return ctx.Err()
-		case <-time.After(3 * time.Second):
-		}
-	}
-	var result falResult
-	if err = falRequest(ctx, "GET", requestURL, a.FalKey, nil, &result); err != nil {
-		return err
-	}
-	if len(result.Images) == 0 {
-		return errors.New("model returned no images")
-	}
-	for i, image := range result.Images {
-		if err = saveGeneratedImage(ctx, a, orgID, caseID, runID, sourceID, i, image.URL); err != nil {
-			return err
-		}
-		activity.RecordHeartbeat(ctx, fmt.Sprintf("stored %d of %d", i+1, len(result.Images)))
 	}
 	_, err = a.DB.Exec(ctx, "UPDATE generation_runs SET status='completed',completed_at=now(),error='' WHERE id=$1", runID)
 	return err
 }
 
-func saveGeneratedImage(ctx context.Context, a *App, orgID, caseID, runID, sourceID string, index int, imageURL string) error {
+func (a *App) storeGeneratedImage(ctx context.Context, orgID, caseID, runID, sourceID string, index int, data []byte) error {
 	var exists bool
 	if err := a.DB.QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM assets WHERE run_id=$1 AND variant_index=$2)", runID, index).Scan(&exists); err != nil {
 		return err
@@ -168,44 +185,12 @@ func saveGeneratedImage(ctx context.Context, a *App, orgID, caseID, runID, sourc
 	if exists {
 		return nil
 	}
-	parsed, err := url.Parse(imageURL)
-	if err != nil || parsed.Scheme != "https" || !(parsed.Hostname() == "fal.media" || strings.HasSuffix(parsed.Hostname(), ".fal.media")) {
-		return errors.New("model returned an unexpected image URL")
-	}
-	req, err := http.NewRequestWithContext(ctx, "GET", imageURL, nil)
+	contentType, err := imageType(data)
 	if err != nil {
 		return err
-	}
-	client := http.Client{Timeout: 2 * time.Minute}
-	resp, err := client.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != 200 {
-		return fmt.Errorf("model image download returned %d", resp.StatusCode)
-	}
-	data, err := io.ReadAll(io.LimitReader(resp.Body, (20<<20)+1))
-	if err != nil {
-		return err
-	}
-	if len(data) > 20<<20 {
-		return errors.New("generated image is too large")
-	}
-	contentType := http.DetectContentType(data)
-	ext := ""
-	switch contentType {
-	case "image/jpeg":
-		ext = "jpg"
-	case "image/png":
-		ext = "png"
-	case "image/webp":
-		ext = "webp"
-	default:
-		return errors.New("model returned a non-image file")
 	}
 	id := newID()
-	key := orgID + "/" + caseID + "/" + id + "." + ext
+	key := path.Join(orgID, caseID, id+imageExt(contentType))
 	if err = a.Storage.Put(ctx, key, contentType, bytes.NewReader(data)); err != nil {
 		return err
 	}

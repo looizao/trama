@@ -3,6 +3,7 @@ package app
 import (
 	"context"
 	"crypto/rand"
+	"crypto/tls"
 	_ "embed"
 	"encoding/hex"
 	"errors"
@@ -20,10 +21,12 @@ import (
 var schema string
 
 type App struct {
-	DB       *pgxpool.Pool
-	Storage  *Storage
-	Temporal client.Client
-	FalKey   string
+	DB              *pgxpool.Pool
+	Storage         *Storage
+	Temporal        client.Client
+	ImageAPIBaseURL string
+	ImageAPIKey     string
+	ImageModel      string
 }
 
 func Open(ctx context.Context) (*App, error) {
@@ -49,7 +52,12 @@ func Open(ctx context.Context) (*App, error) {
 		pool.Close()
 		return nil, err
 	}
-	a := &App{DB: pool, Storage: store, FalKey: os.Getenv("FAL_KEY")}
+	a := &App{
+		DB: pool, Storage: store,
+		ImageAPIBaseURL: strings.TrimSuffix(os.Getenv("IMAGE_API_BASE_URL"), "/"),
+		ImageAPIKey:     os.Getenv("IMAGE_API_KEY"),
+		ImageModel:      os.Getenv("IMAGE_MODEL"),
+	}
 	if err := a.bootstrapAdmin(ctx); err != nil {
 		pool.Close()
 		return nil, err
@@ -68,6 +76,7 @@ func (a *App) ConnectTemporal() error {
 	}
 	options := client.Options{HostPort: address, Namespace: namespace}
 	if key := os.Getenv("TEMPORAL_API_KEY"); key != "" {
+		options.ConnectionOptions = client.ConnectionOptions{TLS: &tls.Config{MinVersion: tls.VersionTLS12}}
 		options.Credentials = client.NewAPIKeyStaticCredentials(key)
 	}
 	c, err := client.Dial(options)

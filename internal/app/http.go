@@ -101,14 +101,15 @@ func (a *App) audit(r *http.Request, action, kind, id string) {
 }
 
 func (a *App) models(w http.ResponseWriter, r *http.Request) {
-	respond(w, 200, map[string]any{"enabled": a.modelReady(), "models": []map[string]string{{"id": "fal-ai/flux-pro/kontext", "name": "FLUX.1 Kontext Pro", "capability": "Reference image editing"}}})
+	models := []map[string]string{}
+	if a.ImageModel != "" {
+		models = append(models, map[string]string{"id": a.ImageModel, "name": a.ImageModel, "capability": "Reference image editing"})
+	}
+	respond(w, 200, map[string]any{"enabled": a.modelReady(), "models": models})
 }
 
 func (a *App) modelReady() bool {
-	if a.FalKey == "" || a.Temporal == nil || a.Storage.mode == "local" {
-		return false
-	}
-	if a.Storage.mode == "db" && (os.Getenv("PUBLIC_BASE_URL") == "" || os.Getenv("MODEL_ASSET_SECRET") == "") {
+	if a.ImageAPIBaseURL == "" || a.ImageAPIKey == "" || a.ImageModel == "" || a.Temporal == nil {
 		return false
 	}
 	return true

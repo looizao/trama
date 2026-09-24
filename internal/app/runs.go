@@ -87,9 +87,9 @@ func (a *App) createRun(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if in.ModelID == "" {
-		in.ModelID = "fal-ai/flux-pro/kontext"
+		in.ModelID = a.ImageModel
 	}
-	if in.ModelID != "fal-ai/flux-pro/kontext" {
+	if in.ModelID != a.ImageModel {
 		problem(w, 400, "unsupported model")
 		return
 	}
