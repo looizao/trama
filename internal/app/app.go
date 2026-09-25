@@ -38,6 +38,10 @@ func Open(ctx context.Context) (*App, error) {
 	if err != nil {
 		return nil, err
 	}
+	if err = migrateClientWorkspace(ctx, pool); err != nil {
+		pool.Close()
+		return nil, fmt.Errorf("migrate client workspace: %w", err)
+	}
 	for _, statement := range strings.Split(schema, ";") {
 		if strings.TrimSpace(statement) == "" {
 			continue

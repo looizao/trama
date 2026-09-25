@@ -1,9 +1,8 @@
 export type User = { id: string; organizationId: string; email: string; name: string; role: 'admin' | 'professional' }
 export type Client = { id: string; name: string; email: string; notes: string; createdAt: string }
-export type Case = { id: string; clientId: string; title: string; description: string; createdAt: string }
-export type Milestone = { id: string; caseId: string; title: string; position: number; createdAt: string }
-export type Asset = { id: string; caseId: string; runId: string; milestoneId: string; sourceAssetId: string; kind: 'source' | 'generated'; contentType: string; createdAt: string }
-export type Run = { id: string; caseId: string; sourceAssetId: string; prompt: string; modelId: string; quantity: number; status: string; error: string; createdAt: string }
+export type Milestone = { id: string; clientId: string; title: string; position: number; createdAt: string }
+export type Asset = { id: string; clientId: string; runId: string; milestoneId: string; sourceAssetId: string; kind: 'source' | 'generated'; contentType: string; createdAt: string }
+export type Run = { id: string; clientId: string; sourceAssetId: string; prompt: string; modelId: string; quantity: number; status: string; error: string; createdAt: string }
 export type AdminUser = { id: string; email: string; name: string; role: string; active: boolean; createdAt: string }
 export type AuditEvent = { id: string; actorName: string; action: string; subjectType: string; subjectId: string; createdAt: string }
 

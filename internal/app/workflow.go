@@ -152,9 +152,9 @@ func (a *App) GenerateImages(ctx context.Context, runID string) error {
 	if a.ImageAPIBaseURL == "" || a.ImageAPIKey == "" || a.ImageModel == "" {
 		return errors.New("image proxy is not configured")
 	}
-	var orgID, caseID, sourceID, prompt, modelID, sourceKey, sourceContentType string
+	var orgID, clientID, sourceID, prompt, modelID, sourceKey, sourceContentType string
 	var quantity int
-	err := a.DB.QueryRow(ctx, `SELECT r.organization_id,r.case_id,r.source_asset_id,r.prompt,r.model_id,a.storage_key,a.content_type,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1`, runID).Scan(&orgID, &caseID, &sourceID, &prompt, &modelID, &sourceKey, &sourceContentType, &quantity)
+	err := a.DB.QueryRow(ctx, `SELECT r.organization_id,r.client_id,r.source_asset_id,r.prompt,r.model_id,a.storage_key,a.content_type,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1`, runID).Scan(&orgID, &clientID, &sourceID, &prompt, &modelID, &sourceKey, &sourceContentType, &quantity)
 	if err != nil {
 		return err
 	}
@@ -169,7 +169,7 @@ func (a *App) GenerateImages(ctx context.Context, runID string) error {
 		return err
 	}
 	for i, data := range images {
-		if err = a.storeGeneratedImage(ctx, orgID, caseID, runID, sourceID, i, data); err != nil {
+		if err = a.storeGeneratedImage(ctx, orgID, clientID, runID, sourceID, i, data); err != nil {
 			return err
 		}
 	}
@@ -177,7 +177,7 @@ func (a *App) GenerateImages(ctx context.Context, runID string) error {
 	return err
 }
 
-func (a *App) storeGeneratedImage(ctx context.Context, orgID, caseID, runID, sourceID string, index int, data []byte) error {
+func (a *App) storeGeneratedImage(ctx context.Context, orgID, clientID, runID, sourceID string, index int, data []byte) error {
 	var exists bool
 	if err := a.DB.QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM assets WHERE run_id=$1 AND variant_index=$2)", runID, index).Scan(&exists); err != nil {
 		return err
@@ -190,10 +190,10 @@ func (a *App) storeGeneratedImage(ctx context.Context, orgID, caseID, runID, sou
 		return err
 	}
 	id := newID()
-	key := path.Join(orgID, caseID, id+imageExt(contentType))
+	key := path.Join(orgID, clientID, id+imageExt(contentType))
 	if err = a.Storage.Put(ctx, key, contentType, bytes.NewReader(data)); err != nil {
 		return err
 	}
-	_, err = a.DB.Exec(ctx, "INSERT INTO assets(id,organization_id,case_id,run_id,source_asset_id,storage_key,content_type,kind,variant_index) VALUES($1,$2,$3,$4,$5,$6,$7,'generated',$8) ON CONFLICT DO NOTHING", id, orgID, caseID, runID, sourceID, key, contentType, index)
+	_, err = a.DB.Exec(ctx, "INSERT INTO assets(id,organization_id,client_id,run_id,source_asset_id,storage_key,content_type,kind,variant_index) VALUES($1,$2,$3,$4,$5,$6,$7,'generated',$8) ON CONFLICT DO NOTHING", id, orgID, clientID, runID, sourceID, key, contentType, index)
 	return err
 }

@@ -10,7 +10,7 @@ import (
 
 type Asset struct {
 	ID            string    `json:"id"`
-	CaseID        string    `json:"caseId"`
+	ClientID      string    `json:"clientId"`
 	RunID         string    `json:"runId"`
 	MilestoneID   string    `json:"milestoneId"`
 	SourceAssetID string    `json:"sourceAssetId"`
@@ -20,12 +20,12 @@ type Asset struct {
 }
 
 func (a *App) listAssets(w http.ResponseWriter, r *http.Request) {
-	caseID := r.PathValue("caseID")
-	if !a.caseExists(r, caseID) {
-		problem(w, 404, "case not found")
+	clientID := r.PathValue("clientID")
+	if !a.clientExists(r, clientID) {
+		problem(w, 404, "client not found")
 		return
 	}
-	rows, err := a.DB.Query(r.Context(), `SELECT id,case_id,COALESCE(run_id::text,''),COALESCE(milestone_id::text,''),COALESCE(source_asset_id::text,''),kind,content_type,created_at FROM assets WHERE case_id=$1 AND organization_id=$2 ORDER BY created_at DESC`, caseID, userFrom(r).OrganizationID)
+	rows, err := a.DB.Query(r.Context(), `SELECT id,client_id,COALESCE(run_id::text,''),COALESCE(milestone_id::text,''),COALESCE(source_asset_id::text,''),kind,content_type,created_at FROM assets WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC`, clientID, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load assets")
 		return
@@ -34,7 +34,7 @@ func (a *App) listAssets(w http.ResponseWriter, r *http.Request) {
 	items := []Asset{}
 	for rows.Next() {
 		var x Asset
-		if err = rows.Scan(&x.ID, &x.CaseID, &x.RunID, &x.MilestoneID, &x.SourceAssetID, &x.Kind, &x.ContentType, &x.CreatedAt); err != nil {
+		if err = rows.Scan(&x.ID, &x.ClientID, &x.RunID, &x.MilestoneID, &x.SourceAssetID, &x.Kind, &x.ContentType, &x.CreatedAt); err != nil {
 			problem(w, 500, "could not load assets")
 			return
 		}
@@ -44,9 +44,9 @@ func (a *App) listAssets(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
-	caseID := r.PathValue("caseID")
-	if !a.caseExists(r, caseID) {
-		problem(w, 404, "case not found")
+	clientID := r.PathValue("clientID")
+	if !a.clientExists(r, clientID) {
+		problem(w, 404, "client not found")
 		return
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 12<<20)
@@ -85,19 +85,19 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 	}
 	u := userFrom(r)
 	id := newID()
-	key := u.OrganizationID + "/" + caseID + "/" + id + "." + ext
+	key := u.OrganizationID + "/" + clientID + "/" + id + "." + ext
 	if err = a.Storage.Put(r.Context(), key, contentType, bytes.NewReader(data)); err != nil {
 		problem(w, 500, "could not store image")
 		return
 	}
 	created := now()
-	_, err = a.DB.Exec(r.Context(), "INSERT INTO assets(id,organization_id,case_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, caseID, key, contentType, created)
+	_, err = a.DB.Exec(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
 	if err != nil {
 		problem(w, 500, "could not save image record")
 		return
 	}
 	a.audit(r, "upload", "asset", id)
-	respond(w, 201, Asset{ID: id, CaseID: caseID, Kind: "source", ContentType: contentType, CreatedAt: created})
+	respond(w, 201, Asset{ID: id, ClientID: clientID, Kind: "source", ContentType: contentType, CreatedAt: created})
 }
 
 func (a *App) assetContent(w http.ResponseWriter, r *http.Request) {
@@ -153,8 +153,8 @@ func (a *App) placeAsset(w http.ResponseWriter, r *http.Request) {
 		problem(w, 404, "image not found")
 		return
 	}
-	var caseID string
-	err := a.DB.QueryRow(r.Context(), "SELECT case_id FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&caseID)
+	var clientID string
+	err := a.DB.QueryRow(r.Context(), "SELECT client_id FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&clientID)
 	if err != nil {
 		problem(w, 404, "image not found")
 		return
@@ -175,7 +175,7 @@ func (a *App) placeAsset(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		var found string
-		if err = a.DB.QueryRow(r.Context(), "SELECT id FROM milestones WHERE id=$1 AND case_id=$2 AND organization_id=$3", in.MilestoneID, caseID, userFrom(r).OrganizationID).Scan(&found); err != nil {
+		if err = a.DB.QueryRow(r.Context(), "SELECT id FROM milestones WHERE id=$1 AND client_id=$2 AND organization_id=$3", in.MilestoneID, clientID, userFrom(r).OrganizationID).Scan(&found); err != nil {
 			problem(w, 404, "milestone not found")
 			return
 		}

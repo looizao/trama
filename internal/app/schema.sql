@@ -40,30 +40,20 @@ CREATE TABLE IF NOT EXISTS clients (
 );
 CREATE INDEX IF NOT EXISTS clients_org_created_idx ON clients (organization_id, created_at DESC);
 
-CREATE TABLE IF NOT EXISTS cases (
+CREATE TABLE IF NOT EXISTS milestones (
   id uuid PRIMARY KEY,
   organization_id uuid NOT NULL REFERENCES organizations(id),
   client_id uuid NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
   title text NOT NULL,
-  description text NOT NULL DEFAULT '',
-  created_at timestamptz NOT NULL DEFAULT now()
-);
-CREATE INDEX IF NOT EXISTS cases_client_idx ON cases (organization_id, client_id, created_at DESC);
-
-CREATE TABLE IF NOT EXISTS milestones (
-  id uuid PRIMARY KEY,
-  organization_id uuid NOT NULL REFERENCES organizations(id),
-  case_id uuid NOT NULL REFERENCES cases(id) ON DELETE CASCADE,
-  title text NOT NULL,
   position integer NOT NULL,
   created_at timestamptz NOT NULL DEFAULT now(),
-  UNIQUE (case_id, position)
+  UNIQUE (client_id, position)
 );
 
 CREATE TABLE IF NOT EXISTS generation_runs (
   id uuid PRIMARY KEY,
   organization_id uuid NOT NULL REFERENCES organizations(id),
-  case_id uuid NOT NULL REFERENCES cases(id) ON DELETE CASCADE,
+  client_id uuid NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
   source_asset_id uuid,
   prompt text NOT NULL,
   model_id text NOT NULL,
@@ -75,12 +65,12 @@ CREATE TABLE IF NOT EXISTS generation_runs (
   created_at timestamptz NOT NULL DEFAULT now(),
   completed_at timestamptz
 );
-CREATE INDEX IF NOT EXISTS generation_runs_case_idx ON generation_runs (organization_id, case_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS generation_runs_client_idx ON generation_runs (organization_id, client_id, created_at DESC);
 
 CREATE TABLE IF NOT EXISTS assets (
   id uuid PRIMARY KEY,
   organization_id uuid NOT NULL REFERENCES organizations(id),
-  case_id uuid NOT NULL REFERENCES cases(id) ON DELETE CASCADE,
+  client_id uuid NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
   run_id uuid REFERENCES generation_runs(id) ON DELETE SET NULL,
   milestone_id uuid REFERENCES milestones(id) ON DELETE SET NULL,
   source_asset_id uuid REFERENCES assets(id) ON DELETE SET NULL,
@@ -90,7 +80,7 @@ CREATE TABLE IF NOT EXISTS assets (
   variant_index integer,
   created_at timestamptz NOT NULL DEFAULT now()
 );
-CREATE INDEX IF NOT EXISTS assets_case_idx ON assets (organization_id, case_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS assets_client_idx ON assets (organization_id, client_id, created_at DESC);
 CREATE UNIQUE INDEX IF NOT EXISTS assets_run_variant_idx ON assets (run_id, variant_index) WHERE run_id IS NOT NULL;
 
 CREATE TABLE IF NOT EXISTS audit_events (

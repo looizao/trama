@@ -12,7 +12,7 @@ const TaskQueue = "trama-images"
 
 type Run struct {
 	ID            string    `json:"id"`
-	CaseID        string    `json:"caseId"`
+	ClientID      string    `json:"clientId"`
 	SourceAssetID string    `json:"sourceAssetId"`
 	Prompt        string    `json:"prompt"`
 	ModelID       string    `json:"modelId"`
@@ -23,12 +23,12 @@ type Run struct {
 }
 
 func (a *App) listRuns(w http.ResponseWriter, r *http.Request) {
-	caseID := r.PathValue("caseID")
-	if !a.caseExists(r, caseID) {
-		problem(w, 404, "case not found")
+	clientID := r.PathValue("clientID")
+	if !a.clientExists(r, clientID) {
+		problem(w, 404, "client not found")
 		return
 	}
-	rows, err := a.DB.Query(r.Context(), "SELECT id,case_id,COALESCE(source_asset_id::text,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE case_id=$1 AND organization_id=$2 ORDER BY created_at DESC LIMIT 100", caseID, userFrom(r).OrganizationID)
+	rows, err := a.DB.Query(r.Context(), "SELECT id,client_id,COALESCE(source_asset_id::text,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC LIMIT 100", clientID, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load runs")
 		return
@@ -37,7 +37,7 @@ func (a *App) listRuns(w http.ResponseWriter, r *http.Request) {
 	items := []Run{}
 	for rows.Next() {
 		var x Run
-		if err = rows.Scan(&x.ID, &x.CaseID, &x.SourceAssetID, &x.Prompt, &x.ModelID, &x.Quantity, &x.Status, &x.Error, &x.CreatedAt); err != nil {
+		if err = rows.Scan(&x.ID, &x.ClientID, &x.SourceAssetID, &x.Prompt, &x.ModelID, &x.Quantity, &x.Status, &x.Error, &x.CreatedAt); err != nil {
 			problem(w, 500, "could not load runs")
 			return
 		}
@@ -53,7 +53,7 @@ func (a *App) getRun(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var x Run
-	err := a.DB.QueryRow(r.Context(), "SELECT id,case_id,COALESCE(source_asset_id::text,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&x.ID, &x.CaseID, &x.SourceAssetID, &x.Prompt, &x.ModelID, &x.Quantity, &x.Status, &x.Error, &x.CreatedAt)
+	err := a.DB.QueryRow(r.Context(), "SELECT id,client_id,COALESCE(source_asset_id::text,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&x.ID, &x.ClientID, &x.SourceAssetID, &x.Prompt, &x.ModelID, &x.Quantity, &x.Status, &x.Error, &x.CreatedAt)
 	if err != nil {
 		problem(w, 404, "run not found")
 		return
@@ -62,9 +62,9 @@ func (a *App) getRun(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) createRun(w http.ResponseWriter, r *http.Request) {
-	caseID := r.PathValue("caseID")
-	if !a.caseExists(r, caseID) {
-		problem(w, 404, "case not found")
+	clientID := r.PathValue("clientID")
+	if !a.clientExists(r, clientID) {
+		problem(w, 404, "client not found")
 		return
 	}
 	if !a.modelReady() {
@@ -98,14 +98,14 @@ func (a *App) createRun(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var found string
-	err := a.DB.QueryRow(r.Context(), "SELECT id FROM assets WHERE id=$1 AND case_id=$2 AND organization_id=$3", in.SourceAssetID, caseID, userFrom(r).OrganizationID).Scan(&found)
+	err := a.DB.QueryRow(r.Context(), "SELECT id FROM assets WHERE id=$1 AND client_id=$2 AND organization_id=$3", in.SourceAssetID, clientID, userFrom(r).OrganizationID).Scan(&found)
 	if err != nil {
 		problem(w, 404, "source image not found")
 		return
 	}
 	u := userFrom(r)
-	x := Run{ID: newID(), CaseID: caseID, SourceAssetID: in.SourceAssetID, Prompt: in.Prompt, ModelID: in.ModelID, Quantity: in.Quantity, Status: "queued", CreatedAt: now()}
-	_, err = a.DB.Exec(r.Context(), "INSERT INTO generation_runs(id,organization_id,case_id,source_asset_id,prompt,model_id,quantity,status,created_by,created_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)", x.ID, u.OrganizationID, caseID, x.SourceAssetID, x.Prompt, x.ModelID, x.Quantity, x.Status, u.ID, x.CreatedAt)
+	x := Run{ID: newID(), ClientID: clientID, SourceAssetID: in.SourceAssetID, Prompt: in.Prompt, ModelID: in.ModelID, Quantity: in.Quantity, Status: "queued", CreatedAt: now()}
+	_, err = a.DB.Exec(r.Context(), "INSERT INTO generation_runs(id,organization_id,client_id,source_asset_id,prompt,model_id,quantity,status,created_by,created_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)", x.ID, u.OrganizationID, clientID, x.SourceAssetID, x.Prompt, x.ModelID, x.Quantity, x.Status, u.ID, x.CreatedAt)
 	if err != nil {
 		problem(w, 500, "could not create run")
 		return
