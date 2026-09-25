@@ -23,6 +23,6 @@ export function json(method: string, body: unknown): RequestInit {
 
 export function imageURL(id: string) { return `/api/assets/${id}/content` }
 
-export function dateLabel(value: string) {
-  return new Date(value).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' })
+export function dateLabel(value: string, locale: 'pt-BR' | 'en' = 'pt-BR') {
+  return new Date(value).toLocaleDateString(locale === 'en' ? 'en-US' : 'pt-BR', { day: 'numeric', month: 'short', year: 'numeric' })
 }
