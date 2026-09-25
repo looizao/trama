@@ -13,6 +13,8 @@ Run `go test ./...` and `npm --prefix web run build` for code checks. `Dockerfil
 
 ## Render
 
+After completing an app code or UI change, run relevant checks, commit and push it to the repository, deploy that commit to Render, and verify the live app. Keep changes local only when the user explicitly asks.
+
 The free web service is `trama-prototype` (`srv-daqohcpsrm7s73drhdp0`) at https://trama-prototype.onrender.com. Use the Render CLI: `render login` if needed, `render services --output json` to inspect resources, `render logs --resources srv-daqohcpsrm7s73drhdp0 --tail` for logs, and `render deploys list srv-daqohcpsrm7s73drhdp0` for deploy status. Deploy with `render deploys create srv-daqohcpsrm7s73drhdp0` when appropriate.
 
 The current free PostgreSQL ID is in `.secrets/current-db-id`; inspect its status and `expiresAt` with `render postgres get "$(cat .secrets/current-db-id)" --output json`. It expires after about 30 days. `scripts/backup-db.sh` creates and verifies an encrypted archive in `backups/` and restores the database IP allow list. `scripts/recycle-db.sh` is for use only after expiry with a verified recent backup. Never delete the database to force a recycle or select a paid plan. Keep `.secrets/`, `backups/`, and credentials out of Git.
