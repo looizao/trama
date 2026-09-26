@@ -27,12 +27,12 @@ func (a *App) clientExists(r *http.Request, id string) bool {
 		return false
 	}
 	var found string
-	return a.DB.QueryRow(r.Context(), "SELECT id FROM clients WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&found) == nil
+	return a.DB.QueryRowContext(r.Context(), "SELECT id FROM clients WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&found) == nil
 }
 
 func (a *App) listClients(w http.ResponseWriter, r *http.Request) {
 	u := userFrom(r)
-	rows, err := a.DB.Query(r.Context(), "SELECT id,name,email,notes,created_at FROM clients WHERE organization_id=$1 ORDER BY created_at DESC LIMIT 500", u.OrganizationID)
+	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,name,email,notes,created_at FROM clients WHERE organization_id=$1 ORDER BY created_at DESC LIMIT 500", u.OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load clients")
 		return
@@ -68,7 +68,7 @@ func (a *App) createClient(w http.ResponseWriter, r *http.Request) {
 	}
 	u := userFrom(r)
 	x := ClientRecord{ID: newID(), Name: in.Name, Email: in.Email, Notes: in.Notes, CreatedAt: now()}
-	_, err := a.DB.Exec(r.Context(), "INSERT INTO clients(id,organization_id,name,email,notes,created_at) VALUES($1,$2,$3,$4,$5,$6)", x.ID, u.OrganizationID, x.Name, x.Email, x.Notes, x.CreatedAt)
+	_, err := a.DB.ExecContext(r.Context(), "INSERT INTO clients(id,organization_id,name,email,notes,created_at) VALUES($1,$2,$3,$4,$5,$6)", x.ID, u.OrganizationID, x.Name, x.Email, x.Notes, x.CreatedAt)
 	if err != nil {
 		problem(w, 500, "could not create client")
 		return
@@ -84,7 +84,7 @@ func (a *App) getClient(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var x ClientRecord
-	err := a.DB.QueryRow(r.Context(), "SELECT id,name,email,notes,created_at FROM clients WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&x.ID, &x.Name, &x.Email, &x.Notes, &x.CreatedAt)
+	err := a.DB.QueryRowContext(r.Context(), "SELECT id,name,email,notes,created_at FROM clients WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&x.ID, &x.Name, &x.Email, &x.Notes, &x.CreatedAt)
 	if err != nil {
 		problem(w, 404, "client not found")
 		return
@@ -113,7 +113,7 @@ func (a *App) updateClient(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, "invalid client fields")
 		return
 	}
-	_, err := a.DB.Exec(r.Context(), "UPDATE clients SET name=$1,email=$2,notes=$3,updated_at=now() WHERE id=$4 AND organization_id=$5", in.Name, in.Email, in.Notes, id, userFrom(r).OrganizationID)
+	_, err := a.DB.ExecContext(r.Context(), "UPDATE clients SET name=$1,email=$2,notes=$3,updated_at=$4 WHERE id=$5 AND organization_id=$6", in.Name, in.Email, in.Notes, now(), id, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not update client")
 		return
@@ -128,7 +128,7 @@ func (a *App) listMilestones(w http.ResponseWriter, r *http.Request) {
 		problem(w, 404, "client not found")
 		return
 	}
-	rows, err := a.DB.Query(r.Context(), "SELECT id,client_id,title,position,created_at FROM milestones WHERE client_id=$1 AND organization_id=$2 ORDER BY position", id, userFrom(r).OrganizationID)
+	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,client_id,title,position,created_at FROM milestones WHERE client_id=$1 AND organization_id=$2 ORDER BY position", id, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load milestones")
 		return
@@ -165,7 +165,7 @@ func (a *App) createMilestone(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	x := Milestone{ID: newID(), ClientID: id, Title: in.Title, CreatedAt: now()}
-	err := a.DB.QueryRow(r.Context(), "INSERT INTO milestones(id,organization_id,client_id,title,position,created_at) VALUES($1,$2,$3,$4,(SELECT COALESCE(MAX(position),0)+1 FROM milestones WHERE client_id=$3),$5) RETURNING position", x.ID, userFrom(r).OrganizationID, id, x.Title, x.CreatedAt).Scan(&x.Position)
+	err := a.DB.QueryRowContext(r.Context(), "INSERT INTO milestones(id,organization_id,client_id,title,position,created_at) VALUES($1,$2,$3,$4,(SELECT COALESCE(MAX(position),0)+1 FROM milestones WHERE client_id=$3),$5) RETURNING position", x.ID, userFrom(r).OrganizationID, id, x.Title, x.CreatedAt).Scan(&x.Position)
 	if err != nil {
 		problem(w, 500, "could not create milestone")
 		return

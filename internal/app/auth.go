@@ -80,7 +80,7 @@ func (a *App) setSession(w http.ResponseWriter, r *http.Request, userID string) 
 		return err
 	}
 	expires := now().Add(14 * 24 * time.Hour)
-	if _, err = a.DB.Exec(r.Context(), "INSERT INTO sessions (token_hash,user_id,expires_at) VALUES ($1,$2,$3)", digest, userID, expires); err != nil {
+	if _, err = a.DB.ExecContext(r.Context(), "INSERT INTO sessions (token_hash,user_id,expires_at) VALUES ($1,$2,$3)", digest, userID, expires); err != nil {
 		return err
 	}
 	http.SetCookie(w, &http.Cookie{Name: sessionCookie, Value: token, Path: "/", Expires: expires, MaxAge: 14 * 24 * 3600, HttpOnly: true, Secure: secureCookie(), SameSite: http.SameSiteLaxMode})
@@ -100,7 +100,7 @@ func (a *App) authenticated(next http.HandlerFunc) http.HandlerFunc {
 		}
 		hash := sha256.Sum256([]byte(cookie.Value))
 		var u User
-		err = a.DB.QueryRow(r.Context(), `SELECT u.id,u.organization_id,u.email,u.name,u.role FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=$1 AND s.expires_at>now() AND u.active=true`, hash[:]).Scan(&u.ID, &u.OrganizationID, &u.Email, &u.Name, &u.Role)
+		err = a.DB.QueryRowContext(r.Context(), `SELECT u.id,u.organization_id,u.email,u.name,u.role FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=$1 AND s.expires_at>$2 AND u.active=1`, hash[:], now()).Scan(&u.ID, &u.OrganizationID, &u.Email, &u.Name, &u.Role)
 		if err != nil {
 			clearSession(w)
 			problem(w, 401, "session expired")
@@ -168,7 +168,7 @@ func (a *App) login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var id, hash string
-	err = a.DB.QueryRow(r.Context(), "SELECT id,password_hash FROM users WHERE email=$1 AND active=true", email).Scan(&id, &hash)
+	err = a.DB.QueryRowContext(r.Context(), "SELECT id,password_hash FROM users WHERE email=$1 AND active=1", email).Scan(&id, &hash)
 	if err != nil || !verifyPassword(hash, input.Password) {
 		problem(w, 401, "invalid credentials")
 		return
@@ -183,7 +183,7 @@ func (a *App) login(w http.ResponseWriter, r *http.Request) {
 func (a *App) logout(w http.ResponseWriter, r *http.Request) {
 	if cookie, err := r.Cookie(sessionCookie); err == nil {
 		hash := sha256.Sum256([]byte(cookie.Value))
-		_, _ = a.DB.Exec(r.Context(), "DELETE FROM sessions WHERE token_hash=$1", hash[:])
+		_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM sessions WHERE token_hash=$1", hash[:])
 	}
 	clearSession(w)
 	respond(w, 200, map[string]string{"status": "ok"})
@@ -200,7 +200,7 @@ func (a *App) changePassword(w http.ResponseWriter, r *http.Request) {
 	}
 	u := userFrom(r)
 	var stored string
-	if err := a.DB.QueryRow(r.Context(), "SELECT password_hash FROM users WHERE id=$1", u.ID).Scan(&stored); err != nil {
+	if err := a.DB.QueryRowContext(r.Context(), "SELECT password_hash FROM users WHERE id=$1", u.ID).Scan(&stored); err != nil {
 		problem(w, 500, "could not load account")
 		return
 	}
@@ -213,11 +213,11 @@ func (a *App) changePassword(w http.ResponseWriter, r *http.Request) {
 		badRequest(w, err)
 		return
 	}
-	if _, err = a.DB.Exec(r.Context(), "UPDATE users SET password_hash=$1 WHERE id=$2", hash, u.ID); err != nil {
+	if _, err = a.DB.ExecContext(r.Context(), "UPDATE users SET password_hash=$1 WHERE id=$2", hash, u.ID); err != nil {
 		problem(w, 500, "could not update password")
 		return
 	}
-	_, _ = a.DB.Exec(r.Context(), "DELETE FROM sessions WHERE user_id=$1", u.ID)
+	_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM sessions WHERE user_id=$1", u.ID)
 	clearSession(w)
 	respond(w, 200, map[string]string{"status": "password changed; sign in again"})
 }

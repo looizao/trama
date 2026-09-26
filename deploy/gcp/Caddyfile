@@ -1,0 +1,5 @@
+trama.34-24-249-190.sslip.io {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8080
+}
+

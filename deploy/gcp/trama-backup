@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+umask 077
+scratch=$(mktemp -d /mnt/disks/trama-data/.backup.XXXXXX)
+trap 'rm -rf -- "$scratch"' EXIT
+export GNUPGHOME="$scratch/gnupg"
+mkdir -m 0700 "$GNUPGHOME"
+timestamp=$(date -u +%Y%m%dT%H%M%SZ)
+snapshot="$scratch/trama-$timestamp.db"
+archive="$snapshot.gpg"
+downloaded="$scratch/uploaded.gpg"
+restored="$scratch/restored.db"
+object="backups/$(basename "$archive")"
+
+export AWS_ACCESS_KEY_ID="$S3_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY="$S3_SECRET_ACCESS_KEY"
+export AWS_DEFAULT_REGION=auto
+export AWS_EC2_METADATA_DISABLED=true
+
+sqlite3 "$DATABASE_PATH" ".timeout 5000" ".backup '$snapshot'"
+gpg --batch --yes --quiet --pinentry-mode loopback \
+  --passphrase-file /etc/trama/backup-passphrase \
+  --symmetric --cipher-algo AES256 --output "$archive" "$snapshot"
+aws --endpoint-url "$S3_ENDPOINT" s3 cp "$archive" "s3://$S3_BUCKET/$object" --only-show-errors
+aws --endpoint-url "$S3_ENDPOINT" s3 cp "s3://$S3_BUCKET/$object" "$downloaded" --only-show-errors
+cmp --silent "$archive" "$downloaded"
+gpg --batch --yes --quiet --pinentry-mode loopback \
+  --passphrase-file /etc/trama/backup-passphrase \
+  --decrypt --output "$restored" "$downloaded"
+test "$(sqlite3 "$restored" 'PRAGMA integrity_check;')" = "ok"

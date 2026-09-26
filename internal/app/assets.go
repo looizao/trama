@@ -25,7 +25,7 @@ func (a *App) listAssets(w http.ResponseWriter, r *http.Request) {
 		problem(w, 404, "client not found")
 		return
 	}
-	rows, err := a.DB.Query(r.Context(), `SELECT id,client_id,COALESCE(run_id::text,''),COALESCE(milestone_id::text,''),COALESCE(source_asset_id::text,''),kind,content_type,created_at FROM assets WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC`, clientID, userFrom(r).OrganizationID)
+	rows, err := a.DB.QueryContext(r.Context(), `SELECT id,client_id,COALESCE(run_id,''),COALESCE(milestone_id,''),COALESCE(source_asset_id,''),kind,content_type,created_at FROM assets WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC`, clientID, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load assets")
 		return
@@ -91,7 +91,7 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	created := now()
-	_, err = a.DB.Exec(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
+	_, err = a.DB.ExecContext(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
 	if err != nil {
 		problem(w, 500, "could not save image record")
 		return
@@ -107,9 +107,18 @@ func (a *App) assetContent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var key, contentType string
-	err := a.DB.QueryRow(r.Context(), "SELECT storage_key,content_type FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&key, &contentType)
+	err := a.DB.QueryRowContext(r.Context(), "SELECT storage_key,content_type FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&key, &contentType)
 	if err != nil {
 		problem(w, 404, "image not found")
+		return
+	}
+	if a.Storage.mode == "s3" || a.Storage.mode == "gcs" {
+		location, signErr := a.Storage.PresignGet(r.Context(), key, 2*time.Minute)
+		if signErr != nil {
+			problem(w, 500, "could not load image")
+			return
+		}
+		http.Redirect(w, r, location, http.StatusTemporaryRedirect)
 		return
 	}
 	body, err := a.Storage.Get(r.Context(), key)
@@ -154,7 +163,7 @@ func (a *App) placeAsset(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var clientID string
-	err := a.DB.QueryRow(r.Context(), "SELECT client_id FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&clientID)
+	err := a.DB.QueryRowContext(r.Context(), "SELECT client_id FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&clientID)
 	if err != nil {
 		problem(w, 404, "image not found")
 		return
@@ -168,18 +177,18 @@ func (a *App) placeAsset(w http.ResponseWriter, r *http.Request) {
 	}
 	in.MilestoneID = strings.TrimSpace(in.MilestoneID)
 	if in.MilestoneID == "" {
-		_, err = a.DB.Exec(r.Context(), "UPDATE assets SET milestone_id=NULL WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID)
+		_, err = a.DB.ExecContext(r.Context(), "UPDATE assets SET milestone_id=NULL WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID)
 	} else {
 		if !isID(in.MilestoneID) {
 			problem(w, 400, "invalid milestone")
 			return
 		}
 		var found string
-		if err = a.DB.QueryRow(r.Context(), "SELECT id FROM milestones WHERE id=$1 AND client_id=$2 AND organization_id=$3", in.MilestoneID, clientID, userFrom(r).OrganizationID).Scan(&found); err != nil {
+		if err = a.DB.QueryRowContext(r.Context(), "SELECT id FROM milestones WHERE id=$1 AND client_id=$2 AND organization_id=$3", in.MilestoneID, clientID, userFrom(r).OrganizationID).Scan(&found); err != nil {
 			problem(w, 404, "milestone not found")
 			return
 		}
-		_, err = a.DB.Exec(r.Context(), "UPDATE assets SET milestone_id=$1 WHERE id=$2 AND organization_id=$3", in.MilestoneID, id, userFrom(r).OrganizationID)
+		_, err = a.DB.ExecContext(r.Context(), "UPDATE assets SET milestone_id=$1 WHERE id=$2 AND organization_id=$3", in.MilestoneID, id, userFrom(r).OrganizationID)
 	}
 	if err != nil {
 		problem(w, 500, "could not update image")

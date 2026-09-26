@@ -1,0 +1,19 @@
+[Unit]
+Description=Create and verify an encrypted Trama SQLite backup
+After=network-online.target trama.service
+Wants=network-online.target
+RequiresMountsFor=/mnt/disks/trama-data
+
+[Service]
+Type=oneshot
+User=trama
+Group=trama
+EnvironmentFile=/etc/trama/trama.env
+ExecStart=/usr/local/sbin/trama-backup
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/mnt/disks/trama-data
+

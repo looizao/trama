@@ -91,7 +91,7 @@ func (a *App) serveWeb(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) audit(r *http.Request, action, kind, id string) {
 	u := userFrom(r)
-	_, err := a.DB.Exec(r.Context(), "INSERT INTO audit_events(id,organization_id,actor_id,action,subject_type,subject_id) VALUES($1,$2,$3,$4,$5,$6)", newID(), u.OrganizationID, u.ID, action, kind, id)
+	_, err := a.DB.ExecContext(r.Context(), "INSERT INTO audit_events(id,organization_id,actor_id,action,subject_type,subject_id) VALUES($1,$2,$3,$4,$5,$6)", newID(), u.OrganizationID, u.ID, action, kind, id)
 	if err != nil {
 		log.Printf("audit failed: %v", err)
 	}

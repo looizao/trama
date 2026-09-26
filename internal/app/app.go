@@ -4,24 +4,27 @@ import (
 	"context"
 	"crypto/rand"
 	"crypto/tls"
+	"database/sql"
 	_ "embed"
 	"encoding/hex"
 	"errors"
 	"fmt"
 	"log"
+	"net/url"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
-	"github.com/jackc/pgx/v5/pgxpool"
 	"go.temporal.io/sdk/client"
+	_ "modernc.org/sqlite"
 )
 
 //go:embed schema.sql
 var schema string
 
 type App struct {
-	DB              *pgxpool.Pool
+	DB              *sql.DB
 	Storage         *Storage
 	Temporal        client.Client
 	ImageAPIBaseURL string
@@ -30,43 +33,75 @@ type App struct {
 }
 
 func Open(ctx context.Context) (*App, error) {
-	dsn := os.Getenv("DATABASE_URL")
-	if dsn == "" {
-		return nil, errors.New("DATABASE_URL is required")
-	}
-	pool, err := pgxpool.New(ctx, dsn)
+	db, err := OpenDatabase(ctx, os.Getenv("DATABASE_PATH"))
 	if err != nil {
 		return nil, err
 	}
-	if err = migrateClientWorkspace(ctx, pool); err != nil {
-		pool.Close()
-		return nil, fmt.Errorf("migrate client workspace: %w", err)
-	}
-	for _, statement := range strings.Split(schema, ";") {
-		if strings.TrimSpace(statement) == "" {
-			continue
-		}
-		if _, err = pool.Exec(ctx, statement); err != nil {
-			pool.Close()
-			return nil, fmt.Errorf("schema: %w", err)
-		}
-	}
-	store, err := OpenStorage(ctx, pool)
+	store, err := OpenStorage(ctx, db)
 	if err != nil {
-		pool.Close()
+		db.Close()
 		return nil, err
 	}
 	a := &App{
-		DB: pool, Storage: store,
+		DB: db, Storage: store,
 		ImageAPIBaseURL: strings.TrimSuffix(os.Getenv("IMAGE_API_BASE_URL"), "/"),
 		ImageAPIKey:     os.Getenv("IMAGE_API_KEY"),
 		ImageModel:      os.Getenv("IMAGE_MODEL"),
 	}
 	if err := a.bootstrapAdmin(ctx); err != nil {
-		pool.Close()
+		db.Close()
 		return nil, err
 	}
 	return a, nil
+}
+
+func OpenDatabase(ctx context.Context, path string) (*sql.DB, error) {
+	path = strings.TrimSpace(path)
+	if path == "" {
+		return nil, errors.New("DATABASE_PATH is required")
+	}
+	if path != ":memory:" {
+		absolute, err := filepath.Abs(path)
+		if err != nil {
+			return nil, err
+		}
+		path = absolute
+		if err = os.MkdirAll(filepath.Dir(path), 0700); err != nil {
+			return nil, err
+		}
+	}
+	query := url.Values{}
+	query.Add("_pragma", "busy_timeout(5000)")
+	query.Add("_pragma", "foreign_keys(1)")
+	query.Add("_pragma", "journal_mode(WAL)")
+	query.Add("_pragma", "synchronous(NORMAL)")
+	dsn := "file:" + filepath.ToSlash(path) + "?" + query.Encode()
+	db, err := sql.Open("sqlite", dsn)
+	if err != nil {
+		return nil, err
+	}
+	db.SetMaxOpenConns(1)
+	db.SetMaxIdleConns(1)
+	if err = db.PingContext(ctx); err != nil {
+		db.Close()
+		return nil, err
+	}
+	for _, statement := range strings.Split(schema, ";") {
+		if strings.TrimSpace(statement) == "" {
+			continue
+		}
+		if _, err = db.ExecContext(ctx, statement); err != nil {
+			db.Close()
+			return nil, fmt.Errorf("schema: %w", err)
+		}
+	}
+	if path != ":memory:" {
+		if err = os.Chmod(path, 0600); err != nil {
+			db.Close()
+			return nil, err
+		}
+	}
+	return db, nil
 }
 
 func (a *App) ConnectTemporal() error {
@@ -95,6 +130,9 @@ func (a *App) Close() {
 	if a.Temporal != nil {
 		a.Temporal.Close()
 	}
+	if a.Storage != nil {
+		a.Storage.Close()
+	}
 	if a.DB != nil {
 		a.DB.Close()
 	}
@@ -102,7 +140,7 @@ func (a *App) Close() {
 
 func (a *App) bootstrapAdmin(ctx context.Context) error {
 	var count int
-	if err := a.DB.QueryRow(ctx, "SELECT count(*) FROM users").Scan(&count); err != nil {
+	if err := a.DB.QueryRowContext(ctx, "SELECT count(*) FROM users").Scan(&count); err != nil {
 		return err
 	}
 	if count > 0 {
@@ -120,19 +158,19 @@ func (a *App) bootstrapAdmin(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	tx, err := a.DB.Begin(ctx)
+	tx, err := a.DB.BeginTx(ctx, nil)
 	if err != nil {
 		return err
 	}
-	defer tx.Rollback(ctx)
+	defer tx.Rollback()
 	orgID, userID := newID(), newID()
-	if _, err = tx.Exec(ctx, "INSERT INTO organizations (id,name) VALUES ($1,$2)", orgID, "My studio"); err != nil {
+	if _, err = tx.ExecContext(ctx, "INSERT INTO organizations (id,name) VALUES ($1,$2)", orgID, "My studio"); err != nil {
 		return err
 	}
-	if _, err = tx.Exec(ctx, "INSERT INTO users (id,organization_id,email,name,password_hash,role) VALUES ($1,$2,$3,$4,$5,'admin')", userID, orgID, email, "Administrator", hash); err != nil {
+	if _, err = tx.ExecContext(ctx, "INSERT INTO users (id,organization_id,email,name,password_hash,role) VALUES ($1,$2,$3,$4,$5,'admin')", userID, orgID, email, "Administrator", hash); err != nil {
 		return err
 	}
-	if err = tx.Commit(ctx); err != nil {
+	if err = tx.Commit(); err != nil {
 		return err
 	}
 	log.Printf("initial administrator created: %s", email)

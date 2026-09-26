@@ -5,6 +5,7 @@ import (
 	"context"
 	"crypto/hmac"
 	"crypto/sha256"
+	"database/sql"
 	"encoding/base64"
 	"encoding/binary"
 	"errors"
@@ -16,29 +17,35 @@ import (
 	"strings"
 	"time"
 
+	gcs "cloud.google.com/go/storage"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"github.com/jackc/pgx/v5/pgxpool"
+	"golang.org/x/oauth2"
+	"google.golang.org/api/iamcredentials/v1"
+	"google.golang.org/api/option"
 )
 
 type Storage struct {
-	mode    string
-	dir     string
-	bucket  string
-	s3      *s3.Client
-	presign *s3.PresignClient
-	db      *pgxpool.Pool
+	mode     string
+	dir      string
+	bucket   string
+	s3       *s3.Client
+	presign  *s3.PresignClient
+	gcs      *gcs.Client
+	signer   *iamcredentials.Service
+	signerID string
+	db       *sql.DB
 }
 
-func OpenStorage(ctx context.Context, pool *pgxpool.Pool) (*Storage, error) {
+func OpenStorage(ctx context.Context, db *sql.DB) (*Storage, error) {
 	mode := os.Getenv("STORAGE_MODE")
 	if mode == "" {
 		mode = "db"
 	}
 	if mode == "db" {
-		return &Storage{mode: mode, db: pool}, nil
+		return &Storage{mode: mode, db: db}, nil
 	}
 	if mode == "local" {
 		dir := os.Getenv("STORAGE_DIR")
@@ -49,6 +56,27 @@ func OpenStorage(ctx context.Context, pool *pgxpool.Pool) (*Storage, error) {
 			return nil, err
 		}
 		return &Storage{mode: mode, dir: dir}, nil
+	}
+	if mode == "gcs" {
+		bucket := strings.TrimSpace(os.Getenv("GCS_BUCKET"))
+		signerID := strings.TrimSpace(os.Getenv("GCS_SIGNING_SERVICE_ACCOUNT"))
+		if bucket == "" || signerID == "" {
+			return nil, errors.New("GCS_BUCKET and GCS_SIGNING_SERVICE_ACCOUNT are required")
+		}
+		var options []option.ClientOption
+		if token := strings.TrimSpace(os.Getenv("GOOGLE_OAUTH_ACCESS_TOKEN")); token != "" {
+			options = append(options, option.WithTokenSource(oauth2.StaticTokenSource(&oauth2.Token{AccessToken: token})))
+		}
+		client, err := gcs.NewClient(ctx, options...)
+		if err != nil {
+			return nil, err
+		}
+		signer, err := iamcredentials.NewService(ctx, options...)
+		if err != nil {
+			client.Close()
+			return nil, err
+		}
+		return &Storage{mode: mode, bucket: bucket, gcs: client, signer: signer, signerID: signerID}, nil
 	}
 	if mode != "s3" {
 		return nil, fmt.Errorf("unknown STORAGE_MODE %q", mode)
@@ -66,8 +94,15 @@ func OpenStorage(ctx context.Context, pool *pgxpool.Pool) (*Storage, error) {
 	if err != nil {
 		return nil, err
 	}
-	s := s3.NewFromConfig(cfg, func(o *s3.Options) { o.BaseEndpoint = aws.String(endpoint); o.UsePathStyle = true })
+	usePathStyle := os.Getenv("S3_PATH_STYLE") != "false"
+	s := s3.NewFromConfig(cfg, func(o *s3.Options) { o.BaseEndpoint = aws.String(endpoint); o.UsePathStyle = usePathStyle })
 	return &Storage{mode: mode, bucket: bucket, s3: s, presign: s3.NewPresignClient(s)}, nil
+}
+
+func (s *Storage) Close() {
+	if s.gcs != nil {
+		_ = s.gcs.Close()
+	}
 }
 
 func (s *Storage) safePath(key string) (string, error) {
@@ -86,7 +121,7 @@ func (s *Storage) Put(ctx context.Context, key, contentType string, body io.Read
 		if len(data) > 20<<20 {
 			return errors.New("image too large for prototype storage")
 		}
-		_, err = s.db.Exec(ctx, "INSERT INTO storage_objects(key,content_type,data) VALUES($1,$2,$3) ON CONFLICT(key) DO NOTHING", key, contentType, data)
+		_, err = s.db.ExecContext(ctx, "INSERT INTO storage_objects(key,content_type,data) VALUES($1,$2,$3) ON CONFLICT(key) DO NOTHING", key, contentType, data)
 		return err
 	}
 	if s.mode == "local" {
@@ -109,6 +144,16 @@ func (s *Storage) Put(ctx context.Context, key, contentType string, body io.Read
 		}
 		return closeErr
 	}
+	if s.mode == "gcs" {
+		writer := s.gcs.Bucket(s.bucket).Object(key).NewWriter(ctx)
+		writer.ContentType = contentType
+		_, copyErr := io.Copy(writer, body)
+		closeErr := writer.Close()
+		if copyErr != nil {
+			return copyErr
+		}
+		return closeErr
+	}
 	_, err := s.s3.PutObject(ctx, &s3.PutObjectInput{Bucket: aws.String(s.bucket), Key: aws.String(key), ContentType: aws.String(contentType), Body: body})
 	return err
 }
@@ -116,7 +161,7 @@ func (s *Storage) Put(ctx context.Context, key, contentType string, body io.Read
 func (s *Storage) Get(ctx context.Context, key string) (io.ReadCloser, error) {
 	if s.mode == "db" {
 		var data []byte
-		if err := s.db.QueryRow(ctx, "SELECT data FROM storage_objects WHERE key=$1", key).Scan(&data); err != nil {
+		if err := s.db.QueryRowContext(ctx, "SELECT data FROM storage_objects WHERE key=$1", key).Scan(&data); err != nil {
 			return nil, err
 		}
 		return io.NopCloser(bytes.NewReader(data)), nil
@@ -127,6 +172,9 @@ func (s *Storage) Get(ctx context.Context, key string) (io.ReadCloser, error) {
 			return nil, err
 		}
 		return os.Open(path)
+	}
+	if s.mode == "gcs" {
+		return s.gcs.Bucket(s.bucket).Object(key).NewReader(ctx)
 	}
 	out, err := s.s3.GetObject(ctx, &s3.GetObjectInput{Bucket: aws.String(s.bucket), Key: aws.String(key)})
 	if err != nil {
@@ -149,6 +197,24 @@ func (s *Storage) PresignGet(ctx context.Context, key string, expiry time.Durati
 		mac.Write(payload)
 		token := base64.RawURLEncoding.EncodeToString(payload) + "." + base64.RawURLEncoding.EncodeToString(mac.Sum(nil))
 		return strings.TrimSuffix(base, "/") + "/api/model-assets/" + url.PathEscape(token), nil
+	}
+	if s.mode == "gcs" {
+		return gcs.SignedURL(s.bucket, key, &gcs.SignedURLOptions{
+			Scheme:         gcs.SigningSchemeV4,
+			Method:         "GET",
+			Expires:        time.Now().Add(expiry),
+			GoogleAccessID: s.signerID,
+			SignBytes: func(payload []byte) ([]byte, error) {
+				response, err := s.signer.Projects.ServiceAccounts.SignBlob(
+					"projects/-/serviceAccounts/"+s.signerID,
+					&iamcredentials.SignBlobRequest{Payload: base64.StdEncoding.EncodeToString(payload)},
+				).Context(ctx).Do()
+				if err != nil {
+					return nil, err
+				}
+				return base64.StdEncoding.DecodeString(response.SignedBlob)
+			},
+		})
 	}
 	if s.mode != "s3" {
 		return "", errors.New("model access requires durable storage")

@@ -18,5 +18,9 @@ RUN apk add --no-cache ca-certificates
 WORKDIR /app
 COPY --from=build /out/api /app/api
 COPY --from=web /src/web/dist /app/web/dist
-EXPOSE 10000
+RUN addgroup -S -g 10001 trama && adduser -S -D -H -u 10001 -G trama trama && \
+    mkdir -p /var/lib/trama && chown trama:trama /var/lib/trama
+ENV DATABASE_PATH=/var/lib/trama/trama.db PORT=8080
+USER trama
+EXPOSE 8080
 CMD ["/app/api"]
