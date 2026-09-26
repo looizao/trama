@@ -71,7 +71,7 @@ func newSessionToken() (string, []byte, error) {
 }
 
 func secureCookie() bool {
-	return strings.HasPrefix(os.Getenv("PUBLIC_BASE_URL"), "https://") || os.Getenv("RENDER_EXTERNAL_URL") != ""
+	return strings.HasPrefix(os.Getenv("PUBLIC_BASE_URL"), "https://")
 }
 
 func (a *App) setSession(w http.ResponseWriter, r *http.Request, userID string) error {

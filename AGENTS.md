@@ -5,16 +5,16 @@ Trama is a prototype workspace for visagism professionals. A studio manages clie
 ## Architecture
 
 - `web/`: React 19, TypeScript, Vite, TanStack Router, and TanStack Query.
-- `cmd/api/` and `internal/app/`: Go 1.26 HTTP API, session-based email/password login, admin functions, and PostgreSQL access through pgx. The API serves the built frontend.
-- PostgreSQL stores clients, cases, milestones, sessions, image metadata, and prototype image bytes (`STORAGE_MODE=db`). S3 storage is also supported.
+- `cmd/api/` and `internal/app/`: Go 1.26 HTTP API, session-based email/password login, admin functions, and SQLite access through `database/sql`. The API serves the built frontend.
+- SQLite stores clients, cases, milestones, sessions, and image metadata. Google Cloud Storage stores portrait images in production. Database, local, S3, and GCS storage modes are supported.
 - `cmd/worker/`: Temporal worker for image generation. The API can run that worker in the same process with `RUN_WORKER_IN_API=true`. Generation needs Temporal plus an OpenAI-compatible image edit proxy configured with `IMAGE_API_BASE_URL`, `IMAGE_API_KEY`, and `IMAGE_MODEL`. It is currently disabled on the free prototype.
 
 Run `go test ./...` and `npm --prefix web run build` for code checks. `Dockerfile` builds the frontend and Go API for deployment.
 
-## Render
+## Google Cloud
 
-After completing an app code or UI change, run relevant checks, commit and push it to the repository, deploy that commit to Render, and verify the live app. Keep changes local only when the user explicitly asks.
+After completing an app code or UI change, run relevant checks, commit and push it to the repository, deploy that commit to Google Cloud, and verify the live app. Keep changes local only when the user explicitly asks.
 
-The free web service is `trama-prototype` (`srv-daqohcpsrm7s73drhdp0`) at https://trama-prototype.onrender.com. Use the Render CLI: `render login` if needed, `render services --output json` to inspect resources, `render logs --resources srv-daqohcpsrm7s73drhdp0 --tail` for logs, and `render deploys list srv-daqohcpsrm7s73drhdp0` for deploy status. Deploy with `render deploys create srv-daqohcpsrm7s73drhdp0` when appropriate.
+The production project is `trama-509722`. The `trama-prototype` Compute Engine VM is in `us-east1-b`, and the app is available at https://trama.34-24-249-190.sslip.io. Caddy terminates HTTPS and proxies to the `trama.service` systemd unit on `127.0.0.1:8080`. Use `gcloud --project=trama-509722 compute ssh trama-prototype --zone=us-east1-b` for service status and logs.
 
-The current free PostgreSQL ID is in `.secrets/current-db-id`; inspect its status and `expiresAt` with `render postgres get "$(cat .secrets/current-db-id)" --output json`. It expires after about 30 days. `scripts/backup-db.sh` creates and verifies an encrypted archive in `backups/` and restores the database IP allow list. `scripts/recycle-db.sh` is for use only after expiry with a verified recent backup. Never delete the database to force a recycle or select a paid plan. Keep `.secrets/`, `backups/`, and credentials out of Git.
+The SQLite database is on the persistent `trama-data` disk at `/mnt/disks/trama-data/trama.db`. Portraits and encrypted database backups are in `gs://trama-509722-assets`. The `trama-backup.timer` systemd timer creates a daily snapshot, encrypts it, uploads it, downloads it, decrypts it, and runs SQLite integrity verification. Never replace the production database without a recent verified backup. Keep credentials and backup passphrases out of Git.
