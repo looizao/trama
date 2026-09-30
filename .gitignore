@@ -7,3 +7,8 @@ web/*.tsbuildinfo
 !.env.example
 backups/
 .secrets/
+.scratch/*
+!.scratch/execution-log/
+*.db
+*.db-shm
+*.db-wal
