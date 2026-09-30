@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T04:11:04-03:00",
+  "updated": "2026-09-30T04:12:06-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1080,7 +1080,9 @@ window.executionLog={
           "date": "2026-09-30T04:11:04-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "ef786c1"
+      ],
       "outputs": [
         {
           "href": "assets/mpfb-corrected-basis-verification.json",
@@ -1123,6 +1125,10 @@ window.executionLog={
         {
           "date": "2026-09-30T04:11:04-03:00",
           "text": "Dependency repair is technically verified. The current fictional Alex browser fixture opens its corrected MPFB option after QA; all original experiments/options remain retained with visible limitations. This is a reversible inspection state, not professional acceptance or a final route selection. MakeHuman 10a remains pending until the repair commit is made."
+        },
+        {
+          "date": "2026-09-30T04:12:06-03:00",
+          "text": "Local repair milestone committed as ef786c1; no push or deployment. Proceeding back to MakeHuman after the dependency repair."
         }
       ]
     },
@@ -1369,7 +1375,7 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
+      "status": "in progress",
       "changes": [
         "Standalone MakeHuman source is pinned and unmodified. Native Human.applyAllTargets applies eight explicit neutral macros and up to 24 signed head target files; native MHCLO proxy.getCoords refits 10 shared CC0 hairstyles and textured eyes. Shared coil/beard definitions generate real geometry on the fitted head. A local CPU rasterizer and embedded-texture GLB exporter run without Qt, OpenGL or Blender.",
         "The app queues real MakeHuman fitting through the same offline process group, all-six input snapshot, artifact authorization, cancellation and erasure safeguards. Candidate-specific controls and retained diagnostics are available in English and Portuguese. Three fictional cases have native fitted explorations, without automatically replacing the currently chosen workspace or selecting expected results."
@@ -1427,6 +1433,10 @@ window.executionLog={
         {
           "date": "2026-09-30T06:51:45.261508+00:00",
           "text": "Pause before verification: comparison of native MakeHuman units exposed an MPFB basis error. Original MPFB target offsets are decimetres with Y up; its earlier fitting basis omitted conversion to metres with Z up. Repair and direct native target-application verification are active in task 07b. Actual MakeHuman fitting uses the correct conversion; its final verification and commit remain pending."
+        },
+        {
+          "date": "2026-09-30T04:12:06-03:00",
+          "text": "Resume standalone MakeHuman final verification after the committed MPFB coordinate repair. Add the same direct native target-application check to the standalone route and retain versioned outputs before its milestone commit."
         }
       ]
     },
