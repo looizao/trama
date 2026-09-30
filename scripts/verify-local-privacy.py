@@ -38,9 +38,9 @@ expect(403, request(f'/clients/{cid}/assets', body=b'no image', method='POST'), 
 def acknowledge():
     link = expect(201, request(f'/clients/{cid}/permission-link', method='POST'), 'client acknowledgement link created')
     path = link['path']
-    expect(200, request(path, opener=client), 'notice available without client account')
-    expect(400, request(path, {'name': 'Wrong Name', 'acknowledged': True, 'noticeVersion': 'trama-consultation-v1'}, opener=client), 'wrong-name acknowledgement rejected')
-    expect(200, request(path, {'name': record['name'], 'acknowledged': True, 'noticeVersion': 'trama-consultation-v1'}, opener=client), 'affirmative client entry recorded')
+    notice = expect(200, request(path, opener=client), 'notice available without client account')
+    expect(400, request(path, {'name': 'Wrong Name', 'acknowledged': True, 'noticeVersion': notice['noticeVersion']}, opener=client), 'wrong-name acknowledgement rejected')
+    expect(200, request(path, {'name': record['name'], 'acknowledged': True, 'noticeVersion': notice['noticeVersion']}, opener=client), 'affirmative client entry recorded')
     expect(404, request(path, opener=client), 'used link invalidated')
 
 image = base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/iXcAAAAASUVORK5CYII=')

@@ -48,8 +48,8 @@ func (a *App) lockMedia() (func(), error) {
 	return unlock, nil
 }
 
-const permissionVersion = "trama-consultation-v1"
-const permissionText = "I allow this studio to store my photos, create private client-specific previews and 3D models, and retain my consultation journey. My material will not be used for promotion, training or the generic catalog. I may ask the professional to remove a photo, withdraw permission or delete my journey without creating an account. Active media and dependent previews/models will be removed, processing cancelled, and restricted encrypted backups expire within 30 days. Any legally required retained information must be explained separately."
+const permissionVersion = "trama-consultation-v2"
+const permissionText = "I allow this studio to store my photos, create private client-specific previews and 3D models, and retain my consultation journey. My material will not be used for promotion, training or the generic catalog. I may ask the professional to remove a photo, withdraw permission or delete my journey without creating an account. Active media and dependent previews/models will be removed and processing cancelled. Any legally required retained information must be explained separately."
 
 func (a *App) listPrivacyRequests(w http.ResponseWriter, r *http.Request) {
 	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,action,status,requested_at FROM privacy_requests WHERE organization_id=$1 ORDER BY requested_at DESC LIMIT 100", userFrom(r).OrganizationID)
@@ -291,7 +291,7 @@ func (a *App) assetDeletionImpact(w http.ResponseWriter, r *http.Request) {
 		problem(w, 500, "could not calculate deletion impact")
 		return
 	}
-	respond(w, 200, map[string]any{"mediaCount": len(e.Assets), "jobCount": len(e.Runs), "explanation": "Removes this photo and all dependent thumbnails, previews and personal models. Related processing will be cancelled. Earlier encrypted backups expire within 30 days and restores must replay deletion records."})
+	respond(w, 200, map[string]any{"mediaCount": len(e.Assets), "jobCount": len(e.Runs), "explanation": "Removes this photo and all dependent thumbnails, previews and personal models. Related processing will be cancelled."})
 }
 
 func (a *App) clientDeletionImpact(w http.ResponseWriter, r *http.Request) {
@@ -305,7 +305,7 @@ func (a *App) clientDeletionImpact(w http.ResponseWriter, r *http.Request) {
 		problem(w, 500, "could not calculate deletion impact")
 		return
 	}
-	respond(w, 200, map[string]any{"mediaCount": len(e.Assets), "jobCount": len(e.Runs), "explanation": "Withdrawal removes all active photos and their dependent previews/models and cancels processing, while retaining the consultation record. Deleting the client also removes the entire journey. Privacy request status is retained without imagery. Encrypted backups expire within 30 days; deletion records prevent restoration. Any legally required retention must be explained separately."})
+	respond(w, 200, map[string]any{"mediaCount": len(e.Assets), "jobCount": len(e.Runs), "explanation": "Withdrawal removes all active photos and their dependent previews/models and cancels processing, while retaining the consultation record. Deleting the client also removes the entire journey. Privacy request status is retained without imagery. Any legally required retention must be explained separately."})
 }
 
 func (a *App) appendErasure(e erasureEvent) error {

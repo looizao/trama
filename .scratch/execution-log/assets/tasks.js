@@ -1,11 +1,12 @@
 window.executionLog={
-  "updated": "2026-09-29T22:07:50-03:00",
+  "updated": "2026-09-29T22:15:56-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
     "Fresh fictional SQLite database, local storage and disabled external image generation.",
     "Local reminder queue is the reversible default; external messages require explicit authorization.",
-    "Professional acceptance and final route choice remain pending."
+    "Professional acceptance and final route choice remain pending.",
+    "User deferred and erased the local backup/restore flow. Do not rebuild it during this delivery without later instruction."
   ],
   "tasks": [
     {
@@ -102,7 +103,7 @@ window.executionLog={
         "Locally verified for existing image assets and generation runs. Future 3D outputs must register provenance and use the same mutation guards; later tasks remain pending.",
         "Acknowledgement records a client-entered affirmation; identity verification is not claimed. No real client inputs used.",
         "Cloud object deletion and Temporal cancellation code added, but no production storage or production worker was accessed. Production rollout remains unverified.",
-        "Backup expiry enforcement and encrypted restore tests belong to task 02 and are not yet verified."
+        "Backup creation, expiry and restore are deferred by superseding user instruction. Client deletion and interrupted cleanup safeguards remain active."
       ],
       "verification": [
         {
@@ -163,7 +164,9 @@ window.executionLog={
           "date": "2026-09-29T22:07:50-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "d428514"
+      ],
       "outputs": [],
       "events": [
         {
@@ -186,7 +189,7 @@ window.executionLog={
     },
     {
       "id": "02",
-      "title": "Local backup expiry and safe restoration",
+      "title": "Local backup flow (deferred by user)",
       "depends": [
         "01"
       ],
@@ -196,16 +199,69 @@ window.executionLog={
         "Expired archives rejected and removed; restore replays a protected deletion ledger before serving.",
         "Stale backup cannot restore deleted originals or derivatives; no production backup changes."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "blocked",
+      "changes": [
+        "Built an initial local encrypted snapshot experiment, verified copy/decrypt and SQLite integrity, then erased the entire new backup/restore implementation at the user's request.",
+        "Removed scripts/local-backup.py, cmd/local-privacy-replay, the generated encrypted test archive and its local passphrase.",
+        "Removed the existing backup deployment script and systemd service/timer from the local checkout. Removed unimplemented backup promises from client consent and deletion explanations in English and Portuguese. Updated local AGENTS instructions to defer backups."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "User explicitly deferred rebuilding the backup flow. No backup expiry/restore implementation is being delivered or claimed complete.",
+        "Backup deployment source was removed locally. Production infrastructure, running services and stored backups were neither accessed nor changed."
+      ],
+      "verification": [
+        {
+          "command": "Initial local snapshot experiment (subsequently erased)",
+          "result": "Created one 7,517-byte encrypted synthetic local archive and verified retained copy, decryption and SQLite integrity. Deleted this archive and its key after the user cancelled the flow. No deletion-aware restored database test had been performed."
+        },
+        {
+          "command": "Removal inspection",
+          "result": "New local backup script, replay command, archive directory and key no longer exist. The committed client deletion ledger and media guards remain intact."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS all Go packages after backup removal."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS TypeScript and Vite build, 170 modules."
+        },
+        {
+          "command": "python scripts/verify-local-privacy.py",
+          "result": "PASS full local permission, upload, withdrawal, deletion, reload and failure checks using the mandated demo account. No backup operation performed."
+        },
+        {
+          "command": "In-app Browser: open withdrawal impact, inspect then cancel",
+          "result": "PASS privacy explanation contains no backup promises. Diagnostic screenshot retained; no deletion action submitted."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/backup-flow-removed.png",
+          "caption": "Local withdrawal impact after removing backup promises. No photos or media in this fictional client.",
+          "date": "2026-09-29T22:15:56-03:00"
+        }
+      ],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-29T22:07:59-03:00",
+          "text": "Privacy milestone committed as d428514. Starting local 30-day expiry and deletion-aware restore safeguards."
+        },
+        {
+          "date": "2026-09-29T22:11:22-03:00",
+          "text": "Superseding user instruction: erase all of this backup flow; rebuild later. Removed new work and deferred task. No backup milestone commit made."
+        },
+        {
+          "date": "2026-09-29T22:14:48-03:00",
+          "text": "Expanded the removal to all backup workflow source in this checkout. No production commands, services or stored backups changed."
+        },
+        {
+          "date": "2026-09-29T22:15:56-03:00",
+          "text": "Backup removal verified. Rebuilding remains deferred, not complete."
+        }
+      ]
     },
     {
       "id": "03",
@@ -222,13 +278,18 @@ window.executionLog={
       "status": "pending",
       "changes": [],
       "limitations": [
-        "Not implemented or verified."
+        "Consultation and reusable intake implementation underway."
       ],
       "verification": [],
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-29T22:11:22-03:00",
+          "text": "Backup flow erased and deferred by explicit user instruction. Advancing to the next independent task: consultations and reusable intake."
+        }
+      ]
     },
     {
       "id": "04",
@@ -651,7 +712,6 @@ window.executionLog={
       "id": "21",
       "title": "Review-ready integrated handoff",
       "depends": [
-        "02",
         "15",
         "17",
         "18",
@@ -668,7 +728,7 @@ window.executionLog={
       "status": "pending",
       "changes": [],
       "limitations": [
-        "Not implemented or verified."
+        "The local backup/restore flow is explicitly deferred by the user and excluded from this delivery. All remaining product/demo work and professional assessment are still pending."
       ],
       "verification": [],
       "pictures": [],
