@@ -14,7 +14,10 @@ for field in ['event', 'change', 'limitation', 'verify', 'picture', 'commit', 'o
 parser.add_argument('--clear-limitations', action='store_true')
 args = parser.parse_args()
 path = Path(__file__).resolve().parent.parent / '.scratch/execution-log/assets/tasks.js'
-data = json.loads(path.read_text().removeprefix('window.executionLog=').strip().removesuffix(';'))
+assignment, separator, payload = path.read_text().partition('=')
+if assignment.strip() != 'window.executionLog' or not separator:
+    parser.error('Unexpected execution log data format.')
+data = json.loads(payload.strip().removesuffix(';'))
 task = next(t for t in data['tasks'] if t['id'] == args.task)
 if args.status == 'in progress' and any(t['status'] == 'in progress' and t != task for t in data['tasks']):
     parser.error('Finish or block the current task before advancing.')

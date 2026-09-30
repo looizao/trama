@@ -1,5 +1,5 @@
-window.executionLog = {
-  "updated": "2026-09-30T02:40:22-03:00",
+window.executionLog={
+  "updated": "2026-09-30T02:43:02-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1065,6 +1065,10 @@ window.executionLog = {
         {
           "command": "Portable evidence HTTP and browser checks",
           "result": "All 64 relative retained pictures/output links exist and returned HTTP 200. Browser task selector renders task 08a as failed and shows the retained evidence. Restored Alex’s previously chosen MPFB model and original independent styles after testing COLMAP settings."
+        },
+        {
+          "command": "HTML log updater after milestone",
+          "result": "Whitespace in the JavaScript assignment broke the CLI parser during commit recording. Updated the parser to validate the assignment and parse its JSON independent of whitespace; actual commit recording succeeded."
         }
       ],
       "pictures": [
@@ -1084,7 +1088,9 @@ window.executionLog = {
           "date": "2026-09-30T02:39:01-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "d2acc07a521e915bc4584dc991248539500aaa0f"
+      ],
       "outputs": [
         {
           "href": "assets/colmap-provenance.json",
