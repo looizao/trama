@@ -165,3 +165,38 @@ CREATE TABLE IF NOT EXISTS photo_views (
   PRIMARY KEY(set_id,view),
   UNIQUE(set_id,asset_id)
 );
+
+CREATE TABLE IF NOT EXISTS demo_jobs (
+  run_id text PRIMARY KEY REFERENCES generation_runs(id) ON DELETE CASCADE,
+  candidate text NOT NULL,
+  kind text NOT NULL,
+  photo_set_id text REFERENCES photo_sets(id) ON DELETE SET NULL,
+  settings text NOT NULL,
+  progress integer NOT NULL DEFAULT 0,
+  result text NOT NULL DEFAULT '{}'
+);
+CREATE TABLE IF NOT EXISTS demo_job_inputs (
+  run_id text NOT NULL REFERENCES generation_runs(id) ON DELETE CASCADE,
+  asset_id text NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  view text NOT NULL,
+  PRIMARY KEY(run_id,view)
+);
+CREATE TABLE IF NOT EXISTS demo_options (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  candidate text NOT NULL,
+  title text NOT NULL,
+  state text NOT NULL,
+  created_at timestamp NOT NULL
+);
+CREATE TABLE IF NOT EXISTS demo_option_inputs (
+  option_id text NOT NULL REFERENCES demo_options(id) ON DELETE CASCADE,
+  asset_id text NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  PRIMARY KEY(option_id,asset_id)
+);
+CREATE TABLE IF NOT EXISTS demo_workspace_states (
+  client_id text PRIMARY KEY REFERENCES clients(id) ON DELETE CASCADE,
+  state text NOT NULL,
+  version integer NOT NULL DEFAULT 1
+);

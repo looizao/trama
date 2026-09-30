@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-30T03:20:05.122Z",
+  "scope": "Selector and shared input/report workspace checks. All candidate-specific fitting or reconstruction stages still pending.",
+  "checks": [
+    {
+      "candidate": "blender-mpfb",
+      "supportDependencyVisible": false,
+      "pendingLabel": true,
+      "jobCount": 1
+    },
+    {
+      "candidate": "colmap",
+      "supportDependencyVisible": false,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "meshroom",
+      "supportDependencyVisible": false,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "makehuman",
+      "supportDependencyVisible": false,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "flame",
+      "supportDependencyVisible": false,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "open3d",
+      "supportDependencyVisible": true,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "meshlab",
+      "supportDependencyVisible": true,
+      "pendingLabel": true,
+      "jobCount": 0
+    },
+    {
+      "candidate": "cloudcompare",
+      "supportDependencyVisible": true,
+      "pendingLabel": true,
+      "jobCount": 0
+    }
+  ]
+}

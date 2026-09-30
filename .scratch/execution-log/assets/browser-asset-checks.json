@@ -1,0 +1,182 @@
+{
+  "date": "2026-09-30T03:19:13.891Z",
+  "scope": "Shared synthetic mannequin GLB browser load and initial rendering only. No client accuracy or candidate reconstruction evidence.",
+  "checks": [
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "17,522 triangles · 3.2 MB · 130 ms · 158 initial FPS"
+      ],
+      "pressed": [
+        "Short swept layers",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "16,854 triangles · 4.3 MB · 125 ms · 159 initial FPS"
+      ],
+      "pressed": [
+        "Short textured crop",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "14,010 triangles · 3.1 MB · 116 ms · 157 initial FPS"
+      ],
+      "pressed": [
+        "Short parted curtains",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "12,266 triangles · 3.0 MB · 110 ms · 159 initial FPS"
+      ],
+      "pressed": [
+        "Slicked back crop",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "27,114 triangles · 5.1 MB · 169 ms · 160 initial FPS"
+      ],
+      "pressed": [
+        "Asymmetric bob",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "14,662 triangles · 4.1 MB · 182 ms · 156 initial FPS"
+      ],
+      "pressed": [
+        "Chin length fringe bob",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "18,382 triangles · 3.7 MB · 114 ms · 156 initial FPS"
+      ],
+      "pressed": [
+        "Long loose lengths",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "21,202 triangles · 3.5 MB · 107 ms · 159 initial FPS"
+      ],
+      "pressed": [
+        "Long braid",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "20,870 triangles · 4.7 MB · 105 ms · 159 initial FPS"
+      ],
+      "pressed": [
+        "Tied ponytail",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "14,550 triangles · 5.5 MB · 145 ms · 160 initial FPS"
+      ],
+      "pressed": [
+        "Close coily crop",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "392,086 triangles · 9.9 MB · 81 ms · 150 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Clean-shaven"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "603,010 triangles · 26.8 MB · 163 ms · 152 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Even short stubble"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "603,010 triangles · 26.8 MB · 151 ms · 156 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Short full beard"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "488,203 triangles · 17.6 MB · 75 ms · 155 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Connected goatee"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "407,266 triangles · 11.0 MB · 78 ms · 154 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Natural moustache"
+      ]
+    },
+    {
+      "alerts": [],
+      "metrics": [
+        "392,086 triangles · 9.9 MB · 193 ms · 147 initial FPS",
+        "430,870 triangles · 13.0 MB · 93 ms · 154 initial FPS"
+      ],
+      "pressed": [
+        "Rounded natural coils",
+        "Defined chinstrap"
+      ]
+    }
+  ]
+}

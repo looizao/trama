@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T23:32:01-03:00",
+  "updated": "2026-09-30T00:46:38-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -659,6 +659,402 @@ window.executionLog={
         "Real processing jobs, cancellation, failure and restart/reopen behavior; no canned success.",
         "Synchronized rotation/zoom and consistent named angles; independent styles and option persistence."
       ],
+      "status": "verified",
+      "changes": [
+        "Implemented shared authenticated library, optimistic workspace persistence, immutable explored mannequin options and six-view input-check jobs. Candidate-specific head processing remains pending.",
+        "Saved workspace/options now snapshot owned photo assignments. Replacing a live view preserves earlier explorations; erasing an old snapshot source clears dependent options, workspace and jobs without deleting the replacement.",
+        "Centered the generic mannequin camera and increased default/reset distance to 1.3 m after rounded coils touched the top of the closer viewport. Added mobile navigation access to demos and complete Portuguese labels for the new controls.",
+        "Verified the shared workspace foundation. All eight candidates are selectable; three fictional cases each retain actual six-photo diagnostics and a saved independent mannequin exploration. Full candidate processing and complete journeys remain explicitly pending in their separate tasks.",
+        "Code-split Three.js/demo UI so normal client pages retain a 414.71 kB entry bundle; viewer code loads when opening demos. Default/reset mannequin framing is centered at 1.3 m."
+      ],
+      "limitations": [
+        "Candidate-specific fitting/reconstruction, client-specific geometry, direct editing, expected-result selections and full comparative demos remain pending in tasks 07a-14a, 16, 17 and full candidate checks 07-14.",
+        "Representative catalog is 11 hairstyles and 5 beardstyles. Expanded variety and natural beard edge refinement remain in task 15; professional acceptance is pending.",
+        "Uncompressed assets total 91 MB for the 16 styles; dense beards can exceed 210k triangles. Initial frame rates are short local observations, not sustained performance guarantees. Deferred Three.js bundle retains the Vite size warning.",
+        "In-app viewport override did not apply; desktop browser behavior is verified, narrow-screen behavior is not yet verified. One old QuillBot extension console error was observed; no application error was observed during these viewer checks."
+      ],
+      "verification": [
+        {
+          "command": "go test ./internal/app -run Demo -count=1",
+          "result": "Passed: persistence, access, decoding failure, cancellation, restart interruption, non-front erasure and late-publication guards."
+        },
+        {
+          "command": "go test -race ./internal/app -run 'Demo|Privacy|Permission|Guided' -count=1",
+          "result": "Passed under race detector."
+        },
+        {
+          "command": "python3 scripts/verify-local-demos.py",
+          "result": "Passed on running loopback app: read 91,075,372 bytes of 16 real GLBs; verified six metrics, identical-image warnings, snapshot replacement/reopen, conflict, non-front erasure, cancellation, withdrawal and fixture cleanup."
+        },
+        {
+          "command": "go test ./...",
+          "result": "Passed for all packages after shared demo changes."
+        },
+        {
+          "command": "go test -race ./internal/app -run Demo -count=1",
+          "result": "Passed for all demo tests, including original snapshot erasure after later replacement."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "Passed: 181 modules; entry 414.71 kB (131.74 kB gzip), deferred demos 659.05 kB (167.72 kB gzip). Vite still warns about the deferred Three.js chunk over 500 kB."
+        },
+        {
+          "command": "@Browser shared workspace flow",
+          "result": "All 16 real style GLBs loaded without app alerts. Named angle and zoom controls produced identical actual cameras. Keep-current, independent beard, clean-shaven, filters, saved option reopen and reload passed. All eight selectors passed; supporting dependencies explicitly labeled. Withdrawn client rendered zero input photos and zero canvases."
+        },
+        {
+          "command": "python3 scripts/demo-assets/populate-workspaces.py",
+          "result": "24 retained real input checks, six original source views each; 24 saved mannequin options; no candidate head processing claimed. Known removed assets/options are refused rather than recreated."
+        },
+        {
+          "command": "go test -race ./internal/app -run Demo -count=1",
+          "result": "Passed after adding queued-restart verification: queued jobs resume with original inputs; interrupted running jobs become failed; completed work reopens."
+        },
+        {
+          "command": "python3 scripts/demo-assets/populate-workspaces.py (second run)",
+          "result": "Passed without creating extra jobs/options or changing saved workspace. All 24 stored input checks and original source IDs verified again."
+        },
+        {
+          "command": "Portable HTML log: local file references plus loopback HTTP and @Browser selector",
+          "result": "41 relative picture/output links exist and returned HTTP 200. Full browser reload and selector showed the current six verified milestones and all added processing/full-demo tasks."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/demo-workspace-intermediate.png",
+          "caption": "2026-09-30: all eight selectors, six coherent Maya inputs, synchronized real GLB inspection and actual input job running. Head geometry is explicitly generic, not a client reconstruction.",
+          "date": "2026-09-30T00:09:03-03:00"
+        },
+        {
+          "src": "assets/demo-independent-styles.png",
+          "caption": "2026-09-30: actual rounded-coil GLB in both views, independent goatee only in proposal, synchronized front angle and 1.09 m zoom. Both actual camera measurements agree. Beard silhouette refinement and professional acceptance remain pending.",
+          "date": "2026-09-30T00:16:36-03:00"
+        },
+        {
+          "src": "assets/demo-portuguese-framing.png",
+          "caption": "2026-09-30: Portuguese synchronized viewer with corrected default framing and ample room above the rounded coils. This capture is desktop width; the attempted viewport override did not apply.",
+          "date": "2026-09-30T00:28:45-03:00"
+        },
+        {
+          "src": "assets/demo-support-dependency.png",
+          "caption": "2026-09-30: CloudCompare selector explicitly identifies its required upstream reconstruction/fitting dependency and pending candidate stage.",
+          "date": "2026-09-30T00:28:45-03:00"
+        },
+        {
+          "src": "assets/demo-withdrawn-client.png",
+          "caption": "2026-09-30: withdrawn baseline client cannot open private demo inputs or saved work. DOM check: zero input images and zero 3D canvases.",
+          "date": "2026-09-30T00:40:35-03:00"
+        },
+        {
+          "src": "assets/demo-input-verification.png",
+          "caption": "2026-09-30: actual 768x896 six-view metrics, hashes and completed retained report. An additional input check is running asynchronously; neither is presented as reconstruction.",
+          "date": "2026-09-30T00:40:35-03:00"
+        }
+      ],
+      "commits": [],
+      "outputs": [
+        {
+          "href": "assets/three-provenance.json",
+          "label": "Three.js and type definitions: pinned versions and full MIT notices"
+        },
+        {
+          "href": "assets/browser-asset-checks.json",
+          "label": "Actual browser load/mesh counts/bytes/initial frame rates for 11 hairstyles and 5 beards"
+        },
+        {
+          "href": "assets/browser-candidate-checks.json",
+          "label": "All eight selector checks, including explicit upstream dependencies for supporting components"
+        },
+        {
+          "href": "assets/shared-demo-population-results.json",
+          "label": "24 real shared six-input checks and preserved mannequin explorations; all candidate head processing remains pending"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-29T23:32:01-03:00",
+          "text": "Starting authenticated local comparative workspace. Shared assets and fictional baseline sets are ready; reconstruction/fitting routes remain distinct pending tasks. No route is presented as successful until it actually processes inputs."
+        },
+        {
+          "date": "2026-09-30T00:09:03-03:00",
+          "text": "First browser check: actual head and hair GLBs loaded in both WebGL scenes; shared neutral geometry visibly rendered. Input check progressed asynchronously. Styling, rotation, reload and deletion verification continues."
+        },
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Browser viewport override requested 390x844 but the in-app browser remained 1658px wide. No mobile verification claim is made. Reset override. One English Language locator failed after changing to Portuguese; fresh DOM identified Idioma and verification continued."
+        },
+        {
+          "date": "2026-09-30T00:40:35-03:00",
+          "text": "Updated dependencies: native processing milestones precede shared direct editing/history, and complete candidate verification follows them. This removes the earlier circular dependency while retaining every approved full-demo requirement."
+        },
+        {
+          "date": "2026-09-30T00:46:38-03:00",
+          "text": "The browser log tab initially retained an older loaded page during hash-only navigation. A full reload and Task selector verified the current log; commit hashes remain local text, not broken remote links."
+        }
+      ]
+    },
+    {
+      "id": "07a",
+      "title": "Blender + MPFB processing experiment",
+      "depends": [
+        "06"
+      ],
+      "requirement": "Fit shared photos using actual MPFB, explicit cameras, landmarks and bounded render iterations. Retain actual processing success or failure; the full candidate journey remains in task 07.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 07."
+        }
+      ]
+    },
+    {
+      "id": "08a",
+      "title": "COLMAP / PyCOLMAP processing experiment",
+      "depends": [
+        "06"
+      ],
+      "requirement": "Reconstruct the agreed six photos through real COLMAP processing. Retain actual processing success or failure; the full candidate journey remains in task 08.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 08."
+        }
+      ]
+    },
+    {
+      "id": "09a",
+      "title": "Meshroom / AliceVision processing experiment",
+      "depends": [
+        "06"
+      ],
+      "requirement": "Run the same input through the actual photogrammetry pipeline. Retain actual processing success or failure; the full candidate journey remains in task 09.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 09."
+        }
+      ]
+    },
+    {
+      "id": "10a",
+      "title": "Standalone MakeHuman processing experiment",
+      "depends": [
+        "06"
+      ],
+      "requirement": "Fit and export an actual MakeHuman template without Blender. Retain actual processing success or failure; the full candidate journey remains in task 10.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 10."
+        }
+      ]
+    },
+    {
+      "id": "11a",
+      "title": "FLAME 2023 Open processing experiment",
+      "depends": [
+        "06"
+      ],
+      "requirement": "Fit exact commercially usable Open model with compatible fitting code and assets. Retain actual processing success or failure; the full candidate journey remains in task 11.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 11."
+        }
+      ]
+    },
+    {
+      "id": "12a",
+      "title": "Open3D component processing experiment",
+      "depends": [
+        "07a",
+        "08a"
+      ],
+      "requirement": "Process and evaluate meshes using Open3D with named reconstruction/fitting dependency. Retain actual processing success or failure; the full candidate journey remains in task 12.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 12."
+        }
+      ]
+    },
+    {
+      "id": "13a",
+      "title": "MeshLab / PyMeshLab component processing experiment",
+      "depends": [
+        "07a",
+        "08a"
+      ],
+      "requirement": "Clean, repair, simplify and export shared meshes with named upstream route. Retain actual processing success or failure; the full candidate journey remains in task 13.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 13."
+        }
+      ]
+    },
+    {
+      "id": "14a",
+      "title": "CloudCompare component processing experiment",
+      "depends": [
+        "07a",
+        "08a"
+      ],
+      "requirement": "Align and compare shared outputs with named upstream reconstruction/fitting route. Retain actual processing success or failure; the full candidate journey remains in task 14.",
+      "criteria": [
+        "Exact software, model and asset licenses verified separately against primary sources.",
+        "Runnable local six-photo processing with real status, cancellation, retained settings, outputs and reload; successful head geometry loads with independent shared assets.",
+        "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
+        "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 14."
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Client-specific refinements and direct editing",
+      "depends": [
+        "06",
+        "07a",
+        "08a",
+        "09a",
+        "10a",
+        "11a",
+        "12a",
+        "13a",
+        "14a"
+      ],
+      "requirement": "Provide meaningful written refinements and direct 3D changes within evaluated routes.",
+      "criteria": [
+        "Text refinements cause defined geometry/material changes with unsupported requests explained.",
+        "Direct edits preserved in new revisions; synchronized client comparison and style independence retained.",
+        "Missing coverage, likeness and clipping visible and checked; unmet quality requirements not marked complete."
+      ],
+      "status": "pending",
+      "changes": [],
+      "limitations": [
+        "Not implemented or verified."
+      ],
+      "verification": [],
+      "pictures": [],
+      "commits": [],
+      "outputs": [],
+      "events": []
+    },
+    {
+      "id": "17",
+      "title": "Explored options, expected selections and history",
+      "depends": [
+        "16"
+      ],
+      "requirement": "Persist all alternatives, revisions and chosen expected results in the journey.",
+      "criteria": [
+        "Every explored option retained; selected state and rationale visible.",
+        "Changing selection preserves earlier selections and revisions; reload/reopen verified.",
+        "Expected, reference and actual material visibly distinguishable; failure cannot become successful preview."
+      ],
       "status": "pending",
       "changes": [],
       "limitations": [
@@ -672,9 +1068,12 @@ window.executionLog={
     },
     {
       "id": "07",
-      "title": "Blender + MPFB experiment",
+      "title": "Blender + MPFB complete demo verification",
       "depends": [
-        "06"
+        "06",
+        "07a",
+        "16",
+        "17"
       ],
       "requirement": "Fit shared photos using actual MPFB, explicit cameras, landmarks and bounded render iterations.",
       "criteria": [
@@ -691,13 +1090,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "08",
-      "title": "COLMAP / PyCOLMAP experiment",
+      "title": "COLMAP / PyCOLMAP complete demo verification",
       "depends": [
-        "06"
+        "06",
+        "08a",
+        "16",
+        "17"
       ],
       "requirement": "Reconstruct the agreed six photos through real COLMAP processing.",
       "criteria": [
@@ -714,13 +1121,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "09",
-      "title": "Meshroom / AliceVision experiment",
+      "title": "Meshroom / AliceVision complete demo verification",
       "depends": [
-        "06"
+        "06",
+        "09a",
+        "16",
+        "17"
       ],
       "requirement": "Run the same input through the actual photogrammetry pipeline.",
       "criteria": [
@@ -737,13 +1152,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "10",
-      "title": "Standalone MakeHuman experiment",
+      "title": "Standalone MakeHuman complete demo verification",
       "depends": [
-        "06"
+        "06",
+        "10a",
+        "16",
+        "17"
       ],
       "requirement": "Fit and export an actual MakeHuman template without Blender.",
       "criteria": [
@@ -760,13 +1183,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "11",
-      "title": "FLAME 2023 Open experiment",
+      "title": "FLAME 2023 Open complete demo verification",
       "depends": [
-        "06"
+        "06",
+        "11a",
+        "16",
+        "17"
       ],
       "requirement": "Fit exact commercially usable Open model with compatible fitting code and assets.",
       "criteria": [
@@ -799,15 +1230,21 @@ window.executionLog={
         {
           "date": "2026-09-29T23:02:05-03:00",
           "text": "FLAME download prerequisite ready. Candidate task remains pending while shared assets task is active."
+        },
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
         }
       ]
     },
     {
       "id": "12",
-      "title": "Open3D component experiment",
+      "title": "Open3D component complete demo verification",
       "depends": [
-        "07",
-        "08"
+        "06",
+        "12a",
+        "16",
+        "17"
       ],
       "requirement": "Process and evaluate meshes using Open3D with named reconstruction/fitting dependency.",
       "criteria": [
@@ -824,14 +1261,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "13",
-      "title": "MeshLab / PyMeshLab component experiment",
+      "title": "MeshLab / PyMeshLab component complete demo verification",
       "depends": [
-        "07",
-        "08"
+        "06",
+        "13a",
+        "16",
+        "17"
       ],
       "requirement": "Clean, repair, simplify and export shared meshes with named upstream route.",
       "criteria": [
@@ -848,14 +1292,21 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "14",
-      "title": "CloudCompare component experiment",
+      "title": "CloudCompare component complete demo verification",
       "depends": [
-        "07",
-        "08"
+        "06",
+        "14a",
+        "16",
+        "17"
       ],
       "requirement": "Align and compare shared outputs with named upstream reconstruction/fitting route.",
       "criteria": [
@@ -872,7 +1323,12 @@ window.executionLog={
       "pictures": [],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-30T00:28:45-03:00",
+          "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        }
+      ]
     },
     {
       "id": "15",
@@ -893,60 +1349,6 @@ window.executionLog={
         "Varied real reusable styles across length/texture/volume/silhouette/maintenance, independent catalogs and filters.",
         "Consistent renders and visible structured license provenance; professional import works privately.",
         "Assets load, render, combine, save/reopen across viable routes; incompatibilities recorded; professional review pending."
-      ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
-      ],
-      "verification": [],
-      "pictures": [],
-      "commits": [],
-      "outputs": [],
-      "events": []
-    },
-    {
-      "id": "16",
-      "title": "Client-specific refinements and direct editing",
-      "depends": [
-        "06",
-        "07",
-        "08",
-        "09",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14"
-      ],
-      "requirement": "Provide meaningful written refinements and direct 3D changes within evaluated routes.",
-      "criteria": [
-        "Text refinements cause defined geometry/material changes with unsupported requests explained.",
-        "Direct edits preserved in new revisions; synchronized client comparison and style independence retained.",
-        "Missing coverage, likeness and clipping visible and checked; unmet quality requirements not marked complete."
-      ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
-      ],
-      "verification": [],
-      "pictures": [],
-      "commits": [],
-      "outputs": [],
-      "events": []
-    },
-    {
-      "id": "17",
-      "title": "Explored options, expected selections and history",
-      "depends": [
-        "16"
-      ],
-      "requirement": "Persist all alternatives, revisions and chosen expected results in the journey.",
-      "criteria": [
-        "Every explored option retained; selected state and rationale visible.",
-        "Changing selection preserves earlier selections and revisions; reload/reopen verified.",
-        "Expected, reference and actual material visibly distinguishable; failure cannot become successful preview."
       ],
       "status": "pending",
       "changes": [],

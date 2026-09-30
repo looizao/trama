@@ -11,6 +11,7 @@ set -a
 source "$runtime/local.env"
 set +a
 export DATABASE_PATH="$runtime/trama.db" STORAGE_MODE=local STORAGE_DIR="$runtime/media"
+export DEMO_ASSET_DIR="$PWD/.scratch/private/demo-assets"
 export HOST=127.0.0.1 PORT=8080 PUBLIC_BASE_URL=http://127.0.0.1:8080
 export TEMPORAL_ADDRESS= RUN_WORKER_IN_API=false MIGRATION_REDIRECT_URL=
 export IMAGE_API_BASE_URL= IMAGE_API_KEY= IMAGE_MODEL=

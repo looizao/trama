@@ -28,7 +28,7 @@ func (a *App) listRuns(w http.ResponseWriter, r *http.Request) {
 		problem(w, 404, "client not found")
 		return
 	}
-	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,client_id,COALESCE(source_asset_id,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC LIMIT 100", clientID, userFrom(r).OrganizationID)
+	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,client_id,COALESCE(source_asset_id,''),prompt,model_id,quantity,status,error,created_at FROM generation_runs WHERE client_id=$1 AND organization_id=$2 AND model_id NOT LIKE 'local-3d:%' ORDER BY created_at DESC LIMIT 100", clientID, userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load runs")
 		return

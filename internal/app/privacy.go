@@ -246,10 +246,11 @@ func (a *App) erasureImpact(ctx context.Context, orgID, clientID, assetID string
 	if err != nil {
 		return e, err
 	}
-	rows, err = a.DB.QueryContext(ctx, "SELECT id,COALESCE(source_asset_id,'') FROM generation_runs WHERE client_id=$1 AND organization_id=$2", clientID, orgID)
+	rows, err = a.DB.QueryContext(ctx, "SELECT r.id,COALESCE(i.asset_id,r.source_asset_id,'') FROM generation_runs r LEFT JOIN demo_job_inputs i ON i.run_id=r.id WHERE r.client_id=$1 AND r.organization_id=$2", clientID, orgID)
 	if err != nil {
 		return e, err
 	}
+	seenRuns := map[string]bool{}
 	for rows.Next() {
 		var run, source string
 		if err = rows.Scan(&run, &source); err != nil {
@@ -262,8 +263,9 @@ func (a *App) erasureImpact(ctx context.Context, orgID, clientID, assetID string
 				include = true
 			}
 		}
-		if include {
+		if include && !seenRuns[run] {
 			e.Runs = append(e.Runs, run)
+			seenRuns[run] = true
 		}
 	}
 	err = rows.Err()
@@ -344,6 +346,12 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 	}
 	defer tx.Rollback()
 	for _, x := range e.Assets {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE id IN(SELECT option_id FROM demo_option_inputs WHERE asset_id=$1)", x.ID); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_workspace_states WHERE client_id=$1 AND (json_extract(state,'$.photoSetId') IN(SELECT set_id FROM photo_views WHERE asset_id=$2) OR EXISTS(SELECT 1 FROM json_each(state,'$.photoViews') WHERE value=$2))", e.ClientID, x.ID); err != nil {
+			return err
+		}
 		if _, err = tx.ExecContext(ctx, "INSERT OR IGNORE INTO privacy_tombstones(subject_type,subject_id) VALUES('asset',$1)", x.ID); err != nil {
 			return err
 		}
@@ -355,11 +363,20 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 		}
 	}
 	for _, id := range e.Runs {
+		if _, err = tx.ExecContext(ctx, "UPDATE demo_jobs SET result='{}' WHERE run_id=$1", id); err != nil {
+			return err
+		}
 		if _, err = tx.ExecContext(ctx, "UPDATE generation_runs SET status='cancelled',error='Source removed or permission withdrawn',completed_at=$1 WHERE id=$2 AND organization_id=$3", e.Date, id, e.OrganizationID); err != nil {
 			return err
 		}
 	}
 	if e.Action != "asset deletion" {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1", e.ClientID); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_workspace_states WHERE client_id=$1", e.ClientID); err != nil {
+			return err
+		}
 		if _, err = tx.ExecContext(ctx, "UPDATE client_permissions SET withdrawn_at=$1 WHERE client_id=$2 AND acknowledged_at<=$1", e.Date, e.ClientID); err != nil {
 			return err
 		}
@@ -384,6 +401,7 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 
 func (a *App) finishErasure(ctx context.Context, e erasureEvent) error {
 	var failures []error
+	a.cancelLocalDemoRuns(e.Runs)
 	for _, id := range e.Runs {
 		if a.Temporal != nil {
 			if err := a.Temporal.CancelWorkflow(ctx, id, ""); err != nil {

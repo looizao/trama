@@ -1,0 +1,221 @@
+{
+  "scope": "Shared six-view diagnostics and generic mannequin asset explorations. Not candidate head fitting, reconstruction, selected expected results or actual haircut outcomes.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "blender-mpfb",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 97,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "colmap",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 101,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "meshroom",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 100,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "makehuman",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "flame",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 104,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "open3d",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 102,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "meshlab",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 100,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "cloudcompare",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 104,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "blender-mpfb",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 112,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "colmap",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 108,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "meshroom",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 108,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "makehuman",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "flame",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 107,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "open3d",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 110,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "meshlab",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 108,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "cloudcompare",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 109,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "blender-mpfb",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 102,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "colmap",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 105,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "meshroom",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "makehuman",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "flame",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "open3d",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 107,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "meshlab",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 103,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "cloudcompare",
+      "inputCheckStatus": "completed",
+      "inputCount": 6,
+      "inputCheckMS": 108,
+      "exploredMannequinOptionSaved": true,
+      "candidateHeadProcessing": "pending"
+    }
+  ]
+}

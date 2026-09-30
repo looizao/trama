@@ -35,6 +35,12 @@ type App struct {
 	mediaMu           sync.Mutex
 	PrivacyLedgerPath string
 	privacyFault      atomic.Bool
+	demoMu            sync.Mutex
+	demoContext       context.Context
+	demoCancel        context.CancelFunc
+	demoRuns          map[string]context.CancelFunc
+	demoSlots         chan struct{}
+	demoWait          sync.WaitGroup
 }
 
 func Open(ctx context.Context) (*App, error) {
@@ -65,6 +71,10 @@ func Open(ctx context.Context) (*App, error) {
 	unlock()
 	if err := a.bootstrapAdmin(ctx); err != nil {
 		db.Close()
+		return nil, err
+	}
+	if err := a.startDemoProcessing(); err != nil {
+		a.Close()
 		return nil, err
 	}
 	return a, nil
@@ -142,6 +152,12 @@ func (a *App) ConnectTemporal() error {
 }
 
 func (a *App) Close() {
+	a.demoMu.Lock()
+	if a.demoCancel != nil {
+		a.demoCancel()
+	}
+	a.demoMu.Unlock()
+	a.demoWait.Wait()
 	if a.Temporal != nil {
 		a.Temporal.Close()
 	}
