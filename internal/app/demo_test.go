@@ -367,6 +367,12 @@ func TestNativeDemoSettingsAndUnconfiguredRoutes(t *testing.T) {
 	if w.Code != 503 {
 		t.Fatal(w.Code, w.Body.String())
 	}
+	in["candidate"] = "makehuman"
+	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)
+	if w.Code != 503 {
+		t.Fatal("standalone MakeHuman must obey the same local processing gate", w.Code, w.Body.String())
+	}
+	in["candidate"] = "blender-mpfb"
 	t.Setenv("LOCAL_DEMO_ROOT", t.TempDir())
 	in["native"] = map[string]any{"fitRounds": 99}
 	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)

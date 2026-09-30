@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T04:12:06-03:00",
+  "updated": "2026-09-30T04:35:23-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1375,15 +1375,18 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "in progress",
+      "status": "verified",
       "changes": [
         "Standalone MakeHuman source is pinned and unmodified. Native Human.applyAllTargets applies eight explicit neutral macros and up to 24 signed head target files; native MHCLO proxy.getCoords refits 10 shared CC0 hairstyles and textured eyes. Shared coil/beard definitions generate real geometry on the fitted head. A local CPU rasterizer and embedded-texture GLB exporter run without Qt, OpenGL or Blender.",
-        "The app queues real MakeHuman fitting through the same offline process group, all-six input snapshot, artifact authorization, cancellation and erasure safeguards. Candidate-specific controls and retained diagnostics are available in English and Portuguese. Three fictional cases have native fitted explorations, without automatically replacing the currently chosen workspace or selecting expected results."
+        "The app queues real MakeHuman fitting through the same offline process group, all-six input snapshot, artifact authorization, cancellation and erasure safeguards. Candidate-specific controls and retained diagnostics are available in English and Portuguese. Three fictional cases have native fitted explorations, without automatically replacing the currently chosen workspace or selecting expected results.",
+        "Added direct native deformation checks before head publication. The fitter now computes changing crown height for every target trial. Version 2 passed all three cases; version 1 failures remain retained and have no exported head."
       ],
       "limitations": [
         "Native 10a fitting is only the route prerequisite. Written/direct refinement, expected-result selection history and the full demo journey remain tasks 16, 17 and 10. Professional likeness, hair clipping and beard styling assessment remain pending.",
         "All head geometry is fitted or inferred. Facial landmarks cover three views for Alex/Maya and two for Noah; back/profile hidden surfaces retain the prior. The neck is clipped and capped at a declared artificial plane.",
-        "The native hair proxy topology is unsmoothed and the procedural beard boundaries remain coarse. These are retained limitations for professional review and catalog improvement, not successful evidence of an actual haircut."
+        "The native hair proxy topology is unsmoothed and the procedural beard boundaries remain coarse. These are retained limitations for professional review and catalog improvement, not successful evidence of an actual haircut.",
+        "Three validated native runs took 14.418 to 14.752 seconds and retained 72.7 to 74.2 MiB privately. These synthetic fixtures and 2D landmark residuals do not establish real-client reconstruction accuracy. Initial browser FPS measurements are short loading diagnostics, not sustained benchmark results.",
+        "Earlier MakeHuman unversioned and version-1 explorations remain historical experiments. Version-1 Maya/Noah processing failed honestly before export; evaluate the version-2 options. Current technical fixture views do not constitute selection of the final route."
       ],
       "verification": [
         {
@@ -1393,6 +1396,30 @@ window.executionLog={
         {
           "command": "Initial go test ./... and npm --prefix web run build",
           "result": "Passed. Build retained the existing 500 kB demo chunk warning. A later settings-gate test and final checks remain to run."
+        },
+        {
+          "command": "Actual native output verification on three fictional clients",
+          "result": "Passed 51 decoded GLBs, 18 native rendered views, finite positions/UVs, unit normals, valid indices, embedded textures, shared six-photo SHA-256 equality and absence of Blender processing. Native prediction differs from actual Human.applyAllTargets by at most 10 micrometres; actual maximum errors are retained in the linked JSON. Deliberate 20 mm corruption failed before head publication."
+        },
+        {
+          "command": "python scripts/native-demos/verify-local.py --candidate makehuman --job-id e979cacf-a165-47b9-91f0-a4b53881ab0d",
+          "result": "Passed authenticated 17 native assets, anonymous/private artifact denial, saved option and workspace reload, affirmative permission, actual no-face failure without fallback, erasure of nonfront input during native processing, process-group termination, dependent purge and permission withdrawal. Disposable fictional fixture was deleted."
+        },
+        {
+          "command": "IAB actual validated MakeHuman option",
+          "result": "All 11 hair and 5 beard native GLBs loaded with actual job URLs. Six named viewing angles synchronized both canvases. Saved coils plus clean-shaven exploration reopens after reload. Browser-started native repeat def93450-3a9a-418b-af04-ba6f29ba9541 completed in 15.292 seconds with byte-identical head GLB; previously chosen saved model remains e979cacf-a165-47b9-91f0-a4b53881ab0d."
+        },
+        {
+          "command": "Population rerun with makehuman-metre-z-up-v2",
+          "result": "Reused all three validated job IDs and options; no duplicate processing or automatic expected-result selection."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; go test -race ./...; npm --prefix web run build",
+          "result": "Passed. Race run cmd/api 1.031 seconds and internal/app 4.394 seconds. Frontend build 1.63 seconds, existing 670.79 kB demo chunk warning remains."
+        },
+        {
+          "command": "Portable HTML and assets audit",
+          "result": "Passed 96 linked files or intentional localhost app links; every linked raster image decoded. IAB task selector displayed verified MakeHuman entry and all six entry images loaded after scrolling. Initial system Python audit lacked Pillow; reran successfully using the pinned native virtual environment. An evidence-picture click opened its image page as designed; returned to the log and checked remaining links without navigation."
         }
       ],
       "pictures": [
@@ -1400,6 +1427,31 @@ window.executionLog={
           "src": "assets/makehuman-intermediate-neck.png",
           "caption": "2026-09-30 intermediate native MakeHuman CPU render: actual head and textured eyes; whole-face filtering left a jagged neck boundary, requiring a proper plane clip before delivery.",
           "date": "2026-09-30T03:31:14-03:00"
+        },
+        {
+          "src": "assets/makehuman-validated-comparison.png",
+          "caption": "2026-09-30 Validated version-2 standalone MakeHuman head and independent assets in the actual app. Coils and clean-shaven proposed; coarse stubble boundaries visible on the current reference. Synthetic inputs, inferred hidden geometry and pending styling review.",
+          "date": "2026-09-30T04:34:00-03:00"
+        },
+        {
+          "src": "assets/makehuman-validated-native-check.png",
+          "caption": "2026-09-30 Actual retained native target-application check, landmark coverage and resource evidence. This verifies basis application, not professional likeness.",
+          "date": "2026-09-30T04:34:00-03:00"
+        },
+        {
+          "src": "assets/makehuman-six-fitted-renders.png",
+          "caption": "2026-09-30 Six actual CPU renders of the retained fitted MakeHuman template. Native plane-clipped neck is artificial. Synthetic inputs; hidden surfaces inferred.",
+          "date": "2026-09-30T04:34:00-03:00"
+        },
+        {
+          "src": "assets/makehuman-retained-failure.png",
+          "caption": "2026-09-30 Actual retained intermediate Maya version-1 failure. The native check rejected the crown framing mismatch before export, and no fallback head was supplied.",
+          "date": "2026-09-30T04:34:00-03:00"
+        },
+        {
+          "src": "assets/makehuman-save-conflict.png",
+          "caption": "2026-09-30 Intermediate stale-workspace HTTP 409 during browser saving. Saved immutable option survived; reload and reopening subsequently passed.",
+          "date": "2026-09-30T04:34:00-03:00"
         }
       ],
       "commits": [],
@@ -1407,6 +1459,50 @@ window.executionLog={
         {
           "href": "assets/makehuman-provenance.json",
           "label": "Pinned standalone MakeHuman software, core asset and dependency terms"
+        },
+        {
+          "href": "assets/makehuman-intermediate-basis-failures.json",
+          "label": "Retained actual intermediate target-validation failures and successful rejection before head export"
+        },
+        {
+          "href": "assets/makehuman-output-verification.json",
+          "label": "Actual native output, deformation and deliberate-corruption verification"
+        },
+        {
+          "href": "assets/makehuman-live-verification.json",
+          "label": "Permission, persistence, failure, cancellation and erasure checks"
+        },
+        {
+          "href": "assets/makehuman-populated-validated-results.json",
+          "label": "Validated native runs on the three shared fictional cases"
+        },
+        {
+          "href": "assets/makehuman-validated-browser-styles.json",
+          "label": "Actual browser loading and measured 16 independent native style assets"
+        },
+        {
+          "href": "assets/makehuman-validated-browser-cameras.json",
+          "label": "Six synchronized actual browser viewing angles"
+        },
+        {
+          "href": "assets/makehuman-validated-repeat.json",
+          "label": "Browser-queued version-2 repeat and actual head checksum"
+        },
+        {
+          "href": "assets/makehuman-populated-native-results.json",
+          "label": "Historical first processing runs, before direct basis validation"
+        },
+        {
+          "href": "assets/makehuman-browser-repeat-check.json",
+          "label": "Historical initial browser-queued native repeat"
+        },
+        {
+          "href": "assets/makehuman-browser-style-checks.json",
+          "label": "Historical initial native style loading checks"
+        },
+        {
+          "href": "assets/makehuman-browser-camera-checks.json",
+          "label": "Historical initial camera and zoom checks"
         }
       ],
       "events": [
@@ -1437,6 +1533,14 @@ window.executionLog={
         {
           "date": "2026-09-30T04:12:06-03:00",
           "text": "Resume standalone MakeHuman final verification after the committed MPFB coordinate repair. Add the same direct native target-application check to the standalone route and retain versioned outputs before its milestone commit."
+        },
+        {
+          "date": "2026-09-30T04:17:57-03:00",
+          "text": "Adding direct native deformation checks exposed a 3.2168 mm global framing mismatch for Maya and 2.2518 mm for Noah. The actual highest crown vertex changes after head morphing; a fixed neutral crown correspondence did not reproduce actual recentering. Both version-1 experiments failed before head export and remain retained. Version 2 now evaluates the highest native vertex from the full target height basis at every optimizer trial, with a separate checkpoint and new runs."
+        },
+        {
+          "date": "2026-09-30T04:34:00-03:00",
+          "text": "Intermediate save encountered expected HTTP 409 after CLI verification had changed the workspace version. The immutable explored option was retained; browser reload and reopening passed. Initial direct verifier accidentally wrote its result to the earlier MPFB filename; that historical MPFB evidence was restored from its committed version and the shared script now uses candidate-specific output names."
         }
       ]
     },

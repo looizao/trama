@@ -423,6 +423,7 @@ function DemoSession({
     ? artifactURL(state.modelRunId, 'head', 'model')
     : library.headUrl
   const nativeSettings = state.native || nativeDefaults
+  const nativeFit = candidate.id === 'blender-mpfb' || candidate.id === 'makehuman'
   const resolve = (styles: DemoStyle[], id: string, current: string) => {
     const chosen = id === 'keep-current' ? current : id
     return styles.find((s) => s.id === chosen)
@@ -481,7 +482,7 @@ function DemoSession({
         <p>
           <strong>{candidate.name}</strong> · {t(candidate.role)} ·{' '}
           {t(
-            candidate.id === 'blender-mpfb'
+            nativeFit
               ? 'Local fitting experiment available'
               : candidate.id === 'colmap'
                 ? 'Local reconstruction experiment available'
@@ -493,7 +494,9 @@ function DemoSession({
         )}
         <p>
           {t(
-            candidate.id === 'blender-mpfb'
+            candidate.id === 'makehuman'
+              ? 'Run standalone MakeHuman target fitting and native hair refitting without Blender. The CPU renders and retained parameters show a fitted template, with inferred hidden surfaces and pending professional likeness review.'
+              : candidate.id === 'blender-mpfb'
               ? 'Run the MPFB fitting experiment, inspect its retained evidence and select a completed fitted head. Hidden surfaces remain inferred and professional likeness review is pending.'
               : candidate.id === 'colmap'
                 ? 'Run real SIFT extraction, exhaustive matching and three bounded mapping trials on the same six photos. Failed coverage and partial observations are retained. A mannequin does not count as a reconstructed head.'
@@ -592,9 +595,9 @@ function DemoSession({
             {t('Check six inputs locally')}
           </button>
         </div>
-        {candidate.id === 'blender-mpfb' && (
+        {nativeFit && (
           <fieldset className="demo-native-settings">
-            <legend>{t('MPFB fitting settings')}</legend>
+            <legend>{t(candidate.id === 'makehuman' ? 'MakeHuman fitting settings' : 'MPFB fitting settings')}</legend>
             <p>
               {t(
                 'Assumed capture cameras: six labeled yaw angles, 36 mm sensor and shared focal length, distance and height. These values are not measured calibration. Inspect and adjust them for each capture.',
@@ -653,12 +656,12 @@ function DemoSession({
                     queryKey: ['demo-jobs', clientId],
                   })
                   setMessage(
-                    'Local MPFB fitting queued. The retained experiment shows failures and inferred coverage.',
+                    'Local fitting queued. The retained experiment shows failures and inferred coverage.',
                   )
                 })
               }
             >
-              {t('Fit head locally with MPFB')}
+              {t(candidate.id === 'makehuman' ? 'Fit head locally with MakeHuman' : 'Fit head locally with MPFB')}
             </button>
           </fieldset>
         )}
@@ -709,7 +712,7 @@ function DemoSession({
         <p className="notice">
           {t(
             fitted
-              ? 'MPFB head fitted to detected image landmarks. Entire surface is fitted or inferred; no measured 3D surface or verified likeness is claimed.'
+              ? 'Head fitted to detected image landmarks. Entire surface is fitted or inferred; no measured 3D surface or verified likeness is claimed.'
               : library.geometry,
           )}
           {fitted ? ' ' : '. '}
@@ -928,7 +931,7 @@ function DemoSession({
                   <strong>
                     {t(
                       j.kind === 'fit'
-                        ? 'MPFB head fitting experiment'
+                        ? j.candidate === 'makehuman' ? 'Standalone MakeHuman head fitting experiment' : 'MPFB head fitting experiment'
                         : j.kind === 'reconstruct'
                           ? 'COLMAP six-view reconstruction experiment'
                         : 'Six-view input check',

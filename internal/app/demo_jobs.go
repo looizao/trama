@@ -395,7 +395,7 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if in.Kind == "fit" || in.Kind == "reconstruct" {
-		if !(in.Candidate == "blender-mpfb" && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct") {
+		if !((in.Candidate == "blender-mpfb" || in.Candidate == "makehuman") && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct") {
 			problem(w, 400, "native route is not configured yet")
 			return
 		}

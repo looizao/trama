@@ -1,0 +1,138 @@
+{
+  "scope": "Actual intermediate native validation. Two fits correctly failed because the actual highest crown vertex changed, invalidating a fixed-crown linear translation. Historical failed runs are retained, with no fallback head.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "jobId": "3cde6e51-9f6f-4c62-9804-ada93aea9aa0",
+      "nativeCheck": {
+        "basisVersion": "makehuman-metre-z-up-v1",
+        "mappedVertices": 4666,
+        "maximumErrorMetres": 5.759419273742585e-08,
+        "meanErrorMetres": 1.632172844455279e-08,
+        "toleranceMetres": 1e-05,
+        "passed": true,
+        "measurement": "Optimization-basis prediction compared against actual native Human.applyAllTargets and actual crown recentering. Artificial plane intersections and cap vertices are excluded."
+      },
+      "failure": null,
+      "headExported": true
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "jobId": "e4655e62-a10e-43b5-a8e7-a42104fbcf0c",
+      "nativeCheck": {
+        "basisVersion": "makehuman-metre-z-up-v1",
+        "mappedVertices": 4666,
+        "maximumErrorMetres": 0.0032168003916740514,
+        "meanErrorMetres": 0.0032167142126753585,
+        "toleranceMetres": 1e-05,
+        "passed": false,
+        "measurement": "Optimization-basis prediction compared against actual native Human.applyAllTargets and actual crown recentering. Artificial plane intersections and cap vertices are excluded."
+      },
+      "failure": {
+        "error": "export failed with exit 1; retained diagnostic log",
+        "resources": [
+          {
+            "stage": "prepare",
+            "seconds": 4.08,
+            "cpuSeconds": 4.337,
+            "peakRssKiB": 78888,
+            "exitCode": 0,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+              "prepare",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/e4655e62-a10e-43b5-a8e7-a42104fbcf0c"
+            ]
+          },
+          {
+            "stage": "fit",
+            "seconds": 1.766,
+            "cpuSeconds": 2.285,
+            "peakRssKiB": 253564,
+            "exitCode": 0,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/e4655e62-a10e-43b5-a8e7-a42104fbcf0c"
+            ]
+          },
+          {
+            "stage": "export",
+            "seconds": 0.675,
+            "cpuSeconds": 0.947,
+            "peakRssKiB": 253564,
+            "exitCode": 1,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+              "export",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/e4655e62-a10e-43b5-a8e7-a42104fbcf0c"
+            ]
+          }
+        ],
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+        "elapsedMs": 6522
+      },
+      "headExported": false
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "jobId": "7d2da0bd-5fad-4357-bd24-462646502dc4",
+      "nativeCheck": {
+        "basisVersion": "makehuman-metre-z-up-v1",
+        "mappedVertices": 4666,
+        "maximumErrorMetres": 0.002251761145889811,
+        "meanErrorMetres": 0.0022516951438212064,
+        "toleranceMetres": 1e-05,
+        "passed": false,
+        "measurement": "Optimization-basis prediction compared against actual native Human.applyAllTargets and actual crown recentering. Artificial plane intersections and cap vertices are excluded."
+      },
+      "failure": {
+        "error": "export failed with exit 1; retained diagnostic log",
+        "resources": [
+          {
+            "stage": "prepare",
+            "seconds": 4.086,
+            "cpuSeconds": 4.344,
+            "peakRssKiB": 78944,
+            "exitCode": 0,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+              "prepare",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/7d2da0bd-5fad-4357-bd24-462646502dc4"
+            ]
+          },
+          {
+            "stage": "fit",
+            "seconds": 1.779,
+            "cpuSeconds": 2.311,
+            "peakRssKiB": 253828,
+            "exitCode": 0,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/7d2da0bd-5fad-4357-bd24-462646502dc4"
+            ]
+          },
+          {
+            "stage": "export",
+            "seconds": 0.717,
+            "cpuSeconds": 0.988,
+            "peakRssKiB": 253828,
+            "exitCode": 1,
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+              "export",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/7d2da0bd-5fad-4357-bd24-462646502dc4"
+            ]
+          }
+        ],
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+        "elapsedMs": 6583
+      },
+      "headExported": false
+    }
+  ]
+}

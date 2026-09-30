@@ -63,6 +63,10 @@ regularization=.00008
 def projected(w):
     coords=base.copy()
     for i,value in enumerate(w):coords+=deltas[2*i+(1 if value>=0 else 0)]*abs(value)
+    if 'frameHeights' in basis:
+        heights=basis['frameHeights'].copy()
+        for i,value in enumerate(w):heights+=basis['frameDeltas'][2*i+(1 if value>=0 else 0)]*abs(value)
+        coords[:,2]-=(heights.max()-basis['frameHeights'].max())*basis['frameMask'][points]
     p=np.einsum('ijk,ik->ij',matrices,np.column_stack([coords,np.ones(len(coords))]))
     return np.column_stack([(p[:,0]/p[:,3]+1)/2,(1-p[:,1]/p[:,3])/2])
 # Remove only per-view framing translations. Focal length and yaw remain the

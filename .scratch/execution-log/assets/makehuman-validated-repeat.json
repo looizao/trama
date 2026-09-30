@@ -1,0 +1,601 @@
+{
+  "date": "2026-09-30T04:32:31-0300",
+  "jobId": "def93450-3a9a-418b-af04-ba6f29ba9541",
+  "status": "completed",
+  "actualResult": {
+    "artifacts": [
+      {
+        "bytes": 1167,
+        "path": "manifest.json"
+      },
+      {
+        "bytes": 1226,
+        "path": "processing.log"
+      },
+      {
+        "bytes": 34,
+        "path": "progress.json"
+      },
+      {
+        "bytes": 746,
+        "path": "prepare.log"
+      },
+      {
+        "bytes": 2011,
+        "path": "cameras.json"
+      },
+      {
+        "bytes": 310254,
+        "path": "basis.npz"
+      },
+      {
+        "bytes": 852100,
+        "path": "neutral.glb"
+      },
+      {
+        "bytes": 1387,
+        "path": "resources.json"
+      },
+      {
+        "bytes": 1133,
+        "path": "fit.log"
+      },
+      {
+        "bytes": 398590,
+        "path": "back-landmarks.png"
+      },
+      {
+        "bytes": 412346,
+        "path": "front-landmarks.png"
+      },
+      {
+        "bytes": 413051,
+        "path": "left-profile-landmarks.png"
+      },
+      {
+        "bytes": 418758,
+        "path": "left-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 414537,
+        "path": "right-profile-landmarks.png"
+      },
+      {
+        "bytes": 421136,
+        "path": "right-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 1711,
+        "path": "observations.json"
+      },
+      {
+        "bytes": 4561,
+        "path": "fit.json"
+      },
+      {
+        "bytes": 4363,
+        "path": "export.log"
+      },
+      {
+        "bytes": 407,
+        "path": "target-basis-check.json"
+      },
+      {
+        "bytes": 852672,
+        "path": "head.glb"
+      },
+      {
+        "bytes": 711,
+        "path": "makehuman-shape.json"
+      },
+      {
+        "bytes": 603370,
+        "path": "inputs/back.image"
+      },
+      {
+        "bytes": 618185,
+        "path": "inputs/front.image"
+      },
+      {
+        "bytes": 618223,
+        "path": "inputs/left-profile.image"
+      },
+      {
+        "bytes": 621663,
+        "path": "inputs/left-three-quarter.image"
+      },
+      {
+        "bytes": 621706,
+        "path": "inputs/right-profile.image"
+      },
+      {
+        "bytes": 626743,
+        "path": "inputs/right-three-quarter.image"
+      },
+      {
+        "bytes": 411131,
+        "path": "makehuman-targets/macrodetails_african-female-young.target"
+      },
+      {
+        "bytes": 405566,
+        "path": "makehuman-targets/macrodetails_african-male-young.target"
+      },
+      {
+        "bytes": 434949,
+        "path": "makehuman-targets/macrodetails_asian-female-young.target"
+      },
+      {
+        "bytes": 420436,
+        "path": "makehuman-targets/macrodetails_asian-male-young.target"
+      },
+      {
+        "bytes": 419955,
+        "path": "makehuman-targets/macrodetails_caucasian-female-young.target"
+      },
+      {
+        "bytes": 395875,
+        "path": "makehuman-targets/macrodetails_caucasian-male-young.target"
+      },
+      {
+        "bytes": 0,
+        "path": "makehuman-targets/macrodetails_universal-female-young-averagemuscle-averageweight.target"
+      },
+      {
+        "bytes": 0,
+        "path": "makehuman-targets/macrodetails_universal-male-young-averagemuscle-averageweight.target"
+      },
+      {
+        "bytes": 81086,
+        "path": "makehuman-targets/head_head-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 82552,
+        "path": "makehuman-targets/head_head-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 77344,
+        "path": "makehuman-targets/head_head-scale-vert-decr.target"
+      },
+      {
+        "bytes": 77713,
+        "path": "makehuman-targets/head_head-scale-vert-incr.target"
+      },
+      {
+        "bytes": 73245,
+        "path": "makehuman-targets/head_head-scale-depth-decr.target"
+      },
+      {
+        "bytes": 68695,
+        "path": "makehuman-targets/head_head-scale-depth-incr.target"
+      },
+      {
+        "bytes": 4470,
+        "path": "makehuman-targets/nose_nose-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 6964,
+        "path": "makehuman-targets/nose_nose-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 4827,
+        "path": "makehuman-targets/nose_nose-scale-vert-decr.target"
+      },
+      {
+        "bytes": 6044,
+        "path": "makehuman-targets/nose_nose-scale-vert-incr.target"
+      },
+      {
+        "bytes": 5207,
+        "path": "makehuman-targets/nose_nose-scale-depth-decr.target"
+      },
+      {
+        "bytes": 5158,
+        "path": "makehuman-targets/nose_nose-scale-depth-incr.target"
+      },
+      {
+        "bytes": 2649,
+        "path": "makehuman-targets/chin_chin-width-decr.target"
+      },
+      {
+        "bytes": 3833,
+        "path": "makehuman-targets/chin_chin-width-incr.target"
+      },
+      {
+        "bytes": 4150,
+        "path": "makehuman-targets/chin_chin-height-decr.target"
+      },
+      {
+        "bytes": 8592,
+        "path": "makehuman-targets/chin_chin-height-incr.target"
+      },
+      {
+        "bytes": 3040,
+        "path": "makehuman-targets/chin_chin-prominent-decr.target"
+      },
+      {
+        "bytes": 1891,
+        "path": "makehuman-targets/chin_chin-prominent-incr.target"
+      },
+      {
+        "bytes": 12040,
+        "path": "makehuman-targets/mouth_mouth-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 15053,
+        "path": "makehuman-targets/mouth_mouth-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 6891,
+        "path": "makehuman-targets/mouth_mouth-scale-vert-decr.target"
+      },
+      {
+        "bytes": 12832,
+        "path": "makehuman-targets/mouth_mouth-scale-vert-incr.target"
+      },
+      {
+        "bytes": 6833,
+        "path": "makehuman-targets/mouth_mouth-scale-depth-decr.target"
+      },
+      {
+        "bytes": 6909,
+        "path": "makehuman-targets/mouth_mouth-scale-depth-incr.target"
+      },
+      {
+        "bytes": 58372,
+        "path": "neutral-renders/front.png"
+      },
+      {
+        "bytes": 49250,
+        "path": "neutral-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 59293,
+        "path": "neutral-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 32936,
+        "path": "neutral-renders/left-profile.png"
+      },
+      {
+        "bytes": 47228,
+        "path": "neutral-renders/right-profile.png"
+      },
+      {
+        "bytes": 19719,
+        "path": "neutral-renders/back.png"
+      },
+      {
+        "bytes": 59111,
+        "path": "fitted-renders/front.png"
+      },
+      {
+        "bytes": 49732,
+        "path": "fitted-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 59294,
+        "path": "fitted-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 33150,
+        "path": "fitted-renders/left-profile.png"
+      },
+      {
+        "bytes": 47340,
+        "path": "fitted-renders/right-profile.png"
+      },
+      {
+        "bytes": 19867,
+        "path": "fitted-renders/back.png"
+      },
+      {
+        "bytes": 2501464,
+        "path": "hair/short01.glb"
+      },
+      {
+        "bytes": 3661140,
+        "path": "hair/short02.glb"
+      },
+      {
+        "bytes": 2451784,
+        "path": "hair/short03.glb"
+      },
+      {
+        "bytes": 2353956,
+        "path": "hair/short04.glb"
+      },
+      {
+        "bytes": 4537548,
+        "path": "hair/bob01.glb"
+      },
+      {
+        "bytes": 3458496,
+        "path": "hair/bob02.glb"
+      },
+      {
+        "bytes": 3072112,
+        "path": "hair/long01.glb"
+      },
+      {
+        "bytes": 2835656,
+        "path": "hair/braid01.glb"
+      },
+      {
+        "bytes": 4106104,
+        "path": "hair/ponytail01.glb"
+      },
+      {
+        "bytes": 4917836,
+        "path": "hair/afro01.glb"
+      },
+      {
+        "bytes": 8470876,
+        "path": "hair/rounded-coils.glb"
+      },
+      {
+        "bytes": 8809160,
+        "path": "beard/stubble.glb"
+      },
+      {
+        "bytes": 8809152,
+        "path": "beard/full.glb"
+      },
+      {
+        "bytes": 2882224,
+        "path": "beard/goatee.glb"
+      },
+      {
+        "bytes": 792264,
+        "path": "beard/moustache.glb"
+      },
+      {
+        "bytes": 2336544,
+        "path": "beard/chinstrap.glb"
+      }
+    ],
+    "beard": {
+      "chinstrap": "beard/chinstrap.glb",
+      "full": "beard/full.glb",
+      "goatee": "beard/goatee.glb",
+      "moustache": "beard/moustache.glb",
+      "stubble": "beard/stubble.glb"
+    },
+    "candidate": "makehuman",
+    "completedAt": "2026-09-30T07:31:54.663474+00:00",
+    "diagnostics": [
+      "fit",
+      "export",
+      "resources",
+      "settings",
+      "result",
+      "process",
+      "makehuman-shape",
+      "target-basis",
+      "prepare"
+    ],
+    "elapsedMs": 15292,
+    "fit": {
+      "basisVersion": "makehuman-metre-z-up-v2",
+      "evaluations": 97,
+      "finalLoss": 1.0633527920112546e-05,
+      "framingTranslations": {
+        "front": [
+          -0.0011059045955757324,
+          0.00739547839988712
+        ],
+        "left-three-quarter": [
+          0.0024577075629603094,
+          0.008075779707580416
+        ],
+        "right-three-quarter": [
+          -0.003946178502155409,
+          0.009208012579765858
+        ]
+      },
+      "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "initialLoss": 1.169715079059682e-05,
+      "iterations": [
+        {
+          "acceptedChanges": 0,
+          "iteration": 1,
+          "loss": 1.169715079059682e-05,
+          "step": 0.4
+        },
+        {
+          "acceptedChanges": 2,
+          "iteration": 2,
+          "loss": 1.1514011000157631e-05,
+          "step": 0.2
+        },
+        {
+          "acceptedChanges": 4,
+          "iteration": 3,
+          "loss": 1.0656480764607423e-05,
+          "step": 0.1
+        },
+        {
+          "acceptedChanges": 2,
+          "iteration": 4,
+          "loss": 1.0633527920112546e-05,
+          "step": 0.05
+        }
+      ],
+      "limitations": [
+        "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+        "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+        "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+        "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+        "No texture likeness or inferred demographic labels. Professional likeness review pending."
+      ],
+      "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+      "meanLandmarkErrorPixels": 2.862841441891599,
+      "pairedLandmarks": 60,
+      "seconds": 2.9781484230006754,
+      "signedParameters": {
+        "chin/chin-height": 0,
+        "chin/chin-prominent": 0,
+        "chin/chin-width": 0,
+        "head/head-scale-depth": 0,
+        "head/head-scale-horiz": 0.1,
+        "head/head-scale-vert": -0.1,
+        "mouth/mouth-scale-depth": 0,
+        "mouth/mouth-scale-horiz": 0.05,
+        "mouth/mouth-scale-vert": 0,
+        "nose/nose-scale-depth": 0,
+        "nose/nose-scale-horiz": 0.1,
+        "nose/nose-scale-vert": -0.05
+      },
+      "targets": {
+        "head/head-scale-horiz-incr.target.gz": 0.1,
+        "head/head-scale-vert-decr.target.gz": 0.1,
+        "mouth/mouth-scale-horiz-incr.target.gz": 0.05,
+        "nose/nose-scale-horiz-incr.target.gz": 0.1,
+        "nose/nose-scale-vert-decr.target.gz": 0.05
+      },
+      "views": [
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+          "targetFaces": 0,
+          "view": "back"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+          "targetFaces": 1,
+          "view": "front"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+          "targetFaces": 0,
+          "view": "left-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+          "targetFaces": 1,
+          "view": "left-three-quarter"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+          "targetFaces": 0,
+          "view": "right-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+          "targetFaces": 1,
+          "view": "right-three-quarter"
+        }
+      ]
+    },
+    "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+    "hair": {
+      "afro01": "hair/afro01.glb",
+      "bob01": "hair/bob01.glb",
+      "bob02": "hair/bob02.glb",
+      "braid01": "hair/braid01.glb",
+      "long01": "hair/long01.glb",
+      "ponytail01": "hair/ponytail01.glb",
+      "rounded-coils": "hair/rounded-coils.glb",
+      "short01": "hair/short01.glb",
+      "short02": "hair/short02.glb",
+      "short03": "hair/short03.glb",
+      "short04": "hair/short04.glb"
+    },
+    "head": "head.glb",
+    "kind": "fit",
+    "nativeShape": {
+      "beard": 5,
+      "hair": 11,
+      "headTriangles": 9618,
+      "headVertices": 4949,
+      "interchange": "GLB Y up, face +Z",
+      "limitations": [
+        "Neck ends at an artificial clipped plane with a flat cap, not reconstructed underside anatomy.",
+        "Hair uses the native unsmoothed MHCLO topology; clipping and professional acceptance must be reviewed.",
+        "Head is entirely fitted or inferred from a CC0 prior; hidden surfaces are not observed geometry."
+      ],
+      "nativeHumanVertices": 19158,
+      "processing": "Native Human.applyAllTargets and proxy.getCoords; CPU triangle rasterizer; no Blender.",
+      "software": "MakeHuman 1.3.0",
+      "sourceCommit": "1f508f6083b2f823dab15de924b3bde72e08d77c",
+      "units": "metres"
+    },
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "prepare",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/def93450-3a9a-418b-af04-ba6f29ba9541"
+        ],
+        "cpuSeconds": 4.359,
+        "exitCode": 0,
+        "peakRssKiB": 79396,
+        "seconds": 4.101,
+        "stage": "prepare"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/def93450-3a9a-418b-af04-ba6f29ba9541"
+        ],
+        "cpuSeconds": 5.397,
+        "exitCode": 0,
+        "peakRssKiB": 253948,
+        "seconds": 4.993,
+        "stage": "fit"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "export",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/def93450-3a9a-418b-af04-ba6f29ba9541"
+        ],
+        "cpuSeconds": 7.912,
+        "exitCode": 0,
+        "peakRssKiB": 302328,
+        "seconds": 6.193,
+        "stage": "export"
+      }
+    ],
+    "retainedBytes": 77820329,
+    "scope": "Six-view makehuman fitting experiment. Full refinement and expected-result journey remain pending.",
+    "targetBasisCheck": {
+      "basisVersion": "makehuman-metre-z-up-v2",
+      "mappedVertices": 4666,
+      "maximumErrorMetres": 5.768732307201875e-08,
+      "meanErrorMetres": 1.6373569461376735e-08,
+      "measurement": "Optimization-basis prediction compared against actual native Human.applyAllTargets and actual crown recentering. Artificial plane intersections and cap vertices are excluded.",
+      "passed": true,
+      "toleranceMetres": 1e-05
+    }
+  },
+  "repeatedValidatedJob": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+  "sameHeadSha256": true,
+  "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+  "browserQueued": true,
+  "reopenedPreviouslyChosenNativeJob": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+  "scope": "Real browser-queued native processing with the six retained authorized synthetic photos. Previously saved native option reopens across reload. Not expected-result selection or professional likeness approval."
+}
