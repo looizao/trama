@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-30T14:39:51.825352744Z",
+  "runId": "eb421d61-6b7e-4659-8fbf-3f8c5705d33b",
+  "status": "failed",
+  "scope": "Actual failed correction attempt; report-field mismatch fixed and a separate experiment retained. No success asserted.",
+  "failure": {
+    "elapsedMs": 16043,
+    "error": "export failed with exit 1; retained diagnostic log",
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "prepare",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+        ],
+        "cpuSeconds": 5.229,
+        "exitCode": 0,
+        "peakRssKiB": 76284,
+        "seconds": 5.1,
+        "stage": "prepare"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+        ],
+        "cpuSeconds": 5.54,
+        "exitCode": 0,
+        "peakRssKiB": 254596,
+        "seconds": 5.556,
+        "stage": "fit"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "export",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+        ],
+        "cpuSeconds": 5.812,
+        "exitCode": 1,
+        "peakRssKiB": 254596,
+        "seconds": 5.386,
+        "stage": "export"
+      }
+    ]
+  },
+  "result": {
+    "diagnostics": [
+      "process",
+      "resources",
+      "prepare",
+      "failure",
+      "target-basis",
+      "export",
+      "settings",
+      "fit"
+    ],
+    "failure": {
+      "elapsedMs": 16043,
+      "error": "export failed with exit 1; retained diagnostic log",
+      "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+      "resources": [
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+          ],
+          "cpuSeconds": 5.229,
+          "exitCode": 0,
+          "peakRssKiB": 76284,
+          "seconds": 5.1,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+          ],
+          "cpuSeconds": 5.54,
+          "exitCode": 0,
+          "peakRssKiB": 254596,
+          "seconds": 5.556,
+          "stage": "fit"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+            "export",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/eb421d61-6b7e-4659-8fbf-3f8c5705d33b"
+          ],
+          "cpuSeconds": 5.812,
+          "exitCode": 1,
+          "peakRssKiB": 254596,
+          "seconds": 5.386,
+          "stage": "export"
+        }
+      ]
+    },
+    "geometry": "No verified fitted result retained",
+    "scope": "Failed native experiment. No fallback counted as candidate success."
+  }
+}

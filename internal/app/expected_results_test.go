@@ -24,7 +24,7 @@ func TestExpectedSelectionLineageConcurrencyAndMediaErasure(t *testing.T) {
 	parent := completedComponentParent(t, f, set)
 	base := "/api/clients/" + f.client
 	// This fixture tests API invariants only. It is not a processed client head.
-	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','makehuman-metre-z-up-v2') WHERE run_id=$1`, parent.ID)
+	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','makehuman-metre-z-up-v2','$.nativeShape.styleAttachment.version','makehuman-visible-lips-v2') WHERE run_id=$1`, parent.ID)
 	w := f.request(t, "POST", base+"/consultations", consultationInput())
 	visit := responseRecord[Consultation](t, w.Body.Bytes())
 	state := demoState(set.ID)
@@ -148,7 +148,7 @@ func TestExpectedRejectsHistoricalPrimaryAndReferenceThroughComponent(t *testing
 	}
 	f.a.DB.Exec("INSERT INTO demo_job_sources(run_id,source_run_id) VALUES($1,$2)", child.ID, primary.ID)
 	f.a.DB.Exec("INSERT INTO demo_job_references(run_id,source_run_id) VALUES($1,$2)", child.ID, reference.ID)
-	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','makehuman-metre-z-up-v2') WHERE run_id IN ($1,$2)`, primary.ID, reference.ID)
+	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','makehuman-metre-z-up-v2','$.nativeShape.styleAttachment.version','makehuman-visible-lips-v2') WHERE run_id IN ($1,$2)`, primary.ID, reference.ID)
 	base := "/api/clients/" + f.client
 	visit := responseRecord[Consultation](t, f.request(t, "POST", base+"/consultations", consultationInput()).Body.Bytes())
 	state := demoState(set.ID)
@@ -162,6 +162,14 @@ func TestExpectedRejectsHistoricalPrimaryAndReferenceThroughComponent(t *testing
 	}
 	o := responseRecord[DemoOption](t, w.Body.Bytes())
 	input := map[string]any{"consultationId": visit.ID, "optionId": o.ID, "version": 0, "rationale": "Fixture client agreement", "professionalReviewed": true, "clientAgreed": true, "agreementName": "Fictional Test Client", "agreementMethod": "synthetic-demonstration"}
+	// The comparison reference contributes geometry diagnostics, not the styles
+	// shown on the primary head. Only the actual style source needs lip attachment.
+	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_remove(result,'$.nativeShape.styleAttachment') WHERE run_id=$1`, reference.ID)
+	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_remove(result,'$.nativeShape.styleAttachment') WHERE run_id=$1`, primary.ID)
+	if w = f.request(t, "POST", base+"/expected-results", input); w.Code != 400 || !bytes.Contains(w.Body.Bytes(), []byte("beard placement")) {
+		t.Fatal("broken primary beard attachment accepted", w.Code, w.Body.String())
+	}
+	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.nativeShape.styleAttachment.version','makehuman-visible-lips-v2') WHERE run_id=$1`, primary.ID)
 	for _, id := range []string{primary.ID, reference.ID} {
 		f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','historical-fit') WHERE run_id=$1`, id)
 		if w = f.request(t, "POST", base+"/expected-results", input); w.Code != 400 {

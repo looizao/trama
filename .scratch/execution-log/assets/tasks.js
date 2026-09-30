@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T11:26:15-03:00",
+  "updated": "2026-09-30T12:26:01-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2973,19 +2973,167 @@ window.executionLog={
         "Refine/edit, save options, choose expected and reopen; likeness professional review pending.",
         "Code and models cleared separately; fitted/inferred geometry, iteration and resource metrics retained."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Visual full-journey check found actual MakeHuman beard strands on the nose. Traced placement to the upstream rig mouth joint, which is not the visible lip surface. Corrected placement to the actual fitted template vertices corresponding to neutral front upper/lower lip landmarks 13/14; added retained versioned attachment metadata, explicit historical warning and expected-result rejection of broken primary style sources. Comparison-only reference geometry does not contribute style attachment.",
+        "Regenerated all three standalone MakeHuman fits with visible-lip surface correspondences mapped to original Human vertices. Historical failed attachments and diagnostics remain retained. New expected selections reject obsolete MakeHuman beard attachments, including primary supporting-route ancestors.",
+        "Camera, edit and resize updates render immediately; actual rendered camera metadata verifies synchronized buffers across all six named angles."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "This Browser session recorded 1.9 initial FPS and 34-51 s load readings with repeated input/focus timeouts. These measurements are retained, not claimed as acceptable customer performance. Retest and address demo browser performance before final handoff."
+      ],
+      "verification": [
+        {
+          "command": "Actual local API response measurements during browser recovery",
+          "result": "GET library 8000 serialized bytes in 1ms; 62 jobs 859875 bytes in 10ms; 53 options 80026 bytes in 3ms; workspace 1792 bytes in 1ms; permission 719 bytes under1ms. No API error. Browser control reports focus/input acknowledgement timeouts, so those durations are not attributed to server performance."
+        },
+        {
+          "command": "Corrected actual native lip experiment",
+          "result": "Run 94508d2f completed in 15.498s with 81497531 retained bytes. Visible lip basis vertices 482/523 map to original native Human vertices 468/520, mouth Z .003871655m. Head bytes unchanged from the failed attachment experiment; original and corrected results remain retained. Full browser styling and final journey verification are still pending."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/native-demos/verify-makehuman-assets.py --style-version makehuman-visible-lips-v2",
+          "result": "PASS 51 actual GLBs, 18 native renders, identical six source-photo hashes, correct style version and visible-lip mapping, finite geometry and beard coverage envelopes; corrupted target basis rejected without publishing a head."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/verify-local-candidate-journey.py makehuman",
+          "result": "PASS actual corrected run, two browser-rendered alternative/revision pictures, synthetic expected result, workspace persistence, anonymous denial, stale update 409, atomic unsupported request 400 and unlisted asset 404."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; mise exec go@1.26.0 -- go test -race ./internal/app; npm --prefix web run build",
+          "result": "PASS all Go packages and race checks (cached); frontend typecheck/build passed in 1.38 s. Existing 705 kB demo chunk warning remains."
+        },
+        {
+          "command": "Browser exact saved revision reload and rendered-camera inspection",
+          "result": "PASS native run 94508d2f, independent short01/goatee, bounded written recipe and one 20mm/3mm stroke replayed; current geometry unchanged; selected synthetic expected result version 1 visible; browser error/warning logs empty."
+        },
+        {
+          "command": "Portable HTML log HTTP and picture audit after restarting the loopback server",
+          "result": "PASS 235 relative resources returned HTTP 200 with matching byte sizes; 98 linked raster/SVG pictures decoded or parsed."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./... and go test -race ./internal/app after reference-only style eligibility regression update",
+          "result": "PASS app tests 0.953 s; race checks 7.846 s. Broken primary style ancestor rejected, comparison-only reference does not supply styles, and obsolete geometric ancestors remain rejected."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/makehuman-journey-edit-2026-09-30.png",
+          "caption": "Failed intermediate actual MakeHuman styled fit: beard strands visibly occupy the nose. This is an implementation defect, not deferred professional judgment. Preserved while a new corrected native experiment runs.",
+          "date": "2026-09-30T11:39:51-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-reopened-2026-09-30.png",
+          "caption": "Reopened actual standalone MakeHuman revision after visible-lip correction. Same fitted head and front camera; separate current stubble and proposed brown goatee. Blocky beard coverage remains for catalog cleanup, not professional acceptance.",
+          "date": "2026-09-30T12:22:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-expected-result-2026-09-30.png",
+          "caption": "Actual retained browser proposal selected for a dedicated synthetic MakeHuman consultation; history preserved and professional acceptance explicitly pending.",
+          "date": "2026-09-30T12:22:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-corrected-comparison-2026-09-30.png",
+          "caption": "Intermediate failed comparison capture: shared zoom had changed but one canvas still showed its previous frame. Immediate rendering fixes the synchronization defect; this is failure evidence.",
+          "date": "2026-09-30T12:22:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-six-fitted-renders-visible-lips.png",
+          "caption": "Actual standalone fitted head at six labeled angles from the corrected native run; entirely fitted or inferred geometry, synthetic inputs.",
+          "date": "2026-09-30T12:22:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-corrected-edits-2026-09-30.png",
+          "caption": "Actual written hair/beard deformation and local hair brush inspection. Corrected lower-face beard placement; both views share the same client geometry.",
+          "date": "2026-09-30T12:25:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-clean-shaven-front-2026-09-30.png",
+          "caption": "Intermediate viewport capture missed the model surfaces while scrolling. Retained as a capture failure; it is not beard placement verification.",
+          "date": "2026-09-30T12:25:19-03:00"
+        },
+        {
+          "src": "assets/makehuman-journey-corrected-neutral-styles-2026-09-30.png",
+          "caption": "Intermediate viewport capture showed the selector instead of the comparison. Later reopened picture supplies the visual verification.",
+          "date": "2026-09-30T12:25:19-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/makehuman-journey-native-result.json",
+          "label": "Actual failed attachment experiment and outline diagnostics"
+        },
+        {
+          "href": "assets/makehuman-journey-correction-failure.json",
+          "label": "Actual failed correction and native diagnostics"
+        },
+        {
+          "href": "assets/makehuman-journey-corrected-native-result.json",
+          "label": "Actual final native-index-stable lip attachment, unchanged head and processing resources"
+        },
+        {
+          "href": "assets/makehuman-journey-intermediate-lip-result.json",
+          "label": "Retained intermediate direct cropped-index lip attachment; superseded by stable native mapping"
+        },
+        {
+          "href": "assets/makehuman-populated-visible-lips-results.json",
+          "label": "Actual corrected standalone fits on all three fictional cases"
+        },
+        {
+          "href": "assets/makehuman-output-verification-visible-lips.json",
+          "label": "Actual corrected native geometry and corrupt-basis rejection evidence"
+        },
+        {
+          "href": "assets/makehuman-journey-verification.json",
+          "label": "Persisted complete synthetic MakeHuman journey and failure checks"
+        },
+        {
+          "href": "assets/makehuman-journey-camera-verification.json",
+          "label": "Actual rendered synchronization and deformation at six angles"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T11:26:16-03:00",
+          "text": "Complete standalone MakeHuman journey next, using the same authorized synthetic six inputs, independent shared styles and explicit fitted-versus-inferred geometry. Native fitting already verified under 10a; fresh processing also checks the added outline diagnostic."
+        },
+        {
+          "date": "2026-09-30T11:39:51-03:00",
+          "text": "Browser input acknowledgements timed out even when selection/submission applied. Checked actual state before continuing, preserved the real saved clean-shaven alternative, and closed three completed agent-created comparison tabs. Subsequent semantic actions succeeded. Actual rendering then exposed the beard-placement defect; fixing it before task completion."
+        },
+        {
+          "date": "2026-09-30T11:41:35-03:00",
+          "text": "First correction attempt eb421d61 failed on a report field mismatch: semantic correspondences are stored as semanticCorrespondences, not correspondences. Inspected the actual retained export error and fit report, corrected the field, and started a distinct experiment. Failed correction remains retained with no head counted as success."
+        },
+        {
+          "date": "2026-09-30T11:55:01-03:00",
+          "text": "Browser control kept timing out on focus/input acknowledgements while actual style selections applied. Reset the tool session, reconnected the same browser, then replaced only the unresponsive agent-created tab. Saved the actually observed corrected fit with keep-current hair and clean-shaven state through the local API before reopening. No other browser or bypass used."
+        },
+        {
+          "date": "2026-09-30T12:15:48-03:00",
+          "text": "Visible comparison size mismatch came from a stale canvas frame during a shared scroll zoom, not different head geometry. Immediate camera/edit/resize rendering added; actual front rendered camera positions, targets, FOV and aspect now match exactly."
+        },
+        {
+          "date": "2026-09-30T12:15:48-03:00",
+          "text": "Extended native geometry check initially used a 50 mm lower beard envelope, which incorrectly excluded 12 mm full-beard strands. Measured bounds and the actual strand formula justify the corrected 60 mm envelope; upper lip coverage remains 30 mm."
+        },
+        {
+          "date": "2026-09-30T12:20:00-03:00",
+          "text": "The expected-selection CLI initially assumed consultations without selections were omitted; the API returns an empty selection record instead. Corrected the check to use its actual version. POST succeeded with HTTP 201; printing a nonexistent response version field failed afterward. Read-back verification confirms the selection was saved, so no POST was repeated."
+        },
+        {
+          "date": "2026-09-30T12:22:19-03:00",
+          "text": "Corrected alternative 51de56d0 and edited revision 18ecfdcc are saved with actual 400px browser JPEGs; dedicated consultation a478b9c4 selects the revision with synthetic agreement only. Exact revision reopened, recipe replayed and selection visible. Old examples remain immutable."
+        },
+        {
+          "date": "2026-09-30T12:23:33-03:00",
+          "text": "Portable HTTP audit failed because the prior execution-log server had stopped (connection refused). Removed the prematurely added success entry and returned task to in progress; restarting the loopback log server before rerunning the audit."
         }
       ]
     },

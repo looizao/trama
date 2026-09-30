@@ -1,0 +1,1637 @@
+{
+  "date": "2026-09-30T14:27:15.00949869Z",
+  "candidate": "makehuman",
+  "runId": "60ceeae9-ab3e-45ee-91c6-b58e1ac114a1",
+  "uploadedViews": 8,
+  "processedViews": 6,
+  "result": {
+    "artifacts": [
+      {
+        "bytes": 1309,
+        "path": "manifest.json"
+      },
+      {
+        "bytes": 1644,
+        "path": "processing.log"
+      },
+      {
+        "bytes": 38,
+        "path": "progress.json"
+      },
+      {
+        "bytes": 746,
+        "path": "prepare.log"
+      },
+      {
+        "bytes": 2011,
+        "path": "cameras.json"
+      },
+      {
+        "bytes": 310254,
+        "path": "basis.npz"
+      },
+      {
+        "bytes": 852100,
+        "path": "neutral.glb"
+      },
+      {
+        "bytes": 1854,
+        "path": "resources.json"
+      },
+      {
+        "bytes": 1132,
+        "path": "fit.log"
+      },
+      {
+        "bytes": 398590,
+        "path": "back-landmarks.png"
+      },
+      {
+        "bytes": 412346,
+        "path": "front-landmarks.png"
+      },
+      {
+        "bytes": 413051,
+        "path": "left-profile-landmarks.png"
+      },
+      {
+        "bytes": 418758,
+        "path": "left-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 414537,
+        "path": "right-profile-landmarks.png"
+      },
+      {
+        "bytes": 421136,
+        "path": "right-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 1711,
+        "path": "observations.json"
+      },
+      {
+        "bytes": 21611,
+        "path": "fit.json"
+      },
+      {
+        "bytes": 4363,
+        "path": "export.log"
+      },
+      {
+        "bytes": 407,
+        "path": "target-basis-check.json"
+      },
+      {
+        "bytes": 852672,
+        "path": "head.glb"
+      },
+      {
+        "bytes": 711,
+        "path": "makehuman-shape.json"
+      },
+      {
+        "bytes": 74,
+        "path": "silhouette.log"
+      },
+      {
+        "bytes": 258917,
+        "path": "silhouette-back.png"
+      },
+      {
+        "bytes": 286267,
+        "path": "silhouette-front.png"
+      },
+      {
+        "bytes": 266109,
+        "path": "silhouette-left-profile.png"
+      },
+      {
+        "bytes": 283895,
+        "path": "silhouette-left-three-quarter.png"
+      },
+      {
+        "bytes": 276474,
+        "path": "silhouette-right-profile.png"
+      },
+      {
+        "bytes": 289844,
+        "path": "silhouette-right-three-quarter.png"
+      },
+      {
+        "bytes": 7054,
+        "path": "silhouette-report.json"
+      },
+      {
+        "bytes": 603370,
+        "path": "inputs/back.image"
+      },
+      {
+        "bytes": 618185,
+        "path": "inputs/front.image"
+      },
+      {
+        "bytes": 618223,
+        "path": "inputs/left-profile.image"
+      },
+      {
+        "bytes": 621663,
+        "path": "inputs/left-three-quarter.image"
+      },
+      {
+        "bytes": 621706,
+        "path": "inputs/right-profile.image"
+      },
+      {
+        "bytes": 626743,
+        "path": "inputs/right-three-quarter.image"
+      },
+      {
+        "bytes": 411131,
+        "path": "makehuman-targets/macrodetails_african-female-young.target"
+      },
+      {
+        "bytes": 405566,
+        "path": "makehuman-targets/macrodetails_african-male-young.target"
+      },
+      {
+        "bytes": 434949,
+        "path": "makehuman-targets/macrodetails_asian-female-young.target"
+      },
+      {
+        "bytes": 420436,
+        "path": "makehuman-targets/macrodetails_asian-male-young.target"
+      },
+      {
+        "bytes": 419955,
+        "path": "makehuman-targets/macrodetails_caucasian-female-young.target"
+      },
+      {
+        "bytes": 395875,
+        "path": "makehuman-targets/macrodetails_caucasian-male-young.target"
+      },
+      {
+        "bytes": 0,
+        "path": "makehuman-targets/macrodetails_universal-female-young-averagemuscle-averageweight.target"
+      },
+      {
+        "bytes": 0,
+        "path": "makehuman-targets/macrodetails_universal-male-young-averagemuscle-averageweight.target"
+      },
+      {
+        "bytes": 81086,
+        "path": "makehuman-targets/head_head-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 82552,
+        "path": "makehuman-targets/head_head-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 77344,
+        "path": "makehuman-targets/head_head-scale-vert-decr.target"
+      },
+      {
+        "bytes": 77713,
+        "path": "makehuman-targets/head_head-scale-vert-incr.target"
+      },
+      {
+        "bytes": 73245,
+        "path": "makehuman-targets/head_head-scale-depth-decr.target"
+      },
+      {
+        "bytes": 68695,
+        "path": "makehuman-targets/head_head-scale-depth-incr.target"
+      },
+      {
+        "bytes": 4470,
+        "path": "makehuman-targets/nose_nose-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 6964,
+        "path": "makehuman-targets/nose_nose-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 4827,
+        "path": "makehuman-targets/nose_nose-scale-vert-decr.target"
+      },
+      {
+        "bytes": 6044,
+        "path": "makehuman-targets/nose_nose-scale-vert-incr.target"
+      },
+      {
+        "bytes": 5207,
+        "path": "makehuman-targets/nose_nose-scale-depth-decr.target"
+      },
+      {
+        "bytes": 5158,
+        "path": "makehuman-targets/nose_nose-scale-depth-incr.target"
+      },
+      {
+        "bytes": 2649,
+        "path": "makehuman-targets/chin_chin-width-decr.target"
+      },
+      {
+        "bytes": 3833,
+        "path": "makehuman-targets/chin_chin-width-incr.target"
+      },
+      {
+        "bytes": 4150,
+        "path": "makehuman-targets/chin_chin-height-decr.target"
+      },
+      {
+        "bytes": 8592,
+        "path": "makehuman-targets/chin_chin-height-incr.target"
+      },
+      {
+        "bytes": 3040,
+        "path": "makehuman-targets/chin_chin-prominent-decr.target"
+      },
+      {
+        "bytes": 1891,
+        "path": "makehuman-targets/chin_chin-prominent-incr.target"
+      },
+      {
+        "bytes": 12040,
+        "path": "makehuman-targets/mouth_mouth-scale-horiz-decr.target"
+      },
+      {
+        "bytes": 15053,
+        "path": "makehuman-targets/mouth_mouth-scale-horiz-incr.target"
+      },
+      {
+        "bytes": 6891,
+        "path": "makehuman-targets/mouth_mouth-scale-vert-decr.target"
+      },
+      {
+        "bytes": 12832,
+        "path": "makehuman-targets/mouth_mouth-scale-vert-incr.target"
+      },
+      {
+        "bytes": 6833,
+        "path": "makehuman-targets/mouth_mouth-scale-depth-decr.target"
+      },
+      {
+        "bytes": 6909,
+        "path": "makehuman-targets/mouth_mouth-scale-depth-incr.target"
+      },
+      {
+        "bytes": 58372,
+        "path": "neutral-renders/front.png"
+      },
+      {
+        "bytes": 49250,
+        "path": "neutral-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 59293,
+        "path": "neutral-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 32936,
+        "path": "neutral-renders/left-profile.png"
+      },
+      {
+        "bytes": 47228,
+        "path": "neutral-renders/right-profile.png"
+      },
+      {
+        "bytes": 19719,
+        "path": "neutral-renders/back.png"
+      },
+      {
+        "bytes": 59111,
+        "path": "fitted-renders/front.png"
+      },
+      {
+        "bytes": 49732,
+        "path": "fitted-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 59294,
+        "path": "fitted-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 33150,
+        "path": "fitted-renders/left-profile.png"
+      },
+      {
+        "bytes": 47340,
+        "path": "fitted-renders/right-profile.png"
+      },
+      {
+        "bytes": 19867,
+        "path": "fitted-renders/back.png"
+      },
+      {
+        "bytes": 2501464,
+        "path": "hair/short01.glb"
+      },
+      {
+        "bytes": 3661140,
+        "path": "hair/short02.glb"
+      },
+      {
+        "bytes": 2451784,
+        "path": "hair/short03.glb"
+      },
+      {
+        "bytes": 2353956,
+        "path": "hair/short04.glb"
+      },
+      {
+        "bytes": 4537548,
+        "path": "hair/bob01.glb"
+      },
+      {
+        "bytes": 3458496,
+        "path": "hair/bob02.glb"
+      },
+      {
+        "bytes": 3072112,
+        "path": "hair/long01.glb"
+      },
+      {
+        "bytes": 2835656,
+        "path": "hair/braid01.glb"
+      },
+      {
+        "bytes": 4106104,
+        "path": "hair/ponytail01.glb"
+      },
+      {
+        "bytes": 4917836,
+        "path": "hair/afro01.glb"
+      },
+      {
+        "bytes": 8470876,
+        "path": "hair/rounded-coils.glb"
+      },
+      {
+        "bytes": 8809160,
+        "path": "beard/stubble.glb"
+      },
+      {
+        "bytes": 8809152,
+        "path": "beard/full.glb"
+      },
+      {
+        "bytes": 2882224,
+        "path": "beard/goatee.glb"
+      },
+      {
+        "bytes": 792264,
+        "path": "beard/moustache.glb"
+      },
+      {
+        "bytes": 2336544,
+        "path": "beard/chinstrap.glb"
+      }
+    ],
+    "beard": {
+      "chinstrap": "beard/chinstrap.glb",
+      "full": "beard/full.glb",
+      "goatee": "beard/goatee.glb",
+      "moustache": "beard/moustache.glb",
+      "stubble": "beard/stubble.glb"
+    },
+    "candidate": "makehuman",
+    "completedAt": "2026-09-30T14:27:34.151014+00:00",
+    "diagnostics": [
+      "fit",
+      "process",
+      "result",
+      "makehuman-shape",
+      "prepare",
+      "export",
+      "silhouettes",
+      "resources",
+      "settings",
+      "target-basis"
+    ],
+    "elapsedMs": 18986,
+    "fit": {
+      "basisVersion": "makehuman-metre-z-up-v2",
+      "evaluations": 97,
+      "finalLoss": 1.0633527920112546e-05,
+      "framingTranslations": {
+        "front": [
+          -0.0011059045955757324,
+          0.00739547839988712
+        ],
+        "left-three-quarter": [
+          0.0024577075629603094,
+          0.008075779707580416
+        ],
+        "right-three-quarter": [
+          -0.003946178502155409,
+          0.009208012579765858
+        ]
+      },
+      "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "initialLoss": 1.169715079059682e-05,
+      "iterations": [
+        {
+          "acceptedChanges": 0,
+          "iteration": 1,
+          "loss": 1.169715079059682e-05,
+          "step": 0.4
+        },
+        {
+          "acceptedChanges": 2,
+          "iteration": 2,
+          "loss": 1.1514011000157631e-05,
+          "step": 0.2
+        },
+        {
+          "acceptedChanges": 4,
+          "iteration": 3,
+          "loss": 1.0656480764607423e-05,
+          "step": 0.1
+        },
+        {
+          "acceptedChanges": 2,
+          "iteration": 4,
+          "loss": 1.0633527920112546e-05,
+          "step": 0.05
+        }
+      ],
+      "limitations": [
+        "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+        "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+        "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+        "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+        "No texture likeness or inferred demographic labels. Professional likeness review pending."
+      ],
+      "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+      "meanLandmarkErrorPixels": 2.862841441891599,
+      "pairedLandmarks": 60,
+      "seconds": 3.505613056004222,
+      "semanticCorrespondences": [
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 302,
+          "neutralImageXY": [
+            0.5011301040649414,
+            0.4987867474555969
+          ],
+          "targetImageXY": [
+            0.5014261603355408,
+            0.48856115341186523
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 267,
+          "neutralImageXY": [
+            0.5012182593345642,
+            0.4911929965019226
+          ],
+          "targetImageXY": [
+            0.501499354839325,
+            0.48120763897895813
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 144,
+          "neutralImageXY": [
+            0.5007835626602173,
+            0.4558035135269165
+          ],
+          "targetImageXY": [
+            0.5019219517707825,
+            0.44599759578704834
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 1144,
+          "neutralImageXY": [
+            0.4356539845466614,
+            0.4480935037136078
+          ],
+          "targetImageXY": [
+            0.43798214197158813,
+            0.43823617696762085
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 75,
+          "neutralImageXY": [
+            0.47616928815841675,
+            0.4518493711948395
+          ],
+          "targetImageXY": [
+            0.4755024313926697,
+            0.4420244097709656
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 3474,
+          "neutralImageXY": [
+            0.5643924474716187,
+            0.4475974440574646
+          ],
+          "targetImageXY": [
+            0.5639988780021667,
+            0.43790125846862793
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 2533,
+          "neutralImageXY": [
+            0.5241174697875977,
+            0.45183712244033813
+          ],
+          "targetImageXY": [
+            0.5267914533615112,
+            0.4420049786567688
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 1744,
+          "neutralImageXY": [
+            0.4637720584869385,
+            0.5360788106918335
+          ],
+          "targetImageXY": [
+            0.4637908339500427,
+            0.5228866338729858
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 4113,
+          "neutralImageXY": [
+            0.5345907211303711,
+            0.5357040762901306
+          ],
+          "targetImageXY": [
+            0.5379133820533752,
+            0.5232872366905212
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 482,
+          "neutralImageXY": [
+            0.499899297952652,
+            0.5333859920501709
+          ],
+          "targetImageXY": [
+            0.5011776685714722,
+            0.5234443545341492
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 523,
+          "neutralImageXY": [
+            0.500079870223999,
+            0.5359275937080383
+          ],
+          "targetImageXY": [
+            0.5012153387069702,
+            0.5238271951675415
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 1927,
+          "neutralImageXY": [
+            0.49846047163009644,
+            0.5851826071739197
+          ],
+          "targetImageXY": [
+            0.5010037422180176,
+            0.5717079639434814
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 2127,
+          "neutralImageXY": [
+            0.40102869272232056,
+            0.46953916549682617
+          ],
+          "targetImageXY": [
+            0.4020601809024811,
+            0.4591803550720215
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 3251,
+          "neutralImageXY": [
+            0.5979917049407959,
+            0.4699779152870178
+          ],
+          "targetImageXY": [
+            0.598493218421936,
+            0.45927274227142334
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 944,
+          "neutralImageXY": [
+            0.40294450521469116,
+            0.48710355162620544
+          ],
+          "targetImageXY": [
+            0.4027225971221924,
+            0.4758704602718353
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 3257,
+          "neutralImageXY": [
+            0.5963764190673828,
+            0.48770320415496826
+          ],
+          "targetImageXY": [
+            0.5972104668617249,
+            0.4759901463985443
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 875,
+          "neutralImageXY": [
+            0.42071738839149475,
+            0.543537974357605
+          ],
+          "targetImageXY": [
+            0.41868019104003906,
+            0.5303632616996765
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 3268,
+          "neutralImageXY": [
+            0.5773403644561768,
+            0.5433461666107178
+          ],
+          "targetImageXY": [
+            0.5813431739807129,
+            0.5299456715583801
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 220,
+          "neutralImageXY": [
+            0.4406481385231018,
+            0.4248063266277313
+          ],
+          "targetImageXY": [
+            0.44200560450553894,
+            0.41595983505249023
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 2660,
+          "neutralImageXY": [
+            0.5596625208854675,
+            0.4250614047050476
+          ],
+          "targetImageXY": [
+            0.5623217225074768,
+            0.41500645875930786
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 1979,
+          "neutralImageXY": [
+            0.32284480333328247,
+            0.494690477848053
+          ],
+          "targetImageXY": [
+            0.31805017590522766,
+            0.48441725969314575
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 2027,
+          "neutralImageXY": [
+            0.3218849301338196,
+            0.4879423677921295
+          ],
+          "targetImageXY": [
+            0.317247599363327,
+            0.4775155782699585
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 1843,
+          "neutralImageXY": [
+            0.34258365631103516,
+            0.45639359951019287
+          ],
+          "targetImageXY": [
+            0.3386450409889221,
+            0.4454818069934845
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 1178,
+          "neutralImageXY": [
+            0.32622918486595154,
+            0.4512419104576111
+          ],
+          "targetImageXY": [
+            0.3210069537162781,
+            0.4396328330039978
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 1189,
+          "neutralImageXY": [
+            0.3416855037212372,
+            0.452698677778244
+          ],
+          "targetImageXY": [
+            0.33961227536201477,
+            0.4412781596183777
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 2486,
+          "neutralImageXY": [
+            0.41132301092147827,
+            0.448891818523407
+          ],
+          "targetImageXY": [
+            0.4089716076850891,
+            0.439473032951355
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 2539,
+          "neutralImageXY": [
+            0.37750673294067383,
+            0.45274588465690613
+          ],
+          "targetImageXY": [
+            0.375136137008667,
+            0.4420228898525238
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 461,
+          "neutralImageXY": [
+            0.33086711168289185,
+            0.5302716493606567
+          ],
+          "targetImageXY": [
+            0.3267357349395752,
+            0.5179450511932373
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 4084,
+          "neutralImageXY": [
+            0.37586408853530884,
+            0.5335142612457275
+          ],
+          "targetImageXY": [
+            0.3761179447174072,
+            0.5214716792106628
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 481,
+          "neutralImageXY": [
+            0.3372271656990051,
+            0.5321033596992493
+          ],
+          "targetImageXY": [
+            0.336080938577652,
+            0.5193202495574951
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 575,
+          "neutralImageXY": [
+            0.3386499881744385,
+            0.533778190612793
+          ],
+          "targetImageXY": [
+            0.3363596498966217,
+            0.520000696182251
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 1927,
+          "neutralImageXY": [
+            0.35587918758392334,
+            0.5818846225738525
+          ],
+          "targetImageXY": [
+            0.35116809606552124,
+            0.5646848082542419
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 4255,
+          "neutralImageXY": [
+            0.3501180112361908,
+            0.4713057279586792
+          ],
+          "targetImageXY": [
+            0.35851776599884033,
+            0.45925259590148926
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 4512,
+          "neutralImageXY": [
+            0.5112171769142151,
+            0.46980172395706177
+          ],
+          "targetImageXY": [
+            0.5033603310585022,
+            0.4596302807331085
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 2718,
+          "neutralImageXY": [
+            0.3507006764411926,
+            0.4868360161781311
+          ],
+          "targetImageXY": [
+            0.36108964681625366,
+            0.4742733836174011
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 4505,
+          "neutralImageXY": [
+            0.5114456415176392,
+            0.4890470802783966
+          ],
+          "targetImageXY": [
+            0.5039750933647156,
+            0.477946400642395
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 2936,
+          "neutralImageXY": [
+            0.34910938143730164,
+            0.5357838869094849
+          ],
+          "targetImageXY": [
+            0.3565405011177063,
+            0.5237388610839844
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 3131,
+          "neutralImageXY": [
+            0.47512298822402954,
+            0.549193799495697
+          ],
+          "targetImageXY": [
+            0.4741291403770447,
+            0.5360369682312012
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 216,
+          "neutralImageXY": [
+            0.3196460008621216,
+            0.42744946479797363
+          ],
+          "targetImageXY": [
+            0.309592604637146,
+            0.4191579520702362
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 2674,
+          "neutralImageXY": [
+            0.40188950300216675,
+            0.42406994104385376
+          ],
+          "targetImageXY": [
+            0.3933897018432617,
+            0.41466987133026123
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 2741,
+          "neutralImageXY": [
+            0.672757625579834,
+            0.49893322587013245
+          ],
+          "targetImageXY": [
+            0.6827729344367981,
+            0.4862006902694702
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 2716,
+          "neutralImageXY": [
+            0.67403244972229,
+            0.4913465976715088
+          ],
+          "targetImageXY": [
+            0.6847320795059204,
+            0.47917163372039795
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 4208,
+          "neutralImageXY": [
+            0.6563929319381714,
+            0.4568586051464081
+          ],
+          "targetImageXY": [
+            0.665614128112793,
+            0.4471313953399658
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 28,
+          "neutralImageXY": [
+            0.5913373231887817,
+            0.4501093626022339
+          ],
+          "targetImageXY": [
+            0.5960655212402344,
+            0.44024360179901123
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 76,
+          "neutralImageXY": [
+            0.6229034662246704,
+            0.4532064199447632
+          ],
+          "targetImageXY": [
+            0.6281828880310059,
+            0.44206690788269043
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 3539,
+          "neutralImageXY": [
+            0.6702635288238525,
+            0.4505288004875183
+          ],
+          "targetImageXY": [
+            0.6788063049316406,
+            0.4365181028842926
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 2599,
+          "neutralImageXY": [
+            0.6529395580291748,
+            0.45230281352996826
+          ],
+          "targetImageXY": [
+            0.6617546081542969,
+            0.438391774892807
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 1746,
+          "neutralImageXY": [
+            0.6234679222106934,
+            0.5354750156402588
+          ],
+          "targetImageXY": [
+            0.6212683320045471,
+            0.5235915780067444
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 2910,
+          "neutralImageXY": [
+            0.6672222018241882,
+            0.5319889187812805
+          ],
+          "targetImageXY": [
+            0.6706595420837402,
+            0.520900547504425
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 2915,
+          "neutralImageXY": [
+            0.6580871343612671,
+            0.532909631729126
+          ],
+          "targetImageXY": [
+            0.6608220934867859,
+            0.5218488574028015
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 2914,
+          "neutralImageXY": [
+            0.6589043140411377,
+            0.5330107808113098
+          ],
+          "targetImageXY": [
+            0.6596386432647705,
+            0.522506594657898
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 1914,
+          "neutralImageXY": [
+            0.6407636404037476,
+            0.5814738869667053
+          ],
+          "targetImageXY": [
+            0.6416468620300293,
+            0.5695235729217529
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 2450,
+          "neutralImageXY": [
+            0.49922534823417664,
+            0.46924182772636414
+          ],
+          "targetImageXY": [
+            0.49646511673927307,
+            0.4563506841659546
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 1936,
+          "neutralImageXY": [
+            0.6445445418357849,
+            0.47190752625465393
+          ],
+          "targetImageXY": [
+            0.6477260589599609,
+            0.45485731959342957
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 943,
+          "neutralImageXY": [
+            0.4986037611961365,
+            0.4885908365249634
+          ],
+          "targetImageXY": [
+            0.49418705701828003,
+            0.4752005636692047
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 273,
+          "neutralImageXY": [
+            0.6431172490119934,
+            0.4883803129196167
+          ],
+          "targetImageXY": [
+            0.6449903249740601,
+            0.46999236941337585
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 734,
+          "neutralImageXY": [
+            0.5300419926643372,
+            0.549507737159729
+          ],
+          "targetImageXY": [
+            0.5226809978485107,
+            0.5361112952232361
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 495,
+          "neutralImageXY": [
+            0.6460771560668945,
+            0.5402234792709351
+          ],
+          "targetImageXY": [
+            0.6484915018081665,
+            0.5202639102935791
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 225,
+          "neutralImageXY": [
+            0.6060840487480164,
+            0.4227841794490814
+          ],
+          "targetImageXY": [
+            0.6116048693656921,
+            0.41400018334388733
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 2670,
+          "neutralImageXY": [
+            0.6809134483337402,
+            0.4274026155471802
+          ],
+          "targetImageXY": [
+            0.6926375031471252,
+            0.41578274965286255
+          ],
+          "view": "right-three-quarter"
+        }
+      ],
+      "signedParameters": {
+        "chin/chin-height": 0,
+        "chin/chin-prominent": 0,
+        "chin/chin-width": 0,
+        "head/head-scale-depth": 0,
+        "head/head-scale-horiz": 0.1,
+        "head/head-scale-vert": -0.1,
+        "mouth/mouth-scale-depth": 0,
+        "mouth/mouth-scale-horiz": 0.05,
+        "mouth/mouth-scale-vert": 0,
+        "nose/nose-scale-depth": 0,
+        "nose/nose-scale-horiz": 0.1,
+        "nose/nose-scale-vert": -0.05
+      },
+      "targets": {
+        "head/head-scale-horiz-incr.target.gz": 0.1,
+        "head/head-scale-vert-decr.target.gz": 0.1,
+        "mouth/mouth-scale-horiz-incr.target.gz": 0.05,
+        "nose/nose-scale-horiz-incr.target.gz": 0.1,
+        "nose/nose-scale-vert-decr.target.gz": 0.05
+      },
+      "views": [
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+          "targetFaces": 0,
+          "view": "back"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+          "targetFaces": 1,
+          "view": "front"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+          "targetFaces": 0,
+          "view": "left-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+          "targetFaces": 1,
+          "view": "left-three-quarter"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+          "targetFaces": 0,
+          "view": "right-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+          "targetFaces": 1,
+          "view": "right-three-quarter"
+        }
+      ]
+    },
+    "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+    "hair": {
+      "afro01": "hair/afro01.glb",
+      "bob01": "hair/bob01.glb",
+      "bob02": "hair/bob02.glb",
+      "braid01": "hair/braid01.glb",
+      "long01": "hair/long01.glb",
+      "ponytail01": "hair/ponytail01.glb",
+      "rounded-coils": "hair/rounded-coils.glb",
+      "short01": "hair/short01.glb",
+      "short02": "hair/short02.glb",
+      "short03": "hair/short03.glb",
+      "short04": "hair/short04.glb"
+    },
+    "head": "head.glb",
+    "kind": "fit",
+    "nativeShape": {
+      "beard": 5,
+      "hair": 11,
+      "headTriangles": 9618,
+      "headVertices": 4949,
+      "interchange": "GLB Y up, face +Z",
+      "limitations": [
+        "Neck ends at an artificial clipped plane with a flat cap, not reconstructed underside anatomy.",
+        "Hair uses the native unsmoothed MHCLO topology; clipping and professional acceptance must be reviewed.",
+        "Head is entirely fitted or inferred from a CC0 prior; hidden surfaces are not observed geometry."
+      ],
+      "nativeHumanVertices": 19158,
+      "processing": "Native Human.applyAllTargets and proxy.getCoords; CPU triangle rasterizer; no Blender.",
+      "software": "MakeHuman 1.3.0",
+      "sourceCommit": "1f508f6083b2f823dab15de924b3bde72e08d77c",
+      "units": "metres"
+    },
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "prepare",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60ceeae9-ab3e-45ee-91c6-b58e1ac114a1"
+        ],
+        "cpuSeconds": 4.692,
+        "exitCode": 0,
+        "peakRssKiB": 77888,
+        "seconds": 4.542,
+        "stage": "prepare"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60ceeae9-ab3e-45ee-91c6-b58e1ac114a1"
+        ],
+        "cpuSeconds": 6.427,
+        "exitCode": 0,
+        "peakRssKiB": 254584,
+        "seconds": 6.397,
+        "stage": "fit"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+          "export",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60ceeae9-ab3e-45ee-91c6-b58e1ac114a1"
+        ],
+        "cpuSeconds": 8.171,
+        "exitCode": 0,
+        "peakRssKiB": 281312,
+        "seconds": 6.405,
+        "stage": "export"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60ceeae9-ab3e-45ee-91c6-b58e1ac114a1"
+        ],
+        "cpuSeconds": 1.893,
+        "exitCode": 0,
+        "peakRssKiB": 281312,
+        "seconds": 1.637,
+        "stage": "silhouette"
+      }
+    ],
+    "retainedBytes": 79507043,
+    "scope": "Six-view makehuman fitting experiment. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.",
+    "silhouette": {
+      "alignment": "Only the bounded image framing translation already retained by the landmark fit. Camera yaw, focal length and distance remain explicit assumptions.",
+      "limitations": [
+        "Observed outline includes hair and facial hair, so overlap is not skin/scalp accuracy or professional likeness.",
+        "The back has no facial framing translation and remains a template prior beneath observed hair.",
+        "Automatic outlines can omit colors close to the background or include shadows. Inspect the paired pictures; unavailable metrics are retained honestly.",
+        "No silhouette objective is added to the optimizer: fitting a bald scalp to a hair outline would create misleading anatomy."
+      ],
+      "maskMethod": "Median RGB of four corner patches; foreground color distance >18; 95th percentile corner spread <=8 and foreground coverage 1%-90%. Uniform-background diagnostic only, not a general portrait segmenter. Nonuniform backgrounds have unavailable metrics.",
+      "scope": "Visible image outlines compared with neutral fitted renders. Inputs are authorized images, including existing hair/beard. This diagnostic does not modify the head or reconstruct hidden anatomy.",
+      "seconds": 1.543,
+      "version": "uniform-background-outline-v1",
+      "views": [
+        {
+          "differentMaskPixels": 14240,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.12459019252232142,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            0,
+            0
+          ],
+          "imageMaskIntersectionOverUnion": 0.855924400781084,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.14197939918154762,
+            "validUniformBackground": true
+          },
+          "renderSha256": "194609bb2292d4f08068b31aa875414025d1eba42bad5c15819f2003e813033e",
+          "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+          "status": "available",
+          "view": "back"
+        },
+        {
+          "differentMaskPixels": 14462,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.13386753627232142,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            0.8493347294021625,
+            -6.62634864629886
+          ],
+          "imageMaskIntersectionOverUnion": 0.8635673248365582,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.15320114862351192,
+            "validUniformBackground": true
+          },
+          "renderSha256": "a35879148b196251440b364c91cf28cdddb4d8050e02ac878c115d04dd6191d2",
+          "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+          "status": "available",
+          "view": "front"
+        },
+        {
+          "differentMaskPixels": 10175,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.10319010416666667,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            0,
+            0
+          ],
+          "imageMaskIntersectionOverUnion": 0.872798189796352,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.11451212565104167,
+            "validUniformBackground": true
+          },
+          "renderSha256": "5c0972343577bb2cde440fe26d45f2dfb103c382045a03e3e3f11698da6efa90",
+          "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+          "status": "available",
+          "view": "left-profile"
+        },
+        {
+          "differentMaskPixels": 11742,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.12667556036086308,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            -1.8875194083535176,
+            -7.235898617992053
+          ],
+          "imageMaskIntersectionOverUnion": 0.8806877070335521,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.14229474748883927,
+            "validUniformBackground": true
+          },
+          "renderSha256": "55dd19005ed7caae7665110e8b4a83db7d3b8c504195a2f519e5f2f3a7689d53",
+          "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+          "status": "available",
+          "view": "left-three-quarter"
+        },
+        {
+          "differentMaskPixels": 10409,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.10319010416666667,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            0,
+            0
+          ],
+          "imageMaskIntersectionOverUnion": 0.8700142361197832,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.11442493257068452,
+            "validUniformBackground": true
+          },
+          "renderSha256": "07eb3c017c096362d83af073aebedce33c175d3d1a92765db716620369908d46",
+          "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+          "status": "available",
+          "view": "right-profile"
+        },
+        {
+          "differentMaskPixels": 11756,
+          "fittedMask": {
+            "backgroundRGB": [
+              218,
+              225,
+              228
+            ],
+            "cornerColorSpread95": 0,
+            "foregroundFraction": 0.12667556036086308,
+            "validUniformBackground": true
+          },
+          "framingTranslationPixels": [
+            3.030665089655354,
+            -8.250379271470209
+          ],
+          "imageMaskIntersectionOverUnion": 0.8804750091504331,
+          "imagePixels": 688128,
+          "observedMask": {
+            "backgroundRGB": [
+              59,
+              59,
+              59
+            ],
+            "cornerColorSpread95": 1.7320507764816284,
+            "foregroundFraction": 0.14210582914806547,
+            "validUniformBackground": true
+          },
+          "renderSha256": "8cfba7356fa6a272fec4e48fee8f23c662fd7d09a84ca34846b05150092489d2",
+          "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+          "status": "available",
+          "view": "right-three-quarter"
+        }
+      ]
+    },
+    "targetBasisCheck": {
+      "basisVersion": "makehuman-metre-z-up-v2",
+      "mappedVertices": 4666,
+      "maximumErrorMetres": 5.768732307201875e-08,
+      "meanErrorMetres": 1.6373569461376735e-08,
+      "measurement": "Optimization-basis prediction compared against actual native Human.applyAllTargets and actual crown recentering. Artificial plane intersections and cap vertices are excluded.",
+      "passed": true,
+      "toleranceMetres": 1e-05
+    }
+  }
+}

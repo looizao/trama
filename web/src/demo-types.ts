@@ -104,6 +104,7 @@ export type DemoJob = {
     retainedBytes?: number
     failure?: { error?: string }
     targetBasisCheck?: { basisVersion: string; mappedVertices: number; maximumErrorMetres: number; passed: boolean }
+    nativeShape?: {styleAttachment?:{version:string;method:string;lipBasisVertices:number[];nativeLipVertices:number[];mouthHeightMetres:number;limitations:string}}
     reconstruction?: {
       version: string
       geometry: string

@@ -814,6 +814,7 @@ function DemoSession({
           <p className="notice">{t('Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.')}</p>
         )}
         {modelJob?.candidate === 'flame' && modelJob.result.fit?.basisVersion !== 'flame-2023-open-neutral-rig-v4' && <p className="error" role="alert">{t('Historical FLAME experiment: earlier coordinate alignment or style attachment has known limitations. Retained for comparison; use the latest validated experiment for evaluation.')}</p>}
+        {modelJob?.candidate==='makehuman'&&modelJob.result.nativeShape?.styleAttachment?.version!=='makehuman-visible-lips-v2'&&<p className="error" role="alert">{t('Historical MakeHuman styles: beard placement used a rig joint above the visible lips. This can place strands on the nose. Retained for comparison; use a corrected visible-lip attachment experiment for evaluation.')}</p>}
         {modelJob?.result.component?.processingVersion === 'open3d-cpu-upstream-v1' && <p className="error">{t('Historical Open3D result welded a neck-cap normal seam and has a known shading regression. Use a seam-preserving result for evaluation.')}</p>}
         <p className="notice">
           {t(

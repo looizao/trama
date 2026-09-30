@@ -110,6 +110,12 @@ export function DemoViewer({
     controls.maxDistance = 3
     controls.minPolarAngle = Math.PI / 2 - 1.45
     controls.maxPolarAngle = Math.PI / 2 + 1.45
+    const renderNow=()=>{
+      if(destroyed)return
+      renderer.render(scene,viewCamera)
+      renderNeeded=false
+      element.dataset.renderedCamera=JSON.stringify({position:viewCamera.position.toArray(),target:controls.target.toArray(),fov:viewCamera.fov,aspect:viewCamera.aspect})
+    }
     const applyEdits=()=>{
       renderNeeded=true
       const edits=editRef.current||defaultRefinement()
@@ -127,8 +133,9 @@ export function DemoViewer({
       element.dataset.appliedRefinement=JSON.stringify(edits)
       element.dataset.editMeasurements=JSON.stringify(measurements)
       controls.enabled=!brushRef.current
+      renderNow()
     }
-    const instance = { camera: viewCamera, controls, updating: false, applyEdits, requestRender:()=>{renderNeeded=true} }
+    const instance = { camera: viewCamera, controls, updating: false, applyEdits, requestRender:renderNow }
     active.current = instance
     const measuredCamera = () => {
       element.dataset.azimuth = controls.getAzimuthalAngle().toFixed(6)
@@ -155,6 +162,7 @@ export function DemoViewer({
     const changed = () => {
       renderNeeded=true
       measuredCamera()
+      renderNow()
       if (!instance.updating && !destroyed)
         changeRef.current({
           azimuth: controls.getAzimuthalAngle(),
@@ -197,6 +205,7 @@ export function DemoViewer({
         renderer.setSize(width, height)
         viewCamera.aspect = width / height
         viewCamera.updateProjectionMatrix()
+        renderNow()
       }
     })
     resize.observe(element)
@@ -251,7 +260,7 @@ export function DemoViewer({
       })
     if(capture)capture.current=()=>{
       if(destroyed||!loaded||!renderer.domElement.width)return null
-      applyEdits();position(cameraRef.current);renderer.render(scene,viewCamera)
+      applyEdits();position(cameraRef.current);renderNow()
       const picture=document.createElement('canvas');picture.width=400;picture.height=Math.round(400*renderer.domElement.height/renderer.domElement.width)
       if(picture.height>1024)return null
       picture.getContext('2d')!.drawImage(renderer.domElement,0,0,picture.width,picture.height)
@@ -264,8 +273,7 @@ export function DemoViewer({
       if(!visible||document.hidden){sampleStarted=0;renderedFrames=0}
       if(visible&&(renderNeeded||(!document.hidden&&loaded&&!inspected))){
       if(loaded&&!document.hidden&&!sampleStarted)sampleStarted=performance.now()
-      renderer.render(scene, viewCamera)
-      renderNeeded=false
+      renderNow()
       if (loaded&&!document.hidden) {
         renderedFrames++
         if (!inspected && performance.now() - sampleStarted >= 1000) {
@@ -308,7 +316,6 @@ export function DemoViewer({
     const instance = active.current
     if (!instance) return
     const { controls, camera: viewCamera } = instance
-    instance.requestRender()
     instance.updating = true
     const radius = Math.cos(camera.elevation) * camera.distance
     viewCamera.position.set(
@@ -326,6 +333,7 @@ export function DemoViewer({
       host.current.dataset.distance = controls.getDistance().toFixed(6)
     }
     instance.updating = false
+    instance.requestRender()
   }, [camera])
   return (
     <div className="demo-viewer">

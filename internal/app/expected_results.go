@@ -218,8 +218,9 @@ func (a *App) expectedEligible(r *http.Request, state *DemoWorkspaceState) strin
 		return "upgrade the historical style attachment before selecting an expected result"
 	}
 	rows, err := a.DB.QueryContext(r.Context(), `WITH RECURSIVE models(id) AS (
- SELECT $1 UNION SELECT d.source_run_id FROM demo_job_dependencies d JOIN models m ON d.run_id=m.id)
- SELECT j.candidate,j.result FROM models m JOIN demo_jobs j ON j.run_id=m.id`, state.ModelRunID)
+ SELECT $1 UNION SELECT d.source_run_id FROM demo_job_dependencies d JOIN models m ON d.run_id=m.id),
+ style_models(id) AS (SELECT $1 UNION SELECT d.source_run_id FROM demo_job_sources d JOIN style_models m ON d.run_id=m.id)
+ SELECT j.candidate,j.result,EXISTS(SELECT 1 FROM style_models s WHERE s.id=j.run_id) FROM models m JOIN demo_jobs j ON j.run_id=m.id`, state.ModelRunID)
 	if err != nil {
 		return "native result is unavailable"
 	}
@@ -229,7 +230,8 @@ func (a *App) expectedEligible(r *http.Request, state *DemoWorkspaceState) strin
 	count := 0
 	for rows.Next() {
 		var candidate, raw string
-		if rows.Scan(&candidate, &raw) != nil {
+		var suppliesStyles bool
+		if rows.Scan(&candidate, &raw, &suppliesStyles) != nil {
 			return "invalid native result"
 		}
 		var result struct {
@@ -239,6 +241,11 @@ func (a *App) expectedEligible(r *http.Request, state *DemoWorkspaceState) strin
 			Component struct {
 				Version string `json:"processingVersion"`
 			} `json:"component"`
+			NativeShape struct {
+				StyleAttachment struct {
+					Version string `json:"version"`
+				} `json:"styleAttachment"`
+			} `json:"nativeShape"`
 		}
 		if json.Unmarshal([]byte(raw), &result) != nil {
 			return "invalid native result"
@@ -248,6 +255,9 @@ func (a *App) expectedEligible(r *http.Request, state *DemoWorkspaceState) strin
 		}
 		if expected := components[candidate]; expected != "" && result.Component.Version != expected {
 			return "historical supporting output has known limitations; use a corrected experiment"
+		}
+		if candidate == "makehuman" && suppliesStyles && (state.CurrentBeardID != "clean-shaven" || (state.BeardID != "clean-shaven" && state.BeardID != "keep-current")) && result.NativeShape.StyleAttachment.Version != "makehuman-visible-lips-v2" {
+			return "historical MakeHuman beard placement used a rig joint above the visible lips; use a corrected experiment"
 		}
 		count++
 	}

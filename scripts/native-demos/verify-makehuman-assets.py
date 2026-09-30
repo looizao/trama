@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Inspect actual standalone outputs and compare authorized input snapshots."""
+import argparse
 import datetime
 import hashlib
 import io
@@ -66,9 +67,14 @@ def inspect_glb(path):
             'embeddedTextures': len(doc.get('images', [])), 'checks': 'GLB lengths, bounds, finite positions/UVs, unit normals, valid triangle indices and actual decoded embedded images passed.'}
 
 
+parser=argparse.ArgumentParser()
+parser.add_argument('--style-version',choices=['makehuman-visible-lips-v2'])
+args=parser.parse_args()
+suffix='-visible-lips' if args.style_version else ''
 summary = []
 for name, entries in runs.items():
-    job = entries['makehuman:makehuman-metre-z-up-v2']['jobId']; client = imports['cases'][name]['clientId']
+    key='makehuman:makehuman-metre-z-up-v2'+(':'+args.style_version if args.style_version else '')
+    job = entries[key]['jobId']; client = imports['cases'][name]['clientId']
     directory = runtime / 'processing' / client / job
     prior = runtime / 'processing' / client / entries['blender-mpfb']['jobId']
     result = json.loads((directory / 'result.json').read_text())
@@ -82,6 +88,18 @@ for name, entries in runs.items():
     files = [directory / 'head.glb', *sorted((directory / 'hair').glob('*.glb')), *sorted((directory / 'beard').glob('*.glb'))]
     assert len(files) == 17
     checks = [inspect_glb(file) for file in files]
+    if args.style_version:
+        attachment=json.loads((directory/'makehuman-style-attachment.json').read_text())
+        assert attachment['version']==args.style_version==result['nativeShape']['styleAttachment']['version']
+        assert len(attachment['nativeLipVertices'])==2 and len(set(attachment['nativeLipVertices']))==2
+        with np.load(directory/'basis.npz') as basis:
+            mapping=basis['mapping'][attachment['lipBasisVertices']]
+        assert mapping[:,0].tolist()==mapping[:,1].tolist()==attachment['nativeLipVertices']
+        for beard in checks[-5:]:
+            for bounds in beard['boundsMetres']:
+                assert bounds['max'][1]<attachment['mouthHeightMetres']+.030,'Beard must remain below upper visible lip coverage, not on nose'
+                assert bounds['min'][1]>attachment['mouthHeightMetres']-.060,'Beard must remain attached to actual lower face'
+        assert result['fit']['basisVersion']=='makehuman-metre-z-up-v2'
     for view in source_hashes:
         with Image.open(directory / 'fitted-renders' / (view + '.png')) as image:
             assert image.size == (768, 896); image.verify()
@@ -96,7 +114,7 @@ for name, entries in runs.items():
             x, y = (index % 3) * 384, 28 + (index // 3) * 463
             image = Image.open(directory / 'fitted-renders' / (view + '.png')); image.thumbnail((384, 448))
             sheet.paste(image, (x, y)); draw.text((x + 10, y + 446), view, fill='#172d25')
-        sheet.save(log / 'makehuman-six-fitted-renders.png')
+        sheet.save(log / ('makehuman-six-fitted-renders'+suffix+'.png'))
 fixture=ROOT/'.scratch/private/native-demos'/('makehuman-basis-rejection-'+str(uuid.uuid4()));fixture.mkdir(mode=0o700)
 for name in ['manifest.json','fit.json']:shutil.copyfile(rejection_source/name,fixture/name)
 with np.load(rejection_source/'basis.npz') as original:basis={key:original[key].copy() for key in original.files}
@@ -108,5 +126,5 @@ rejection=json.loads((fixture/'target-basis-check.json').read_text());assert rej
 report = {'corruptedBasisRejection':{'injectedOffsetMetres':.02,'nativeCheck':rejection,'exitCode':rejected.returncode,'headPublished':False},'date': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'scope': 'Actual local MakeHuman head fitting and interchange verification on three fictional cases. No ground-truth geometry or fictional morph settings supplied to the fitter. Landmark agreement is not likeness or observed 3D accuracy.',
           'professionalAssessment': 'pending', 'results': summary}
-(log / 'makehuman-output-verification.json').write_text(json.dumps(report, indent=2) + '\n')
+(log / ('makehuman-output-verification'+suffix+'.json')).write_text(json.dumps(report, indent=2) + '\n')
 print('PASS 51 actual GLBs, 18 native rendered pictures, all three shared six-photo hashes, finite interchange geometry, embedded textures and no Blender stage.')

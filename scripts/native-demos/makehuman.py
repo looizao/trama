@@ -301,17 +301,23 @@ def main():
             export(directory / 'hair' / (name + '.glb'), [mesh])
         # The original shared beard definitions are sampled on the actual
         # fitted lower face. These are new compatible meshes, not canned ones.
-        lips = np.flatnonzero(np.isin(h.meshData.group, [g.idx for g in h.meshData._faceGroups if g.name == 'joint-mouth']))
-        if not len(lips):
-            raise RuntimeError('Native MakeHuman mouth joint required for beard placement')
-        mouth_z = float(xyz[np.unique(h.meshData.fvert[lips]), 2].mean())
-        # Same fixed offset used by the shared lower-face style definition.
+        lip_points=[c['nativeVertexIndex'] for c in json.loads((directory/'fit.json').read_text())['semanticCorrespondences'] if c['view']=='front' and c['landmarkIndex'] in [13,14]]
+        if len(lip_points)!=2:
+            raise RuntimeError('Front visible lip correspondences required for beard placement; rig joints are not surface landmarks')
+        with np.load(directory/'basis.npz') as basis:
+            lip_mapping=basis['mapping'][lip_points]
+        if np.any(lip_mapping[:,0]!=lip_mapping[:,1]) or np.any(lip_mapping[:,0]<0):
+            raise RuntimeError('Visible lips must map to actual native skin vertices, not artificial neck intersections')
+        native_lips=lip_mapping[:,0].astype(int)
+        mouth_z=float(xyz[native_lips,2].mean())
+        attachment={'version':'makehuman-visible-lips-v2','method':'Neutral front upper/lower lip correspondences 13 and 14 mapped through the retained clipping map to actual native Human vertices after fitting. Neither rig mouth joints nor potentially reordered neck-clipped indices are used as visible lip positions.','lipBasisVertices':lip_points,'nativeLipVertices':native_lips.tolist(),'mouthHeightMetres':mouth_z,'limitations':'Landmark-to-template correspondence and procedural coverage remain approximate; inspect lip boundaries, cheeks and all angles.'}
+        (directory/'makehuman-style-attachment.json').write_text(json.dumps(attachment,indent=2)+'\n')
         for kind, length in {'stubble': .0017, 'full': .012, 'goatee': .009, 'moustache': .007, 'chinstrap': .006}.items():
             export(directory / 'beard' / (kind + '.glb'), [beard_mesh(head, mouth_z, kind, length)])
         (directory / 'makehuman-shape.json').write_text(json.dumps({
             'software': 'MakeHuman 1.3.0', 'sourceCommit': '1f508f6083b2f823dab15de924b3bde72e08d77c',
             'nativeHumanVertices': len(full), 'headVertices': len(head['xyz']), 'headTriangles': len(head['tri']),
-            'hair': len(styles), 'beard': 5, 'units': 'metres', 'interchange': 'GLB Y up, face +Z',
+            'hair': len(styles), 'beard': 5, 'units': 'metres', 'interchange': 'GLB Y up, face +Z', 'styleAttachment':attachment,
             'processing': 'Native Human.applyAllTargets and proxy.getCoords; CPU triangle rasterizer; no Blender.',
             'limitations': ['Neck ends at an artificial clipped plane with a flat cap, not reconstructed underside anatomy.', 'Hair uses the native unsmoothed MHCLO topology; clipping and professional acceptance must be reviewed.',
                             'Head is entirely fitted or inferred from a CC0 prior; hidden surfaces are not observed geometry.']}, indent=2) + '\n')

@@ -5,6 +5,7 @@ export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
  "Native Meshroom reconstruction is unavailable. The official AliceVision runtime has not been provisioned; CUDA 12.1.1 terms require your acceptance before acquisition. The retained prepared graph is setup evidence. No photos have been reconstructed, and no client head or expected result is available from this route.":"A reconstrução nativa do Meshroom está indisponível. O runtime oficial do AliceVision ainda não foi provisionado; os termos do CUDA 12.1.1 exigem sua aceitação antes da aquisição. O grafo preparado retido comprova apenas a configuração. Nenhuma foto foi reconstruída, e esta rota não disponibiliza uma cabeça do cliente ou resultado esperado.",
+ "Historical MakeHuman styles: beard placement used a rig joint above the visible lips. This can place strands on the nose. Retained for comparison; use a corrected visible-lip attachment experiment for evaluation.":"Estilos históricos do MakeHuman: a barba foi posicionada por uma articulação do rig acima dos lábios visíveis. Isso pode colocar fios sobre o nariz. Mantidos para comparação; use um experimento corrigido com ancoragem nos lábios visíveis para avaliação.",
  "Runtime terms":"Termos do runtime",
  "Visible outline comparison":"Comparação dos contornos visíveis",
  "Outline metric unavailable":"Métrica de contorno indisponível",
