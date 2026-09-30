@@ -238,6 +238,10 @@ def main():
     renders = directory / ('neutral-renders' if args.phase == 'prepare' else 'fitted-renders'); renders.mkdir(exist_ok=True)
     for view, _ in VIEWS:
         print('FLAME_RENDER', view, flush=True); render(renders / (view + '.png'), meshes, np.array(matrices[view]))
+    if args.phase=='export':
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('photo_texture',ROOT/'scripts/native-demos/photo-texture.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        module.evaluate(directory,meshes,matrices,manifest,fit)
     (directory / 'flame-attribution.json').write_text(json.dumps(ATTRIBUTION, indent=2) + '\n')
 
 

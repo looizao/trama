@@ -1,0 +1,11 @@
+{
+  "scope": "Actual local FLAME fit and photo atlas on copied fictional six-view inputs. Real artifact serving, anonymous boundaries, source erasure, physical derivative removal and cancellation of a concurrent job. No production data or backup accessed.",
+  "fixtureId": "4c755909-7d2d-4230-9af5-435cda622254",
+  "completedRunId": "88192d9e-81c2-4845-986f-695716636ddc",
+  "cancelledRunId": "5275a266-f488-4d68-ab68-6526abb824cf",
+  "seconds": 26.993,
+  "projectionVersion": "six-photo-projection-v2",
+  "privateFilesRemoved": true,
+  "concurrentProcessingCancelled": true,
+  "erasedSourceCannotRecreate": true
+}

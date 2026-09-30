@@ -287,6 +287,15 @@ func validateNativeArtifacts(dir string, result map[string]any) error {
 		return errors.New("missing actual fitted head")
 	}
 	files := []string{"head.glb"}
+	if photo, ok := result["photoTexture"].(map[string]any); ok {
+		if result["candidate"] != "flame" || (photo["version"] != "six-photo-projection-v1" && photo["version"] != "six-photo-projection-v2") {
+			return errors.New("unexpected photo projection experiment")
+		}
+		files = append(files, "photo-texture/head.glb", "photo-texture/authorized-photo-atlas.png")
+		for _, view := range requiredPhotoViews {
+			files = append(files, "photo-texture/"+view+".png")
+		}
+	}
 	for _, kind := range []string{"hair", "beard"} {
 		styles, err := readDemoStyles(kind)
 		if err != nil {
@@ -316,7 +325,11 @@ func validateNativeArtifacts(dir string, result map[string]any) error {
 		header := make([]byte, 12)
 		_, err = io.ReadFull(f, header)
 		f.Close()
-		if err != nil || string(header[:4]) != "glTF" {
+		validHeader := string(header[:4]) == "glTF"
+		if strings.HasSuffix(relative, ".png") {
+			validHeader = string(header[:8]) == "\x89PNG\r\n\x1a\n"
+		}
+		if err != nil || !validHeader {
 			return errors.New("invalid native GLB")
 		}
 	}
@@ -348,9 +361,9 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	id, client := r.PathValue("runID"), r.PathValue("clientID")
-	var status, kind string
+	var status, kind, candidate string
 	var count int
-	err = a.DB.QueryRowContext(r.Context(), "SELECT r.status,j.kind,(SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=r.id) FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, client, userFrom(r).OrganizationID).Scan(&status, &kind, &count)
+	err = a.DB.QueryRowContext(r.Context(), "SELECT r.status,j.kind,j.candidate,(SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=r.id) FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, client, userFrom(r).OrganizationID).Scan(&status, &kind, &candidate, &count)
 	if err != nil || (status != "completed" && status != "failed") || count != 6 || !a.nativeParentsAvailable(r.Context(), id) {
 		problem(w, 404, "retained artifact not found")
 		return
@@ -359,6 +372,21 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	relative := ""
 	if artifactKind == "head" && artifactID == "model" && nativeModelKind(kind) && status == "completed" {
 		relative = "head.glb"
+	}
+	if candidate == "flame" && kind == "fit" && status == "completed" {
+		if artifactKind == "photo-texture" && artifactID == "model" {
+			relative = "photo-texture/head.glb"
+		}
+		if artifactKind == "photo-texture" && artifactID == "atlas" {
+			relative = "photo-texture/authorized-photo-atlas.png"
+		}
+		if artifactKind == "photo-texture-render" {
+			for _, view := range requiredPhotoViews {
+				if artifactID == view {
+					relative = "photo-texture/" + view + ".png"
+				}
+			}
+		}
 	}
 	if (artifactKind == "hair" || artifactKind == "beard") && nativeModelKind(kind) && status == "completed" {
 		styles, _ := readDemoStyles(artifactKind)
@@ -419,7 +447,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"silhouettes": "silhouette-report.json", "prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log", "cloudcompare": "cloudcompare.log", "cloudcompare-icp": "cloudcompare-native/icp.log", "cloudcompare-sampling": "cloudcompare-native/sample-convert-distance.log", "cloudcompare-trace": "cloudcompare-native/registration_trace_log.csv", "cloudcompare-matrix": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"}
+	return map[string]string{"photo-texture": "photo-texture-report.json", "silhouettes": "silhouette-report.json", "prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log", "cloudcompare": "cloudcompare.log", "cloudcompare-icp": "cloudcompare-native/icp.log", "cloudcompare-sampling": "cloudcompare-native/sample-convert-distance.log", "cloudcompare-trace": "cloudcompare-native/registration_trace_log.csv", "cloudcompare-matrix": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string

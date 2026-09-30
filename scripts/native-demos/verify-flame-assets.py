@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Verify actual Open model outputs, same inputs and rejection before publication."""
+import argparse
 import datetime
 import hashlib
 import io
@@ -60,9 +61,10 @@ def inspect_glb(path):
             'embeddedTextures': len(doc.get('images', [])), 'checks': 'GLB lengths, bounds, finite positions/UVs, unit normals, valid triangle indices and actual decoded embedded images passed.'}
 
 
+parser=argparse.ArgumentParser();parser.add_argument('--texture-version',choices=['six-photo-projection-v2']);args=parser.parse_args();suffix='-photo-texture' if args.texture_version else ''
 imports=json.loads((runtime/'demo-asset-imports.json').read_text());runs=json.loads((runtime/'native-demo-imports.json').read_text());summary=[]
 for name,entries in runs.items():
-    job=entries['flame:'+VERSION]['jobId'];client=imports['cases'][name]['clientId'];directory=runtime/'processing'/client/job
+    job=entries['flame:'+VERSION+(':'+args.texture_version if args.texture_version else '')]['jobId'];client=imports['cases'][name]['clientId'];directory=runtime/'processing'/client/job
     result=json.loads((directory/'result.json').read_text());assert result['candidate']=='flame' and result['fit']['basisVersion']==VERSION
     assert result['targetBasisCheck']['passed'] and result['targetBasisCheck']['maximumErrorMetres']<=.00001
     assert result['nativeShape']['modelSha256']==MODEL_SHA and result['nativeShape']['vertices']==5023 and result['nativeShape']['triangles']==9976
@@ -86,7 +88,7 @@ for name,entries in runs.items():
         draw.text((10,19),'Max Planck / Li, Bolkart, Black, Li & Romero (2017), DOI 10.1145/3130800.3130813 | CC-BY-4.0 + model terms',fill='#172d25')
         for i,view in enumerate(['front','left-three-quarter','right-three-quarter','left-profile','right-profile','back']):
             x,y=(i%3)*384,40+(i//3)*463;image=Image.open(directory/'fitted-renders'/(view+'.png'));image.thumbnail((384,448));sheet.paste(image,(x,y));draw.text((x+10,y+446),view,fill='#172d25')
-        sheet.save(log/'flame-six-fitted-renders.png')
+        sheet.save(log/('flame-six-fitted-renders'+suffix+'.png'))
 fixture=ROOT/'.scratch/private/native-demos'/('flame-basis-rejection-'+str(uuid.uuid4()));fixture.mkdir(mode=0o700)
 for name in ['manifest.json','fit.json']:shutil.copyfile(rejection_source/name,fixture/name)
 with np.load(rejection_source/'basis.npz') as original:basis={key:original[key].copy() for key in original.files}
@@ -94,4 +96,4 @@ basis['xyz'][0,0]+=.02;np.savez_compressed(fixture/'basis.npz',**basis)
 with (fixture/'export.log').open('w') as output:rejected=subprocess.run([sys.executable,str(ROOT/'scripts/native-demos/flame.py'),'export',str(fixture)],stdout=output,stderr=subprocess.STDOUT,timeout=30)
 rejection=json.loads((fixture/'target-basis-check.json').read_text());assert rejected.returncode!=0 and not rejection['passed'] and rejection['maximumErrorMetres']>.019 and not (fixture/'head.glb').exists()
 report={'date':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Actual accepted FLAME 2023 Open identity fitting on three fictional cases. No fictional case morph parameters or ground-truth geometry supplied. Neutral rig/expression, first 20 identity components, same six photo inputs. Likeness and professional review remain pending.','corruptedBasisRejection':{'nativeCheck':rejection,'exitCode':rejected.returncode,'headPublished':False},'results':summary}
-(log/'flame-output-verification.json').write_text(json.dumps(report,indent=2)+'\n');print('PASS actual 51 GLBs, full embedded attribution, 18 renders, same six source hashes, native shape checks and 20 mm corruption rejection.')
+(log/('flame-output-verification'+suffix+'.json')).write_text(json.dumps(report,indent=2)+'\n');print('PASS actual 51 GLBs, full embedded attribution, 18 renders, same six source hashes, native shape checks and 20 mm corruption rejection.')

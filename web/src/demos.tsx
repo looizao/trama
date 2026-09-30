@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, json, imageURL, dateLabel, type Client } from './api'
 import { usePreferences } from './i18n'
 import type { Permission } from './privacy'
+import { PhotoTextureEvaluation } from './photo-texture-evaluation'
 import { DemoViewer } from './demo-viewer'
 import { ExpectedResults, OptionPicture } from './expected-results'
 import { defaultRefinement } from './demo-editing'
@@ -1270,6 +1271,7 @@ function DemoSession({
                       </details>
                     </>
                   )}
+                  {j.result.photoTexture && <PhotoTextureEvaluation job={j} url={(kind,id)=>artifactURL(j.id,kind,id)} camera={state.camera} onCamera={camera}/>}
                   {j.result.silhouette && <details>
                     <summary>{t('Visible outline comparison')}</summary>
                     <p>{t('Green outlines come from input image pixels, including existing hair and beard. Blue outlines come from the fitted neutral render. This is an image diagnostic, not measured head geometry or likeness.')}</p>

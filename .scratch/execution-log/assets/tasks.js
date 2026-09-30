@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T12:26:15-03:00",
+  "updated": "2026-09-30T13:05:45-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -3154,25 +3154,120 @@ window.executionLog={
         "Actual multi-view fitting, texturing, independent styles and complete saved proposal journey.",
         "Code, weights, texture and landmark terms verified separately; failures and inference recorded."
       ],
-      "status": "pending",
+      "status": "verified",
       "changes": [
-        "Exact commercial Open model acquired privately; download account and agreement blocker resolved by user."
+        "Exact commercial Open model acquired privately; download account and agreement blocker resolved by user.",
+        "Integrated a retained private six-photo UV atlas, native-depth occlusion, best-facing triangle projection, report, six renders and diagnostic 3D comparison into FLAME jobs. No separately restricted FLAME texture model or texture pack is acquired.",
+        "Complete native FLAME Open journey verified on all three fictional six-photo cases, with actual processing, independent styles, written and direct edits, saved revisions, selected synthetic expected results and reopening. Separate photo projection experiment is runnable and retained with its unsuitable clean-skin outcome clearly identified."
       ],
       "limitations": [
-        "Not implemented or verified."
+        "Not implemented or verified.",
+        "Projected photo appearance remains unsuitable as clean skin: original hair/beard, camera mismatch, UV seams and lighting remain. Real-person likeness and professionally acceptable hair/beard catalog remain pending; no hidden skin observation claimed.",
+        "Actual short01 hair at the quarter angle has visible scalp gaps near the side and ear. The broad catalog compatibility/cleanup task must address these before final customer-demo handoff; this is not treated as professional approval.",
+        "Photo projection is unsuitable for clean scalp and facial skin because existing source hair, beard and lighting remain baked in. Neutral fitted geometry remains the editable proposal default. Visible short-hair side coverage gaps require catalog task 15; final professional acceptance and route selection remain pending."
       ],
       "verification": [
         {
           "command": "FLAME2023Open.zip integrity and bundled readme",
           "result": "Archive passed integrity; bundled readme identifies CC-BY-4.0 and links exact model terms. Model loading and multi-view fitting remain pending."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/native-demos/verify-photo-texture.py",
+          "result": "PASS three actual photo-texture GLBs: original triangle positions and smooth normals exact, eyes unchanged, model attribution exact, 18 exact source atlas tiles, 18 decoded renders and embedded atlas bytes."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/native-demos/verify-flame-assets.py --texture-version six-photo-projection-v2",
+          "result": "PASS 51 actual native GLBs, embedded model attribution, 18 fitted renders, same six input hashes, native basis geometry and corrupted-basis rejection before head publication."
+        },
+        {
+          "command": "Live actual photo projection API checks",
+          "result": "PASS private textured GLB, actual atlas and six rendered views decode; each anonymous request denied with 401; unknown view and other candidate paths denied with 404."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/verify-local-photo-texture.py",
+          "result": "PASS actual disposable six-photo FLAME fit and atlas, protected derivative requests, source deletion and physical removal of all derived files, concurrent job cancellation, erased-source recreation rejection, and final synthetic permission withdrawal."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/verify-local-candidate-journey.py flame",
+          "result": "PASS actual retained fit, independent styles, real written and localized edits, alternative/revision browser pictures, simulated expected selection, workspace persistence, stale 409, atomic invalid refinement 400, anonymous 401 and unlisted 404."
+        },
+        {
+          "command": "Browser exact revision reload",
+          "result": "PASS saved native run 28fc78b7, independent short01/goatee, hair 90%/5mm, beard width 90%/brown, one 20mm/3mm stroke and camera replayed; current changes 0, proposed changes 49891. Synthetic expected result version 1 and gallery revision 2 visible; console errors/warnings empty."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; go test -race ./internal/app; npm --prefix web run build",
+          "result": "PASS all Go packages, app 1.084 s, race checks 8.847 s, TypeScript/frontend build 2.27 s. Existing 707 kB demo chunk warning retained."
+        },
+        {
+          "command": "Portable log HTTP and image audit",
+          "result": "251 linked resources HTTP 200 and byte-identical; 106 raster pictures decoded or SVG documents parsed. An initial overbroad regex incorrectly treated plain-text asset paths as links and received 404; audit corrected to actual picture/output link fields."
         }
       ],
-      "pictures": [],
+      "pictures": [
+        {
+          "src": "assets/flame-photo-texture-v1-front.png",
+          "caption": "Actual six-photo FLAME texture v1. Existing synthetic hair and beard remain baked onto the fitted surface; seam and faceting defects are visible. Neutral proposal geometry remains separate.",
+          "date": "2026-09-30T12:37:55-03:00"
+        },
+        {
+          "src": "assets/flame-photo-texture-browser-2026-09-30.png",
+          "caption": "Integrated actual neutral-versus-photo-textured FLAME head at identical rendered cameras. Original hair and beard remain baked in, so the texture is unsuitable as clean skin. Neutral head 112ms/116 initial FPS; textured diagnostic 241ms/132.6 initial FPS in this local sample.",
+          "date": "2026-09-30T12:50:27-03:00"
+        },
+        {
+          "src": "assets/flame-photo-texture-v2-front.png",
+          "caption": "Native revised projection render preserves smooth native normals. Original styles, imperfect camera alignment, view seams and source lighting remain actual limitations.",
+          "date": "2026-09-30T12:50:27-03:00"
+        },
+        {
+          "src": "assets/flame-journey-reopened-2026-09-30.png",
+          "caption": "Reopened actual FLAME proposal: identical fitted client head and camera, independent styles, written geometry refinements and a retained local hair stroke. Skin remains neutral; photo-texture failure is evaluated separately.",
+          "date": "2026-09-30T12:53:05-03:00"
+        },
+        {
+          "src": "assets/flame-journey-expected-result-2026-09-30.png",
+          "caption": "Real saved proposal picture chosen for the fictional FLAME evaluation visit. Earlier candidate selections are preserved; professional assessment and final route selection pending.",
+          "date": "2026-09-30T12:53:05-03:00"
+        }
+      ],
       "commits": [],
       "outputs": [
         {
           "href": "assets/flame-open-provenance.json",
           "label": "Pinned model files, hashes and exact terms"
+        },
+        {
+          "href": "assets/flame-photo-texture-v1-report.json",
+          "label": "Actual initial projection coverage, input hashes, assumptions and failures"
+        },
+        {
+          "href": "assets/flame-photo-texture-verification.json",
+          "label": "Actual native projection, unchanged geometry and photo atlas checks"
+        },
+        {
+          "href": "assets/flame-output-verification-photo-texture.json",
+          "label": "Native accepted Open model, attribution and corrupt-basis checks"
+        },
+        {
+          "href": "assets/flame-photo-texture-serving-verification.json",
+          "label": "Actual protected derivative requests and decoded outputs"
+        },
+        {
+          "href": "assets/flame-populated-photo-texture-results.json",
+          "label": "Actual fitted and texture runs on three fictional clients"
+        },
+        {
+          "href": "assets/flame-photo-texture-live-erasure.json",
+          "label": "Actual private derivative erasure, cancellation and no recreation"
+        },
+        {
+          "href": "assets/flame-journey-verification.json",
+          "label": "Complete retained synthetic FLAME proposal journey and failure checks"
+        },
+        {
+          "href": "assets/flame-journey-camera-verification.json",
+          "label": "Actual six-angle rendered synchronization and deformation"
         }
       ],
       "events": [
@@ -3183,6 +3278,30 @@ window.executionLog={
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T12:26:15-03:00",
+          "text": "Starting FLAME complete journey after the committed MakeHuman milestone. Exact accepted Open weights and native fitter already retained. Discovery ticket 19 explicitly includes evaluating texturing: current clay head does not implement photo texture evaluation, so that requirement remains active before this task can be verified."
+        },
+        {
+          "date": "2026-09-30T12:37:55-03:00",
+          "text": "Actual initial FLAME texture run 6d9a67ad completed in 33.369 s, with 7.430 s texture evaluation. Projection assigned 7217 of 7800 skin triangles. Front render shows retained original hair/beard traces, view seams and faceted normals from UV vertex duplication. This is an unsuitable clean-skin texture, not professional acceptance."
+        },
+        {
+          "date": "2026-09-30T12:40:17-03:00",
+          "text": "UV islands initially recomputed separate flat normals, producing faceting. Photo projection v2 retains each original native smooth normal exactly while duplicating only UV vertices; v1 outputs stay immutable for failure comparison. Compatibility mode smooth=False preserves the initial projection algorithm for reproducibility."
+        },
+        {
+          "date": "2026-09-30T12:50:27-03:00",
+          "text": "Dedicated synthetic FLAME intake creation initially passed the response-only template field and received HTTP 400. Corrected to the input schema and updated its goals and observations for FLAME; no failed request created a consultation."
+        },
+        {
+          "date": "2026-09-30T12:50:27-03:00",
+          "text": "Actual proposal stroke first clicked skin and was rejected without changing geometry. A visible hair click then changed 49 additional vertices, preserving the current head and style reference."
+        },
+        {
+          "date": "2026-09-30T12:55:34-03:00",
+          "text": "Portable HTTP audit again found the standalone log server stopped. Its prior process exited with SIGTERM (143); no application-side source indicates why. Restarting it in a separate PTY. Portable file paths remain intact; no successful HTTP audit claimed for the failed attempt."
         }
       ]
     },

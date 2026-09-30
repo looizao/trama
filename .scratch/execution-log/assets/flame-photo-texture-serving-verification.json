@@ -1,0 +1,56 @@
+{
+  "runId": "28fc78b7-c6dd-4c81-af63-157b8f28e8f7",
+  "actualArtifacts": [
+    {
+      "kind": "photo-texture",
+      "id": "model",
+      "bytes": 2612512,
+      "sha256": "1d7fe72bf7512eaec6d2a313e442e69248cf35d2e5fa4062acf29d0a002f6a3a"
+    },
+    {
+      "kind": "photo-texture",
+      "id": "atlas",
+      "bytes": 1711700,
+      "sha256": "498fb85514549526bd3ea2874a7abf5a6196fd3a66b4aa66f69853f85fe3869f"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "front",
+      "bytes": 89434,
+      "sha256": "fee89aa83951adfc50d2eea726ab529238f99ba14e44cc1791c69d7c804b8f05"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "left-three-quarter",
+      "bytes": 88199,
+      "sha256": "af75819f3c936e06771bb5f219d9f92b460eacaee9c6d985ba3ae991513cfff4"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "right-three-quarter",
+      "bytes": 95214,
+      "sha256": "e922ab0a64b2b5c3585f2a641d45eb9e850bb57e49dcd1dcd899d2c13941457b"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "left-profile",
+      "bytes": 84422,
+      "sha256": "9b4487d0ad810c20442449227d4a02d249932aaedc75a062c238ce595d5fade8"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "right-profile",
+      "bytes": 89888,
+      "sha256": "06f9a2d500d57c9299118083b4e78ed12033d2688081109404d95a2c2af66759"
+    },
+    {
+      "kind": "photo-texture-render",
+      "id": "back",
+      "bytes": 61415,
+      "sha256": "b309236a160b4b9e44573859cdf5e727e073e9d16bf5564a378b3f49b971623a"
+    }
+  ],
+  "anonymousDenied": true,
+  "unknownViewDenied": true,
+  "otherCandidateDenied": true
+}

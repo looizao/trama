@@ -69,6 +69,7 @@ try:
     if args.candidate=='makehuman':report['nativeShape']=json.loads((directory/'makehuman-shape.json').read_text())
     if args.candidate=='flame':
         report['nativeShape']=json.loads((directory/'flame-shape.json').read_text())
+        report['photoTexture']=json.loads((directory/'photo-texture-report.json').read_text())
         report['styleAdaptation']=json.loads((directory/'flame-style-adaptation.json').read_text())
         report['provenance']=json.loads((directory/'flame-attribution.json').read_text())
     report['targetBasisCheck']=json.loads((directory/'target-basis-check.json').read_text())

@@ -1,0 +1,88 @@
+{
+  "version": "six-photo-projection-v1",
+  "geometry": "Same fitted or inferred FLAME triangles; source photograph colors do not establish observed geometry.",
+  "method": "Per-triangle best facing view, native-template depth visibility, retained landmark framing translations, independent UV islands and actual six-image atlas. Uncovered triangles retain a neutral patch.",
+  "assignedTriangles": 7217,
+  "neutralTriangles": 583,
+  "totalSkinTriangles": 7800,
+  "atlasPixels": [
+    3072,
+    1792
+  ],
+  "sourceViews": [
+    {
+      "view": "front",
+      "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+      "nativeVisibleCandidateTriangles": 4582,
+      "framingTranslationPixels": [
+        1.3097764439640067,
+        -7.8258275127881465
+      ],
+      "framingLandmarksAvailable": true,
+      "assignedTriangles": 1395
+    },
+    {
+      "view": "left-three-quarter",
+      "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+      "nativeVisibleCandidateTriangles": 3433,
+      "framingTranslationPixels": [
+        1.5300774039472371,
+        -8.677794505478781
+      ],
+      "framingLandmarksAvailable": true,
+      "assignedTriangles": 1663
+    },
+    {
+      "view": "right-three-quarter",
+      "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+      "nativeVisibleCandidateTriangles": 3404,
+      "framingTranslationPixels": [
+        -0.3160281558394906,
+        -8.96546862151347
+      ],
+      "framingLandmarksAvailable": true,
+      "assignedTriangles": 1719
+    },
+    {
+      "view": "left-profile",
+      "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+      "nativeVisibleCandidateTriangles": 2539,
+      "framingTranslationPixels": [
+        0,
+        0
+      ],
+      "framingLandmarksAvailable": false,
+      "assignedTriangles": 794
+    },
+    {
+      "view": "right-profile",
+      "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+      "nativeVisibleCandidateTriangles": 2573,
+      "framingTranslationPixels": [
+        0,
+        0
+      ],
+      "framingLandmarksAvailable": false,
+      "assignedTriangles": 769
+    },
+    {
+      "view": "back",
+      "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+      "nativeVisibleCandidateTriangles": 1104,
+      "framingTranslationPixels": [
+        0,
+        0
+      ],
+      "framingLandmarksAvailable": false,
+      "assignedTriangles": 877
+    }
+  ],
+  "textureLicense": "No FLAME texture model, weights or third-party texture pack. Only this client authorized source images; dependent private derivative, erased with any source. Model attribution and original image provenance remain applicable.",
+  "limitations": [
+    "Native head depth cannot remove original photo hair, beard, shadows or background colors. This diagnostic may bake existing styles into skin and is unsuitable as a clean hairstyle-change base.",
+    "Per-triangle view changes can produce seams; source lighting is retained and rendered lighting can double shade it.",
+    "Camera assumptions and fitted landmark framing are approximate. Missing profile/back facial landmarks limit alignment; colors on inferred hidden anatomy are not observed skin.",
+    "Neutral material remains the default editable proposal head. This separate experiment evaluates failure modes, not a successful reconstruction of bald scalp or bare jaw."
+  ],
+  "seconds": 7.43
+}

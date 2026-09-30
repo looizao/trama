@@ -4,6 +4,19 @@ export type Locale = 'pt-BR' | 'en'
 export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
+ "Actual six-photo texture evaluation":"Avaliação real de textura com seis fotos",
+ "Projected photo colors retain existing hair, beard and lighting. This experiment cannot provide bare scalp or clean facial skin beneath them. Neutral material remains the editable proposal default.":"As cores projetadas preservam o cabelo, a barba e a iluminação atuais. Este experimento não fornece couro cabeludo descoberto nem pele limpa sob eles. O material neutro continua sendo o padrão da proposta editável.",
+ "triangles with source photo projection":"triângulos com projeção das fotos de origem",
+ "neutral uncovered triangles":"triângulos sem cobertura com material neutro",
+ "Neutral fitted head":"Cabeça ajustada com material neutro",
+ "Projected photo appearance experiment":"Experimento de aparência fotográfica projetada",
+ "Drag either evaluation view to rotate both. Shared viewing controls also synchronize this diagnostic with the proposal.":"Arraste qualquer vista da avaliação para girar ambas. Os controles compartilhados também sincronizam este diagnóstico com a proposta.",
+ "assigned triangles":"triângulos atribuídos",
+ "Landmark framing available":"Alinhamento por pontos faciais disponível",
+ "No facial landmark framing":"Sem alinhamento por pontos faciais",
+ "Retained private photo atlas":"Atlas fotográfico privado preservado",
+ "Projection settings, provenance and limitations":"Configurações da projeção, procedência e limitações",
+
  "Native Meshroom reconstruction is unavailable. The official AliceVision runtime has not been provisioned; CUDA 12.1.1 terms require your acceptance before acquisition. The retained prepared graph is setup evidence. No photos have been reconstructed, and no client head or expected result is available from this route.":"A reconstrução nativa do Meshroom está indisponível. O runtime oficial do AliceVision ainda não foi provisionado; os termos do CUDA 12.1.1 exigem sua aceitação antes da aquisição. O grafo preparado retido comprova apenas a configuração. Nenhuma foto foi reconstruída, e esta rota não disponibiliza uma cabeça do cliente ou resultado esperado.",
  "Historical MakeHuman styles: beard placement used a rig joint above the visible lips. This can place strands on the nose. Retained for comparison; use a corrected visible-lip attachment experiment for evaluation.":"Estilos históricos do MakeHuman: a barba foi posicionada por uma articulação do rig acima dos lábios visíveis. Isso pode colocar fios sobre o nariz. Mantidos para comparação; use um experimento corrigido com ancoragem nos lábios visíveis para avaliação.",
  "Runtime terms":"Termos do runtime",

@@ -59,7 +59,7 @@ def export(path, meshes):
                     'pbrMetallicRoughness': {'baseColorFactor': [*mesh.get('color', [.48, .31, .22]), 1],
                                              'metallicFactor': 0, 'roughnessFactor': .75}}
         attrs = {'POSITION': accessor(xyz @ rotation.T, 5126, 'VEC3', 34962),
-                 'NORMAL': accessor(normals(xyz, tri) @ rotation.T, 5126, 'VEC3', 34962)}
+                 'NORMAL': accessor((mesh['normals'] if 'normals' in mesh else normals(xyz, tri)) @ rotation.T, 5126, 'VEC3', 34962)}
         if mesh.get('texture') and 'uv' in mesh:
             texture = Path(mesh['texture'])
             image_index = len(document.setdefault('images', []))
@@ -118,7 +118,7 @@ def render(path, meshes, matrix, width=768, height=896):
         p = np.column_stack([xyz, np.ones(len(xyz))]) @ matrix.T
         screen = np.column_stack([(p[:, 0] / p[:, 3] + 1) * width / 2,
                                   (1 - p[:, 1] / p[:, 3]) * height / 2])
-        brightness = .48 + .52 * np.maximum(normals(xyz, tri) @ light, 0)
+        brightness = .48 + .52 * np.maximum((mesh['normals'] if 'normals' in mesh else normals(xyz, tri)) @ light, 0)
         texture = np.asarray(Image.open(mesh['texture']).convert('RGBA')) if mesh.get('texture') else None
         color = np.array(mesh.get('color', [.48, .31, .22]))
         # Linear materials are converted to display sRGB approximately here.
@@ -155,3 +155,4 @@ def render(path, meshes, matrix, width=768, height=896):
             pixels[top:bottom + 1, left:right + 1][valid] = np.clip(rgb[valid], 0, 255).astype(np.uint8)
             depth[top:bottom + 1, left:right + 1][valid] = z[valid]
     Image.fromarray(pixels).save(path)
+    return depth

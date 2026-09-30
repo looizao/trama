@@ -523,6 +523,59 @@ func TestSilhouetteArtifactRequiresCompletedOwnedFitAndLiveSources(t *testing.T)
 	}
 }
 
+func TestPhotoTextureRequiresCompletedFlameAndLiveSources(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	set := demoCapture(t, f, false)
+	job := completedComponentParent(t, f, set)
+	dir := filepath.Join(f.a.demoJobDirectory(f.client, job.ID), "photo-texture")
+	os.Mkdir(dir, 0700)
+	// Fake bytes test authorization and lifecycle only, not native processing.
+	for _, file := range []string{"head.glb", "authorized-photo-atlas.png", "front.png"} {
+		if err := os.WriteFile(filepath.Join(dir, file), []byte("test-only diagnostic bytes"), 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	base := "/api/clients/" + f.client + "/demo-jobs/" + job.ID + "/artifacts/"
+	paths := []string{"photo-texture/model", "photo-texture/atlas", "photo-texture-render/front"}
+	for _, path := range paths {
+		if w := f.request(t, "GET", base+path, nil); w.Code != 404 {
+			t.Fatal("other candidate exposed photo diagnostic", w.Code)
+		}
+	}
+	f.a.DB.Exec("UPDATE demo_jobs SET candidate='flame' WHERE run_id=$1", job.ID)
+	for _, path := range paths {
+		if w := f.request(t, "GET", base+path, nil); w.Code != 200 || w.Header().Get("Cache-Control") != "private, no-store" {
+			t.Fatal(w.Code, w.Header())
+		}
+	}
+	if w := f.request(t, "GET", base+"photo-texture-render/unlisted", nil); w.Code != 404 {
+		t.Fatal(w.Code)
+	}
+	f.a.DB.Exec("UPDATE generation_runs SET status='running' WHERE id=$1", job.ID)
+	if w := f.request(t, "GET", base+paths[0], nil); w.Code != 404 {
+		t.Fatal("unfinished texture exposed", w.Code)
+	}
+	f.a.DB.Exec("UPDATE generation_runs SET status='completed' WHERE id=$1", job.ID)
+	outside := filepath.Join(t.TempDir(), "private.png")
+	os.WriteFile(outside, []byte("not client material"), 0600)
+	os.Symlink(outside, filepath.Join(dir, "back.png"))
+	if w := f.request(t, "GET", base+"photo-texture-render/back", nil); w.Code != 404 {
+		t.Fatal("texture symlink escaped", w.Code)
+	}
+	if w := f.request(t, "DELETE", "/api/assets/"+set.Views["right-profile"], map[string]bool{"confirmed": true}); w.Code != 200 {
+		t.Fatal(w.Code)
+	}
+	for _, path := range paths {
+		if w := f.request(t, "GET", base+path, nil); w.Code != 404 {
+			t.Fatal("erased source texture exposed", w.Code)
+		}
+	}
+	if _, err := os.Stat(dir); !os.IsNotExist(err) {
+		t.Fatal("dependent private texture files survived erasure", err)
+	}
+}
+
 func TestColmapFailureRetainsEvidenceWithoutSelectableHead(t *testing.T) {
 	f := demoFixture(t)
 	f.acknowledge(t)
