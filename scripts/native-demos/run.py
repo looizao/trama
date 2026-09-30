@@ -32,7 +32,7 @@ for item in manifest['inputs']:
 env=dict(os.environ,BLENDER_USER_RESOURCES=str(ROOT/'.scratch/private/blender-resources'),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4')
 metrics=[];started=time.monotonic()
 def stage(name,command):
-    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'colmap':5,'open3d':5,'meshlab':5,'cloudcompare':5}[name]}))
+    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'silhouette':90,'colmap':5,'open3d':5,'meshlab':5,'cloudcompare':5}[name]}))
     before=resource.getrusage(resource.RUSAGE_CHILDREN);start=time.monotonic()
     with (directory/(name+'.log')).open('w') as output:
         result=subprocess.run(command,env=env,stdout=output,stderr=subprocess.STDOUT,preexec_fn=protect_stage)
@@ -55,22 +55,24 @@ try:
         stage(args.candidate,[sys.executable,str(ROOT/('scripts/native-demos/process-'+args.candidate+'.py')),str(directory)])
         component=json.loads((directory/'component-report.json').read_text())
         files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
-        report={'candidate':args.candidate,'kind':'process','geometry':component['geometry'],'scope':args.candidate+' supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending.','component':component,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
+        report={'candidate':args.candidate,'kind':'process','geometry':component['geometry'],'scope':args.candidate+' supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','component':component,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
         (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n');print('EXPERIMENT_COMPLETE',json.dumps({'elapsedMs':report['elapsedMs'],'retainedBytes':report['retainedBytes']}),flush=True)
         raise SystemExit(0)
     fitter=[sys.executable,str(ROOT/('scripts/native-demos/'+args.candidate+'.py'))] if args.candidate in ['makehuman','flame'] else blender
     stage('prepare',fitter+['prepare',str(directory)])
     stage('fit',[str(ROOT/'.scratch/private/native-demos/python/bin/python'),str(ROOT/'scripts/native-demos/fit-mpfb.py'),str(directory)])
     stage('export',fitter+['export',str(directory)])
+    stage('silhouette',[sys.executable,str(ROOT/'scripts/native-demos/evaluate-silhouettes.py'),str(directory)])
     fit=json.loads((directory/'fit.json').read_text())
     files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
-    report={'candidate':args.candidate,'kind':'fit','geometry':fit['geometry'],'scope':'Six-view '+args.candidate+' fitting experiment. Full refinement and expected-result journey remain pending.','fit':fit,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
+    report={'candidate':args.candidate,'kind':'fit','geometry':fit['geometry'],'scope':'Six-view '+args.candidate+' fitting experiment. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','fit':fit,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
     if args.candidate=='makehuman':report['nativeShape']=json.loads((directory/'makehuman-shape.json').read_text())
     if args.candidate=='flame':
         report['nativeShape']=json.loads((directory/'flame-shape.json').read_text())
         report['styleAdaptation']=json.loads((directory/'flame-style-adaptation.json').read_text())
         report['provenance']=json.loads((directory/'flame-attribution.json').read_text())
     report['targetBasisCheck']=json.loads((directory/'target-basis-check.json').read_text())
+    report['silhouette']=json.loads((directory/'silhouette-report.json').read_text())
     (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n');print('EXPERIMENT_COMPLETE',json.dumps({'elapsedMs':report['elapsedMs'],'retainedBytes':report['retainedBytes']}),flush=True)
 except Exception as e:
     (directory/'failure.json').write_text(json.dumps({'error':str(e),'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000)},indent=2));raise

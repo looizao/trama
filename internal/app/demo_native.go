@@ -368,7 +368,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	if artifactKind == "render" || artifactKind == "landmarks" {
+	if artifactKind == "render" || artifactKind == "landmarks" || artifactKind == "silhouette" {
 		for _, view := range requiredPhotoViews {
 			if view == artifactID {
 				if artifactKind == "render" && status == "completed" {
@@ -376,6 +376,9 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 				}
 				if artifactKind == "landmarks" {
 					relative = view + "-landmarks.png"
+				}
+				if artifactKind == "silhouette" && status == "completed" && kind == "fit" {
+					relative = "silhouette-" + view + ".png"
 				}
 			}
 		}
@@ -416,7 +419,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log", "cloudcompare": "cloudcompare.log", "cloudcompare-icp": "cloudcompare-native/icp.log", "cloudcompare-sampling": "cloudcompare-native/sample-convert-distance.log", "cloudcompare-trace": "cloudcompare-native/registration_trace_log.csv", "cloudcompare-matrix": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"}
+	return map[string]string{"silhouettes": "silhouette-report.json", "prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log", "cloudcompare": "cloudcompare.log", "cloudcompare-icp": "cloudcompare-native/icp.log", "cloudcompare-sampling": "cloudcompare-native/sample-convert-distance.log", "cloudcompare-trace": "cloudcompare-native/registration_trace_log.csv", "cloudcompare-matrix": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string

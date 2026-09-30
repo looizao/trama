@@ -486,6 +486,43 @@ func TestNativeModelSelectionRequiresMatchingSourceSnapshot(t *testing.T) {
 	}
 }
 
+func TestSilhouetteArtifactRequiresCompletedOwnedFitAndLiveSources(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	set := demoCapture(t, f, false)
+	job := completedComponentParent(t, f, set)
+	dir := f.a.demoJobDirectory(f.client, job.ID)
+	// Diagnostic bytes test serving/privacy only; real silhouette processing is
+	// exercised in the retained local native experiment.
+	if err := os.WriteFile(filepath.Join(dir, "silhouette-front.png"), []byte("test-only image bytes"), 0600); err != nil {
+		t.Fatal(err)
+	}
+	base := "/api/clients/" + f.client + "/demo-jobs/" + job.ID + "/artifacts/silhouette/"
+	if w := f.request(t, "GET", base+"front", nil); w.Code != 200 || w.Header().Get("Cache-Control") != "private, no-store" {
+		t.Fatal(w.Code, w.Header())
+	}
+	if w := f.request(t, "GET", base+"unlisted", nil); w.Code != 404 {
+		t.Fatal("unlisted artifact exposed", w.Code)
+	}
+	f.a.DB.Exec("UPDATE generation_runs SET status='running' WHERE id=$1", job.ID)
+	if w := f.request(t, "GET", base+"front", nil); w.Code != 404 {
+		t.Fatal("unfinished artifact exposed", w.Code)
+	}
+	f.a.DB.Exec("UPDATE generation_runs SET status='completed' WHERE id=$1", job.ID)
+	outside := filepath.Join(t.TempDir(), "private.png")
+	os.WriteFile(outside, []byte("not client evidence"), 0600)
+	os.Symlink(outside, filepath.Join(dir, "silhouette-back.png"))
+	if w := f.request(t, "GET", base+"back", nil); w.Code != 404 {
+		t.Fatal("symlink escaped private result", w.Code)
+	}
+	if w := f.request(t, "DELETE", "/api/assets/"+set.Views["right-profile"], map[string]bool{"confirmed": true}); w.Code != 200 {
+		t.Fatal(w.Code)
+	}
+	if w := f.request(t, "GET", base+"front", nil); w.Code != 404 {
+		t.Fatal("erased source silhouette still served", w.Code)
+	}
+}
+
 func TestColmapFailureRetainsEvidenceWithoutSelectableHead(t *testing.T) {
 	f := demoFixture(t)
 	f.acknowledge(t)

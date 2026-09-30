@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T10:36:39-03:00",
+  "updated": "2026-09-30T11:18:02-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2682,19 +2682,130 @@ window.executionLog={
         "Reproducible fit, matched renders, independent styles, editing, option selection and reopening.",
         "Fit versus observation and hidden inference labeled; iterations, resource use, output size, likeness/clipping failures recorded."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Added an actual private six-view outline diagnostic after native export: compare authorized input pixels, neutral fitted renders and image-plane overlays using only retained framing translations. Uniform-background checks make metrics unavailable when masking is unreliable. No hidden scalp or geometric accuracy is inferred, and geometry is not fitted to existing hair silhouettes.",
+        "A fresh browser-started MPFB experiment e67dbec6-115e-40c6-a1e8-539e2a791aea processed the same six authorized synthetic source views and retained actual native/interchange models, six outline pictures and all settings. Native head bytes match the preceding corrected fit, so the diagnostic did not change fitted geometry.",
+        "Completed Alex synthetic MPFB evaluation: actual six-photo fit, independent style changes, keep-current hair plus clean-shaven alternative, written 90% hair/5mm volume/90% beard width/brown tint, actual 20mm-radius 3mm hair brush affecting 46 additional vertices, six synchronized angles, revision 2 and simulated expected choice in a separate consultation. Reopened actual revision with matching fingerprint and 277906 changed proposed vertices; current reference unchanged.",
+        "Verified the complete local MPFB technical journey using actual fitting, independent styles, refinements, actual browser proposal pictures, simulated consultation selection and reopen. All earlier failed fits and alternatives remain retained. No professional likeness or cut-feasibility acceptance is claimed."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Professional recognizability and feasibility assessment remain pending. Catalog expansion and coarse beard cleanup are tracked in task 15; no six-photo measured-geometry claim is made.",
+        "Opening an explicit old option link overrides the saved workspace on reload by design. The new revision has its own retained link; opening that link reopens the exact saved state. Historic native job reports retain their creation-time full-journey-pending wording; subsequent separate verification establishes the saved workflow without modifying those reports."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./internal/app -run TestSilhouette/TestNative -count=1",
+          "result": "PASS output serving/privacy boundaries: completed owned fit only, unlisted paths denied, symlink escape denied, source erasure removes the outline artifact. Real native evaluation follows."
+        },
+        {
+          "command": "IAB Fit head locally with MPFB plus actual API/native outputs",
+          "result": "PASS real run completed in 59.711 s, 111141642 retained bytes, 56 paired landmarks, 97 evaluations, 2.90 px mean framed landmark residual. Native target prediction max 0.166 micrometres for 4701 mapped vertices. Six outline checks available, input-mask overlaps 0.882-0.916; these are not 3D error or professional likeness."
+        },
+        {
+          "command": "go test ./...",
+          "result": "PASS via mise Go 1.26.0; cached appropriate packages."
+        },
+        {
+          "command": "go test -race ./internal/app",
+          "result": "PASS, 8.619s."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS, 2.03s; existing 703.97 kB demo bundle warning retained."
+        },
+        {
+          "command": "Uniform-background outline negative fixture",
+          "result": "Initial verification fixture failed because private input has .image suffix and Pillow requires explicit format. Corrected fixture to PNG; actual nonuniform front reports unavailable with null overlap and null difference count, five uniform views remain available."
+        },
+        {
+          "command": "python scripts/verify-local-candidate-journey.py blender-mpfb",
+          "result": "PASS real native head and four separate current/proposed styles, two actual browser JPEGs, immutable revision lineage, synthetic expected result, saved workspace, anonymous denial, stale conflict, unsupported mixed request atomicity, unlisted asset and invalid camera rejection."
+        },
+        {
+          "command": "Portable HTML audit and @Browser selector",
+          "result": "PASS 216 relative resources HTTP 200, 89 raster or SVG evidence pictures valid. Browser task selector reloaded current 07 entry, native report links, images and dated captions. First raster-only audit rejected a valid SVG; corrected SVG handling and reran successfully."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/mpfb-journey-outline-front.png",
+          "caption": "Actual synthetic front input, neutral fitted render and pixel outlines. Existing hair/beard contribute to the green outline; this does not measure the hidden head.",
+          "date": "2026-09-30T10:54:37-03:00"
+        },
+        {
+          "src": "assets/mpfb-journey-outline-back.png",
+          "caption": "Actual synthetic rear input and the inferred bald template. No back facial landmarks or recovered hidden scalp are claimed.",
+          "date": "2026-09-30T10:54:37-03:00"
+        },
+        {
+          "src": "assets/mpfb-journey-outline-ui-2026-09-30.png",
+          "caption": "Actual retained six-angle outline diagnostic panel. Neutral fitted surface is inferred; green observed image masks include existing styles and shoulders.",
+          "date": "2026-09-30T11:15:15-03:00"
+        },
+        {
+          "src": "assets/mpfb-journey-edit-2026-09-30.png",
+          "caption": "Intermediate front proposal after meaningful written mesh changes. Clicking bare facial skin correctly found no selected hair surface; the subsequent real hair hit retained one stroke.",
+          "date": "2026-09-30T11:15:15-03:00"
+        },
+        {
+          "src": "assets/mpfb-journey-reopened-2026-09-30.png",
+          "caption": "Actual saved edited MPFB proposal reopened through its revision link at the same three-quarter camera. Coarse beard attachments remain visible and tracked for catalog work; this is synthetic, not professional acceptance.",
+          "date": "2026-09-30T11:15:15-03:00"
+        },
+        {
+          "src": "assets/mpfb-journey-expected-2026-09-30.png",
+          "caption": "Simulated expected-result selection recorded for the dedicated synthetic MPFB consultation. Review/agree checkboxes reset after saving; the synthetic label remains selected. This record does not establish professional acceptance.",
+          "date": "2026-09-30T11:18:02-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/mpfb-journey-native-result.json",
+          "label": "Actual fresh native fit, resources and six outline diagnostics"
+        },
+        {
+          "href": "assets/makehuman-core-provenance.json",
+          "label": "Exact MPFB code, CC0 core assets and Blender license provenance"
+        },
+        {
+          "href": "assets/native-mpfb-provenance.json",
+          "label": "Exact detector, model, Python and dependency provenance"
+        },
+        {
+          "href": "assets/mpfb-journey-cameras.json",
+          "label": "Actual six-angle synchronized transforms and edit measurements"
+        },
+        {
+          "href": "assets/blender-mpfb-journey-verification.json",
+          "label": "Live native artifacts, retained browser pictures, saved choices and failure checks"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T10:36:39-03:00",
+          "text": "Begin complete Blender + MPFB demo journey validation using the corrected native fit, shared six synthetic views, real independent style assets and now-verified refinement/expected-result workflow. Earlier native fitting is evidence, not completion of this journey."
+        },
+        {
+          "date": "2026-09-30T10:49:01-03:00",
+          "text": "Native surface fitting remains a bounded 2D landmark objective. The outline stage evaluates visible differences and preserves its limits explicitly. An initial patch failed to match the long diagnostic map line and applied no changes; corrected before checks."
+        },
+        {
+          "date": "2026-09-30T10:54:37-03:00",
+          "text": "Outline pictures visually inspected. Differences include hair silhouette, shoulder crop and internal color boundaries; metrics remain explicitly image-mask diagnostics. Professional recognizability and catalog quality are not marked accepted."
+        },
+        {
+          "date": "2026-09-30T11:15:15-03:00",
+          "text": "Browser reload of original earlier option link correctly reopened that old option. Opening the newly saved revision link restored the edited state and simulated evaluation expected result. All technical journey checks passed; final professional judgment remains pending."
+        },
+        {
+          "date": "2026-09-30T11:17:39-03:00",
+          "text": "Technical acceptance verified locally. Committing coherent MPFB diagnostic and complete journey evidence before advancing to the next candidate. Model/style professional assessment and route choice remain explicitly pending."
         }
       ]
     },

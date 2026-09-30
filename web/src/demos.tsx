@@ -1265,6 +1265,17 @@ function DemoSession({
                       </details>
                     </>
                   )}
+                  {j.result.silhouette && <details>
+                    <summary>{t('Visible outline comparison')}</summary>
+                    <p>{t('Green outlines come from input image pixels, including existing hair and beard. Blue outlines come from the fitted neutral render. This is an image diagnostic, not measured head geometry or likeness.')}</p>
+                    <p>{j.result.silhouette.alignment}</p>
+                    <div className="demo-photo-strip">{j.result.silhouette.views.map(v=><figure key={v.view}>
+                      <a href={artifactURL(j.id,'silhouette',v.view)}><img src={artifactURL(j.id,'silhouette',v.view)} alt={`${t(v.view)} / ${t('Visible outline comparison')}`} loading="lazy"/></a>
+                      <figcaption>{t(v.view)} · {v.imageMaskIntersectionOverUnion===null?t('Outline metric unavailable'):`${t('Image-mask overlap')}: ${(v.imageMaskIntersectionOverUnion*100).toFixed(1)}%`}</figcaption>
+                    </figure>)}</div>
+                    <p><a href={artifactURL(j.id,'diagnostic','silhouettes')}>{t('Retained outline settings and measurements')}</a></p>
+                    <p>{j.result.silhouette.maskMethod}</p>{j.result.silhouette.limitations.map(l=><p key={l}>{l}</p>)}
+                  </details>}
                   {j.result.resources && (
                     <div className="demo-table-scroll">
                       <table>

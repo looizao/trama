@@ -4,6 +4,11 @@ export type Locale = 'pt-BR' | 'en'
 export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
+ "Visible outline comparison":"Comparação dos contornos visíveis",
+ "Outline metric unavailable":"Métrica de contorno indisponível",
+ "Image-mask overlap":"Sobreposição das máscaras de imagem",
+ "Retained outline settings and measurements":"Configurações e medidas de contorno preservadas",
+ "Green outlines come from input image pixels, including existing hair and beard. Blue outlines come from the fitted neutral render. This is an image diagnostic, not measured head geometry or likeness.":"Os contornos verdes vêm dos pixels da imagem, incluindo o cabelo e a barba atuais. Os azuis vêm da renderização neutra ajustada. Este é um diagnóstico de imagem, não uma medida da geometria ou da semelhança da cabeça.",
  "Expected results and selection history":"Resultados esperados e histórico de escolhas",
  "Consultation for expected result":"Consulta do resultado esperado",
  "Saved proposal to choose":"Proposta salva para escolher",

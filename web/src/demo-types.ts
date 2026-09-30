@@ -82,6 +82,10 @@ export type DemoJob = {
   settings: { minimumWidth: number; native?: NativeSettings; colmapPreset?: string; component?: ComponentSettings }
   createdAt: string
   result: {
+    silhouette?: {
+      version:string; scope:string; maskMethod:string; alignment:string; limitations:string[];
+      views:{view:string;status:string;imageMaskIntersectionOverUnion:number|null;differentMaskPixels:number|null;framingTranslationPixels:number[]}[]
+    }
     component?: {
  version: string; processingVersion: string; upstream: { runId: string; candidate: string; headSha256: string }; settings: ComponentSettings;
  mesh: { before: { vertices: number; triangles: number }; after: { vertices: number; triangles: number }; triangleTarget: number; deviation: { upstreamVerticesToProcessedSurface: { meanMetres: number; maximumMetres: number }; processedVerticesToUpstreamSurface: { meanMetres: number; maximumMetres: number } } };
