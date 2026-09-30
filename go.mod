@@ -9,9 +9,12 @@ require (
 	github.com/aws/aws-sdk-go-v2/credentials v1.18.13
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.88.3
 	github.com/jackc/pgx/v5 v5.11.0
+	go.temporal.io/api v1.63.5
 	go.temporal.io/sdk v1.49.0
 	golang.org/x/crypto v0.57.0
+	golang.org/x/image v0.46.0
 	golang.org/x/oauth2 v0.37.0
+	golang.org/x/sys v0.48.0
 	google.golang.org/api v0.299.0
 	modernc.org/sqlite v1.59.0
 )
@@ -83,10 +86,8 @@ require (
 	go.opentelemetry.io/otel/sdk v1.44.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v1.44.0 // indirect
 	go.opentelemetry.io/otel/trace v1.44.0 // indirect
-	go.temporal.io/api v1.63.5 // indirect
 	golang.org/x/net v0.59.0 // indirect
 	golang.org/x/sync v0.23.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
 	golang.org/x/text v0.42.0 // indirect
 	golang.org/x/time v0.16.0 // indirect
 	google.golang.org/genproto v0.0.0-20260715232425-e75dac1f907d // indirect

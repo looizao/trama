@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Exercise the running loopback app with a disposable fictional client."""
-import base64
+from local_demo_http import diagnostic_png
 import http.cookiejar
 import json
 from pathlib import Path
@@ -43,7 +43,7 @@ def acknowledge():
     expect(200, request(path, {'name': record['name'], 'acknowledged': True, 'noticeVersion': notice['noticeVersion']}, opener=client), 'affirmative client entry recorded')
     expect(404, request(path, opener=client), 'used link invalidated')
 
-image = base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/iXcAAAAASUVORK5CYII=')
+image = diagnostic_png()
 def upload():
     boundary = 'trama-disposable-local-fixture'
     body = (f'--{boundary}\r\nContent-Disposition: form-data; name="image"; filename="fixture.png"\r\nContent-Type: image/png\r\n\r\n').encode() + image + f'\r\n--{boundary}--\r\n'.encode()

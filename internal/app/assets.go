@@ -2,6 +2,10 @@ package app
 
 import (
 	"bytes"
+	_ "golang.org/x/image/webp"
+	"image"
+	_ "image/jpeg"
+	_ "image/png"
 	"io"
 	"net/http"
 	"strings"
@@ -64,6 +68,22 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, "image is too large or invalid")
 		return
 	}
+	defer r.MultipartForm.RemoveAll()
+	set, view, expected := r.FormValue("photoSetId"), r.FormValue("view"), r.FormValue("expectedAssetId")
+	if set != "" || view != "" {
+		if !a.photoSetExists(r, set, clientID) {
+			problem(w, 404, "photo set not found")
+			return
+		}
+		if !validPhotoView(view) {
+			problem(w, 400, "invalid photo view")
+			return
+		}
+		if !a.photoSlotMatches(r, set, view, expected) {
+			problem(w, 409, "photo view changed; reload before replacing")
+			return
+		}
+	}
 	f, _, err := r.FormFile("image")
 	if err != nil {
 		problem(w, 400, "image is required")
@@ -93,6 +113,19 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, "use a JPEG, PNG, or WebP image")
 		return
 	}
+	config, _, decodeErr := image.DecodeConfig(bytes.NewReader(data))
+	if decodeErr != nil || config.Width <= 0 || config.Height <= 0 {
+		problem(w, 400, "use a valid still JPEG, PNG, or WebP image")
+		return
+	}
+	if config.Width > 12000 || config.Height > 12000 || int64(config.Width)*int64(config.Height) > 32000000 {
+		problem(w, 400, "image exceeds 32 megapixels or 12000 pixels on a side; resize it before uploading")
+		return
+	}
+	if _, _, decodeErr = image.Decode(bytes.NewReader(data)); decodeErr != nil {
+		problem(w, 400, "use a valid still JPEG, PNG, or WebP image")
+		return
+	}
 	u := userFrom(r)
 	id := newID()
 	key := u.OrganizationID + "/" + clientID + "/" + id + "." + ext
@@ -101,7 +134,18 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	created := now()
-	_, err = a.DB.ExecContext(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
+	tx, err := a.DB.BeginTx(r.Context(), nil)
+	if err == nil {
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
+		if err == nil && set != "" {
+			_, err = tx.ExecContext(r.Context(), "INSERT INTO photo_views(set_id,view,asset_id) VALUES($1,$2,$3) ON CONFLICT(set_id,view) DO UPDATE SET asset_id=excluded.asset_id", set, view, id)
+		}
+		if err == nil {
+			err = tx.Commit()
+		} else {
+			_ = tx.Rollback()
+		}
+	}
 	if err != nil {
 		_ = a.Storage.Delete(r.Context(), key)
 		problem(w, 500, "could not save image record")

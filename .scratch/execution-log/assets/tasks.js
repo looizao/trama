@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T22:26:41-03:00",
+  "updated": "2026-09-29T22:49:06-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -330,7 +330,9 @@ window.executionLog={
           "date": "2026-09-29T22:25:58-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "e3d10ce46329e83a0e9ee0faf4defe3002fd7998"
+      ],
       "outputs": [],
       "events": [
         {
@@ -368,16 +370,111 @@ window.executionLog={
         "Review, replacement, optional details and missing-view summary work across reloads.",
         "Invalid uploads fail clearly; no silent claim that six views guarantee reconstruction."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Photo sets persist six main views and two optional details, missing-view counts, consultation links, reviewed replacements and reassignment of existing photos. Replaced images remain in gallery; explicit deletion uses the privacy workflow.",
+        "Rejects corrupt or unsupported images before storage; defaults are 10 MB, 32 megapixels and 12000 pixels per side. Added the Go Authors’ WebP decoder v0.46.0 with verified BSD-3-Clause notice/provenance.",
+        "Client gallery, progression and capture previews now hide media and disable processing when permission lookup fails. Python bytecode is excluded from Git."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Pictures in this milestone are colored diagnostic squares, never portraits or reconstruction accuracy evidence. Full fictional photo libraries and 3D assets belong to task 05.",
+        "Capture quality and angle correctness are reviewed by the professional. The app validates file decoding and size, but does not infer sharpness or promise reconstruction from six views.",
+        "Earlier images remain in the private gallery when replacing or clearing a slot. Explicit removal purges dependent views/media; withdrawal purges all server-owned media. Original files selected from the user’s filesystem remain outside app control."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS all packages, including required/optional labels, incomplete and complete sets, replacement/history, stale conflicts, corrupt-file rejection, studio isolation, restart, withdrawal and client cascade deletion."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app",
+          "result": "PASS 2.251s, privacy/consultation/photo workflows."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test golang.org/x/image/webp",
+          "result": "PASS 0.072s: pinned decoder’s format regression tests. License text verified from downloaded tagged module; package version verified via official Go module proxy."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS 172 modules, 403.46 kB JS / 127.42 kB gzip after final UI fixes."
+        },
+        {
+          "command": "python scripts/verify-local-photos.py",
+          "result": "PASS live eight-slot labels, missing-view counts, replacement retaining originals, corrupt/unsupported file failures, stale/duplicate conflicts, clear/reassign, reload, dependent deletion, withdrawal and no recreation."
+        },
+        {
+          "command": "python scripts/verify-local-privacy.py; python scripts/verify-local-consultations.py",
+          "result": "PASS regression workflows with valid generated PNG fixture and mandated demo account; disposable records deleted."
+        },
+        {
+          "command": "In-app Browser: linked set, preview, upload, reload, invalid file, replacement, clear and reassign",
+          "result": "PASS 0/6 incomplete state, 1/6 saved state after reload, visible unsupported file error, original and replacement retained. Existing-photo numbers now consistent with source gallery."
+        },
+        {
+          "command": "In-app Browser plus CLI: withdraw while unsaved preview is open",
+          "result": "PASS two stored diagnostic images erased. Before reload: preview images 0, slot images 0, all eight upload inputs disabled, missing state 0/6. Reload preserved withdrawn/empty state."
+        },
+        {
+          "command": "Final npm --prefix web run build after permission-error guard",
+          "result": "PASS TypeScript/Vite with permission gating and grouped notice condition; permission-error guard inspected in source. Browser withdrawal branch verified separately."
+        },
+        {
+          "command": "Portable log image validation",
+          "result": "PASS every retained image exists and loads via its relative asset URL."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/guided-upload-empty.png",
+          "caption": "Empty six-view set with external capture guide and optional detail slots. Upload blocked until fictional client acknowledgement.",
+          "date": "2026-09-29T22:46:16-03:00"
+        },
+        {
+          "src": "assets/guided-upload-review.png",
+          "caption": "Intermediate review before upload. The green square is a diagnostic fixture, not a client portrait.",
+          "date": "2026-09-29T22:46:16-03:00"
+        },
+        {
+          "src": "assets/guided-upload-invalid.png",
+          "caption": "Unsupported text-file rejection while the saved front view remains intact. Diagnostic image only.",
+          "date": "2026-09-29T22:46:16-03:00"
+        },
+        {
+          "src": "assets/guided-upload-retained.png",
+          "caption": "Retained original selected again after replacement and clear/reassign. Both diagnostic square images remain in private gallery.",
+          "date": "2026-09-29T22:46:16-03:00"
+        },
+        {
+          "src": "assets/guided-upload-withdrawn.png",
+          "caption": "Final withdrawal state: no stored images or open preview, all six main views missing and uploads disabled. Consultation history remains.",
+          "date": "2026-09-29T22:46:16-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/image-decoder-provenance.json",
+          "label": "WebP decoder source, pinned version, license notice and attribution requirements"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-29T22:27:02-03:00",
+          "text": "Beginning guided photo-set uploads. Incomplete six-view sets remain usable and explicitly labeled; no dense-capture experiment is implied."
+        },
+        {
+          "date": "2026-09-29T22:37:47-03:00",
+          "text": "Full PNG/JPEG/WebP decoding now rejects corrupted files. The older privacy CLI fixture failed HTTP 400 due to malformed PNG bytes, revealing a fixture problem previously hidden by header-only checks. Replaced it with a valid generated colored diagnostic square, cleaned the disposable failed record and reran the full privacy workflow successfully."
+        },
+        {
+          "date": "2026-09-29T22:46:16-03:00",
+          "text": "Browser workflow fixes verified: consistent existing-photo numbering, focused review panel, revoked object URLs on withdrawal, and progression images hidden without active permission."
+        },
+        {
+          "date": "2026-09-29T22:46:16-03:00",
+          "text": "Task 04 technical acceptance verified locally. Professional capture review and actual reconstruction remain pending."
+        }
+      ]
     },
     {
       "id": "05",

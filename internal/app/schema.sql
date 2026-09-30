@@ -149,3 +149,19 @@ CREATE TABLE IF NOT EXISTS consultations (
   UNIQUE(series_id,revision)
 );
 CREATE INDEX IF NOT EXISTS consultations_client_idx ON consultations(organization_id,client_id,created_at DESC);
+
+CREATE TABLE IF NOT EXISTS photo_sets (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  consultation_id text REFERENCES consultations(id) ON DELETE SET NULL,
+  title text NOT NULL,
+  created_at timestamp NOT NULL
+);
+CREATE TABLE IF NOT EXISTS photo_views (
+  set_id text NOT NULL REFERENCES photo_sets(id) ON DELETE CASCADE,
+  view text NOT NULL CHECK(view IN ('front','left-three-quarter','right-three-quarter','left-profile','right-profile','back','crown','under-chin')),
+  asset_id text NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  PRIMARY KEY(set_id,view),
+  UNIQUE(set_id,asset_id)
+);
