@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T11:21:54-03:00",
+  "updated": "2026-09-30T11:25:48-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2894,19 +2894,65 @@ window.executionLog={
         "Full viewer/options journey where viable; hardware/setup/resource/coverage limitations recorded.",
         "Licenses and exact versions verified; same six inputs, no hidden fallback."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "blocked",
+      "changes": [
+        "Pinned Meshroom 2025.1.0 and AliceVision 3.3.0 source checkouts and actual 11-node/13-edge prepared graph remain retained. Added explicit English/Portuguese selector notice explaining the missing native runtime, terms blocker and absent reconstructed head/expected result."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Exact CUDA 12.1.1 EULA acceptance remains pending. Official binary acquisition, native six-photo processing and full style/refinement/expected-result/reopen workflow are not implemented or verified. Actual prepared graph is configuration evidence only. No substitution is counted as Meshroom success."
+      ],
+      "verification": [
+        {
+          "command": "Pinned source, graph and native acquisition state",
+          "result": "PASS actual source commits 024b6f398c67bec4968a29a2c5744e49e2bab9b8 and 928bac2689461ffb6f0174609f983a16bdbd2b30. Actual graph has 11 nodes and 13 edges. Native archive/runtime absent; no reconstruction asserted."
+        },
+        {
+          "command": "go test ./...; npm --prefix web run build",
+          "result": "PASS via Go 1.26.0; frontend 1.53s, existing 704.52kB chunk warning."
+        },
+        {
+          "command": "@Browser Meshroom selector after frontend rebuild",
+          "result": "PASS actual selection shows explicit runtime/terms blocker, six authorized source views and absence of candidate reconstruction result. Accessible native dropdown succeeded after the earlier semantic label mismatch. No native acquisition performed."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/meshroom-journey-blocked-2026-09-30.png",
+          "caption": "Meshroom remains selectable with exact runtime blocker and six authorized inputs. No client head or expected result is claimed.",
+          "date": "2026-09-30T11:25:48-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/meshroom-prepared-graph.json",
+          "label": "Actual registered graph and classical six-view settings"
+        },
+        {
+          "href": "assets/meshroom-setup-provenance.json",
+          "label": "Pinned code licenses and exact native runtime acquisition blocker"
+        },
+        {
+          "href": "assets/meshroom-python-provenance.json",
+          "label": "Separate Qt/PySide and Python package provenance"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T11:21:54-03:00",
+          "text": "Checking the actual Meshroom selector, retained native graph and acquisition state. CUDA 12.1.1 agreement remains unaccepted, so no bundled AliceVision binary is acquired or run."
+        },
+        {
+          "date": "2026-09-30T11:25:05-03:00",
+          "text": "Browser initial semantic label selection failed to match; native accessibility dropdown selection succeeded. Later reload observed 22.45s before Loading workspace. Retaining this browser delay as a limitation, not a responsive-performance claim."
+        },
+        {
+          "date": "2026-09-30T11:25:48-03:00",
+          "text": "Blocked candidate retained and explained. Continuing the next independent candidate; no blocked workflow marked complete."
         }
       ]
     },

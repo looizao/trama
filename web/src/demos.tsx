@@ -542,6 +542,10 @@ function DemoSession({
         {candidate.dependency && (
           <p className="notice">{t(candidate.dependency)}</p>
         )}
+        {candidate.id==='meshroom'&&<p className="notice" role="status">
+          {t('Native Meshroom reconstruction is unavailable. The official AliceVision runtime has not been provisioned; CUDA 12.1.1 terms require your acceptance before acquisition. The retained prepared graph is setup evidence. No photos have been reconstructed, and no client head or expected result is available from this route.')}
+          {' '}<a href="https://docs.nvidia.com/cuda/archive/12.1.1/eula/index.html" target="_blank" rel="noreferrer">{t('Runtime terms')}</a>
+        </p>}
         <p>
           {t(
             componentRoute ? componentRoute.description

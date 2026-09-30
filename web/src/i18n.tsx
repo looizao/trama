@@ -4,6 +4,8 @@ export type Locale = 'pt-BR' | 'en'
 export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
+ "Native Meshroom reconstruction is unavailable. The official AliceVision runtime has not been provisioned; CUDA 12.1.1 terms require your acceptance before acquisition. The retained prepared graph is setup evidence. No photos have been reconstructed, and no client head or expected result is available from this route.":"A reconstrução nativa do Meshroom está indisponível. O runtime oficial do AliceVision ainda não foi provisionado; os termos do CUDA 12.1.1 exigem sua aceitação antes da aquisição. O grafo preparado retido comprova apenas a configuração. Nenhuma foto foi reconstruída, e esta rota não disponibiliza uma cabeça do cliente ou resultado esperado.",
+ "Runtime terms":"Termos do runtime",
  "Visible outline comparison":"Comparação dos contornos visíveis",
  "Outline metric unavailable":"Métrica de contorno indisponível",
  "Image-mask overlap":"Sobreposição das máscaras de imagem",
