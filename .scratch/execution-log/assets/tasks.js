@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T03:03:29-03:00",
+  "updated": "2026-09-30T03:04:13-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1175,6 +1175,10 @@ window.executionLog={
         {
           "command": "Browser HTML log selector and SVG rendering",
           "result": "Task 09a shows blocked, exact license requirement and pending native processing. Inline graph loaded at 1100 by 1075 pixels; its retained SVG opened and rendered successfully. Clicking its linked image navigated to the SVG, so a subsequent image-selector query found no HTML image until returning to the log; this was navigation, not an asset-loading failure."
+        },
+        {
+          "command": "Portable evidence link check",
+          "result": "All 69 retained relative pictures and output links returned HTTP 200. The prepared graph and package provenance load locally."
         }
       ],
       "pictures": [
@@ -1189,7 +1193,9 @@ window.executionLog={
           "date": "2026-09-30T03:03:29-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "2d8dfce1e83385bb0a01cd527f0d4a90fc5ca851"
+      ],
       "outputs": [
         {
           "href": "assets/meshroom-setup-provenance.json",
