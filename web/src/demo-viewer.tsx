@@ -47,6 +47,7 @@ export function DemoViewer({
   brush,
   onStroke,
   capture,
+  lockedRotation = false,
 }: {
   title: string
   urls: string[]
@@ -55,6 +56,7 @@ export function DemoViewer({
   refinement?: DemoRefinement
   brush?: {kind:'hair'|'beard';radiusMm:number;strengthMm:number}
   capture?: { current: (()=>string|null)|null }
+  lockedRotation?: boolean
   onStroke?: (stroke:BrushStroke)=>void
 }) {
   const { t } = usePreferences(),
@@ -170,6 +172,7 @@ export function DemoViewer({
           distance: controls.getDistance(),
         })
     }
+    controls.enableRotate = !lockedRotation
     controls.addEventListener('change', changed)
     const stroke=(event:PointerEvent)=>{
       const settings=brushRef.current
@@ -310,7 +313,7 @@ export function DemoViewer({
       if (active.current === instance) active.current = null
     }
     // Model changes rebuild the scene. Camera changes synchronize the existing scene.
-  }, [key, t, title])
+  }, [key, t, title, lockedRotation])
   useEffect(()=>{active.current?.applyEdits();if(host.current)host.current.style.cursor=brush?'crosshair':'grab';if(!brush)setBrushMessage('')},[refinement,brush])
   useEffect(() => {
     const instance = active.current

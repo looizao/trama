@@ -1,0 +1,151 @@
+{
+  "date": "2026-09-30T18:35:58.799Z",
+  "scope": "Actual post-cut and linked follow-up UI with immutable retained native expected option. All eight labeled photo angles select the matching fixed expected camera; uploaded framing is not measured calibration. Synthetic inputs and outcomes, professional review pending.",
+  "angles": [
+    {
+      "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Front / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/35d0f67c-2763-4f31-8f7a-7ab029f6d579/content"
+        },
+        {
+          "alt": "Simulated outcome / Front / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/7e99115d-3696-41bc-8062-71262ba291e7/content"
+        }
+      ],
+      "label": "Front",
+      "view": "front"
+    },
+    {
+      "camera": "{\"position\":[0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Left three-quarter / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/d415a9d8-7dd8-4b7d-894a-7b45633420b4/content"
+        },
+        {
+          "alt": "Simulated outcome / Left three-quarter / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/68d84f9c-e258-44c8-9798-6e301f3a9a48/content"
+        }
+      ],
+      "label": "Left three-quarter",
+      "view": "left-three-quarter"
+    },
+    {
+      "camera": "{\"position\":[-0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Right three-quarter / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4/content"
+        },
+        {
+          "alt": "Simulated outcome / Right three-quarter / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/791df689-44bd-4b6f-a927-eb54e46395b3/content"
+        }
+      ],
+      "label": "Right three-quarter",
+      "view": "right-three-quarter"
+    },
+    {
+      "camera": "{\"position\":[1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Left profile / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/405363e2-49c2-4402-af8e-4ca20be54e06/content"
+        },
+        {
+          "alt": "Simulated outcome / Left profile / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/b97a2111-68ed-47b1-94a0-b61ec02f0572/content"
+        }
+      ],
+      "label": "Left profile",
+      "view": "left-profile"
+    },
+    {
+      "camera": "{\"position\":[-1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Right profile / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/d8e0be17-0dfd-4829-a344-6403058e5eed/content"
+        },
+        {
+          "alt": "Simulated outcome / Right profile / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/6d8a0ff1-8a9b-4394-919a-42be84cb18b6/content"
+        }
+      ],
+      "label": "Right profile",
+      "view": "right-profile"
+    },
+    {
+      "camera": "{\"position\":[1.5869490247105598e-16,0.10388910215992438,-1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Back / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/23c64c28-1a74-4d39-a9db-f5e9d14299af/content"
+        },
+        {
+          "alt": "Simulated outcome / Back / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/87edfd62-ff42-4c25-a259-be2b4507de10/content"
+        }
+      ],
+      "label": "Back",
+      "view": "back"
+    },
+    {
+      "camera": "{\"position\":[0,1.2116508117573943,0.4710650808196755],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Crown / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/846331dc-6e20-45c6-b734-a7f60284fa61/content"
+        },
+        {
+          "alt": "Simulated outcome / Crown / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/5d13a5bd-cf26-4adc-b9f3-2e3ab6536d3a/content"
+        }
+      ],
+      "label": "Crown",
+      "view": "crown"
+    },
+    {
+      "camera": "{\"position\":[0,-0.7867423274568512,1.0349089381137726],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.8512820512820513}",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "images": [
+        {
+          "alt": "Original baseline / Under-chin / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/14f27593-e019-42b0-bd6f-23d89c554ccf/content"
+        },
+        {
+          "alt": "Simulated outcome / Under-chin / Synthetic four-week follow-up demonstration",
+          "loaded": true,
+          "src": "/api/assets/20e621b2-c4bf-437e-884d-a9ed3a116da4/content"
+        }
+      ],
+      "label": "Under-chin",
+      "view": "under-chin"
+    }
+  ],
+  "actualDragRotationStayedFixed": true
+}

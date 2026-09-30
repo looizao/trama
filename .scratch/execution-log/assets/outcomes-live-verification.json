@@ -1,0 +1,855 @@
+{
+  "date": "2026-09-30T18:49:34.335962+00:00",
+  "scope": "Six live retained simulated visits, exact original expected-selection events, six actual native heads and real saved expected render pictures, 72 unique authorized source photographs decoded through the app. All inputs/outcomes are synthetic; not accuracy or actual haircut evidence. Professional acceptance and route choice pending.",
+  "checks": "Anonymous visits and every unique photo denied; post-cut/follow-up ordering and original snapshot sources retained. Source replacement, target changes, idempotent retry, cross-studio boundaries, erasure and withdrawal tested separately in meaningful Go tests.",
+  "visits": [
+    {
+      "fictionalCase": "alex-ramos",
+      "id": "42139019-49e4-4b47-a8e3-c082c9a2722d",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "expectedVersion": 2,
+      "expectedOptionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "expectedEventId": "9b3fa25c-92f9-4a70-9500-b8bbf3fd702e",
+      "previousVisitId": "",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+        "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+        "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+        "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+        "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+        "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+        "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+        "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+      },
+      "actualViews": {
+        "back": "778c5623-ff93-4474-aa01-aeb5066461bb",
+        "crown": "a33edd6d-3006-44f5-94de-94a3e0c805b8",
+        "front": "d7cb56c6-894e-4c8b-8b5b-d3ccde8ffd2f",
+        "left-profile": "754277be-83d6-4f53-aac4-cb447f73cd60",
+        "left-three-quarter": "27a5e6d3-f551-4dab-b4b2-e78686faf01c",
+        "right-profile": "20750a4e-b1e0-4a13-b9ec-6cc71d0777b5",
+        "right-three-quarter": "bdb39734-9048-49b0-a04f-d80082436686",
+        "under-chin": "6cdb3abc-9439-4665-a2f3-7f9f1a60b9bd"
+      },
+      "nativeCandidate": "makehuman",
+      "nativeRunId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "id": "e6045095-ea14-499f-8e1c-5b1636aafd4c",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "expectedVersion": 2,
+      "expectedOptionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "expectedEventId": "9b3fa25c-92f9-4a70-9500-b8bbf3fd702e",
+      "previousVisitId": "42139019-49e4-4b47-a8e3-c082c9a2722d",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+        "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+        "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+        "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+        "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+        "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+        "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+        "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+      },
+      "actualViews": {
+        "back": "87edfd62-ff42-4c25-a259-be2b4507de10",
+        "crown": "5d13a5bd-cf26-4adc-b9f3-2e3ab6536d3a",
+        "front": "7e99115d-3696-41bc-8062-71262ba291e7",
+        "left-profile": "b97a2111-68ed-47b1-94a0-b61ec02f0572",
+        "left-three-quarter": "68d84f9c-e258-44c8-9798-6e301f3a9a48",
+        "right-profile": "6d8a0ff1-8a9b-4394-919a-42be84cb18b6",
+        "right-three-quarter": "791df689-44bd-4b6f-a927-eb54e46395b3",
+        "under-chin": "20e621b2-c4bf-437e-884d-a9ed3a116da4"
+      },
+      "nativeCandidate": "makehuman",
+      "nativeRunId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "id": "bde199cd-73fd-41a2-9894-8589d7053614",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "expectedVersion": 1,
+      "expectedOptionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+      "expectedEventId": "a0792a6f-98a7-4c7b-8637-05c6c1935ca1",
+      "previousVisitId": "",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "99853bc9-16b0-4aa8-bda2-eb1998d02fae",
+        "crown": "11c3d996-7bf9-4420-822f-08d74c6df9c6",
+        "front": "01945b7c-8096-44f4-8ec5-23745d4b9c98",
+        "left-profile": "39ee1e4e-0117-44bd-8520-d0e3a62e2e07",
+        "left-three-quarter": "196cb070-54d9-4615-8b4e-42fc861201b7",
+        "right-profile": "fdc0c3f2-d0c9-4bf8-9263-b6da2221baaf",
+        "right-three-quarter": "11ad936b-1dde-45fc-aefe-8b9f4b08fcf7",
+        "under-chin": "8f292a21-8708-4efc-aeb2-69f750f2a3b1"
+      },
+      "actualViews": {
+        "back": "62f85710-7076-47b6-aae1-22a9ad7f558d",
+        "crown": "43097b07-a510-48c5-b944-c80402a53e0c",
+        "front": "0a0add35-9944-4ca6-a304-39f0fd75bb6b",
+        "left-profile": "4e916cb2-3454-4c4b-b1f7-58695db81d45",
+        "left-three-quarter": "c54d34fa-e8e7-4687-b508-9a2aba1ec46e",
+        "right-profile": "1a6e8ca3-01d6-4ef7-87b0-2c8fcb911770",
+        "right-three-quarter": "564efb5a-2533-4613-9a44-392e8874676c",
+        "under-chin": "e1053286-c9cf-4872-9a3e-3a15ff30d361"
+      },
+      "nativeCandidate": "blender-mpfb",
+      "nativeRunId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "id": "5e54853d-6b21-42c3-b9b4-cec4b48126fe",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "expectedVersion": 1,
+      "expectedOptionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+      "expectedEventId": "a0792a6f-98a7-4c7b-8637-05c6c1935ca1",
+      "previousVisitId": "bde199cd-73fd-41a2-9894-8589d7053614",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "99853bc9-16b0-4aa8-bda2-eb1998d02fae",
+        "crown": "11c3d996-7bf9-4420-822f-08d74c6df9c6",
+        "front": "01945b7c-8096-44f4-8ec5-23745d4b9c98",
+        "left-profile": "39ee1e4e-0117-44bd-8520-d0e3a62e2e07",
+        "left-three-quarter": "196cb070-54d9-4615-8b4e-42fc861201b7",
+        "right-profile": "fdc0c3f2-d0c9-4bf8-9263-b6da2221baaf",
+        "right-three-quarter": "11ad936b-1dde-45fc-aefe-8b9f4b08fcf7",
+        "under-chin": "8f292a21-8708-4efc-aeb2-69f750f2a3b1"
+      },
+      "actualViews": {
+        "back": "3c901c44-b184-4237-99dd-85c06bdaffd2",
+        "crown": "3821e93a-03e8-4a24-8287-ed3eb792ba93",
+        "front": "c8e7d135-a7ad-49d3-a775-2a84ee643769",
+        "left-profile": "cd148c20-b3f5-4d43-9094-555ddc71310b",
+        "left-three-quarter": "55139788-cb76-4a3d-b6a8-c0cac59d4c1e",
+        "right-profile": "e5c65037-2db8-4150-87d4-19ef1a6537b4",
+        "right-three-quarter": "fee475d7-b189-4412-8a35-96ddaeda6c9c",
+        "under-chin": "aaf30ebe-46ac-4b1e-88c8-90f48e162dd0"
+      },
+      "nativeCandidate": "blender-mpfb",
+      "nativeRunId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "id": "e6eb9110-6f82-4ead-8003-95b78ca556b9",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "expectedVersion": 1,
+      "expectedOptionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+      "expectedEventId": "81a67dc4-f1d3-4e0c-8695-54b4d074eee5",
+      "previousVisitId": "",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "7f12eeda-d7e3-4cb5-96db-e4914a43a032",
+        "crown": "98e4e61c-ccb3-4601-8c5f-9473b9109820",
+        "front": "f274620b-289f-43a0-a9b8-cf2fb99f5715",
+        "left-profile": "e0161b40-d9f4-4ca0-b6b2-d145b3bdb9ea",
+        "left-three-quarter": "664de045-99f6-4ee1-b7ed-a9e6bf82f3fd",
+        "right-profile": "2a158fc3-3ebb-4508-9c78-8555b1dcb531",
+        "right-three-quarter": "0c1a10aa-900b-4d06-b188-9e17f17c498f",
+        "under-chin": "88476391-c8b4-4ec0-9c5e-3a07ea3e7085"
+      },
+      "actualViews": {
+        "back": "b14844fa-837f-41f6-8822-66658f29bd55",
+        "crown": "dd14b1d3-bd6c-478e-bf76-8eabfc79aeab",
+        "front": "096a8c3b-359d-49dc-9266-8694540e5b20",
+        "left-profile": "b49d4cc4-c8bc-466e-acd9-49383a75d138",
+        "left-three-quarter": "62a7dbd2-53a9-4bfe-b3d5-ee96be425c28",
+        "right-profile": "12eb04e0-c3e6-4f74-ae0a-df344580f90d",
+        "right-three-quarter": "801b0d41-8a09-4ee9-b45f-8acc8d992418",
+        "under-chin": "358211f9-45db-42b5-adf9-a096cc2cf47b"
+      },
+      "nativeCandidate": "flame",
+      "nativeRunId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "id": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "expectedVersion": 1,
+      "expectedOptionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+      "expectedEventId": "81a67dc4-f1d3-4e0c-8695-54b4d074eee5",
+      "previousVisitId": "e6eb9110-6f82-4ead-8003-95b78ca556b9",
+      "synthetic": true,
+      "baselineViews": {
+        "back": "7f12eeda-d7e3-4cb5-96db-e4914a43a032",
+        "crown": "98e4e61c-ccb3-4601-8c5f-9473b9109820",
+        "front": "f274620b-289f-43a0-a9b8-cf2fb99f5715",
+        "left-profile": "e0161b40-d9f4-4ca0-b6b2-d145b3bdb9ea",
+        "left-three-quarter": "664de045-99f6-4ee1-b7ed-a9e6bf82f3fd",
+        "right-profile": "2a158fc3-3ebb-4508-9c78-8555b1dcb531",
+        "right-three-quarter": "0c1a10aa-900b-4d06-b188-9e17f17c498f",
+        "under-chin": "88476391-c8b4-4ec0-9c5e-3a07ea3e7085"
+      },
+      "actualViews": {
+        "back": "071b98db-7f39-4080-b37a-1e1b60a08116",
+        "crown": "71506b4c-4626-4d85-88a0-b2ff1bea4d87",
+        "front": "3abb6dbf-ecd1-47ac-ac61-00b7ca9d711d",
+        "left-profile": "05c79852-4936-4d04-a953-53d3d262aadc",
+        "left-three-quarter": "7febf40e-2fa2-4062-b055-75706eb8c2e4",
+        "right-profile": "2e65bcb5-a317-4b80-bbc1-160dd65bb13b",
+        "right-three-quarter": "1a4363be-e311-4e00-b821-2e18da7ba39a",
+        "under-chin": "5c5072c5-2893-48a9-963f-7bcf25cd6d98"
+      },
+      "nativeCandidate": "flame",
+      "nativeRunId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+    }
+  ],
+  "photographs": [
+    {
+      "id": "778c5623-ff93-4474-aa01-aeb5066461bb",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ae5fc14177a7676de117142e84a65624286ad8e85874490fbb352120cada9412",
+      "bytes": 596636
+    },
+    {
+      "id": "a33edd6d-3006-44f5-94de-94a3e0c805b8",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "b827c74a13bbe146faf722f4705949ee063df61e56b710d346c3d7b1eecf50bb",
+      "bytes": 581329
+    },
+    {
+      "id": "d7cb56c6-894e-4c8b-8b5b-d3ccde8ffd2f",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "895b80189f4e9fef91b47c6f821d201b3ff91c1e8d63ebcde8172e566d2a9ed7",
+      "bytes": 606057
+    },
+    {
+      "id": "754277be-83d6-4f53-aac4-cb447f73cd60",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "f50ae98ec08d500fd30b90c41fbee3ec9629155239558916249b684ca861902c",
+      "bytes": 603342
+    },
+    {
+      "id": "27a5e6d3-f551-4dab-b4b2-e78686faf01c",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "51f242909616f730a4fd668d0415db4a73271ece2296e0167894313f14364664",
+      "bytes": 608318
+    },
+    {
+      "id": "20750a4e-b1e0-4a13-b9ec-6cc71d0777b5",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "a4ada8ab90e00d7c3210f151c2705a801ff2d3b15bfe3ffc031ef4d17dd01841",
+      "bytes": 612057
+    },
+    {
+      "id": "bdb39734-9048-49b0-a04f-d80082436686",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "23089c01b5eb75dfd761df5e2515fd10de2f380f243b0e2ab1eff19643636e82",
+      "bytes": 614196
+    },
+    {
+      "id": "6cdb3abc-9439-4665-a2f3-7f9f1a60b9bd",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "417d8d15da4a81c839366bdc4539db36225b29c00fdc2ab11025b8c443f65313",
+      "bytes": 600962
+    },
+    {
+      "id": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+      "bytes": 603370
+    },
+    {
+      "id": "846331dc-6e20-45c6-b734-a7f60284fa61",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "0e3dfedd9ef44108094c37c68544a83a6745813857b1770e15d32034ad9149b8",
+      "bytes": 590709
+    },
+    {
+      "id": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+      "bytes": 618185
+    },
+    {
+      "id": "405363e2-49c2-4402-af8e-4ca20be54e06",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+      "bytes": 618223
+    },
+    {
+      "id": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+      "bytes": 621663
+    },
+    {
+      "id": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+      "bytes": 621706
+    },
+    {
+      "id": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+      "bytes": 626743
+    },
+    {
+      "id": "14f27593-e019-42b0-bd6f-23d89c554ccf",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "2ea817a4ca0b89afccb23989c4700ca60bb32acae78e33acb16d10fb08f58b3c",
+      "bytes": 612209
+    },
+    {
+      "id": "87edfd62-ff42-4c25-a259-be2b4507de10",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "cdf4e389bf9507c714a3bb3229ce5dc2b6c6df7beb1052bd7cd584a8ee632e1a",
+      "bytes": 596636
+    },
+    {
+      "id": "5d13a5bd-cf26-4adc-b9f3-2e3ab6536d3a",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "7adbbebeb58823737b159a4dbe60997ea2a04d8f194d86830d2fb13b3e5e81f7",
+      "bytes": 581329
+    },
+    {
+      "id": "7e99115d-3696-41bc-8062-71262ba291e7",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "0df8f5d2a10c4e5e29716afbc2e2f8f62901994475cb9bc0d2d09eca53e1a72d",
+      "bytes": 606057
+    },
+    {
+      "id": "b97a2111-68ed-47b1-94a0-b61ec02f0572",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "1faaf879dc6a1151dcc6b9ec05d5e88114a72f578a4be67d4f4ecb626c2504c0",
+      "bytes": 603342
+    },
+    {
+      "id": "68d84f9c-e258-44c8-9798-6e301f3a9a48",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "0d1cf89b22b97e61a7c28a6bc0ac0b887cfeea2cad8b508bf8b97cade8c45bff",
+      "bytes": 608318
+    },
+    {
+      "id": "6d8a0ff1-8a9b-4394-919a-42be84cb18b6",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "62e1d9774cf10680f61859c7c5a050f43066715cd7ff4f4af756279307b2cd53",
+      "bytes": 612057
+    },
+    {
+      "id": "791df689-44bd-4b6f-a927-eb54e46395b3",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "4e705fb6d6e31e4fe592982fac6d24df7c08c345237c33c5e0e0287453775363",
+      "bytes": 614196
+    },
+    {
+      "id": "20e621b2-c4bf-437e-884d-a9ed3a116da4",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "99e077c1905c72f047a4368f442828ebd599d316d3f4b54d30ca1a31e92ef3c0",
+      "bytes": 600962
+    },
+    {
+      "id": "62f85710-7076-47b6-aae1-22a9ad7f558d",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ae44534928a4164b834ab7f423b15355a26c2ccfaec56991606119ad89ac20c9",
+      "bytes": 671991
+    },
+    {
+      "id": "43097b07-a510-48c5-b944-c80402a53e0c",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "36ab038dcac0d141e6dd6032559c2a5a38979b00f5619f85259f5c8629a5b285",
+      "bytes": 639200
+    },
+    {
+      "id": "0a0add35-9944-4ca6-a304-39f0fd75bb6b",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "15c27d733c97880eeaa4aeda340a5a01163e7e47601fc302a1ecf61ea6be7496",
+      "bytes": 671990
+    },
+    {
+      "id": "4e916cb2-3454-4c4b-b1f7-58695db81d45",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "5a9503b9241402abe21d509cd56436ba162009221fb91b5a98cbefce6729d02a",
+      "bytes": 663566
+    },
+    {
+      "id": "c54d34fa-e8e7-4687-b508-9a2aba1ec46e",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "1b9cabff79089f4b67163c0e6e1f8b4dfb1a412ac42f00c5152a3136caed8fdd",
+      "bytes": 668353
+    },
+    {
+      "id": "1a6e8ca3-01d6-4ef7-87b0-2c8fcb911770",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "732900a5b0828dd4d45b716a49238da95ef86b0d6d30bb021143726c8dff7b3d",
+      "bytes": 666523
+    },
+    {
+      "id": "564efb5a-2533-4613-9a44-392e8874676c",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "7bbc7f021763ec0f946086e04468d18db969ca02cb9f68bc404433e73d496116",
+      "bytes": 674103
+    },
+    {
+      "id": "e1053286-c9cf-4872-9a3e-3a15ff30d361",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "85347c91b9f09c1de4071363d48f271a66c036604c937a6f097fc1985705fb41",
+      "bytes": 642131
+    },
+    {
+      "id": "99853bc9-16b0-4aa8-bda2-eb1998d02fae",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
+      "bytes": 671991
+    },
+    {
+      "id": "11c3d996-7bf9-4420-822f-08d74c6df9c6",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "f6c82821108323f65a754b87b86f5503bccdc21b3246e1a1358526f0b1fcd07c",
+      "bytes": 639200
+    },
+    {
+      "id": "01945b7c-8096-44f4-8ec5-23745d4b9c98",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
+      "bytes": 671990
+    },
+    {
+      "id": "39ee1e4e-0117-44bd-8520-d0e3a62e2e07",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ddc618b70db6fbfb0d6036e09b4cde1695ffdc83fcebdf5a9167cb810845765c",
+      "bytes": 663566
+    },
+    {
+      "id": "196cb070-54d9-4615-8b4e-42fc861201b7",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "5325fd2b249ca399acc038ad34e5430f82525b2f2649a3303aa52cb0e72beb3e",
+      "bytes": 668353
+    },
+    {
+      "id": "fdc0c3f2-d0c9-4bf8-9263-b6da2221baaf",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "e03f3efc483c1aea4224cbd11d075eb5725ee40a1e290fc71d453bc0f448d943",
+      "bytes": 666523
+    },
+    {
+      "id": "11ad936b-1dde-45fc-aefe-8b9f4b08fcf7",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "6e863e385c8f3cbbe2ebe025d8e862d69852dac9e8d8e33242ac6f3a21d74491",
+      "bytes": 674103
+    },
+    {
+      "id": "8f292a21-8708-4efc-aeb2-69f750f2a3b1",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "fb2007da0d166d2df726be4680d57f9af6a7470afffc63a3997f669845aec0e6",
+      "bytes": 642131
+    },
+    {
+      "id": "3c901c44-b184-4237-99dd-85c06bdaffd2",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "587e6719a13db2f21739362e26dd925d0bfec21508c451fc62aed9abdaad633d",
+      "bytes": 671991
+    },
+    {
+      "id": "3821e93a-03e8-4a24-8287-ed3eb792ba93",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "3d447917f3ecc70c4d5135041830e808800cd3a1786238f0a673258556292f8c",
+      "bytes": 639200
+    },
+    {
+      "id": "c8e7d135-a7ad-49d3-a775-2a84ee643769",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "02ed0976ca1bd9b62078d303f935b0b9c6f4d63ec43b1e8f23aa2be152bc1211",
+      "bytes": 671990
+    },
+    {
+      "id": "cd148c20-b3f5-4d43-9094-555ddc71310b",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "147383dced62dcafb781a44955158033429fabd0b574c661625e25035870eea9",
+      "bytes": 663566
+    },
+    {
+      "id": "55139788-cb76-4a3d-b6a8-c0cac59d4c1e",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "8f2b9e6d79b2957edcdafee81b244a4a9a6544ece3a1b357560836163b645ec2",
+      "bytes": 668353
+    },
+    {
+      "id": "e5c65037-2db8-4150-87d4-19ef1a6537b4",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "a7f7fb6573cc5d113bc362928ed05baee62b3a9cede30c63f7aad78280ec0534",
+      "bytes": 666523
+    },
+    {
+      "id": "fee475d7-b189-4412-8a35-96ddaeda6c9c",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "22462b652162a105f6990a7026afe9268d54dccd5e4b1aa63ccee8332494d40a",
+      "bytes": 674103
+    },
+    {
+      "id": "aaf30ebe-46ac-4b1e-88c8-90f48e162dd0",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "1ebdc620a10014e07bcde41d6041e9ea914bc597da9fe542e2ed9f514d224107",
+      "bytes": 642131
+    },
+    {
+      "id": "b14844fa-837f-41f6-8822-66658f29bd55",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "456467d4b7d3a4b05a579081dbc20401bc3cd2de9a7b36fed4a0fc7d8fa73585",
+      "bytes": 595949
+    },
+    {
+      "id": "dd14b1d3-bd6c-478e-bf76-8eabfc79aeab",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "46ec99938601abca714ffff0696ab7bb6fa69383df2d860b57f938df956c316e",
+      "bytes": 581504
+    },
+    {
+      "id": "096a8c3b-359d-49dc-9266-8694540e5b20",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "61bf02ac7f97fbdab24f222d57135860c1edec9a4c7b28ccbd2ded159ac72407",
+      "bytes": 603880
+    },
+    {
+      "id": "b49d4cc4-c8bc-466e-acd9-49383a75d138",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "e8ad467d50c9db5b00f434fda03c1c59de088cb87610cc5ccdd6300686955249",
+      "bytes": 596154
+    },
+    {
+      "id": "62a7dbd2-53a9-4bfe-b3d5-ee96be425c28",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "f778298420d2e2ccc786b359418a7ab6eb221f973e2bb905ddf9b5180c1248f1",
+      "bytes": 602643
+    },
+    {
+      "id": "12eb04e0-c3e6-4f74-ae0a-df344580f90d",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "88c42d1de40bfd77f4f8673e635b71dc21a3832808a64e3d633863951b815c1c",
+      "bytes": 601642
+    },
+    {
+      "id": "801b0d41-8a09-4ee9-b45f-8acc8d992418",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "d982770f505205c20608eaa039f25fc08fec634e6385bf3f4d09ac35bab0c9e5",
+      "bytes": 608893
+    },
+    {
+      "id": "358211f9-45db-42b5-adf9-a096cc2cf47b",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "b6647e4a3fbd4e93848b9179dc8586e5619fdec81b53aaa459ec720d12817313",
+      "bytes": 597986
+    },
+    {
+      "id": "7f12eeda-d7e3-4cb5-96db-e4914a43a032",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
+      "bytes": 594433
+    },
+    {
+      "id": "98e4e61c-ccb3-4601-8c5f-9473b9109820",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "62e0efbdd697b48b15cb7e433c589a103164365b12787a45e112e2515e20da51",
+      "bytes": 584315
+    },
+    {
+      "id": "f274620b-289f-43a0-a9b8-cf2fb99f5715",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
+      "bytes": 608112
+    },
+    {
+      "id": "e0161b40-d9f4-4ca0-b6b2-d145b3bdb9ea",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "c479cf3def0bb268c80c2ab34ed1495760767a7a628f4b7d860d9181e0edb516",
+      "bytes": 595581
+    },
+    {
+      "id": "664de045-99f6-4ee1-b7ed-a9e6bf82f3fd",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "54e2714b9031592aaf4d7aa6de8421b2c81dbd14439c510bf251b33623a6a2bd",
+      "bytes": 603933
+    },
+    {
+      "id": "2a158fc3-3ebb-4508-9c78-8555b1dcb531",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "e164ef0ecbcd904eef0b2f315b2b4b3152d4f7f1d38b4d4d94cfda4129fb8f24",
+      "bytes": 605703
+    },
+    {
+      "id": "0c1a10aa-900b-4d06-b188-9e17f17c498f",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "2ae51a125f9c8771db5cbe43979ce0e754ecc5f04480d7d61d436e0cf477c134",
+      "bytes": 611226
+    },
+    {
+      "id": "88476391-c8b4-4ec0-9c5e-3a07ea3e7085",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "c589ba6ffad3153c6faec9f9cc56a73f8b0bf886d428ba2780ce82ad2410852a",
+      "bytes": 603599
+    },
+    {
+      "id": "071b98db-7f39-4080-b37a-1e1b60a08116",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "7593e46d95cc8cb3e7c0603619ec9ad94074e1445c4e6f4d3d8203f9dd69528a",
+      "bytes": 595949
+    },
+    {
+      "id": "71506b4c-4626-4d85-88a0-b2ff1bea4d87",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ea045336e94d688e98d30ac47d4dd7eab0b6a3ca5f8a0f009615fb751ce76a52",
+      "bytes": 581504
+    },
+    {
+      "id": "3abb6dbf-ecd1-47ac-ac61-00b7ca9d711d",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "6cb8be7cb00736ffd2687c18dd2d4fddb8e7485f888219da328a8ae9e9f790b4",
+      "bytes": 603880
+    },
+    {
+      "id": "05c79852-4936-4d04-a953-53d3d262aadc",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "5ed1a2b31553d8e1ee8c6e659e4add0e92ecda383443303209f2fa475aa83991",
+      "bytes": 596154
+    },
+    {
+      "id": "7febf40e-2fa2-4062-b055-75706eb8c2e4",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "95deac2294a39f74423518233ba91d47dc843e10501cf4de5b65c3740240791f",
+      "bytes": 602643
+    },
+    {
+      "id": "2e65bcb5-a317-4b80-bbc1-160dd65bb13b",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "5bc24c17a8631e1f91f982c60c9268cef4e89927f68d0cac4f5009a3e7500aba",
+      "bytes": 601642
+    },
+    {
+      "id": "1a4363be-e311-4e00-b821-2e18da7ba39a",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "62a684643ac138b9a681d676591f6e1d0925dec8938ce3d13e184111e94013b5",
+      "bytes": 608893
+    },
+    {
+      "id": "5c5072c5-2893-48a9-963f-7bcf25cd6d98",
+      "pixels": [
+        768,
+        896
+      ],
+      "sha256": "ca43695ebba30c8c96388e77542caf2a4ecc0a39ff4731770f249efc7773b38a",
+      "bytes": 597986
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T15:07:10-03:00",
+  "updated": "2026-09-30T16:09:59-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4199,16 +4199,143 @@ window.executionLog={
         "Matching views compare all three states with honest missing angle handling.",
         "Service notes, client feedback and synthetic/simulated outcome labels persisted."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Implementation defaults: immutable visit records with an explicit post-cut or follow-up type, date, notes and client feedback; retained baseline/actual view assignments; selected expected option and selection event captured at visit creation. Incomplete views remain visible. Synthetic demo visits are labeled and never treated as actual haircut evidence.",
+        "Implemented immutable post-cut and follow-up records with linked earlier visits, consultation-specific expected selection snapshots, independently retained baseline/actual view assignments, synthetic labeling and explicit actual-photo confirmation.",
+        "Added the local three-column comparison with eight named angles, the actual retained edited native 3D proposal, fixed rotation, explicit zoom and reset, clear missing-media states and visit history.",
+        "Populated and reopened six positive simulated visits across Alex, Maya and Noah using their original private fictional sources and real saved native proposals; retained the initial incorrect date-entry example as intermediate failure evidence."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "All populated outcomes are explicitly simulated. Retrospective dates do not establish historical client agreement; the selected expected version is captured when the visit is recorded. Real haircut outcomes and professional acceptance require user review.",
+        "Uploaded photos have labeled angles, not measured camera calibration. Expected geometry is fitted/inferred. Browser evidence is background IAB render evidence and is not a foreground performance benchmark.",
+        "Initial automated date fill did not commit React state; native ArrowUp/ArrowDown entry verified the corrected date. The intermediate wrong-date visit remains labeled and retained. An initial Noah screenshot captures lazy loading; final evidence verifies real loaded geometry and photos."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS cmd/api cached and internal/app 1.334s after meaningful visit tests. Immutable snapshot, selected-version changes, idempotent retry, incomplete views, chronological follow-up, confirmation, studio boundaries, SQLite reopen, transitive source erase, withdrawal and client deletion."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS Vite 1.48s. Expected 3D viewer lazy-loaded; existing 649.86kB viewer chunk warning retained."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS; internal/app 1.334s, cmd/api cached."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./...",
+          "result": "PASS; internal/app 10.486s, cmd/api 1.027s. Tests cover ownership, anonymous denial, actual confirmation, stale expected versions, idempotency, immutable snapshots, source deletion, withdrawal and restart."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS; Vite 2.08s, 187 modules; native viewer remains a separate lazy chunk with the existing bundle-size advisory."
+        },
+        {
+          "command": "scripts/populate-local-outcomes.py and scripts/verify-local-outcomes.py through the mandated local demo account",
+          "result": "PASS: six positive simulated visits, original selection events, actual head GLBs and retained JPEGs, 72 distinct decoded source photos and anonymous API/media denial. Import checkpoint refuses recreation of deleted records."
+        },
+        {
+          "command": "Browser: record visits, select eight angles, reopen, native zoom ArrowRight and reset",
+          "result": "PASS. Reloaded retained follow-up has both actual loaded photos and edited native meshes. Zoom changes distance from 1.30 to 1.25m and reset restores the exact named front camera."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/outcomes-empty-visit-browser.png",
+          "caption": "Initial client state: no outcome record; source photo sets alone are not claimed as actual results.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-date-input-intermediate-browser.png",
+          "caption": "Intermediate automated date entry failed to commit. The simulated record is retained as failure evidence.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-corrected-postcut-browser.png",
+          "caption": "Corrected synthetic September 2 post-cut comparison with original baseline and the actual edited native expected proposal.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-followup-front-browser.png",
+          "caption": "Synthetic follow-up front comparison, linked to the corrected earlier visit.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-followup-profile-browser.png",
+          "caption": "Same labeled profile across original baseline, fitted expected proposal and simulated outcome.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-followup-back-browser.png",
+          "caption": "Back comparison, including clearly inferred expected geometry.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-followup-reopened-browser.png",
+          "caption": "Retained follow-up comparison after reopening.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-reloaded-zoom-browser.png",
+          "caption": "Reloaded fictional Alex follow-up with real edited meshes and both source photos loaded, after explicit zoom/reset checks. Background rendering, not foreground performance.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-maya-followup-browser.png",
+          "caption": "Fictional Maya follow-up with the retained MPFB expected proposal and real simulated source photos.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-noah-followup-loading-browser.png",
+          "caption": "Intermediate lazy-loading state for fictional Noah, preserved separately from the successful render.",
+          "date": "2026-09-30T16:09:59-03:00"
+        },
+        {
+          "src": "assets/outcomes-noah-followup-browser.png",
+          "caption": "Fictional Noah follow-up with loaded FLAME expected geometry and simulated photos.",
+          "date": "2026-09-30T16:09:59-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/outcomes-browser-angle-verification.json",
+          "label": "Actual browser camera and angle observations"
+        },
+        {
+          "href": "assets/outcomes-reloaded-zoom-verification.json",
+          "label": "Reloaded mesh/photo readiness and explicit zoom/reset observations"
+        },
+        {
+          "href": "assets/outcomes-populated-verification.json",
+          "label": "Six populated simulated visit records and immutable references"
+        },
+        {
+          "href": "assets/outcomes-live-verification.json",
+          "label": "Live persistence, native artifacts, decoded media and access verification"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T15:09:21-03:00",
+          "text": "Inspecting current behavior: labeled photo sets and consultation history exist, but no persisted post-cut/follow-up record captures the original baseline, selected expected version and actual labeled photos together. Existing simulated follow-up photos are assets, not proof of this workflow."
+        },
+        {
+          "date": "2026-09-30T15:25:21-03:00",
+          "text": "Initial outcome API tests reached persisted snapshots and SQLite reopen, then failed a test assertion expecting private,no-store. The shared JSON responder correctly emits no-store for all JSON. Corrected the assertion to the existing responder contract; no cache protection was removed."
+        },
+        {
+          "date": "2026-09-30T15:32:53-03:00",
+          "text": "Actual browser verification exposed an intermediate input failure: the IAB date fill displayed September 2 in the DOM but did not commit the controlled form state, so a subsequent field change restored September 30 and the first synthetic visit saved that default. Native ArrowUp/ArrowDown entry commits the date and survives later field edits. Preserve the first synthetic record and create an explicitly identified corrected example; no real visit data is involved."
+        },
+        {
+          "date": "2026-09-30T16:09:59-03:00",
+          "text": "Task 18 technically verified. Real outcomes and professional assessment remain pending; task 19 begins only after the local milestone commit."
+        }
+      ]
     },
     {
       "id": "19",

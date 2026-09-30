@@ -1,0 +1,186 @@
+{
+  "date": "2026-09-30T18:41:25.347885+00:00",
+  "scope": "Six actual persisted post-cut/follow-up workflow records across three authorized fictional clients. Images and all outcomes are synthetic simulations, with retrospective illustrative visit dates. Existing input assignments and selection events are retained without copying media or recreating deleted work. Professional review and final route choice remain pending.",
+  "visits": [
+    {
+      "fictionalCase": "alex-ramos",
+      "visitId": "42139019-49e4-4b47-a8e3-c082c9a2722d",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "synthetic": true,
+      "expectedOptionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "expectedVersion": 2,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": ""
+    },
+    {
+      "fictionalCase": "alex-ramos",
+      "visitId": "e6045095-ea14-499f-8e1c-5b1636aafd4c",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "synthetic": true,
+      "expectedOptionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "expectedVersion": 2,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": "42139019-49e4-4b47-a8e3-c082c9a2722d"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "visitId": "bde199cd-73fd-41a2-9894-8589d7053614",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "synthetic": true,
+      "expectedOptionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+      "expectedVersion": 1,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": ""
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "visitId": "5e54853d-6b21-42c3-b9b4-cec4b48126fe",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "synthetic": true,
+      "expectedOptionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+      "expectedVersion": 1,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": "bde199cd-73fd-41a2-9894-8589d7053614"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "visitId": "e6eb9110-6f82-4ead-8003-95b78ca556b9",
+      "kind": "post-cut",
+      "occurredOn": "2026-09-02",
+      "synthetic": true,
+      "expectedOptionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+      "expectedVersion": 1,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": ""
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "visitId": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb",
+      "kind": "follow-up",
+      "occurredOn": "2026-09-30",
+      "synthetic": true,
+      "expectedOptionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+      "expectedVersion": 1,
+      "baselineViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "actualViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "linkedPreviousVisit": "e6eb9110-6f82-4ead-8003-95b78ca556b9"
+    }
+  ]
+}

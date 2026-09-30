@@ -262,3 +262,36 @@ CREATE TABLE IF NOT EXISTS expected_selection_events (
   created_at timestamp NOT NULL,
   UNIQUE(consultation_id,sequence)
 );
+
+CREATE TABLE IF NOT EXISTS outcome_visits (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  consultation_id text NOT NULL REFERENCES consultations(id) ON DELETE CASCADE,
+  previous_visit_id text REFERENCES outcome_visits(id) ON DELETE SET NULL,
+  kind text NOT NULL CHECK(kind IN ('post-cut','follow-up')),
+  title text NOT NULL,
+  occurred_on text NOT NULL,
+  notes text NOT NULL,
+  client_feedback text NOT NULL,
+  synthetic integer NOT NULL CHECK(synthetic IN (0,1)),
+  baseline_set_id text REFERENCES photo_sets(id) ON DELETE SET NULL,
+  actual_set_id text REFERENCES photo_sets(id) ON DELETE SET NULL,
+  expected_option_id text REFERENCES demo_options(id) ON DELETE SET NULL,
+  expected_event_id text REFERENCES expected_selection_events(id) ON DELETE SET NULL,
+  expected_version integer NOT NULL,
+  request_id text NOT NULL,
+  request_hash blob NOT NULL,
+  created_by text NOT NULL REFERENCES users(id),
+  created_at timestamp NOT NULL,
+  UNIQUE(client_id,request_id)
+);
+CREATE INDEX IF NOT EXISTS outcome_visits_client_idx ON outcome_visits(organization_id,client_id,occurred_on DESC,created_at DESC);
+CREATE TABLE IF NOT EXISTS outcome_visit_views (
+  visit_id text NOT NULL REFERENCES outcome_visits(id) ON DELETE CASCADE,
+  phase text NOT NULL CHECK(phase IN ('baseline','actual')),
+  view text NOT NULL CHECK(view IN ('front','left-three-quarter','right-three-quarter','left-profile','right-profile','back','crown','under-chin')),
+  asset_id text NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  PRIMARY KEY(visit_id,phase,view),
+  UNIQUE(visit_id,phase,asset_id)
+);

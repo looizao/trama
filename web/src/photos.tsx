@@ -13,7 +13,7 @@ const views=[
  {id:'crown',name:'Crown',hint:'Optional detail: photograph the top of the head and crown growth pattern.'},
  {id:'under-chin',name:'Under-chin',hint:'Optional detail: lift the chin slightly to show the underside and beard neckline.'}
 ]
-type PhotoSet={id:string;clientId:string;consultationId:string;title:string;createdAt:string;views:Record<string,string>;missing:string[]}
+export type PhotoSet={id:string;clientId:string;consultationId:string;title:string;createdAt:string;views:Record<string,string>;missing:string[]}
 type Pending={view:string;file:File;url:string;expected:string;ready:boolean}
 function FramingGuide({view}:{view:string}){
  const isLeft=view.startsWith('left'),profile=view.includes('profile'),quarter=view.includes('quarter'),back=view==='back'

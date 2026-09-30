@@ -1,0 +1,24 @@
+{
+  "verifiedAt": "2026-09-30T19:08:35.117Z",
+  "scope": "Fictional Alex, reopened retained simulated follow-up. Background IAB screenshot is render evidence, not foreground performance.",
+  "arrowRight": {
+    "zoom": 2.05,
+    "distance": 1.25
+  },
+  "reset": {
+    "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":0.7512820512820513}",
+    "photos": [
+      {
+        "loaded": true,
+        "src": "/api/assets/35d0f67c-2763-4f31-8f7a-7ab029f6d579/content"
+      },
+      {
+        "loaded": true,
+        "src": "/api/assets/7e99115d-3696-41bc-8062-71262ba291e7/content"
+      }
+    ],
+    "title": "Synthetic four-week follow-up demonstration",
+    "view": "front",
+    "zoom": "2"
+  }
+}
