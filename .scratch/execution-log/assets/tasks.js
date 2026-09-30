@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T02:03:53-03:00",
+  "updated": "2026-09-30T02:04:10-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -932,7 +932,9 @@ window.executionLog={
           "date": "2026-09-30T02:03:53-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "fec6ce29c8e26df44e9f90d73d9e49688ddef904"
+      ],
       "outputs": [
         {
           "href": "assets/native-mpfb-provenance.json",
@@ -991,6 +993,10 @@ window.executionLog={
         {
           "date": "2026-09-30T02:02:34-03:00",
           "text": "Verified the scoped native processing experiment. Full Blender demo task 07 stays pending until client editing, expected-result history and complete journey verification are delivered."
+        },
+        {
+          "date": "2026-09-30T02:04:10-03:00",
+          "text": "Local verified milestone committed as fec6ce29c8e26df44e9f90d73d9e49688ddef904; no push or deployment."
         }
       ]
     },
