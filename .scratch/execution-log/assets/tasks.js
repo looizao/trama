@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T11:18:29-03:00",
+  "updated": "2026-09-30T11:21:03-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2826,19 +2826,54 @@ window.executionLog={
         "Successful outputs support shared styles, edits, selections and reopen; unmet requirements explicitly labeled.",
         "No denser capture substituted; versions, licenses, settings, timing, coverage and resources recorded."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "failed",
+      "changes": [
+        "The selector opens the actual COLMAP reconstruction controls, authorized baseline six photos, presets, queue status, retained matching graph, three mapping attempts, metrics and failure requirements. Fresh browser-started run 3e7b3c02-1f94-44a0-8c87-e2bc765abe5f retains no sparse model; prior standard and sensitive-calibrated experiments across all three fictional cases remain available."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Actual same-six-photo COLMAP reconstruction produced no usable head. Independent replacement styles, client-head synchronization/refinements and an expected-result journey are unmet. Shared mannequin references are explicitly labeled as references and are not a candidate reconstruction result. No fallback or unapproved denser capture is counted as success."
+      ],
+      "verification": [
+        {
+          "command": "@Browser same-six-photo COLMAP reconstruction and CLI retained report",
+          "result": "Actual 863ms reconstruction, 6609380 retained bytes, 226-320 SIFT features per view, all 15 pairs attempted, three mapping trials all 0 models. Head HTTP404; retained report HTTP200; anonymous report HTTP401. Actual match graph decoded and visually inspected. No new app change; native privacy/cancellation/failure regression checks and software/model provenance are retained under 08a."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/colmap-journey-failure-2026-09-30.png",
+          "caption": "Actual failed standard six-photo COLMAP run. Failure and absent geometry are explicit; no head or editable proposal is claimed.",
+          "date": "2026-09-30T11:21:03-03:00"
+        },
+        {
+          "src": "assets/colmap-journey-matches.png",
+          "caption": "Actual verified-feature-match graph from the fresh six-photo experiment. Sparse matching did not create a usable reconstruction.",
+          "date": "2026-09-30T11:21:03-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/colmap-journey-failure.json",
+          "label": "Fresh actual settings, native report and unmet journey requirements"
+        },
+        {
+          "href": "assets/colmap-provenance.json",
+          "label": "Exact COLMAP software and wheel provenance retained under 08a"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T11:18:29-03:00",
+          "text": "Inspecting the complete COLMAP candidate from the same authorized six views. Earlier native experiments failed to recover a model; verify the runnable failure workflow and preserve unmet requirements instead of supplying another route as its result."
+        },
+        {
+          "date": "2026-09-30T11:21:03-03:00",
+          "text": "Complete experiment retained with failed product requirements. This candidate remains selectable and runnable; professional review may assess failure evidence but no functional head journey is marked complete."
         }
       ]
     },
