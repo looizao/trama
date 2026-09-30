@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T23:31:09-03:00",
+  "updated": "2026-09-29T23:32:01-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -591,7 +591,9 @@ window.executionLog={
           "date": "2026-09-29T23:30:17-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "2b529a7d014b399e700e6e6916c94a8d6b3e85ba"
+      ],
       "outputs": [
         {
           "href": "assets/flame-open-provenance.json",
