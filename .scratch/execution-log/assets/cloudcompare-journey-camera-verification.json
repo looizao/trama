@@ -1,0 +1,408 @@
+{
+  "date": "2026-09-30T16:27:55.562Z",
+  "scope": "Actual current/proposed cameras after real independent hair editing; CloudCompare primary MakeHuman fit and distinct MPFB comparison reference.",
+  "angles": [
+    {
+      "angle": "Front",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    },
+    {
+      "angle": "Left three-quarter",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    },
+    {
+      "angle": "Right three-quarter",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[-0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[-0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    },
+    {
+      "angle": "Left profile",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    },
+    {
+      "angle": "Right profile",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[-1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[-1.2958422181934053,0.10388910215992438,7.934745123552799e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    },
+    {
+      "angle": "Back",
+      "frames": [
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          "renderedCamera": "{\"position\":[1.5869490247105598e-16,0.10388910215992438,-1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        },
+        {
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 124679,
+              "fingerprints": [
+                {
+                  "edited": "eed80c77",
+                  "mesh": "goatee",
+                  "original": "03215630"
+                }
+              ],
+              "maximumDisplacementMm": 4.098784178495407,
+              "vertices": 124680
+            },
+            "hair": {
+              "changedSincePrevious": 60,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "6cc091de",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 9.507264153391022,
+              "vertices": 3177
+            }
+          },
+          "renderedCamera": "{\"position\":[1.5869490247105598e-16,0.10388910215992438,-1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}"
+        }
+      ]
+    }
+  ]
+}

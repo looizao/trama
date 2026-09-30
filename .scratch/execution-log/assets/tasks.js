@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T13:24:39-03:00",
+  "updated": "2026-09-30T13:31:13-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -3548,19 +3548,96 @@ window.executionLog={
         "Integrated workflow through expected selection/reopen; shared upstream dependency explicit.",
         "Agreement between inferred meshes never presented as ground truth; licenses/resources recorded."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Completed native CloudCompare experiments on all three corrected MakeHuman primary fits with MPFB as a distinct comparison reference. Preserved original jobs; exact unchanged styles survive native conversion. Actual browser workflow saves keep-current/clean-shaven alternative, written and direct refinements, immutable revision 3, synthetic expected choice and exact reopened work."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "CloudCompare is explicitly dependent on the primary fitting route and optional separately identified fitted reference. Random native sampling is not seeded, so exact diagnostics can vary; same geometry still round-trips unchanged. No independent scan or accuracy proof. Shared beard outline cleanup remains task 15 and professional assessment pending."
+      ],
+      "verification": [
+        {
+          "command": "populate-components.py cloudcompare --upstream makehuman --reference blender-mpfb --attempt visible-lips-v2 --source-style-version makehuman-visible-lips-v2",
+          "result": "PASS three real native jobs. Alex 7.112s/238327884 bytes, C2M mean 2.642 to 0.509mm/max 8.791mm; Maya 6.995s/235245601 bytes, 2.970 to 0.137mm/max 10.645mm; Noah 7.067s/231748491 bytes, 2.987 to 0.340mm/max 10.740mm. Alignment compares inferred fitted geometry; preview retains primary head."
+        },
+        {
+          "command": "verify-components-assets.py --candidate cloudcompare --makehuman-style-version makehuman-visible-lips-v2",
+          "result": "PASS 153 actual GLBs, 54 native renders, nine same-six-photo snapshots, 45 PLY files including fitted comparison outputs reopened through actual native CloudCompare, exact style copies, conversion coordinates unchanged, native registration iterations, scalar distances and two-route provenance."
+        },
+        {
+          "command": "Browser journey and verify-local-candidate-journey.py cloudcompare",
+          "result": "PASS real independent native assets, keep-current/clean-shaven alternative and actual JPEGs, written 90% hair length/5mm volume/90% brown beard width, one real 20mm/3mm brush stroke, six matching rendered cameras, revision 3 and separate simulated expected consultation version 1. Reload retains meshes, edits, camera and history. Anonymous 401, stale 409, unsupported mixed request atomic 400 and unlisted native style 404."
+        },
+        {
+          "command": "go test ./... and npm --prefix web run build",
+          "result": "PASS mise Go 1.26.0 cached packages; build 1.68s, existing 707.14kB bundle warning."
+        },
+        {
+          "command": "Reopened browser rendering and environment",
+          "result": "Current 229416 triangles/13.4MB/468ms/126.3 initial FPS; proposed 106978 triangles/7.1MB/310ms/126.3 initial FPS. Actual rendered transforms match at saved three-quarter angle. Same earlier QuillBot extension rejection remains in browser log; no new Trama source error observed."
+        },
+        {
+          "command": "verify-execution-log.py",
+          "result": "PASS 274 linked local resources HTTP 200 and byte-identical, 116 pictures decoded or parsed, one active task."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/cloudcompare-journey-reopened-2026-09-30.png",
+          "caption": "Actual saved CloudCompare result reopened with independent current/proposed styles and retained edits, same three-quarter camera, resource measurements. Primary is corrected MakeHuman; separate MPFB reference changes diagnostic evidence, not this preview.",
+          "date": "2026-09-30T13:30:56-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-journey-expected-result-2026-09-30.png",
+          "caption": "Consultation-specific simulated CloudCompare expected choice preserves earlier route history. Real professional acceptance and final choice remain pending.",
+          "date": "2026-09-30T13:30:56-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-three-upstream-comparison-makehuman-visible-lips-v2.png",
+          "caption": "Actual original upstream fits above and CloudCompare native converted heads below. Unchanged primary geometry and different fitted templates are visible, with no ground-truth scan claim.",
+          "date": "2026-09-30T13:30:56-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/cloudcompare-journey-camera-verification.json",
+          "label": "Actual six rendered cameras and vertex edits"
+        },
+        {
+          "href": "assets/cloudcompare-journey-verification.json",
+          "label": "Actual persisted native artifacts, browser pictures, expected choice and failure checks"
+        },
+        {
+          "href": "assets/cloudcompare-makehuman-populated-results-makehuman-visible-lips-v2.json",
+          "label": "Three corrected primary fits and separate reference experiments"
+        },
+        {
+          "href": "assets/cloudcompare-output-verification-makehuman-visible-lips-v2.json",
+          "label": "Native readers, real traces, same inputs and independent styles across nine experiments"
+        },
+        {
+          "href": "assets/cloudcompare-provenance.json",
+          "label": "Exact software, build, bundled dependency and change notices"
+        },
+        {
+          "href": "assets/cloudcompare-live-verification.json",
+          "label": "Prior actual reference-only deletion, concurrent cancellation, private access and no recreation evidence, still applicable unchanged privacy code"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T13:24:39-03:00",
+          "text": "Begin complete CloudCompare supporting journey on corrected MakeHuman primary fits with independent MPFB comparison reference. Real native processing, separate primary/reference provenance, shared style edits, saved history and exact reopening required."
+        },
+        {
+          "date": "2026-09-30T13:30:56-03:00",
+          "text": "An incorrect optional-reference locator failed read-only; exact visible control name used. Initial alternative save blocked until actual meshes loaded, without placeholder success. Both primary and reference remain live transitive dependencies."
         }
       ]
     },

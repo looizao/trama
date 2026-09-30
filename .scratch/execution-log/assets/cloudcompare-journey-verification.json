@@ -1,0 +1,153 @@
+{
+  "date": "2026-09-30T16:28:48.304007+00:00",
+  "candidate": "cloudcompare",
+  "scope": "Actual retained six-photo native processing, separate current/proposed meshes, written and direct browser edits, immutable alternative/revision pictures, simulated expected result and persistence. Synthetic inputs do not establish real likeness or actual haircut outcomes. Professional assessment and final route selection pending.",
+  "runId": "08f9c382-68fe-4c97-9f7e-85c2f9dc775c",
+  "nativeKind": "process",
+  "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+  "settings": {
+    "colmapPreset": "standard",
+    "component": {
+      "sourceRunId": "94508d2f-1243-4329-9d11-cae2038116c5",
+      "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+      "triangleRatio": 0.75,
+      "voxelSize": 0.003,
+      "samplePoints": 12000
+    },
+    "minimumWidth": 512,
+    "native": {
+      "focalLength": 70,
+      "cameraDistance": 1.6,
+      "cameraHeight": 0.04,
+      "fitRounds": 4
+    },
+    "photoViews": {
+      "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+      "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+      "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+      "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+      "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+      "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+      "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+      "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+    }
+  },
+  "nativeSeconds": 7.112,
+  "nativeOutputBytes": 238327884,
+  "artifactsChecked": [
+    {
+      "kind": "head",
+      "asset": "model",
+      "bytes": 853936,
+      "sha256": "b1237588863e220aa9917fd653ad09cd6fc591e791b560cc805339d2de269ef7",
+      "meshCount": 2
+    },
+    {
+      "kind": "hair",
+      "asset": "short01",
+      "bytes": 2501464,
+      "sha256": "bdd4f5954ca9f600aea2e107f716d8f360d953ed0ceef4b80e81e3224ce5c7bf",
+      "meshCount": 1
+    },
+    {
+      "kind": "beard",
+      "asset": "goatee",
+      "bytes": 4115632,
+      "sha256": "be62ce6ca9382c659ac0eec33817570bc6997a2c748f3d3dca02d49f2883e6f3",
+      "meshCount": 1
+    },
+    {
+      "kind": "hair",
+      "asset": "short02",
+      "bytes": 3661140,
+      "sha256": "3b7ee2ccba012adaef3c25ccaf0c08e296c48341f6da8a9867cf7d12613f0416",
+      "meshCount": 1
+    },
+    {
+      "kind": "beard",
+      "asset": "stubble",
+      "bytes": 9517604,
+      "sha256": "d198cb955e8ce8ea42503450634991c456f2b9765d6d929319bd84500f11413e",
+      "meshCount": 1
+    }
+  ],
+  "browserPictures": [
+    {
+      "optionId": "1e6e525e-329e-42f6-a467-c2550203d1cd",
+      "pixels": [
+        400,
+        373
+      ],
+      "bytes": 7215,
+      "sha256": "1ee0f71670ecd798ab148813d6a1324cdf46479253de9d4fbcc5107e90bdaebb"
+    },
+    {
+      "optionId": "7d79e6cd-c410-4e9c-bf8f-3cd4a7831c17",
+      "pixels": [
+        400,
+        373
+      ],
+      "bytes": 7443,
+      "sha256": "9210b6be4af8354ef45cb479ea73fa56809c3f99e0ec17cca2272a8779b60dbf"
+    }
+  ],
+  "options": [
+    {
+      "id": "1e6e525e-329e-42f6-a467-c2550203d1cd",
+      "parentId": "593e072e-642d-462a-a1cf-79f5011ea68d",
+      "revision": 2,
+      "hair": "keep-current",
+      "beard": "clean-shaven"
+    },
+    {
+      "id": "7d79e6cd-c410-4e9c-bf8f-3cd4a7831c17",
+      "parentId": "1e6e525e-329e-42f6-a467-c2550203d1cd",
+      "revision": 3,
+      "hair": "short01",
+      "beard": "goatee"
+    }
+  ],
+  "refinement": {
+    "version": "style-mesh-v2",
+    "hair": {
+      "lengthPercent": 90,
+      "widthPercent": 100,
+      "volumeMm": 5,
+      "color": "original"
+    },
+    "beard": {
+      "lengthPercent": 100,
+      "widthPercent": 90,
+      "volumeMm": 0,
+      "color": "brown"
+    },
+    "strokes": [
+      {
+        "kind": "hair",
+        "center": [
+          -0.027050495433896142,
+          0.16450574045806465,
+          0.09406377833932478
+        ],
+        "normal": [
+          -0.11212933321553721,
+          0.8860911334284624,
+          0.44974383363432796
+        ],
+        "radiusMm": 20,
+        "strengthMm": 3
+      }
+    ]
+  },
+  "consultationId": "ec177bee-e3bb-4034-bb8c-aa080acbd968",
+  "selectionVersion": 1,
+  "syntheticAgreement": true,
+  "workspaceVersion": 53,
+  "failureChecks": [
+    "anonymous native assets and expected history denied",
+    "unlisted style denied",
+    "stale workspace rejected",
+    "unsupported mixed refinement rejected atomically"
+  ],
+  "privacyEvidence": "Live source erasure, withdrawal, cancellation and transitive component erasure are separately retained in tasks 01, 06, 07b, 12a, 13a, 14a and 17."
+}
