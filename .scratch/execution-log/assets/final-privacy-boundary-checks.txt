@@ -1,0 +1,27 @@
+PASS anonymous studio access denied: HTTP 401
+PASS mandated local demo account login: HTTP 200
+PASS fictional client created: HTTP 201
+PASS upload denied without acknowledgement: HTTP 403
+PASS client acknowledgement link created: HTTP 201
+PASS notice available without client account: HTTP 200
+PASS wrong-name acknowledgement rejected: HTTP 400
+PASS affirmative client entry recorded: HTTP 200
+PASS used link invalidated: HTTP 404
+PASS authorized diagnostic image uploaded: HTTP 201
+PASS authorized content read: HTTP 200
+PASS unconfirmed removal rejected: HTTP 400
+PASS withdrawal impact available: HTTP 200
+PASS withdrawal completed: HTTP 200
+PASS withdrawn media inaccessible: HTTP 404
+PASS reload confirms media removal: HTTP 200
+PASS withdrawal blocks fresh uploads: HTTP 403
+PASS client acknowledgement link created: HTTP 201
+PASS notice available without client account: HTTP 200
+PASS wrong-name acknowledgement rejected: HTTP 400
+PASS affirmative client entry recorded: HTTP 200
+PASS used link invalidated: HTTP 404
+PASS authorized diagnostic image uploaded: HTTP 201
+PASS entire fictional journey deleted: HTTP 200
+PASS deleted client cannot reopen: HTTP 404
+PASS completion history survives client deletion: HTTP 200
+PASS local privacy workflow, reload and failure checks. No external services used.

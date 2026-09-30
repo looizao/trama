@@ -1,3 +1,4 @@
+import { DemoReview } from './demo-review'
 import { useEffect, useState, useRef } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, json, imageURL, dateLabel, type Client } from './api'
@@ -511,7 +512,8 @@ function DemoSession({
   const camera = (value: DemoCamera) => change({ camera: value })
   return (
     <div className="demo-session">
-      <section className="card demo-inputs">
+      <DemoReview library={library} jobs={jobs.data||[]} options={options.data||[]} choose={id=>{change({candidate:id,modelRunId:'',component:componentDefaults});document.getElementById('candidate-workflow')?.scrollIntoView({block:'start'})}}/>
+      <section className="card demo-inputs" id="candidate-workflow">
         <div className="section-toolbar">
           <div>
             <span className="eyebrow">{t('01 / CANDIDATE AND INPUTS')}</span>

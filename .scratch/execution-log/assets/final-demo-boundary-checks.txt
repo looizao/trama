@@ -1,0 +1,127 @@
+PASS mandated local demo account session reuse: HTTP 200
+PASS shared library: HTTP 200
+PASS anonymous library denied: HTTP 401
+PASS actual GLB short01: HTTP 200
+PASS actual GLB short02: HTTP 200
+PASS actual GLB short03: HTTP 200
+PASS actual GLB short04: HTTP 200
+PASS actual GLB bob01: HTTP 200
+PASS actual GLB bob02: HTTP 200
+PASS actual GLB long01: HTTP 200
+PASS actual GLB braid01: HTTP 200
+PASS actual GLB ponytail01: HTTP 200
+PASS actual GLB afro01: HTTP 200
+PASS actual GLB rounded-coils: HTTP 200
+PASS actual GLB trama-buzz-straight: HTTP 200
+PASS actual GLB trama-buzz-wavy: HTTP 200
+PASS actual GLB trama-buzz-curly: HTTP 200
+PASS actual GLB trama-buzz-coily: HTTP 200
+PASS actual GLB trama-crew-straight: HTTP 200
+PASS actual GLB trama-crew-wavy: HTTP 200
+PASS actual GLB trama-crew-curly: HTTP 200
+PASS actual GLB trama-crew-coily: HTTP 200
+PASS actual GLB trama-ivy-straight: HTTP 200
+PASS actual GLB trama-ivy-wavy: HTTP 200
+PASS actual GLB trama-ivy-curly: HTTP 200
+PASS actual GLB trama-ivy-coily: HTTP 200
+PASS actual GLB trama-crop-straight: HTTP 200
+PASS actual GLB trama-crop-wavy: HTTP 200
+PASS actual GLB trama-crop-curly: HTTP 200
+PASS actual GLB trama-crop-coily: HTTP 200
+PASS actual GLB trama-side-part-straight: HTTP 200
+PASS actual GLB trama-side-part-wavy: HTTP 200
+PASS actual GLB trama-side-part-curly: HTTP 200
+PASS actual GLB trama-side-part-coily: HTTP 200
+PASS actual GLB trama-slick-straight: HTTP 200
+PASS actual GLB trama-slick-wavy: HTTP 200
+PASS actual GLB trama-slick-curly: HTTP 200
+PASS actual GLB trama-slick-coily: HTTP 200
+PASS actual GLB trama-quiff-straight: HTTP 200
+PASS actual GLB trama-quiff-wavy: HTTP 200
+PASS actual GLB trama-quiff-curly: HTTP 200
+PASS actual GLB trama-quiff-coily: HTTP 200
+PASS actual GLB trama-pompadour-straight: HTTP 200
+PASS actual GLB trama-pompadour-wavy: HTTP 200
+PASS actual GLB trama-pompadour-curly: HTTP 200
+PASS actual GLB trama-pompadour-coily: HTTP 200
+PASS actual GLB trama-shag-straight: HTTP 200
+PASS actual GLB trama-shag-wavy: HTTP 200
+PASS actual GLB trama-shag-curly: HTTP 200
+PASS actual GLB trama-shag-coily: HTTP 200
+PASS actual GLB trama-long-straight: HTTP 200
+PASS actual GLB trama-long-wavy: HTTP 200
+PASS actual GLB trama-long-curly: HTTP 200
+PASS actual GLB trama-long-coily: HTTP 200
+PASS actual GLB stubble: HTTP 200
+PASS actual GLB full: HTTP 200
+PASS actual GLB goatee: HTTP 200
+PASS actual GLB moustache: HTTP 200
+PASS actual GLB chinstrap: HTTP 200
+PASS actual GLB trama-light-stubble: HTTP 200
+PASS actual GLB trama-heavy-stubble: HTTP 200
+PASS actual GLB trama-soft-stubble: HTTP 200
+PASS actual GLB trama-short-boxed: HTTP 200
+PASS actual GLB trama-rounded-full: HTTP 200
+PASS actual GLB trama-curly-full: HTTP 200
+PASS actual GLB trama-coily-full: HTTP 200
+PASS actual GLB trama-medium-rounded: HTTP 200
+PASS actual GLB trama-long-tapered: HTTP 200
+PASS actual GLB trama-long-curly: HTTP 200
+PASS actual GLB trama-circle: HTTP 200
+PASS actual GLB trama-goatee: HTTP 200
+PASS actual GLB trama-anchor: HTTP 200
+PASS actual GLB trama-van-dyke: HTTP 200
+PASS actual GLB trama-moustache: HTTP 200
+PASS actual GLB trama-chevron: HTTP 200
+PASS actual GLB trama-beardstache: HTTP 200
+PASS actual GLB trama-chinstrap: HTTP 200
+PASS actual GLB trama-soul-patch: HTTP 200
+PASS actual GLB trama-limited-coverage: HTTP 200
+PASS private paths excluded: HTTP 404
+PASS disposable fixture: HTTP 201
+PASS permission gate: HTTP 403
+PASS acknowledgement link: HTTP 201
+PASS notice: HTTP 200
+PASS affirmative fictional acknowledgement: HTTP 200
+PASS photo set: HTTP 201
+PASS incomplete capture rejected: HTTP 400
+PASS upload front: HTTP 201
+PASS upload left-three-quarter: HTTP 201
+PASS upload right-three-quarter: HTTP 201
+PASS upload left-profile: HTTP 201
+PASS upload right-profile: HTTP 201
+PASS upload back: HTTP 201
+PASS upload crown: HTTP 201
+PASS upload under-chin: HTTP 201
+PASS persist selections and camera: HTTP 200
+PASS stale workspace conflict: HTTP 409
+PASS save explored option: HTTP 201
+PASS reload workspace: HTTP 200
+PASS reload options: HTTP 200
+PASS upload back: HTTP 201
+PASS real asynchronous input job: HTTP 202
+PASS erase nonfront snapshot input: HTTP 200
+PASS cancelled result reload: HTTP 200
+PASS dependent options erased: HTTP 200
+PASS snapshot workspace cleared: HTTP 200
+PASS replacement preserved: HTTP 200
+PASS new local check: HTTP 202
+PASS explicit cancellation: HTTP 200
+PASS withdrawal: HTTP 200
+PASS withdrawal denies demo-workspace: HTTP 403
+PASS withdrawal denies demo-options: HTTP 403
+PASS withdrawal denies demo-jobs: HTTP 403
+{
+  "scope": "Local API checks, diagnostic colored squares only. Not reconstruction accuracy.",
+  "candidateCount": 8,
+  "hairModels": 51,
+  "beardModels": 25,
+  "actualGLBBytesRead": 163789256,
+  "sixInputMetricsVerified": true,
+  "snapshotReplacementAndErasureVerified": true,
+  "workspaceAndOptionReloadVerified": true,
+  "cancellationAndWithdrawalVerified": true,
+  "date": "2026-09-30T17:32:50-0300"
+}
+PASS delete disposable fixture: HTTP 200
+PASS local demo library, actual processing, reload, retained inputs, cancellation and deletion. No external processing.

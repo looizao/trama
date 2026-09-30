@@ -1,0 +1,140 @@
+{
+  "date": "2026-09-30T20:44:35.673Z",
+  "scope": "Six exact existing persisted proposals reopened in the final app; native GLBs parsed/rendered and separate hair/beard refinements replayed, current unchanged, synchronized named cameras. No proposal recreated or selected as expected. One warm local observation per route; physical browser visibility differs from document.hidden, so these are qualified background samples, not a controlled foreground benchmark. CloudCompare initial inspection sample was unavailable during the automated deadline; actual parsed geometry/render and previous performance evidence are retained.",
+  "physicalBrowserVisible": false,
+  "checks": [
+    {
+      "candidate": "blender-mpfb",
+      "optionId": "ea2830df-4dae-4d0e-b5fc-3ba7c4bc9c4d",
+      "inspection": [
+        "233,060 triangles · 21.6 MB · 446 ms · 107.9 initial FPS",
+        "140,930 triangles · 4.1 MB · 256 ms · 107.9 initial FPS"
+      ],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/stubble",
+          "camera": "{\"position\":[0,0.0863723969509797,1.0773507146432377],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":649314,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"34e21cba\",\"edited\":\"34e21cba\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":1794,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"6a1d9fee\",\"edited\":\"6a1d9fee\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/stubble"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0,0.0863723969509797,1.0773507146432377],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":12253,\"changedSincePrevious\":12241,\"maximumDisplacementMm\":13.579061031341544,\"vertices\":13595,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"6600ee3a\",\"edited\":\"db82b788\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"f4e11296\",\"edited\":\"59e6e1a8\"}]},\"beard\":{\"changedVertices\":64314,\"changedSincePrevious\":64313,\"maximumDisplacementMm\":6.436919420957567,\"vertices\":64314,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"89f4d907\",\"edited\":\"6df72e3b\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/trama-short-boxed"
+        }
+      ],
+      "documentHidden": false
+    },
+    {
+      "candidate": "makehuman",
+      "optionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "inspection": [
+        "229,416 triangles · 13.4 MB · 366 ms · 143.8 initial FPS",
+        "137,666 triangles · 4.0 MB · 265 ms · 135.2 initial FPS"
+      ],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/stubble",
+          "camera": "{\"position\":[0,0.10388910215992411,1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":288376,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"04413a0c\",\"edited\":\"04413a0c\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/stubble"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0,0.10388910215992411,1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/trama-short-boxed"
+        }
+      ],
+      "documentHidden": false
+    },
+    {
+      "candidate": "flame",
+      "optionId": "1fff849b-b3b4-448c-9f89-05c87fa89ef4",
+      "inspection": [
+        "142,764 triangles · 9.2 MB · 269 ms · 162.2 initial FPS",
+        "105,420 triangles · 2.6 MB · 102 ms · 146.4 initial FPS"
+      ],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/stubble",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":172592,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"af04506a\",\"edited\":\"af04506a\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":1794,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"bf5d259a\",\"edited\":\"bf5d259a\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/stubble"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":11732,\"changedSincePrevious\":11721,\"maximumDisplacementMm\":13.623296618461595,\"vertices\":13085,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"83658e19\",\"edited\":\"5f4cc0a3\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"cad805ff\",\"edited\":\"80ca0ac9\"}]},\"beard\":{\"changedVertices\":43506,\"changedSincePrevious\":43506,\"maximumDisplacementMm\":6.501729786396022,\"vertices\":43506,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"3c38d469\",\"edited\":\"71867509\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/trama-short-boxed"
+        }
+      ],
+      "documentHidden": false
+    },
+    {
+      "candidate": "open3d",
+      "optionId": "13ced3f4-e66d-4867-8ad0-220bc2ee6cbb",
+      "inspection": [
+        "227,011 triangles · 13.3 MB · 363 ms · 132.5 initial FPS",
+        "135,261 triangles · 4.0 MB · 201 ms · 116.5 initial FPS"
+      ],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/stubble",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":288376,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"04413a0c\",\"edited\":\"04413a0c\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/stubble"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":11014,\"changedSincePrevious\":11003,\"maximumDisplacementMm\":12.846953570842729,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"e695a68f\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"11eb2f6f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/trama-short-boxed"
+        }
+      ],
+      "documentHidden": false
+    },
+    {
+      "candidate": "meshlab",
+      "optionId": "a4dcc7d4-be8a-4a29-ac6e-5ca5e2f31f57",
+      "inspection": [
+        "227,010 triangles · 13.3 MB · 429 ms · 123 initial FPS",
+        "135,260 triangles · 4.0 MB · 387 ms · 129.3 initial FPS"
+      ],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/stubble",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":288376,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"04413a0c\",\"edited\":\"04413a0c\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/stubble"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":11014,\"changedSincePrevious\":11003,\"maximumDisplacementMm\":12.846953570842729,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"e695a68f\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"11eb2f6f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/trama-short-boxed"
+        }
+      ],
+      "documentHidden": false
+    },
+    {
+      "candidate": "cloudcompare",
+      "optionId": "39e5ef61-5d01-4f10-94eb-96717d7cbbae",
+      "inspection": [],
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/beard/stubble",
+          "camera": "{\"position\":[0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":288376,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"04413a0c\",\"edited\":\"04413a0c\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/beard/trama-short-boxed",
+          "camera": "{\"position\":[0.9162988198323745,0.10388910215992438,0.9162988198323747],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.0717948717948718}",
+          "edits": "{\"hair\":{\"changedVertices\":11014,\"changedSincePrevious\":0,\"maximumDisplacementMm\":12.846953570842729,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"e695a68f\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"11eb2f6f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}"
+        }
+      ],
+      "documentHidden": false
+    }
+  ]
+}

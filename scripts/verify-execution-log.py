@@ -22,6 +22,8 @@ assert sum(t['status'] == 'in progress' for t in data['tasks']) <= 1
 for task in data['tasks']:
     links.update(p['src'] for p in task['pictures'])
     links.update(o['href'] for o in task['outputs'] if not urllib.parse.urlsplit(o['href']).scheme and not o['href'].startswith('#'))
+for candidate in data.get("comparison", {}).get("candidates", []):
+    links.add(candidate["provenance"])
 pictures = 0
 for relative in sorted(links):
     path = (root / relative).resolve()

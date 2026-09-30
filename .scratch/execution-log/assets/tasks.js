@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T17:19:10-03:00",
+  "updated": "2026-09-30T17:51:04-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4590,16 +4590,242 @@ window.executionLog={
         "Log and relative images load; commits and retained outputs linked.",
         "Professional likeness/asset assessment and final route choice explicitly pending."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "The local backup/restore flow is explicitly deferred by the user and excluded from this delivery. All remaining product/demo work and professional assessment are still pending."
+      "status": "blocked",
+      "changes": [
+        "Added a client-specific eight-candidate comparison in the running app, with actual native timing, retained sizes, RSS, saved options, explicit upstream roles, failure/blocker states and primary software/model terms. Added the portable comparison to the requested HTML log."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Meshroom native reconstruction remains incomplete pending the user’s acceptance of the CUDA 12.1.1 agreement included with the official AliceVision 3.3.0 runtime. Task 09 and the all-candidate handoff criterion remain blocked. Prepared graph and input diagnostics are available, not a completed reconstruction demo.",
+        "COLMAP failed the agreed original six-photo capture for all three synthetic cases and both presets: no usable registered head. Task 08 remains failed; dependent native style/expected-result workflow requirements are unmet for this candidate. Its actual runnable experiment and failures remain available.",
+        "No real-person likeness or independent measured geometry validation. Original procedural 3D assets, approximate attachments, clipping, achievable cuts and maintenance suitability require the user’s professional assessment. No final route selected.",
+        "Local reminders require opening the app/portal; no external delivery is configured or claimed. Production rollout and production backup safeguards are not verified; the backup flow was removed at the user’s later instruction.",
+        "Bundle warnings remain: main 509 kB and lazy 3D viewer 650 kB. Native FPS observations use a hidden IAB and warm local cache. They do not establish foreground customer-device performance; fresh CloudCompare FPS sample unavailable."
+      ],
+      "verification": [
+        {
+          "command": "scripts/verify-local-review.py",
+          "result": "PASS original six photograph hashes and decoding for all three cases; 36 current native runs, 2736 native style headers, upstream head hashes, anonymous denials, preserved options/selection/visits/upload/reminders/plans. Read only; no recreation."
+        },
+        {
+          "command": "scripts/verify-local-demos.py",
+          "result": "PASS all 76 actual library GLBs, eight routes, real asynchronous diagnostics, immutable input replacement, workspace and option reload/conflicts, source erasure, cancellation, withdrawal and disposable client deletion."
+        },
+        {
+          "command": "scripts/verify-local-privacy.py",
+          "result": "PASS real local permission entry, wrong-name rejection, single-use link, private media access, withdrawal, fresh acknowledgement, complete disposable erasure and nonidentifying completion history."
+        },
+        {
+          "command": "scripts/verify-local-outcomes.py; scripts/verify-local-maintenance.py",
+          "result": "PASS six retained simulated visits and 72 decoded images, original expected event history, four immutable plan revisions, nine native stage references and private media."
+        },
+        {
+          "command": "npm --prefix web run build; mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS final comparison/translation build: 190 modules, 1.99 s; Go packages passed (cached). Vite retains 509 kB main and 650 kB lazy viewer bundle warnings."
+        },
+        {
+          "command": "@Browser: final-selector-browser-verification.json; final-native-browser-verification.json",
+          "result": "PASS eight workflow buttons, six exact persisted native proposal reloads, actual render/geometry edit fingerprints, unchanged current hair/beard, independent proposed hair/beard deformation and synchronized named camera controls. Browser physically hidden; available FPS/load samples are qualified, CloudCompare fresh sample unavailable."
+        },
+        {
+          "command": "@Browser: HTML log selector and console",
+          "result": "PASS task selector switched from 15 to 21, correct task headings and blocked status rendered; no browser warnings/errors on the log."
+        },
+        {
+          "command": "scripts/verify-execution-log.py",
+          "result": "PASS 408 relative linked resources HTTP 200 and byte-identical to local files; 201 decoded pictures, comparison provenance included, at most one active task. Final log browser screenshot is checked in the next audit."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/final-candidate-comparison.png",
+          "caption": "Final app comparison with current actual counts and qualified measurements; all eight alternatives retained.",
+          "date": "2026-09-30T17:38:32-03:00"
+        },
+        {
+          "src": "assets/final-colmap-workflow.png",
+          "caption": "Actual COLMAP six-photo settings and retained-input workflow; failed reconstruction remains separate from fitting alternatives.",
+          "date": "2026-09-30T17:38:32-03:00"
+        },
+        {
+          "src": "assets/final-blender-mpfb-reopened.png",
+          "caption": "Actual reopened MPFB proposal. Current/proposed fitted template and original procedural styles; hidden geometry and professional style quality remain unvalidated.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-makehuman-reopened.png",
+          "caption": "Actual reopened MakeHuman saved proposal with independent styles and retained refinements; synthetic input, fitted/inferred geometry.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-flame-reopened.png",
+          "caption": "Actual reopened licensed FLAME 2023 Open proposal. Independent hairstyle and beardstyle edits replayed; approximate style attachment, professional clipping and likeness review pending.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-open3d-reopened.png",
+          "caption": "Actual Open3D processed MakeHuman proposal, saved styles and refinements reopened. The upstream fitting dependency is retained; this is not photo reconstruction.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-meshlab-reopened.png",
+          "caption": "Actual MeshLab processed MakeHuman proposal, saved styles and refinements reopened. No missing client surfaces were measured or filled.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-cloudcompare-reopened.png",
+          "caption": "Actual CloudCompare route with retained MakeHuman fit and synchronized three-quarter camera. Native registration evaluates geometry; it does not generate measured anatomy.",
+          "date": "2026-09-30T17:47:34-03:00"
+        },
+        {
+          "src": "assets/final-log-browser.png",
+          "caption": "Final portable HTML task selector shows the integration handoff blocked rather than complete; all completed tasks, failures and pending native runtime requirement remain visible.",
+          "date": "2026-09-30T17:51:04-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/candidate-comparison.json",
+          "label": "Read-only live comparison of all eight candidates and measured runs"
+        },
+        {
+          "href": "assets/final-demo-boundary-checks.txt",
+          "label": "Actual final asynchronous demo/persistence/source-erasure verification output"
+        },
+        {
+          "href": "assets/final-privacy-boundary-checks.txt",
+          "label": "Actual final permission/withdrawal/deletion verification output"
+        },
+        {
+          "href": "assets/final-review-options.json",
+          "label": "Exact persisted native option links for all six working routes"
+        },
+        {
+          "href": "assets/final-selector-browser-verification.json",
+          "label": "Actual eight workflow button navigation and visible settings"
+        },
+        {
+          "href": "assets/final-native-browser-verification.json",
+          "label": "Actual final native proposal reloads, mesh edit fingerprints, cameras and qualified browser performance"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T17:20:28-03:00",
+          "text": "Begin final local integration review, keeping all eight candidates available. COLMAP’s actual six-photo failures, the still-gated AliceVision runtime, removed backup scope, unvalidated real likeness and pending professional assessment remain explicit."
+        },
+        {
+          "date": "2026-09-30T17:36:35-03:00",
+          "text": "Initial review table build failed because result types duplicated elapsedMs/resources and omitted catalog. Reused existing types, added actual immutable catalog fields, corrected supporting-role detection, and rebuilt successfully."
+        },
+        {
+          "date": "2026-09-30T17:47:34-03:00",
+          "text": "Browser verifier initially waited for FPS inspection before bringing MPFB on screen. Its filtered first/last selector then matched only the faster proposed viewer for Open3D and MeshLab. Readiness was corrected to address current/proposed hosts separately; actual parsed fingerprints, screenshots and synchronized cameras were verified. CloudCompare parsed/rendered both meshes with no console errors but its fresh FPS sample remained unavailable in the hidden IAB. These earlier deadlines are not counted as passed checks."
+        },
+        {
+          "date": "2026-09-30T17:47:34-03:00",
+          "text": "All currently independent implementation and final integration checks completed locally. Review workspace is available, but the full all-candidate handoff remains blocked specifically by Meshroom runtime license acceptance. COLMAP remains an honest unsuitable six-photo experiment. No unmet native reconstruction requirement is marked complete."
+        }
+      ]
     }
-  ]
+  ],
+  "comparison": {
+    "verifiedAt": "2026-09-30T20:35:02.281078+00:00",
+    "scope": "Observed pixels and detected 2D features; fitted and inferred surfaces, including hidden regions. Supporting tools process explicitly identified upstream templates. Synthetic outcomes are not actual haircut results.",
+    "pending": [
+      "Real-client likeness and professional style quality/clipping/coverage/maintenance assessment",
+      "Final reconstruction/fitting route choice",
+      "Meshroom runtime agreement acceptance and native evaluation"
+    ],
+    "candidates": [
+      {
+        "id": "blender-mpfb",
+        "name": "Blender + MPFB",
+        "role": "Parametric head fitting",
+        "status": "verified local workflow",
+        "runs": 3,
+        "effort": "53.15 to 54.16 s; 173.9 to 177.7 MiB retained; 1152.2 MiB reported peak RSS",
+        "dependency": "",
+        "provenance": "assets/native-mpfb-provenance.json",
+        "task": "07"
+      },
+      {
+        "id": "colmap",
+        "name": "COLMAP / PyCOLMAP",
+        "role": "Photogrammetric reconstruction",
+        "status": "failed",
+        "runs": 8,
+        "effort": "0.81 to 1.34 s; 6.0 to 7.6 MiB retained; 889.9 MiB reported peak RSS",
+        "dependency": "",
+        "provenance": "assets/colmap-provenance.json",
+        "task": "08"
+      },
+      {
+        "id": "meshroom",
+        "name": "Meshroom / AliceVision",
+        "role": "Photogrammetric reconstruction",
+        "status": "blocked",
+        "runs": 0,
+        "effort": "Native runtime not acquired; source graph and setup retained.",
+        "dependency": "",
+        "provenance": "assets/meshroom-setup-provenance.json",
+        "task": "09"
+      },
+      {
+        "id": "makehuman",
+        "name": "Standalone MakeHuman",
+        "role": "Parametric head fitting",
+        "status": "verified local workflow",
+        "runs": 3,
+        "effort": "16.25 to 17.17 s; 142.9 to 146.2 MiB retained; 284.1 MiB reported peak RSS",
+        "dependency": "",
+        "provenance": "assets/makehuman-provenance.json",
+        "task": "10"
+      },
+      {
+        "id": "flame",
+        "name": "FLAME 2023 Open",
+        "role": "Parametric head fitting",
+        "status": "verified local workflow",
+        "runs": 3,
+        "effort": "32.23 to 32.71 s; 161.7 to 166.3 MiB retained; 264.6 MiB reported peak RSS",
+        "dependency": "",
+        "provenance": "assets/flame-open-provenance.json",
+        "task": "11"
+      },
+      {
+        "id": "open3d",
+        "name": "Open3D",
+        "role": "Supporting geometry processing",
+        "status": "verified local workflow",
+        "runs": 9,
+        "effort": "3.29 to 3.84 s; 229.5 to 325.9 MiB retained; 181.3 MiB reported peak RSS",
+        "dependency": "Requires an identified reconstruction or fitting result",
+        "provenance": "assets/open3d-provenance.json",
+        "task": "12"
+      },
+      {
+        "id": "meshlab",
+        "name": "MeshLab / PyMeshLab",
+        "role": "Supporting mesh processing",
+        "status": "verified local workflow",
+        "runs": 9,
+        "effort": "2.69 to 3.28 s; 228.9 to 325.2 MiB retained; 165.4 MiB reported peak RSS",
+        "dependency": "Requires an identified reconstruction or fitting result",
+        "provenance": "assets/meshlab-provenance.json",
+        "task": "13"
+      },
+      {
+        "id": "cloudcompare",
+        "name": "CloudCompare",
+        "role": "Supporting alignment and comparison",
+        "status": "verified local workflow",
+        "runs": 9,
+        "effort": "5.64 to 7.54 s; 362.3 to 461.9 MiB retained; 155.1 MiB reported peak RSS",
+        "dependency": "Requires an identified reconstruction or fitting result",
+        "provenance": "assets/cloudcompare-provenance.json",
+        "task": "14"
+      }
+    ]
+  }
 };

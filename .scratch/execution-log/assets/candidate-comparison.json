@@ -1,0 +1,3651 @@
+{
+  "verifiedAt": "2026-09-30T20:35:02.281078+00:00",
+  "scope": "Read-only live local original fictional cases. Actual source image hashes and decoding, 36 persisted native jobs, 2736 style GLB headers and lengths, original upstream head hashes, actual authenticated/anonymous head access, retained workflows. Prior full decoded catalog/1368 edit/render/browser tests remain separate evidence. No records created, rewritten or restored.",
+  "activeHair": 40,
+  "activeBeard": 20,
+  "styleHeadersVerified": 2736,
+  "cases": [
+    {
+      "fictionalCase": "alex-ramos",
+      "clientId": "a0b730e5-490f-488d-ae16-4f3812ee044f",
+      "originalSixPhotosDecodedAndSha256Verified": true,
+      "retainedOptions": 88,
+      "selectionHistoryEvents": 11,
+      "simulatedVisits": 3,
+      "immutablePlanRevisions": 2,
+      "uploadLinks": 1,
+      "localReminders": 4,
+      "currentNativeRuns": 12
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "clientId": "a83ec874-3249-4185-a028-26933b0de6da",
+      "originalSixPhotosDecodedAndSha256Verified": true,
+      "retainedOptions": 59,
+      "selectionHistoryEvents": 1,
+      "simulatedVisits": 2,
+      "immutablePlanRevisions": 1,
+      "uploadLinks": 1,
+      "localReminders": 3,
+      "currentNativeRuns": 12
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "clientId": "4e10027c-664d-4c35-b96e-5f486ebe948e",
+      "originalSixPhotosDecodedAndSha256Verified": true,
+      "retainedOptions": 58,
+      "selectionHistoryEvents": 1,
+      "simulatedVisits": 2,
+      "immutablePlanRevisions": 1,
+      "uploadLinks": 1,
+      "localReminders": 3,
+      "currentNativeRuns": 12
+    }
+  ],
+  "candidates": [
+    {
+      "id": "blender-mpfb",
+      "name": "Blender + MPFB",
+      "role": "Parametric head fitting",
+      "dependency": "",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "3f6c06ee-7406-45f1-af00-6fb2d18cd714",
+          "elapsedSeconds": 54.155,
+          "retainedMiBAtProcessing": 177.70871925354004,
+          "resources": [
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/3f6c06ee-7406-45f1-af00-6fb2d18cd714"
+              ],
+              "cpuSeconds": 83.691,
+              "exitCode": 0,
+              "peakRssKiB": 1166920,
+              "seconds": 23.3,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/3f6c06ee-7406-45f1-af00-6fb2d18cd714"
+              ],
+              "cpuSeconds": 2.285,
+              "exitCode": 0,
+              "peakRssKiB": 1166920,
+              "seconds": 2.045,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/3f6c06ee-7406-45f1-af00-6fb2d18cd714"
+              ],
+              "cpuSeconds": 88.829,
+              "exitCode": 0,
+              "peakRssKiB": 1169124,
+              "seconds": 27.308,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/3f6c06ee-7406-45f1-af00-6fb2d18cd714"
+              ],
+              "cpuSeconds": 1.764,
+              "exitCode": 0,
+              "peakRssKiB": 1169124,
+              "seconds": 1.495,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 0,
+              "iteration": 1,
+              "loss": 1.2491628371895219e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 2,
+              "iteration": 2,
+              "loss": 1.1659815806019984e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 5,
+              "iteration": 3,
+              "loss": 1.1258539122323629e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 7,
+              "iteration": 4,
+              "loss": 1.1172134595578414e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06",
+          "elapsedSeconds": 53.784,
+          "retainedMiBAtProcessing": 177.49013233184814,
+          "resources": [
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+              ],
+              "cpuSeconds": 84.476,
+              "exitCode": 0,
+              "peakRssKiB": 1175808,
+              "seconds": 22.665,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+              ],
+              "cpuSeconds": 2.281,
+              "exitCode": 0,
+              "peakRssKiB": 1175808,
+              "seconds": 1.971,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+              ],
+              "cpuSeconds": 89.43,
+              "exitCode": 0,
+              "peakRssKiB": 1178832,
+              "seconds": 27.501,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d2301f8e-358a-4c11-9fb4-c06cc5243e06"
+              ],
+              "cpuSeconds": 1.907,
+              "exitCode": 0,
+              "peakRssKiB": 1178832,
+              "seconds": 1.639,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 2,
+              "iteration": 1,
+              "loss": 1.2212321889037307e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 4,
+              "iteration": 2,
+              "loss": 1.0154923626716213e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 3,
+              "iteration": 3,
+              "loss": 1.004613151318122e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 4,
+              "iteration": 4,
+              "loss": 1.0020657696063515e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "bcf1d7e8-450d-4354-8012-8bb4c4d9bda6",
+          "elapsedSeconds": 53.151,
+          "retainedMiBAtProcessing": 173.91966247558594,
+          "resources": [
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/bcf1d7e8-450d-4354-8012-8bb4c4d9bda6"
+              ],
+              "cpuSeconds": 83.994,
+              "exitCode": 0,
+              "peakRssKiB": 1174792,
+              "seconds": 22.546,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/bcf1d7e8-450d-4354-8012-8bb4c4d9bda6"
+              ],
+              "cpuSeconds": 2.361,
+              "exitCode": 0,
+              "peakRssKiB": 1174792,
+              "seconds": 1.966,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "blender",
+                "--background",
+                "--factory-startup",
+                "--offline-mode",
+                "--threads",
+                "4",
+                "--python-exit-code",
+                "1",
+                "--python",
+                "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+                "--",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/bcf1d7e8-450d-4354-8012-8bb4c4d9bda6"
+              ],
+              "cpuSeconds": 88.376,
+              "exitCode": 0,
+              "peakRssKiB": 1179812,
+              "seconds": 26.958,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/bcf1d7e8-450d-4354-8012-8bb4c4d9bda6"
+              ],
+              "cpuSeconds": 1.761,
+              "exitCode": 0,
+              "peakRssKiB": 1179812,
+              "seconds": 1.674,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 3,
+              "iteration": 1,
+              "loss": 1.7758723595545737e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 5,
+              "iteration": 2,
+              "loss": 1.4995198388067612e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 6,
+              "iteration": 3,
+              "loss": 1.4608237184926674e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 6,
+              "iteration": 4,
+              "loss": 1.4555259492306696e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "colmap",
+      "name": "COLMAP / PyCOLMAP",
+      "role": "Photogrammetric reconstruction",
+      "dependency": "",
+      "status": "failed",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "3e7b3c02-1f94-44a0-8c87-e2bc765abe5f",
+          "preset": "standard",
+          "elapsedSeconds": 0.863,
+          "retainedMiBAtProcessing": 6.303195953369141,
+          "resources": [
+            {
+              "cpuSeconds": 2.254,
+              "peakRssKiB": 907320,
+              "seconds": 0.755,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.03,
+              "peakRssKiB": 907320,
+              "seconds": 0.052,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.002,
+              "peakRssKiB": 907320,
+              "seconds": 0.002,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.01,
+              "peakRssKiB": 907320,
+              "seconds": 0.007,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.023,
+              "peakRssKiB": 907320,
+              "seconds": 0.015,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 226,
+              "view": "back"
+            },
+            {
+              "features": 276,
+              "view": "front"
+            },
+            {
+              "features": 310,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 320,
+              "view": "left-profile"
+            },
+            {
+              "features": 295,
+              "view": "right-profile"
+            },
+            {
+              "features": 319,
+              "view": "right-three-quarter"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 20
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 21
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Separating visible current hair and beard into independent fitting surfaces is not implemented.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "3735c097-2b42-4132-9fba-266a435d02cd",
+          "preset": "sensitive-calibrated",
+          "elapsedSeconds": 1.006,
+          "retainedMiBAtProcessing": 6.579148292541504,
+          "resources": [
+            {
+              "cpuSeconds": 2.668,
+              "peakRssKiB": 787248,
+              "seconds": 0.903,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.079,
+              "peakRssKiB": 787248,
+              "seconds": 0.051,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.005,
+              "peakRssKiB": 787248,
+              "seconds": 0.004,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.013,
+              "peakRssKiB": 787248,
+              "seconds": 0.008,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.021,
+              "peakRssKiB": 787248,
+              "seconds": 0.01,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 500,
+              "view": "front"
+            },
+            {
+              "features": 575,
+              "view": "back"
+            },
+            {
+              "features": 598,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 695,
+              "view": "left-profile"
+            },
+            {
+              "features": 559,
+              "view": "right-three-quarter"
+            },
+            {
+              "features": 707,
+              "view": "right-profile"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "front",
+              "second": "back",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 23
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 22
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 40
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "8e6fa7be-3520-4e08-a41c-a1b52cda06a9",
+          "preset": "sensitive-calibrated",
+          "elapsedSeconds": 1.061,
+          "retainedMiBAtProcessing": 6.579150199890137,
+          "resources": [
+            {
+              "cpuSeconds": 2.722,
+              "peakRssKiB": 785756,
+              "seconds": 0.953,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.066,
+              "peakRssKiB": 785756,
+              "seconds": 0.051,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.005,
+              "peakRssKiB": 785756,
+              "seconds": 0.005,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.015,
+              "peakRssKiB": 785756,
+              "seconds": 0.01,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.018,
+              "peakRssKiB": 785756,
+              "seconds": 0.008,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 500,
+              "view": "front"
+            },
+            {
+              "features": 575,
+              "view": "back"
+            },
+            {
+              "features": 598,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 695,
+              "view": "left-profile"
+            },
+            {
+              "features": 559,
+              "view": "right-three-quarter"
+            },
+            {
+              "features": 707,
+              "view": "right-profile"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "front",
+              "second": "back",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 23
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 22
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 40
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "6f931945-7a7a-40a3-bb3f-2351efd82fc5",
+          "preset": "standard",
+          "elapsedSeconds": 0.809,
+          "retainedMiBAtProcessing": 6.302817344665527,
+          "resources": [
+            {
+              "cpuSeconds": 2.025,
+              "peakRssKiB": 909660,
+              "seconds": 0.703,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.028,
+              "peakRssKiB": 909660,
+              "seconds": 0.052,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.002,
+              "peakRssKiB": 909660,
+              "seconds": 0.001,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.012,
+              "peakRssKiB": 909660,
+              "seconds": 0.008,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.021,
+              "peakRssKiB": 909660,
+              "seconds": 0.014,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 226,
+              "view": "back"
+            },
+            {
+              "features": 276,
+              "view": "front"
+            },
+            {
+              "features": 310,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 320,
+              "view": "left-profile"
+            },
+            {
+              "features": 319,
+              "view": "right-three-quarter"
+            },
+            {
+              "features": 295,
+              "view": "right-profile"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 20
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 21
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "7a47c557-6f13-436d-8520-a0ecf3c3a830",
+          "preset": "sensitive-calibrated",
+          "elapsedSeconds": 1.342,
+          "retainedMiBAtProcessing": 7.578173637390137,
+          "resources": [
+            {
+              "cpuSeconds": 3.666,
+              "peakRssKiB": 786048,
+              "seconds": 1.254,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.137,
+              "peakRssKiB": 786048,
+              "seconds": 0.052,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.002,
+              "peakRssKiB": 786048,
+              "seconds": 0.002,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.001,
+              "peakRssKiB": 786048,
+              "seconds": 0.001,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.001,
+              "peakRssKiB": 786048,
+              "seconds": 0.001,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 1003,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 1080,
+              "view": "back"
+            },
+            {
+              "features": 1078,
+              "view": "left-profile"
+            },
+            {
+              "features": 1053,
+              "view": "front"
+            },
+            {
+              "features": 967,
+              "view": "right-three-quarter"
+            },
+            {
+              "features": 1134,
+              "view": "right-profile"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "left-three-quarter",
+              "second": "back",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "f58099bf-9863-49b9-85ad-22d586cc33bd",
+          "preset": "standard",
+          "elapsedSeconds": 0.839,
+          "retainedMiBAtProcessing": 7.374772071838379,
+          "resources": [
+            {
+              "cpuSeconds": 2.244,
+              "peakRssKiB": 911252,
+              "seconds": 0.753,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.08,
+              "peakRssKiB": 911252,
+              "seconds": 0.051,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.001,
+              "peakRssKiB": 911252,
+              "seconds": 0.001,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.001,
+              "peakRssKiB": 911252,
+              "seconds": 0.001,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.001,
+              "peakRssKiB": 911252,
+              "seconds": 0.001,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 846,
+              "view": "back"
+            },
+            {
+              "features": 806,
+              "view": "front"
+            },
+            {
+              "features": 878,
+              "view": "left-profile"
+            },
+            {
+              "features": 776,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 760,
+              "view": "right-three-quarter"
+            },
+            {
+              "features": 866,
+              "view": "right-profile"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "c0b82f1e-ad33-44b3-80dd-88a8658f802c",
+          "preset": "sensitive-calibrated",
+          "elapsedSeconds": 0.915,
+          "retainedMiBAtProcessing": 6.230694770812988,
+          "resources": [
+            {
+              "cpuSeconds": 2.272,
+              "peakRssKiB": 785836,
+              "seconds": 0.803,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.042,
+              "peakRssKiB": 785836,
+              "seconds": 0.052,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.011,
+              "peakRssKiB": 785836,
+              "seconds": 0.006,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.02,
+              "peakRssKiB": 785836,
+              "seconds": 0.009,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.026,
+              "peakRssKiB": 785836,
+              "seconds": 0.011,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 308,
+              "view": "back"
+            },
+            {
+              "features": 407,
+              "view": "front"
+            },
+            {
+              "features": 380,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 385,
+              "view": "left-profile"
+            },
+            {
+              "features": 498,
+              "view": "right-profile"
+            },
+            {
+              "features": 493,
+              "view": "right-three-quarter"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "left-three-quarter",
+              "verifiedMatches": 16
+            },
+            {
+              "first": "front",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 36
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 26
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "right-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 33
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "c4afdfed-720a-4e46-93ac-2ada987b096a",
+          "preset": "standard",
+          "elapsedSeconds": 0.904,
+          "retainedMiBAtProcessing": 5.991809844970703,
+          "resources": [
+            {
+              "cpuSeconds": 2.401,
+              "peakRssKiB": 911012,
+              "seconds": 0.804,
+              "stage": "features"
+            },
+            {
+              "cpuSeconds": 0.026,
+              "peakRssKiB": 911012,
+              "seconds": 0.051,
+              "stage": "matches"
+            },
+            {
+              "cpuSeconds": 0.002,
+              "peakRssKiB": 911012,
+              "seconds": 0.002,
+              "stage": "mapping-0"
+            },
+            {
+              "cpuSeconds": 0.006,
+              "peakRssKiB": 911012,
+              "seconds": 0.006,
+              "stage": "mapping-1"
+            },
+            {
+              "cpuSeconds": 0.011,
+              "peakRssKiB": 911012,
+              "seconds": 0.01,
+              "stage": "mapping-2"
+            }
+          ],
+          "features": [
+            {
+              "features": 83,
+              "view": "back"
+            },
+            {
+              "features": 133,
+              "view": "left-three-quarter"
+            },
+            {
+              "features": 123,
+              "view": "left-profile"
+            },
+            {
+              "features": 149,
+              "view": "front"
+            },
+            {
+              "features": 151,
+              "view": "right-profile"
+            },
+            {
+              "features": 175,
+              "view": "right-three-quarter"
+            }
+          ],
+          "verifiedPairs": [
+            {
+              "first": "back",
+              "second": "left-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "back",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "left-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-three-quarter",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "front",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "left-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-profile",
+              "verifiedMatches": 0
+            },
+            {
+              "first": "front",
+              "second": "right-three-quarter",
+              "verifiedMatches": 19
+            },
+            {
+              "first": "right-profile",
+              "second": "right-three-quarter",
+              "verifiedMatches": 0
+            }
+          ],
+          "trials": [
+            {
+              "index": 0,
+              "initialMinimumAngleDegrees": 16,
+              "initialMinimumInliers": 100,
+              "models": [],
+              "relaxedThresholds": false
+            },
+            {
+              "index": 1,
+              "initialMinimumAngleDegrees": 8,
+              "initialMinimumInliers": 50,
+              "models": [],
+              "relaxedThresholds": true
+            },
+            {
+              "index": 2,
+              "initialMinimumAngleDegrees": 5,
+              "initialMinimumInliers": 20,
+              "models": [],
+              "relaxedThresholds": true
+            }
+          ],
+          "limitations": [
+            "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+            "Six views may lack overlap and texture needed for connected reconstruction.",
+            "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+            "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+            "No mesh, compatible independent styles or verified likeness produced."
+          ],
+          "unmetRequirements": [
+            "Complete six-view head coverage",
+            "Client-specific editable head mesh",
+            "Removal or separation of current hair and beard",
+            "Independent compatible hairstyle and beardstyle fitting",
+            "Refinement and expected-result journey on reconstructed geometry"
+          ],
+          "usableHead": false
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "meshroom",
+      "name": "Meshroom / AliceVision",
+      "role": "Photogrammetric reconstruction",
+      "dependency": "",
+      "status": "blocked",
+      "runs": [],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "makehuman",
+      "name": "Standalone MakeHuman",
+      "role": "Parametric head fitting",
+      "dependency": "",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+          "elapsedSeconds": 17.174,
+          "retainedMiBAtProcessing": 146.17870044708252,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+              ],
+              "cpuSeconds": 4.113,
+              "exitCode": 0,
+              "peakRssKiB": 77556,
+              "seconds": 3.896,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+              ],
+              "cpuSeconds": 5.435,
+              "exitCode": 0,
+              "peakRssKiB": 254456,
+              "seconds": 5.422,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+              ],
+              "cpuSeconds": 8.986,
+              "exitCode": 0,
+              "peakRssKiB": 285720,
+              "seconds": 6.476,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+              ],
+              "cpuSeconds": 1.634,
+              "exitCode": 0,
+              "peakRssKiB": 285720,
+              "seconds": 1.372,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 0,
+              "iteration": 1,
+              "loss": 1.169715079059682e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 2,
+              "iteration": 2,
+              "loss": 1.1514011000157631e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 4,
+              "iteration": 3,
+              "loss": 1.0656480764607423e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 2,
+              "iteration": 4,
+              "loss": 1.0633527920112546e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+          "elapsedSeconds": 16.251,
+          "retainedMiBAtProcessing": 144.93010234832764,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+              ],
+              "cpuSeconds": 4.217,
+              "exitCode": 0,
+              "peakRssKiB": 77936,
+              "seconds": 3.959,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+              ],
+              "cpuSeconds": 5.256,
+              "exitCode": 0,
+              "peakRssKiB": 252660,
+              "seconds": 4.945,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+              ],
+              "cpuSeconds": 8.29,
+              "exitCode": 0,
+              "peakRssKiB": 290936,
+              "seconds": 5.921,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+              ],
+              "cpuSeconds": 1.687,
+              "exitCode": 0,
+              "peakRssKiB": 290936,
+              "seconds": 1.418,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 2,
+              "iteration": 1,
+              "loss": 1.2948831570479531e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 3,
+              "iteration": 2,
+              "loss": 1.1278090581329327e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 3,
+              "iteration": 3,
+              "loss": 1.1148924432375966e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 5,
+              "iteration": 4,
+              "loss": 1.1118707589828365e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+          "elapsedSeconds": 16.71,
+          "retainedMiBAtProcessing": 142.86346626281738,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/fa809343-10df-4e8d-a5d6-e835404f9745"
+              ],
+              "cpuSeconds": 4.202,
+              "exitCode": 0,
+              "peakRssKiB": 77800,
+              "seconds": 3.946,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/fa809343-10df-4e8d-a5d6-e835404f9745"
+              ],
+              "cpuSeconds": 5.275,
+              "exitCode": 0,
+              "peakRssKiB": 256148,
+              "seconds": 4.948,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/makehuman.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/fa809343-10df-4e8d-a5d6-e835404f9745"
+              ],
+              "cpuSeconds": 8.871,
+              "exitCode": 0,
+              "peakRssKiB": 287612,
+              "seconds": 6.394,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/fa809343-10df-4e8d-a5d6-e835404f9745"
+              ],
+              "cpuSeconds": 1.679,
+              "exitCode": 0,
+              "peakRssKiB": 287612,
+              "seconds": 1.415,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 2,
+              "iteration": 1,
+              "loss": 2.2205505296523036e-05,
+              "step": 0.4
+            },
+            {
+              "acceptedChanges": 2,
+              "iteration": 2,
+              "loss": 2.086972850232697e-05,
+              "step": 0.2
+            },
+            {
+              "acceptedChanges": 5,
+              "iteration": 3,
+              "loss": 2.0268928722913776e-05,
+              "step": 0.1
+            },
+            {
+              "acceptedChanges": 4,
+              "iteration": 4,
+              "loss": 2.0147113621038537e-05,
+              "step": 0.05
+            }
+          ],
+          "evaluationCount": 97,
+          "nativeStyleCount": 76,
+          "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "flame",
+      "name": "FLAME 2023 Open",
+      "role": "Parametric head fitting",
+      "dependency": "",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "0c1e51d4-b944-4c8a-bb00-9cd66b9efc67",
+          "elapsedSeconds": 32.266,
+          "retainedMiBAtProcessing": 163.8410406112671,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67"
+              ],
+              "cpuSeconds": 3.505,
+              "exitCode": 0,
+              "peakRssKiB": 119316,
+              "seconds": 3.26,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67"
+              ],
+              "cpuSeconds": 14.764,
+              "exitCode": 0,
+              "peakRssKiB": 255724,
+              "seconds": 14.555,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67"
+              ],
+              "cpuSeconds": 14.54,
+              "exitCode": 0,
+              "peakRssKiB": 270992,
+              "seconds": 13.107,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67"
+              ],
+              "cpuSeconds": 1.608,
+              "exitCode": 0,
+              "peakRssKiB": 270992,
+              "seconds": 1.337,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 15,
+              "iteration": 1,
+              "loss": 1.302890191008191e-05,
+              "step": 1
+            },
+            {
+              "acceptedChanges": 12,
+              "iteration": 2,
+              "loss": 1.2285778914477756e-05,
+              "step": 0.5
+            },
+            {
+              "acceptedChanges": 15,
+              "iteration": 3,
+              "loss": 1.1987903009600421e-05,
+              "step": 0.25
+            },
+            {
+              "acceptedChanges": 13,
+              "iteration": 4,
+              "loss": 1.18762359249413e-05,
+              "step": 0.125
+            }
+          ],
+          "evaluationCount": 161,
+          "nativeStyleCount": 76,
+          "headSha256": "23f9bc2ebb56e8a8c6e53fde15049e2f0e024d634a97b81b56b2cc15115cc51b",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "2691ccd3-6908-4992-81cc-64a3ee492abc",
+          "elapsedSeconds": 32.234,
+          "retainedMiBAtProcessing": 166.251971244812,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/2691ccd3-6908-4992-81cc-64a3ee492abc"
+              ],
+              "cpuSeconds": 3.506,
+              "exitCode": 0,
+              "peakRssKiB": 119620,
+              "seconds": 3.248,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/2691ccd3-6908-4992-81cc-64a3ee492abc"
+              ],
+              "cpuSeconds": 14.832,
+              "exitCode": 0,
+              "peakRssKiB": 253344,
+              "seconds": 14.548,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/2691ccd3-6908-4992-81cc-64a3ee492abc"
+              ],
+              "cpuSeconds": 14.562,
+              "exitCode": 0,
+              "peakRssKiB": 259280,
+              "seconds": 13.044,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/2691ccd3-6908-4992-81cc-64a3ee492abc"
+              ],
+              "cpuSeconds": 1.657,
+              "exitCode": 0,
+              "peakRssKiB": 259280,
+              "seconds": 1.387,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 16,
+              "iteration": 1,
+              "loss": 2.202786815591359e-05,
+              "step": 1
+            },
+            {
+              "acceptedChanges": 14,
+              "iteration": 2,
+              "loss": 1.3097217329685566e-05,
+              "step": 0.5
+            },
+            {
+              "acceptedChanges": 15,
+              "iteration": 3,
+              "loss": 1.102600204590846e-05,
+              "step": 0.25
+            },
+            {
+              "acceptedChanges": 14,
+              "iteration": 4,
+              "loss": 1.0338079164700608e-05,
+              "step": 0.125
+            }
+          ],
+          "evaluationCount": 161,
+          "nativeStyleCount": 76,
+          "headSha256": "f8225b8b1592a09c1997e03faba51437ca0660a8bcfbe96123c4d93031dc7cdd",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937",
+          "elapsedSeconds": 32.712,
+          "retainedMiBAtProcessing": 161.73144245147705,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "prepare",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+              ],
+              "cpuSeconds": 3.317,
+              "exitCode": 0,
+              "peakRssKiB": 116812,
+              "seconds": 3.052,
+              "stage": "prepare"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+              ],
+              "cpuSeconds": 14.725,
+              "exitCode": 0,
+              "peakRssKiB": 254220,
+              "seconds": 14.488,
+              "stage": "fit"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+                "export",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+              ],
+              "cpuSeconds": 15.206,
+              "exitCode": 0,
+              "peakRssKiB": 268960,
+              "seconds": 13.738,
+              "stage": "export"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/evaluate-silhouettes.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/8c46fbf3-afcd-4043-b7e2-e131ea84f937"
+              ],
+              "cpuSeconds": 1.691,
+              "exitCode": 0,
+              "peakRssKiB": 268960,
+              "seconds": 1.426,
+              "stage": "silhouette"
+            }
+          ],
+          "iterations": [
+            {
+              "acceptedChanges": 17,
+              "iteration": 1,
+              "loss": 2.260305602575898e-05,
+              "step": 1
+            },
+            {
+              "acceptedChanges": 15,
+              "iteration": 2,
+              "loss": 1.531056723994785e-05,
+              "step": 0.5
+            },
+            {
+              "acceptedChanges": 17,
+              "iteration": 3,
+              "loss": 1.3561608972430572e-05,
+              "step": 0.25
+            },
+            {
+              "acceptedChanges": 17,
+              "iteration": 4,
+              "loss": 1.285097739828063e-05,
+              "step": 0.125
+            }
+          ],
+          "evaluationCount": 161,
+          "nativeStyleCount": 76,
+          "headSha256": "ea7d1f2771588bdcbd62e0578304390f711691e539a7131c35d33d9c9b8b4989",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+          "sameOriginalPhotos": true,
+          "geometry": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+          "limitations": [
+            "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+            "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+            "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+            "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+            "No texture likeness or inferred demographic labels. Professional likeness review pending."
+          ],
+          "upstream": null
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "open3d",
+      "name": "Open3D",
+      "role": "Supporting geometry processing",
+      "dependency": "Requires an identified reconstruction or fitting result",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "1788c38a-19d2-4644-a6aa-a5f98e96c2d2",
+          "elapsedSeconds": 3.347,
+          "retainedMiBAtProcessing": 232.90454483032227,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/1788c38a-19d2-4644-a6aa-a5f98e96c2d2"
+              ],
+              "cpuSeconds": 3.729,
+              "exitCode": 0,
+              "peakRssKiB": 174492,
+              "seconds": 3.338,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "9371026b1ec81aa6fc757e66bd7dda5fc350f35af4c5200a0d172b0e4c43a19f",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "23f9bc2ebb56e8a8c6e53fde15049e2f0e024d634a97b81b56b2cc15115cc51b",
+            "runId": "0c1e51d4-b944-4c8a-bb00-9cd66b9efc67",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "0a57ca9c-51cf-403e-80e2-7dda86439254",
+          "elapsedSeconds": 3.837,
+          "retainedMiBAtProcessing": 325.8577356338501,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/0a57ca9c-51cf-403e-80e2-7dda86439254"
+              ],
+              "cpuSeconds": 4.06,
+              "exitCode": 0,
+              "peakRssKiB": 184192,
+              "seconds": 3.83,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "61fcf1e906cc26c3b8d35e9d85bdfc83f88936ab9efee75782b0f5af260c4d1f",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "runId": "3f6c06ee-7406-45f1-af00-6fb2d18cd714",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "e333f024-9d23-4441-8c52-2bdd8abc91e7",
+          "elapsedSeconds": 3.612,
+          "retainedMiBAtProcessing": 273.60172271728516,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/e333f024-9d23-4441-8c52-2bdd8abc91e7"
+              ],
+              "cpuSeconds": 3.834,
+              "exitCode": 0,
+              "peakRssKiB": 185676,
+              "seconds": 3.604,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "14274818de4c354ee37deb0cd2834c3edc7375efc015745728fbbba17f21c515",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "3a13587a-8729-40a6-9fb1-7c07a4dc934c",
+          "elapsedSeconds": 3.43,
+          "retainedMiBAtProcessing": 234.7095127105713,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/3a13587a-8729-40a6-9fb1-7c07a4dc934c"
+              ],
+              "cpuSeconds": 3.836,
+              "exitCode": 0,
+              "peakRssKiB": 173916,
+              "seconds": 3.422,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "ea956e1e83dbf3cab6ae9478b1c181046f909d5fc1e757ca14440f09afce6e0e",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "f8225b8b1592a09c1997e03faba51437ca0660a8bcfbe96123c4d93031dc7cdd",
+            "runId": "2691ccd3-6908-4992-81cc-64a3ee492abc",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "557e3c1e-de60-407e-8f1d-b2e24a9fb15f",
+          "elapsedSeconds": 3.745,
+          "retainedMiBAtProcessing": 323.4696683883667,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/557e3c1e-de60-407e-8f1d-b2e24a9fb15f"
+              ],
+              "cpuSeconds": 3.787,
+              "exitCode": 0,
+              "peakRssKiB": 185440,
+              "seconds": 3.734,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "4cd755b4dd9c5ed8ebe877e7c66e3b0665742c8956b0546c5a8e34f71151fe94",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "runId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "df9d9bea-61bb-43bd-b88b-2843ec74b8a0",
+          "elapsedSeconds": 3.46,
+          "retainedMiBAtProcessing": 269.45823192596436,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/df9d9bea-61bb-43bd-b88b-2843ec74b8a0"
+              ],
+              "cpuSeconds": 3.838,
+              "exitCode": 0,
+              "peakRssKiB": 182024,
+              "seconds": 3.452,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "0eb7fe5cb9148e1da2d4f9177aa26829ad42d8944b7deaafa6d45ed3c730c468",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "7a760fe0-59d2-4d0f-8b5c-51d92abc8c2a",
+          "elapsedSeconds": 3.289,
+          "retainedMiBAtProcessing": 229.5363254547119,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/7a760fe0-59d2-4d0f-8b5c-51d92abc8c2a"
+              ],
+              "cpuSeconds": 3.692,
+              "exitCode": 0,
+              "peakRssKiB": 174584,
+              "seconds": 3.282,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "8d4a67a64ded248979c971053d54564898948e69c06ede8078c315c96f8e416a",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "ea7d1f2771588bdcbd62e0578304390f711691e539a7131c35d33d9c9b8b4989",
+            "runId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "0644b61f-2ec6-4aaa-a5ef-792e8688d8fa",
+          "elapsedSeconds": 3.78,
+          "retainedMiBAtProcessing": 318.61010932922363,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/0644b61f-2ec6-4aaa-a5ef-792e8688d8fa"
+              ],
+              "cpuSeconds": 4.164,
+              "exitCode": 0,
+              "peakRssKiB": 184544,
+              "seconds": 3.773,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "ef943900daadaa11ed8072b62cc78a658a0f42ed4055553570960fa67691426a",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "runId": "bcf1d7e8-450d-4354-8012-8bb4c4d9bda6",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "dca93d27-094d-4181-8a7e-cb375df9a867",
+          "elapsedSeconds": 3.3,
+          "retainedMiBAtProcessing": 267.32474994659424,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/dca93d27-094d-4181-8a7e-cb375df9a867"
+              ],
+              "cpuSeconds": 3.689,
+              "exitCode": 0,
+              "peakRssKiB": 185436,
+              "seconds": 3.293,
+              "stage": "open3d"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "d486f5ed2452a5bd281fc34683446102f524e3ef283c79f0888b2e9185ab9f52",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+            "headSha256Verified": true
+          }
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "meshlab",
+      "name": "MeshLab / PyMeshLab",
+      "role": "Supporting mesh processing",
+      "dependency": "Requires an identified reconstruction or fitting result",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "37711913-cfbd-4b69-b5fc-dfc97ba5afe4",
+          "elapsedSeconds": 2.903,
+          "retainedMiBAtProcessing": 232.2543077468872,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/37711913-cfbd-4b69-b5fc-dfc97ba5afe4"
+              ],
+              "cpuSeconds": 3.149,
+              "exitCode": 0,
+              "peakRssKiB": 156004,
+              "seconds": 2.895,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "d485070d69d78074cac05fa4be860b375165325ff5e85e0831798ba05e0e9e4a",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "23f9bc2ebb56e8a8c6e53fde15049e2f0e024d634a97b81b56b2cc15115cc51b",
+            "runId": "0c1e51d4-b944-4c8a-bb00-9cd66b9efc67",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "779016a9-9a1c-4167-b675-7ebd515ca857",
+          "elapsedSeconds": 3.159,
+          "retainedMiBAtProcessing": 325.15595722198486,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/779016a9-9a1c-4167-b675-7ebd515ca857"
+              ],
+              "cpuSeconds": 3.319,
+              "exitCode": 0,
+              "peakRssKiB": 168716,
+              "seconds": 3.152,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "bd79f447729be54af9799b60789a88696b44e912315c07b390ab7a7a7b904193",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "runId": "3f6c06ee-7406-45f1-af00-6fb2d18cd714",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "60051f77-5a99-425f-a589-39c370fa6355",
+          "elapsedSeconds": 3.163,
+          "retainedMiBAtProcessing": 272.90055561065674,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60051f77-5a99-425f-a589-39c370fa6355"
+              ],
+              "cpuSeconds": 3.319,
+              "exitCode": 0,
+              "peakRssKiB": 161780,
+              "seconds": 3.155,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "8ea2fe0cc4e28a59360b522c64afeea7ff17d33e2548a9e1c6d04ac9d660402e",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "9ab64a33-7abc-4176-93b4-eed3caf37893",
+          "elapsedSeconds": 2.752,
+          "retainedMiBAtProcessing": 234.061372756958,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/9ab64a33-7abc-4176-93b4-eed3caf37893"
+              ],
+              "cpuSeconds": 2.998,
+              "exitCode": 0,
+              "peakRssKiB": 153312,
+              "seconds": 2.745,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "b9831fb1058f3eb569d3a854b63aabdba7a0547707edb43ed972592f881a7502",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "f8225b8b1592a09c1997e03faba51437ca0660a8bcfbe96123c4d93031dc7cdd",
+            "runId": "2691ccd3-6908-4992-81cc-64a3ee492abc",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "4120c6c8-52d8-4372-9eb8-dcd09fd82bbf",
+          "elapsedSeconds": 3.282,
+          "retainedMiBAtProcessing": 322.7695941925049,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/4120c6c8-52d8-4372-9eb8-dcd09fd82bbf"
+              ],
+              "cpuSeconds": 3.385,
+              "exitCode": 0,
+              "peakRssKiB": 169364,
+              "seconds": 3.272,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "69bef499594b1dd2c0caa334cc50006ce970bc611b4a74e8abbce37b669dacab",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "runId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "d4499efd-df43-481c-95d6-cf75b1fe578f",
+          "elapsedSeconds": 3.273,
+          "retainedMiBAtProcessing": 268.7604093551636,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d4499efd-df43-481c-95d6-cf75b1fe578f"
+              ],
+              "cpuSeconds": 3.468,
+              "exitCode": 0,
+              "peakRssKiB": 161932,
+              "seconds": 3.266,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "1aab7a0103f9c3141a497c311af5a814d2464e2dad3c06163fedc0efed2aedc2",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "83fa164f-1a1f-455b-8f37-d6ff4f9b2fa0",
+          "elapsedSeconds": 2.686,
+          "retainedMiBAtProcessing": 228.8853235244751,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/83fa164f-1a1f-455b-8f37-d6ff4f9b2fa0"
+              ],
+              "cpuSeconds": 2.935,
+              "exitCode": 0,
+              "peakRssKiB": 155632,
+              "seconds": 2.678,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "7850c5289f52bd47be06461a6f8eaf1b220751379791719fd6ccecef93c508e1",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "ea7d1f2771588bdcbd62e0578304390f711691e539a7131c35d33d9c9b8b4989",
+            "runId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "12a27e46-ae1b-4d4a-a21d-0fa0abac7a2b",
+          "elapsedSeconds": 3.231,
+          "retainedMiBAtProcessing": 317.9090976715088,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/12a27e46-ae1b-4d4a-a21d-0fa0abac7a2b"
+              ],
+              "cpuSeconds": 3.44,
+              "exitCode": 0,
+              "peakRssKiB": 168744,
+              "seconds": 3.223,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "fd8a069139b15be6872d6bd787576152bcdc553d120b4e42600053aaa53c2ca7",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "runId": "bcf1d7e8-450d-4354-8012-8bb4c4d9bda6",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "4343be43-9788-4fb2-a464-276f94f6dca7",
+          "elapsedSeconds": 3.179,
+          "retainedMiBAtProcessing": 266.6252031326294,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/4343be43-9788-4fb2-a464-276f94f6dca7"
+              ],
+              "cpuSeconds": 3.421,
+              "exitCode": 0,
+              "peakRssKiB": 166068,
+              "seconds": 3.169,
+              "stage": "meshlab"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "40ae3e385e73549acb9acf93ffad644dfe8f29602799c66e110c2d6de3684809",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+            "headSha256Verified": true
+          }
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    },
+    {
+      "id": "cloudcompare",
+      "name": "CloudCompare",
+      "role": "Supporting alignment and comparison",
+      "dependency": "Requires an identified reconstruction or fitting result",
+      "status": "verified local workflow",
+      "runs": [
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "d674a139-d973-46ea-b762-6e16be18c46c",
+          "elapsedSeconds": 5.642,
+          "retainedMiBAtProcessing": 368.721697807312,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/d674a139-d973-46ea-b762-6e16be18c46c"
+              ],
+              "cpuSeconds": 8.922,
+              "exitCode": 0,
+              "peakRssKiB": 158792,
+              "seconds": 5.632,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "a903375fd719f801f46fdc2b3234c605bc916d3cd174776a7890e651a4c480a0",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "23f9bc2ebb56e8a8c6e53fde15049e2f0e024d634a97b81b56b2cc15115cc51b",
+            "runId": "0c1e51d4-b944-4c8a-bb00-9cd66b9efc67",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "feea4b83-bf89-4a15-b1be-57d3ebc4abc9",
+          "elapsedSeconds": 6.709,
+          "retainedMiBAtProcessing": 461.9232473373413,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/feea4b83-bf89-4a15-b1be-57d3ebc4abc9"
+              ],
+              "cpuSeconds": 8.392,
+              "exitCode": 0,
+              "peakRssKiB": 154408,
+              "seconds": 6.697,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "01720280cce210c41ad2bf7b52a7f2aa7aa9cb9c31117585fcabed2836e6c82a",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "runId": "3f6c06ee-7406-45f1-af00-6fb2d18cd714",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "alex-ramos",
+          "jobId": "e51f43a4-2a48-41eb-89f6-4cd342a4a4d0",
+          "elapsedSeconds": 6.942,
+          "retainedMiBAtProcessing": 435.7724380493164,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0"
+              ],
+              "cpuSeconds": 8.446,
+              "exitCode": 0,
+              "peakRssKiB": 153768,
+              "seconds": 6.927,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "21f9d5b5f8468774bfd34d8ed3cb3371ffcb3a4521b549108c35ea614b1b2745",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "f6ee54eb-ce12-4b12-a031-3a713d57637f",
+          "elapsedSeconds": 7.537,
+          "retainedMiBAtProcessing": 368.3167562484741,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/f6ee54eb-ce12-4b12-a031-3a713d57637f"
+              ],
+              "cpuSeconds": 15.834,
+              "exitCode": 0,
+              "peakRssKiB": 158628,
+              "seconds": 7.527,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "8eb4a39cdc408b9a447059e1300657092af4378206916b0727512a65379ac935",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "f8225b8b1592a09c1997e03faba51437ca0660a8bcfbe96123c4d93031dc7cdd",
+            "runId": "2691ccd3-6908-4992-81cc-64a3ee492abc",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "3368119e-18d1-45da-98d0-b314a6be0d68",
+          "elapsedSeconds": 6.567,
+          "retainedMiBAtProcessing": 457.3343105316162,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/3368119e-18d1-45da-98d0-b314a6be0d68"
+              ],
+              "cpuSeconds": 8.479,
+              "exitCode": 0,
+              "peakRssKiB": 154116,
+              "seconds": 6.557,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "81a5c79f37fd7b35af7c6771b2fe1a646a13587ac715b0397ff9768da761cd8f",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "runId": "d2301f8e-358a-4c11-9fb4-c06cc5243e06",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "maya-costa",
+          "jobId": "5f030df0-ac21-4b33-8177-038f2bae0ac6",
+          "elapsedSeconds": 6.463,
+          "retainedMiBAtProcessing": 430.30671310424805,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/5f030df0-ac21-4b33-8177-038f2bae0ac6"
+              ],
+              "cpuSeconds": 8.163,
+              "exitCode": 0,
+              "peakRssKiB": 153960,
+              "seconds": 6.45,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "760ae4d26db84515f0903188f919f52e7ebececec76bcd056f1e5b62db1f7f98",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "c9641dd1-3da5-43b0-a7c4-616ed71af130",
+          "elapsedSeconds": 7.24,
+          "retainedMiBAtProcessing": 362.2610139846802,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/c9641dd1-3da5-43b0-a7c4-616ed71af130"
+              ],
+              "cpuSeconds": 14.543,
+              "exitCode": 0,
+              "peakRssKiB": 156320,
+              "seconds": 7.23,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "11b592921f15e31a1383e5580528fcaeab91bdbef654c1677cf0ca4620e3b4cf",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "flame",
+            "headSha256": "ea7d1f2771588bdcbd62e0578304390f711691e539a7131c35d33d9c9b8b4989",
+            "runId": "8c46fbf3-afcd-4043-b7e2-e131ea84f937",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "b1206231-fd6b-4506-9457-f38ecd20c0d8",
+          "elapsedSeconds": 6.497,
+          "retainedMiBAtProcessing": 451.58309841156006,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/b1206231-fd6b-4506-9457-f38ecd20c0d8"
+              ],
+              "cpuSeconds": 8.201,
+              "exitCode": 0,
+              "peakRssKiB": 154384,
+              "seconds": 6.487,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "440eb52b124341da079edc635e2020c2e8ada180d652495e821fc25937f5d5ce",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "runId": "bcf1d7e8-450d-4354-8012-8bb4c4d9bda6",
+            "headSha256Verified": true
+          }
+        },
+        {
+          "fictionalCase": "noah-kim",
+          "jobId": "635e76f6-e49c-493f-85e4-d56286108db6",
+          "elapsedSeconds": 6.434,
+          "retainedMiBAtProcessing": 425.9130811691284,
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/635e76f6-e49c-493f-85e4-d56286108db6"
+              ],
+              "cpuSeconds": 8.69,
+              "exitCode": 0,
+              "peakRssKiB": 154516,
+              "seconds": 6.414,
+              "stage": "cloudcompare"
+            }
+          ],
+          "iterations": [],
+          "evaluationCount": null,
+          "nativeStyleCount": 76,
+          "headSha256": "a5fb102ad402ca8cd08c91e345280c03697f1dcb95e302bed376aafb31211a05",
+          "catalogVersion": "trama-surface-styles-v1",
+          "catalogSnapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "sameOriginalPhotos": true,
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+            "headSha256Verified": true
+          }
+        }
+      ],
+      "professionalAcceptance": "pending",
+      "realPersonAccuracy": "unvalidated",
+      "sixPhotoCoverage": "Original six synthetic photographs only. No denser capture or independent measured head scan."
+    }
+  ],
+  "meshroomBlocker": "Official AliceVision 3.3.0 runtime includes CUDA 12.1.1 terms awaiting user acceptance. Source graph experiment retained; no runtime/head success claimed.",
+  "geometryScope": "Observed pixels and detected 2D features; fitted and inferred surfaces, including hidden regions. Supporting tools process explicitly identified upstream templates. Synthetic outcomes are not actual haircut results.",
+  "pendingReview": [
+    "Real-client likeness and professional style quality/clipping/coverage/maintenance assessment",
+    "Final reconstruction/fitting route choice",
+    "Meshroom runtime agreement acceptance and native evaluation"
+  ],
+  "removedScope": "Backup workflow removed at user instruction. No production rollout, production backups or client data accessed."
+}
