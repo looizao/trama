@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T22:49:06-03:00",
+  "updated": "2026-09-29T22:49:38-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -450,7 +450,9 @@ window.executionLog={
           "date": "2026-09-29T22:46:16-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "c5dd386930eb31a87dc38ec4c426bc1ee8a8a3bc"
+      ],
       "outputs": [
         {
           "href": "assets/image-decoder-provenance.json",
