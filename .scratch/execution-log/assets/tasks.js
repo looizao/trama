@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T16:09:59-03:00",
+  "updated": "2026-09-30T16:10:41-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4299,7 +4299,9 @@ window.executionLog={
           "date": "2026-09-30T16:09:59-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "0b3b0afd8b864bc676b26251279c4b7fffaf585a"
+      ],
       "outputs": [
         {
           "href": "assets/outcomes-browser-angle-verification.json",
