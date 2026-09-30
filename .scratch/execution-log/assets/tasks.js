@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T11:21:03-03:00",
+  "updated": "2026-09-30T11:21:54-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2851,7 +2851,9 @@ window.executionLog={
           "date": "2026-09-30T11:21:03-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "f3f8d466031938b200c098042a39feca4d70ce4e"
+      ],
       "outputs": [
         {
           "href": "assets/colmap-journey-failure.json",
