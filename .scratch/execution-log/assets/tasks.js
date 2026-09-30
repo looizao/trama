@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T17:51:04-03:00",
+  "updated": "2026-09-30T17:52:57-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4633,6 +4633,10 @@ window.executionLog={
         {
           "command": "scripts/verify-execution-log.py",
           "result": "PASS 408 relative linked resources HTTP 200 and byte-identical to local files; 201 decoded pictures, comparison provenance included, at most one active task. Final log browser screenshot is checked in the next audit."
+        },
+        {
+          "command": "Final portable log audit",
+          "result": "PASS 409 relative resources HTTP 200 and exact local byte equality, 202 pictures decoded, no active tasks. Blocked Meshroom and failed COLMAP remain explicit."
         }
       ],
       "pictures": [
@@ -4682,7 +4686,9 @@ window.executionLog={
           "date": "2026-09-30T17:51:04-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "88a067c50fd8389a0423533095e8b45ab2af32ee"
+      ],
       "outputs": [
         {
           "href": "assets/candidate-comparison.json",
@@ -4725,6 +4731,10 @@ window.executionLog={
         {
           "date": "2026-09-30T17:47:34-03:00",
           "text": "All currently independent implementation and final integration checks completed locally. Review workspace is available, but the full all-candidate handoff remains blocked specifically by Meshroom runtime license acceptance. COLMAP remains an honest unsuitable six-photo experiment. No unmet native reconstruction requirement is marked complete."
+        },
+        {
+          "date": "2026-09-30T17:52:57-03:00",
+          "text": "Committed the verified comparison UI, read-only final verifier and safe evidence locally as 88a067c50fd8389a0423533095e8b45ab2af32ee. Credentials, model bundles, databases and private generation outputs remain unstaged. No push or deploy."
         }
       ]
     }
