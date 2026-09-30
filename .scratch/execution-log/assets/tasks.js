@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T09:36:29-03:00",
+  "updated": "2026-09-30T10:32:04-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2536,16 +2536,134 @@ window.executionLog={
         "Changing selection preserves earlier selections and revisions; reload/reopen verified.",
         "Expected, reference and actual material visibly distinguishable; failure cannot become successful preview."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Reversible defaults: expected choices attach to a specific consultation revision; new selections append events and update a versioned current pointer. Studio records professional review and client agreement method, with an explicit synthetic demonstration method for fictional cases. Native fit quality remains subject to professional review.",
+        "Added private retained browser-render pictures with JPEG decoding and metadata removal; pictures cascade with their immutable option. Added parent/root/revision metadata without overwriting legacy options. Gallery includes every candidate and current/earlier selection badges.",
+        "Added immutable revision lineage and private retained browser pictures, a gallery across candidates, consultation-scoped current expected choices and append-only selection/clear history. Agreement records explicitly distinguish fictional demonstrations from professional-recorded client agreement. Client records link to the exact chosen version.",
+        "Selection validates corrected fit and processing versions recursively through both primary and comparison-reference dependencies. Mannequin-only inspections, incomplete six-view inputs, failed output and known historical fit/style defects cannot qualify. Native renders pause when offscreen or unchanged; camera updates no longer recompute mesh edits."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Professional assessment remains pending. Studio-recorded agreement is not an authenticated client signature. Synthetic examples are simulated and do not establish real likeness, feasibility or actual haircut outcomes. Beard catalog quality remains pending task 15.",
+        "Existing pre-gallery options have no retained picture until their actual meshes are reopened and a picture is captured. This is visibly labeled. Captures illustrate a saved camera; authoritative persisted native geometry and recipes reopen independently.",
+        "IAB navigation and some Playwright actions intermittently time out. Working native controls passed all six synchronized angles. Background FPS is unavailable; no performance improvement claim is inferred from the rendering change. Existing 703 KB demo bundle warning remains.",
+        "Intermediate comparison screenshot displays the superseded FPS sampling bug. Corrected sampling excludes offscreen/hidden pauses; foreground frame rate is not inferred from background measurements."
+      ],
+      "verification": [
+        {
+          "command": "go test ./internal/app -run Expected -count=1",
+          "result": "PASS API invariants: separate revisions, agreement required, stale 409, reopening DB, selection/clear/reselection history, native source cancellation removes dependent pictures and selections without resurrecting earlier choices, withdrawal purges agreement notes, mannequin/historical native fit and foreign consultation rejection."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS all packages; internal/app 0.978 s."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app",
+          "result": "PASS 7.519 s."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS TypeScript and Vite, 1.38 s; existing demo bundle size warning."
+        },
+        {
+          "command": "private Python scripts/verify-local-expected-results.py",
+          "result": "PASS actual retained browser pictures, immutable lineage and four-event synthetic history; anonymous 401, cross-client 404, stale 409; actual same-six-source MakeHuman fit, source erasure removed native head/picture/options/selection events, preserved version without resurrection, withdrawal denied recreation. Optional crown/under-chin copied but excluded from fitting."
+        },
+        {
+          "command": "IAB gallery and client record",
+          "result": "PASS first proposal 85% hair reopened independently of revision 2 at 90%; both retain one brush stroke and 90% brown goatee. Select/select/clear/reselect creates version 4 and preserves four events. Client record loads the chosen revision and links to its exact saved version."
+        },
+        {
+          "command": "IAB six named angles on reopened revision 2",
+          "result": "PASS matched azimuth/elevation/distance in both canvases and unchanged current style vertices. Proposed fingerprint e327243e differs from earlier 82afc9d2; source head is retained independently."
+        },
+        {
+          "command": "IAB client-record exact-option link after API restart and fresh page load",
+          "result": "PASS revision 2 hair 90%, goatee 90% brown, one retained brush stroke, selection version 4, native current 0 changed vertices and proposed 90233; console warnings/errors empty."
+        },
+        {
+          "command": "Portable HTML and image audit",
+          "result": "PASS 207 relative references, all files present and HTTP 200; 83 PNG/JPEG/SVG pictures decoded; exactly one active implementation task."
+        },
+        {
+          "command": "npm --prefix web run build after FPS correction",
+          "result": "PASS 1.61 s; TypeScript and Vite, existing 703 KB demo chunk warning."
+        },
+        {
+          "command": "IAB corrected foreground sample after exact-option reload",
+          "result": "PASS current 213315 triangles, 12.7 MB, 292 ms mesh load, 115.4 initial FPS; proposed 78946 triangles, 5.9 MB, 209 ms load, 124.6 initial FPS. One contiguous foreground run, warm local cache; console empty. No cold-load or professional quality inference."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/expected-history-2026-09-30.png",
+          "caption": "Earlier two selected versions and explicit synthetic agreement labels. This intermediate state preceded clearing and reselection.",
+          "date": "2026-09-30T10:24:21-03:00"
+        },
+        {
+          "src": "assets/expected-gallery-2026-09-30.png",
+          "caption": "Gallery labels revision 2, its parent, current expected selection and earlier selected revision. Images are captured separately below.",
+          "date": "2026-09-30T10:24:21-03:00"
+        },
+        {
+          "src": "assets/expected-gallery-pictures-2026-09-30.png",
+          "caption": "Actual retained browser renders of the two independent saved camera states. Synthetic fitted geometry and coarse demo beard, not professional acceptance.",
+          "date": "2026-09-30T10:24:21-03:00"
+        },
+        {
+          "src": "assets/expected-client-record-2026-09-30.png",
+          "caption": "Client record reopened with current selection version 4 and preserved history.",
+          "date": "2026-09-30T10:24:21-03:00"
+        },
+        {
+          "src": "assets/expected-reopened-comparison-2026-09-30.png",
+          "caption": "Actual meshes reopened through the selected-version link on a fresh client page. Current reference stays unchanged; this is synthetic fitted geometry and pending catalog quality.",
+          "date": "2026-09-30T10:25:48-03:00"
+        },
+        {
+          "src": "assets/expected-reopened-final-2026-09-30.png",
+          "caption": "Fresh reload of the selected revision after correcting active-frame sampling. Both actual meshes reopen at the retained quarter angle; current reference is unchanged.",
+          "date": "2026-09-30T10:29:59-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/expected-live-verification.json",
+          "label": "Actual local privacy and immutable proposal verification"
+        },
+        {
+          "href": "assets/expected-camera-verification.json",
+          "label": "Actual synchronized angle and unchanged-current measurements"
+        },
+        {
+          "href": "assets/expected-browser-performance.json",
+          "label": "Corrected actual foreground browser performance"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T09:38:21-03:00",
+          "text": "Begin options gallery, explicit revision lineage, consultation-scoped expected selections and preserved agreement/selection history. Later broad MVP and expected-result ticket govern scope; mannequin inspection or failed processing cannot qualify as a client expected result."
+        },
+        {
+          "date": "2026-09-30T09:50:52-03:00",
+          "text": "Initial compile failed after a repeated text replacement inserted transactional cleanup into filesystem cleanup too. Removed the extra insertion and verified the correct database transaction erases selection data on withdrawal."
+        },
+        {
+          "date": "2026-09-30T10:24:21-03:00",
+          "text": "Real browser select/select/clear/reselect and actual fitted-source deletion passed. Historical upstream gating now checks both dependency branches. Navigation timeouts were inspected before further actions; no timed-out attempt is counted as success."
+        },
+        {
+          "date": "2026-09-30T10:28:03-03:00",
+          "text": "Visual comparison exposed a misleading 0 initial FPS: sampling included an offscreen interval. Changed the initial sample to a contiguous visible foreground interval and retain fractional FPS; mesh loading time remains measured separately. Earlier screenshot is retained as intermediate evidence."
+        },
+        {
+          "date": "2026-09-30T10:32:04-03:00",
+          "text": "Technical gallery/history task verified locally. Earlier options remain immutable, linked revisions and four-event selection history reopen, and actual native source deletion purges dependent content without restoring an earlier selection. Professional assessment, fuller catalog and final route choice remain pending."
+        }
+      ]
     },
     {
       "id": "07",

@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-30T10:16:19-0300",
+  "scope": "Actual local browser proposal pictures, immutable revisions and four-event synthetic selection history. A disposable same-six-photo MakeHuman fit verified source-dependent erasure. No real-person accuracy or professional acceptance claim.",
+  "browserRevisions": [
+    {
+      "id": "c5ea9ce3-397f-47c8-b069-320d8d9ff342",
+      "parentId": "",
+      "revision": 1
+    },
+    {
+      "id": "b42c8077-9ac2-4ab8-9b0a-5355a7ba5839",
+      "parentId": "c5ea9ce3-397f-47c8-b069-320d8d9ff342",
+      "revision": 2
+    }
+  ],
+  "browserPictures": [
+    {
+      "optionId": "c5ea9ce3-397f-47c8-b069-320d8d9ff342",
+      "bytes": 6937,
+      "sha256": "e4a72983d61fc8e16549dc800cb08d9c89da1da3eef8b2c7e0a3fb29973f3bad",
+      "pixels": [
+        400,
+        373
+      ]
+    },
+    {
+      "optionId": "b42c8077-9ac2-4ab8-9b0a-5355a7ba5839",
+      "bytes": 7913,
+      "sha256": "e43c452fde833220fedd3f024579f0878ba464f1b978e2ca304115f736c1458d",
+      "pixels": [
+        400,
+        373
+      ]
+    }
+  ],
+  "selectionActions": [
+    "select",
+    "select",
+    "clear",
+    "select"
+  ],
+  "persistedSelectionVersion": 4,
+  "actualDisposableFitCompleted": true,
+  "anonymousAndCrossClientDenied": true,
+  "staleSelectionDenied": true,
+  "sourceRemovalErasedNativeHeadOptionPictureAndSelectionHistory": true,
+  "selectionVersionPreservedWithoutResurrection": true,
+  "withdrawalDeniedRestoration": true
+}

@@ -33,12 +33,16 @@ type DemoWorkspaceState struct {
 	RevisionNote   string                `json:"revisionNote,omitempty"`
 }
 type DemoOption struct {
-	ID        string             `json:"id"`
-	Title     string             `json:"title"`
-	Candidate string             `json:"candidate"`
-	Geometry  string             `json:"geometry"`
-	State     DemoWorkspaceState `json:"state"`
-	CreatedAt time.Time          `json:"createdAt"`
+	ID         string             `json:"id"`
+	Title      string             `json:"title"`
+	Candidate  string             `json:"candidate"`
+	Geometry   string             `json:"geometry"`
+	State      DemoWorkspaceState `json:"state"`
+	CreatedAt  time.Time          `json:"createdAt"`
+	ParentID   string             `json:"parentId"`
+	SeriesID   string             `json:"seriesId"`
+	Revision   int                `json:"revision"`
+	PreviewURL string             `json:"previewUrl"`
 }
 
 func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) string {
@@ -230,7 +234,7 @@ func (a *App) listDemoOptions(w http.ResponseWriter, r *http.Request) {
 	if !a.authorizeDemoClient(w, r) {
 		return
 	}
-	rows, err := a.DB.QueryContext(r.Context(), "SELECT id,title,candidate,state,created_at FROM demo_options WHERE client_id=$1 AND organization_id=$2 ORDER BY created_at DESC", r.PathValue("clientID"), userFrom(r).OrganizationID)
+	rows, err := a.DB.QueryContext(r.Context(), `SELECT o.id,o.title,o.candidate,o.state,o.created_at,COALESCE(v.parent_id,''),COALESCE(v.series_id,o.id),COALESCE(v.revision,1),EXISTS(SELECT 1 FROM demo_option_previews p WHERE p.option_id=o.id) FROM demo_options o LEFT JOIN demo_option_revisions v ON v.option_id=o.id WHERE o.client_id=$1 AND o.organization_id=$2 ORDER BY o.created_at DESC,o.id`, r.PathValue("clientID"), userFrom(r).OrganizationID)
 	if err != nil {
 		problem(w, 500, "could not load explored asset options")
 		return
@@ -240,13 +244,17 @@ func (a *App) listDemoOptions(w http.ResponseWriter, r *http.Request) {
 	for rows.Next() {
 		var x DemoOption
 		var raw string
-		if err = rows.Scan(&x.ID, &x.Title, &x.Candidate, &raw, &x.CreatedAt); err != nil {
+		var preview bool
+		if err = rows.Scan(&x.ID, &x.Title, &x.Candidate, &raw, &x.CreatedAt, &x.ParentID, &x.SeriesID, &x.Revision, &preview); err != nil {
 			problem(w, 500, "could not load explored asset options")
 			return
 		}
 		if err = json.Unmarshal([]byte(raw), &x.State); err != nil {
 			problem(w, 500, "invalid saved option")
 			return
+		}
+		if preview {
+			x.PreviewURL = optionPreviewURL(r.PathValue("clientID"), x.ID)
 		}
 		x.Geometry = nativeGeometry(x.State)
 		items = append(items, x)
@@ -268,8 +276,10 @@ func (a *App) saveDemoOption(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var in struct {
-		Title string             `json:"title"`
-		State DemoWorkspaceState `json:"state"`
+		Title    string             `json:"title"`
+		State    DemoWorkspaceState `json:"state"`
+		ParentID string             `json:"parentId"`
+		Preview  string             `json:"preview"`
 	}
 	if err = decodeJSON(r, &in); err != nil {
 		badRequest(w, err)
@@ -284,6 +294,11 @@ func (a *App) saveDemoOption(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, message)
 		return
 	}
+	picture, err := decodeOptionPicture(in.Preview)
+	if err != nil {
+		problem(w, 400, err.Error())
+		return
+	}
 	x := DemoOption{ID: newID(), Title: in.Title, Candidate: in.State.Candidate, Geometry: nativeGeometry(in.State), State: in.State, CreatedAt: now()}
 	tx, err := a.DB.BeginTx(r.Context(), nil)
 	if err != nil {
@@ -291,7 +306,28 @@ func (a *App) saveDemoOption(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer tx.Rollback()
+	x.ParentID = in.ParentID
+	x.SeriesID = x.ID
+	x.Revision = 1
+	if in.ParentID != "" {
+		var parent string
+		if tx.QueryRowContext(r.Context(), `SELECT o.id,COALESCE(v.series_id,o.id) FROM demo_options o LEFT JOIN demo_option_revisions v ON v.option_id=o.id WHERE o.id=$1 AND o.client_id=$2 AND o.organization_id=$3`, in.ParentID, r.PathValue("clientID"), userFrom(r).OrganizationID).Scan(&parent, &x.SeriesID) != nil {
+			problem(w, 404, "parent option not found")
+			return
+		}
+		if err = tx.QueryRowContext(r.Context(), `SELECT COALESCE(MAX(revision),1)+1 FROM demo_option_revisions WHERE series_id=$1`, x.SeriesID).Scan(&x.Revision); err != nil {
+			problem(w, 500, "could not number revision")
+			return
+		}
+	}
 	_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_options(id,organization_id,client_id,candidate,title,state,created_at) VALUES($1,$2,$3,$4,$5,$6,$7)", x.ID, userFrom(r).OrganizationID, r.PathValue("clientID"), x.Candidate, x.Title, string(rawJSON(x.State)), x.CreatedAt)
+	if err == nil {
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_option_revisions(option_id,parent_id,series_id,revision,created_by) VALUES($1,NULLIF($2,''),$3,$4,$5)", x.ID, x.ParentID, x.SeriesID, x.Revision, userFrom(r).ID)
+	}
+	if err == nil && len(picture) > 0 {
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_option_previews(option_id,picture,created_at) VALUES($1,$2,$3)", x.ID, picture, x.CreatedAt)
+		x.PreviewURL = optionPreviewURL(r.PathValue("clientID"), x.ID)
+	}
 	if err == nil && x.State.PhotoSetID != "" {
 		for _, id := range x.State.PhotoViews {
 			if err == nil {

@@ -46,6 +46,7 @@ export function DemoViewer({
   refinement,
   brush,
   onStroke,
+  capture,
 }: {
   title: string
   urls: string[]
@@ -53,6 +54,7 @@ export function DemoViewer({
   onCamera: (value: DemoCamera) => void
   refinement?: DemoRefinement
   brush?: {kind:'hair'|'beard';radiusMm:number;strengthMm:number}
+  capture?: { current: (()=>string|null)|null }
   onStroke?: (stroke:BrushStroke)=>void
 }) {
   const { t } = usePreferences(),
@@ -62,6 +64,7 @@ export function DemoViewer({
     controls: OrbitControls
     updating: boolean
     applyEdits: () => void
+    requestRender: () => void
   } | null>(null)
   const cameraRef = useRef(camera),
     changeRef = useRef(onCamera)
@@ -77,7 +80,8 @@ export function DemoViewer({
   useEffect(() => {
     const element = host.current!
     let destroyed = false,
-      frame = 0
+      frame = 0,
+      visible=true, renderNeeded=true
     const abort = new AbortController(),
       scene = new THREE.Scene(),
       model = new THREE.Group()
@@ -107,6 +111,7 @@ export function DemoViewer({
     controls.minPolarAngle = Math.PI / 2 - 1.45
     controls.maxPolarAngle = Math.PI / 2 + 1.45
     const applyEdits=()=>{
+      renderNeeded=true
       const edits=editRef.current||defaultRefinement()
       let changedVertices=0,maximumDisplacementMm=0
       const measurements:Record<string,unknown>={}
@@ -123,7 +128,7 @@ export function DemoViewer({
       element.dataset.editMeasurements=JSON.stringify(measurements)
       controls.enabled=!brushRef.current
     }
-    const instance = { camera: viewCamera, controls, updating: false, applyEdits }
+    const instance = { camera: viewCamera, controls, updating: false, applyEdits, requestRender:()=>{renderNeeded=true} }
     active.current = instance
     const measuredCamera = () => {
       element.dataset.azimuth = controls.getAzimuthalAngle().toFixed(6)
@@ -134,6 +139,7 @@ export function DemoViewer({
       element.dataset.distance = controls.getDistance().toFixed(6)
     }
     const position = (value: DemoCamera) => {
+      renderNeeded=true
       instance.updating = true
       const radius = Math.cos(value.elevation) * value.distance
       viewCamera.position.set(
@@ -147,6 +153,7 @@ export function DemoViewer({
     }
     position(cameraRef.current)
     const changed = () => {
+      renderNeeded=true
       measuredCamera()
       if (!instance.updating && !destroyed)
         changeRef.current({
@@ -180,7 +187,10 @@ export function DemoViewer({
     const fill = new THREE.DirectionalLight(0xffffff, 1)
     fill.position.set(3, 0, -2)
     scene.add(fill)
+    const visibility = new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;if(visible)renderNeeded=true})
+    visibility.observe(element)
     const resize = new ResizeObserver(() => {
+      renderNeeded=true
       const width = element.clientWidth,
         height = element.clientHeight
       if (width && height) {
@@ -198,6 +208,7 @@ export function DemoViewer({
       loaded = false,
       renderedFrames = 0,
       measuredAt = 0,
+      sampleStarted = 0,
       inspected = false
     const loader = new GLTFLoader()
     Promise.all(
@@ -238,12 +249,26 @@ export function DemoViewer({
           setLoading(false)
         }
       })
+    if(capture)capture.current=()=>{
+      if(destroyed||!loaded||!renderer.domElement.width)return null
+      applyEdits();position(cameraRef.current);renderer.render(scene,viewCamera)
+      const picture=document.createElement('canvas');picture.width=400;picture.height=Math.round(400*renderer.domElement.height/renderer.domElement.width)
+      if(picture.height>1024)return null
+      picture.getContext('2d')!.drawImage(renderer.domElement,0,0,picture.width,picture.height)
+      return picture.toDataURL('image/jpeg',.85)
+    }
     const draw = () => {
       if (destroyed) return
+      // Sample only a contiguous visible, foreground interval. Loading and
+      // offscreen pauses are separate from the renderer's frame rate.
+      if(!visible||document.hidden){sampleStarted=0;renderedFrames=0}
+      if(visible&&(renderNeeded||(!document.hidden&&loaded&&!inspected))){
+      if(loaded&&!document.hidden&&!sampleStarted)sampleStarted=performance.now()
       renderer.render(scene, viewCamera)
-      if (loaded) {
+      renderNeeded=false
+      if (loaded&&!document.hidden) {
         renderedFrames++
-        if (!inspected && performance.now() - measuredAt >= 1000) {
+        if (!inspected && performance.now() - sampleStarted >= 1000) {
           inspected = true
           setInspection({
             assets: key,
@@ -251,19 +276,22 @@ export function DemoViewer({
             bytes,
             triangles: renderer.info.render.triangles,
             fps: Math.round(
-              (renderedFrames * 1000) / (performance.now() - measuredAt),
-            ),
+              (renderedFrames * 10000) / (performance.now() - sampleStarted),
+            )/10,
           })
         }
+      }
       }
       frame = requestAnimationFrame(draw)
     }
     draw()
     return () => {
+      if(capture)capture.current=null
       destroyed = true
       abort.abort()
       cancelAnimationFrame(frame)
       resize.disconnect()
+      visibility.disconnect()
       controls.removeEventListener('change', changed)
       renderer.domElement.removeEventListener('pointerdown',stroke)
       controls.dispose()
@@ -280,6 +308,7 @@ export function DemoViewer({
     const instance = active.current
     if (!instance) return
     const { controls, camera: viewCamera } = instance
+    instance.requestRender()
     instance.updating = true
     const radius = Math.cos(camera.elevation) * camera.distance
     viewCamera.position.set(

@@ -59,6 +59,10 @@ export type DemoLibrary = {
   }[]
 }
 export type DemoOption = {
+  parentId:string
+  seriesId:string
+  revision:number
+  previewUrl:string
   id: string
   title: string
   candidate: string
@@ -155,3 +159,6 @@ export type DemoJob = {
     }[]
   }
 }
+
+export type ExpectedEvent={id:string;optionId:string;sequence:number;action:string;rationale:string;agreementMethod:string;agreementName:string;createdBy:string;createdAt:string}
+export type ExpectedResult={consultationId:string;optionId:string;version:number;history:ExpectedEvent[]}

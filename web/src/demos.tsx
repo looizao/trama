@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, json, imageURL, dateLabel, type Client } from './api'
 import { usePreferences } from './i18n'
 import type { Permission } from './privacy'
 import { DemoViewer } from './demo-viewer'
+import { ExpectedResults, OptionPicture } from './expected-results'
 import { defaultRefinement } from './demo-editing'
 import { ProposalEditor, type ProposalBrush } from './proposal-editor'
 import type {
@@ -291,12 +292,16 @@ function DemoSession({
     enabled: authorized,
     refetchInterval: 3000,
   })
+  const expected=useQuery({queryKey:['expected-results',clientId],queryFn:()=>api<import('./demo-types').ExpectedResult[]>(`${base}/expected-results`),enabled:authorized,refetchInterval:3000})
   const jobs = useQuery({
     queryKey: ['demo-jobs', clientId],
     queryFn: () => api<DemoJob[]>(`${base}/demo-jobs`),
     enabled: authorized,
     refetchInterval: 1000,
   })
+  const capture=useRef<(()=>string|null)|null>(null)
+  const [openedOption,setOpenedOption]=useState(''),[selectedOption,setSelectedOption]=useState(''),[optionFilter,setOptionFilter]=useState('')
+  const deepLinkOpened=useRef(false)
   const [state, setState] = useState<DemoState>(),
     [version, setVersion] = useState(0),
     [dirty, setDirty] = useState(false),
@@ -307,6 +312,8 @@ function DemoSession({
     [brush,setBrush]=useState<ProposalBrush>()
   useEffect(() => {
     if (!authorized) {
+      setOpenedOption('');setSelectedOption('');capture.current=null
+      cache.removeQueries({queryKey:['expected-results',clientId]})
       setState(undefined)
       setVersion(0)
       setDirty(false)
@@ -346,17 +353,22 @@ function DemoSession({
       )
     ) {
       setState(undefined)
+      setOpenedOption('');setSelectedOption('');cache.invalidateQueries({queryKey:['expected-results',clientId]})
       setVersion(0)
       cache.invalidateQueries({ queryKey: ['demo-workspace', clientId] })
       cache.invalidateQueries({ queryKey: ['demo-options', clientId] })
     }
   }, [state?.modelRunId, state?.component?.sourceRunId, state?.component?.referenceRunId, jobs.data, cache, clientId])
+  useEffect(()=>{
+    const id=new URLSearchParams(window.location.search).get('option')
+    if(!deepLinkOpened.current&&authorized&&state&&options.data&&id){deepLinkOpened.current=true;const option=options.data.find(o=>o.id===id);if(option)reopen(option);else setError('Saved option is no longer available.')}
+  },[authorized,state,options.data])
   function change(next: Partial<DemoState>) {
     setState((s) => {
       if(!s)return s
       const updated={...s,...next}
       if (('modelRunId' in next && next.modelRunId!==s.modelRunId)||('candidate' in next && next.candidate!==s.candidate)||('photoSetId' in next&&next.photoSetId!==s.photoSetId)) {
-        updated.refinement=undefined;updated.revisionNote='';setBrush(undefined)
+        setOpenedOption('');updated.refinement=undefined;updated.revisionNote='';setBrush(undefined)
       } else if((next.hairId!==undefined&&next.hairId!==s.hairId)||(next.beardId!==undefined&&next.beardId!==s.beardId)) {
         const kind=next.hairId!==undefined&&next.hairId!==s.hairId?'hair':'beard'
         if(s.refinement){updated.refinement={...s.refinement,strokes:s.refinement.strokes.filter(stroke=>stroke.kind!==kind)};updated.refinement[kind]=defaultRefinement()[kind]}
@@ -396,6 +408,7 @@ function DemoSession({
     })
   }
   function reopen(option: DemoOption) {
+    setOpenedOption(option.id);setSelectedOption(option.id)
     setBrush(undefined)
     setState({
       ...option.state,
@@ -925,6 +938,7 @@ function DemoSession({
             urls={proposedURLs}
             camera={state.camera}
             onCamera={camera}
+            capture={capture}
             refinement={state.refinement}
             brush={brush}
             onStroke={stroke=>{const edits=state.refinement||defaultRefinement();if(edits.strokes.length<64)change({refinement:{...edits,strokes:[...edits.strokes,stroke]}})}}
@@ -934,7 +948,7 @@ function DemoSession({
           const result=await api<{state:DemoState;changes:string[]}>(`${base}/demo-refinements`,json('POST',{state,request}));change({refinement:result.state.refinement,revisionNote:result.state.revisionNote});setMessage('Applied geometry changes: '+result.changes.join('; '))
         })} onSave={()=>action(async()=>{
           const revisionTitle=`Edited proposal / ${new Date().toISOString()} / ${state.hairId} + ${state.beardId}`
-          await api<DemoOption>(`${base}/demo-options`,json('POST',{state,title:revisionTitle}));await cache.invalidateQueries({queryKey:['demo-options',clientId]});setBrush(undefined);setMessage('Edited revision saved as a new option. Earlier options are preserved. Save workspace to reopen this revision on reload.')
+          const preview=capture.current?.();if(!preview)throw new Error('Wait for the actual proposed meshes to load before saving.');const saved=await api<DemoOption>(`${base}/demo-options`,json('POST',{state,title:revisionTitle,parentId:openedOption,preview}));setOpenedOption(saved.id);setSelectedOption(saved.id);await cache.invalidateQueries({queryKey:['demo-options',clientId]});setBrush(undefined);setMessage('Edited revision saved as a new option. Earlier options are preserved. Save workspace to reopen this revision on reload.')
         })}/>}
         <div className="demo-catalog-pair">
           <Catalog
@@ -958,7 +972,7 @@ function DemoSession({
         <h2>{t('Explored asset options')}</h2>
         <p>
           {t(
-            'Save the selected meshes, shared camera, candidate and input set. These mannequin explorations are not selected client expected results.',
+            'Keep every explored proposal and its immutable revisions. A completed client head can become an expected result when agreement is recorded below. Mannequin inspections remain references.',
           )}
         </p>
         <form
@@ -966,10 +980,13 @@ function DemoSession({
           onSubmit={(e) => {
             e.preventDefault()
             action(async () => {
+              const preview=capture.current?.()
+              if(!preview)throw new Error('Wait for the actual proposed meshes to load before saving.')
               const saved = await api<DemoOption>(
                 `${base}/demo-options`,
-                json('POST', { title, state }),
+                json('POST', { title, state,parentId:openedOption,preview }),
               )
+              setOpenedOption(saved.id);setSelectedOption(saved.id)
               setState(saved.state)
               setTitle('')
               await cache.invalidateQueries({
@@ -993,18 +1010,25 @@ function DemoSession({
             {t('Save explored option')}
           </button>
         </form>
-        {options.data
-          ?.filter((o) => o.candidate === state.candidate)
+        <label>{t('Gallery candidate filter')}<select value={optionFilter} onChange={e=>setOptionFilter(e.target.value)}><option value="">{t('All candidates')}</option>{library.candidates.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
+        <div className="proposal-gallery">{options.data
+          ?.filter((o) => !optionFilter||o.candidate === optionFilter)
           .map((o) => (
-            <article className="demo-option" key={o.id}>
-              <div>
+            <article className={`demo-option ${openedOption===o.id?'opened':''}`} key={o.id} aria-label={o.title}>
+              <OptionPicture option={o}/><div>
                 <strong>{o.title}</strong>
                 <p>
                   {t(o.geometry)} · {dateLabel(o.createdAt, locale)}
                 </p>
                 <small>
-                  {o.state.hairId} + {o.state.beardId}
+                  {o.state.hairId} + {o.state.beardId} · {t('Revision')} {o.revision} {o.parentId&&<span> · {t('Revises')} {options.data?.find(p=>p.id===o.parentId)?.title||o.parentId}</span>}
                 </small>
+                <p>{o.state.revisionNote}</p>
+                {expected.data?.some(e=>e.optionId===o.id)&&<span className="tag generated">{t('Selected expected result')}</span>}
+                {!expected.data?.some(e=>e.optionId===o.id)&&expected.data?.some(e=>e.history.some(h=>h.optionId===o.id))&&<span className="tag">{t('Earlier selected version')}</span>}
+                {o.id===openedOption&&<span className="tag">{t('Opened proposal')}</span>}
+                {o.state.modelRunId&&<button className="button ghost" onClick={()=>setSelectedOption(o.id)}>{t('Choose for agreement')}</button>}
+                {o.id===openedOption&&!o.previewUrl&&<button className="button ghost" disabled={busy} onClick={()=>action(async()=>{const preview=capture.current?.();if(!preview)throw new Error('Wait for the actual proposed meshes to load before saving.');await api(`${base}/demo-options/${o.id}/preview`,json('PUT',{state,preview}));await cache.invalidateQueries({queryKey:['demo-options',clientId]});setMessage('Saved proposal picture retained.')} )}>{t('Retain preview picture')}</button>}
               </div>
               <button
                 className="button secondary"
@@ -1014,7 +1038,8 @@ function DemoSession({
                 {t('Reopen option')}
               </button>
             </article>
-          ))}
+          ))}</div>
+        <ExpectedResults clientId={clientId} options={options.data||[]} onReopen={reopen} onSelectOption={setSelectedOption} selectedOptionId={selectedOption}/>
         {options.error && <p className="error">{options.error.message}</p>}
       </section>
       <section className="card demo-jobs">

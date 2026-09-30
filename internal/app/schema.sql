@@ -215,3 +215,34 @@ CREATE TABLE IF NOT EXISTS demo_workspace_states (
   state text NOT NULL,
   version integer NOT NULL DEFAULT 1
 );
+
+CREATE TABLE IF NOT EXISTS demo_option_revisions (
+  option_id text PRIMARY KEY REFERENCES demo_options(id) ON DELETE CASCADE,
+  parent_id text REFERENCES demo_options(id) ON DELETE SET NULL,
+  series_id text NOT NULL,
+  revision integer NOT NULL,
+  created_by text NOT NULL REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS demo_option_previews (
+  option_id text PRIMARY KEY REFERENCES demo_options(id) ON DELETE CASCADE,
+  picture blob NOT NULL,
+  created_at timestamp NOT NULL
+);
+CREATE TABLE IF NOT EXISTS expected_selections (
+  consultation_id text PRIMARY KEY REFERENCES consultations(id) ON DELETE CASCADE,
+  option_id text REFERENCES demo_options(id) ON DELETE SET NULL,
+  version integer NOT NULL
+);
+CREATE TABLE IF NOT EXISTS expected_selection_events (
+  id text PRIMARY KEY,
+  consultation_id text NOT NULL REFERENCES consultations(id) ON DELETE CASCADE,
+  option_id text REFERENCES demo_options(id) ON DELETE CASCADE,
+  sequence integer NOT NULL,
+  action text NOT NULL CHECK(action IN ('select','clear')),
+  rationale text NOT NULL,
+  agreement_method text NOT NULL,
+  agreement_name text NOT NULL,
+  created_by text NOT NULL REFERENCES users(id),
+  created_at timestamp NOT NULL,
+  UNIQUE(consultation_id,sequence)
+);

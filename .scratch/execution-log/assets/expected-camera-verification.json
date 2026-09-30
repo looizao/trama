@@ -1,0 +1,444 @@
+{
+  "date": "2026-09-30T13:20:11.952Z",
+  "scope": "Actual reopened immutable revision 2; synchronized six named angles, current reference unchanged. Browser background FPS is unavailable.",
+  "angles": [
+    {
+      "name": "Front",
+      "values": [
+        {
+          "azimuth": "0.000000",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "0.000000",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Left three-quarter",
+      "values": [
+        {
+          "azimuth": "0.785398",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "0.785398",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Right three-quarter",
+      "values": [
+        {
+          "azimuth": "-0.785398",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "-0.785398",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Left profile",
+      "values": [
+        {
+          "azimuth": "1.570796",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "1.570796",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Right profile",
+      "values": [
+        {
+          "azimuth": "-1.570796",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "-1.570796",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Back",
+      "values": [
+        {
+          "azimuth": "3.141593",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "3.141593",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "elevation": "0.080000",
+          "measurements": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 2930,
+              "changedVertices": 2930,
+              "fingerprints": [
+                {
+                  "edited": "e327243e",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 11.561816598010696,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

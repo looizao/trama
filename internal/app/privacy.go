@@ -380,6 +380,12 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 		}
 	}
 	if e.Action == "withdrawal" || e.Action == "client deletion" {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM expected_selection_events WHERE consultation_id IN(SELECT id FROM consultations WHERE client_id=$1)", e.ClientID); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "DELETE FROM expected_selections WHERE consultation_id IN(SELECT id FROM consultations WHERE client_id=$1)", e.ClientID); err != nil {
+			return err
+		}
 		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1", e.ClientID); err != nil {
 			return err
 		}
