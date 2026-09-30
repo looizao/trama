@@ -7,7 +7,7 @@ import numpy as np
 import open3d as o3d
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[2]
-p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab','cloudcompare'],default='open3d');candidate=p.parse_args().candidate
+p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab','cloudcompare'],default='open3d');p.add_argument('--makehuman-style-version',choices=['makehuman-visible-lips-v2'],default='');args=p.parse_args();candidate=args.candidate
 if candidate=='meshlab':import pymeshlab as ml
 if candidate=='cloudcompare':
  spec=importlib.util.spec_from_file_location('cloudcompare_native',ROOT/'scripts/native-demos/process-cloudcompare.py');cc=importlib.util.module_from_spec(spec);spec.loader.exec_module(cc)
@@ -81,7 +81,8 @@ draw.text((15,42),('Native conversion, unchanged triangles.' if candidate=='clou
 from flame import read_shared_glb
 from geometry import render,camera
 for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
- report=json.loads((log/f'{candidate}-{parent}-populated-results.json').read_text())
+ suffix='-'+args.makehuman_style_version if parent=='makehuman' and args.makehuman_style_version else ''
+ report=json.loads((log/f'{candidate}-{parent}-populated-results{suffix}.json').read_text())
  for case in report['results']:
   client=imports['cases'][case['fictionalCase']]['clientId'];directory=runtime/'processing'/client/case['jobId']
   manifest=json.loads((directory/'manifest.json').read_text());component=json.loads((directory/'component-report.json').read_text())
@@ -100,6 +101,9 @@ for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
    assert all(c['exitCode']==0 for c in component['commands'])
   assert len(manifest['inputs'])==6 and component['upstream']['candidate']==parent
   parent_dir=runtime/'processing'/client/component['upstream']['runId'];parent_manifest=json.loads((parent_dir/'manifest.json').read_text())
+  if parent=='makehuman' and args.makehuman_style_version:
+   parent_result=json.loads((parent_dir/'result.json').read_text())
+   assert parent_result['nativeShape']['styleAttachment']['version']==args.makehuman_style_version
   current={i['view']:hashlib.sha256((directory/i['path']).read_bytes()).hexdigest() for i in manifest['inputs']}
   original={i['view']:hashlib.sha256((parent_dir/i['path']).read_bytes()).hexdigest() for i in parent_manifest['inputs']}
   assert current==original and len(current)==6
@@ -154,7 +158,8 @@ for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
    for row,path in enumerate([before,directory/'fitted-renders/front.png']):
     image=Image.open(path);image.thumbnail((384,448));sheet.paste(image,(column*384,88+row*472))
     draw.text((column*384+10,88+row*472),parent+(' / upstream' if row==0 else ' / '+candidate+' processed'),fill='#17313d',font_size=16)
-sheet.save(log/f'{candidate}-three-upstream-comparison.png')
+output_suffix='-'+args.makehuman_style_version if args.makehuman_style_version else ''
+sheet.save(log/f'{candidate}-three-upstream-comparison{output_suffix}.png')
 report={'date':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Actual 153 GLB files and 54 native renders from nine supporting-component jobs. Three original fitted routes use the same six authorized synthetic images and independent shared style assets. No scan, denser capture, real-person reconstruction accuracy or professional acceptance claimed.','results':results}
-(log/f'{candidate}-output-verification.json').write_text(json.dumps(report,indent=2)+'\n')
+(log/f'{candidate}-output-verification{output_suffix}.json').write_text(json.dumps(report,indent=2)+'\n')
 print('PASS',candidate,'153 actual GLBs, 54 renders, native PLY exports, nine same-six-photo snapshots, unchanged independent styles, native measurements and retained provenance.')

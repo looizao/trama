@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T13:06:33-03:00",
+  "updated": "2026-09-30T13:16:02-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -3322,19 +3322,96 @@ window.executionLog={
         "Integrated complete viewer/options journey; supporting dependency explicit.",
         "Licenses, metrics and measured/inferred distinctions retained."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Explicit primary style-version keys prevent supporting jobs from silently reusing the old nose-level MakeHuman beard attachment. New Open3D jobs processed all three corrected native fits; earlier jobs and outputs remain immutable. Verification checks actual primary attachment version and preserves separate report filenames."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "Open3D requires an explicitly identified upstream fit, and all hidden surfaces inherit that fitted or inferred geometry. Registration uses a declared synthetic transform, not an independent observed scan. Coarse beard catalog edges need task 15 cleanup; professional judgment and route selection pending."
+      ],
+      "verification": [
+        {
+          "command": "populate-components.py open3d --upstream makehuman --attempt visible-lips-v2 --source-style-version makehuman-visible-lips-v2",
+          "result": "PASS three actual native CPU jobs completed; preserved corrected primary style assets."
+        },
+        {
+          "command": "verify-components-assets.py --candidate open3d --makehuman-style-version makehuman-visible-lips-v2",
+          "result": "PASS 153 GLBs, 54 native renders, nine same-six-photo experiments, exact upstream style copies, native PLY readers, provenance and actual registration/mesh deviation measurements."
+        },
+        {
+          "command": "Browser full Open3D journey and verify-local-candidate-journey.py open3d",
+          "result": "PASS keep-current/clean-shaven alternative, written hair length 90% and volume 5mm plus beard width 90% brown, real hair brush with 60 additional vertices, six equal actual rendered camera transforms, revision 3, separate synthetic expected consultation, reload and actual pictures. Current unchanged; proposed hair 2930 and beard 124679 vertices changed. Invalid mixed written commands rejected atomically, stale workspace 409, anonymous 401, unlisted native style 404."
+        },
+        {
+          "command": "go test ./... and npm --prefix web run build",
+          "result": "PASS via mise Go 1.26.0, packages cached. Build 1.67s; existing 707.14kB bundle warning retained."
+        },
+        {
+          "command": "Browser reopened render and console",
+          "result": "PASS actual native current 227011 triangles/13.3MB/448ms/108.7 initial FPS and proposed 104573 triangles/7.1MB/279ms/108.7 initial FPS; console errors empty. Reopened independent meshes, recipe, camera and synthetic expected selection version 1."
+        },
+        {
+          "command": "Corrected MakeHuman upstream resources",
+          "result": "Alex 3.582s/143408429 bytes/0.409mm max deviation/4 ICP iterations; Maya 3.460s/141514522 bytes/0.348mm/4; Noah 3.444s/139694652 bytes/0.363mm/5. Deviations compare fitted template surfaces, not actual people."
+        },
+        {
+          "command": "verify-execution-log.py",
+          "result": "PASS 257 actual relative resources HTTP 200 and byte-identical, 108 decoded pictures; one implementation task active. New comparison picture already decoded separately."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/open3d-journey-reopened-2026-09-30.png",
+          "caption": "Actual edited Open3D output reopened at a common three-quarter camera. Primary dependency is the corrected MakeHuman fit. Coarse goatee edges remain catalog cleanup work; hidden surfaces are inferred.",
+          "date": "2026-09-30T13:15:11-03:00"
+        },
+        {
+          "src": "assets/open3d-journey-expected-result-2026-09-30.png",
+          "caption": "Separate synthetic Open3D expected choice preserves earlier FLAME, MakeHuman and MPFB choices. This recorded simulation does not constitute professional acceptance.",
+          "date": "2026-09-30T13:15:11-03:00"
+        },
+        {
+          "src": "assets/open3d-three-upstream-comparison-makehuman-visible-lips-v2.png",
+          "caption": "Actual neutral upstream fits above and Open3D processed geometry below. The same synthetic six views inform each fit; no independent scan is supplied. Native conversion and smoothing differences remain visible.",
+          "date": "2026-09-30T13:16:02-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/open3d-journey-camera-verification.json",
+          "label": "Actual six rendered cameras and vertex edit measurements"
+        },
+        {
+          "href": "assets/open3d-journey-verification.json",
+          "label": "Actual persisted native artifacts, browser pictures, revisions, expected result and failure behavior"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-makehuman-visible-lips-v2.json",
+          "label": "Three corrected upstream native component runs"
+        },
+        {
+          "href": "assets/open3d-output-verification-makehuman-visible-lips-v2.json",
+          "label": "Actual nine experiments, exact independent assets and native measurements"
+        },
+        {
+          "href": "assets/open3d-provenance.json",
+          "label": "Exact Open3D CPU and dependency license provenance"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T13:06:33-03:00",
+          "text": "Begin complete Open3D supporting journey using identified real six-photo native fitting, corrected MakeHuman visible-lip style attachment, independent styles, editing, saved alternatives, expected selection and reopening. Historical component jobs remain retained."
+        },
+        {
+          "date": "2026-09-30T13:15:11-03:00",
+          "text": "An ambiguous keep-current button locator failed before mutation; scoped to the hairstyle region. Two natural-language requests were rejected atomically before the supported explicit recipe. Ambiguous expected-panel heading locator failed before capture; exact synthetic consultation heading used."
         }
       ]
     },
