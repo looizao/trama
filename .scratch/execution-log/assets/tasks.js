@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T00:46:38-03:00",
+  "updated": "2026-09-30T00:47:04-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -717,6 +717,10 @@ window.executionLog={
         {
           "command": "Portable HTML log: local file references plus loopback HTTP and @Browser selector",
           "result": "41 relative picture/output links exist and returned HTTP 200. Full browser reload and selector showed the current six verified milestones and all added processing/full-demo tasks."
+        },
+        {
+          "command": "npm --prefix web run build (final formatted source)",
+          "result": "Passed: entry 414.71 kB (131.73 kB gzip), deferred demos 659.07 kB (167.73 kB gzip), 181 modules, 1.44 s. Deferred Three.js chunk warning remains."
         }
       ],
       "pictures": [
@@ -751,7 +755,9 @@ window.executionLog={
           "date": "2026-09-30T00:40:35-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "81ba3ea"
+      ],
       "outputs": [
         {
           "href": "assets/three-provenance.json",
