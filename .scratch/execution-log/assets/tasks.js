@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T04:35:23-03:00",
+  "updated": "2026-09-30T04:35:51-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1454,7 +1454,9 @@ window.executionLog={
           "date": "2026-09-30T04:34:00-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "141d003e2f49d898b40893fd41ff737716823021"
+      ],
       "outputs": [
         {
           "href": "assets/makehuman-provenance.json",
@@ -1557,7 +1559,7 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
+      "status": "in progress",
       "changes": [],
       "limitations": [],
       "verification": [],
@@ -1568,6 +1570,10 @@ window.executionLog={
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 11."
+        },
+        {
+          "date": "2026-09-30T04:35:51-03:00",
+          "text": "Begin exact FLAME 2023 Open native fitting with the downloaded, explicitly accepted model. Keep its model terms separate from software and shared style licenses, and keep all model weights private."
         }
       ]
     },
