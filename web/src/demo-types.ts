@@ -77,6 +77,7 @@ export type DemoJob = {
     beard?: Record<string, string>
     retainedBytes?: number
     failure?: { error?: string }
+    targetBasisCheck?: { basisVersion: string; mappedVertices: number; maximumErrorMetres: number; passed: boolean }
     reconstruction?: {
       version: string
       geometry: string
@@ -97,6 +98,7 @@ export type DemoJob = {
       unmetRequirements: string[]
     }
     fit?: {
+      basisVersion?: string
       pairedLandmarks: number
       meanLandmarkErrorPixels: number
       evaluations: number

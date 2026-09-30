@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-30T03:56:54-0300",
+  "scope": "Real local native pipeline and privacy checks. Diagnostic squares cannot produce a fitted head. The chosen candidate synthetic Alex fitted artifacts were actually read. No real-person accuracy or professional acceptance claimed.",
+  "candidate": "blender-mpfb",
+  "fittedArtifactsRead": 17,
+  "fittedBytesRead": 92801436,
+  "fittedWorkspaceAndOptionReopened": true,
+  "anonymousAndPrivatePathDenied": true,
+  "failureExperiment": {
+    "status": "failed",
+    "error": "Native processing failed; retained diagnostics describe the failure",
+    "failure": {
+      "elapsedMs": 25530,
+      "error": "fit failed with exit 1; retained diagnostic log",
+      "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+      "resources": [
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/7ae97d3c-a0ce-4676-8d48-d2186d82f39e/3c1d5a66-6767-4962-a23f-3696289d2fc6"
+          ],
+          "cpuSeconds": 92.2,
+          "exitCode": 0,
+          "peakRssKiB": 1182200,
+          "seconds": 24.799,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/7ae97d3c-a0ce-4676-8d48-d2186d82f39e/3c1d5a66-6767-4962-a23f-3696289d2fc6"
+          ],
+          "cpuSeconds": 1.135,
+          "exitCode": 1,
+          "peakRssKiB": 1182200,
+          "seconds": 0.731,
+          "stage": "fit"
+        }
+      ]
+    },
+    "modelAvailable": false
+  },
+  "nonfrontDeletionKilledRealNativeProcess": true,
+  "erasedDirectoryDidNotReappear": true,
+  "withdrawalDeniedRetainedArtifacts": true
+}

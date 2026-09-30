@@ -1,0 +1,152 @@
+{
+  "date": "2026-09-30T07:02:11.887Z",
+  "candidate": "blender-mpfb",
+  "basisVersion": "mpfb-metre-z-up-v2",
+  "checks": [
+    {
+      "kind": "hair",
+      "id": "short01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "108,976 triangles · 10.5 MB · 186 ms · 163 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "short02",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "108,308 triangles · 11.6 MB · 155 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "short03",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/short03|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "105,464 triangles · 10.5 MB · 145 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "short04",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/short04|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "103,720 triangles · 10.4 MB · 140 ms · 161 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "bob01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/bob01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "118,568 triangles · 12.4 MB · 140 ms · 162 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "bob02",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/bob02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "106,116 triangles · 11.4 MB · 142 ms · 161 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "long01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/long01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "109,836 triangles · 11.0 MB · 147 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "braid01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/braid01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "112,656 triangles · 10.8 MB · 150 ms · 157 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "ponytail01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/ponytail01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "112,324 triangles · 12.0 MB · 144 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "afro01",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/afro01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "106,004 triangles · 12.8 MB · 126 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "hair",
+      "id": "rounded-coils",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "491,604 triangles · 17.4 MB · 68 ms · 159 initial FPS"
+      ]
+    },
+    {
+      "kind": "beard",
+      "id": "stubble",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/stubble",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "616,356 triangles · 27.4 MB · 177 ms · 153 initial FPS"
+      ]
+    },
+    {
+      "kind": "beard",
+      "id": "full",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/full",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "616,356 triangles · 27.4 MB · 144 ms · 160 initial FPS"
+      ]
+    },
+    {
+      "kind": "beard",
+      "id": "goatee",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/goatee",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "491,604 triangles · 17.4 MB · 127 ms · 164 initial FPS"
+      ]
+    },
+    {
+      "kind": "beard",
+      "id": "moustache",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/moustache",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "414,933 triangles · 11.2 MB · 113 ms · 166 initial FPS"
+      ]
+    },
+    {
+      "kind": "beard",
+      "id": "chinstrap",
+      "loaded": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e90fa4b1-492c-4b76-af70-dd96257bdb84/artifacts/beard/chinstrap",
+      "metrics": [
+        "233,060 triangles · 21.6 MB · 376 ms · 162 initial FPS",
+        "440,481 triangles · 13.3 MB · 97 ms · 159 initial FPS"
+      ]
+    }
+  ],
+  "professionalAcceptance": "pending"
+}

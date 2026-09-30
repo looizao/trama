@@ -1,0 +1,108 @@
+{
+  "date": "2026-09-30T07:09:55.690901+00:00",
+  "scope": "Native repeat queued in the browser from the exact staged repair checkout; original corrected head choice preserved.",
+  "jobId": "1a6726d4-004a-499c-bbd9-8721a1f3308a",
+  "originalCorrectedJobId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+  "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+  "identicalHead": true,
+  "nativeCheck": {
+    "basisVersion": "mpfb-metre-z-up-v2",
+    "mappedVertices": 4701,
+    "maximumErrorMetres": 1.6551875367595952e-07,
+    "meanErrorMetres": 4.9115705511558736e-08,
+    "measurement": "Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded.",
+    "passed": true,
+    "toleranceMetres": 1e-05
+  },
+  "resources": [
+    {
+      "command": [
+        "blender",
+        "--background",
+        "--factory-startup",
+        "--offline-mode",
+        "--threads",
+        "4",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/home/looizao/Projects/trama/.scratch/private/index-verify-07b/scripts/native-demos/blender-mpfb.py",
+        "--",
+        "prepare",
+        "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/1a6726d4-004a-499c-bbd9-8721a1f3308a"
+      ],
+      "cpuSeconds": 86.675,
+      "exitCode": 0,
+      "peakRssKiB": 1183816,
+      "seconds": 23.284,
+      "stage": "prepare"
+    },
+    {
+      "command": [
+        "/home/looizao/Projects/trama/.scratch/private/index-verify-07b/.scratch/private/native-demos/python/bin/python",
+        "/home/looizao/Projects/trama/.scratch/private/index-verify-07b/scripts/native-demos/fit-mpfb.py",
+        "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/1a6726d4-004a-499c-bbd9-8721a1f3308a"
+      ],
+      "cpuSeconds": 2.348,
+      "exitCode": 0,
+      "peakRssKiB": 1183816,
+      "seconds": 1.937,
+      "stage": "fit"
+    },
+    {
+      "command": [
+        "blender",
+        "--background",
+        "--factory-startup",
+        "--offline-mode",
+        "--threads",
+        "4",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/home/looizao/Projects/trama/.scratch/private/index-verify-07b/scripts/native-demos/blender-mpfb.py",
+        "--",
+        "export",
+        "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/1a6726d4-004a-499c-bbd9-8721a1f3308a"
+      ],
+      "cpuSeconds": 92.31,
+      "exitCode": 0,
+      "peakRssKiB": 1183816,
+      "seconds": 27.34,
+      "stage": "export"
+    }
+  ],
+  "elapsedMs": 52564,
+  "persistedState": {
+    "candidate": "blender-mpfb",
+    "photoSetId": "4c42188f-9b65-4634-affe-08a34019895a",
+    "photoViews": {
+      "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+      "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+      "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+      "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+      "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+      "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+      "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+      "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+    },
+    "modelRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+    "currentHairId": "short02",
+    "currentBeardId": "stubble",
+    "hairId": "short04",
+    "beardId": "goatee",
+    "camera": {
+      "azimuth": 0,
+      "elevation": 0.08,
+      "distance": 1.3
+    },
+    "minimumWidth": 512,
+    "native": {
+      "focalLength": 70,
+      "cameraDistance": 1.6,
+      "cameraHeight": 0.04,
+      "fitRounds": 4
+    },
+    "colmapPreset": "standard"
+  }
+}

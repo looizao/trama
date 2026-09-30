@@ -402,7 +402,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json"}
+	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "target-basis": "target-basis-check.json"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string

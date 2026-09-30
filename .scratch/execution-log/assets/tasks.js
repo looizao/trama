@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T03:04:13-03:00",
+  "updated": "2026-09-30T04:11:04-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -824,7 +824,8 @@ window.executionLog={
         "Initial synthetic-only CLI probe preceded network isolation. MediaPipe 1.0.1 NOTICE describes utilization metrics; integrated app processing now uses an isolated Linux network namespace.",
         "Alex and Maya used 56 paired landmarks in three views; Noah used 37 in two views. Both profile views and back remain unobserved by this face detector. The fitted heads visibly retain strong generic-prior influence; likeness remains unverified.",
         "No texture likeness is fitted. Hair and beard references remain manually chosen. Goatee boundaries and dense stubble still need catalog-quality refinement. Full editing, expected-result selection/revision history and complete candidate demos remain pending in their existing tasks.",
-        "Peak RSS is the cumulative maximum child-process memory through each stage, not isolated stage memory. Landmark pixel error is after framing translation and fixed neutral correspondence offsets; neither metric establishes likeness."
+        "Peak RSS is the cumulative maximum child-process memory through each stage, not isolated stage memory. Landmark pixel error is after framing translation and fixed neutral correspondence offsets; neither metric establishes likeness.",
+        "Later task 10a investigation found that the original optimization basis omitted target unit/axis conversion. Historical outputs are retained, with a corrected and reverified implementation required in task 07b. Previous technical evidence does not establish correct target optimization."
       ],
       "verification": [
         {
@@ -997,6 +998,131 @@ window.executionLog={
         {
           "date": "2026-09-30T02:04:10-03:00",
           "text": "Local verified milestone committed as fec6ce29c8e26df44e9f90d73d9e49688ddef904; no push or deployment."
+        },
+        {
+          "date": "2026-09-30T06:51:45.261508+00:00",
+          "text": "Coordinate-basis regression discovered through independent native MakeHuman comparison; task 07b now repairs and verifies actual deformation against its optimization basis."
+        }
+      ]
+    },
+    {
+      "id": "07b",
+      "title": "Repair MPFB target units and verify actual applied geometry",
+      "depends": [
+        "07a"
+      ],
+      "requirement": "Correct the discovered target coordinate-basis error before native comparison milestones advance. Preserve historical options and selection history; label their limitation.",
+      "criteria": [
+        "Convert raw MakeHuman target offsets from decimetres and Y up to the exported head metres and Z up, including crown recentering.",
+        "Every corrected completed MPFB experiment checks predicted target geometry against actual MPFB-applied vertices and retains the measured error.",
+        "Run corrected six-photo cases, actual native fitting/failure/privacy checks, app checks and browser inspection. Retain original experiments and clearly flag their basis limitation."
+      ],
+      "status": "verified",
+      "changes": [
+        "Corrected raw CC0 target offsets from native MakeHuman X/Y/Z decimetres into MPFB X/-Z/Y metres and included the actual crown recentering translation. Each export now directly compares its optimization-basis prediction with actual MPFB-evaluated target vertices, refusing completion above 10 micrometres of error.",
+        "Corrected fitting has the explicit mpfb-metre-z-up-v2 basis version. Historical jobs and options remain retained and receive a visible limitation notice; new corrected population uses a separate checkpoint and new options, preserving prior history."
+      ],
+      "limitations": [
+        "Historical MPFB fitted experiments lack the corrected basis and must not be counted as corrected fitting evidence. Professional likeness remains pending."
+      ],
+      "verification": [
+        {
+          "command": "Source coordinate inspection",
+          "result": "MPFB TargetService._target_string_to_shape_key_info rotates X/Y/Z to X/-Z/Y; _set_shape_key_coords_from_dict multiplies by the human scale factor. Native source and the generated basis confirmed the missing conversion in the earlier experiment."
+        },
+        {
+          "command": "Corrected native failure, artifact access, persistence and erasure verification",
+          "result": "Passed against actual corrected Alex head e90fa4b1-492c-4b76-af70-dd96257bdb84. All 17 fitted artifacts read; chosen option persisted/reloaded; original current exploration restored; no-face fitting failed without a head; deletion cancelled real native processing and purged outputs; withdrawal denied earlier diagnostics."
+        },
+        {
+          "command": "Corrupted MPFB basis rejection experiment",
+          "result": "Passed: injected 20 mm prediction offset produced a failed direct native check, nonzero Blender exit and no exported head. All three positive checks measured 0.12 to 0.17 micrometres maximum error against actual MPFB application."
+        },
+        {
+          "command": "Exact staged-index go test ./...",
+          "result": "Passed independently in the exported staged checkout, including internal/app in 0.701 s."
+        },
+        {
+          "command": "Exact staged-index npm --prefix web run build",
+          "result": "Passed after correcting the staging-only JSX extraction. Demo chunk remains about 670 kB with the existing size warning."
+        },
+        {
+          "command": "go test -race ./internal/app -run Native/Demo/Colmap/Privacy/Permission",
+          "result": "Passed in the working app in 3.255 s."
+        },
+        {
+          "command": "Browser corrected MPFB inspection",
+          "result": "All 16 actual fitted styles loaded against the corrected Alex job. Corrected option saved; historical outputs display the explicit units/axes limitation. Reload and exact-staged-source native repeat are in progress."
+        },
+        {
+          "command": "Browser-queued exact-staged-source MPFB repeat",
+          "result": "Passed: completed native run 1a6726d4-004a-499c-bbd9-8721a1f3308a produced a byte-identical head to corrected Alex e90fa4b1-492c-4b76-af70-dd96257bdb84. Actual applied target check passed; saving and reload retained the corrected option and did not choose the new run automatically."
+        },
+        {
+          "command": "Local progress-log link verification",
+          "result": "75 relative pictures/outputs loaded with HTTP 200 before adding the final repeat evidence links. One authenticated local app link is intentionally separate from portable assets. The first audit incorrectly treated that app URL as a relative file and failed; corrected classification passed."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/mpfb-historical-basis-notice.png",
+          "caption": "2026-09-30: original MPFB experiment retained with an explicit warning about its incorrect optimization units and axes; history is preserved.",
+          "date": "2026-09-30T04:09:01-03:00"
+        },
+        {
+          "src": "assets/mpfb-corrected-comparison.png",
+          "caption": "2026-09-30: actual corrected MPFB head with independently refitted current and proposed hair/beard meshes; synthetic input and professional likeness review remains pending.",
+          "date": "2026-09-30T04:09:01-03:00"
+        },
+        {
+          "src": "assets/mpfb-corrected-native-validation.png",
+          "caption": "2026-09-30: native repeat using the exact staged source completed; 4,701 directly checked vertices differ by at most 0.17 micrometres from the optimizer prediction. This verifies target application, not likeness.",
+          "date": "2026-09-30T04:11:04-03:00"
+        }
+      ],
+      "commits": [],
+      "outputs": [
+        {
+          "href": "assets/mpfb-corrected-basis-verification.json",
+          "label": "Actual target application checks for three cases and deliberate corruption rejection"
+        },
+        {
+          "href": "assets/mpfb-corrected-live-verification.json",
+          "label": "Corrected head authorization, persistence, failure, cancellation and erasure checks"
+        },
+        {
+          "href": "assets/mpfb-populated-corrected-results.json",
+          "label": "Three retained corrected MPFB experiments and populated explored options"
+        },
+        {
+          "href": "assets/mpfb-corrected-browser-style-checks.json",
+          "label": "All 16 corrected fitted styles loaded in the browser"
+        },
+        {
+          "href": "assets/mpfb-corrected-staged-repeat.json",
+          "label": "Exact staged-source browser repeat, actual target checks and repeat head checksum"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T06:51:45.261508+00:00",
+          "text": "Begin focused dependency repair; task 10a is paused pending this verified local milestone."
+        },
+        {
+          "date": "2026-09-30T03:54:14-03:00",
+          "text": "Corrected three-case native reruns are in progress. Current MakeHuman task 10a remains pending until this dependency repair is verified and committed."
+        },
+        {
+          "date": "2026-09-30T03:57:46-03:00",
+          "text": "All three corrected MPFB runs completed, preserving original jobs/options. Direct prediction-versus-native application passed with sub-micrometre vertex errors. During shared verifier generalization, its old fixed output path overwrote the previous evidence JSON. The corrected run evidence was retained under mpfb-corrected-live-verification.json, the original committed evidence restored, and output paths are now candidate-specific. The MakeHuman verifier will run again for its own retained evidence after this repair milestone."
+        },
+        {
+          "date": "2026-09-30T04:05:01-03:00",
+          "text": "The focused repair is staged separately from paused MakeHuman app code. An exported copy of exactly the staged index caught a truncated JSX insertion in the staging script, while the working app source remained valid. The staged insertion was corrected; this exact-index frontend and Go verification is being rerun before committing."
+        },
+        {
+          "date": "2026-09-30T04:11:04-03:00",
+          "text": "Dependency repair is technically verified. The current fictional Alex browser fixture opens its corrected MPFB option after QA; all original experiments/options remain retained with visible limitations. This is a reversible inspection state, not professional acceptance or a final route selection. MakeHuman 10a remains pending until the repair commit is made."
         }
       ]
     },
@@ -1233,7 +1359,8 @@ window.executionLog={
       "id": "10a",
       "title": "Standalone MakeHuman processing experiment",
       "depends": [
-        "06"
+        "06",
+        "07b"
       ],
       "requirement": "Fit and export an actual MakeHuman template without Blender. Retain actual processing success or failure; the full candidate journey remains in task 10.",
       "criteria": [
@@ -1243,16 +1370,63 @@ window.executionLog={
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
       "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "changes": [
+        "Standalone MakeHuman source is pinned and unmodified. Native Human.applyAllTargets applies eight explicit neutral macros and up to 24 signed head target files; native MHCLO proxy.getCoords refits 10 shared CC0 hairstyles and textured eyes. Shared coil/beard definitions generate real geometry on the fitted head. A local CPU rasterizer and embedded-texture GLB exporter run without Qt, OpenGL or Blender.",
+        "The app queues real MakeHuman fitting through the same offline process group, all-six input snapshot, artifact authorization, cancellation and erasure safeguards. Candidate-specific controls and retained diagnostics are available in English and Portuguese. Three fictional cases have native fitted explorations, without automatically replacing the currently chosen workspace or selecting expected results."
+      ],
+      "limitations": [
+        "Native 10a fitting is only the route prerequisite. Written/direct refinement, expected-result selection history and the full demo journey remain tasks 16, 17 and 10. Professional likeness, hair clipping and beard styling assessment remain pending.",
+        "All head geometry is fitted or inferred. Facial landmarks cover three views for Alex/Maya and two for Noah; back/profile hidden surfaces retain the prior. The neck is clipped and capped at a declared artificial plane.",
+        "The native hair proxy topology is unsmoothed and the procedural beard boundaries remain coarse. These are retained limitations for professional review and catalog improvement, not successful evidence of an actual haircut."
+      ],
+      "verification": [
+        {
+          "command": "MakeHuman core loader and Human initialization probe",
+          "result": "Passed on private Python 3.12.14 / NumPy 2.5.3; missing compiled base.npz warning correctly falls back to the actual OBJ parser."
+        },
+        {
+          "command": "Initial go test ./... and npm --prefix web run build",
+          "result": "Passed. Build retained the existing 500 kB demo chunk warning. A later settings-gate test and final checks remain to run."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/makehuman-intermediate-neck.png",
+          "caption": "2026-09-30 intermediate native MakeHuman CPU render: actual head and textured eyes; whole-face filtering left a jagged neck boundary, requiring a proper plane clip before delivery.",
+          "date": "2026-09-30T03:31:14-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/makehuman-provenance.json",
+          "label": "Pinned standalone MakeHuman software, core asset and dependency terms"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 10."
+        },
+        {
+          "date": "2026-09-30T03:04:13-03:00",
+          "text": "Begin standalone MakeHuman fitting investigation while Meshroom awaits required runtime-license acceptance. Use actual MakeHuman source and core assets; do not count Blender processing as standalone MakeHuman."
+        },
+        {
+          "date": "2026-09-30T03:22:42-03:00",
+          "text": "Official MakeHuman v1.3.0 source pinned at 1f508f6083b2f823dab15de924b3bde72e08d77c. Its actual headless files3d loader and Human object instantiate a 19,158-vertex mesh using existing CC0 assets. First applyAllTargets call failed because the upstream progress callback expects a GUI application; adding a headless progress adapter is under evaluation. No Blender process or private fictional morph ground truth was used."
+        },
+        {
+          "date": "2026-09-30T03:31:14-03:00",
+          "text": "Native target application required only a headless progress callback, not a GUI replacement. Actual Human.applyAllTargets and proxy.getCoords passed with eight neutral macro targets and real hair/eye meshes. Initial CPU render showed a jagged neck extraction boundary; this intermediate defect is being corrected before verification. Setup initially looked for license files inside makehuman/; upstream keeps the two full licenses at the repository root, so the lookup was corrected and setup passed."
+        },
+        {
+          "date": "2026-09-30T03:40:53-03:00",
+          "text": "Three genuine MakeHuman runs completed in 11.20 to 11.45 seconds, with 40 to 60 paired landmarks and 72.6 to 74.1 MiB of retained private files. Rerunning population reused the same jobs/options. First population attempt ran before the rebuilt API was listening and failed with ConnectionRefusedError; after readiness it passed. /healthz served the SPA, so the actual /health endpoint was then checked and returned status ok."
+        },
+        {
+          "date": "2026-09-30T06:51:45.261508+00:00",
+          "text": "Pause before verification: comparison of native MakeHuman units exposed an MPFB basis error. Original MPFB target offsets are decimetres with Y up; its earlier fitting basis omitted conversion to metres with Z up. Repair and direct native target-application verification are active in task 07b. Actual MakeHuman fitting uses the correct conversion; its final verification and commit remain pending."
         }
       ]
     },

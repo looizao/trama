@@ -1,0 +1,648 @@
+{
+  "date": "2026-09-30T07:00:25.648421+00:00",
+  "scope": "Correct target prediction versus actual native MPFB application; shared six synthetic photos; no professional likeness claim.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "jobId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+      "sameSixInputs": true,
+      "historicalOptionPreserved": true,
+      "actualNativeCheck": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "mappedVertices": 4701,
+        "maximumErrorMetres": 1.6551875367595952e-07,
+        "meanErrorMetres": 4.9115705511558736e-08,
+        "measurement": "Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded.",
+        "passed": true,
+        "toleranceMetres": 1e-05
+      },
+      "fit": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "evaluations": 97,
+        "finalLoss": 1.1172134595578414e-05,
+        "framingTranslations": {
+          "front": [
+            -0.0009804492779836459,
+            -0.003162500469009538
+          ],
+          "left-three-quarter": [
+            0.0005564293105517642,
+            -0.0016280638689890837
+          ],
+          "right-three-quarter": [
+            0.00047021628410294866,
+            -0.0030988171762994714
+          ]
+        },
+        "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+        "initialLoss": 1.2491628371895219e-05,
+        "iterations": [
+          {
+            "acceptedChanges": 0,
+            "iteration": 1,
+            "loss": 1.2491628371895219e-05,
+            "step": 0.4
+          },
+          {
+            "acceptedChanges": 2,
+            "iteration": 2,
+            "loss": 1.1659815806019984e-05,
+            "step": 0.2
+          },
+          {
+            "acceptedChanges": 5,
+            "iteration": 3,
+            "loss": 1.1258539122323629e-05,
+            "step": 0.1
+          },
+          {
+            "acceptedChanges": 7,
+            "iteration": 4,
+            "loss": 1.1172134595578414e-05,
+            "step": 0.05
+          }
+        ],
+        "limitations": [
+          "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+          "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+          "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+          "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+          "No texture likeness or inferred demographic labels. Professional likeness review pending."
+        ],
+        "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+        "meanLandmarkErrorPixels": 2.898823225594392,
+        "pairedLandmarks": 56,
+        "seconds": 0.007271206999575952,
+        "signedParameters": {
+          "chin/chin-height": 0,
+          "chin/chin-prominent": -0.05,
+          "chin/chin-width": 0,
+          "head/head-scale-depth": 0.15000000000000002,
+          "head/head-scale-horiz": 0.05,
+          "head/head-scale-vert": -0.15000000000000002,
+          "mouth/mouth-scale-depth": 0,
+          "mouth/mouth-scale-horiz": 0.05,
+          "mouth/mouth-scale-vert": -0.05,
+          "nose/nose-scale-depth": 0,
+          "nose/nose-scale-horiz": 0.1,
+          "nose/nose-scale-vert": -0.05
+        },
+        "targets": {
+          "chin/chin-prominent-decr.target.gz": 0.05,
+          "head/head-scale-depth-incr.target.gz": 0.15000000000000002,
+          "head/head-scale-horiz-incr.target.gz": 0.05,
+          "head/head-scale-vert-decr.target.gz": 0.15000000000000002,
+          "mouth/mouth-scale-horiz-incr.target.gz": 0.05,
+          "mouth/mouth-scale-vert-decr.target.gz": 0.05,
+          "nose/nose-scale-horiz-incr.target.gz": 0.1,
+          "nose/nose-scale-vert-decr.target.gz": 0.05
+        },
+        "views": [
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+            "targetFaces": 0,
+            "view": "back"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 18,
+            "neutralFaces": 1,
+            "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+            "targetFaces": 1,
+            "view": "front"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+            "targetFaces": 0,
+            "view": "left-profile"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 19,
+            "neutralFaces": 1,
+            "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+            "targetFaces": 1,
+            "view": "left-three-quarter"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+            "targetFaces": 0,
+            "view": "right-profile"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 19,
+            "neutralFaces": 1,
+            "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+            "targetFaces": 1,
+            "view": "right-three-quarter"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/e90fa4b1-492c-4b76-af70-dd96257bdb84"
+          ],
+          "cpuSeconds": 86.521,
+          "exitCode": 0,
+          "peakRssKiB": 1170880,
+          "seconds": 23.524,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/e90fa4b1-492c-4b76-af70-dd96257bdb84"
+          ],
+          "cpuSeconds": 2.44,
+          "exitCode": 0,
+          "peakRssKiB": 1170880,
+          "seconds": 2.025,
+          "stage": "fit"
+        },
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "export",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/e90fa4b1-492c-4b76-af70-dd96257bdb84"
+          ],
+          "cpuSeconds": 94.373,
+          "exitCode": 0,
+          "peakRssKiB": 1172008,
+          "seconds": 28.19,
+          "stage": "export"
+        }
+      ],
+      "retainedBytes": 109239573,
+      "elapsedMs": 53742
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "jobId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+      "sameSixInputs": true,
+      "historicalOptionPreserved": true,
+      "actualNativeCheck": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "mappedVertices": 4701,
+        "maximumErrorMetres": 1.6055618150254112e-07,
+        "meanErrorMetres": 6.227837620931039e-08,
+        "measurement": "Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded.",
+        "passed": true,
+        "toleranceMetres": 1e-05
+      },
+      "fit": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "evaluations": 97,
+        "finalLoss": 1.0020657696063515e-05,
+        "framingTranslations": {
+          "front": [
+            -0.00016766200609719735,
+            -0.0037577469431275146
+          ],
+          "left-three-quarter": [
+            -0.01318387271038208,
+            -0.004756300212883266
+          ],
+          "right-three-quarter": [
+            0.01579445610972622,
+            -0.005380206388297182
+          ]
+        },
+        "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+        "initialLoss": 2.0872257670736123e-05,
+        "iterations": [
+          {
+            "acceptedChanges": 2,
+            "iteration": 1,
+            "loss": 1.2212321889037307e-05,
+            "step": 0.4
+          },
+          {
+            "acceptedChanges": 4,
+            "iteration": 2,
+            "loss": 1.0154923626716213e-05,
+            "step": 0.2
+          },
+          {
+            "acceptedChanges": 3,
+            "iteration": 3,
+            "loss": 1.004613151318122e-05,
+            "step": 0.1
+          },
+          {
+            "acceptedChanges": 4,
+            "iteration": 4,
+            "loss": 1.0020657696063515e-05,
+            "step": 0.05
+          }
+        ],
+        "limitations": [
+          "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+          "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+          "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+          "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+          "No texture likeness or inferred demographic labels. Professional likeness review pending."
+        ],
+        "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+        "meanLandmarkErrorPixels": 2.7947448707987115,
+        "pairedLandmarks": 56,
+        "seconds": 0.007669765000173356,
+        "signedParameters": {
+          "chin/chin-height": -0.05,
+          "chin/chin-prominent": 0.15000000000000002,
+          "chin/chin-width": 0,
+          "head/head-scale-depth": -0.2,
+          "head/head-scale-horiz": -0.2,
+          "head/head-scale-vert": -0.4,
+          "mouth/mouth-scale-depth": -0.05,
+          "mouth/mouth-scale-horiz": 0,
+          "mouth/mouth-scale-vert": 0,
+          "nose/nose-scale-depth": -0.2,
+          "nose/nose-scale-horiz": 0.05,
+          "nose/nose-scale-vert": 0
+        },
+        "targets": {
+          "chin/chin-height-decr.target.gz": 0.05,
+          "chin/chin-prominent-incr.target.gz": 0.15000000000000002,
+          "head/head-scale-depth-decr.target.gz": 0.2,
+          "head/head-scale-horiz-decr.target.gz": 0.2,
+          "head/head-scale-vert-decr.target.gz": 0.4,
+          "mouth/mouth-scale-depth-decr.target.gz": 0.05,
+          "nose/nose-scale-depth-decr.target.gz": 0.2,
+          "nose/nose-scale-horiz-incr.target.gz": 0.05
+        },
+        "views": [
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
+            "targetFaces": 0,
+            "view": "back"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 18,
+            "neutralFaces": 1,
+            "sourceSha256": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
+            "targetFaces": 1,
+            "view": "front"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "ddc618b70db6fbfb0d6036e09b4cde1695ffdc83fcebdf5a9167cb810845765c",
+            "targetFaces": 0,
+            "view": "left-profile"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 19,
+            "neutralFaces": 1,
+            "sourceSha256": "5325fd2b249ca399acc038ad34e5430f82525b2f2649a3303aa52cb0e72beb3e",
+            "targetFaces": 1,
+            "view": "left-three-quarter"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "e03f3efc483c1aea4224cbd11d075eb5725ee40a1e290fc71d453bc0f448d943",
+            "targetFaces": 0,
+            "view": "right-profile"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 19,
+            "neutralFaces": 1,
+            "sourceSha256": "6e863e385c8f3cbbe2ebe025d8e862d69852dac9e8d8e33242ac6f3a21d74491",
+            "targetFaces": 1,
+            "view": "right-three-quarter"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/bf78983d-1eed-477e-88a9-f63db001b22a"
+          ],
+          "cpuSeconds": 88.445,
+          "exitCode": 0,
+          "peakRssKiB": 1172468,
+          "seconds": 23.756,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/bf78983d-1eed-477e-88a9-f63db001b22a"
+          ],
+          "cpuSeconds": 2.376,
+          "exitCode": 0,
+          "peakRssKiB": 1172468,
+          "seconds": 1.954,
+          "stage": "fit"
+        },
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "export",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/bf78983d-1eed-477e-88a9-f63db001b22a"
+          ],
+          "cpuSeconds": 93.429,
+          "exitCode": 0,
+          "peakRssKiB": 1180160,
+          "seconds": 27.742,
+          "stage": "export"
+        }
+      ],
+      "retainedBytes": 108683928,
+      "elapsedMs": 53456
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "jobId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+      "sameSixInputs": true,
+      "historicalOptionPreserved": true,
+      "actualNativeCheck": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "mappedVertices": 4701,
+        "maximumErrorMetres": 1.2391972235446805e-07,
+        "meanErrorMetres": 3.452123046536213e-08,
+        "measurement": "Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded.",
+        "passed": true,
+        "toleranceMetres": 1e-05
+      },
+      "fit": {
+        "basisVersion": "mpfb-metre-z-up-v2",
+        "evaluations": 97,
+        "finalLoss": 1.4555259492306696e-05,
+        "framingTranslations": {
+          "front": [
+            0.0006712383573276829,
+            0.00609573504170452
+          ],
+          "left-three-quarter": [
+            -0.005024858419327749,
+            0.004271040263535282
+          ]
+        },
+        "geometry": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+        "initialLoss": 2.162063627758405e-05,
+        "iterations": [
+          {
+            "acceptedChanges": 3,
+            "iteration": 1,
+            "loss": 1.7758723595545737e-05,
+            "step": 0.4
+          },
+          {
+            "acceptedChanges": 5,
+            "iteration": 2,
+            "loss": 1.4995198388067612e-05,
+            "step": 0.2
+          },
+          {
+            "acceptedChanges": 6,
+            "iteration": 3,
+            "loss": 1.4608237184926674e-05,
+            "step": 0.1
+          },
+          {
+            "acceptedChanges": 6,
+            "iteration": 4,
+            "loss": 1.4555259492306696e-05,
+            "step": 0.05
+          }
+        ],
+        "limitations": [
+          "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+          "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+          "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+          "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+          "No texture likeness or inferred demographic labels. Professional likeness review pending."
+        ],
+        "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+        "meanLandmarkErrorPixels": 3.6262294943166435,
+        "pairedLandmarks": 37,
+        "seconds": 0.006291079000220634,
+        "signedParameters": {
+          "chin/chin-height": -0.05,
+          "chin/chin-prominent": -0.1,
+          "chin/chin-width": 0,
+          "head/head-scale-depth": -0.30000000000000004,
+          "head/head-scale-horiz": -0.25000000000000006,
+          "head/head-scale-vert": -0.2,
+          "mouth/mouth-scale-depth": 0.05,
+          "mouth/mouth-scale-horiz": 0.15000000000000002,
+          "mouth/mouth-scale-vert": 0,
+          "nose/nose-scale-depth": -0.05,
+          "nose/nose-scale-horiz": 0,
+          "nose/nose-scale-vert": 0.15000000000000002
+        },
+        "targets": {
+          "chin/chin-height-decr.target.gz": 0.05,
+          "chin/chin-prominent-decr.target.gz": 0.1,
+          "head/head-scale-depth-decr.target.gz": 0.30000000000000004,
+          "head/head-scale-horiz-decr.target.gz": 0.25000000000000006,
+          "head/head-scale-vert-decr.target.gz": 0.2,
+          "mouth/mouth-scale-depth-incr.target.gz": 0.05,
+          "mouth/mouth-scale-horiz-incr.target.gz": 0.15000000000000002,
+          "nose/nose-scale-depth-decr.target.gz": 0.05,
+          "nose/nose-scale-vert-incr.target.gz": 0.15000000000000002
+        },
+        "views": [
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
+            "targetFaces": 0,
+            "view": "back"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 18,
+            "neutralFaces": 1,
+            "sourceSha256": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
+            "targetFaces": 1,
+            "view": "front"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "c479cf3def0bb268c80c2ab34ed1495760767a7a628f4b7d860d9181e0edb516",
+            "targetFaces": 0,
+            "view": "left-profile"
+          },
+          {
+            "depthUsed": false,
+            "matchedLandmarks": 19,
+            "neutralFaces": 1,
+            "sourceSha256": "54e2714b9031592aaf4d7aa6de8421b2c81dbd14439c510bf251b33623a6a2bd",
+            "targetFaces": 1,
+            "view": "left-three-quarter"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 0,
+            "sourceSha256": "e164ef0ecbcd904eef0b2f315b2b4b3152d4f7f1d38b4d4d94cfda4129fb8f24",
+            "targetFaces": 0,
+            "view": "right-profile"
+          },
+          {
+            "depthUsed": false,
+            "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+            "matchedLandmarks": 0,
+            "neutralFaces": 1,
+            "sourceSha256": "2ae51a125f9c8771db5cbe43979ce0e754ecc5f04480d7d61d436e0cf477c134",
+            "targetFaces": 0,
+            "view": "right-three-quarter"
+          }
+        ]
+      },
+      "resources": [
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/5709afce-0ce2-4a4f-bd60-3180f4f72ece"
+          ],
+          "cpuSeconds": 88.432,
+          "exitCode": 0,
+          "peakRssKiB": 1178936,
+          "seconds": 23.76,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/5709afce-0ce2-4a4f-bd60-3180f4f72ece"
+          ],
+          "cpuSeconds": 2.411,
+          "exitCode": 0,
+          "peakRssKiB": 1178936,
+          "seconds": 1.98,
+          "stage": "fit"
+        },
+        {
+          "command": [
+            "blender",
+            "--background",
+            "--factory-startup",
+            "--offline-mode",
+            "--threads",
+            "4",
+            "--python-exit-code",
+            "1",
+            "--python",
+            "/home/looizao/Projects/trama/scripts/native-demos/blender-mpfb.py",
+            "--",
+            "export",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/5709afce-0ce2-4a4f-bd60-3180f4f72ece"
+          ],
+          "cpuSeconds": 92.672,
+          "exitCode": 0,
+          "peakRssKiB": 1183276,
+          "seconds": 27.519,
+          "stage": "export"
+        }
+      ],
+      "retainedBytes": 106182769,
+      "elapsedMs": 53261
+    }
+  ],
+  "corruptionRejection": {
+    "injectedOffsetMetres": 0.02,
+    "actualNativeCheck": {
+      "basisVersion": "mpfb-metre-z-up-v2",
+      "mappedVertices": 4701,
+      "maximumErrorMetres": 0.020000001115850072,
+      "meanErrorMetres": 4.303520274867937e-06,
+      "toleranceMetres": 1e-05,
+      "passed": false,
+      "measurement": "Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded."
+    },
+    "exitCode": 1,
+    "headPublished": false
+  }
+}

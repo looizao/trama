@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""Fit MPFB targets to image-plane landmarks without using landmark depth."""
+"""Fit a retained native target basis to image-plane landmarks, using no depth."""
 import argparse, json, hashlib, time, os, sys
 from pathlib import Path
 interfaces=[line.split(':',1)[0].strip() for line in Path('/proc/self/net/dev').read_text().splitlines() if ':' in line]
@@ -11,7 +11,7 @@ import mediapipe as mp
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[2]
 parser=argparse.ArgumentParser();parser.add_argument('directory',type=Path);args=parser.parse_args();d=args.directory
-manifest=json.loads((d/'manifest.json').read_text());basis=np.load(d/'basis.npz');cameras=json.loads((d/'cameras.json').read_text())
+manifest=json.loads((d/'manifest.json').read_text());prior='Standalone MakeHuman' if manifest.get('candidate')=='makehuman' else 'MPFB';basis=np.load(d/'basis.npz');cameras=json.loads((d/'cameras.json').read_text())
 model=ROOT/'.scratch/private/models/mediapipe/face_landmarker.task'
 indices=[1,4,6,33,133,263,362,61,291,13,14,152,234,454,93,323,172,397,105,334]
 observations=[];points=[];observed=[];neutral_semantic=[];view_groups=[]
@@ -93,6 +93,7 @@ for iteration,step in enumerate(steps):
 targets={}
 for i,w in enumerate(weights):
     if abs(w)>1e-8:targets[str(basis['names'][2*i+(1 if w>=0 else 0)])]=float(abs(w))
-result={'targets':targets,'signedParameters':dict(zip(basis['params'].tolist(),weights.tolist())),'initialLoss':initial,'finalLoss':best,'iterations':trace,'evaluations':evaluations,'seconds':time.monotonic()-started,'pairedLandmarks':len(points),'views':observations,'lossDefinition':'Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.', 'framingTranslations':{view:np.clip(np.mean((projected(weights)+semantic_offset-observed)[view_names==view],axis=0),-.06,.06).tolist() for view in set(view_names)},'meanLandmarkErrorPixels':float(np.mean(np.linalg.norm(residual(weights)*np.array([768,896]),axis=1))),'geometry':'MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain the MPFB prior.','limitations':['Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.','No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.','Camera yaw, focal length, distance and height are assumptions supplied with this experiment.','Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.','No texture likeness or inferred demographic labels. Professional likeness review pending.']}
+result={'targets':targets,'signedParameters':dict(zip(basis['params'].tolist(),weights.tolist())),'initialLoss':initial,'finalLoss':best,'iterations':trace,'evaluations':evaluations,'seconds':time.monotonic()-started,'pairedLandmarks':len(points),'views':observations,'lossDefinition':'Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.', 'framingTranslations':{view:np.clip(np.mean((projected(weights)+semantic_offset-observed)[view_names==view],axis=0),-.06,.06).tolist() for view in set(view_names)},'meanLandmarkErrorPixels':float(np.mean(np.linalg.norm(residual(weights)*np.array([768,896]),axis=1))),'geometry':prior+' prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.','limitations':['Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.','No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.','Camera yaw, focal length, distance and height are assumptions supplied with this experiment.','Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.','No texture likeness or inferred demographic labels. Professional likeness review pending.']}
+result['basisVersion']=str(basis['basisVersion']) if 'basisVersion' in basis else 'unversioned'
 (d/'fit.json').write_text(json.dumps(result,indent=2)+'\n')
 print('FIT_COMPLETE',json.dumps({k:result[k] for k in ['pairedLandmarks','meanLandmarkErrorPixels','evaluations','seconds']}),flush=True)

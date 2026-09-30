@@ -703,6 +703,9 @@ function DemoSession({
           )}
         </span>
         <h2>{t('Synchronized 3D comparison')}</h2>
+        {modelJob?.candidate === 'blender-mpfb' && modelJob.result.fit?.basisVersion !== 'mpfb-metre-z-up-v2' && (
+          <p className="notice">{t('Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.')}</p>
+        )}
         <p className="notice">
           {t(
             fitted
@@ -969,6 +972,12 @@ function DemoSession({
                   </button>
                 )}
               </div>
+              {j.candidate === 'blender-mpfb' && j.result.fit && j.result.fit.basisVersion !== 'mpfb-metre-z-up-v2' && (
+                <p className="notice">{t('Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.')}</p>
+              )}
+              {j.result.targetBasisCheck && (
+                <p>{t('Native target-basis validation')}: {j.result.targetBasisCheck.mappedVertices} {t('vertices')} · {t('Maximum prediction error')} {(j.result.targetBasisCheck.maximumErrorMetres * 1000000).toFixed(2)} µm · {t(j.result.targetBasisCheck.passed ? 'passed' : 'failed')}</p>
+              )}
               {j.error && (
                 <p role="alert" className="error">
                   {j.error}

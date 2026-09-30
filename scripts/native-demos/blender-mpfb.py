@@ -50,10 +50,35 @@ if phase=='prepare':
                 for line in f:
                     if line.strip() and not line.startswith('#'):
                         row=line.split();values[int(row[0])]=[float(x) for x in row[1:4]]
-            deltas.append(np.array([values[i] if i>=0 else np.zeros(3) for i in mapping]));names.append(name)
-    np.savez_compressed(directory/'basis.npz',xyz=xyz,tri=tri,deltas=np.array(deltas),names=np.array(names),params=np.array(PARAMS))
+            # Core targets use decimetres, Y up, face +Z. MPFB's actual target
+            # loader rotates X,Y,Z to X,-Z,Y and applies scale_factor=0.1.
+            # The optimizer must predict that same native deformation.
+            converted=values[:,[0,2,1]]*np.array([.1,-.1,.1])
+            crown=mapping[int(np.argmax(xyz[:,2]))]
+            if crown<0:raise RuntimeError('Native crown correspondence is required')
+            delta=np.array([converted[i] if i>=0 else np.zeros(3) for i in mapping])
+            delta[np.array(mapping)>=0,2]-=converted[crown,2]
+            deltas.append(delta);names.append(name)
+    np.savez_compressed(directory/'basis.npz',xyz=xyz,tri=tri,deltas=np.array(deltas),names=np.array(names),params=np.array(PARAMS),mapping=np.array(mapping),basisVersion=np.array('mpfb-metre-z-up-v2'))
     a.export([head,eyes],directory/'neutral.glb')
 else:
+    # Compare the optimizer's predicted vertices with native MPFB application,
+    # rather than asserting correctness from duplicated conversion arithmetic.
+    basis=np.load(directory/'basis.npz')
+    predicted=basis['xyz'].copy()
+    for name,value in fit['targets'].items():
+        index=np.flatnonzero(basis['names']==name)
+        if len(index)!=1:raise RuntimeError('Unknown fitted native target')
+        predicted+=basis['deltas'][index[0]]*value
+    mask=human.modifiers.get('Hide helpers');mask.show_viewport=False;bpy.context.view_layer.update()
+    applied=human.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+    mapping=basis['mapping'];valid=mapping>=0
+    actual=np.array([list(applied.vertices[i].co) for i in mapping[valid]])-np.array([0,0,origin_z])
+    error=np.linalg.norm(predicted[valid]-actual,axis=1)
+    check={'basisVersion':str(basis['basisVersion']),'mappedVertices':int(valid.sum()),'maximumErrorMetres':float(error.max()),'meanErrorMetres':float(error.mean()),'toleranceMetres':.00001,'passed':bool(error.max()<=.00001),'measurement':'Optimization-basis prediction compared against actual MPFB-evaluated target application and actual crown recentering. Artificial neck cap vertices are excluded.'}
+    (directory/'target-basis-check.json').write_text(json.dumps(check,indent=2)+'\n')
+    if not check['passed']:raise RuntimeError('Native applied geometry differs from fitting basis')
+    mask.show_viewport=True;bpy.context.view_layer.update()
     a.export([head,eyes],directory/'head.glb')
     human.hide_viewport=True
     (directory/'hair').mkdir(exist_ok=True);(directory/'beard').mkdir(exist_ok=True)

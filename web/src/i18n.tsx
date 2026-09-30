@@ -32,6 +32,10 @@ const pt: Record<string, string> = {
 
   "Local fitting experiment available": "Experimento local de ajuste disponível",
   "Run the MPFB fitting experiment, inspect its retained evidence and select a completed fitted head. Hidden surfaces remain inferred and professional likeness review is pending.": "Execute o ajuste com MPFB, inspecione as evidências preservadas e selecione uma cabeça ajustada. Superfícies ocultas são inferidas e a avaliação profissional de semelhança está pendente.",
+  "Native target-basis validation": "Validação nativa da base de alvos",
+  "Maximum prediction error": "Erro máximo da previsão",
+  "vertices": "vértices",
+  "Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.": "Ajuste histórico com MPFB: a base de otimização usou unidades e eixos incorretos nos alvos. Preservado no histórico; use um experimento corrigido para avaliação.",
   "MPFB fitting settings": "Configurações de ajuste com MPFB",
   "Assumed capture cameras: six labeled yaw angles, 36 mm sensor and shared focal length, distance and height. These values are not measured calibration. Inspect and adjust them for each capture.": "Câmeras de captura presumidas: seis ângulos rotulados, sensor de 36 mm e distância focal, distância e altura compartilhadas. Estes valores não são calibração medida. Inspecione e ajuste para cada captura.",
   "Focal length (mm)": "Distância focal (mm)",
