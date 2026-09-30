@@ -92,3 +92,35 @@ CREATE TABLE IF NOT EXISTS audit_events (
   subject_id text NOT NULL,
   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS client_permissions (
+  client_id text PRIMARY KEY REFERENCES clients(id) ON DELETE CASCADE,
+  notice_version text NOT NULL,
+  acknowledged_name text NOT NULL,
+  method text NOT NULL,
+  acknowledged_at timestamp NOT NULL,
+  withdrawn_at timestamp
+);
+CREATE TABLE IF NOT EXISTS permission_links (
+  token_hash blob PRIMARY KEY,
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  expires_at timestamp NOT NULL
+);
+CREATE TABLE IF NOT EXISTS privacy_tombstones (
+  subject_type text NOT NULL,
+  subject_id text NOT NULL,
+  PRIMARY KEY(subject_type, subject_id)
+);
+CREATE TABLE IF NOT EXISTS media_purges (
+  storage_key text PRIMARY KEY,
+  error text NOT NULL DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS privacy_requests (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL,
+  client_id text NOT NULL,
+  action text NOT NULL,
+  status text NOT NULL,
+  requested_at timestamp NOT NULL,
+  completed_at timestamp
+);

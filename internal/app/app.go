@@ -14,6 +14,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
+	"sync/atomic"
 	"time"
 
 	"go.temporal.io/sdk/client"
@@ -24,12 +26,15 @@ import (
 var schema string
 
 type App struct {
-	DB              *sql.DB
-	Storage         *Storage
-	Temporal        client.Client
-	ImageAPIBaseURL string
-	ImageAPIKey     string
-	ImageModel      string
+	DB                *sql.DB
+	Storage           *Storage
+	Temporal          client.Client
+	ImageAPIBaseURL   string
+	ImageAPIKey       string
+	ImageModel        string
+	mediaMu           sync.Mutex
+	PrivacyLedgerPath string
+	privacyFault      atomic.Bool
 }
 
 func Open(ctx context.Context) (*App, error) {
@@ -44,10 +49,20 @@ func Open(ctx context.Context) (*App, error) {
 	}
 	a := &App{
 		DB: db, Storage: store,
-		ImageAPIBaseURL: strings.TrimSuffix(os.Getenv("IMAGE_API_BASE_URL"), "/"),
-		ImageAPIKey:     os.Getenv("IMAGE_API_KEY"),
-		ImageModel:      os.Getenv("IMAGE_MODEL"),
+		ImageAPIBaseURL:   strings.TrimSuffix(os.Getenv("IMAGE_API_BASE_URL"), "/"),
+		ImageAPIKey:       os.Getenv("IMAGE_API_KEY"),
+		ImageModel:        os.Getenv("IMAGE_MODEL"),
+		PrivacyLedgerPath: os.Getenv("PRIVACY_LEDGER_PATH"),
 	}
+	if a.PrivacyLedgerPath == "" {
+		a.PrivacyLedgerPath = os.Getenv("DATABASE_PATH") + ".privacy.jsonl"
+	}
+	unlock, privacyErr := a.lockMedia()
+	if privacyErr != nil {
+		a.Close()
+		return nil, fmt.Errorf("privacy recovery: %w", privacyErr)
+	}
+	unlock()
 	if err := a.bootstrapAdmin(ctx); err != nil {
 		db.Close()
 		return nil, err

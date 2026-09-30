@@ -39,7 +39,7 @@ func (a *App) FailRun(ctx context.Context, runID, reason string) error {
 	if len(reason) > 1000 {
 		reason = reason[:1000]
 	}
-	_, err := a.DB.ExecContext(ctx, "UPDATE generation_runs SET status='failed',error=$1,completed_at=$2 WHERE id=$3 AND status!='completed'", reason, now(), runID)
+	_, err := a.DB.ExecContext(ctx, "UPDATE generation_runs SET status='failed',error=$1,completed_at=$2 WHERE id=$3 AND status IN ('queued','running')", reason, now(), runID)
 	return err
 }
 
@@ -154,12 +154,15 @@ func (a *App) GenerateImages(ctx context.Context, runID string) error {
 	}
 	var orgID, clientID, sourceID, prompt, modelID, sourceKey, sourceContentType string
 	var quantity int
-	err := a.DB.QueryRowContext(ctx, `SELECT r.organization_id,r.client_id,r.source_asset_id,r.prompt,r.model_id,a.storage_key,a.content_type,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1`, runID).Scan(&orgID, &clientID, &sourceID, &prompt, &modelID, &sourceKey, &sourceContentType, &quantity)
+	err := a.DB.QueryRowContext(ctx, `SELECT r.organization_id,r.client_id,r.source_asset_id,r.prompt,r.model_id,a.storage_key,a.content_type,r.quantity FROM generation_runs r JOIN assets a ON a.id=r.source_asset_id AND a.organization_id=r.organization_id WHERE r.id=$1 AND r.status IN ('queued','running')`, runID).Scan(&orgID, &clientID, &sourceID, &prompt, &modelID, &sourceKey, &sourceContentType, &quantity)
 	if err != nil {
 		return err
 	}
 	if modelID != a.ImageModel {
 		return errors.New("configured image model does not match run")
+	}
+	if !a.hasPermission(ctx, clientID) {
+		return errors.New("client permission is unavailable")
 	}
 	if _, err = a.DB.ExecContext(ctx, "UPDATE generation_runs SET status='running' WHERE id=$1 AND status IN ('queued','running')", runID); err != nil {
 		return err
@@ -173,11 +176,24 @@ func (a *App) GenerateImages(ctx context.Context, runID string) error {
 			return err
 		}
 	}
-	_, err = a.DB.ExecContext(ctx, "UPDATE generation_runs SET status='completed',completed_at=$1,error='' WHERE id=$2", now(), runID)
+	_, err = a.DB.ExecContext(ctx, "UPDATE generation_runs SET status='completed',completed_at=$1,error='' WHERE id=$2 AND status='running'", now(), runID)
 	return err
 }
 
 func (a *App) storeGeneratedImage(ctx context.Context, orgID, clientID, runID, sourceID string, index int, data []byte) error {
+	unlock, guardErr := a.lockMedia()
+	if guardErr != nil {
+		return guardErr
+	}
+	defer unlock()
+	var allowed bool
+	err := a.DB.QueryRowContext(ctx, `SELECT EXISTS(SELECT 1 FROM generation_runs r JOIN assets s ON s.id=r.source_asset_id JOIN client_permissions p ON p.client_id=r.client_id WHERE r.id=$1 AND r.organization_id=$2 AND r.client_id=$3 AND s.id=$4 AND p.withdrawn_at IS NULL AND r.status IN ('queued','running')) AND NOT EXISTS(SELECT 1 FROM privacy_tombstones WHERE (subject_type='client' AND subject_id=$3) OR (subject_type='asset' AND subject_id=$4))`, runID, orgID, clientID, sourceID).Scan(&allowed)
+	if err != nil {
+		return err
+	}
+	if !allowed {
+		return errors.New("processing cancelled or source deleted")
+	}
 	var exists bool
 	if err := a.DB.QueryRowContext(ctx, "SELECT EXISTS(SELECT 1 FROM assets WHERE run_id=$1 AND variant_index=$2)", runID, index).Scan(&exists); err != nil {
 		return err
@@ -195,5 +211,8 @@ func (a *App) storeGeneratedImage(ctx context.Context, orgID, clientID, runID, s
 		return err
 	}
 	_, err = a.DB.ExecContext(ctx, "INSERT INTO assets(id,organization_id,client_id,run_id,source_asset_id,storage_key,content_type,kind,variant_index) VALUES($1,$2,$3,$4,$5,$6,$7,'generated',$8) ON CONFLICT DO NOTHING", id, orgID, clientID, runID, sourceID, key, contentType, index)
+	if err != nil {
+		_ = a.Storage.Delete(ctx, key)
+	}
 	return err
 }

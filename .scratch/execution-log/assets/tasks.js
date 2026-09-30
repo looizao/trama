@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T21:49:12-03:00",
+  "updated": "2026-09-29T22:07:50-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -63,7 +63,9 @@ window.executionLog={
           "date": "2026-09-29T21:49:12-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "3f84aee"
+      ],
       "outputs": [],
       "events": [
         {
@@ -73,6 +75,10 @@ window.executionLog={
         {
           "date": "2026-09-29T21:49:12-03:00",
           "text": "Baseline and execution log verified; preparing coherent local milestone commit."
+        },
+        {
+          "date": "2026-09-29T21:49:39-03:00",
+          "text": "User requested local demo credentials in AGENTS.md and mandated the same account for local use. Added existing credentials locally; AGENTS.md excluded from milestone staging to keep credentials out of Git."
         }
       ]
     },
@@ -90,16 +96,93 @@ window.executionLog={
         "Tombstones and completion-time guards prevent delayed work recreating removed material; audit retains no deleted media.",
         "UI confirmation explains affected data and request status; reload and failure paths verified."
       ],
-      "status": "pending",
+      "status": "verified",
       "changes": [],
       "limitations": [
-        "Not implemented or verified."
+        "Locally verified for existing image assets and generation runs. Future 3D outputs must register provenance and use the same mutation guards; later tasks remain pending.",
+        "Acknowledgement records a client-entered affirmation; identity verification is not claimed. No real client inputs used.",
+        "Cloud object deletion and Temporal cancellation code added, but no production storage or production worker was accessed. Production rollout remains unverified.",
+        "Backup expiry enforcement and encrypted restore tests belong to task 02 and are not yet verified."
       ],
-      "verification": [],
-      "pictures": [],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS, including acknowledgement/version/name rejection, cross-studio access/deletion denial, transitive media erasure, renewed permission across restart, separate-worker late-result cancellation, missing/corrupt ledger fail-closed behavior and cleanup retry on restart."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app",
+          "result": "PASS; separate App/worker race fixture prevents late image recreation and cancellation overwrite."
+        },
+        {
+          "command": "python scripts/verify-local-privacy.py",
+          "result": "PASS: full running local flow through anonymous denial, client link, wrong-name rejection, active upload/read, unconfirmed deletion failure, withdrawal, missing media after reload, re-acknowledgement, new upload, client deletion and retained completion history."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS: 170 modules; final JS 375.60 kB (118.28 kB gzip)."
+        },
+        {
+          "command": "@Browser acknowledgement and withdrawal checks",
+          "result": "Client entry succeeded and persisted after reload. Impact displays 1 diagnostic image and 0 jobs. CLI removal returned completed; reload shows withdrawn, zero images, blocked uploads and completed request history. Portuguese view inspected."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/permission-required.png",
+          "caption": "Existing local diagnostic media requires fresh client acknowledgement before access or further uploads.",
+          "date": "2026-09-29T22:01:48-03:00"
+        },
+        {
+          "src": "assets/client-acknowledgement.png",
+          "caption": "Client-facing workflow records a fictional test acknowledgement without a client account; no studio proxy checkbox.",
+          "date": "2026-09-29T22:01:48-03:00"
+        },
+        {
+          "src": "assets/permission-active.png",
+          "caption": "Studio sees acknowledgement name, method, date and notice version after reload.",
+          "date": "2026-09-29T22:01:48-03:00"
+        },
+        {
+          "src": "assets/withdrawal-impact.png",
+          "caption": "Review names the affected media, cancellation, dependent removal and retained request status before confirmation.",
+          "date": "2026-09-29T22:07:50-03:00"
+        },
+        {
+          "src": "assets/withdrawal-complete.png",
+          "caption": "After removal and reload: withdrawn permission, zero images, disabled upload and completed privacy request.",
+          "date": "2026-09-29T22:07:50-03:00"
+        },
+        {
+          "src": "assets/privacy-portuguese.png",
+          "caption": "Localized privacy and withdrawal status in Portuguese.",
+          "date": "2026-09-29T22:07:50-03:00"
+        },
+        {
+          "src": "assets/privacy-guards.svg",
+          "caption": "Diagnostic overview alongside actual API, persistence, race and failure verification results.",
+          "date": "2026-09-29T22:07:50-03:00"
+        }
+      ],
       "commits": [],
       "outputs": [],
-      "events": []
+      "events": [
+        {
+          "date": "2026-09-29T21:49:39-03:00",
+          "text": "Starting affirmative permission and cascading media lifecycle with server-side guards."
+        },
+        {
+          "date": "2026-09-29T22:01:48-03:00",
+          "text": "Implemented one-time, 15-minute client acknowledgement pages and private studio controls. Added transitive deletion, durable ledger, recovery on startup, shared API/worker file locks, cancelled-run preservation and late-result rejection."
+        },
+        {
+          "date": "2026-09-29T22:07:50-03:00",
+          "text": "Browser assertion initially searched capitalized Withdrawn; CSS capitalizes the visible label while DOM text is lowercase. Corrected the assertion using observed state; application withdrawal behavior was correct."
+        },
+        {
+          "date": "2026-09-29T22:07:50-03:00",
+          "text": "Task verified locally. Remaining product and all comparative demos remain pending. Preparing local commit before moving to backup safeguards."
+        }
+      ]
     },
     {
       "id": "02",

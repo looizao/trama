@@ -16,13 +16,23 @@ func (a *App) Handler() http.Handler {
 	mux.HandleFunc("GET /api/model-assets/{token}", a.modelAssetContent)
 	mux.HandleFunc("POST /api/login", a.login)
 	mux.HandleFunc("POST /api/logout", a.logout)
+	mux.HandleFunc("GET /api/permission/{token}", a.permissionNotice)
+	mux.HandleFunc("POST /api/permission/{token}", a.acknowledgePermission)
 	mux.HandleFunc("GET /api/me", a.authenticated(func(w http.ResponseWriter, r *http.Request) { respond(w, 200, userFrom(r)) }))
+	mux.HandleFunc("GET /api/privacy-requests", a.authenticated(a.listPrivacyRequests))
 	mux.HandleFunc("POST /api/password", a.authenticated(a.changePassword))
 	mux.HandleFunc("GET /api/models", a.authenticated(a.models))
 	mux.HandleFunc("GET /api/clients", a.authenticated(a.listClients))
 	mux.HandleFunc("POST /api/clients", a.authenticated(a.createClient))
 	mux.HandleFunc("GET /api/clients/{clientID}", a.authenticated(a.getClient))
 	mux.HandleFunc("PATCH /api/clients/{clientID}", a.authenticated(a.updateClient))
+	mux.HandleFunc("GET /api/clients/{clientID}/permission", a.authenticated(a.getPermission))
+	mux.HandleFunc("POST /api/clients/{clientID}/permission-link", a.authenticated(a.createPermissionLink))
+	mux.HandleFunc("POST /api/clients/{clientID}/withdraw", a.authenticated(a.withdrawPermission))
+	mux.HandleFunc("DELETE /api/clients/{clientID}", a.authenticated(a.deleteClient))
+	mux.HandleFunc("GET /api/clients/{clientID}/deletion-impact", a.authenticated(a.clientDeletionImpact))
+	mux.HandleFunc("GET /api/assets/{assetID}/deletion-impact", a.authenticated(a.assetDeletionImpact))
+	mux.HandleFunc("DELETE /api/assets/{assetID}", a.authenticated(a.deleteAsset))
 	mux.HandleFunc("GET /api/clients/{clientID}/milestones", a.authenticated(a.listMilestones))
 	mux.HandleFunc("POST /api/clients/{clientID}/milestones", a.authenticated(a.createMilestone))
 	mux.HandleFunc("GET /api/clients/{clientID}/assets", a.authenticated(a.listAssets))
@@ -38,6 +48,10 @@ func (a *App) Handler() http.Handler {
 	mux.HandleFunc("GET /api/admin/audit", a.authenticated(requireAdmin(a.listAudit)))
 	mux.HandleFunc("/", a.serveWeb)
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if a.privacyFault.Load() && r.URL.Path != "/health" {
+			problem(w, 503, "privacy recovery is required before serving data")
+			return
+		}
 		if r.Method != http.MethodGet && r.Method != http.MethodHead && r.Method != http.MethodOptions {
 			origin := r.Header.Get("Origin")
 			if origin != "" {

@@ -183,6 +183,33 @@ func (s *Storage) Get(ctx context.Context, key string) (io.ReadCloser, error) {
 	return out.Body, nil
 }
 
+func (s *Storage) Delete(ctx context.Context, key string) error {
+	if s.mode == "db" {
+		_, err := s.db.ExecContext(ctx, "DELETE FROM storage_objects WHERE key=$1", key)
+		return err
+	}
+	if s.mode == "local" {
+		path, err := s.safePath(key)
+		if err != nil {
+			return err
+		}
+		err = os.Remove(path)
+		if errors.Is(err, os.ErrNotExist) {
+			return nil
+		}
+		return err
+	}
+	if s.mode == "gcs" {
+		err := s.gcs.Bucket(s.bucket).Object(key).Delete(ctx)
+		if errors.Is(err, gcs.ErrObjectNotExist) {
+			return nil
+		}
+		return err
+	}
+	_, err := s.s3.DeleteObject(ctx, &s3.DeleteObjectInput{Bucket: aws.String(s.bucket), Key: aws.String(key)})
+	return err
+}
+
 func (s *Storage) PresignGet(ctx context.Context, key string, expiry time.Duration) (string, error) {
 	if s.mode == "db" {
 		base := os.Getenv("PUBLIC_BASE_URL")

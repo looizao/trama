@@ -44,9 +44,19 @@ func (a *App) listAssets(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
+	unlock, guardErr := a.lockMedia()
+	if guardErr != nil {
+		problem(w, 503, "privacy recovery is required")
+		return
+	}
+	defer unlock()
 	clientID := r.PathValue("clientID")
 	if !a.clientExists(r, clientID) {
 		problem(w, 404, "client not found")
+		return
+	}
+	if !a.hasPermission(r.Context(), clientID) {
+		problem(w, 403, "client acknowledgement is required before storing or processing media")
 		return
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 12<<20)
@@ -93,6 +103,7 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 	created := now()
 	_, err = a.DB.ExecContext(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
 	if err != nil {
+		_ = a.Storage.Delete(r.Context(), key)
 		problem(w, 500, "could not save image record")
 		return
 	}
@@ -107,7 +118,7 @@ func (a *App) assetContent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var key, contentType string
-	err := a.DB.QueryRowContext(r.Context(), "SELECT storage_key,content_type FROM assets WHERE id=$1 AND organization_id=$2", id, userFrom(r).OrganizationID).Scan(&key, &contentType)
+	err := a.DB.QueryRowContext(r.Context(), "SELECT a.storage_key,a.content_type FROM assets a JOIN client_permissions p ON p.client_id=a.client_id WHERE a.id=$1 AND a.organization_id=$2 AND p.withdrawn_at IS NULL", id, userFrom(r).OrganizationID).Scan(&key, &contentType)
 	if err != nil {
 		problem(w, 404, "image not found")
 		return
@@ -128,7 +139,7 @@ func (a *App) assetContent(w http.ResponseWriter, r *http.Request) {
 	}
 	defer body.Close()
 	w.Header().Set("Content-Type", contentType)
-	w.Header().Set("Cache-Control", "private, max-age=120")
+	w.Header().Set("Cache-Control", "private, no-store")
 	w.Header().Set("X-Content-Type-Options", "nosniff")
 	_, _ = io.Copy(w, body)
 }
@@ -137,6 +148,11 @@ func (a *App) modelAssetContent(w http.ResponseWriter, r *http.Request) {
 	key, err := a.Storage.VerifyModelToken(r.PathValue("token"))
 	if err != nil {
 		problem(w, 403, "image link expired")
+		return
+	}
+	var exists bool
+	if err = a.DB.QueryRowContext(r.Context(), `SELECT EXISTS(SELECT 1 FROM assets a JOIN client_permissions p ON p.client_id=a.client_id WHERE a.storage_key=$1 AND p.withdrawn_at IS NULL)`, key).Scan(&exists); err != nil || !exists {
+		problem(w, 404, "image not found")
 		return
 	}
 	body, err := a.Storage.Get(r.Context(), key)

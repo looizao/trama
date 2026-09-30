@@ -56,3 +56,6 @@
 
 @media(max-width:850px){.mobile-top{flex-wrap:wrap}.mobile-top>.preferences{justify-content:flex-end}}
 @media(max-width:650px){.mobile-top>.preferences{width:100%;justify-content:flex-end}.login-preferences{top:16px;right:16px}.login-preferences .theme-toggle span:last-child{display:none}}
+
+.permission-page{max-width:780px;margin:40px auto;padding:24px}.permission-page .brand{margin-bottom:32px}.permission-page h1{font-size:2.4rem}.check-label{display:flex;align-items:flex-start;gap:12px;line-height:1.6}.check-label input{width:auto;margin-top:5px}.privacy-panel{padding:24px;margin-bottom:24px}.privacy-actions{display:flex;gap:8px;flex-wrap:wrap}.privacy-confirm{margin-top:18px}.danger{background:#ae4438;color:white}.photo-removal{padding:0 12px 12px}.photo-removal p{font-size:.75rem}.photo-removal .button{font-size:.74rem;min-height:32px;padding:4px 10px}
+.permission-placeholder{display:grid;place-items:center;aspect-ratio:3/4;padding:18px;background:#edf1e9;color:#596258;font-size:.8rem;text-align:center}

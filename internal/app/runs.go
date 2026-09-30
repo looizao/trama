@@ -62,9 +62,19 @@ func (a *App) getRun(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) createRun(w http.ResponseWriter, r *http.Request) {
+	unlock, guardErr := a.lockMedia()
+	if guardErr != nil {
+		problem(w, 503, "privacy recovery is required")
+		return
+	}
+	defer unlock()
 	clientID := r.PathValue("clientID")
 	if !a.clientExists(r, clientID) {
 		problem(w, 404, "client not found")
+		return
+	}
+	if !a.hasPermission(r.Context(), clientID) {
+		problem(w, 403, "client acknowledgement is required before storing or processing media")
 		return
 	}
 	if !a.modelReady() {
