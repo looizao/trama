@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-09-30T20:16:49.954Z",
+  "scope": "Actual retained native meshes in three fictional plan-stage pages. Alex v2 revises daily effort; v1 is preserved. Viewport and rendered camera observed after loading. Background IAB render evidence, not a foreground benchmark or professional acceptance.",
+  "cases": [
+    {
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/trama-short-boxed",
+      "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":2.0704545454545453}",
+      "case": "alex-ramos",
+      "edits": "{\"hair\":{\"changedVertices\":11017,\"changedSincePrevious\":11010,\"maximumDisplacementMm\":15.593085484301206,\"vertices\":12316,\"fingerprints\":[{\"mesh\":\"trama-quiff-wavy-scalp\",\"original\":\"1fb6b9a3\",\"edited\":\"2ef8c67a\"},{\"mesh\":\"trama-quiff-wavy-strands\",\"original\":\"480a9fdd\",\"edited\":\"bf47b25f\"}]},\"beard\":{\"changedVertices\":63792,\"changedSincePrevious\":63792,\"maximumDisplacementMm\":6.461486220359802,\"vertices\":63792,\"fingerprints\":[{\"mesh\":\"trama-short-boxed\",\"original\":\"367fe021\",\"edited\":\"4f8fa6cb\"}]}}",
+      "scope": "Week 8 · Planning reference, not observed growth",
+      "stage": "Longer-term target discussion"
+    },
+    {
+      "assets": "/api/clients/a83ec874-3249-4185-a028-26933b0de6da/demo-jobs/d2301f8e-358a-4c11-9fb4-c06cc5243e06/artifacts/head/model|/api/clients/a83ec874-3249-4185-a028-26933b0de6da/demo-jobs/d2301f8e-358a-4c11-9fb4-c06cc5243e06/artifacts/hair/trama-crop-coily",
+      "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":2.0704545454545453}",
+      "case": "maya-costa",
+      "edits": "{\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":20522,\"fingerprints\":[{\"mesh\":\"trama-crop-coily-scalp\",\"original\":\"eddce2e6\",\"edited\":\"eddce2e6\"},{\"mesh\":\"trama-crop-coily-strands\",\"original\":\"15764b9e\",\"edited\":\"15764b9e\"}]}}",
+      "scope": "Week 4 · Planning reference, not observed growth",
+      "stage": "Intermediate shape review"
+    },
+    {
+      "assets": "/api/clients/4e10027c-664d-4c35-b96e-5f486ebe948e/demo-jobs/8c46fbf3-afcd-4043-b7e2-e131ea84f937/artifacts/head/model|/api/clients/4e10027c-664d-4c35-b96e-5f486ebe948e/demo-jobs/8c46fbf3-afcd-4043-b7e2-e131ea84f937/artifacts/hair/trama-side-part-straight|/api/clients/4e10027c-664d-4c35-b96e-5f486ebe948e/demo-jobs/8c46fbf3-afcd-4043-b7e2-e131ea84f937/artifacts/beard/trama-circle",
+      "camera": "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":2.0704545454545453}",
+      "case": "noah-kim",
+      "edits": "{\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":13007,\"fingerprints\":[{\"mesh\":\"trama-side-part-straight-scalp\",\"original\":\"262d2106\",\"edited\":\"262d2106\"},{\"mesh\":\"trama-side-part-straight-strands\",\"original\":\"adb613e8\",\"edited\":\"adb613e8\"}]},\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":18000,\"fingerprints\":[{\"mesh\":\"trama-circle\",\"original\":\"c1c57e8d\",\"edited\":\"c1c57e8d\"}]}}",
+      "scope": "Week 4 · Planning reference, not observed growth",
+      "stage": "Intermediate shape review"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "verifiedAt": "2026-09-30T20:18:21.894Z",
+  "scope": "Actual retained-stage link reopened its exact separately recorded simulated follow-up. Neither a growth prediction nor an actual haircut claim.",
+  "observed": {
+    "requestedVisit": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb",
+    "selectedVisit": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb",
+    "synthetic": "Simulated outcome",
+    "title": "Noah Kim (synthetic demo) / simulated follow-up demonstration"
+  }
+}

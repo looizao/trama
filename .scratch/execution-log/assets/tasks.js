@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T16:41:23-03:00",
+  "updated": "2026-09-30T17:18:43-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4463,16 +4463,113 @@ window.executionLog={
         "Future stages distinguished from immediate result; stage revisions preserve history.",
         "Fictional completed demo plans and follow-up evidence populated."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Reversible plan defaults: immutable revisions, 1–8 explicit stages with weeks relative to a chosen start date, editable daily care effort, washing/styling steps, product categories, trim/check-in intervals and feasibility notes. Stage visuals refer to retained real 3D options; no generated biological-growth prediction.",
+        "Added exact plan/stage and exact observed-visit deep links, so review can reopen a specific immutable revision rather than defaulting to the newest record.",
+        "Three completed synthetic plans now contain editable care routines and nine actual compatible stage proposals with separate linked simulated outcomes. The browser saved Alex revision 2 with four daily minutes while revision 1 remains five; expected selection version 2 remains unchanged.",
+        "Fixed asynchronous exact-stage navigation: once the actual native proposal is ready, an explicit #growth-stage link scrolls to the requested retained stage. Ordinary page navigation does not force this scroll.",
+        "Exact-stage navigation and the loaded proposals are verified in the browser for three fitters. A real canvas drag rotated the retained FLAME stage; wheel zoom changed its camera radius. The linked stage reopened the exact separate simulated follow-up record."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Background IAB inputs sometimes time out after dispatch during native scene changes. Real intermediate geometry loaded, revision save succeeded, and API checks passed. Final render evidence is checked separately; browser delays are not counted as successful actions without observed state.",
+        "Plans provide configurable professional guidance and review checkpoints. Fictional example routines, product categories and dates are not medical advice, measured growth rates or promises of an achievable final result. User professional review and final route selection remain pending."
+      ],
+      "verification": [
+        {
+          "command": "Initial compilation and fictional population",
+          "result": "FAIL then corrected: an incomplete loop brace prevented compilation; a keep-current stage correctly rejected inherited proposed-style deformations, so the new reference resets edits; the creation checkpoint now resumes an incomplete import without recreating any known deleted plan or option."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS internal/app 1.546s; cmd/api cached. Meaningful tests cover synthetic labeling, stale expected selections, invalid schedules, foreign options/visits, idempotency, immutable revisions, restart, transitive media deletion and withdrawn/client-deleted state."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./...",
+          "result": "PASS internal/app 11.840s; cmd/api 1.029s."
+        },
+        {
+          "command": "scripts/populate-local-maintenance.py and scripts/verify-local-maintenance.py",
+          "result": "PASS three real retained plans, nine actual GLB head/style combinations, original expected JPEGs/events, simulated visit references, anonymous denial and preserved original/revised routines. Creation script refuses erased known work; verifier is read-only."
+        },
+        {
+          "command": "npm --prefix web run build after exact-stage navigation correction",
+          "result": "PASS Vite 1.59s, 189 modules. Main bundle ~505KB and native viewer ~650KB retain size advisories; browser delays and background measurements are reported separately."
+        },
+        {
+          "command": "Browser retained plan revisions, native proposals, exact-stage reload, rotation/zoom and observed-visit navigation",
+          "result": "PASS. Actual geometry and deformations loaded; viewport bounds place the target canvas at y247–687. Noah linked visit request and selected record IDs match exactly."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/maintenance-revision-browser.png",
+          "caption": "Actual browser revision retained with the original plan still present. Synthetic professional acceptance remains pending.",
+          "date": "2026-09-30T17:13:49-03:00"
+        },
+        {
+          "src": "assets/maintenance-intermediate-browser.png",
+          "caption": "Loaded compatible crew-wavy and light-stubble geometry on the actual fitted Alex head. A planning reference with separate simulated follow-up, not a biological growth prediction.",
+          "date": "2026-09-30T17:13:49-03:00"
+        },
+        {
+          "src": "assets/maintenance-target-browser.png",
+          "caption": "Exact Alex revision 2, week 8 target reopened at the loaded edited 3D view. This is a planning checkpoint, not a promised growth date.",
+          "date": "2026-09-30T17:18:43-03:00"
+        },
+        {
+          "src": "assets/maintenance-maya-browser.png",
+          "caption": "Real MPFB intermediate coily hairstyle with independent clean-shaven choice in fictional Maya’s saved plan.",
+          "date": "2026-09-30T17:18:43-03:00"
+        },
+        {
+          "src": "assets/maintenance-noah-browser.png",
+          "caption": "Actual FLAME intermediate side-part and circle beard in fictional Noah’s retained plan.",
+          "date": "2026-09-30T17:18:43-03:00"
+        },
+        {
+          "src": "assets/maintenance-noah-rotated-browser.png",
+          "caption": "Actual browser rotation of the retained native FLAME planning proposal.",
+          "date": "2026-09-30T17:18:43-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/maintenance-populated-verification.json",
+          "label": "Three populated fictional plans and nine native stage references"
+        },
+        {
+          "href": "assets/maintenance-live-verification.json",
+          "label": "Live original/revised guidance, native artifact headers and access checks"
+        },
+        {
+          "href": "assets/maintenance-browser-verification.json",
+          "label": "Observed loaded stage meshes, exact camera states and scope labels"
+        },
+        {
+          "href": "assets/maintenance-stage-rotation-verification.json",
+          "label": "Actual canvas-drag rotation measurements"
+        },
+        {
+          "href": "assets/maintenance-stage-zoom-verification.json",
+          "label": "Actual canvas wheel-zoom camera measurements"
+        },
+        {
+          "href": "assets/maintenance-linked-visit-verification.json",
+          "label": "Exact separately recorded simulated follow-up reopened from its stage link"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T16:42:10-03:00",
+          "text": "Read consultation, expected-result and actual-progress decisions alongside the later broad MVP. Current code has editable intake and retained visits, but no structured maintenance or staged-growth workflow."
+        },
+        {
+          "date": "2026-09-30T17:18:43-03:00",
+          "text": "Task 20 verified locally. Professional feasibility, actual growth outcomes and final route selection remain pending user review."
+        }
+      ]
     },
     {
       "id": "21",

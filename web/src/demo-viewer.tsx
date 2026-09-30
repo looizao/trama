@@ -48,6 +48,7 @@ export function DemoViewer({
   onStroke,
   capture,
   lockedRotation = false,
+  onReady,
 }: {
   title: string
   urls: string[]
@@ -57,6 +58,7 @@ export function DemoViewer({
   brush?: {kind:'hair'|'beard';radiusMm:number;strengthMm:number}
   capture?: { current: (()=>string|null)|null }
   lockedRotation?: boolean
+  onReady?: () => void
   onStroke?: (stroke:BrushStroke)=>void
 }) {
   const { t } = usePreferences(),
@@ -70,6 +72,7 @@ export function DemoViewer({
   } | null>(null)
   const cameraRef = useRef(camera),
     changeRef = useRef(onCamera)
+  const readyRef=useRef(onReady);readyRef.current=onReady
   const editRef=useRef(refinement), brushRef=useRef(brush), strokeRef=useRef(onStroke)
   editRef.current=refinement;brushRef.current=brush;strokeRef.current=onStroke
   cameraRef.current = camera
@@ -250,6 +253,7 @@ export function DemoViewer({
           applyEdits()
           measuredAt = performance.now()
           setLoading(false)
+          readyRef.current?.()
         }
       })
       .catch((e) => {
@@ -259,6 +263,7 @@ export function DemoViewer({
           model.clear()
           setError((e as Error).message)
           setLoading(false)
+          readyRef.current?.()
         }
       })
     if(capture)capture.current=()=>{

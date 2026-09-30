@@ -321,3 +321,23 @@ CREATE TABLE IF NOT EXISTS client_upload_photos (
  asset_id TEXT NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
  view TEXT NOT NULL, PRIMARY KEY(link_id,asset_id)
 );
+CREATE TABLE IF NOT EXISTS maintenance_plans (
+ id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+ client_id TEXT NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+ consultation_id TEXT NOT NULL REFERENCES consultations(id) ON DELETE CASCADE,
+ series_id TEXT NOT NULL, revision INTEGER NOT NULL,
+ parent_id TEXT REFERENCES maintenance_plans(id) ON DELETE SET NULL,
+ title TEXT NOT NULL, starts_on TEXT NOT NULL, guidance TEXT NOT NULL,
+ synthetic BOOLEAN NOT NULL, expected_option_id TEXT REFERENCES demo_options(id) ON DELETE SET NULL,
+ expected_event_id TEXT REFERENCES expected_selection_events(id) ON DELETE SET NULL,
+ expected_version INTEGER NOT NULL, request_id TEXT NOT NULL, request_hash BLOB NOT NULL,
+ created_by TEXT NOT NULL REFERENCES users(id), created_at TIMESTAMP NOT NULL,
+ UNIQUE(series_id,revision), UNIQUE(client_id,request_id)
+);
+CREATE TABLE IF NOT EXISTS growth_plan_stages (
+ plan_id TEXT NOT NULL REFERENCES maintenance_plans(id) ON DELETE CASCADE,
+ position INTEGER NOT NULL, weeks INTEGER NOT NULL, title TEXT NOT NULL, instructions TEXT NOT NULL,
+ option_id TEXT REFERENCES demo_options(id) ON DELETE SET NULL,
+ outcome_visit_id TEXT REFERENCES outcome_visits(id) ON DELETE SET NULL,
+ PRIMARY KEY(plan_id,position)
+);

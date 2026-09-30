@@ -1,0 +1,135 @@
+{
+  "verifiedAt": "2026-09-30T20:10:45.225245+00:00",
+  "scope": "Live local fictional planning records, actual native GLB headers and retained expected JPEG, original immutable revisions and exact selection event history, nine stage references and simulated observed visit links. No real growth prediction or professional acceptance. No creation or mutation performed.",
+  "cases": [
+    {
+      "fictionalCase": "alex-ramos",
+      "initialId": "76bcd1d1-bfb1-49ad-a1ac-d11214755bfd",
+      "latestId": "28a77f92-7fc0-4d12-ac9e-e4d26a3437bb",
+      "preservedRevisionCount": 2,
+      "initialDailyMinutes": 5,
+      "latestDailyMinutes": 4,
+      "expectedVersion": 2,
+      "expectedEventRetained": true,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "optionId": "2a4de9da-c098-4034-8b10-8c75a56cb844",
+          "nativeArtifactCount": 3,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "42139019-49e4-4b47-a8e3-c082c9a2722d",
+          "predictedGrowth": false
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "optionId": "7ff2be98-9e31-4fbd-aa81-67cc8c6f1ba4",
+          "nativeArtifactCount": 3,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "e6045095-ea14-499f-8e1c-5b1636aafd4c",
+          "predictedGrowth": false
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "optionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+          "nativeArtifactCount": 3,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "",
+          "predictedGrowth": false
+        }
+      ],
+      "anonymousPlanAndMediaDenied": true
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "initialId": "08abadf3-f6be-4c3e-96bb-69a4bab75aaa",
+      "latestId": "08abadf3-f6be-4c3e-96bb-69a4bab75aaa",
+      "preservedRevisionCount": 1,
+      "initialDailyMinutes": 7,
+      "latestDailyMinutes": 7,
+      "expectedVersion": 1,
+      "expectedEventRetained": true,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "optionId": "a4d6031a-a91c-4adc-8034-8753cbe0724e",
+          "nativeArtifactCount": 2,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "bde199cd-73fd-41a2-9894-8589d7053614",
+          "predictedGrowth": false
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "optionId": "55041bb9-410a-448f-8a6a-3e1312b95f83",
+          "nativeArtifactCount": 2,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "5e54853d-6b21-42c3-b9b4-cec4b48126fe",
+          "predictedGrowth": false
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "optionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+          "nativeArtifactCount": 2,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "",
+          "predictedGrowth": false
+        }
+      ],
+      "anonymousPlanAndMediaDenied": true
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "initialId": "39cc8bd0-311c-486b-bcc4-6c33153429e9",
+      "latestId": "39cc8bd0-311c-486b-bcc4-6c33153429e9",
+      "preservedRevisionCount": 1,
+      "initialDailyMinutes": 3,
+      "latestDailyMinutes": 3,
+      "expectedVersion": 1,
+      "expectedEventRetained": true,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "optionId": "e85a9bd2-abd0-4bba-be1b-49b77fd987a9",
+          "nativeArtifactCount": 3,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "e6eb9110-6f82-4ead-8003-95b78ca556b9",
+          "predictedGrowth": false
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "optionId": "4be7f27d-d594-440d-84b5-732415de9755",
+          "nativeArtifactCount": 3,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb",
+          "predictedGrowth": false
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "optionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+          "nativeArtifactCount": 2,
+          "actualArtifactHeadersVerified": true,
+          "observedVisit": "",
+          "predictedGrowth": false
+        }
+      ],
+      "anonymousPlanAndMediaDenied": true
+    }
+  ]
+}

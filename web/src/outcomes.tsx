@@ -26,7 +26,7 @@ export function OutcomeVisits({clientId,authorized,options}:{clientId:string;aut
   const sets=useQuery({queryKey:['photo-sets',clientId],queryFn:()=>api<PhotoSet[]>(base+'/photo-sets')})
   const consultations=useQuery({queryKey:['consultations',clientId],queryFn:()=>api<{id:string;title:string;revision:number}[]>(base+'/consultations')})
   const selections=useQuery({queryKey:['expected-results',clientId],queryFn:()=>api<ExpectedResult[]>(base+'/expected-results'),enabled:authorized})
-  const [selected,setSelected]=useState(''),[consultation,setConsultation]=useState(''),[kind,setKind]=useState('post-cut'),[previous,setPrevious]=useState('')
+  const [selected,setSelected]=useState(()=>new URLSearchParams(window.location.search).get('visit')||''),[consultation,setConsultation]=useState(''),[kind,setKind]=useState('post-cut'),[previous,setPrevious]=useState('')
   const [title,setTitle]=useState(''),[date,setDate]=useState(localDate),[baseline,setBaseline]=useState(''),[actual,setActual]=useState('')
   const [notes,setNotes]=useState(''),[feedback,setFeedback]=useState(''),[synthetic,setSynthetic]=useState(false),[confirmed,setConfirmed]=useState(false)
   const [requestId,setRequestId]=useState(()=>crypto.randomUUID()),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState('')

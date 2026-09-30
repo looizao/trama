@@ -108,3 +108,5 @@
 @media(max-width: 1000px) { .outcome-comparison { grid-template-columns: 1fr; } }
 
 .client-upload-portal{max-width:1100px}.client-upload-portal>.card{margin:24px 0}.client-upload-portal dd{white-space:pre-wrap}.client-upload-portal li{overflow-wrap:anywhere}
+
+.maintenance-panel{margin:24px 0;overflow-wrap:anywhere}.maintenance-form{margin:20px 0}.plan-stage-editor{border:1px solid var(--border,#dfe3d9);border-radius:10px;padding:16px;display:grid;gap:12px;min-width:0}.maintenance-guidance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.retained-stage .demo-canvas{height:440px}.maintenance-panel .demo-actions{margin-top:20px}.retained-stage{margin:20px 0}@media(max-width:800px){.maintenance-guidance-grid{grid-template-columns:1fr}}

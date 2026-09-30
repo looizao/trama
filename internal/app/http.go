@@ -26,6 +26,8 @@ func (a *App) Handler() http.Handler {
 	mux.HandleFunc("POST /api/clients/{clientID}/upload-links", a.authenticated(a.createClientUploadLink))
 	mux.HandleFunc("POST /api/clients/{clientID}/upload-links/{linkID}/revoke", a.authenticated(a.revokeClientUploadLink))
 	mux.HandleFunc("POST /api/clients/{clientID}/upload-links/{linkID}/review", a.authenticated(a.reviewClientUploadIntake))
+	mux.HandleFunc("GET /api/clients/{clientID}/maintenance-plans", a.authenticated(a.listMaintenancePlans))
+	mux.HandleFunc("POST /api/clients/{clientID}/maintenance-plans", a.authenticated(a.saveMaintenancePlan))
 	mux.HandleFunc("GET /api/reminders", a.authenticated(a.listClientReminders))
 	mux.HandleFunc("GET /api/clients/{clientID}/reminders", a.authenticated(a.listClientReminders))
 	mux.HandleFunc("POST /api/clients/{clientID}/reminders", a.authenticated(a.createClientReminder))

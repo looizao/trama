@@ -1,0 +1,117 @@
+{
+  "verifiedAt": "2026-09-30T19:59:42.655489+00:00",
+  "scope": "Three real persisted fictional plans, nine live native stage proposals and separate simulated visit links. No actual biological growth prediction, professional approval or final route choice. Existing erasures are never automatically restored.",
+  "plans": [
+    {
+      "fictionalCase": "alex-ramos",
+      "planId": "76bcd1d1-bfb1-49ad-a1ac-d11214755bfd",
+      "revision": 1,
+      "expectedOptionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "expectedVersion": 2,
+      "dailyMinutes": 5,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "instructions": "Discuss the keep-current fitted reference and the simulated post-cut evidence separately. This planning reference is not an actual photograph.",
+          "optionId": "2a4de9da-c098-4034-8b10-8c75a56cb844",
+          "outcomeVisitId": "42139019-49e4-4b47-a8e3-c082c9a2722d"
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "instructions": "Review actual length and maintenance effort before an intermediate proposal. The linked follow-up is simulated evidence, not measured growth.",
+          "optionId": "7ff2be98-9e31-4fbd-aa81-67cc8c6f1ba4",
+          "outcomeVisitId": "e6045095-ea14-499f-8e1c-5b1636aafd4c"
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "instructions": "Reassess whether the retained expected target is achievable and still desired. This is a planning checkpoint, not a promised growth date.",
+          "optionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+          "outcomeVisitId": ""
+        }
+      ],
+      "actualNativeArtifactsVerified": true,
+      "synthetic": true,
+      "professionalAcceptance": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "planId": "08abadf3-f6be-4c3e-96bb-69a4bab75aaa",
+      "revision": 1,
+      "expectedOptionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+      "expectedVersion": 1,
+      "dailyMinutes": 7,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "instructions": "Discuss the keep-current fitted reference and the simulated post-cut evidence separately. This planning reference is not an actual photograph.",
+          "optionId": "a4d6031a-a91c-4adc-8034-8753cbe0724e",
+          "outcomeVisitId": "bde199cd-73fd-41a2-9894-8589d7053614"
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "instructions": "Review actual length and maintenance effort before an intermediate proposal. The linked follow-up is simulated evidence, not measured growth.",
+          "optionId": "55041bb9-410a-448f-8a6a-3e1312b95f83",
+          "outcomeVisitId": "5e54853d-6b21-42c3-b9b4-cec4b48126fe"
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "instructions": "Reassess whether the retained expected target is achievable and still desired. This is a planning checkpoint, not a promised growth date.",
+          "optionId": "15c762f0-d77c-4fdc-b7a7-e7ba2c620e87",
+          "outcomeVisitId": ""
+        }
+      ],
+      "actualNativeArtifactsVerified": true,
+      "synthetic": true,
+      "professionalAcceptance": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "planId": "39cc8bd0-311c-486b-bcc4-6c33153429e9",
+      "revision": 1,
+      "expectedOptionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+      "expectedVersion": 1,
+      "dailyMinutes": 3,
+      "stages": [
+        {
+          "position": 1,
+          "weeks": 0,
+          "title": "Present outline and immediate care",
+          "instructions": "Discuss the keep-current fitted reference and the simulated post-cut evidence separately. This planning reference is not an actual photograph.",
+          "optionId": "e85a9bd2-abd0-4bba-be1b-49b77fd987a9",
+          "outcomeVisitId": "e6eb9110-6f82-4ead-8003-95b78ca556b9"
+        },
+        {
+          "position": 2,
+          "weeks": 4,
+          "title": "Intermediate shape review",
+          "instructions": "Review actual length and maintenance effort before an intermediate proposal. The linked follow-up is simulated evidence, not measured growth.",
+          "optionId": "4be7f27d-d594-440d-84b5-732415de9755",
+          "outcomeVisitId": "b92db7c2-b20c-4351-8ff4-ff4506e13dbb"
+        },
+        {
+          "position": 3,
+          "weeks": 8,
+          "title": "Longer-term target discussion",
+          "instructions": "Reassess whether the retained expected target is achievable and still desired. This is a planning checkpoint, not a promised growth date.",
+          "optionId": "c495b6c7-9e33-4220-b3e0-fe2cf8625126",
+          "outcomeVisitId": ""
+        }
+      ],
+      "actualNativeArtifactsVerified": true,
+      "synthetic": true,
+      "professionalAcceptance": "pending"
+    }
+  ]
+}
