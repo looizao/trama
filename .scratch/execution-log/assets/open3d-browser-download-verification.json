@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-30T09:31:04.689267+00:00",
+  "nativeJobId": "d91d80a1-fd88-4f31-8ad6-43fe9975986d",
+  "browserDownloadName": "processed-skin.ply",
+  "sha256": "b005ffe40eb688568929ab765028ead0278d1b9336cb3d56251473e7a38e6d58",
+  "bytes": 291176,
+  "nativeReaderTriangles": 7694,
+  "fullProvenanceRecovered": {
+    "upstreamCandidate": "makehuman",
+    "upstreamRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+    "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+    "upstreamProvenance": {},
+    "component": "Open3D CPU 0.20.0 / MIT",
+    "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
+    "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+    "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+    "professionalReview": "pending"
+  }
+}

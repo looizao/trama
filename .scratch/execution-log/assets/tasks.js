@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T05:18:14-03:00",
+  "updated": "2026-09-30T06:33:17-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1653,7 +1653,9 @@ window.executionLog={
           "date": "2026-09-30T05:15:59-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "9f3c7df392e6a4bf505a1273a7ec252f576eeefc"
+      ],
       "outputs": [
         {
           "href": "assets/flame-native-provenance.json",
@@ -1743,8 +1745,9 @@ window.executionLog={
       "id": "12a",
       "title": "Open3D component processing experiment",
       "depends": [
-        "07a",
-        "08a"
+        "07b",
+        "10a",
+        "11a"
       ],
       "requirement": "Process and evaluate meshes using Open3D with named reconstruction/fitting dependency. Retain actual processing success or failure; the full candidate journey remains in task 12.",
       "criteria": [
@@ -1753,17 +1756,250 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "verified",
+      "changes": [
+        "Installed official Open3D CPU-only 0.20.0 wheel (SHA-256 cee9c7686a794de792070f029f8b81913aff1269154ee43de9cc4af72fa5e087). Pinned 76 runtime packages and retained separate package notices, primary sources and hashes. No CUDA or learned reconstruction model acquired.",
+        "Added explicit upstream native-run dependencies, six-photo snapshot matching, source ownership checks and durable transitive experiment-output erasure. Full product refinement/history remain pending common tasks.",
+        "Preserved coincident normal seams after the v1 visual regression; v2 CPU renders show a smooth neck cap. v3 records actual native Tensor ICP iterations; v4 adds full upstream provenance to PLY downloads. Final v5 uses short ordered provenance comments compatible with bounded native PLY readers.",
+        "v5 regenerates all nine populated component cases, retains full license metadata in short PLY comments, and exposes only verified-version PLY downloads. Native reader successfully reopens all 27 exported PLY files. Earlier failures and versioned experiments remain available and labeled.",
+        "Final browser-started v5 run d91d80a1-fd88-4f31-8ad6-43fe9975986d uses MakeHuman e979cacf-a165-47b9-91f0-a4b53881ab0d with triangle fraction 0.8, voxel size 0.004 m and 10000 points: 3638 ms, 132.8 MiB retained, 4 actual ICP iterations. Reversible Alex technical workspace now reopens this processed head, coils and chinstrap, front view and synchronized 1.15 m zoom. This is not an expected-result choice or final route selection."
+      ],
+      "limitations": [
+        "Only native supporting processing milestone 12a is verified. Full candidate 12 refinement, direct 3D editing, expected selection and revision history remain pending tasks 16 and 17. No independent scan or real-client likeness established. Historical v1 shading failure and v4 native-reader failure remain retained; old unverified PLY links are hidden with an explanatory notice."
+      ],
+      "verification": [
+        {
+          "command": "Private Python setup-open3d.py",
+          "result": "CPU-only build confirmed; official wheel and MIT notice verified; 76 separate software records retained."
+        },
+        {
+          "command": "Intermediate internal/app test compile",
+          "result": "Two test-fixture editing errors found before execution (fixture organization field and insertion position); corrected before behavioral checks. No native success inferred from fixture tests."
+        },
+        {
+          "command": "First native Open3D population",
+          "result": "All three real jobs failed at import because the wrapper filename shadowed the installed open3d package. No head published. Renamed the wrapper process-open3d.py; failed jobs and diagnostics are retained and new attempts use a separate checkpoint."
+        },
+        {
+          "command": "populate-components.py open3d --upstream makehuman/blender-mpfb/flame --attempt import-fixed",
+          "result": "All nine real native runs completed. Each uses one retained upstream fitted head, its same six original photo dependencies and the same 16 independent style GLBs. MakeHuman default processing measured maximum upstream-to-processed deviation 0.349 to 0.409 mm; these are model deviations, not likeness measurements."
+        },
+        {
+          "command": "Intermediate live verification",
+          "result": "Actual 19 artifacts, auth denial and state reopening passed. Fixture permission response field used url instead of path; corrected against current API source. Disposable client was removed by finally; no positive processing result inferred from this failed verifier."
+        },
+        {
+          "command": "Intermediate native privacy verifier",
+          "result": "Real upstream fitting, completed dependent processing, live child processing and parent removal passed. Final photo-count assertion failed because the retained snapshot also included two optional detail assignments. Verifier now copies exactly the six required photos. Failed disposable fixture was fully deleted in finally."
+        },
+        {
+          "command": "Intermediate visual review after native metrics passed",
+          "result": "Open3D v1 coincident-vertex merging joined the intentionally separate neck-cap normal seam. Actual browser and CPU renders showed a jagged shading band. Small geometric deviation did not detect this visual regression. Preserved failure renders/results; v2 keeps seam vertices separate before decimation."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/native-demos/verify-components-assets.py (v4)",
+          "result": "FAILED with RPly Line too long and SIGABRT, before claiming PLY compatibility. coredumpctl identified ReadPointCloudFromPLY in libOpen3D and libc fortify; memory available and no OOM event. Native data and app remained intact. Original retained v4 exports are historical evidence; regenerating v5."
+        },
+        {
+          "command": "python scripts/native-demos/verify-components.py after download-check edit",
+          "result": "Initial verification script did not start due to an unmatched closing parenthesis; corrected. No app mutation occurred."
+        },
+        {
+          "command": "setup-open3d.py",
+          "result": "76 pinned package license records retained, including bundled Roboto and Jupyter third-party notices. CPU-only wheel unchanged."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS, internal/app 0.875 s, including bounded component settings, source ownership, same-six snapshots, recursive output cancellation, tombstones and export symlink containment."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app",
+          "result": "PASS 5.262 s."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS 1.58 s. Existing large demo chunk warning remains; browser performance is measured separately."
+        },
+        {
+          "command": "python scripts/native-demos/verify-components.py",
+          "result": "PASS final v5: 22 actual artifacts, real upstream fit and component processing, corrupt upstream failure with no fallback, independent ownership, save/reopen, removal of parent plus completed/failed/live children, no re-created folders, source photos and permission preserved until explicit withdrawal."
+        },
+        {
+          "command": "@Browser final v5 native processing and asset inspection",
+          "result": "PASS all 48 independent style selections across three upstream routes; six synchronized angles; keyboard zoom updates both canvases and persists at 1.15 m after reload. Range-fill automation did not change the controlled slider, so the behavioral check used normal keyboard interaction. Saved option contains coils plus chinstrap; no browser console errors."
+        },
+        {
+          "command": "@Browser PLY download + actual Open3D native reader",
+          "result": "PASS 7694 triangles and complete chunked provenance on the browser-downloaded file."
+        },
+        {
+          "command": "populate-components.py open3d --upstream makehuman --attempt final-ply-comments (repeat)",
+          "result": "PASS reused existing three job and option IDs; no new processing or options."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/open3d-three-upstream-comparison-v1.png",
+          "caption": "2026-09-30 / intermediate v1 failure: MakeHuman neck-cap shading worsened after vertex welding despite small mesh deviation. Same CPU renderer.",
+          "date": "2026-09-30T06:03:37-03:00"
+        },
+        {
+          "src": "assets/open3d-makehuman-coils-chinstrap.png",
+          "caption": "2026-09-30 / intermediate v1 browser: real independent style loading passed, but processed neck shading remains visibly jagged and is not accepted as final.",
+          "date": "2026-09-30T06:03:37-03:00"
+        },
+        {
+          "src": "assets/open3d-three-upstream-comparison.png",
+          "caption": "2026-09-30: final v5 processing of MPFB, standalone MakeHuman and FLAME fitted heads, same synthetic six-photo inputs. Upstream above, Open3D below. Corrected neck normals; no observed scan or real likeness claim.",
+          "date": "2026-09-30T06:27:14-03:00"
+        },
+        {
+          "src": "assets/open3d-browser-settings-final.png",
+          "caption": "2026-09-30: explicit MakeHuman upstream and editable Open3D settings before starting real local processing.",
+          "date": "2026-09-30T06:33:17-03:00"
+        },
+        {
+          "src": "assets/open3d-browser-native-result-final.png",
+          "caption": "2026-09-30: completed browser-started native processing with live retained outputs, actual geometry measurements and iterations.",
+          "date": "2026-09-30T06:33:17-03:00"
+        },
+        {
+          "src": "assets/open3d-browser-current-proposed-final.png",
+          "caption": "2026-09-30: synchronized current and proposed independent style assets on the corrected Open3D result. Synthetic client, inferred fitted geometry and coarse beard borders remain explicit; professional acceptance pending.",
+          "date": "2026-09-30T06:33:17-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/open3d-provenance.json",
+          "label": "Exact CPU release and separate software/model/asset provenance"
+        },
+        {
+          "href": "assets/open3d-initial-import-failures.json",
+          "label": "Actual first processing failures with no native model"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results.json",
+          "label": "Three actual MakeHuman-dependent Open3D results"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results.json",
+          "label": "Three actual corrected MPFB-dependent Open3D results"
+        },
+        {
+          "href": "assets/open3d-flame-populated-results.json",
+          "label": "Three actual exact Open FLAME-dependent Open3D results"
+        },
+        {
+          "href": "assets/open3d-output-verification-v1.json",
+          "label": "Intermediate numerical checks that missed the shading regression"
+        },
+        {
+          "href": "assets/open3d-cached-setup-resources.json",
+          "label": "Measured cached setup repeat, distinct from initial installation"
+        },
+        {
+          "href": "assets/open3d-live-verification.json",
+          "label": "Final native flow and transitive privacy evidence"
+        },
+        {
+          "href": "assets/open3d-output-verification.json",
+          "label": "Final GLB, render, PLY, ICP and provenance checks"
+        },
+        {
+          "href": "assets/open3d-browser-style-checks.json",
+          "label": "48 final browser asset loads and measured render metrics"
+        },
+        {
+          "href": "assets/open3d-browser-camera-checks.json",
+          "label": "Six actual synchronized camera states"
+        },
+        {
+          "href": "assets/open3d-browser-download-verification.json",
+          "label": "Actual browser PLY download reopened by native reader"
+        },
+        {
+          "href": "assets/open3d-browser-reopen-verification.json",
+          "label": "Native meshes, option and zoom retained across reload"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results-v1.json",
+          "label": "Historical processing iteration: open3d-blender-mpfb-populated-results-v1"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results-v2.json",
+          "label": "Historical processing iteration: open3d-blender-mpfb-populated-results-v2"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results-v3.json",
+          "label": "Historical processing iteration: open3d-blender-mpfb-populated-results-v3"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results-v4.json",
+          "label": "Historical processing iteration: open3d-blender-mpfb-populated-results-v4"
+        },
+        {
+          "href": "assets/open3d-flame-populated-results-v1.json",
+          "label": "Historical processing iteration: open3d-flame-populated-results-v1"
+        },
+        {
+          "href": "assets/open3d-flame-populated-results-v2.json",
+          "label": "Historical processing iteration: open3d-flame-populated-results-v2"
+        },
+        {
+          "href": "assets/open3d-flame-populated-results-v4.json",
+          "label": "Historical processing iteration: open3d-flame-populated-results-v4"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-v1.json",
+          "label": "Historical processing iteration: open3d-makehuman-populated-results-v1"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-v2.json",
+          "label": "Historical processing iteration: open3d-makehuman-populated-results-v2"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-v3.json",
+          "label": "Historical processing iteration: open3d-makehuman-populated-results-v3"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-v4.json",
+          "label": "Historical processing iteration: open3d-makehuman-populated-results-v4"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 12."
+        },
+        {
+          "date": "2026-09-30T05:19:19-03:00",
+          "text": "Begin Open3D supporting-component workflow on retained fitted heads, with explicitly named upstream native run and its same six authorized photo dependencies. This component is not a raw-photo head reconstructor. Preserve parent-output deletion/cancellation boundaries before processing copied meshes."
+        },
+        {
+          "date": "2026-09-30T05:42:56-03:00",
+          "text": "Open3D processing workflow implemented; native local processing and browser verification are in progress."
+        },
+        {
+          "date": "2026-09-30T05:45:41-03:00",
+          "text": "Corrected Open3D import-shadowing failure; starting separate retained experiments."
+        },
+        {
+          "date": "2026-09-30T05:52:24-03:00",
+          "text": "All three fitted upstream routes processed successfully. Native privacy verification and browser asset checks continue."
+        },
+        {
+          "date": "2026-09-30T05:54:31-03:00",
+          "text": "Native outputs across all upstream routes retained. Final fixture verification now isolates the required six-photo arm and includes actual corrupt-upstream failure."
+        },
+        {
+          "date": "2026-09-30T06:03:37-03:00",
+          "text": "Preserve intentional normal seams in Open3D v2; all final native and visual checks must use the corrected version."
+        },
+        {
+          "date": "2026-09-30T06:33:17-03:00",
+          "text": "Corrected the supporting milestone dependencies to the three actual validated upstream fitting routes used. Failed COLMAP is retained as an independently evaluated candidate, not a mandatory source for this processor."
         }
       ]
     },

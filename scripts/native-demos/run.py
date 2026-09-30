@@ -20,7 +20,7 @@ def protect_stage():
     if ctypes.CDLL(None).prctl(1,signal.SIGKILL)!=0:os._exit(125)
     if os.getppid()!=stage_parent:os.kill(os.getpid(),signal.SIGKILL)
 os.umask(0o077)
-p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman','flame']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
+p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman','flame','open3d']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
 manifest=json.loads((directory/'manifest.json').read_text())
 manifest['candidate']=args.candidate
 (directory/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
@@ -32,7 +32,7 @@ for item in manifest['inputs']:
 env=dict(os.environ,BLENDER_USER_RESOURCES=str(ROOT/'.scratch/private/blender-resources'),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4')
 metrics=[];started=time.monotonic()
 def stage(name,command):
-    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'colmap':5}[name]}))
+    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'colmap':5,'open3d':5}[name]}))
     before=resource.getrusage(resource.RUSAGE_CHILDREN);start=time.monotonic()
     with (directory/(name+'.log')).open('w') as output:
         result=subprocess.run(command,env=env,stdout=output,stderr=subprocess.STDOUT,preexec_fn=protect_stage)
@@ -51,6 +51,13 @@ try:
         report['artifacts']=files
         (directory/'colmap-report.json').write_text(json.dumps(report,indent=2)+'\n')
         raise RuntimeError('Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.')
+    if args.candidate=='open3d':
+        stage('open3d',[sys.executable,str(ROOT/'scripts/native-demos/process-open3d.py'),str(directory)])
+        component=json.loads((directory/'component-report.json').read_text())
+        files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
+        report={'candidate':args.candidate,'kind':'process','geometry':component['geometry'],'scope':'Open3D supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending.','component':component,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
+        (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n');print('EXPERIMENT_COMPLETE',json.dumps({'elapsedMs':report['elapsedMs'],'retainedBytes':report['retainedBytes']}),flush=True)
+        raise SystemExit(0)
     fitter=[sys.executable,str(ROOT/('scripts/native-demos/'+args.candidate+'.py'))] if args.candidate in ['makehuman','flame'] else blender
     stage('prepare',fitter+['prepare',str(directory)])
     stage('fit',[str(ROOT/'.scratch/private/native-demos/python/bin/python'),str(ROOT/'scripts/native-demos/fit-mpfb.py'),str(directory)])

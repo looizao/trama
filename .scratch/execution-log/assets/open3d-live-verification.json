@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30T06:23:59-0300",
+  "candidate": "open3d",
+  "upstreamRoute": "standalone MakeHuman",
+  "scope": "Actual local upstream fitting, native Open3D processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.",
+  "actualArtifactsRead": 22,
+  "actualBytesRead": 67956495,
+  "processedStateReopened": true,
+  "actualCorruptUpstreamFailure": {
+    "elapsedMs": 500,
+    "error": "open3d failed with exit 1; retained diagnostic log",
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/6f7be57f-92d5-4461-a115-edbb8ba14239/39a20794-28fb-4985-af40-117eb20812d4"
+        ],
+        "cpuSeconds": 0.768,
+        "exitCode": 1,
+        "peakRssKiB": 163052,
+        "seconds": 0.499,
+        "stage": "open3d"
+      }
+    ]
+  },
+  "anonymousAndCrossClientDenied": true,
+  "privateUpstreamPathDenied": true,
+  "parentRemovalPurgedCompletedAndRunningChildren": true,
+  "removedExperiments": 4,
+  "sameSixSourcePhotosPreservedUntilWithdrawal": true,
+  "permissionPreservedOnExperimentRemoval": true,
+  "dependentWorkspaceAndOptionsRemoved": true,
+  "deletedParentReprocessingDenied": true,
+  "deletedDirectoriesDidNotReappear": true,
+  "withdrawalDeniedDiagnostics": true
+}

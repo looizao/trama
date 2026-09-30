@@ -1,0 +1,1882 @@
+{
+  "date": "2026-09-30T06:08:58-0300",
+  "scope": "Real supporting processing of identified fitted heads and unchanged six-photo inputs. No raw-photo reconstruction attributed to component, no measured scan or real likeness proof. Full editing/expected-result journeys and professional review remain pending.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "open3d",
+      "upstreamCandidate": "blender-mpfb",
+      "upstreamJobId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+      "jobId": "76112397-8ac9-4040-8dbb-e6fadf2a57a1",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 13414,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 408,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 33,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 307,
+            "path": "open3d.log"
+          },
+          {
+            "bytes": 288797,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 485894,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 275559,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795996,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 9656,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 109996,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 459,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 603370,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 618185,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 618223,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 621663,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 621706,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 626743,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 834900,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4902044,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 9695036,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 3408440,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 18181932,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 7702768,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 1172312,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 18181940,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 62398,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 52397,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 62921,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 34206,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 48851,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19918,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2475272,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902044,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9695036,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 18181940,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 18181932,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 7702768,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1172312,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3408440,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "open3d",
+        "completedAt": "2026-09-30T09:08:50.192939+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 4,
+            "fitness": 1,
+            "inlierRmseMetres": 1.716242076350344e-13,
+            "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.0038172110777755825,
+                "iteration": 0,
+                "transformation": [
+                  [
+                    0.9953132791396739,
+                    0.09669845554881593,
+                    0.0009407777118112268,
+                    -0.003496885492265219
+                  ],
+                  [
+                    -0.09669536268216762,
+                    0.9953097668872264,
+                    -0.002911146622732239,
+                    0.0020938616382615376
+                  ],
+                  [
+                    -0.0012178686273298896,
+                    0.002806534049081126,
+                    0.9999953200703681,
+                    -0.003432664371387518
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00041453276136157785,
+                "iteration": 1,
+                "transformation": [
+                  [
+                    0.9906265364964213,
+                    0.13659815524405736,
+                    9.577590974018616e-05,
+                    -0.0045507254560350555
+                  ],
+                  [
+                    -0.13659790904001826,
+                    0.9906256830898349,
+                    -0.0013293790628574693,
+                    0.003377278352832348
+                  ],
+                  [
+                    -0.0002764688036163267,
+                    0.001303835387722439,
+                    0.9999991117887467,
+                    -0.003964587518727669
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 3.039316960082156e-07,
+                "iteration": 2,
+                "transformation": [
+                  [
+                    0.9902680916805783,
+                    0.13917293773236053,
+                    1.500071157511384e-06,
+                    -0.004533748636576495
+                  ],
+                  [
+                    -0.1391729377341893,
+                    0.9902680916807397,
+                    1.192312915224451e-06,
+                    0.0036668362786951327
+                  ],
+                  [
+                    -1.3195349114264378e-06,
+                    -1.3894787450456376e-06,
+                    0.9999999999981639,
+                    -0.004000109024701291
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.716242076350344e-13,
+                "iteration": 3,
+                "transformation": [
+                  [
+                    0.9902680687415756,
+                    0.13917310096002827,
+                    6.252402540518324e-14,
+                    -0.004533821040742645
+                  ],
+                  [
+                    -0.13917310096002822,
+                    0.9902680687415756,
+                    1.5291455896518846e-13,
+                    0.0036666697110363257
+                  ],
+                  [
+                    -4.063429557957433e-14,
+                    -1.601270955447939e-13,
+                    0.9999999999999999,
+                    -0.0039999999998573165
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "knownTransform": [
+              [
+                0.9902680687415704,
+                -0.13917310096006544,
+                0,
+                0.005
+              ],
+              [
+                0.13917310096006544,
+                0.9902680687415704,
+                0,
+                -0.003
+              ],
+              [
+                0,
+                0,
+                1,
+                0.004
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "maximumIterations": 80,
+            "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
+            "recoveredPointMaximumErrorMetres": 1.9456345127844732e-13,
+            "recoveredPointRmsErrorMetres": 1.7161766238351947e-13,
+            "recoveredTransform": [
+              [
+                0.9902680687415756,
+                0.13917310096002827,
+                6.252402540518324e-14,
+                -0.004533821040742645
+              ],
+              [
+                -0.13917310096002822,
+                0.9902680687415756,
+                1.5291455896518846e-13,
+                0.0036666697110363257
+              ],
+              [
+                -4.063429557957433e-14,
+                -1.601270955447939e-13,
+                0.9999999999999999,
+                -0.0039999999998573165
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "candidate": "open3d",
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7192,
+              "vertices": 3774
+            },
+            "before": {
+              "triangles": 9590,
+              "vertices": 4999
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 7.63330317568034e-05,
+                "meanMetres": 4.2202677674982065e-07,
+                "rmsMetres": 4.228432186092727e-06
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00040707012522034347,
+                "meanMetres": 2.8661934825853018e-05,
+                "rmsMetres": 6.109436584557647e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7192
+          },
+          "pointProcessing": {
+            "retainedAfterOutlierFilter": 10105,
+            "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head.",
+            "sampled": 12000,
+            "voxelized": 10386
+          },
+          "processingVersion": "open3d-cpu-upstream-v3",
+          "provenance": {
+            "component": "Open3D CPU 0.20.0 / MIT",
+            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
+            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "upstreamCandidate": "blender-mpfb",
+            "upstreamProvenance": {},
+            "upstreamRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "98702b7ccff661f7aa4ba0ad24710133ab18f72c5a308de29dea2d6ea79b1711"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "764e4ce14c573b76359b42c4d59999820ccd0a48a1779b8608ed2e1e9fb36ce6"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "4c142758b0acff567c862866eeab2a7685ebfabd2c5cf34253f7f27cb39763cf"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "f173b384b7aeae7d151d0fa75143e1859e2026befd70f7ff8ad0cb2267bd6945"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "bf97a0db3368ad9444e7b77f464197fb972030db8b9f85b4d3e9f832c4a539df"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "0dd8e784c0a62818be5760c6e24d31f11403cddf834021d3d6b79f22e31ac1b1"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "a97312536acc9cd1350311a07ffe96c1221f80370b32d874e216b5c07098e325"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "1774ab50dbd8a1fe686755ad299b19be01dff545acb206b85130d1976206c86a"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "504c3bab5b13f68f9d4fea03c0d39b557c24d71fd36bad102a1aed06c095abff"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "1c23463adaf560b1ec2bb32b059c75da48a037c6f6782e46e7faba7f05aabfc3"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "2c4029c0c0081caa1209ce3493c7de2b23d71d2a72d9cb1aad40355347a2dcdf"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "23c2ddbbee484627fa3e666f2b460875ffc128ad79e9d32e0047204dc83a5616"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "5bc0067a44eb4c933b27baa6452e092c27acc2463c5663a59c4ce1951e62a389"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "d9adc45755706d8e48d42091d68eed4fe8394e4a8643255924190dc4b4aa38b5"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "68f75965b28d848ae910bc0a9e1ef8366b16ca593432b5374c1dcefc6f1f0559"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "db9d23f7b021ca1c6de3b025dece5d5e9c2a6aca936a0bd838ba76f0d4785a60"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "runId": "e90fa4b1-492c-4b76-af70-dd96257bdb84"
+          },
+          "version": "0.20.0"
+        },
+        "diagnostics": [
+          "result",
+          "component",
+          "process",
+          "resources",
+          "settings"
+        ],
+        "elapsedMs": 3531,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/76112397-8ac9-4040-8dbb-e6fadf2a57a1"
+            ],
+            "cpuSeconds": 3.898,
+            "exitCode": 0,
+            "peakRssKiB": 189344,
+            "seconds": 3.528,
+            "stage": "open3d"
+          }
+        ],
+        "retainedBytes": 191349889,
+        "scope": "Open3D supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "open3d",
+      "upstreamCandidate": "blender-mpfb",
+      "upstreamJobId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+      "jobId": "67a4865f-e182-4595-a115-5065c700e801",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 13372,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 407,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 33,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 306,
+            "path": "open3d.log"
+          },
+          {
+            "bytes": 288797,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 483542,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 277793,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 797388,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 9626,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 110514,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 458,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 671991,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 671990,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 663566,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 668353,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 666523,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 674103,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 836608,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4902040,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 9349820,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3632468,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 3450024,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 17430468,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 8218864,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 1255148,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 17430472,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 61456,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 52587,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 61826,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 34310,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 47949,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 20141,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2475272,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632468,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902040,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9349820,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 17430472,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 17430468,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 8218864,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1255148,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3450024,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "open3d",
+        "completedAt": "2026-09-30T09:08:54.220948+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 4,
+            "fitness": 1,
+            "inlierRmseMetres": 9.845669331938653e-14,
+            "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.0035624904891455884,
+                "iteration": 0,
+                "transformation": [
+                  [
+                    0.9947540646566119,
+                    0.10229534161234284,
+                    -0.0001180405156593098,
+                    -0.0034575997398928696
+                  ],
+                  [
+                    -0.10229519857918071,
+                    0.9947490047451506,
+                    -0.003179607865489838,
+                    0.0020988942463786575
+                  ],
+                  [
+                    -0.00020783838732187248,
+                    0.003175002826199908,
+                    0.9999949380673177,
+                    -0.0033710443337291503
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00031510034994058884,
+                "iteration": 1,
+                "transformation": [
+                  [
+                    0.9905366009697223,
+                    0.13724875482412932,
+                    0.00014641917512246734,
+                    -0.0045237036395784636
+                  ],
+                  [
+                    -0.13724855359350602,
+                    0.9905361736821102,
+                    -0.0009608140790945282,
+                    0.0034507051999844735
+                  ],
+                  [
+                    -0.0002769040254527162,
+                    0.0009316256920662356,
+                    0.9999995276987538,
+                    -0.003952724731609848
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 2.237746139187017e-07,
+                "iteration": 2,
+                "transformation": [
+                  [
+                    0.9902681062688885,
+                    0.13917283393684413,
+                    7.850651132367585e-07,
+                    -0.004533754793944568
+                  ],
+                  [
+                    -0.13917283393771585,
+                    0.990268106268358,
+                    1.193608527780385e-06,
+                    0.003666830751216739
+                  ],
+                  [
+                    -6.113070615600688e-07,
+                    -1.291252193065637e-06,
+                    0.9999999999989795,
+                    -0.004000033651145654
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 9.845669331938653e-14,
+                "iteration": 3,
+                "transformation": [
+                  [
+                    0.9902680687415724,
+                    0.139173100960049,
+                    -3.791563059606597e-14,
+                    -0.004533821040790159
+                  ],
+                  [
+                    -0.13917310096004903,
+                    0.9902680687415726,
+                    2.1554633692501106e-13,
+                    0.0036666697110443874
+                  ],
+                  [
+                    6.754475971572001e-14,
+                    -2.0817118420733466e-13,
+                    1,
+                    -0.003999999999923334
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "knownTransform": [
+              [
+                0.9902680687415704,
+                -0.13917310096006544,
+                0,
+                0.005
+              ],
+              [
+                0.13917310096006544,
+                0.9902680687415704,
+                0,
+                -0.003
+              ],
+              [
+                0,
+                0,
+                1,
+                0.004
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "maximumIterations": 80,
+            "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
+            "recoveredPointMaximumErrorMetres": 1.2255656459721541e-13,
+            "recoveredPointRmsErrorMetres": 9.845368840648535e-14,
+            "recoveredTransform": [
+              [
+                0.9902680687415724,
+                0.139173100960049,
+                -3.791563059606597e-14,
+                -0.004533821040790159
+              ],
+              [
+                -0.13917310096004903,
+                0.9902680687415726,
+                2.1554633692501106e-13,
+                0.0036666697110443874
+              ],
+              [
+                6.754475971572001e-14,
+                -2.0817118420733466e-13,
+                1,
+                -0.003999999999923334
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "candidate": "open3d",
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7242,
+              "vertices": 3807
+            },
+            "before": {
+              "triangles": 9656,
+              "vertices": 5040
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 7.451995770679787e-05,
+                "meanMetres": 4.5115018439055407e-07,
+                "rmsMetres": 4.353996057453242e-06
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.0003571291745174676,
+                "meanMetres": 2.8087664624075095e-05,
+                "rmsMetres": 6.0621520028379775e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7242
+          },
+          "pointProcessing": {
+            "retainedAfterOutlierFilter": 10056,
+            "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head.",
+            "sampled": 12000,
+            "voxelized": 10349
+          },
+          "processingVersion": "open3d-cpu-upstream-v3",
+          "provenance": {
+            "component": "Open3D CPU 0.20.0 / MIT",
+            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
+            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "upstreamCandidate": "blender-mpfb",
+            "upstreamProvenance": {},
+            "upstreamRunId": "bf78983d-1eed-477e-88a9-f63db001b22a"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "548a278661378eeaf82b162f12420faccb3f2ffb2486ceb734b052d1aeb5eb24"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "c13de59f9b6419057160aa350669d1969fd3b99cb2b8f559a915eddec0c3bc2d"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "ef79a7a788390077a25b46af6feeb2096eeb36cd3c473471e510bfd4bbd37e2a"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "da74650e541488f146a8548990c018e966c0b2a23816d046fb4fcd909ade68be"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "0b7936b6889233fbfe7ba96994a3cc25bc68ff307db2c1dde02fb155673e935d"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "22ea3b214d355c3938d83f64b6f5ebf5f0a6b1e6c80e66602c6631304882539e"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "8a47c07e7031584312f5cc25e68f3d2a24d7f32dd54cf82d63d1fd48094e8e72"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "11c4b05542679882d1492a5456a9a3482385a98b61840317bdbbd60f43449d16"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "aa143f370f2789a583558a9b3f9e570992fcaf0f0fb0eb23fc3a4305fe3236cb"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "3e4ddd0c39bd6c862301142c1724066e663d146796b244bedd67b006440622f6"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "cbf1211bc9dd8fd7ae741e6f86c47a4a2a7c6d48b54bd77f7da0e83d934aa8c1"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "a4ce4522cbd073cbcfeaa7dbdab9b37d63ef04c98da0f6d0a8b19889a7035f29"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "bb0b30cab6a293f0e3bd770282d4c6e5be50e5f3f913a350aac7fc40e9ac68e0"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "9122e3bfe7a524f9539ca5e1d2e8a00ceb5eb0da6fdf18c82debd52b326f66fe"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "8a4f4138dddeb28d03ff686bdf88efaba04291a68f069b068c5f035551a159ac"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "f5debad98ed9906af8c422c3c1a6dcea378ee4b05580bb6fbcac00ce45975a7b"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "runId": "bf78983d-1eed-477e-88a9-f63db001b22a"
+          },
+          "version": "0.20.0"
+        },
+        "diagnostics": [
+          "process",
+          "settings",
+          "component",
+          "resources",
+          "result"
+        ],
+        "elapsedMs": 3479,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/67a4865f-e182-4595-a115-5065c700e801"
+            ],
+            "cpuSeconds": 3.81,
+            "exitCode": 0,
+            "peakRssKiB": 189508,
+            "seconds": 3.476,
+            "stage": "open3d"
+          }
+        ],
+        "retainedBytes": 189242248,
+        "scope": "Open3D supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "open3d",
+      "upstreamCandidate": "blender-mpfb",
+      "upstreamJobId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+      "jobId": "bb58e2df-23a7-40ce-8057-375229246dee",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 13567,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 408,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 33,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 306,
+            "path": "open3d.log"
+          },
+          {
+            "bytes": 288797,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 483782,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 275450,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795936,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 10379,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 109570,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 459,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 594433,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 608112,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 595581,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 603933,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 605703,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 611226,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 834860,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4902044,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3442668,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 9232892,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2347332,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 3243384,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 16937304,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 7866820,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 1261464,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 16937308,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 61256,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 52334,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 61543,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 34041,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 48138,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 20056,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2475272,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347332,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442668,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902044,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9232892,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 16937308,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 16937304,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 7866820,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1261464,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3243384,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "open3d",
+        "completedAt": "2026-09-30T09:08:58.380088+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 5,
+            "fitness": 1,
+            "inlierRmseMetres": 3.360708853634776e-17,
+            "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.0038625229896989107,
+                "iteration": 0,
+                "transformation": [
+                  [
+                    0.9954440407498982,
+                    0.09534597870721627,
+                    -0.0005532448627385059,
+                    -0.003485675653688095
+                  ],
+                  [
+                    -0.09534716887665806,
+                    0.9954400694648976,
+                    -0.0028258610946347365,
+                    0.0019231697488616562
+                  ],
+                  [
+                    0.0002812876128369215,
+                    0.0028657369179988044,
+                    0.9999958542060041,
+                    -0.003469552249778688
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.000507832331825245,
+                "iteration": 1,
+                "transformation": [
+                  [
+                    0.9907743169258239,
+                    0.1355221438222436,
+                    -3.8131223111692266e-05,
+                    -0.004608718433810435
+                  ],
+                  [
+                    -0.13552209880771732,
+                    0.9907736667901522,
+                    -0.0011410214493314808,
+                    0.0033613483818197287
+                  ],
+                  [
+                    -0.0001168542612190011,
+                    0.001135662370445313,
+                    0.9999993483078186,
+                    -0.004000343643591236
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.3261037361387132e-06,
+                "iteration": 2,
+                "transformation": [
+                  [
+                    0.990269351387698,
+                    0.13916397415204387,
+                    6.302569457937433e-07,
+                    -0.0045347122865390605
+                  ],
+                  [
+                    -0.13916397415262508,
+                    0.9902693513873141,
+                    9.979548689282615e-07,
+                    0.003666361369265744
+                  ],
+                  [
+                    -4.852447713341349e-07,
+                    -1.0759531820822132e-06,
+                    0.9999999999993033,
+                    -0.004000411063669185
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 2.251955588927374e-12,
+                "iteration": 3,
+                "transformation": [
+                  [
+                    0.9902680687414207,
+                    0.13917310096113011,
+                    -3.5924678136934713e-12,
+                    -0.004533821040851576
+                  ],
+                  [
+                    -0.13917310096113011,
+                    0.9902680687414207,
+                    1.2657278263096197e-11,
+                    0.003666669712678885
+                  ],
+                  [
+                    5.3190587752967424e-12,
+                    -1.203412409099311e-11,
+                    0.9999999999999999,
+                    -0.0040000000015922195
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 3.360708853634776e-17,
+                "iteration": 4,
+                "transformation": [
+                  [
+                    0.9902680687415704,
+                    0.13917310096006544,
+                    8.553409321122909e-18,
+                    -0.004533821040827653
+                  ],
+                  [
+                    -0.13917310096006544,
+                    0.9902680687415704,
+                    -4.644911970954058e-17,
+                    0.003666669711025036
+                  ],
+                  [
+                    -1.4988824367019674e-17,
+                    4.43310667241039e-17,
+                    0.9999999999999999,
+                    -0.004000000000000009
+                  ],
+                  [
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "knownTransform": [
+              [
+                0.9902680687415704,
+                -0.13917310096006544,
+                0,
+                0.005
+              ],
+              [
+                0.13917310096006544,
+                0.9902680687415704,
+                0,
+                -0.003
+              ],
+              [
+                0,
+                0,
+                1,
+                0.004
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "maximumIterations": 80,
+            "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
+            "recoveredPointMaximumErrorMetres": 6.359601310784502e-17,
+            "recoveredPointRmsErrorMetres": 3.175226158031773e-17,
+            "recoveredTransform": [
+              [
+                0.9902680687415704,
+                0.13917310096006544,
+                8.553409321122909e-18,
+                -0.004533821040827653
+              ],
+              [
+                -0.13917310096006544,
+                0.9902680687415704,
+                -4.644911970954058e-17,
+                0.003666669711025036
+              ],
+              [
+                -1.4988824367019674e-17,
+                4.43310667241039e-17,
+                0.9999999999999999,
+                -0.004000000000000009
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          "candidate": "open3d",
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "Open3D is a supporting geometry processor requiring the identified native fitting route.",
+            "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
+            "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
+            "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
+            "Full refinement and expected-result journey remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7191,
+              "vertices": 3772
+            },
+            "before": {
+              "triangles": 9588,
+              "vertices": 4998
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.00011899776291102171,
+                "meanMetres": 6.269910505240555e-07,
+                "rmsMetres": 6.141060314227964e-06
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.0003802691353484988,
+                "meanMetres": 2.8798481307654276e-05,
+                "rmsMetres": 6.170158599584897e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7191
+          },
+          "pointProcessing": {
+            "retainedAfterOutlierFilter": 10061,
+            "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head.",
+            "sampled": 12000,
+            "voxelized": 10367
+          },
+          "processingVersion": "open3d-cpu-upstream-v3",
+          "provenance": {
+            "component": "Open3D CPU 0.20.0 / MIT",
+            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
+            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "upstreamCandidate": "blender-mpfb",
+            "upstreamProvenance": {},
+            "upstreamRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "e986e71f5dd24ecf7bd5baf855944b620b2c3bc6cedef0f4ef1864a63b20fe88"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "e70c4d630d2f30770e51907b5ab7e9c4cbaa6856e92948593b48c86fcedf1a95"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "5602b2d1f53453121a79d53d72d716719a0b52855cd7fea4be3beee38c2dfc12"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "7decb8ae90805b0b6ce18655f286ca6c9d882b6ac6a52c3ad32d4e0e18b08576"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "1fd1a747a9808f180650e81369f4d2caa805218c4ebc38f5a8048775bd389576"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "09cc8ce1090b1d757078cc508ab69cb5d305e9f474814ff5f1acc239cb495958"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "d1988db717e52c5507bef5ba3cb58c398f58e3a7d0e25831a23a751838c6bb03"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "adc58dfa28a02f14e8041d670b625911610c94f868b1a74a05c6e7f4f73e66f4"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "f9c5b306f7cd4732258166e859f63c0745e3f8ee0c5de61c688dbade24d2b6ff"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "67578fe157806fd6518d6b0e0ca59142f0a5ed58fbefade51f97e4b05b507edb"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "e871f208e8521426da18fafe9901e69efe9ec8fc2e52239edeb1c5aea9ebd2d1"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "5987928bb77eb2e477aa2bb43f477fb70182821b87c548e611b207bbb992a2b6"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "4f717cbd2aab56311b7d868b0ff16b467277e746b8a9fc90a557792fbdfdb6be"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "a700d6e9455fb6dce46adfef13465ed90cb8d0a3a20933c33a05704c1dd93c81"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "d0a9e0d9db7575e887699e2512a9013c33bd811c0f12cc6f1d7bcffaa90ad984"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "e29911a548e62307660c959fc8e8043dc904d69fe788b467ecf61db05c6632d4"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "blender-mpfb",
+            "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "runId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece"
+          },
+          "version": "0.20.0"
+        },
+        "diagnostics": [
+          "process",
+          "settings",
+          "result",
+          "resources",
+          "component"
+        ],
+        "elapsedMs": 3586,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-open3d.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/bb58e2df-23a7-40ce-8057-375229246dee"
+            ],
+            "cpuSeconds": 3.973,
+            "exitCode": 0,
+            "peakRssKiB": 190324,
+            "seconds": 3.583,
+            "stage": "open3d"
+          }
+        ],
+        "retainedBytes": 185527264,
+        "scope": "Open3D supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    }
+  ]
+}

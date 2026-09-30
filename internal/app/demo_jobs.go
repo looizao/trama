@@ -114,7 +114,7 @@ func (a *App) launchDemoJob(id string) {
 		if a.DB.QueryRowContext(ctx, "SELECT kind FROM demo_jobs WHERE run_id=$1", id).Scan(&kind) != nil {
 			return
 		}
-		if kind == "fit" || kind == "reconstruct" {
+		if kind == "fit" || kind == "reconstruct" || kind == "process" {
 			a.processNativeDemo(ctx, id)
 		} else {
 			a.processDemoInputs(ctx, id)
@@ -155,7 +155,7 @@ func (a *App) demoRunAllowed(ctx context.Context, id string) bool {
 	if a.DB.QueryRowContext(ctx, "SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=$1 AND s.client_id=$2 AND s.kind='source'", id, client).Scan(&count) != nil {
 		return false
 	}
-	return count == len(requiredPhotoViews)
+	return count == len(requiredPhotoViews) && a.nativeParentsAvailable(ctx, id)
 }
 func (a *App) demoJobDirectory(client, id string) string {
 	return filepath.Join(filepath.Dir(a.PrivacyLedgerPath), "processing", client, id)
@@ -369,15 +369,17 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var in struct {
-		Candidate    string             `json:"candidate"`
-		Kind         string             `json:"kind"`
-		Native       NativeDemoSettings `json:"native"`
-		ColmapPreset string             `json:"colmapPreset"`
-		PhotoSetID   string             `json:"photoSetId"`
-		MinimumWidth int                `json:"minimumWidth"`
-		PhotoViews   map[string]string  `json:"photoViews"`
+		Candidate    string                `json:"candidate"`
+		Kind         string                `json:"kind"`
+		Native       NativeDemoSettings    `json:"native"`
+		Component    ComponentDemoSettings `json:"component"`
+		ColmapPreset string                `json:"colmapPreset"`
+		PhotoSetID   string                `json:"photoSetId"`
+		MinimumWidth int                   `json:"minimumWidth"`
+		PhotoViews   map[string]string     `json:"photoViews"`
 	}
 	in.Native = nativeDemoDefaults()
+	in.Component = componentDemoDefaults()
 	in.ColmapPreset = "standard"
 	if err = decodeJSON(r, &in); err != nil {
 		badRequest(w, err)
@@ -390,12 +392,12 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, "unsupported COLMAP preset")
 		return
 	}
-	if in.Kind != "input-check" && in.Kind != "fit" && in.Kind != "reconstruct" {
+	if in.Kind != "input-check" && in.Kind != "fit" && in.Kind != "reconstruct" && in.Kind != "process" {
 		problem(w, 400, "unsupported experiment kind")
 		return
 	}
-	if in.Kind == "fit" || in.Kind == "reconstruct" {
-		if !((in.Candidate == "blender-mpfb" || in.Candidate == "makehuman" || in.Candidate == "flame") && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct") {
+	if in.Kind == "fit" || in.Kind == "reconstruct" || in.Kind == "process" {
+		if !((in.Candidate == "blender-mpfb" || in.Candidate == "makehuman" || in.Candidate == "flame") && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct" || in.Candidate == "open3d" && in.Kind == "process") {
 			problem(w, 400, "native route is not configured yet")
 			return
 		}
@@ -427,7 +429,17 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "colmapPreset": in.ColmapPreset, "photoViews": inputs})
+	if in.Kind == "process" {
+		if message := in.Component.validate(); message != "" {
+			problem(w, 400, message)
+			return
+		}
+		if !a.validateComponentSource(r, in.Component.SourceRunID, in.PhotoSetID, inputs) {
+			problem(w, 400, "upstream head must be completed, owned by this client and dependent on the same six photos")
+			return
+		}
+	}
+	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "colmapPreset": in.ColmapPreset, "component": in.Component, "photoViews": inputs})
 	x := DemoJob{ID: newID(), Candidate: in.Candidate, Kind: in.Kind, PhotoSetID: in.PhotoSetID, PhotoViews: inputs, Status: "queued", Settings: settings, Result: json.RawMessage("{}"), CreatedAt: now()}
 	tx, err := a.DB.BeginTx(r.Context(), nil)
 	if err != nil {
@@ -438,6 +450,9 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 	_, err = tx.ExecContext(r.Context(), "INSERT INTO generation_runs(id,organization_id,client_id,source_asset_id,prompt,model_id,quantity,status,created_by,created_at) VALUES($1,$2,$3,$4,'Six-view image diagnostics',$5,1,'queued',$6,$7)", x.ID, userFrom(r).OrganizationID, r.PathValue("clientID"), inputs["front"], "local-3d:"+in.Candidate, userFrom(r).ID, x.CreatedAt)
 	if err == nil {
 		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_jobs(run_id,candidate,kind,photo_set_id,settings)VALUES($1,$2,$3,$4,$5)", x.ID, x.Candidate, x.Kind, x.PhotoSetID, string(x.Settings))
+	}
+	if err == nil && in.Kind == "process" {
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_job_sources(run_id,source_run_id) VALUES($1,$2)", x.ID, in.Component.SourceRunID)
 	}
 	for _, view := range requiredPhotoViews {
 		if err == nil {
@@ -504,26 +519,32 @@ func (a *App) cancelDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	id := r.PathValue("runID")
-	result, err := a.DB.ExecContext(r.Context(), "UPDATE generation_runs SET status='cancelled',error='Cancelled by professional',completed_at=$1 WHERE id=$2 AND client_id=$3 AND organization_id=$4 AND id IN(SELECT run_id FROM demo_jobs)", now(), id, r.PathValue("clientID"), userFrom(r).OrganizationID)
-	if err != nil {
-		problem(w, 500, "could not cancel local experiment")
-		return
-	}
-	count, _ := result.RowsAffected()
-	if count != 1 {
+	var found string
+	if a.DB.QueryRowContext(r.Context(), "SELECT r.id FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, r.PathValue("clientID"), userFrom(r).OrganizationID).Scan(&found) != nil {
 		problem(w, 404, "local experiment not found")
 		return
 	}
-	a.cancelLocalDemoRuns([]string{id})
-	_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM demo_workspace_states WHERE client_id=$1 AND json_extract(state,'$.modelRunId')=$2", r.PathValue("clientID"), id)
-	_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM demo_options WHERE client_id=$1 AND json_extract(state,'$.modelRunId')=$2", r.PathValue("clientID"), id)
-	_, err = a.DB.ExecContext(r.Context(), "UPDATE demo_jobs SET result='{}' WHERE run_id=$1", id)
-	if err == nil {
-		err = os.RemoveAll(a.demoJobDirectory(r.PathValue("clientID"), id))
-	}
+	runs, err := a.demoRunDescendants(r.Context(), []string{id}, r.PathValue("clientID"), userFrom(r).OrganizationID)
 	if err != nil {
-		problem(w, 500, "cancelled; output cleanup must be retried")
+		problem(w, 500, "could not calculate dependent experiments")
 		return
 	}
-	respond(w, 200, map[string]string{"status": "cancelled"})
+	e := erasureEvent{ID: newID(), OrganizationID: userFrom(r).OrganizationID, ClientID: r.PathValue("clientID"), Action: "experiment output deletion", Runs: runs, Assets: []erasedAsset{}, Date: now()}
+	if err = a.appendErasure(e); err != nil {
+		a.privacyFault.Store(true)
+		problem(w, 503, "could not retain deletion safeguard; no deletion performed")
+		return
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+	if err = a.applyErasure(ctx, e); err != nil {
+		a.privacyFault.Store(true)
+		problem(w, 503, "deletion recorded; recovery required")
+		return
+	}
+	if err = a.finishErasure(ctx, e); err != nil {
+		respond(w, 202, map[string]any{"status": "pending cleanup", "requestId": e.ID})
+		return
+	}
+	respond(w, 200, map[string]any{"status": "cancelled", "removedExperiments": len(runs)})
 }

@@ -363,6 +363,15 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 		}
 	}
 	for _, id := range e.Runs {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_workspace_states WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2)", e.ClientID, id); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2)", e.ClientID, id); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "INSERT OR IGNORE INTO privacy_tombstones(subject_type,subject_id) VALUES('run',$1)", id); err != nil {
+			return err
+		}
 		if _, err = tx.ExecContext(ctx, "UPDATE demo_jobs SET result='{}' WHERE run_id=$1", id); err != nil {
 			return err
 		}
@@ -370,7 +379,7 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 			return err
 		}
 	}
-	if e.Action != "asset deletion" {
+	if e.Action == "withdrawal" || e.Action == "client deletion" {
 		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1", e.ClientID); err != nil {
 			return err
 		}
@@ -425,7 +434,7 @@ func (a *App) finishErasure(ctx context.Context, e erasureEvent) error {
 	}
 	// Personal processing workspaces are scoped to the removed client or affected run.
 	workspace := filepath.Join(filepath.Dir(a.PrivacyLedgerPath), "processing", e.ClientID)
-	if e.Action != "asset deletion" {
+	if e.Action == "withdrawal" || e.Action == "client deletion" {
 		if err := os.RemoveAll(workspace); err != nil {
 			failures = append(failures, err)
 		}

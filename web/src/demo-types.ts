@@ -9,7 +9,9 @@ export type NativeSettings = {
   cameraHeight: number
   fitRounds: number
 }
+export type ComponentSettings = { sourceRunId: string; triangleRatio: number; voxelSize: number; samplePoints: number }
 export type DemoState = {
+  component?: ComponentSettings
   colmapPreset?: string
   native?: NativeSettings
   candidate: string
@@ -68,9 +70,16 @@ export type DemoJob = {
   status: string
   error: string
   progress: number
-  settings: { minimumWidth: number; native?: NativeSettings; colmapPreset?: string }
+  settings: { minimumWidth: number; native?: NativeSettings; colmapPreset?: string; component?: ComponentSettings }
   createdAt: string
   result: {
+    component?: {
+ version: string; processingVersion: string; upstream: { runId: string; candidate: string; headSha256: string }; settings: ComponentSettings;
+ mesh: { before: { vertices: number; triangles: number }; after: { vertices: number; triangles: number }; triangleTarget: number; deviation: { upstreamVerticesToProcessedSurface: { meanMetres: number; maximumMetres: number }; processedVerticesToUpstreamSurface: { meanMetres: number; maximumMetres: number } } };
+ pointProcessing: { sampled: number; voxelized: number; retainedAfterOutlierFilter: number; role: string };
+ alignment: { input: string; fitness: number; inlierRmseMetres: number; maximumIterations: number; actualIterations?: number; iterations?: { iteration:number; fitness:number; inlierRmseMetres:number }[]; recoveredPointMaximumErrorMetres: number };
+ provenance: { upstreamCandidate: string; upstreamProvenance: unknown }; limitations: string[]
+ };
     diagnostics?: string[]
     head?: string
     hair?: Record<string, string>

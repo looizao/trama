@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-30T09:30:33.101Z",
+  "nativeRunId": "d91d80a1-fd88-4f31-8ad6-43fe9975986d",
+  "checks": [
+    {
+      "label": "Front",
+      "cameras": [
+        {
+          "azimuth": "0.000000",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "0.000000",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Left three-quarter",
+      "cameras": [
+        {
+          "azimuth": "0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Right three-quarter",
+      "cameras": [
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Left profile",
+      "cameras": [
+        {
+          "azimuth": "1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Right profile",
+      "cameras": [
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Back",
+      "cameras": [
+        {
+          "azimuth": "3.141593",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "3.141593",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    }
+  ]
+}

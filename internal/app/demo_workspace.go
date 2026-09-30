@@ -16,18 +16,19 @@ type DemoCamera struct {
 	Distance  float64 `json:"distance"`
 }
 type DemoWorkspaceState struct {
-	Candidate      string             `json:"candidate"`
-	PhotoSetID     string             `json:"photoSetId"`
-	PhotoViews     map[string]string  `json:"photoViews"`
-	ModelRunID     string             `json:"modelRunId"`
-	CurrentHairID  string             `json:"currentHairId"`
-	CurrentBeardID string             `json:"currentBeardId"`
-	HairID         string             `json:"hairId"`
-	BeardID        string             `json:"beardId"`
-	Camera         DemoCamera         `json:"camera"`
-	MinimumWidth   int                `json:"minimumWidth"`
-	Native         NativeDemoSettings `json:"native"`
-	ColmapPreset   string             `json:"colmapPreset"`
+	Candidate      string                `json:"candidate"`
+	PhotoSetID     string                `json:"photoSetId"`
+	PhotoViews     map[string]string     `json:"photoViews"`
+	ModelRunID     string                `json:"modelRunId"`
+	CurrentHairID  string                `json:"currentHairId"`
+	CurrentBeardID string                `json:"currentBeardId"`
+	HairID         string                `json:"hairId"`
+	BeardID        string                `json:"beardId"`
+	Camera         DemoCamera            `json:"camera"`
+	MinimumWidth   int                   `json:"minimumWidth"`
+	Native         NativeDemoSettings    `json:"native"`
+	Component      ComponentDemoSettings `json:"component"`
+	ColmapPreset   string                `json:"colmapPreset"`
 }
 type DemoOption struct {
 	ID        string             `json:"id"`
@@ -64,6 +65,14 @@ func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) stri
 			return err.Error()
 		}
 		state.PhotoViews = inputs
+	}
+	if state.Component != (ComponentDemoSettings{}) && state.Component.SourceRunID != "" {
+		if message := state.Component.validate(); message != "" {
+			return message
+		}
+		if !a.validateComponentSource(r, state.Component.SourceRunID, state.PhotoSetID, state.PhotoViews) {
+			return "upstream source is no longer available"
+		}
 	}
 	// Personalized model selection becomes available only after a fitting route
 	// publishes an actual model. Input reports cannot masquerade as 3D results.

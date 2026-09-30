@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-30T09:32:39.931Z",
+  "nativeRunId": "d91d80a1-fd88-4f31-8ad6-43fe9975986d",
+  "zoomAfterReload": [
+    "1.150000",
+    "1.150000"
+  ],
+  "selectedOption": "Alex / verified Open3D with MakeHuman, coils and chinstrap / synthetic exploration\n\nOpen3D processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending · Sep 30, 2026\n\nrounded-coils + chinstrap\nReopen option",
+  "actualAssets": [
+    "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/beard/stubble",
+    "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/hair/rounded-coils|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/d91d80a1-fd88-4f31-8ad6-43fe9975986d/artifacts/beard/chinstrap"
+  ],
+  "consoleErrors": []
+}

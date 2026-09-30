@@ -85,8 +85,9 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 	var client, candidate, settings string
 	err = a.DB.QueryRowContext(ctx, "SELECT r.client_id,j.candidate,j.settings FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1", id).Scan(&client, &candidate, &settings)
 	var in struct {
-		Native       NativeDemoSettings `json:"native"`
-		ColmapPreset string             `json:"colmapPreset"`
+		Native       NativeDemoSettings    `json:"native"`
+		Component    ComponentDemoSettings `json:"component"`
+		ColmapPreset string                `json:"colmapPreset"`
 	}
 	if err == nil {
 		err = json.Unmarshal([]byte(settings), &in)
@@ -132,8 +133,12 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 		}
 		manifestInputs = append(manifestInputs, map[string]string{"view": input.View, "assetId": input.ID, "path": relative})
 	}
+	var upstream map[string]any
+	if err == nil && candidate == "open3d" {
+		upstream, err = a.copyComponentSource(ctx, client, id, dir)
+	}
 	if err == nil {
-		err = os.WriteFile(filepath.Join(dir, "manifest.json"), rawJSON(map[string]any{"inputs": manifestInputs, "settings": in.Native, "colmapPreset": in.ColmapPreset, "notice": "Authorized six-photo input snapshot; camera parameters are declared assumptions, not measured calibration."}), 0600)
+		err = os.WriteFile(filepath.Join(dir, "manifest.json"), rawJSON(map[string]any{"inputs": manifestInputs, "settings": in.Native, "colmapPreset": in.ColmapPreset, "component": in.Component, "upstream": upstream, "notice": "Authorized six-photo input snapshot; camera parameters are declared assumptions, not measured calibration."}), 0600)
 	}
 	var process *demoProcess
 	var log *os.File
@@ -346,16 +351,16 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	var status, kind string
 	var count int
 	err = a.DB.QueryRowContext(r.Context(), "SELECT r.status,j.kind,(SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=r.id) FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, client, userFrom(r).OrganizationID).Scan(&status, &kind, &count)
-	if err != nil || (status != "completed" && status != "failed") || count != 6 {
+	if err != nil || (status != "completed" && status != "failed") || count != 6 || !a.nativeParentsAvailable(r.Context(), id) {
 		problem(w, 404, "retained artifact not found")
 		return
 	}
 	artifactKind, artifactID := r.PathValue("kind"), r.PathValue("artifactID")
 	relative := ""
-	if artifactKind == "head" && artifactID == "model" && kind == "fit" && status == "completed" {
+	if artifactKind == "head" && artifactID == "model" && nativeModelKind(kind) && status == "completed" {
 		relative = "head.glb"
 	}
-	if (artifactKind == "hair" || artifactKind == "beard") && kind == "fit" && status == "completed" {
+	if (artifactKind == "hair" || artifactKind == "beard") && nativeModelKind(kind) && status == "completed" {
 		styles, _ := readDemoStyles(artifactKind)
 		for _, s := range styles {
 			if s.ID == artifactID {
@@ -378,6 +383,12 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	if artifactKind == "diagnostic" {
 		relative = nativeDiagnostics()[artifactID]
 	}
+	if artifactKind == "geometry" && kind == "process" && status == "completed" {
+		relative = map[string]string{"sampled-cloud": "upstream-sampled.ply", "filtered-cloud": "processed-points.ply", "processed-skin": "processed-skin.ply"}[artifactID]
+	}
+	if artifactKind == "evaluation" && artifactID == "geometry" && kind == "process" {
+		relative = "component-evaluation.png"
+	}
 	if artifactKind == "evaluation" && artifactID == "matches" && kind == "reconstruct" {
 		relative = "colmap-matches.png"
 	}
@@ -394,6 +405,9 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("X-Content-Type-Options", "nosniff")
 	if strings.HasSuffix(relative, ".glb") {
 		w.Header().Set("Content-Type", "model/gltf-binary")
+	} else if strings.HasSuffix(relative, ".ply") {
+		w.Header().Set("Content-Type", "application/octet-stream")
+		w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%q", filepath.Base(relative)))
 	} else if strings.HasSuffix(relative, ".png") {
 		w.Header().Set("Content-Type", "image/png")
 	} else {
@@ -402,12 +416,12 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json"}
+	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string
 	err := a.DB.QueryRowContext(r.Context(), "SELECT j.candidate,r.status,j.kind FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", state.ModelRunID, r.PathValue("clientID"), userFrom(r).OrganizationID).Scan(&candidate, &status, &kind)
-	if err != nil || candidate != state.Candidate || status != "completed" || kind != "fit" {
+	if err != nil || candidate != state.Candidate || status != "completed" || !nativeModelKind(kind) || !a.nativeParentsAvailable(r.Context(), state.ModelRunID) {
 		return false
 	}
 	inputs, err := a.demoInputs(r.Context(), state.ModelRunID)
@@ -424,6 +438,9 @@ func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bo
 }
 func nativeGeometry(state DemoWorkspaceState) string {
 	if state.ModelRunID != "" {
+		if state.Candidate == "open3d" {
+			return "Open3D processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending"
+		}
 		return fmt.Sprintf("%s fitted head; hidden surfaces inferred; professional likeness review pending", state.Candidate)
 	}
 	return "Shared synthetic mannequin asset inspection"

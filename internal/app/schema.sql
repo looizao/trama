@@ -181,6 +181,12 @@ CREATE TABLE IF NOT EXISTS demo_job_inputs (
   view text NOT NULL,
   PRIMARY KEY(run_id,view)
 );
+CREATE TABLE IF NOT EXISTS demo_job_sources (
+  run_id text PRIMARY KEY REFERENCES demo_jobs(run_id) ON DELETE CASCADE,
+  source_run_id text NOT NULL REFERENCES demo_jobs(run_id) ON DELETE CASCADE,
+  CHECK(run_id <> source_run_id)
+);
+CREATE INDEX IF NOT EXISTS demo_job_sources_parent_idx ON demo_job_sources(source_run_id);
 CREATE TABLE IF NOT EXISTS demo_options (
   id text PRIMARY KEY,
   organization_id text NOT NULL REFERENCES organizations(id),
