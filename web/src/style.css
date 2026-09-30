@@ -106,3 +106,5 @@
 .outcome-history li { padding: 10px 0; }
 .outcome-history span { display: block; font-size: 12px; }
 @media(max-width: 1000px) { .outcome-comparison { grid-template-columns: 1fr; } }
+
+.client-upload-portal{max-width:1100px}.client-upload-portal>.card{margin:24px 0}.client-upload-portal dd{white-space:pre-wrap}.client-upload-portal li{overflow-wrap:anywhere}

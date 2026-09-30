@@ -1,0 +1,72 @@
+{
+  "verifiedAt": "2026-09-30T19:34:43.896542+00:00",
+  "scope": "Actual local persisted submissions using three authorized fictional identities and their original coherent synthetic renders. No client accounts or external messages. No reconstruction accuracy or actual haircut outcome claim. Secret tokens excluded. Deleted work is never recreated.",
+  "cases": [
+    {
+      "fictionalCase": "alex-ramos",
+      "clientId": "a0b730e5-490f-488d-ae16-4f3812ee044f",
+      "linkId": "10c5ceab-13f8-4e3a-b6d0-008173a7e25b",
+      "photoSetId": "b420a1bf-5e7c-4c9f-bd93-883552a9dd1a",
+      "uploadedViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "decodedPictures": 8,
+      "intakeSubmitted": true,
+      "pendingClientReminders": 2,
+      "internalReminderHidden": true,
+      "bearerStudioAccessDenied": true,
+      "anonymousStudioAccessDenied": true
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "clientId": "a83ec874-3249-4185-a028-26933b0de6da",
+      "linkId": "38e3fc92-5d5e-44bd-91c2-a423733080bd",
+      "photoSetId": "f3d006d8-277e-4260-aecb-fa7ce4c07543",
+      "uploadedViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "decodedPictures": 8,
+      "intakeSubmitted": true,
+      "pendingClientReminders": 2,
+      "internalReminderHidden": true,
+      "bearerStudioAccessDenied": true,
+      "anonymousStudioAccessDenied": true
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "clientId": "4e10027c-664d-4c35-b96e-5f486ebe948e",
+      "linkId": "23dadc79-de97-454e-99b8-1adbe56959a0",
+      "photoSetId": "c5982bc3-d966-4240-89a9-53b35bd49f06",
+      "uploadedViews": [
+        "back",
+        "crown",
+        "front",
+        "left-profile",
+        "left-three-quarter",
+        "right-profile",
+        "right-three-quarter",
+        "under-chin"
+      ],
+      "decodedPictures": 8,
+      "intakeSubmitted": true,
+      "pendingClientReminders": 2,
+      "internalReminderHidden": true,
+      "bearerStudioAccessDenied": true,
+      "anonymousStudioAccessDenied": true
+    }
+  ]
+}

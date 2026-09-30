@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-09-30T19:38:44.570Z",
+  "scope": "Fictional local browser creation and dismissal, no external message. Private invitation tokens excluded.",
+  "observed": {
+    "alerts": [],
+    "reminders": [
+      "Alex Ramos (synthetic demo) / synthetic due check-in · 9/30/2026, 3:34:43 PM · completedReview the labeled photos and discuss daily care with the professional. Synthetic demonstration; no external delivery.",
+      "Alex Ramos (synthetic demo) / synthetic internal check-in · 10/1/2026, 4:34:43 PM · UpcomingFictional studio-only coordination.Complete reminderDismiss reminder",
+      "Fictional browser reminder creation · 10/2/2026, 10:00:00 AM · dismissedReview maintenance at the next fictional visit. Local reminder only.",
+      "Alex Ramos (synthetic demo) / synthetic future check-in · 10/2/2026, 4:34:43 PM · UpcomingReview the labeled photos and discuss daily care with the professional. Synthetic demonstration; no external delivery.Complete reminderDismiss reminder"
+    ],
+    "reviewedLink": "Fictional Alex private self-upload demonstration · 10/1/2026, 4:31:04 PM · Active  · ReviewedMark intake reviewedRevoke upload link"
+  }
+}

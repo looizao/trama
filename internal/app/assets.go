@@ -54,6 +54,11 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer unlock()
+	a.uploadAssetLocked(w, r)
+}
+
+// Caller holds the media lock and has installed its verified studio or scoped client identity.
+func (a *App) uploadAssetLocked(w http.ResponseWriter, r *http.Request) {
 	clientID := r.PathValue("clientID")
 	if !a.clientExists(r, clientID) {
 		problem(w, 404, "client not found")
@@ -139,6 +144,9 @@ func (a *App) uploadAsset(w http.ResponseWriter, r *http.Request) {
 		_, err = tx.ExecContext(r.Context(), "INSERT INTO assets(id,organization_id,client_id,storage_key,content_type,kind,created_at) VALUES($1,$2,$3,$4,$5,'source',$6)", id, u.OrganizationID, clientID, key, contentType, created)
 		if err == nil && set != "" {
 			_, err = tx.ExecContext(r.Context(), "INSERT INTO photo_views(set_id,view,asset_id) VALUES($1,$2,$3) ON CONFLICT(set_id,view) DO UPDATE SET asset_id=excluded.asset_id", set, view, id)
+		}
+		if link, ok := r.Context().Value(uploadLinkKey{}).(string); err == nil && ok && link != "" {
+			_, err = tx.ExecContext(r.Context(), "INSERT INTO client_upload_photos(link_id,asset_id,view) VALUES($1,$2,$3)", link, id, view)
 		}
 		if err == nil {
 			err = tx.Commit()

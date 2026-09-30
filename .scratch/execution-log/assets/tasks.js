@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T16:10:41-03:00",
+  "updated": "2026-09-30T16:40:32-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4353,16 +4353,99 @@ window.executionLog={
         "Local due reminders and follow-up state survive restart; withdrawal revokes links/reminders.",
         "Failures and misuse boundaries verified; no external messaging unless later authorized."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Implementation default: 24-hour upload link (configurable 1–168 hours), cryptographic token retained only as a hash; bearer travels in a URL fragment and request header, not an API URL. Each link creates a fresh photo set and snapshots an optional reusable intake template.",
+        "Local reminders will be due-state records visible to studio users and, when requested, the scoped client portal. No external message delivery is configured or claimed.",
+        "Implemented fresh link-specific photo sets, hashed fragment bearer tokens, 1–168 hour expiry, explicit revocation, immutable client-submitted consultation/template snapshots, studio review acknowledgement and authenticated local reminder queue.",
+        "Client photo content is additionally limited to recorded link-upload origins; later studio assignment cannot expose prior studio media. Upload uses the existing real decode/size checks and atomic optimistic slot transaction under the erasure lock."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Local reminders are durable in-app due-state records; no email, SMS, operating-system push or external message delivery is configured or claimed. Bearer possession grants the selected submission only; it does not authenticate client identity.",
+        "Client inputs and examples are fictional synthetic demonstrations. The initial intake remains immutable; professional corrections use the existing consultation revision workflow. Links expire and must be explicitly reissued rather than silently revived."
+      ],
+      "verification": [
+        {
+          "command": "Initial scoped-upload tests and build",
+          "result": "FAIL: parsed r.Form bypassed forced slot assignment; a template fixture omitted its required updated_at field; one existing localization key was duplicated. Corrections retain optimistic slot checks, fix fixture metadata and reuse the existing translation."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS internal/app 1.597s, cmd/api cached after fixing initial failures."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./...",
+          "result": "PASS internal/app 11.219s, cmd/api 1.024s; scoped tokens, template snapshots, decode failures, stale slots, bearer isolation, expiry/revocation, deletion/restart and reminder cancellation verified."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS Vite 2.00s, 188 modules. Existing lazy native viewer bundle-size advisory remains."
+        },
+        {
+          "command": "scripts/populate-local-client-upload.py",
+          "result": "PASS three real persisted fictional intakes, 24 decoded synthetic uploads, complete six plus optional two view sets, anonymous/studio isolation and client-visible versus internal local reminders."
+        },
+        {
+          "command": "Browser intake, file chooser/review/cancel/retake/save, reload, studio review and reminder creation/completion/dismissal",
+          "result": "PASS. Eight loaded client photos survive reload; studio review appears in the scoped portal; completed reminders leave the client pending list. One stale studio tab input timed out; a fresh tab verified actual actions."
+        },
+        {
+          "command": "Browser revoked-link test",
+          "result": "PASS: unavailable link exposes only the denial state, with no client record disclosure."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/client-upload-empty-browser.png",
+          "caption": "Initial scoped portal has an empty fresh set and no studio records.",
+          "date": "2026-09-30T16:40:01-03:00"
+        },
+        {
+          "src": "assets/client-upload-review-browser.png",
+          "caption": "Actual fictional photo selected for client review before saving; cancellation and retake verified.",
+          "date": "2026-09-30T16:40:01-03:00"
+        },
+        {
+          "src": "assets/client-upload-studio-review-browser.png",
+          "caption": "Studio review and completed local reminder, with no private bearer visible.",
+          "date": "2026-09-30T16:40:01-03:00"
+        },
+        {
+          "src": "assets/client-upload-reopened-browser.png",
+          "caption": "Reloaded submitted intake and complete original synthetic views in the client-only portal.",
+          "date": "2026-09-30T16:40:01-03:00"
+        },
+        {
+          "src": "assets/client-upload-revoked-browser.png",
+          "caption": "An explicitly revoked fictional test invitation shows no intake, photos or reminders.",
+          "date": "2026-09-30T16:40:32-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/client-upload-live-verification.json",
+          "label": "Three persisted fictional submissions and actual access/decoded-photo checks"
+        },
+        {
+          "href": "assets/client-upload-browser-reminder-verification.json",
+          "label": "Actual browser review, reminder completion and dismissal observations"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T16:13:10-03:00",
+          "text": "Read the later broad MVP and permission decision plus current photo, consultation, authentication and erasure source before implementing task 19."
+        },
+        {
+          "date": "2026-09-30T16:29:54-03:00",
+          "text": "Added origin records so studio-assigned images cannot be disclosed through a client submission link."
+        },
+        {
+          "date": "2026-09-30T16:40:32-03:00",
+          "text": "Task 19 verified locally. Client links, submissions and reminders remain private; no external messages were sent."
+        }
+      ]
     },
     {
       "id": "20",

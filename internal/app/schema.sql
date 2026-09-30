@@ -295,3 +295,29 @@ CREATE TABLE IF NOT EXISTS outcome_visit_views (
   PRIMARY KEY(visit_id,phase,view),
   UNIQUE(visit_id,phase,asset_id)
 );
+
+CREATE TABLE IF NOT EXISTS client_upload_links (
+ id TEXT PRIMARY KEY, token_hash BLOB NOT NULL UNIQUE,
+ organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+ client_id TEXT NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+ photo_set_id TEXT NOT NULL REFERENCES photo_sets(id) ON DELETE CASCADE,
+ created_by TEXT NOT NULL REFERENCES users(id), title TEXT NOT NULL,
+ template_snapshot TEXT NOT NULL DEFAULT 'null',
+ consultation_id TEXT REFERENCES consultations(id) ON DELETE SET NULL,
+ expires_at TIMESTAMP NOT NULL, revoked_at TIMESTAMP, submitted_at TIMESTAMP, reviewed_at TIMESTAMP,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS client_reminders (
+ id TEXT PRIMARY KEY, organization_id TEXT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+ client_id TEXT NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+ title TEXT NOT NULL, message TEXT NOT NULL, due_at TIMESTAMP NOT NULL,
+ client_visible BOOLEAN NOT NULL DEFAULT FALSE,
+ status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN('pending','completed','dismissed','cancelled')),
+ version INTEGER NOT NULL DEFAULT 1, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS client_upload_photos (
+ link_id TEXT NOT NULL REFERENCES client_upload_links(id) ON DELETE CASCADE,
+ asset_id TEXT NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+ view TEXT NOT NULL, PRIMARY KEY(link_id,asset_id)
+);

@@ -398,6 +398,12 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 		if _, err = tx.ExecContext(ctx, "DELETE FROM permission_links WHERE client_id=$1", e.ClientID); err != nil {
 			return err
 		}
+		if _, err = tx.ExecContext(ctx, "UPDATE client_upload_links SET revoked_at=COALESCE(revoked_at,$1) WHERE client_id=$2 AND created_at<=$1", e.Date, e.ClientID); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "UPDATE client_reminders SET status='cancelled',version=version+1,updated_at=$1 WHERE client_id=$2 AND status='pending' AND created_at<=$1", e.Date, e.ClientID); err != nil {
+			return err
+		}
 	}
 	if e.Action == "client deletion" {
 		if _, err = tx.ExecContext(ctx, "INSERT OR IGNORE INTO privacy_tombstones(subject_type,subject_id) VALUES('client',$1)", e.ClientID); err != nil {

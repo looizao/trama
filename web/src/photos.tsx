@@ -3,7 +3,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, json, imageURL, dateLabel, type Asset } from './api'
 import { usePreferences } from './i18n'
 
-const views=[
+export const views=[
  {id:'front',name:'Front',hint:'Face the camera straight on. Show the full hair outline and beard.'},
  {id:'left-three-quarter',name:'Left three-quarter',hint:'Show the client’s left side at about 45 degrees from the front.'},
  {id:'right-three-quarter',name:'Right three-quarter',hint:'Show the client’s right side at about 45 degrees from the front.'},
@@ -15,7 +15,7 @@ const views=[
 ]
 export type PhotoSet={id:string;clientId:string;consultationId:string;title:string;createdAt:string;views:Record<string,string>;missing:string[]}
 type Pending={view:string;file:File;url:string;expected:string;ready:boolean}
-function FramingGuide({view}:{view:string}){
+export function FramingGuide({view}:{view:string}){
  const isLeft=view.startsWith('left'),profile=view.includes('profile'),quarter=view.includes('quarter'),back=view==='back'
  return <svg className="framing-guide" viewBox="0 0 180 140" aria-hidden="true"><rect x="12" y="8" width="156" height="124" rx="10" fill="none" stroke="currentColor" strokeDasharray="5 5"/><g transform={isLeft?'translate(180 0) scale(-1 1)':''}><path d="M50 119 Q60 102 75 101 L75 88 L105 88 L105 101 Q120 102 130 119" fill="none" stroke="currentColor" strokeWidth="2"/>{view==='crown'?<><ellipse cx="90" cy="64" rx="31" ry="37" fill="none" stroke="currentColor" strokeWidth="2"/><path d="M90 50 Q113 57 99 70 Q81 82 75 64 Q75 45 95 45" fill="none" stroke="currentColor"/></>:<><ellipse cx={profile?96:90} cy="61" rx={profile?24:31} ry="38" fill="none" stroke="currentColor" strokeWidth="2"/>{!back&&<><path d={profile?'M72 55 L62 66 L72 71':quarter?'M80 54 L71 68 L82 71':'M90 55 L86 69 L94 69'} fill="none" stroke="currentColor" strokeWidth="2"/>{profile?<circle cx="77" cy="52" r="2"/>:<><circle cx={quarter?80:78} cy="51" r="2"/><circle cx={quarter?98:102} cy="51" r="2"/></>}<path d={view==='under-chin'?'M72 84 Q90 96 108 84':'M79 81 Q90 86 101 81'} fill="none" stroke="currentColor"/></>}</>}</g></svg>
 }
