@@ -1,0 +1,23 @@
+[
+  {
+    "id": "alex-ramos", "name": "Alex Ramos (synthetic demo)", "synthetic": true,
+    "macro": {"gender": 1.0, "age": 0.32, "weight": 0.47, "muscle": 0.55, "race": {"asian": 0.2, "caucasian": 0.6, "african": 0.2}},
+    "skin": "young_caucasian_male2", "targets": {"nose/nose-volume-incr.target.gz": 0.2},
+    "current": {"hair": "short02", "beard": "stubble"}, "proposal": {"hair": "short04", "beard": "goatee"},
+    "consultation": {"goal": "Keep a compact outline and reduce daily styling time while defining the jaw with an independent beard choice.", "maintenance": "low", "maintenanceDetails": "Five minutes each morning; a comb and a small amount of matte paste.", "likes": "Clear neckline and soft texture", "dislikes": "Hair over the eyes", "routine": "Desk work and cycling", "hairTexture": "Straight synthetic reference", "hairDensity": "Medium synthetic density", "observations": "Fictional case. Professional observations and feasibility need human review.", "rationale": "Explore a swept crop and controlled chin volume without implying that a rendered haircut is an actual outcome."}
+  },
+  {
+    "id": "maya-costa", "name": "Maya Costa (synthetic demo)", "synthetic": true,
+    "macro": {"gender": 0.0, "age": 0.4, "weight": 0.52, "muscle": 0.4, "race": {"asian": 0.1, "caucasian": 0.15, "african": 0.75}},
+    "skin": "young_african_female", "targets": {"nose/nose-volume-incr.target.gz": 0.12},
+    "current": {"hair": "rounded-coils", "beard": "clean-shaven"}, "proposal": {"hair": "rounded-coils", "beard": "clean-shaven"},
+    "consultation": {"goal": "Preserve natural coily texture and compare silhouette volume without adding daily heat styling.", "maintenance": "moderate", "maintenanceDetails": "Ten minutes each morning and a weekly wash routine.", "likes": "Natural texture and an open face", "dislikes": "A flattened crown", "routine": "Frequent outdoor activity", "hairTexture": "Coily synthetic reference", "hairDensity": "High synthetic density", "observations": "Fictional case. Natural coily volume is rendered from locally generated solid strands; professional feasibility remains pending.", "rationale": "Keep texture consistent while exploring crown volume through later 3D refinement."}
+  },
+  {
+    "id": "noah-kim", "name": "Noah Kim (synthetic demo)", "synthetic": true,
+    "macro": {"gender": 1.0, "age": 0.27, "weight": 0.43, "muscle": 0.45, "race": {"asian": 0.8, "caucasian": 0.15, "african": 0.05}},
+    "skin": "young_asian_male", "targets": {"nose/nose-volume-incr.target.gz": 0.08},
+    "current": {"hair": "short03", "beard": "moustache"}, "proposal": {"hair": "short01", "beard": "clean-shaven"},
+    "consultation": {"goal": "Compare an open forehead with the current parted fringe and assess a clean-shaven alternative independently.", "maintenance": "moderate", "maintenanceDetails": "Eight minutes each morning; willing to use a dryer.", "likes": "Movement and a soft outline", "dislikes": "A rigid finish", "routine": "Public-facing work", "hairTexture": "Straight synthetic reference", "hairDensity": "Medium synthetic density", "observations": "Fictional case with simulated follow-up renders only.", "rationale": "Compare independent hair and beard choices while retaining current-style history."}
+  }
+]

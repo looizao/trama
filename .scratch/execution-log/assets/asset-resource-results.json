@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-09-30T02:21:34.495190+00:00",
+    "arguments": [
+      "--beard-only"
+    ],
+    "seconds": 22.197,
+    "exitCode": 0,
+    "peakRssKiB": 1551012,
+    "cpuSeconds": 243.518,
+    "settings": {
+      "renderer": "Cycles CPU",
+      "samples": 32,
+      "resolution": [
+        768,
+        896
+      ],
+      "offline": true
+    },
+    "retainedBytes": 256611460
+  },
+  {
+    "date": "2026-09-30T02:25:48.994790+00:00",
+    "arguments": [
+      "--clients-only"
+    ],
+    "seconds": 244.843,
+    "exitCode": 0,
+    "peakRssKiB": 1683828,
+    "cpuSeconds": 2998.161,
+    "settings": {
+      "renderer": "Cycles CPU",
+      "samples": 32,
+      "resolution": [
+        768,
+        896
+      ],
+      "offline": true
+    },
+    "retainedBytes": 371935155
+  }
+]

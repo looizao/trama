@@ -1,0 +1,63 @@
+{
+  "id": "flame-2023-open",
+  "kind": "morphable-head-model",
+  "version": "FLAME 2023 Open",
+  "creator": "Max Planck Institute for Intelligent Systems / Max-Planck-Gesellschaft",
+  "acquiredAt": "2026-09-30T02:02:05.606973+00:00",
+  "sourceUrl": "https://flame.is.tue.mpg.de/download.php",
+  "downloadUrl": "https://download.is.tue.mpg.de/download.php?domain=flame&sfile=FLAME2023Open.zip",
+  "licenseUrl": "https://flame.is.tue.mpg.de/modellicense.html",
+  "licenseIdentifier": "CC-BY-4.0 with additional published usage terms",
+  "licenseVersion": "4.0",
+  "commercialUse": "Expressly permitted for this exact Open model",
+  "attributionRequirements": [
+    "Credit Max Planck and FLAME authors",
+    "Link CC-BY-4.0",
+    "Indicate modifications",
+    "Cite FLAME paper when reporting results"
+  ],
+  "additionalPublishedTerms": [
+    "No pornographic use or material",
+    "No fake, libelous, misleading or defamatory content, with stated exception for peer-reviewed research analyses"
+  ],
+  "citation": {
+    "title": "Learning a model of facial shape and expression from 4D scans",
+    "authors": [
+      "Tianye Li",
+      "Timo Bolkart",
+      "Michael J. Black",
+      "Hao Li",
+      "Javier Romero"
+    ],
+    "year": 2017,
+    "doi": "10.1145/3130800.3130813"
+  },
+  "acceptance": "User explicitly accepted this exact Open agreement in chat before authenticated download",
+  "modifications": [],
+  "files": [
+    {
+      "filename": "FLAME2023Open.zip",
+      "bytes": 47586229,
+      "sha256": "a6b4c3dc15d569d98136a1e548b6fe532eb2830ca12a4f0d4b3a5dba8ee87a91"
+    },
+    {
+      "filename": "flame2023_Open.pkl",
+      "bytes": 53023668,
+      "sha256": "e75a0990728ba038c7da2a420ae4396f7ddd7781366c13026066c5b24f127623"
+    },
+    {
+      "filename": "FLAME2023_Open Readme.pdf",
+      "bytes": 55346,
+      "sha256": "675e46347a4e352fffc18f73f25c58e46fce666c8eb844c5b2f430745472a3ac"
+    }
+  ],
+  "privateDirectory": ".scratch/private/models/flame-2023-open",
+  "validation": {
+    "zipIntegrity": "passed",
+    "bundledReadme": "Extracted text and visually inspected full single page",
+    "modelLoad": "pending",
+    "fitting": "pending",
+    "suitability": "pending"
+  },
+  "scope": "No academic model, dataset or separately licensed texture space acquired"
+}

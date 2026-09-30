@@ -1,0 +1,470 @@
+{
+  "interchange": {
+    "units": "metres",
+    "up": "Z in source Blender; Y in exported glTF",
+    "forward": "-Y in source Blender; +Z in glTF after axis conversion",
+    "crownZMetres": 0.18
+  },
+  "synthetic": true,
+  "professionalAcceptance": "pending",
+  "hair": [
+    {
+      "id": "short01",
+      "kind": "hair",
+      "label": "Short swept layers",
+      "length": "short",
+      "texture": "straight",
+      "maintenance": "low",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/short01/short01.mhclo",
+      "sourceSha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/short01.glb",
+      "render": "hair/short01.png",
+      "vertices": 2984,
+      "polygons": 1839,
+      "bytes": 2475272,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "short02",
+      "kind": "hair",
+      "label": "Short textured crop",
+      "length": "short",
+      "texture": "straight",
+      "maintenance": "low",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/short02/short02.mhclo",
+      "sourceSha256": "625736cdb73e6d094df6e5a2df18f371781f1d2cd37b0ae15795c5d7051c3ec2",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/short02.glb",
+      "render": "hair/short02.png",
+      "vertices": 1755,
+      "polygons": 1672,
+      "bytes": 3632472,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "short03",
+      "kind": "hair",
+      "label": "Short parted curtains",
+      "length": "short",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/short03/short03.mhclo",
+      "sourceSha256": "d80bbb8fd9b06721c481756fb3e1d6dce04fcfc9ca8a379edd4ea3c0d81ed17f",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/short03.glb",
+      "render": "hair/short03.png",
+      "vertices": 1011,
+      "polygons": 961,
+      "bytes": 2439004,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "short04",
+      "kind": "hair",
+      "label": "Slicked back crop",
+      "length": "short",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/short04/short04.mhclo",
+      "sourceSha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/short04.glb",
+      "render": "hair/short04.png",
+      "vertices": 865,
+      "polygons": 525,
+      "bytes": 2347336,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "bob01",
+      "kind": "hair",
+      "label": "Asymmetric bob",
+      "length": "medium",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/bob01/bob01.mhclo",
+      "sourceSha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/bob01.glb",
+      "render": "hair/bob01.png",
+      "vertices": 5203,
+      "polygons": 4237,
+      "bytes": 4469716,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "bob02",
+      "kind": "hair",
+      "label": "Chin length fringe bob",
+      "length": "medium",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/bob02/bob02.mhclo",
+      "sourceSha256": "a48dcf87c6a618f9c6e90fcb00eed07cd59ab024d8d994606fa1b070da515b96",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/bob02.glb",
+      "render": "hair/bob02.png",
+      "vertices": 1653,
+      "polygons": 1124,
+      "bytes": 3442672,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "long01",
+      "kind": "hair",
+      "label": "Long loose lengths",
+      "length": "long",
+      "texture": "straight",
+      "maintenance": "high",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/long01/long01.mhclo",
+      "sourceSha256": "94ecbebfd834da2cbee2ce90b730972590eb22a252ecd9592038ea736e063646",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/long01.glb",
+      "render": "hair/long01.png",
+      "vertices": 3239,
+      "polygons": 2054,
+      "bytes": 3047336,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "braid01",
+      "kind": "hair",
+      "label": "Long braid",
+      "length": "long",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/braid01/braid01.mhclo",
+      "sourceSha256": "e350614dab32230c47d67e7747079b89859d36e62a890ca47890f068eca4f7a9",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/braid01.glb",
+      "render": "hair/braid01.png",
+      "vertices": 4493,
+      "polygons": 2759,
+      "bytes": 2799028,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "ponytail01",
+      "kind": "hair",
+      "label": "Tied ponytail",
+      "length": "long",
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/ponytail01/ponytail01.mhclo",
+      "sourceSha256": "97fc50b12bcb3b1c7b33edddd8d427a2604ffb06fe79b31132bf47f82d7afbac",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/ponytail01.glb",
+      "render": "hair/ponytail01.png",
+      "vertices": 3718,
+      "polygons": 2676,
+      "bytes": 4069228,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "afro01",
+      "kind": "hair",
+      "label": "Close coily crop",
+      "length": "short",
+      "texture": "coily",
+      "maintenance": "low",
+      "creator": "makehuman_system",
+      "license": "CC0-1.0",
+      "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks/makehuman_system_assets.html",
+      "sourceFile": "source-assets/makehuman-system/hair/afro01/afro01.mhclo",
+      "sourceSha256": "9977bd4507e2dd1408504b7a39a6f585ffa2d3ba3aa40ad4bdc2844884bbebb5",
+      "modifications": [
+        "MPFB fitting to shared mannequin",
+        "Evaluated subdivision",
+        "Normalized metre coordinates",
+        "Exported GLB"
+      ],
+      "glb": "hair/afro01.glb",
+      "render": "hair/afro01.png",
+      "vertices": 2196,
+      "polygons": 1096,
+      "bytes": 4902044,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "rounded-coils",
+      "kind": "hair",
+      "label": "Rounded natural coils",
+      "length": "medium",
+      "texture": "coily",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman scalp topology",
+      "modifications": [
+        "Deterministic solid helical strand generation"
+      ],
+      "glb": "hair/rounded-coils.glb",
+      "render": "hair/rounded-coils.png",
+      "vertices": 204600,
+      "polygons": 190960,
+      "bytes": 9494588,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    }
+  ],
+  "beard": [
+    {
+      "id": "stubble",
+      "kind": "beard",
+      "label": "Even short stubble",
+      "lengthMm": 1.7,
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman/MPFB visible lower-face topology",
+      "modifications": [
+        "Deterministic face-surface strand generation"
+      ],
+      "glb": "beard/stubble.glb",
+      "render": "beard/stubble.png",
+      "vertices": 281232,
+      "polygons": 210924,
+      "bytes": 17718760,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "full",
+      "kind": "beard",
+      "label": "Short full beard",
+      "lengthMm": 12.0,
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman/MPFB visible lower-face topology",
+      "modifications": [
+        "Deterministic face-surface strand generation"
+      ],
+      "glb": "beard/full.glb",
+      "render": "beard/full.png",
+      "vertices": 281232,
+      "polygons": 210924,
+      "bytes": 17718756,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "goatee",
+      "kind": "beard",
+      "label": "Connected goatee",
+      "lengthMm": 9.0,
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman/MPFB visible lower-face topology",
+      "modifications": [
+        "Deterministic face-surface strand generation"
+      ],
+      "glb": "beard/goatee.glb",
+      "render": "beard/goatee.png",
+      "vertices": 128156,
+      "polygons": 96117,
+      "bytes": 8074972,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "moustache",
+      "kind": "beard",
+      "label": "Natural moustache",
+      "lengthMm": 7.0,
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman/MPFB visible lower-face topology",
+      "modifications": [
+        "Deterministic face-surface strand generation"
+      ],
+      "glb": "beard/moustache.glb",
+      "render": "beard/moustache.png",
+      "vertices": 20240,
+      "polygons": 15180,
+      "bytes": 1185180,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    },
+    {
+      "id": "chinstrap",
+      "kind": "beard",
+      "label": "Defined chinstrap",
+      "lengthMm": 6.0,
+      "texture": "straight",
+      "maintenance": "moderate",
+      "creator": "Trama procedural asset generator",
+      "license": "CC0-1.0",
+      "sourceUrl": "local:scripts/demo-assets/blender-assets.py",
+      "sourceDependency": "CC0 MakeHuman/MPFB visible lower-face topology",
+      "modifications": [
+        "Deterministic face-surface strand generation"
+      ],
+      "glb": "beard/chinstrap.glb",
+      "render": "beard/chinstrap.png",
+      "vertices": 51712,
+      "polygons": 38784,
+      "bytes": 3259008,
+      "professionalAcceptance": "pending",
+      "compatibility": {
+        "BlenderExport": "passed",
+        "browserLoad": "pending",
+        "candidateRoutes": "pending"
+      }
+    }
+  ]
+}

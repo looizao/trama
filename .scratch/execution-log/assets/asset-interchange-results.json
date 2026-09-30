@@ -1,0 +1,171 @@
+{
+  "scope": "Asset-level Blender interoperability. App selection persistence and other candidate routes are not verified by this check.",
+  "assets": [
+    {
+      "id": "short01",
+      "kind": "hair",
+      "sha256": "c150004b9f9625efe70539824de3de64bd72dad9bf6abbf95a705082d816009a",
+      "bytes": 2475272,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "short02",
+      "kind": "hair",
+      "sha256": "03c8e5f1a2dd5db92a50dd8b9057161e1d38793752f71d194df5f11b56433043",
+      "bytes": 3632472,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "short03",
+      "kind": "hair",
+      "sha256": "21d00085ee47ee2818c8c4605886f366a21bd65a673bd6ca8e30c1397f7b957d",
+      "bytes": 2439004,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "short04",
+      "kind": "hair",
+      "sha256": "c414ea5175b019e25a676937009ec77d8948dbe024958b8d681a63507441c924",
+      "bytes": 2347336,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "bob01",
+      "kind": "hair",
+      "sha256": "80f51feffb389fcd9b88768d7e3ca9aa6f037845add09b837ba1091f0c538345",
+      "bytes": 4469716,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "bob02",
+      "kind": "hair",
+      "sha256": "d7665a2930c810171d41a67b6aadd5b25059547032e665eb835b52d691348886",
+      "bytes": 3442672,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "long01",
+      "kind": "hair",
+      "sha256": "c6c268aaf245c617bed8aef43c11529b70a0ce5dfe4877aef267f5fd93463d27",
+      "bytes": 3047336,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "braid01",
+      "kind": "hair",
+      "sha256": "5c702f2d178f717c322a880c5d9d82a5e3b483e0b809cf3f1d094cf0807493ff",
+      "bytes": 2799028,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "ponytail01",
+      "kind": "hair",
+      "sha256": "664d0cf144f412e24afe51aea426b1c10cfd3157d0363fa1906a37b444b22016",
+      "bytes": 4069228,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "afro01",
+      "kind": "hair",
+      "sha256": "d38a89ee63dcab99e316853ba1d224b683cded5cd632b80a66e818065ba30da0",
+      "bytes": 4902044,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "rounded-coils",
+      "kind": "hair",
+      "sha256": "1930e374724d385aad0823498bc576101000a48d8403299a4888651e4ceb3af7",
+      "bytes": 9494588,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "stubble",
+      "kind": "beard",
+      "sha256": "08b1f18e5723f8ce89b4770cebe1f2eeeea86d9b859b38e724dee32c4889bf76",
+      "bytes": 17718760,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "full",
+      "kind": "beard",
+      "sha256": "aaf585d368e353e70f56e43726c6405de7a5a0b4ad6ff8cd6ddf6be84e2d9e87",
+      "bytes": 17718756,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "goatee",
+      "kind": "beard",
+      "sha256": "730d93f022dda14130df7ba496c9fef4a13a8cf91d17ce3f55cea965f51ca77d",
+      "bytes": 8074972,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "moustache",
+      "kind": "beard",
+      "sha256": "bb14637373707feb7dcb6c9b2e85848e00ec36707b882f5adcef091e6ba1821c",
+      "bytes": 1185180,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    },
+    {
+      "id": "chinstrap",
+      "kind": "beard",
+      "sha256": "aee8eb4f730446405154fc4c41c43fc056d7120e263bee42d3ea134d3d10063a",
+      "bytes": 3259008,
+      "meshCount": 1,
+      "import": "passed",
+      "finiteGeometryAndMetres": "passed",
+      "materials": "passed"
+    }
+  ],
+  "independentHairBeard": "passed",
+  "keepCurrentHair": "passed",
+  "cleanShaven": "passed",
+  "saveReopen": "passed",
+  "retainedMeshCount": 4,
+  "sourceScene": ".scratch/private/demo-assets/interchange-selection-check.blend"
+}

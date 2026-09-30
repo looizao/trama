@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T22:49:38-03:00",
+  "updated": "2026-09-29T23:31:09-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -491,16 +491,159 @@ window.executionLog={
         "Synthetic identity consistent across views; synthetic inputs and simulated visits labeled.",
         "Interchange, independent selection, keep-current and clean-shaven tested; private outputs excluded from Git."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Acquired exact FLAME 2023 Open archive through user-authenticated in-app browser after explicit agreement acceptance. Extracted in private ignored model storage with file permissions 0600; retained SHA-256 and commercial license provenance.",
+        "Pinned MPFB source loaded offline inside private BLENDER_USER_RESOURCES. Created reproducible acquisition/render scripts; first neutral mannequin render underway.",
+        "Core CC0 MakeHuman pack acquired and CRC verified (280,737,770 bytes). Pinned archive SHA-256 b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107; per-asset license and author metadata retained. Added real eyes and replaced uneven torso trim with planar cut and cap.",
+        "Generated rounded natural coils as solid reusable helical strands and five independent beard meshes sampled from the visible face. Corrected half-quad sampling and applied smooth point-level beard boundaries. Eleven hair and five beard GLBs retained privately; metadata and renders available for review.",
+        "Populated three synthetic identities through local authenticated API: required goals and maintenance, reusable intake, nine complete photo sets and 72 retained labeled renders. Expected and follow-up labels explicitly state simulation. Importer stores private progress and refuses automatic restoration after erasure or withdrawal."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Representative asset creation is verified in native Blender and the photo workflow. App 3D selectors, browser model performance and all eight route-specific compatibility checks remain separate pending implementation tasks.",
+        "Catalog currently contains eleven hair and five beard assets. Ample catalog expansion remains task 15; approximately 40/20 are planning targets. Professional acceptance and final route choice remain pending.",
+        "Smooth synthetic portraits and simulated follow-up images demonstrate workflow, not real reconstruction likeness or actual haircut accuracy. Ground-truth synthetic meshes are excluded from candidate inputs.",
+        "Optional Blender MeshOptimizer library is unavailable; uncompressed GLB export/import passed. Existing multi-texture sampler warning needs browser evaluation in the shared workspace."
+      ],
+      "verification": [
+        {
+          "command": "ZipFile.testzip and SHA-256",
+          "result": "Passed: 47,586,229-byte FLAME2023Open.zip, SHA-256 a6b4c3dc15d569d98136a1e548b6fe532eb2830ca12a4f0d4b3a5dba8ee87a91; exact flame2023_Open.pkl present."
+        },
+        {
+          "command": "MPFB v2.0.17 in isolated Blender 5.2.1 profile",
+          "result": "Initial extension setup failed on renamed operator arguments; corrected to custom_directory with LOCAL repository. Rerun passed and generated 19,158-vertex base human with 18,486 polygons in private smoke.blend."
+        },
+        {
+          "command": "Offline Blender render.py neutral mannequin export",
+          "result": "Created real normalized GLB: 4,913 head vertices / 4,869 polygons plus independent eye mesh. Front render visually inspected. Exporter reports unavailable optional MeshOptimizer library; uncompressed GLB export succeeds. Multi-image sampler warning remains for eye material; browser verification pending."
+        },
+        {
+          "command": "Procedural beard render inspection",
+          "result": "Five independent real GLB meshes exported, but stubble and moustache coverage reaches too high near the nose. Marked intermediate failure; correcting lip landmark and sampling boundaries before asset verification."
+        },
+        {
+          "command": "Fictional Alex baseline render visual check",
+          "result": "Failed intermediate appearance check: half-quad strand sampling left unnatural triangular gaps. No demo case imported into app yet; all outputs remain private and replaceable."
+        },
+        {
+          "command": "Offline Blender verify-interchange.py initial run",
+          "result": "16 style GLBs imported with finite geometry, metre-scale bounds and materials. Independent beard changes preserved hair fingerprint. Clean-shaven retained current hair. Selection saved to .blend and reopened with the same four meshes. Repeat underway for refined beard geometry."
+        },
+        {
+          "command": "Measured refined beard render run",
+          "result": "22.197 seconds wall time, 243.518 CPU seconds, peak child RSS 1,551,012 KiB. Cycles CPU 32 samples, 768 x 896. Total private asset workspace at measurement 256,611,460 bytes; includes retained intermediate scenes and client renders."
+        },
+        {
+          "command": "Offline Blender verify-interchange.py refined run",
+          "result": "Passed all 16 current style GLB imports. Hair fingerprint identical after beard switch and clean-shaven; saved selection reopened with four meshes. Candidate-specific clipping, app browser load and browser performance still pending."
+        },
+        {
+          "command": "populate.py then second populate.py run",
+          "result": "Passed: all 72 content hashes matched retained originals on second run, all nine sets reopened with eight labels and zero missing required views. No duplicated clients or photos on repeat."
+        },
+        {
+          "command": "verify-import-guards.py against live local API",
+          "result": "Passed actual disposable media erasure, permission withdrawal and client erasure. Each subsequent importer run failed explicitly; client lists unchanged, erased media absent, retained demo cases untouched."
+        },
+        {
+          "command": "In-app browser Maya baseline and reload",
+          "result": "Baseline selector displayed six coherent main views plus optional details. Reload retained three sets and eight loaded 768-pixel images. First DOM check used incorrect class selector and found zero matches; inspected source and corrected to actual #guided-photos ID. No app loading defect observed."
+        },
+        {
+          "command": "Three-case measured rendering",
+          "result": "Passed: 244.843 seconds wall time, 2,998.161 CPU seconds, peak child RSS 1,683,828 KiB; 72 renders at 768 x 896, Cycles CPU 32 samples. Private asset workspace including source scene outputs: 371,935,155 bytes."
+        },
+        {
+          "command": "go test ./... and npm --prefix web run build",
+          "result": "Passed Go suite (cached unchanged app source) and TypeScript/Vite production build. Asset scripts compile, native GLB checks and live synthetic persistence/refusal flows passed."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/flame-open-license.png",
+          "caption": "Exact Open model agreement inspected before user accepted download. Academic model and texture licenses are separate.",
+          "date": "2026-09-29T23:02:05-03:00"
+        },
+        {
+          "src": "assets/mannequin-intermediate.png",
+          "caption": "Intermediate synthetic clay mannequin with real eye geometry. Hairstyle and beard libraries and cross-route compatibility remain in progress.",
+          "date": "2026-09-29T23:08:44-03:00"
+        },
+        {
+          "src": "assets/beard-placement-intermediate.png",
+          "caption": "Rejected intermediate beard placement. Synthetic mannequin, left to right: stubble, full, goatee, moustache, chinstrap. Upper-face coverage requires correction; these are not accepted catalog outputs.",
+          "date": "2026-09-29T23:12:34-03:00"
+        },
+        {
+          "src": "assets/coily-mannequin.png",
+          "caption": "Locally generated reusable rounded coil geometry on the shared synthetic mannequin. Professional acceptance pending.",
+          "date": "2026-09-29T23:24:06-03:00"
+        },
+        {
+          "src": "assets/beard-stubble-refined.png",
+          "caption": "Stubble after sampling complete polygons and applying point-level boundaries. Independent real mesh; professional acceptance pending.",
+          "date": "2026-09-29T23:24:06-03:00"
+        },
+        {
+          "src": "assets/synthetic-case-browser.png",
+          "caption": "Maya synthetic baseline in running local app with six coherent labeled views; captures and expected/follow-up sets are explicitly synthetic or simulated.",
+          "date": "2026-09-29T23:30:17-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/flame-open-provenance.json",
+          "label": "FLAME 2023 Open acquisition and license provenance"
+        },
+        {
+          "href": "assets/makehuman-core-provenance.json",
+          "label": "Core MakeHuman and MPFB license and acquisition metadata"
+        },
+        {
+          "href": "assets/representative-asset-metadata.json",
+          "label": "Representative hair/beard mesh metadata, licenses, filters and limitations"
+        },
+        {
+          "href": "assets/asset-interchange-results.json",
+          "label": "Actual GLB import, independent selection and saved reopen results"
+        },
+        {
+          "href": "assets/synthetic-cases-provenance.json",
+          "label": "Fictional case histories, view labels, generation licenses and limitations"
+        },
+        {
+          "href": "assets/asset-resource-results.json",
+          "label": "Measured rendering settings, wall time, CPU use, memory and retained sizes"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-29T22:52:20-03:00",
+          "text": "Starting shared asset acquisition and creation. Current colored squares are diagnostics only and will not be used as portrait inputs or 3D accuracy evidence."
+        },
+        {
+          "date": "2026-09-29T23:02:05-03:00",
+          "text": "User accepted FLAME 2023 Open terms. Download prerequisite satisfied; loading and fitting are not yet verified."
+        },
+        {
+          "date": "2026-09-29T23:06:00-03:00",
+          "text": "Official sample asset-pack URL returned 404; located current official /assets/assetpacks page. Core CC0 asset pack downloading; no third-party assets treated as automatically CC0."
+        },
+        {
+          "date": "2026-09-29T23:08:44-03:00",
+          "text": "Ten core hairstyle meshes now being fitted, exported and rendered on the same shared mannequin. Tile labels and appearance still require inspection."
+        },
+        {
+          "date": "2026-09-29T23:17:36-03:00",
+          "text": "Fictional-case rendering paused after inspection found triangular bare patches in beard coverage. Cause: strands sampled only the first triangle of each quad. Corrected to area-weighted sampling across the complete polygon fan; rerendering catalog before rebuilding cases."
+        },
+        {
+          "date": "2026-09-29T23:31:09-03:00",
+          "text": "Verified representative asset milestone, not completion of 3D product features or comparative candidates. Preserving all remaining requirements and professional review as pending."
+        }
+      ]
     },
     {
       "id": "06",
@@ -630,15 +773,32 @@ window.executionLog={
         "Code, weights, texture and landmark terms verified separately; failures and inference recorded."
       ],
       "status": "pending",
-      "changes": [],
+      "changes": [
+        "Exact commercial Open model acquired privately; download account and agreement blocker resolved by user."
+      ],
       "limitations": [
         "Not implemented or verified."
       ],
-      "verification": [],
+      "verification": [
+        {
+          "command": "FLAME2023Open.zip integrity and bundled readme",
+          "result": "Archive passed integrity; bundled readme identifies CC-BY-4.0 and links exact model terms. Model loading and multi-view fitting remain pending."
+        }
+      ],
       "pictures": [],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/flame-open-provenance.json",
+          "label": "Pinned model files, hashes and exact terms"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-29T23:02:05-03:00",
+          "text": "FLAME download prerequisite ready. Candidate task remains pending while shared assets task is active."
+        }
+      ]
     },
     {
       "id": "12",
