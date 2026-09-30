@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T07:09:23-03:00",
+  "updated": "2026-09-30T07:10:13-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2075,6 +2075,10 @@ window.executionLog={
         {
           "command": "populate-components.py meshlab --upstream makehuman --attempt initial (repeat)",
           "result": "PASS reused all three native job and option IDs without regeneration or extra options."
+        },
+        {
+          "command": "Portable evidence audit",
+          "result": "PASS 164 retained relative references and PNG/SVG decodes; direct file:// browser check remains unavailable under browser protocol policy."
         }
       ],
       "pictures": [
@@ -2099,7 +2103,9 @@ window.executionLog={
           "date": "2026-09-30T07:07:56-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "ea2d9dea41146c18b5f63b51967602eb88ac6312"
+      ],
       "outputs": [
         {
           "href": "assets/meshlab-provenance.json",
