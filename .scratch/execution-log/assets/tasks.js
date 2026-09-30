@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T06:33:17-03:00",
+  "updated": "2026-09-30T06:35:44-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1835,6 +1835,10 @@ window.executionLog={
         {
           "command": "populate-components.py open3d --upstream makehuman --attempt final-ply-comments (repeat)",
           "result": "PASS reused existing three job and option IDs; no new processing or options."
+        },
+        {
+          "command": "Portable HTML log asset audit",
+          "result": "PASS 147 retained references, every PNG decode and SVG parse; task selector renders the verified milestone and pending full candidate journey."
         }
       ],
       "pictures": [
@@ -1869,7 +1873,9 @@ window.executionLog={
           "date": "2026-09-30T06:33:17-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "5d5c0f9"
+      ],
       "outputs": [
         {
           "href": "assets/open3d-provenance.json",
