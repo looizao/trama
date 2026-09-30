@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-30T09:59:55.805228+00:00",
+  "date": "2026-09-30T09:57:06.536275+00:00",
   "scope": "Actual 153 GLB files and 54 native renders from nine supporting-component jobs. Three original fitted routes use the same six authorized synthetic images and independent shared style assets. No scan, denser capture, real-person reconstruction accuracy or professional acceptance claimed.",
   "results": [
     {
       "fictionalCase": "alex-ramos",
       "upstream": "blender-mpfb",
-      "jobId": "23200738-7b36-477d-a9f1-d7c879716b6f",
+      "jobId": "d1427645-a7ef-4c77-a7fe-d74ffc0944fb",
       "sameSixOriginalInputSha256": {
         "back": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
         "front": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
@@ -17,9 +17,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
           "candidate": "blender-mpfb",
@@ -38,220 +39,193 @@
             "triangles": 9590
           },
           "after": {
-            "vertices": 3774,
+            "vertices": 3800,
             "triangles": 7192
           },
           "triangleTarget": 7192,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.8661934825853018e-05,
-              "rmsMetres": 6.109436584557647e-05,
-              "maximumMetres": 0.00040707012522034347
+              "meanMetres": 2.2494998120237142e-05,
+              "rmsMetres": 4.495458779274486e-05,
+              "maximumMetres": 0.0003072932013310492
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 4.2202677674982065e-07,
-              "rmsMetres": 4.228432186092727e-06,
-              "maximumMetres": 7.63330317568034e-05
+              "meanMetres": 1.2747874279739335e-05,
+              "rmsMetres": 3.5001714422833174e-05,
+              "maximumMetres": 0.0002952992799691856
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10386,
-          "retainedAfterOutlierFilter": 10105,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000453,
+            "before": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "after": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 4.9e-05,
+            "before": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "after": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.1e-05,
+            "before": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "after": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.004897,
+            "before": {
+              "vertices": 4999,
+              "triangles": 9590
+            },
+            "after": {
+              "vertices": 20925,
+              "triangles": 9590
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7192,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.024964,
+            "before": {
+              "vertices": 20925,
+              "triangles": 9590
+            },
+            "after": {
+              "vertices": 19726,
+              "triangles": 7192
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000653,
+            "before": {
+              "vertices": 19726,
+              "triangles": 7192
+            },
+            "after": {
+              "vertices": 3800,
+              "triangles": 7192
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 404,
+            "connected_components_number": 5,
+            "edges_number": 14587,
+            "faces_number": 9590,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 8,
+            "unreferenced_vertices": 0,
+            "vertices_number": 4999
+          },
+          "after": {
+            "boundary_edges": 404,
+            "connected_components_number": 5,
+            "edges_number": 10990,
+            "faces_number": 7192,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 8,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3800
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415756,
-              0.13917310096002825,
-              6.248699714391923e-14,
-              -0.004533821040742641
-            ],
-            [
-              -0.13917310096002825,
-              0.9902680687415756,
-              1.5291682922524534e-13,
-              0.0036666697110363227
-            ],
-            [
-              -4.05973130887758e-14,
-              -1.6012494662220671e-13,
-              0.9999999999999999,
-              -0.003999999999857316
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 4,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0038172110777755855,
-              "transformation": [
-                [
-                  0.9953132791396739,
-                  0.09669845554881583,
-                  0.0009407777118112203,
-                  -0.0034968854922652263
-                ],
-                [
-                  -0.09669536268216752,
-                  0.9953097668872264,
-                  -0.002911146622732248,
-                  0.0020938616382615368
-                ],
-                [
-                  -0.0012178686273298838,
-                  0.0028065340490811357,
-                  0.9999953200703681,
-                  -0.0034326643713875164
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.00041453276136157346,
-              "transformation": [
-                [
-                  0.9906265364964213,
-                  0.13659815524405738,
-                  9.57759097401636e-05,
-                  -0.004550725456035051
-                ],
-                [
-                  -0.1365979090400183,
-                  0.9906256830898349,
-                  -0.0013293790628574607,
-                  0.003377278352832349
-                ],
-                [
-                  -0.00027646880361630326,
-                  0.0013038353877224329,
-                  0.9999991117887467,
-                  -0.003964587518727668
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.039316960104042e-07,
-              "transformation": [
-                [
-                  0.9902680916805783,
-                  0.1391729377323605,
-                  1.5000711575045434e-06,
-                  -0.004533748636576495
-                ],
-                [
-                  -0.13917293773418932,
-                  0.9902680916807397,
-                  1.1923129152266194e-06,
-                  0.0036668362786951313
-                ],
-                [
-                  -1.3195349114193634e-06,
-                  -1.3894787450475891e-06,
-                  0.9999999999981639,
-                  -0.0040001090247012904
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 1.716247739614503e-13,
-              "transformation": [
-                [
-                  0.9902680687415756,
-                  0.13917310096002825,
-                  6.248699714391923e-14,
-                  -0.004533821040742641
-                ],
-                [
-                  -0.13917310096002825,
-                  0.9902680687415756,
-                  1.5291682922524534e-13,
-                  0.0036666697110363227
-                ],
-                [
-                  -4.05973130887758e-14,
-                  -1.6012494662220671e-13,
-                  0.9999999999999999,
-                  -0.003999999999857316
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 4999,
+            "nativeResult": {
+              "RMS": 4.495458779274486e-05,
+              "diag_mesh_0": 0.6599612832069397,
+              "diag_mesh_1": 0.659940386612389,
+              "max": 0.0003072932013310492,
+              "mean": 2.2494998120237142e-05,
+              "min": 0.0,
+              "n_samples": 4999
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 1.716247739614503e-13,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 1.9456345127844732e-13,
-          "recoveredPointRmsErrorMetres": 1.7162029481560245e-13
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3800,
+            "nativeResult": {
+              "RMS": 3.5001714422833174e-05,
+              "diag_mesh_0": 0.6599403619766235,
+              "diag_mesh_1": 0.6599613028898494,
+              "max": 0.0002952992799691856,
+              "mean": 1.2747874279739335e-05,
+              "min": 0.0,
+              "n_samples": 3800
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3800,
+            "triangles": 7192
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -324,26 +298,26 @@
           "upstreamRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
           "sourceHeadSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "da03b5420fa857be1777795bdee0e31e2c20fe4722079875e9128fa00c7142fd",
-          "bytes": 795996,
-          "vertices": 3870,
+          "sha256": "c53fda9eee8766f63f1a7e3518d26d35954674cc5cfacd212a9b8733da1f9fa9",
+          "bytes": 796768,
+          "vertices": 3896,
           "triangles": 7364,
           "boundsMetres": [
             {
@@ -361,7 +335,7 @@
             {
               "min": [
                 -0.25007522106170654,
-                -0.18000000715255737,
+                -0.18000005185604095,
                 -0.07479193806648254
               ],
               "max": [
@@ -378,9 +352,9 @@
             "upstreamRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
             "sourceHeadSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -758,7 +732,7 @@
     {
       "fictionalCase": "maya-costa",
       "upstream": "blender-mpfb",
-      "jobId": "b0b2ea4b-ff91-440c-9348-8255c3c18a0d",
+      "jobId": "c20fc673-750e-493c-953e-b743014fd1d0",
       "sameSixOriginalInputSha256": {
         "back": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
         "front": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
@@ -770,9 +744,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "bf78983d-1eed-477e-88a9-f63db001b22a",
           "candidate": "blender-mpfb",
@@ -791,220 +766,193 @@
             "triangles": 9656
           },
           "after": {
-            "vertices": 3807,
+            "vertices": 3833,
             "triangles": 7242
           },
           "triangleTarget": 7242,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.8087664624075095e-05,
-              "rmsMetres": 6.0621520028379775e-05,
-              "maximumMetres": 0.0003571291745174676
+              "meanMetres": 2.1595062207779847e-05,
+              "rmsMetres": 4.360896855359897e-05,
+              "maximumMetres": 0.0003788544563576579
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 4.5115018439055407e-07,
-              "rmsMetres": 4.353996057453242e-06,
-              "maximumMetres": 7.451995770679787e-05
+              "meanMetres": 1.2709337170235813e-05,
+              "rmsMetres": 3.442391243879683e-05,
+              "maximumMetres": 0.00029294088017195463
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10349,
-          "retainedAfterOutlierFilter": 10056,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000538,
+            "before": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "after": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 6.1e-05,
+            "before": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "after": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.7e-05,
+            "before": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "after": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.005842,
+            "before": {
+              "vertices": 5040,
+              "triangles": 9656
+            },
+            "after": {
+              "vertices": 21048,
+              "triangles": 9656
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7242,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.028791,
+            "before": {
+              "vertices": 21048,
+              "triangles": 9656
+            },
+            "after": {
+              "vertices": 19841,
+              "triangles": 7242
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000747,
+            "before": {
+              "vertices": 19841,
+              "triangles": 7242
+            },
+            "after": {
+              "vertices": 3833,
+              "triangles": 7242
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 424,
+            "connected_components_number": 5,
+            "edges_number": 14696,
+            "faces_number": 9656,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 10,
+            "unreferenced_vertices": 0,
+            "vertices_number": 5040
+          },
+          "after": {
+            "boundary_edges": 424,
+            "connected_components_number": 5,
+            "edges_number": 11075,
+            "faces_number": 7242,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 10,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3833
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415725,
-              0.139173100960049,
-              -3.7951398684618445e-14,
-              -0.004533821040790156
-            ],
-            [
-              -0.13917310096004903,
-              0.9902680687415726,
-              2.155453029095407e-13,
-              0.0036666697110443887
-            ],
-            [
-              6.757998773658698e-14,
-              -2.0816474823924318e-13,
-              1.0,
-              -0.003999999999923333
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 4,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.00356249048914559,
-              "transformation": [
-                [
-                  0.9947540646566119,
-                  0.1022953416123428,
-                  -0.00011804051565931977,
-                  -0.0034575997398928688
-                ],
-                [
-                  -0.10229519857918067,
-                  0.9947490047451506,
-                  -0.0031796078654898466,
-                  0.002098894246378655
-                ],
-                [
-                  -0.00020783838732186326,
-                  0.0031750028261999176,
-                  0.9999949380673177,
-                  -0.00337104433372915
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.00031510034994058423,
-              "transformation": [
-                [
-                  0.9905366009697223,
-                  0.13724875482412938,
-                  0.0001464191751224741,
-                  -0.004523703639578459
-                ],
-                [
-                  -0.13724855359350607,
-                  0.9905361736821102,
-                  -0.0009608140790945117,
-                  0.003450705199984474
-                ],
-                [
-                  -0.00027690402545272073,
-                  0.0009316256920662187,
-                  0.9999995276987538,
-                  -0.003952724731609848
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.2377461392036904e-07,
-              "transformation": [
-                [
-                  0.9902681062688886,
-                  0.13917283393684413,
-                  7.850651132337297e-07,
-                  -0.004533754793944567
-                ],
-                [
-                  -0.13917283393771585,
-                  0.990268106268358,
-                  1.1936085277815776e-06,
-                  0.0036668307512167397
-                ],
-                [
-                  -6.113070615569518e-07,
-                  -1.2912521930659622e-06,
-                  0.9999999999989795,
-                  -0.004000033651145654
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 9.845588000028867e-14,
-              "transformation": [
-                [
-                  0.9902680687415725,
-                  0.139173100960049,
-                  -3.7951398684618445e-14,
-                  -0.004533821040790156
-                ],
-                [
-                  -0.13917310096004903,
-                  0.9902680687415726,
-                  2.155453029095407e-13,
-                  0.0036666697110443887
-                ],
-                [
-                  6.757998773658698e-14,
-                  -2.0816474823924318e-13,
-                  1.0,
-                  -0.003999999999923333
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 5040,
+            "nativeResult": {
+              "RMS": 4.360896855359897e-05,
+              "diag_mesh_0": 0.6637735962867737,
+              "diag_mesh_1": 0.6637831302409115,
+              "max": 0.0003788544563576579,
+              "mean": 2.1595062207779847e-05,
+              "min": 0.0,
+              "n_samples": 5040
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 9.845588000028867e-14,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 1.2255755834652202e-13,
-          "recoveredPointRmsErrorMetres": 9.845692207775258e-14
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3833,
+            "nativeResult": {
+              "RMS": 3.442391243879683e-05,
+              "diag_mesh_0": 0.6637831330299377,
+              "diag_mesh_1": 0.6637736170713772,
+              "max": 0.00029294088017195463,
+              "mean": 1.2709337170235813e-05,
+              "min": 0.0,
+              "n_samples": 3833
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3833,
+            "triangles": 7242
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -1077,26 +1025,26 @@
           "upstreamRunId": "bf78983d-1eed-477e-88a9-f63db001b22a",
           "sourceHeadSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "d8f080a5da5c6e1f5c1b1b7c4396e615e76a9b682c272eab5d8170b95c387ec5",
-          "bytes": 797388,
-          "vertices": 3903,
+          "sha256": "c11b9354b1820a23b41120a240615d7b3b4ae3f3c875421d166a88f6cc77ae75",
+          "bytes": 798156,
+          "vertices": 3929,
           "triangles": 7414,
           "boundsMetres": [
             {
@@ -1114,13 +1062,13 @@
             {
               "min": [
                 -0.2538093030452728,
-                -0.18000000715255737,
+                -0.1800004541873932,
                 -0.07505854964256287
               ],
               "max": [
-                0.2538093030452728,
+                0.253848671913147,
                 0.18000000715255737,
-                0.15577147901058197
+                0.15579009056091309
               ]
             }
           ],
@@ -1131,9 +1079,9 @@
             "upstreamRunId": "bf78983d-1eed-477e-88a9-f63db001b22a",
             "sourceHeadSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -1511,7 +1459,7 @@
     {
       "fictionalCase": "noah-kim",
       "upstream": "blender-mpfb",
-      "jobId": "127bbcca-af0f-409a-8628-5f645fde2032",
+      "jobId": "f8c0534f-2418-4b86-ba96-c3e8c1da89e4",
       "sameSixOriginalInputSha256": {
         "back": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
         "front": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
@@ -1523,9 +1471,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
           "candidate": "blender-mpfb",
@@ -1544,251 +1493,193 @@
             "triangles": 9588
           },
           "after": {
-            "vertices": 3772,
-            "triangles": 7191
+            "vertices": 3799,
+            "triangles": 7190
           },
           "triangleTarget": 7191,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.8798481307654276e-05,
-              "rmsMetres": 6.170158599584897e-05,
-              "maximumMetres": 0.0003802691353484988
+              "meanMetres": 2.179017428716179e-05,
+              "rmsMetres": 4.3227813876001164e-05,
+              "maximumMetres": 0.0002589203359093517
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 6.269910505240555e-07,
-              "rmsMetres": 6.141060314227964e-06,
-              "maximumMetres": 0.00011899776291102171
+              "meanMetres": 1.2370073818601668e-05,
+              "rmsMetres": 3.4208955185022205e-05,
+              "maximumMetres": 0.0002358688652748242
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10367,
-          "retainedAfterOutlierFilter": 10061,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000488,
+            "before": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "after": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 5.3e-05,
+            "before": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "after": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.8e-05,
+            "before": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "after": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.005306,
+            "before": {
+              "vertices": 4998,
+              "triangles": 9588
+            },
+            "after": {
+              "vertices": 20922,
+              "triangles": 9588
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7191,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.0266,
+            "before": {
+              "vertices": 20922,
+              "triangles": 9588
+            },
+            "after": {
+              "vertices": 19723,
+              "triangles": 7190
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000697,
+            "before": {
+              "vertices": 19723,
+              "triangles": 7190
+            },
+            "after": {
+              "vertices": 3799,
+              "triangles": 7190
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 404,
+            "connected_components_number": 5,
+            "edges_number": 14584,
+            "faces_number": 9588,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 8,
+            "unreferenced_vertices": 0,
+            "vertices_number": 4998
+          },
+          "after": {
+            "boundary_edges": 404,
+            "connected_components_number": 5,
+            "edges_number": 10987,
+            "faces_number": 7190,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 8,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3799
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415704,
-              0.13917310096006544,
-              9.435718737428441e-18,
-              -0.004533821040827657
-            ],
-            [
-              -0.1391731009600654,
-              0.9902680687415703,
-              -1.2836012968102129e-17,
-              0.0036666697110250422
-            ],
-            [
-              -1.1134871169897048e-17,
-              1.0961018022999692e-17,
-              0.9999999999999999,
-              -0.004000000000000013
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 5,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0038625229896989115,
-              "transformation": [
-                [
-                  0.9954440407498982,
-                  0.09534597870721624,
-                  -0.0005532448627385111,
-                  -0.0034856756536880977
-                ],
-                [
-                  -0.09534716887665803,
-                  0.9954400694648976,
-                  -0.00282586109463472,
-                  0.001923169748861657
-                ],
-                [
-                  0.00028128761283692836,
-                  0.0028657369179987883,
-                  0.9999958542060041,
-                  -0.003469552249778691
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.000507832331825251,
-              "transformation": [
-                [
-                  0.9907743169258239,
-                  0.1355221438222435,
-                  -3.813122311168816e-05,
-                  -0.004608718433810445
-                ],
-                [
-                  -0.1355220988077172,
-                  0.9907736667901522,
-                  -0.0011410214493314543,
-                  0.0033613483818197318
-                ],
-                [
-                  -0.00011685426121900143,
-                  0.0011356623704452864,
-                  0.9999993483078186,
-                  -0.004000343643591239
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 1.3261037361395731e-06,
-              "transformation": [
-                [
-                  0.990269351387698,
-                  0.13916397415204387,
-                  6.302569458020543e-07,
-                  -0.004534712286539065
-                ],
-                [
-                  -0.13916397415262505,
-                  0.990269351387314,
-                  9.97954868931731e-07,
-                  0.003666361369265745
-                ],
-                [
-                  -4.852447713418328e-07,
-                  -1.0759531820867668e-06,
-                  0.9999999999993033,
-                  -0.004000411063669189
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.2519572225593806e-12,
-              "transformation": [
-                [
-                  0.9902680687414207,
-                  0.13917310096113011,
-                  -3.592466211289071e-12,
-                  -0.0045338210408515794
-                ],
-                [
-                  -0.1391731009611301,
-                  0.9902680687414206,
-                  1.2657315280553574e-11,
-                  0.003666669712678889
-                ],
-                [
-                  5.319062389956905e-12,
-                  -1.2034160932479393e-11,
-                  0.9999999999999999,
-                  -0.004000000001592224
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 4,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.284801496900593e-17,
-              "transformation": [
-                [
-                  0.9902680687415704,
-                  0.13917310096006544,
-                  9.435718737428441e-18,
-                  -0.004533821040827657
-                ],
-                [
-                  -0.1391731009600654,
-                  0.9902680687415703,
-                  -1.2836012968102129e-17,
-                  0.0036666697110250422
-                ],
-                [
-                  -1.1134871169897048e-17,
-                  1.0961018022999692e-17,
-                  0.9999999999999999,
-                  -0.004000000000000013
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 4998,
+            "nativeResult": {
+              "RMS": 4.3227813876001164e-05,
+              "diag_mesh_0": 0.6595306396484375,
+              "diag_mesh_1": 0.6595088144641583,
+              "max": 0.0002589203359093517,
+              "mean": 2.179017428716179e-05,
+              "min": 0.0,
+              "n_samples": 4998
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 3.284801496900593e-17,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 6.359601310784502e-17,
-          "recoveredPointRmsErrorMetres": 3.0751695809668915e-17
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3799,
+            "nativeResult": {
+              "RMS": 3.4208955185022205e-05,
+              "diag_mesh_0": 0.6595088243484497,
+              "diag_mesh_1": 0.6595306434742556,
+              "max": 0.0002358688652748242,
+              "mean": 1.2370073818601668e-05,
+              "min": 0.0,
+              "n_samples": 3799
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3799,
+            "triangles": 7190
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -1861,27 +1752,27 @@
           "upstreamRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
           "sourceHeadSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "ff00b0d78d32b7816706619652337ab985d2ce4114af8d07667d8a723d0cb6b8",
-          "bytes": 795936,
-          "vertices": 3868,
-          "triangles": 7363,
+          "sha256": "782d6b3f36dcbe6214348f2d7c4cc0b859d303ef30e9e0c8d057bc87bd4c46bf",
+          "bytes": 796720,
+          "vertices": 3895,
+          "triangles": 7362,
           "boundsMetres": [
             {
               "min": [
@@ -1898,7 +1789,7 @@
             {
               "min": [
                 -0.25084877014160156,
-                -0.18000000715255737,
+                -0.1800008863210678,
                 -0.07485495507717133
               ],
               "max": [
@@ -1915,9 +1806,9 @@
             "upstreamRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
             "sourceHeadSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -2295,7 +2186,7 @@
     {
       "fictionalCase": "alex-ramos",
       "upstream": "makehuman",
-      "jobId": "b1219304-7551-4093-b422-33dffa48299e",
+      "jobId": "a9140de0-7d97-441c-b936-15f5fc7dcbc1",
       "sameSixOriginalInputSha256": {
         "back": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
         "front": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
@@ -2307,9 +2198,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
           "candidate": "makehuman",
@@ -2328,220 +2220,193 @@
             "triangles": 9618
           },
           "after": {
-            "vertices": 3715,
-            "triangles": 7213
+            "vertices": 3746,
+            "triangles": 7212
           },
           "triangleTarget": 7213,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.8182008979469904e-05,
-              "rmsMetres": 6.057447178780131e-05,
-              "maximumMetres": 0.0004085552354808897
+              "meanMetres": 2.2689475372317247e-05,
+              "rmsMetres": 4.4989519665250555e-05,
+              "maximumMetres": 0.00026735119172371924
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 3.625041497942996e-07,
-              "rmsMetres": 3.6932148302990186e-06,
-              "maximumMetres": 5.5428088671760634e-05
+              "meanMetres": 1.2898412933282088e-05,
+              "rmsMetres": 3.477085192571394e-05,
+              "maximumMetres": 0.00023042022075969726
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10361,
-          "retainedAfterOutlierFilter": 10092,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000517,
+            "before": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "after": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 5.7e-05,
+            "before": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "after": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.3e-05,
+            "before": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "after": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.004767,
+            "before": {
+              "vertices": 4949,
+              "triangles": 9618
+            },
+            "after": {
+              "vertices": 9759,
+              "triangles": 9618
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7213,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.026064,
+            "before": {
+              "vertices": 9759,
+              "triangles": 9618
+            },
+            "after": {
+              "vertices": 8556,
+              "triangles": 7212
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000578,
+            "before": {
+              "vertices": 8556,
+              "triangles": 7212
+            },
+            "after": {
+              "vertices": 3746,
+              "triangles": 7212
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 276,
+            "connected_components_number": 2,
+            "edges_number": 14565,
+            "faces_number": 9618,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 4949
+          },
+          "after": {
+            "boundary_edges": 276,
+            "connected_components_number": 2,
+            "edges_number": 10956,
+            "faces_number": 7212,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3746
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.990268068741574,
-              0.13917310096003913,
-              -7.479804972519853e-13,
-              -0.004533821040825495
-            ],
-            [
-              -0.13917310096003913,
-              0.9902680687415742,
-              1.0853281755221787e-12,
-              0.0036666697111230103
-            ],
-            [
-              8.917494601014099e-13,
-              -9.70666925921118e-13,
-              1.0,
-              -0.004000000000007716
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 4,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0038350425938777446,
-              "transformation": [
-                [
-                  0.995649831052245,
-                  0.09316548235970985,
-                  0.0012676049536835686,
-                  -0.003500801259070325
-                ],
-                [
-                  -0.09316407757636518,
-                  0.995650133163983,
-                  -0.0011256020114387352,
-                  0.0023148133230511455
-                ],
-                [
-                  -0.0013669582952751187,
-                  0.001002610206279883,
-                  0.9999985630978644,
-                  -0.0035830951012618168
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0005117946914026503,
-              "transformation": [
-                [
-                  0.9907893277690051,
-                  0.13541235712784125,
-                  3.893745125553488e-05,
-                  -0.004576745945374771
-                ],
-                [
-                  -0.13541222416551293,
-                  0.9907886843373548,
-                  -0.0011456594619563111,
-                  0.0033777657553516246
-                ],
-                [
-                  -0.00019371523431023995,
-                  0.0011298345612860453,
-                  0.9999993429739203,
-                  -0.003992680652670887
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.003366583654994e-07,
-              "transformation": [
-                [
-                  0.9902683262435773,
-                  0.13917126872510935,
-                  4.330581108206394e-07,
-                  -0.004533913472654063
-                ],
-                [
-                  -0.1391712687255489,
-                  0.9902683262428255,
-                  1.2468591997190706e-06,
-                  0.003666818938530934
-                ],
-                [
-                  -2.5531675382198704e-07,
-                  -1.2949944194818631e-06,
-                  0.999999999999129,
-                  -0.0040001185919439335
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 1.8872860902704918e-13,
-              "transformation": [
-                [
-                  0.990268068741574,
-                  0.13917310096003913,
-                  -7.479804972519853e-13,
-                  -0.004533821040825495
-                ],
-                [
-                  -0.13917310096003913,
-                  0.9902680687415742,
-                  1.0853281755221787e-12,
-                  0.0036666697111230103
-                ],
-                [
-                  8.917494601014099e-13,
-                  -9.70666925921118e-13,
-                  1.0,
-                  -0.004000000000007716
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 4949,
+            "nativeResult": {
+              "RMS": 4.4989519665250555e-05,
+              "diag_mesh_0": 0.646600067615509,
+              "diag_mesh_1": 0.6465783676924965,
+              "max": 0.00026735119172371924,
+              "mean": 2.2689475372317247e-05,
+              "min": 0.0,
+              "n_samples": 4949
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 1.8872860902704918e-13,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 3.2421753814279855e-13,
-          "recoveredPointRmsErrorMetres": 1.8873009098059355e-13
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3746,
+            "nativeResult": {
+              "RMS": 3.477085192571394e-05,
+              "diag_mesh_0": 0.6465783715248108,
+              "diag_mesh_1": 0.6466000908143555,
+              "max": 0.00023042022075969726,
+              "mean": 1.2898412933282088e-05,
+              "min": 0.0,
+              "n_samples": 3746
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3746,
+            "triangles": 7212
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -2614,27 +2479,27 @@
           "upstreamRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
           "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "3e9391dd3fbbca36acebe6540f87353c38421508d0f0de89b8ce72d01a9834ec",
-          "bytes": 794828,
-          "vertices": 3811,
-          "triangles": 7385,
+          "sha256": "15756c494630e66f6849411f0cc921516000304bf6d01d0c3a941bc7008fb018",
+          "bytes": 795708,
+          "vertices": 3842,
+          "triangles": 7384,
           "boundsMetres": [
             {
               "min": [
@@ -2668,9 +2533,9 @@
             "upstreamRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
             "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -3048,7 +2913,7 @@
     {
       "fictionalCase": "maya-costa",
       "upstream": "makehuman",
-      "jobId": "31fc07c1-d90c-4de6-a6f3-d4c58cd1f61d",
+      "jobId": "6dadb929-246c-4dfd-a62e-bab40bcf0a5e",
       "sameSixOriginalInputSha256": {
         "back": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
         "front": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
@@ -3060,9 +2925,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "69c66910-ed6b-4036-b802-ec562148efe5",
           "candidate": "makehuman",
@@ -3081,220 +2947,193 @@
             "triangles": 9686
           },
           "after": {
-            "vertices": 3757,
-            "triangles": 7263
+            "vertices": 3782,
+            "triangles": 7264
           },
           "triangleTarget": 7264,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.722512593920198e-05,
-              "rmsMetres": 5.9379280937411235e-05,
-              "maximumMetres": 0.0003484569606371224
+              "meanMetres": 2.2295518647297285e-05,
+              "rmsMetres": 4.3681364331860095e-05,
+              "maximumMetres": 0.00022459453612100333
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 4.1670398494605556e-07,
-              "rmsMetres": 4.3935709659831175e-06,
-              "maximumMetres": 0.00010563372779870406
+              "meanMetres": 1.1994875421805773e-05,
+              "rmsMetres": 3.2514322811039165e-05,
+              "maximumMetres": 0.0002128546329913661
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10317,
-          "retainedAfterOutlierFilter": 10031,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000583,
+            "before": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "after": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 6.5e-05,
+            "before": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "after": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 7e-05,
+            "before": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "after": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.005464,
+            "before": {
+              "vertices": 4993,
+              "triangles": 9686
+            },
+            "after": {
+              "vertices": 9837,
+              "triangles": 9686
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7264,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.028466,
+            "before": {
+              "vertices": 9837,
+              "triangles": 9686
+            },
+            "after": {
+              "vertices": 8626,
+              "triangles": 7264
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000664,
+            "before": {
+              "vertices": 8626,
+              "triangles": 7264
+            },
+            "after": {
+              "vertices": 3782,
+              "triangles": 7264
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 296,
+            "connected_components_number": 2,
+            "edges_number": 14677,
+            "faces_number": 9686,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 4993
+          },
+          "after": {
+            "boundary_edges": 296,
+            "connected_components_number": 2,
+            "edges_number": 11044,
+            "faces_number": 7264,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3782
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415707,
-              0.13917310096006338,
-              -5.784247315592436e-13,
-              -0.0045338210407621085
-            ],
-            [
-              -0.13917310096006336,
-              0.9902680687415706,
-              2.1896338938346283e-12,
-              0.003666669711079107
-            ],
-            [
-              8.775337241470911e-13,
-              -2.0878235075073393e-12,
-              1.0,
-              -0.003999999999959942
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 4,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0038585935010371146,
-              "transformation": [
-                [
-                  0.9956079160019313,
-                  0.09361420859714266,
-                  0.001121402256993327,
-                  -0.0035059682682172873
-                ],
-                [
-                  -0.09361492041598689,
-                  0.9956082998677626,
-                  0.0005999249384950056,
-                  0.0024691126223583128
-                ],
-                [
-                  -0.0010603158962180985,
-                  -0.0007022700008153378,
-                  0.9999991912731961,
-                  -0.0035108069060870374
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.00048408836542065855,
-              "transformation": [
-                [
-                  0.9907711962667928,
-                  0.1355449483273729,
-                  -6.0257765620867095e-05,
-                  -0.004552180140046021
-                ],
-                [
-                  -0.1355449529065296,
-                  0.9907708736003151,
-                  -0.000801103510753187,
-                  0.0034261250626371038
-                ],
-                [
-                  -4.8883894884528173e-05,
-                  0.0008018779196857955,
-                  0.9999996773010312,
-                  -0.00400162376179181
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 4.1886388632514275e-07,
-              "transformation": [
-                [
-                  0.990268316140698,
-                  0.1391713406051151,
-                  1.4289063474648854e-06,
-                  -0.004533634990244008
-                ],
-                [
-                  -0.13917134060690242,
-                  0.9902683161407037,
-                  1.2381236295595831e-06,
-                  0.0036668884245805214
-                ],
-                [
-                  -1.242689357266094e-06,
-                  -1.4249374137965216e-06,
-                  0.9999999999982127,
-                  -0.004000083596362363
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.3416937494620274e-13,
-              "transformation": [
-                [
-                  0.9902680687415707,
-                  0.13917310096006338,
-                  -5.784247315592436e-13,
-                  -0.0045338210407621085
-                ],
-                [
-                  -0.13917310096006336,
-                  0.9902680687415706,
-                  2.1896338938346283e-12,
-                  0.003666669711079107
-                ],
-                [
-                  8.775337241470911e-13,
-                  -2.0878235075073393e-12,
-                  1.0,
-                  -0.003999999999959942
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 4993,
+            "nativeResult": {
+              "RMS": 4.3681364331860095e-05,
+              "diag_mesh_0": 0.6476314663887024,
+              "diag_mesh_1": 0.6476082258110213,
+              "max": 0.00022459453612100333,
+              "mean": 2.2295518647297285e-05,
+              "min": 0.0,
+              "n_samples": 4993
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 3.3416937494620274e-13,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 5.019564812013069e-13,
-          "recoveredPointRmsErrorMetres": 3.341698194582656e-13
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3782,
+            "nativeResult": {
+              "RMS": 3.2514322811039165e-05,
+              "diag_mesh_0": 0.64760822057724,
+              "diag_mesh_1": 0.6476314912278931,
+              "max": 0.0002128546329913661,
+              "mean": 1.1994875421805773e-05,
+              "min": 0.0,
+              "n_samples": 3782
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3782,
+            "triangles": 7264
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -3367,27 +3206,27 @@
           "upstreamRunId": "69c66910-ed6b-4036-b802-ec562148efe5",
           "sourceHeadSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "014b3f5f62d75506c669c1c5285e3efabaa9b06f4dad8233aa7e77175cbb1818",
-          "bytes": 796428,
-          "vertices": 3853,
-          "triangles": 7435,
+          "sha256": "6ddec19808741e250342172d76b89b3a1cb05d905d2e7e4efe35cd32d157d2b7",
+          "bytes": 797188,
+          "vertices": 3878,
+          "triangles": 7436,
           "boundsMetres": [
             {
               "min": [
@@ -3421,9 +3260,9 @@
             "upstreamRunId": "69c66910-ed6b-4036-b802-ec562148efe5",
             "sourceHeadSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -3801,7 +3640,7 @@
     {
       "fictionalCase": "noah-kim",
       "upstream": "makehuman",
-      "jobId": "a8beca4c-d31d-4a55-9eee-e5e0191c0efa",
+      "jobId": "f494d32d-9ace-4b1b-b0a3-f3e283230a49",
       "sameSixOriginalInputSha256": {
         "back": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
         "front": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
@@ -3813,9 +3652,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
           "candidate": "makehuman",
@@ -3834,251 +3674,193 @@
             "triangles": 9598
           },
           "after": {
-            "vertices": 3715,
+            "vertices": 3735,
             "triangles": 7198
           },
           "triangleTarget": 7198,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.8271277168427127e-05,
-              "rmsMetres": 6.072389252974614e-05,
-              "maximumMetres": 0.00036335590993985534
+              "meanMetres": 2.20610381802544e-05,
+              "rmsMetres": 4.3739808461396024e-05,
+              "maximumMetres": 0.00025732300127856433
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 4.5056399860097726e-07,
-              "rmsMetres": 4.789834193585539e-06,
-              "maximumMetres": 0.00011901331163244322
+              "meanMetres": 1.2112001968489494e-05,
+              "rmsMetres": 3.2761250622570515e-05,
+              "maximumMetres": 0.0002200892340624705
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 10330,
-          "retainedAfterOutlierFilter": 10023,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000533,
+            "before": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "after": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 5.8e-05,
+            "before": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "after": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.5e-05,
+            "before": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "after": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.004821,
+            "before": {
+              "vertices": 4935,
+              "triangles": 9598
+            },
+            "after": {
+              "vertices": 9735,
+              "triangles": 9598
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 7198,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.025706,
+            "before": {
+              "vertices": 9735,
+              "triangles": 9598
+            },
+            "after": {
+              "vertices": 8535,
+              "triangles": 7198
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 0.000568,
+            "before": {
+              "vertices": 8535,
+              "triangles": 7198
+            },
+            "after": {
+              "vertices": 3735,
+              "triangles": 7198
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 268,
+            "connected_components_number": 2,
+            "edges_number": 14531,
+            "faces_number": 9598,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 4935
+          },
+          "after": {
+            "boundary_edges": 268,
+            "connected_components_number": 2,
+            "edges_number": 10931,
+            "faces_number": 7198,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3735
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415708,
-              0.1391731009600654,
-              -2.8068800135011878e-18,
-              -0.004533821040827657
-            ],
-            [
-              -0.1391731009600654,
-              0.9902680687415701,
-              -1.7928512302431117e-17,
-              0.0036666697110250422
-            ],
-            [
-              2.9868580970484384e-19,
-              1.81312224467325e-17,
-              1.0000000000000002,
-              -0.003999999999999969
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 5,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0038882819779544314,
-              "transformation": [
-                [
-                  0.9957866008968206,
-                  0.09169979436953844,
-                  0.00043953036374901305,
-                  -0.003517630339499491
-                ],
-                [
-                  -0.09169908473460218,
-                  0.9957857393633,
-                  -0.001427984426442727,
-                  0.002014631650269328
-                ],
-                [
-                  -0.0005686239465061326,
-                  0.0013816632260721475,
-                  0.9999988838361457,
-                  -0.003544815697055742
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0005837203825162734,
-              "transformation": [
-                [
-                  0.990877366844539,
-                  0.13476653930769542,
-                  -0.00015413714887625607,
-                  -0.004620600986614815
-                ],
-                [
-                  -0.13476662523024752,
-                  0.9908769101583175,
-                  -0.0009516507528518692,
-                  0.0033308529450475784
-                ],
-                [
-                  2.448026322770791e-05,
-                  0.0009637417355181482,
-                  0.999999535301184,
-                  -0.003966435290383665
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.126345980585651e-06,
-              "transformation": [
-                [
-                  0.9902706561502664,
-                  0.1391546893406359,
-                  -1.494161920681762e-06,
-                  -0.004534918058857903
-                ],
-                [
-                  -0.13915468933896397,
-                  0.9902706561509362,
-                  1.1705068018003865e-06,
-                  0.003666813000863692
-                ],
-                [
-                  1.6425062159649206e-06,
-                  -9.511989007526507e-07,
-                  0.9999999999981988,
-                  -0.004000216472631487
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 8.611253507862015e-12,
-              "transformation": [
-                [
-                  0.990268068742354,
-                  0.13917310095449267,
-                  -1.0608981329818594e-11,
-                  -0.004533821040916392
-                ],
-                [
-                  -0.13917310095449267,
-                  0.9902680687423533,
-                  1.456091616850019e-11,
-                  0.0036666697189689603
-                ],
-                [
-                  1.253222332300054e-11,
-                  -1.294272551711382e-11,
-                  1.0000000000000002,
-                  -0.004000000004733174
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 4,
-              "fitness": 1.0,
-              "inlierRmseMetres": 5.415580908134998e-17,
-              "transformation": [
-                [
-                  0.9902680687415708,
-                  0.1391731009600654,
-                  -2.8068800135011878e-18,
-                  -0.004533821040827657
-                ],
-                [
-                  -0.1391731009600654,
-                  0.9902680687415701,
-                  -1.7928512302431117e-17,
-                  0.0036666697110250422
-                ],
-                [
-                  2.9868580970484384e-19,
-                  1.81312224467325e-17,
-                  1.0000000000000002,
-                  -0.003999999999999969
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 4935,
+            "nativeResult": {
+              "RMS": 4.3739808461396024e-05,
+              "diag_mesh_0": 0.6432738900184631,
+              "diag_mesh_1": 0.6432523684083506,
+              "max": 0.00025732300127856433,
+              "mean": 2.20610381802544e-05,
+              "min": 0.0,
+              "n_samples": 4935
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 5.415580908134998e-17,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 1.6711069443220838e-16,
-          "recoveredPointRmsErrorMetres": 7.233690938049916e-17
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 3735,
+            "nativeResult": {
+              "RMS": 3.2761250622570515e-05,
+              "diag_mesh_0": 0.6432523727416992,
+              "diag_mesh_1": 0.6432739138064109,
+              "max": 0.0002200892340624705,
+              "mean": 1.2112001968489494e-05,
+              "min": 0.0,
+              "n_samples": 3735
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 3735,
+            "triangles": 7198
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -4151,26 +3933,26 @@
           "upstreamRunId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
           "sourceHeadSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
           "upstreamProvenance": {},
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "3b102a3c2407da59399638bee27e9c1df73a3b3d972e3ffca2867275bf64b368",
-          "bytes": 794648,
-          "vertices": 3811,
+          "sha256": "2ec9cb04fac711fd7db8679feb4a20d8ed3bf1f0abc73ccc477d7468ad6efda7",
+          "bytes": 795276,
+          "vertices": 3831,
           "triangles": 7370,
           "boundsMetres": [
             {
@@ -4205,9 +3987,9 @@
             "upstreamRunId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
             "sourceHeadSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
             "upstreamProvenance": {},
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -4585,7 +4367,7 @@
     {
       "fictionalCase": "alex-ramos",
       "upstream": "flame",
-      "jobId": "c2981f16-a2ab-43c0-9352-6d6f622d74e1",
+      "jobId": "6a49ab50-a104-471b-8b46-5a3ac90d6b9c",
       "sameSixOriginalInputSha256": {
         "back": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
         "front": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
@@ -4597,9 +4379,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "7b5ffea9-ba32-4b1c-8f37-4e6a0d1d4c80",
           "candidate": "flame",
@@ -4618,251 +4401,193 @@
             "triangles": 7800
           },
           "after": {
-            "vertices": 2955,
+            "vertices": 2956,
             "triangles": 5850
           },
           "triangleTarget": 5850,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.429763798321901e-05,
-              "rmsMetres": 5.476888215939013e-05,
-              "maximumMetres": 0.0003959119494538754
+              "meanMetres": 1.97095432667993e-05,
+              "rmsMetres": 4.1279974539065734e-05,
+              "maximumMetres": 0.00041170688928104937
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 2.697509896265172e-07,
-              "rmsMetres": 3.170654286412567e-06,
-              "maximumMetres": 6.19192433077842e-05
+              "meanMetres": 1.1023677870980464e-05,
+              "rmsMetres": 3.1127936381381005e-05,
+              "maximumMetres": 0.0002387954154983163
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 8929,
-          "retainedAfterOutlierFilter": 8659,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000453,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 4.6e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 4.7e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.00341,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 5850,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.019706,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6e-05,
+            "before": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 11731,
+            "faces_number": 7800,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3931
+          },
+          "after": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 8806,
+            "faces_number": 5850,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 2956
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415704,
-              0.1391731009600655,
-              -1.4213746654286997e-18,
-              -0.004533821040827655
-            ],
-            [
-              -0.13917310096006544,
-              0.9902680687415701,
-              4.912208832594478e-17,
-              0.003666669711025042
-            ],
-            [
-              1.0303325527271062e-17,
-              -4.8223085029595753e-17,
-              1.0,
-              -0.003999999999999999
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 5,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0028139984838259193,
-              "transformation": [
-                [
-                  0.9969004465766389,
-                  0.07822010123098126,
-                  -0.008432993460978346,
-                  -0.006481212022265377
-                ],
-                [
-                  -0.07826623837946034,
-                  0.9969184746658605,
-                  -0.005286851598423177,
-                  0.0022495861129992467
-                ],
-                [
-                  0.007993468910763872,
-                  0.005930483395921844,
-                  0.9999504656839076,
-                  -0.003087050986487544
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0007356294708783622,
-              "transformation": [
-                [
-                  0.9915516072104257,
-                  0.12970942422390058,
-                  -0.0009356847363307517,
-                  -0.005034451173069391
-                ],
-                [
-                  -0.12971020524952523,
-                  0.9915516002953089,
-                  -0.0008286168825350172,
-                  0.0035680980352474118
-                ],
-                [
-                  0.0008203002789448327,
-                  0.0009429842608375989,
-                  0.9999992189437631,
-                  -0.003946744827036055
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.528735621751905e-06,
-              "transformation": [
-                [
-                  0.9902705747942384,
-                  0.13915526828559685,
-                  2.247694539716413e-06,
-                  -0.0045346156825506
-                ],
-                [
-                  -0.13915526828016167,
-                  0.990270574794603,
-                  -2.4171352629560015e-06,
-                  0.0036684708355278718
-                ],
-                [
-                  -2.562182869804823e-06,
-                  2.0808393895169934e-06,
-                  0.9999999999945527,
-                  -0.004000973914384892
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 1.3207101522294701e-11,
-              "transformation": [
-                [
-                  0.9902680687406068,
-                  0.13917310096692123,
-                  3.561254301148855e-11,
-                  -0.0045338210403100395
-                ],
-                [
-                  -0.13917310096692118,
-                  0.9902680687406066,
-                  6.434333245084305e-11,
-                  0.0036666697184751054
-                ],
-                [
-                  -2.6311101027888982e-11,
-                  -6.867345538352448e-11,
-                  1.0,
-                  -0.004000000006235281
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 4,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.9509278638320886e-17,
-              "transformation": [
-                [
-                  0.9902680687415704,
-                  0.1391731009600655,
-                  -1.4213746654286997e-18,
-                  -0.004533821040827655
-                ],
-                [
-                  -0.13917310096006544,
-                  0.9902680687415701,
-                  4.912208832594478e-17,
-                  0.003666669711025042
-                ],
-                [
-                  1.0303325527271062e-17,
-                  -4.8223085029595753e-17,
-                  1.0,
-                  -0.003999999999999999
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 3931,
+            "nativeResult": {
+              "RMS": 4.1279974539065734e-05,
+              "diag_mesh_0": 0.4300636947154999,
+              "diag_mesh_1": 0.4300637074384193,
+              "max": 0.00041170688928104937,
+              "mean": 1.97095432667993e-05,
+              "min": 0.0,
+              "n_samples": 3931
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 2.9509278638320886e-17,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 3.555125210177728e-17,
-          "recoveredPointRmsErrorMetres": 1.981244061241065e-17
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 2956,
+            "nativeResult": {
+              "RMS": 3.1127936381381005e-05,
+              "diag_mesh_0": 0.4300636947154999,
+              "diag_mesh_1": 0.4300637074384193,
+              "max": 0.0002387954154983163,
+              "mean": 1.1023677870980464e-05,
+              "min": 0.0,
+              "n_samples": 2956
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 2956,
+            "triangles": 5850
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -4944,26 +4669,26 @@
             "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
             "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
           },
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "d373af2d2c77a25c7453951c60ee415c2cd4a7882190c59c73e0dd491d43f07f",
-          "bytes": 199788,
-          "vertices": 4111,
+          "sha256": "53c83a5bb3565a6f6b904652a07737c87f0951c3d0ea5ae05e9518da32d69af8",
+          "bytes": 199960,
+          "vertices": 4112,
           "triangles": 8026,
           "boundsMetres": [
             {
@@ -5019,9 +4744,9 @@
               "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
               "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
             },
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -5399,7 +5124,7 @@
     {
       "fictionalCase": "maya-costa",
       "upstream": "flame",
-      "jobId": "7c62e24e-341d-4c3a-8ed0-8a4d29ab0846",
+      "jobId": "ae111857-80e1-460c-8901-8cd2d50485d7",
       "sameSixOriginalInputSha256": {
         "back": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
         "front": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
@@ -5411,9 +5136,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "76fe571e-185e-4150-bba5-d9a7ce8e9318",
           "candidate": "flame",
@@ -5432,251 +5158,193 @@
             "triangles": 7800
           },
           "after": {
-            "vertices": 2955,
-            "triangles": 5849
+            "vertices": 2956,
+            "triangles": 5850
           },
           "triangleTarget": 5850,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.3327531460965804e-05,
-              "rmsMetres": 5.315445911617646e-05,
-              "maximumMetres": 0.0007084545213729143
+              "meanMetres": 1.8882295989897102e-05,
+              "rmsMetres": 3.953314444515854e-05,
+              "maximumMetres": 0.00047050073044374585
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 2.7008340045266165e-07,
-              "rmsMetres": 2.82008873740369e-06,
-              "maximumMetres": 5.0512033340055496e-05
+              "meanMetres": 1.0106559784617275e-05,
+              "rmsMetres": 2.839835906343069e-05,
+              "maximumMetres": 0.00021612003911286592
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 8875,
-          "retainedAfterOutlierFilter": 8626,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000557,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 5.5e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 5.5e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.004204,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 5850,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.024557,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 6.9e-05,
+            "before": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 11731,
+            "faces_number": 7800,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3931
+          },
+          "after": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 8806,
+            "faces_number": 5850,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 2956
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415704,
-              0.13917310096006552,
-              8.657924683084599e-18,
-              -0.0045338210408276515
-            ],
-            [
-              -0.13917310096006547,
-              0.9902680687415704,
-              3.152167141594839e-17,
-              0.0036666697110250496
-            ],
-            [
-              -6.537004665768362e-18,
-              -3.31021790067114e-17,
-              0.9999999999999999,
-              -0.0040000000000000105
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 5,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0026981705076960347,
-              "transformation": [
-                [
-                  0.9967566529724736,
-                  0.08020478761599063,
-                  -0.006585347263857759,
-                  -0.006508115953041386
-                ],
-                [
-                  -0.0802340650157831,
-                  0.9967667384561925,
-                  -0.004308586595111489,
-                  0.0022142165454888435
-                ],
-                [
-                  0.006218485841010887,
-                  0.0048229815341052674,
-                  0.9999690341620419,
-                  -0.0032560089391055263
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0007127404383412769,
-              "transformation": [
-                [
-                  0.9915426329147408,
-                  0.1297786356363942,
-                  -0.0008443014033175332,
-                  -0.005019746369934741
-                ],
-                [
-                  -0.12977931277835253,
-                  0.9915425780566177,
-                  -0.0008036638692572613,
-                  0.003572468620598774
-                ],
-                [
-                  0.000732862389639812,
-                  0.0009064398448021403,
-                  0.9999993206395319,
-                  -0.003944270817304219
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.3198016303394054e-06,
-              "transformation": [
-                [
-                  0.9902724079285812,
-                  0.13914222253770772,
-                  -1.6114637153087185e-06,
-                  -0.004534769374330047
-                ],
-                [
-                  -0.1391422225439173,
-                  0.9902724079175316,
-                  -4.769992008266826e-06,
-                  0.003668862843738734
-                ],
-                [
-                  9.320807641107962e-07,
-                  4.9478141147227305e-06,
-                  0.999999999987325,
-                  -0.004000581903167183
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.000558594882569e-11,
-              "transformation": [
-                [
-                  0.9902680687437226,
-                  0.13917310094475097,
-                  1.086028131565472e-10,
-                  -0.0045338210384530874
-                ],
-                [
-                  -0.1391731009447509,
-                  0.9902680687437226,
-                  -6.981351725155816e-12,
-                  0.0036666697364410228
-                ],
-                [
-                  -1.0851751676335235e-10,
-                  -8.20118127055347e-12,
-                  0.9999999999999999,
-                  -0.004000000008926558
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 4,
-              "fitness": 1.0,
-              "inlierRmseMetres": 2.945542669931519e-17,
-              "transformation": [
-                [
-                  0.9902680687415704,
-                  0.13917310096006552,
-                  8.657924683084599e-18,
-                  -0.0045338210408276515
-                ],
-                [
-                  -0.13917310096006547,
-                  0.9902680687415704,
-                  3.152167141594839e-17,
-                  0.0036666697110250496
-                ],
-                [
-                  -6.537004665768362e-18,
-                  -3.31021790067114e-17,
-                  0.9999999999999999,
-                  -0.0040000000000000105
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 3931,
+            "nativeResult": {
+              "RMS": 3.953314444515854e-05,
+              "diag_mesh_0": 0.4261334538459778,
+              "diag_mesh_1": 0.42613344813215853,
+              "max": 0.00047050073044374585,
+              "mean": 1.8882295989897102e-05,
+              "min": 0.0,
+              "n_samples": 3931
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 2.945542669931519e-17,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 4.163336342344337e-17,
-          "recoveredPointRmsErrorMetres": 2.4688556668916012e-17
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 2956,
+            "nativeResult": {
+              "RMS": 2.839835906343069e-05,
+              "diag_mesh_0": 0.4261334538459778,
+              "diag_mesh_1": 0.42613344813215853,
+              "max": 0.00021612003911286592,
+              "mean": 1.0106559784617275e-05,
+              "min": 0.0,
+              "n_samples": 2956
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 2956,
+            "triangles": 5850
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -5758,27 +5426,27 @@
             "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
             "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
           },
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "5b99b1d4b56f95e256512b58c20614c4fef2535959e5c947cc7517ec70df555e",
-          "bytes": 199796,
-          "vertices": 4111,
-          "triangles": 8025,
+          "sha256": "7b1c56f3196bea879db700ecef44db082ba84d7648d3bc524f3f43c081a45209",
+          "bytes": 199980,
+          "vertices": 4112,
+          "triangles": 8026,
           "boundsMetres": [
             {
               "min": [
@@ -5833,9 +5501,9 @@
               "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
               "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
             },
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }
@@ -6213,7 +5881,7 @@
     {
       "fictionalCase": "noah-kim",
       "upstream": "flame",
-      "jobId": "3d436563-e2b5-466e-a79e-b343c138f96e",
+      "jobId": "7a50976d-5ba3-45ea-b825-e8a835d82e09",
       "sameSixOriginalInputSha256": {
         "back": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
         "front": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
@@ -6225,9 +5893,10 @@
       "allSixSameAsParent": true,
       "stylesExactlySameAsParent": true,
       "actualNativeComponent": {
-        "candidate": "open3d",
-        "version": "0.20.0",
-        "processingVersion": "open3d-cpu-upstream-v5",
+        "candidate": "meshlab",
+        "version": "2025.7.post1",
+        "engineVersion": "MeshLab 2025.07d",
+        "processingVersion": "meshlab-native-upstream-v1",
         "upstream": {
           "runId": "3bfb1d8d-82a8-4d24-a35c-f7d3bc60f4bd",
           "candidate": "flame",
@@ -6246,251 +5915,193 @@
             "triangles": 7800
           },
           "after": {
-            "vertices": 2955,
-            "triangles": 5849
+            "vertices": 2956,
+            "triangles": 5850
           },
           "triangleTarget": 5850,
           "preservesCoincidentNormalSeams": true,
           "deviation": {
             "upstreamVerticesToProcessedSurface": {
-              "meanMetres": 2.55787432678528e-05,
-              "rmsMetres": 5.766430864254129e-05,
-              "maximumMetres": 0.00047816935693845153
+              "meanMetres": 1.969392178580165e-05,
+              "rmsMetres": 3.986319279647432e-05,
+              "maximumMetres": 0.0002632846881169826
             },
             "processedVerticesToUpstreamSurface": {
-              "meanMetres": 2.6187072723412874e-07,
-              "rmsMetres": 3.005344830332086e-06,
-              "maximumMetres": 7.748383359285071e-05
+              "meanMetres": 1.1036016076104715e-05,
+              "rmsMetres": 3.1677293009124696e-05,
+              "maximumMetres": 0.0002683447382878512
             }
           }
         },
-        "pointProcessing": {
-          "sampled": 12000,
-          "voxelized": 8928,
-          "retainedAfterOutlierFilter": 8682,
-          "role": "Supporting diagnostic point cloud, not a new photo reconstruction. Anatomy removed by the outlier filter is not removed from the retained head."
+        "filters": [
+          {
+            "filter": "meshing_remove_duplicate_faces",
+            "parameters": {},
+            "seconds": 0.000483,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_null_faces",
+            "parameters": {},
+            "seconds": 4.9e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 4.8e-05,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_repair_non_manifold_edges",
+            "parameters": {
+              "method": "Split Vertices"
+            },
+            "seconds": 0.003803,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_decimation_quadric_edge_collapse",
+            "parameters": {
+              "targetfacenum": 5850,
+              "qualitythr": 0.3,
+              "preserveboundary": true,
+              "boundaryweight": 10.0,
+              "preservenormal": true,
+              "preservetopology": true,
+              "optimalplacement": true,
+              "autoclean": false
+            },
+            "seconds": 0.020733,
+            "before": {
+              "vertices": 3931,
+              "triangles": 7800
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          },
+          {
+            "filter": "meshing_remove_unreferenced_vertices",
+            "parameters": {},
+            "seconds": 5.5e-05,
+            "before": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "after": {
+              "vertices": 2956,
+              "triangles": 5850
+            },
+            "returned": {}
+          }
+        ],
+        "topology": {
+          "before": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 11731,
+            "faces_number": 7800,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 3931
+          },
+          "after": {
+            "boundary_edges": 62,
+            "connected_components_number": 1,
+            "edges_number": 8806,
+            "faces_number": 5850,
+            "genus": 0,
+            "incident_faces_on_non_two_manifold_edges": 0,
+            "incident_faces_on_non_two_manifold_vertices": 0,
+            "is_mesh_two_manifold": true,
+            "non_two_manifold_edges": 0,
+            "non_two_manifold_vertices": 0,
+            "number_holes": 2,
+            "unreferenced_vertices": 0,
+            "vertices_number": 2956
+          }
         },
-        "alignment": {
-          "input": "Same upstream mesh sampled once, copied and transformed by an explicitly known synthetic rigid transform. No independent measured scan used.",
-          "knownTransform": [
-            [
-              0.9902680687415704,
-              -0.13917310096006544,
-              0.0,
-              0.005
-            ],
-            [
-              0.13917310096006544,
-              0.9902680687415704,
-              0.0,
-              -0.003
-            ],
-            [
-              0.0,
-              0.0,
-              1.0,
-              0.004
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "recoveredTransform": [
-            [
-              0.9902680687415701,
-              0.13917310096006535,
-              -2.689354659868716e-17,
-              -0.0045338210408276585
-            ],
-            [
-              -0.13917310096006535,
-              0.9902680687415705,
-              -3.820886801214121e-17,
-              0.0036666697110250453
-            ],
-            [
-              2.2386055088740418e-17,
-              4.216046020300684e-17,
-              1.0,
-              -0.004000000000000016
-            ],
-            [
-              0.0,
-              0.0,
-              0.0,
-              1.0
-            ]
-          ],
-          "actualIterations": 5,
-          "iterations": [
-            {
-              "iteration": 0,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.002708453986214716,
-              "transformation": [
-                [
-                  0.9968673653740654,
-                  0.07874015928444346,
-                  -0.00744601692382715,
-                  -0.0065098779243750625
-                ],
-                [
-                  -0.07876288775365729,
-                  0.996889418802942,
-                  -0.0028096603775811468,
-                  0.002267515924275314
-                ],
-                [
-                  0.007201622377924988,
-                  0.00338732853337845,
-                  0.9999683308187979,
-                  -0.0034227611729013363
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 1,
-              "fitness": 1.0,
-              "inlierRmseMetres": 0.0007030911843167981,
-              "transformation": [
-                [
-                  0.9915271400671842,
-                  0.12989685921626298,
-                  -0.0008581817642219205,
-                  -0.005003829883539354
-                ],
-                [
-                  -0.12989739778087117,
-                  0.9915272565540729,
-                  -0.0006046156727779282,
-                  0.003574788302313375
-                ],
-                [
-                  0.0007723729333769153,
-                  0.0007109684268647208,
-                  0.999999448981822,
-                  -0.003982607193784847
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 2,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.638931746545506e-06,
-              "transformation": [
-                [
-                  0.9902734392674873,
-                  0.13913488223833387,
-                  -5.085935158722176e-06,
-                  -0.004535356849514065
-                ],
-                [
-                  -0.13913488227708512,
-                  0.9902734392404461,
-                  -8.284952594678815e-06,
-                  0.0036683299062085584
-                ],
-                [
-                  3.8837405977719684e-06,
-                  8.911999489678965e-06,
-                  0.9999999999527464,
-                  -0.004000959585524507
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 3,
-              "fitness": 1.0,
-              "inlierRmseMetres": 4.776983908121728e-11,
-              "transformation": [
-                [
-                  0.9902680687494352,
-                  0.1391731009041027,
-                  2.5946515400440315e-10,
-                  -0.00453382103834644
-                ],
-                [
-                  -0.1391731009041027,
-                  0.9902680687494355,
-                  -9.37531682401239e-11,
-                  0.003666669745962426
-                ],
-                [
-                  -2.699879750353959e-10,
-                  5.6730199373515046e-11,
-                  1.0,
-                  -0.004000000011126858
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
-            },
-            {
-              "iteration": 4,
-              "fitness": 1.0,
-              "inlierRmseMetres": 3.3844306187660926e-17,
-              "transformation": [
-                [
-                  0.9902680687415701,
-                  0.13917310096006535,
-                  -2.689354659868716e-17,
-                  -0.0045338210408276585
-                ],
-                [
-                  -0.13917310096006535,
-                  0.9902680687415705,
-                  -3.820886801214121e-17,
-                  0.0036666697110250453
-                ],
-                [
-                  2.2386055088740418e-17,
-                  4.216046020300684e-17,
-                  1.0,
-                  -0.004000000000000016
-                ],
-                [
-                  0.0,
-                  0.0,
-                  0.0,
-                  1.0
-                ]
-              ]
+        "measurements": [
+          {
+            "direction": "upstreamVerticesToProcessedSurface",
+            "requestedSamples": 3931,
+            "nativeResult": {
+              "RMS": 3.986319279647432e-05,
+              "diag_mesh_0": 0.4330754280090332,
+              "diag_mesh_1": 0.43307541460843374,
+              "max": 0.0002632846881169826,
+              "mean": 1.969392178580165e-05,
+              "min": 0.0,
+              "n_samples": 3931
             }
-          ],
-          "method": "Open3D CPU Tensor point-to-plane ICP with native iteration callback",
-          "fitness": 1.0,
-          "inlierRmseMetres": 3.3844306187660926e-17,
-          "maximumIterations": 80,
-          "recoveredPointMaximumErrorMetres": 4.163336342344337e-17,
-          "recoveredPointRmsErrorMetres": 2.676863845794865e-17
+          },
+          {
+            "direction": "processedVerticesToUpstreamSurface",
+            "requestedSamples": 2956,
+            "nativeResult": {
+              "RMS": 3.1677293009124696e-05,
+              "diag_mesh_0": 0.4330754280090332,
+              "diag_mesh_1": 0.43307541460843374,
+              "max": 0.0002683447382878512,
+              "mean": 1.1036016076104715e-05,
+              "min": 0.0,
+              "n_samples": 2956
+            }
+          }
+        ],
+        "conversion": {
+          "nativeWriter": "PyMeshLab PLY",
+          "nativeReader": "PyMeshLab PLY",
+          "reopenedCounts": {
+            "vertices": 2956,
+            "triangles": 5850
+          },
+          "maximumCoordinateErrorMetres": 0.0,
+          "fullLicenseProvenanceEmbedded": true
         },
         "styleCompatibility": {
-          "method": "Copy the same independent upstream fitted styles, preserving exact geometry, textures and license metadata. Decimation deviation is measured for clipping review; attachments are not relabeled as new client observations.",
+          "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
           "styles": [
             {
               "path": "beard/chinstrap.glb",
@@ -6572,27 +6183,27 @@
             "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
             "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
           },
-          "component": "Open3D CPU 0.20.0 / MIT",
-          "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-          "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+          "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+          "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+          "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
           "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
           "professionalReview": "pending"
         },
         "limitations": [
-          "Open3D is a supporting geometry processor requiring the identified native fitting route.",
-          "No independent scan or observed head geometry is available in this six-photo synthetic arm. Mesh agreement and transform recovery do not establish real-client likeness.",
-          "Quadric decimation may erase fine facial detail or alter style clipping; professional inspection and future direct editing remain pending.",
-          "The sampled/filtered cloud is a diagnostic output only. Hidden surfaces inherit upstream template inference.",
-          "Full refinement and expected-result journey remain pending common workflow tasks."
+          "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+          "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+          "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+          "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+          "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
         ]
       },
       "glbChecks": [
         {
           "path": "head.glb",
-          "sha256": "52f9f2fe7f1bd06eae37f91041455c833441eefb21a897a69bca55979b31071f",
-          "bytes": 199752,
-          "vertices": 4111,
-          "triangles": 8025,
+          "sha256": "c3c8920b2cb9bc3f603ccb9f57b249a0c4d936ba79dd966cdef585a872f9cdc3",
+          "bytes": 199936,
+          "vertices": 4112,
+          "triangles": 8026,
           "boundsMetres": [
             {
               "min": [
@@ -6647,9 +6258,9 @@
               "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export.",
               "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence."
             },
-            "component": "Open3D CPU 0.20.0 / MIT",
-            "componentLicenseUrl": "https://github.com/isl-org/Open3D/blob/v0.20.0/LICENSE",
-            "componentModifications": "Native mesh cleanup, bounded quadric decimation and normals; original eye geometry/materials and adapted shared style meshes retained.",
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
             "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
             "professionalReview": "pending"
           }

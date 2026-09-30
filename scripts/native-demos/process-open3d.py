@@ -45,7 +45,7 @@ def main(directory):
     assert o3d.__version__ == '0.20.0' and not o3d._build_config['BUILD_CUDA_MODULE']
     o3d.utility.set_max_threads(4); o3d.utility.random.seed(419)
     manifest = json.loads((directory / 'manifest.json').read_text()); source = manifest['upstream']; settings = manifest['component']
-    assert source['runId'] == settings['sourceRunId'] and source['candidate'] in ['blender-mpfb', 'makehuman', 'flame', 'open3d']
+    assert source['runId'] == settings['sourceRunId'] and source['candidate'] in ['blender-mpfb', 'makehuman', 'flame', 'open3d', 'meshlab']
     upstream = directory / source['path']
     assert upstream.resolve().is_relative_to(directory)
     for relative, digest in source['sha256'].items():

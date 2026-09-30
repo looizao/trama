@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T06:35:44-03:00",
+  "updated": "2026-09-30T07:09:23-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2013,8 +2013,9 @@ window.executionLog={
       "id": "13a",
       "title": "MeshLab / PyMeshLab component processing experiment",
       "depends": [
-        "07a",
-        "08a"
+        "07b",
+        "10a",
+        "11a"
       ],
       "requirement": "Clean, repair, simplify and export shared meshes with named upstream route. Retain actual processing success or failure; the full candidate journey remains in task 13.",
       "criteria": [
@@ -2023,17 +2024,148 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "verified",
+      "changes": [
+        "Acquired official PyMeshLab 2025.7.post1 cp312 Linux wheel (SHA-256 bc453d89b114671affc747991a939b257d2320b71885b31213190c64081f5c35), running MeshLab 2025.07d. Retained pinned PyMeshLab, MeshLab, VCGlib and pybind11 primary license notices separately; all model/style rights remain upstream dependencies. Native cleanup/repair/decimation/measurement/PLY filters load without a desktop service.",
+        "Added the identified upstream component route to the same cancellable, private six-input processing pipeline. Actual filters preserve boundary/topology/normals, split non-manifold edges without deleting faces, record bidirectional sampled vertex distances and reopen native PLY exports. No hole filling, native photo reconstruction or fallback head is claimed.",
+        "All nine fitted inputs are already two-manifold at the edge level. Cleanup/edge repair therefore does not invent an improvement; native before/after topology remains visible. A declared artificial edge fixture separately verifies duplicate/null face cleanup and edge splitting, preserving all nondegenerate triangle coordinates.",
+        "All 48 native hairstyle/beard selections across the three upstreams load in the browser. Hair-only, beard-only, clean-shaven and keep-current resolve independently. Browser-started run 517c219f-56f4-48de-a3e0-42c17c44d245 uses MakeHuman e979cacf-a165-47b9-91f0-a4b53881ab0d, triangle fraction 0.85 and 3000 distance samples per direction; native output has 8174 triangles. Actual PLY download reopens in PyMeshLab with complete provenance. Saved long-hair/moustache exploration, synchronized left three-quarter angle and 1.20 m zoom survive reload. This is a reversible technical fixture, not a client expected-result or final route selection."
+      ],
+      "limitations": [
+        "Default six-stage processing takes 2.805 to 3.485 seconds for these nine fitted cases and retains 115.0 to 181.8 MiB privately. Native vertex-to-surface maxima are 0.2246 to 0.4705 mm; these are not real-client errors. Point sampling may miss unmeasured surface regions. Full refinement, expected selection and professional acceptance remain pending.",
+        "Only native milestone 13a is verified. Full candidate 13 written refinements, direct editing, expected-result selection and revision history remain pending 16 and 17. Professional acceptance and final choice remain pending. No measured scan, real-client likeness, successful six-photo MeshLab reconstruction or repaired hidden coverage is claimed."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS internal/app 0.794 s, including MeshLab as a transitive dependent route in the security fixture."
+        },
+        {
+          "command": "verify-components-assets.py --candidate meshlab (first run)",
+          "result": "Verification-script assertion expected seven filter stages although the actual planned workflow has six. Corrected to require the actual cleanup, repair and decimation filter identities plus measured conversion outcomes. Native outputs were already completed; the separate injected non-manifold repair fixture passed before this assertion."
+        },
+        {
+          "command": "python scripts/native-demos/verify-components.py --candidate meshlab",
+          "result": "PASS 20 actual artifacts, real upstream fit and MeshLab native child, corrupt upstream failure without fallback, private/anonymous/cross-client denial, persistent state, running child killed during upstream removal, transitive purging and no recreation. Source photos and permission remain until withdrawal."
+        },
+        {
+          "command": "verify-components-assets.py --candidate meshlab",
+          "result": "PASS 153 actual GLBs, 54 renders and nine native PLY writer/reader conversions. All source six-photo hashes match the named upstream, style bytes are unchanged, embedded FLAME license provenance survives when applicable, native filter identities and sampled distance counts are real."
+        },
+        {
+          "command": "@Browser native workflow",
+          "result": "PASS editable settings, actual running/completed job, 48 measured GLB style loads, six synchronized angles, keyboard zoom, actual converted PLY download, independent keep-current/hair-only/beard-only/clean-shaven choices and saved native state across reload. No browser console errors."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; go test -race ./internal/app; npm --prefix web run build",
+          "result": "PASS latest internal/app 0.901 s, race 5.462 s and build 1.65 s. Existing large demo chunk warning retained."
+        },
+        {
+          "command": "verify-components-assets.py (Open3D regression after generalizing verifier)",
+          "result": "PASS original nine Open3D outputs, 153 GLBs, 54 renders, 27 native PLY files, actual ICP counts and same-input/source provenance."
+        },
+        {
+          "command": "setup-meshlab.py cached repeat",
+          "result": "PASS 0.888 wall s, 0.500 CPU s, 131576 KiB peak child RSS. Initial total acquisition time was not measured; this is explicitly a cached repeat."
+        },
+        {
+          "command": "@Browser direct file:// log check",
+          "result": "Blocked by the in-app browser URL policy, which permits only HTTP and HTTPS. No bypass attempted. Existing loopback-served log remains available; filesystem relative-link/image checks are separate from direct file-protocol browser verification."
+        },
+        {
+          "command": "populate-components.py meshlab --upstream makehuman --attempt initial (repeat)",
+          "result": "PASS reused all three native job and option IDs without regeneration or extra options."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/meshlab-three-upstream-comparison.png",
+          "caption": "2026-09-30: actual MeshLab simplification of the MPFB, MakeHuman and FLAME fitted heads. Original above and native processed result below, using identical CPU cameras and lighting. Same synthetic six-photo inputs; no observed scan or real likeness proof.",
+          "date": "2026-09-30T06:59:52-03:00"
+        },
+        {
+          "src": "assets/meshlab-browser-settings.png",
+          "caption": "2026-09-30: explicit native MakeHuman dependency and editable triangle fraction and distance-sample settings before actual MeshLab processing.",
+          "date": "2026-09-30T07:07:56-03:00"
+        },
+        {
+          "src": "assets/meshlab-browser-native-result.png",
+          "caption": "2026-09-30: completed real MeshLab experiment with native measurements, filter changes and conversion evidence. Historical missing photo reconstruction remains distinct.",
+          "date": "2026-09-30T07:07:56-03:00"
+        },
+        {
+          "src": "assets/meshlab-browser-current-proposed.png",
+          "caption": "2026-09-30: saved current/proposed comparison using the same real processed head with independently selected long hair and moustache. Synthetic example; coarse beard borders and long hair below the cut-off bust remain catalog limitations.",
+          "date": "2026-09-30T07:07:56-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/meshlab-provenance.json",
+          "label": "Exact software wheel, source pins, GPL/BSD notices and native library hashes"
+        },
+        {
+          "href": "assets/meshlab-native-filter-fixture.json",
+          "label": "Actual native cleanup and non-manifold edge splitting on a declared artificial topology diagnostic"
+        },
+        {
+          "href": "assets/meshlab-makehuman-populated-results.json",
+          "label": "Three real supporting workflows using standalone MakeHuman"
+        },
+        {
+          "href": "assets/meshlab-blender-mpfb-populated-results.json",
+          "label": "Three real supporting workflows using MPFB"
+        },
+        {
+          "href": "assets/meshlab-flame-populated-results.json",
+          "label": "Three real supporting workflows using accepted FLAME Open"
+        },
+        {
+          "href": "assets/meshlab-live-verification.json",
+          "label": "Actual geometry, private access, corrupted upstream and transitive live cancellation checks"
+        },
+        {
+          "href": "assets/meshlab-output-verification.json",
+          "label": "Actual native MeshLab filter, GLB, render, PLY, source and license checks"
+        },
+        {
+          "href": "assets/meshlab-cached-setup-resources.json",
+          "label": "Actual cached setup resource measurement and initial timing limitation"
+        },
+        {
+          "href": "assets/meshlab-browser-style-checks.json",
+          "label": "48 real browser style loads across three fitted upstreams"
+        },
+        {
+          "href": "assets/meshlab-browser-camera-checks.json",
+          "label": "Six synchronized actual camera states"
+        },
+        {
+          "href": "assets/meshlab-browser-choice-checks.json",
+          "label": "Independent keep-current, clean-shaven, hair-only and beard-only behavior"
+        },
+        {
+          "href": "assets/meshlab-browser-download-verification.json",
+          "label": "Actual browser native PLY download and PyMeshLab reopen"
+        },
+        {
+          "href": "assets/meshlab-browser-reopen-verification.json",
+          "label": "Native head, styles and camera preserved across browser reload"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 13."
+        },
+        {
+          "date": "2026-09-30T06:35:44-03:00",
+          "text": "Begin native MeshLab/PyMeshLab supporting processing. Read the approved candidate decision, current processing architecture and exact primary software license terms before acquisition or implementation."
+        },
+        {
+          "date": "2026-09-30T07:07:56-03:00",
+          "text": "Native audit clarified edge-repair behavior on already manifold inputs: the MeshLab splitting routine allocates temporary unused vertices even when there is no non-manifold edge. Final cleanup removes them; final topology and connected components are unchanged. The full intermediate counts remain visible rather than being hidden as a no-op. Earlier statement about unchanged repair refers to final surface topology, not every intermediate allocation."
         }
       ]
     },

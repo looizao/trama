@@ -94,6 +94,7 @@ func TestComponentSourceOwnershipSnapshotAndErasure(t *testing.T) {
 	}
 	settings.SourceRunID = child.ID
 	payload["component"] = settings
+	payload["candidate"] = "meshlab"
 	w = f.request(t, "POST", base+"/demo-jobs", payload)
 	if w.Code != 202 {
 		t.Fatal(w.Code, w.Body.String())

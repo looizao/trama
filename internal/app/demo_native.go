@@ -134,7 +134,7 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 		manifestInputs = append(manifestInputs, map[string]string{"view": input.View, "assetId": input.ID, "path": relative})
 	}
 	var upstream map[string]any
-	if err == nil && candidate == "open3d" {
+	if err == nil && componentCandidate(candidate) {
 		upstream, err = a.copyComponentSource(ctx, client, id, dir)
 	}
 	if err == nil {
@@ -416,7 +416,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json"}
+	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string
@@ -438,8 +438,8 @@ func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bo
 }
 func nativeGeometry(state DemoWorkspaceState) string {
 	if state.ModelRunID != "" {
-		if state.Candidate == "open3d" {
-			return "Open3D processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending"
+		if componentCandidate(state.Candidate) {
+			return fmt.Sprintf("%s processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending", state.Candidate)
 		}
 		return fmt.Sprintf("%s fitted head; hidden surfaces inferred; professional likeness review pending", state.Candidate)
 	}

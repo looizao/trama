@@ -10,7 +10,7 @@ import time
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from local_demo_http import LocalDemoAPI
 os.umask(0o077)
-p=argparse.ArgumentParser();p.add_argument('candidate',choices=['open3d']);p.add_argument('--attempt',default='initial');p.add_argument('--upstream',choices=['blender-mpfb','makehuman','flame'],default='makehuman');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('candidate',choices=['open3d','meshlab']);p.add_argument('--attempt',default='initial');p.add_argument('--upstream',choices=['blender-mpfb','makehuman','flame'],default='makehuman');args=p.parse_args()
 versions={'blender-mpfb':'mpfb-metre-z-up-v2','makehuman':'makehuman-metre-z-up-v2','flame':'flame-2023-open-neutral-rig-v4'}
 api=LocalDemoAPI();check=api.expect;runtime=ROOT/'.scratch/private/runtime'
 imports=json.loads((runtime/'demo-asset-imports.json').read_text());native=json.loads((runtime/'native-demo-imports.json').read_text());profiles=json.loads((ROOT/'scripts/demo-assets/cases.json').read_text())
@@ -23,7 +23,8 @@ for profile in profiles:
  jobs=check(200,api.request(base+'/demo-jobs'),'existing native experiments')
  source_id=native[profile['id']][args.upstream+':'+versions[args.upstream]]['jobId'];parent=next((j for j in jobs if j['id']==source_id),None)
  assert parent and parent['status']=='completed' and parent['result'].get('head'),'Known upstream removed or failed; never recreate it'
- key=args.candidate+':'+args.upstream+':open3d-cpu-upstream-v5:'+args.attempt;entry=known.setdefault(profile['id'],{}).setdefault(key,{})
+ component_version={'open3d':'open3d-cpu-upstream-v5','meshlab':'meshlab-native-upstream-v1'}[args.candidate]
+ key=args.candidate+':'+args.upstream+':'+component_version+':'+args.attempt;entry=known.setdefault(profile['id'],{}).setdefault(key,{})
  if entry.get('jobId'):
   job=next((j for j in jobs if j['id']==entry['jobId']),None)
   assert job and job['status']!='cancelled','Known component output removed; never recreate it'

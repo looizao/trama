@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-30T07:02:16-0300",
+  "scope": "Measured cached setup repeat. Initial wheel acquisition and source clones were retained but total initial wall time was not measured; do not substitute this cached duration. Official installer reported 1.81 s wheel preparation and 9 ms installation, excluding acquisition and source inspection.",
+  "wallSeconds": 0.888,
+  "cpuSeconds": 0.5,
+  "peakChildRssKiB": 131576,
+  "exitCode": 0,
+  "output": "Verified official PyMeshLab 2025.7.post1 wheel, pinned MeshLab/VCGlib/pybind11 sources and separate GPL/BSD notices.\nUsing Python 3.12.14 environment at: .scratch/private/native-demos/python\nAudited 77 packages in 4ms\n"
+}

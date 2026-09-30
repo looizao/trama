@@ -30,6 +30,9 @@ func (s ComponentDemoSettings) validate() string {
 	return ""
 }
 func nativeModelKind(kind string) bool { return kind == "fit" || kind == "process" }
+func componentCandidate(candidate string) bool {
+	return candidate == "open3d" || candidate == "meshlab"
+}
 
 // A copied model remains dependent on every upstream experiment. This check
 // runs under the media lock when queuing, publishing and serving artifacts.

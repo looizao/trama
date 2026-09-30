@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-30T10:05:42.757644+00:00",
+  "jobId": "517c219f-56f4-48de-a3e0-42c17c44d245",
+  "downloadName": "processed-skin (1).ply",
+  "sha256": "32fc8b5ca0989868b94c41f718f544b0cb798eee113b440210e24ea7296401e0",
+  "bytes": 361195,
+  "nativeReaderTriangles": 8174,
+  "nativeReaderVertices": 4227,
+  "completeProvenance": {
+    "upstreamCandidate": "makehuman",
+    "upstreamRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+    "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+    "upstreamProvenance": {},
+    "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+    "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+    "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+    "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+    "professionalReview": "pending"
+  }
+}

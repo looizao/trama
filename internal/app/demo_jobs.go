@@ -397,7 +397,7 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if in.Kind == "fit" || in.Kind == "reconstruct" || in.Kind == "process" {
-		if !((in.Candidate == "blender-mpfb" || in.Candidate == "makehuman" || in.Candidate == "flame") && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct" || in.Candidate == "open3d" && in.Kind == "process") {
+		if !((in.Candidate == "blender-mpfb" || in.Candidate == "makehuman" || in.Candidate == "flame") && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct" || componentCandidate(in.Candidate) && in.Kind == "process") {
 			problem(w, 400, "native route is not configured yet")
 			return
 		}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-30T10:06:31.860Z",
+  "canvases": [
+    {
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/beard/stubble",
+      "azimuth": "0.785398",
+      "distance": "1.200000"
+    },
+    {
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/hair/long01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/beard/moustache",
+      "azimuth": "0.785398",
+      "distance": "1.200000"
+    }
+  ],
+  "savedOption": "Alex / verified MeshLab with MakeHuman, long hair and moustache / synthetic exploration\n\nmeshlab processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending · Sep 30, 2026\n\nlong01 + moustache\nReopen option",
+  "consoleErrors": []
+}

@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-30T09:57:02.854699+00:00",
+  "scope": "Artificial native filter diagnostic only, not client geometry or a fitted-head substitute. Three faces share one edge, with one duplicate face, one zero-area face and one unreferenced vertex injected.",
+  "nativeFilters": [
+    {
+      "filter": "meshing_remove_duplicate_faces",
+      "before": {
+        "vertices": 6,
+        "triangles": 5
+      },
+      "after": {
+        "vertices": 6,
+        "triangles": 4
+      }
+    },
+    {
+      "filter": "meshing_remove_null_faces",
+      "before": {
+        "vertices": 6,
+        "triangles": 4
+      },
+      "after": {
+        "vertices": 6,
+        "triangles": 3
+      }
+    },
+    {
+      "filter": "meshing_remove_unreferenced_vertices",
+      "before": {
+        "vertices": 6,
+        "triangles": 3
+      },
+      "after": {
+        "vertices": 5,
+        "triangles": 3
+      }
+    }
+  ],
+  "beforeRepair": {
+    "boundary_edges": 6,
+    "connected_components_number": 1,
+    "edges_number": 7,
+    "faces_number": 3,
+    "genus": -1,
+    "incident_faces_on_non_two_manifold_edges": 3,
+    "incident_faces_on_non_two_manifold_vertices": 0,
+    "is_mesh_two_manifold": false,
+    "non_two_manifold_edges": 1,
+    "non_two_manifold_vertices": 0,
+    "number_holes": -1,
+    "unreferenced_vertices": 0,
+    "vertices_number": 5
+  },
+  "afterRepair": {
+    "boundary_edges": 9,
+    "connected_components_number": 3,
+    "edges_number": 9,
+    "faces_number": 3,
+    "genus": 0,
+    "incident_faces_on_non_two_manifold_edges": 0,
+    "incident_faces_on_non_two_manifold_vertices": 0,
+    "is_mesh_two_manifold": true,
+    "non_two_manifold_edges": 0,
+    "non_two_manifold_vertices": 0,
+    "number_holes": 3,
+    "unreferenced_vertices": 3,
+    "vertices_number": 12
+  },
+  "allNondegenerateFaceCoordinatesPreserved": true,
+  "nonManifoldEdgesSplitWithoutFaceDeletion": true
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-30T10:05:12.740Z",
+  "checks": [
+    {
+      "choice": "keep-current hair and beard",
+      "actualKeys": [
+        "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/beard/stubble",
+        "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/beard/stubble"
+      ]
+    },
+    {
+      "choice": "beard-only",
+      "actualKey": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/beard/chinstrap"
+    },
+    {
+      "choice": "hair-only and clean-shaven",
+      "actualKey": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/517c219f-56f4-48de-a3e0-42c17c44d245/artifacts/hair/short02"
+    }
+  ]
+}

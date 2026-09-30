@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30T06:53:29-0300",
+  "candidate": "meshlab",
+  "upstreamRoute": "standalone MakeHuman",
+  "scope": "Actual local upstream fitting, native meshlab processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.",
+  "actualArtifactsRead": 20,
+  "actualBytesRead": 67219457,
+  "processedStateReopened": true,
+  "actualCorruptUpstreamFailure": {
+    "elapsedMs": 188,
+    "error": "meshlab failed with exit 1; retained diagnostic log",
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/132cde7a-7dee-4d4c-8e02-fb2fa49fdc5b/10b82362-1f34-409f-842d-6d59347aaf07"
+        ],
+        "cpuSeconds": 0.461,
+        "exitCode": 1,
+        "peakRssKiB": 146732,
+        "seconds": 0.188,
+        "stage": "meshlab"
+      }
+    ]
+  },
+  "anonymousAndCrossClientDenied": true,
+  "privateUpstreamPathDenied": true,
+  "parentRemovalPurgedCompletedAndRunningChildren": true,
+  "removedExperiments": 4,
+  "sameSixSourcePhotosPreservedUntilWithdrawal": true,
+  "permissionPreservedOnExperimentRemoval": true,
+  "dependentWorkspaceAndOptionsRemoved": true,
+  "deletedParentReprocessingDenied": true,
+  "deletedDirectoriesDidNotReappear": true,
+  "withdrawalDeniedDiagnostics": true
+}

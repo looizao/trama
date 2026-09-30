@@ -76,8 +76,11 @@ export type DemoJob = {
     component?: {
  version: string; processingVersion: string; upstream: { runId: string; candidate: string; headSha256: string }; settings: ComponentSettings;
  mesh: { before: { vertices: number; triangles: number }; after: { vertices: number; triangles: number }; triangleTarget: number; deviation: { upstreamVerticesToProcessedSurface: { meanMetres: number; maximumMetres: number }; processedVerticesToUpstreamSurface: { meanMetres: number; maximumMetres: number } } };
- pointProcessing: { sampled: number; voxelized: number; retainedAfterOutlierFilter: number; role: string };
- alignment: { input: string; fitness: number; inlierRmseMetres: number; maximumIterations: number; actualIterations?: number; iterations?: { iteration:number; fitness:number; inlierRmseMetres:number }[]; recoveredPointMaximumErrorMetres: number };
+ engineVersion?: string;
+ pointProcessing?: { sampled: number; voxelized: number; retainedAfterOutlierFilter: number; role: string };
+ alignment?: { input: string; fitness: number; inlierRmseMetres: number; maximumIterations: number; actualIterations?: number; iterations?: { iteration:number; fitness:number; inlierRmseMetres:number }[]; recoveredPointMaximumErrorMetres: number };
+ filters?: { filter: string; parameters: unknown; seconds: number; before: {vertices:number;triangles:number}; after: {vertices:number;triangles:number} }[];
+ topology?: unknown; measurements?: unknown; conversion?: unknown;
  provenance: { upstreamCandidate: string; upstreamProvenance: unknown }; limitations: string[]
  };
     diagnostics?: string[]

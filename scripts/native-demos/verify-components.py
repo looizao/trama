@@ -2,18 +2,20 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Real local supporting-component flow and transitive cancellation verification."""
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import sys
 import time
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from local_demo_http import LocalDemoAPI
+p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab'],default='open3d');candidate=p.parse_args().candidate
 api=LocalDemoAPI();check=api.expect
 cid='a0b730e5-490f-488d-ae16-4f3812ee044f';base='/clients/'+cid
-summary=json.loads((ROOT/'.scratch/execution-log/assets/open3d-makehuman-populated-results.json').read_text())
+summary=json.loads((ROOT/f'.scratch/execution-log/assets/{candidate}-makehuman-populated-results.json').read_text())
 job_id=summary['results'][0]['jobId'];job=next(j for j in check(200,api.request(base+'/demo-jobs'),'retained actual processing') if j['id']==job_id)
 assert job['status']=='completed' and job['kind']=='process'
-paths=['head/model','evaluation/geometry','diagnostic/component','geometry/sampled-cloud','geometry/filtered-cloud','geometry/processed-skin']+[kind+'/'+x for kind in ['hair','beard'] for x in job['result'][kind]]
+paths=['head/model','evaluation/geometry','diagnostic/component','geometry/processed-skin']+(['geometry/sampled-cloud','geometry/filtered-cloud'] if candidate=='open3d' else [])+[kind+'/'+x for kind in ['hair','beard'] for x in job['result'][kind]]
 loaded=0
 for path in paths:
  artifact=check(200,api.request(base+'/demo-jobs/'+job_id+'/artifacts/'+path),'actual artifact '+path);loaded+=len(artifact)
@@ -25,7 +27,7 @@ previous=check(200,api.request(base+'/demo-workspace'),'previous workspace');opt
 saved=check(200,api.request(base+'/demo-workspace',{'state':option['state'],'version':previous['version']},'PUT'),'save processed state')
 assert check(200,api.request(base+'/demo-workspace'),'reopen processed state')['state']==saved['state']
 if previous['state']:check(200,api.request(base+'/demo-workspace',{'state':previous['state'],'version':saved['version']},'PUT'),'restore previous technical workspace')
-fixture=check(201,api.request('/clients',{'name':'Disposable synthetic Open3D privacy fixture','notes':'Fictional copied synthetic photo workflow; no real-person data.'}),'disposable fictional client');fid=fixture['id'];fb='/clients/'+fid
+fixture=check(201,api.request('/clients',{'name':'Disposable synthetic '+candidate+' privacy fixture','notes':'Fictional copied synthetic photo workflow; no real-person data.'}),'disposable fictional client');fid=fixture['id'];fb='/clients/'+fid
 fixture_runs=[]
 def poll(run,timeout=100):
  deadline=time.monotonic()+timeout
@@ -35,7 +37,7 @@ def poll(run,timeout=100):
   time.sleep(.15)
  raise RuntimeError('Actual job did not finish')
 def queue_component(parent,snapshot,settings=None):
- payload={'candidate':'open3d','kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'native':parent['settings']['native'],'component':{'sourceRunId':parent['id'],'triangleRatio':.75,'voxelSize':.003,'samplePoints':12000,**(settings or {})}}
+ payload={'candidate':candidate,'kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'native':parent['settings']['native'],'component':{'sourceRunId':parent['id'],'triangleRatio':.75,'voxelSize':.003,'samplePoints':12000,**(settings or {})}}
  result=check(202,api.request(fb+'/demo-jobs',payload),'queue real native dependent processing');fixture_runs.append(result['id']);return result
 try:
  link=check(201,api.request(fb+'/permission-link',{}),'fixture permission link')['path']
@@ -56,7 +58,7 @@ try:
  check(200,api.request(fb+'/demo-workspace',{'state':state,'version':0},'PUT'),'dependent current workspace')
  # Two public API security failures, without fabricating processing results.
  wrong={**state['component'],'sourceRunId':job['id']}
- check(400,api.request(fb+'/demo-jobs',{'candidate':'open3d','kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'component':wrong}),'cross-client upstream denied')
+ check(400,api.request(fb+'/demo-jobs',{'candidate':candidate,'kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'component':wrong}),'cross-client upstream denied')
  check(404,api.request(fb+'/demo-jobs/'+job_id+'/artifacts/head/model'),'cross-client native output denied')
  # Deliberately corrupt only the disposable fixture head to exercise real native failure.
  parent_head=ROOT/'.scratch/private/runtime/processing'/fid/parent['id']/'head.glb'
@@ -70,10 +72,10 @@ try:
  finally:parent_head.write_bytes(original_head)
  running=queue_component(parent,snapshot,{'samplePoints':50000});run_dir=ROOT/'.scratch/private/runtime/processing'/fid/running['id'];deadline=time.monotonic()+10
  while time.monotonic()<deadline:
-  native_log=run_dir/'open3d.log'
-  if native_log.exists() and 'OPEN3D_RENDER front' in native_log.read_text(errors='replace'):break
+  native_log=run_dir/(candidate+'.log')
+  if native_log.exists() and candidate.upper()+'_RENDER front' in native_log.read_text(errors='replace'):break
   time.sleep(.01)
- assert native_log.exists() and 'OPEN3D_RENDER front' in native_log.read_text(errors='replace'),'Open3D actual processing did not start'
+ assert native_log.exists() and candidate.upper()+'_RENDER front' in native_log.read_text(errors='replace'),'Actual native component processing did not start'
  # Removing only the parent output must remove completed AND live children,
  # saved options and copies, without withdrawing permission or deleting photos.
  response=check(200,api.request(fb+'/demo-jobs/'+parent['id']+'/cancel',method='POST'),'remove upstream output while child native process is running')
@@ -86,12 +88,12 @@ try:
   check(404,api.request(fb+'/demo-jobs/'+id+'/artifacts/head/model'),'dependent head denied '+id)
  assert api.request(fb+'/demo-options')[1]==[] and api.request(fb+'/demo-workspace')[1]['state'] is None
  assert api.request(fb+'/permission')[1]['status']=='active' and len(api.request(fb+'/assets')[1])==6
- denied={'candidate':'open3d','kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'component':child['settings']['component']}
+ denied={'candidate':candidate,'kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'component':child['settings']['component']}
  check(400,api.request(fb+'/demo-jobs',denied),'deleted upstream cannot recreate processing')
  check(200,api.request(fb+'/withdraw',{'confirmed':True}),'withdraw fictional fixture permission')
  check(403,api.request(fb+'/demo-jobs/'+child['id']+'/artifacts/diagnostic/component'),'withdrawal denies retained diagnostics')
- evidence={'date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'candidate':'open3d','upstreamRoute':'standalone MakeHuman','scope':'Actual local upstream fitting, native Open3D processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.','actualArtifactsRead':len(paths),'actualBytesRead':loaded,'processedStateReopened':True,'actualCorruptUpstreamFailure':failure_evidence,'anonymousAndCrossClientDenied':True,'privateUpstreamPathDenied':True,'parentRemovalPurgedCompletedAndRunningChildren':True,'removedExperiments':response['removedExperiments'],'sameSixSourcePhotosPreservedUntilWithdrawal':True,'permissionPreservedOnExperimentRemoval':True,'dependentWorkspaceAndOptionsRemoved':True,'deletedParentReprocessingDenied':True,'deletedDirectoriesDidNotReappear':True,'withdrawalDeniedDiagnostics':True}
- (ROOT/'.scratch/execution-log/assets/open3d-live-verification.json').write_text(json.dumps(evidence,indent=2)+'\n')
+ evidence={'date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'candidate':candidate,'upstreamRoute':'standalone MakeHuman','scope':'Actual local upstream fitting, native '+candidate+' processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.','actualArtifactsRead':len(paths),'actualBytesRead':loaded,'processedStateReopened':True,'actualCorruptUpstreamFailure':failure_evidence,'anonymousAndCrossClientDenied':True,'privateUpstreamPathDenied':True,'parentRemovalPurgedCompletedAndRunningChildren':True,'removedExperiments':response['removedExperiments'],'sameSixSourcePhotosPreservedUntilWithdrawal':True,'permissionPreservedOnExperimentRemoval':True,'dependentWorkspaceAndOptionsRemoved':True,'deletedParentReprocessingDenied':True,'deletedDirectoriesDidNotReappear':True,'withdrawalDeniedDiagnostics':True}
+ (ROOT/f'.scratch/execution-log/assets/{candidate}-live-verification.json').write_text(json.dumps(evidence,indent=2)+'\n')
 finally:
  check(200,api.request(fb,{'confirmed':True},'DELETE'),'remove disposable synthetic fixture')
-print('PASS real Open3D artifacts/reopening/auth boundaries and transitive live process erasure.')
+print('PASS real',candidate,'artifacts/reopening/auth boundaries and transitive live process erasure.')

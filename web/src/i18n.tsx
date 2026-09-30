@@ -4,6 +4,16 @@ export type Locale = 'pt-BR' | 'en'
 export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
+ "Processed upstream fitted head. Native mesh measurements do not verify likeness or measured surface coverage.":"Cabeça ajustada de origem processada. As medições nativas de malha não comprovam semelhança ou cobertura de superfícies medidas.",
+ "MeshLab supporting processing settings":"Configurações de processamento auxiliar MeshLab",
+ "Process upstream head locally with MeshLab":"Processar cabeça de origem localmente com MeshLab",
+ "MeshLab upstream head processing experiment":"Experimento de processamento MeshLab da cabeça de origem",
+ "Apply actual MeshLab cleanup, edge repair, simplification and conversion to an identified fitted head. Inspect native bidirectional distance samples and topology changes. MeshLab does not reconstruct a head from these photos.":"Aplique limpeza, reparo de arestas, simplificação e conversão reais do MeshLab a uma cabeça ajustada identificada. Inspecione amostras nativas de distância nas duas direções e mudanças de topologia. MeshLab não reconstrói uma cabeça a partir dessas fotos.",
+ "Maximum vertex distance samples per direction":"Máximo de amostras de distância de vértices por direção",
+ "Repair splits non-manifold edges without deleting faces. Simplification preserves topology, boundaries and normals; missing surfaces are not filled. Distance sampling uses up to the requested number of actual vertices in each direction.":"O reparo divide arestas não manifold sem excluir faces. A simplificação preserva topologia, contornos e normais; superfícies ausentes não são preenchidas. A medição usa até o número solicitado de vértices reais em cada direção.",
+ "Local supporting processing queued. Inspect actual upstream geometry and processing evidence.":"Processamento auxiliar local na fila. Inspecione a geometria real de origem e as evidências do processamento.",
+ "Actual MeshLab filters and topology changes":"Filtros MeshLab reais e mudanças de topologia",
+ "Actual supporting mesh processing evaluation":"Avaliação real do processamento auxiliar de malha",
  "Historical PLY exports have not passed native-reader compatibility checks. Use the current verified processing version for downloads.":"As exportações PLY históricas não passaram na verificação de compatibilidade com leitores nativos. Use a versão atual verificada para baixar.",
  "Sampled upstream cloud":"Nuvem amostrada de origem",
  "Filtered diagnostic cloud":"Nuvem diagnóstica filtrada",
