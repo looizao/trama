@@ -124,3 +124,28 @@ CREATE TABLE IF NOT EXISTS privacy_requests (
   requested_at timestamp NOT NULL,
   completed_at timestamp
 );
+
+CREATE TABLE IF NOT EXISTS intake_templates (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  name text NOT NULL,
+  version integer NOT NULL DEFAULT 1,
+  questions text NOT NULL,
+  archived integer NOT NULL DEFAULT 0 CHECK (archived IN (0,1)),
+  updated_at timestamp NOT NULL
+);
+CREATE TABLE IF NOT EXISTS consultations (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  series_id text NOT NULL,
+  revision integer NOT NULL,
+  title text NOT NULL,
+  fields text NOT NULL,
+  template_snapshot text NOT NULL,
+  answers text NOT NULL,
+  created_by text NOT NULL REFERENCES users(id),
+  created_at timestamp NOT NULL,
+  UNIQUE(series_id,revision)
+);
+CREATE INDEX IF NOT EXISTS consultations_client_idx ON consultations(organization_id,client_id,created_at DESC);

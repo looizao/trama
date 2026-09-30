@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-29T22:15:56-03:00",
+  "updated": "2026-09-29T22:26:41-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -242,7 +242,9 @@ window.executionLog={
           "date": "2026-09-29T22:15:56-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "4d862fc6ad79021a3e031a3ddce0a6801458bd5f"
+      ],
       "outputs": [],
       "events": [
         {
@@ -275,19 +277,81 @@ window.executionLog={
         "Templates are studio-private, reusable and editable without altering earlier consultations.",
         "Consultation versions and client preferences survive reload; studio boundaries tested."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Consultation and reusable intake implementation underway."
+      "status": "verified",
+      "changes": [
+        "Added studio-private reusable question templates with versioned edits, archival/reactivation, and optional required custom answers. Each consultation stores an immutable template snapshot.",
+        "Added required client goal and low/moderate/high maintenance tolerance, optional preferences/routine, structured hair/beard observations and recommendation rationale. New visits and revisions persist independently.",
+        "Progress log now follows task hashes on navigation/back/forward as well as selector changes."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Template questions and client preferences are user-entered text. No personality inference or automatic professional recommendation is performed. Professional review of the demo consultation remains pending.",
+        "Maintenance tolerance uses reversible low/moderate/high choices plus free text. Up to 12 template questions; existing consultation snapshots remain editable only by appending revisions."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "PASS required fields, stale revision/template conflicts, snapshot preservation, archive restrictions, anonymous/foreign-studio isolation, persistence after reopening and consultation cascade on client deletion."
+        },
+        {
+          "command": "python scripts/verify-local-consultations.py",
+          "result": "PASS live required-field/custom-answer rejection, reusable template edit, immutable original questions, stale conflicts, persistence on reload and deletion of consultations with client."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app",
+          "result": "PASS 1.887s, including consultation and privacy tests."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "PASS TypeScript and Vite, 171 modules, 388.20 kB JS / 123.23 kB gzip."
+        },
+        {
+          "command": "In-app Browser: create template, incomplete intake, complete intake, edit template, revise, reload and inspect history",
+          "result": "PASS original and new goal retained; template now v2 while both consultation snapshots remain v1. English and Portuguese labels rendered."
+        },
+        {
+          "command": "Progress log: task selector, HTTP asset links and source-file existence checks",
+          "result": "PASS task 03 renders criteria, actual checks and three dated screenshots. Every retained evidence picture exists and returns HTTP 200 via relative links."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/consultation-intake-form.png",
+          "caption": "Intermediate intake with required goal/maintenance, optional hair observation/rationale and required custom template answer. All inputs fictional.",
+          "date": "2026-09-29T22:25:58-03:00"
+        },
+        {
+          "src": "assets/consultation-history.png",
+          "caption": "Reloaded history shows both revisions, original questions v1, and the edited reusable template v2. Fictional client only.",
+          "date": "2026-09-29T22:25:58-03:00"
+        },
+        {
+          "src": "assets/consultation-portuguese.png",
+          "caption": "Portuguese labels and dates for the same preserved consultation history.",
+          "date": "2026-09-29T22:25:58-03:00"
+        }
+      ],
       "commits": [],
       "outputs": [],
       "events": [
         {
           "date": "2026-09-29T22:11:22-03:00",
           "text": "Backup flow erased and deferred by explicit user instruction. Advancing to the next independent task: consultations and reusable intake."
+        },
+        {
+          "date": "2026-09-29T22:15:56-03:00",
+          "text": "Beginning consultation and reusable intake implementation after verified backup removal."
+        },
+        {
+          "date": "2026-09-29T22:22:27-03:00",
+          "text": "API and frontend compile. Preparing local browser workflow and persistence checks; task not yet verified."
+        },
+        {
+          "date": "2026-09-29T22:25:58-03:00",
+          "text": "Browser automation label matching timed out twice. Inspected fresh DOM and used role/name locators to complete the same flow; no product error or unperformed save claimed."
+        },
+        {
+          "date": "2026-09-29T22:26:41-03:00",
+          "text": "Consultation milestone verified locally. Template and original/revised fictional intake remain available in the local app for professional review."
         }
       ]
     },
