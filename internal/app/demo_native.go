@@ -41,6 +41,9 @@ func (s NativeDemoSettings) validate() string {
 	return ""
 }
 func nativeDemoRoot() string { return strings.TrimSpace(os.Getenv("LOCAL_DEMO_ROOT")) }
+func validColmapPreset(preset string) bool {
+	return preset == "standard" || preset == "sensitive-calibrated"
+}
 
 type demoProcess struct {
 	cmd      *exec.Cmd
@@ -82,7 +85,8 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 	var client, candidate, settings string
 	err = a.DB.QueryRowContext(ctx, "SELECT r.client_id,j.candidate,j.settings FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1", id).Scan(&client, &candidate, &settings)
 	var in struct {
-		Native NativeDemoSettings `json:"native"`
+		Native       NativeDemoSettings `json:"native"`
+		ColmapPreset string             `json:"colmapPreset"`
 	}
 	if err == nil {
 		err = json.Unmarshal([]byte(settings), &in)
@@ -129,7 +133,7 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 		manifestInputs = append(manifestInputs, map[string]string{"view": input.View, "assetId": input.ID, "path": relative})
 	}
 	if err == nil {
-		err = os.WriteFile(filepath.Join(dir, "manifest.json"), rawJSON(map[string]any{"inputs": manifestInputs, "settings": in.Native, "notice": "Authorized six-photo input snapshot; camera parameters are declared assumptions, not measured calibration."}), 0600)
+		err = os.WriteFile(filepath.Join(dir, "manifest.json"), rawJSON(map[string]any{"inputs": manifestInputs, "settings": in.Native, "colmapPreset": in.ColmapPreset, "notice": "Authorized six-photo input snapshot; camera parameters are declared assumptions, not measured calibration."}), 0600)
 	}
 	var process *demoProcess
 	var log *os.File
@@ -242,9 +246,18 @@ func (a *App) publishNativeDemo(ctx context.Context, id, client, dir string, pro
 				result["failure"] = failure
 			}
 		}
+		if file, e := safeNativeFile(dir, "colmap-report.json"); e == nil {
+			if raw, e := os.ReadFile(file); e == nil {
+				var reconstruction map[string]any
+				if json.Unmarshal(raw, &reconstruction) == nil && reconstruction["candidate"] == "colmap" {
+					result["reconstruction"] = reconstruction
+					result["geometry"] = reconstruction["geometry"]
+				}
+			}
+		}
 	}
 	diagnostics := []string{}
-	for key, relative := range map[string]string{"settings": "manifest.json", "resources": "resources.json", "prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "result": "result.json", "failure": "failure.json"} {
+	for key, relative := range nativeDiagnostics() {
 		if _, e := safeNativeFile(dir, relative); e == nil {
 			diagnostics = append(diagnostics, key)
 		}
@@ -363,8 +376,10 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if artifactKind == "diagnostic" {
-		allowed := map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json"}
-		relative = allowed[artifactID]
+		relative = nativeDiagnostics()[artifactID]
+	}
+	if artifactKind == "evaluation" && artifactID == "matches" && kind == "reconstruct" {
+		relative = "colmap-matches.png"
 	}
 	if relative == "" {
 		problem(w, 404, "retained artifact not found")
@@ -385,6 +400,9 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	}
 	http.ServeFile(w, r, file)
+}
+func nativeDiagnostics() map[string]string {
+	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string

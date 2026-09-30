@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-30T02:39:01.892012-03:00",
+  "scope": "Six identical original source-image hashes per case compared with the actual earlier MPFB fitting runs. No additional views, masks, ground-truth mesh or morph values supplied.",
+  "results": [
+    {
+      "case": "alex-ramos",
+      "preset": "standard",
+      "jobId": "6f931945-7a7a-40a3-bb3f-2351efd82fc5",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 2,
+      "elapsedMs": 809,
+      "retainedBytes": 6608983
+    },
+    {
+      "case": "maya-costa",
+      "preset": "standard",
+      "jobId": "f58099bf-9863-49b9-85ad-22d586cc33bd",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 0,
+      "elapsedMs": 839,
+      "retainedBytes": 7733009
+    },
+    {
+      "case": "noah-kim",
+      "preset": "standard",
+      "jobId": "c4afdfed-720a-4e46-93ac-2ada987b096a",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 1,
+      "elapsedMs": 904,
+      "retainedBytes": 6282868
+    },
+    {
+      "case": "alex-ramos",
+      "preset": "sensitive-calibrated",
+      "jobId": "8e6fa7be-3520-4e08-a41c-a1b52cda06a9",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 3,
+      "elapsedMs": 1061,
+      "retainedBytes": 6898739
+    },
+    {
+      "case": "maya-costa",
+      "preset": "sensitive-calibrated",
+      "jobId": "7a47c557-6f13-436d-8520-a0ecf3c3a830",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 0,
+      "elapsedMs": 1342,
+      "retainedBytes": 7946291
+    },
+    {
+      "case": "noah-kim",
+      "preset": "sensitive-calibrated",
+      "jobId": "c0b82f1e-ad33-44b3-80dd-88a8658f802c",
+      "sameSourceHashesAsMPFB": true,
+      "sparseModels": 0,
+      "verifiedPairs": 4,
+      "elapsedMs": 915,
+      "retainedBytes": 6533357
+    }
+  ]
+}

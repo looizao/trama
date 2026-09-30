@@ -483,6 +483,8 @@ function DemoSession({
           {t(
             candidate.id === 'blender-mpfb'
               ? 'Local fitting experiment available'
+              : candidate.id === 'colmap'
+                ? 'Local reconstruction experiment available'
               : 'Candidate processing pending',
           )}
         </p>
@@ -493,6 +495,8 @@ function DemoSession({
           {t(
             candidate.id === 'blender-mpfb'
               ? 'Run the MPFB fitting experiment, inspect its retained evidence and select a completed fitted head. Hidden surfaces remain inferred and professional likeness review is pending.'
+              : candidate.id === 'colmap'
+                ? 'Run real SIFT extraction, exhaustive matching and three bounded mapping trials on the same six photos. Failed coverage and partial observations are retained. A mannequin does not count as a reconstructed head.'
               : 'This workspace currently runs shared input diagnostics and real mannequin asset inspection. These are not candidate reconstruction or fitting results.',
           )}
         </p>
@@ -656,6 +660,30 @@ function DemoSession({
             >
               {t('Fit head locally with MPFB')}
             </button>
+          </fieldset>
+        )}
+        {candidate.id === 'colmap' && (
+          <fieldset className="demo-native-settings">
+            <legend>{t('COLMAP reconstruction settings')}</legend>
+            <label>
+              {t('Reconstruction preset')}
+              <select value={state.colmapPreset || 'standard'} onChange={(e) => change({ colmapPreset: e.target.value })}>
+                <option value="standard">{t('Standard SIFT / unknown calibration')}</option>
+                <option value="sensitive-calibrated">{t('Sensitive affine SIFT / declared calibration')}</option>
+              </select>
+            </label>
+            <p>{t('CPU processing, 8192 feature limit, exhaustive 15 image pairs, three mapping trials with progressively relaxed initialization. Six images remain the entire capture.')}</p>
+            {state.colmapPreset === 'sensitive-calibrated' && (
+              <label>{t('Focal length (mm)')}
+                <input type="number" min={20} max={200} value={nativeSettings.focalLength} onChange={(e) => change({ native: { ...nativeSettings, focalLength: Number(e.target.value) } })} />
+                <span>{t('Declared 36 mm sensor, square pixels and zero distortion. This is an assumption, not measured calibration.')}</span>
+              </label>
+            )}
+            <button className="button primary" disabled={busy || !selectedSet || !!selectedSet.missing.length} onClick={() => action(async () => {
+              await api(`${base}/demo-jobs`, json('POST', { candidate: 'colmap', kind: 'reconstruct', photoSetId: state.photoSetId, photoViews: state.photoViews || {}, minimumWidth: state.minimumWidth, native: nativeSettings, colmapPreset: state.colmapPreset || 'standard' }))
+              await cache.invalidateQueries({ queryKey: ['demo-jobs', clientId] })
+              setMessage('Local COLMAP reconstruction queued. Inspect actual matching and mapping evidence.')
+            })}>{t('Reconstruct six views locally with COLMAP')}</button>
           </fieldset>
         )}
         {dirty && <p className="notice">{t('Unsaved workspace changes')}</p>}
@@ -898,6 +926,8 @@ function DemoSession({
                     {t(
                       j.kind === 'fit'
                         ? 'MPFB head fitting experiment'
+                        : j.kind === 'reconstruct'
+                          ? 'COLMAP six-view reconstruction experiment'
                         : 'Six-view input check',
                     )}
                   </strong>
@@ -947,7 +977,7 @@ function DemoSession({
               {j.result.geometry && (
                 <p className="notice">{t(j.result.geometry)}</p>
               )}
-              {j.kind === 'fit' && (
+              {(j.kind === 'fit' || j.kind === 'reconstruct') && (
                 <>
                   <p>{t(j.result.scope || '')}</p>
                   {j.status === 'completed' && j.result.head && (
@@ -967,6 +997,24 @@ function DemoSession({
                   )}
                   {j.result.failure?.error && (
                     <p className="error">{j.result.failure.error}</p>
+                  )}
+                  {j.result.reconstruction && (
+                    <>
+                      <p>PyCOLMAP {j.result.reconstruction.version} · {j.settings.colmapPreset} · {j.result.reconstruction.elapsedMs} ms · {(j.result.reconstruction.retainedBytes / 1048576).toFixed(1)} MiB</p>
+                      <p className="notice">{j.result.reconstruction.denseStatus}</p>
+                      <div className="demo-table-scroll"><table>
+                        <thead><tr><th>{t('View')}</th><th>{t('Detected features')}</th></tr></thead>
+                        <tbody>{j.result.reconstruction.features.map((f) => <tr key={f.view}><td>{t(f.view)}</td><td>{f.features}</td></tr>)}</tbody>
+                      </table></div>
+                      <figure><img style={{ maxWidth: '100%' }} src={artifactURL(j.id, 'evaluation', 'matches')} alt={t('Actual COLMAP verified-match graph')} loading="lazy" /><figcaption>{t('Verified feature matches do not establish head coverage or likeness.')}</figcaption></figure>
+                      <details><summary>{t('Matching and mapping trials')}</summary>
+                        {j.result.reconstruction.pairs.map((pair) => <p key={pair.first + pair.second}>{t(pair.first)} / {t(pair.second)}: {pair.verifiedMatches}</p>)}
+                        {j.result.reconstruction.trials.map((trial) => <p key={trial.index}>{t('Trial')} {trial.index + 1}: {trial.initialMinimumInliers} {t('minimum inliers')}, {trial.initialMinimumAngleDegrees}° · {trial.models.length} {t('retained sparse models')}{trial.models.map((model) => <span key={model.model}> · {model.points3D} {t('observed points')} / {model.registeredViews.map(t).join(', ')} / {model.meanReprojectionErrorPixels.toFixed(2)} px</span>)}</p>)}
+                      </details>
+                      <details open><summary>{t('Unmet reconstruction requirements')}</summary>{j.result.reconstruction.unmetRequirements.map((requirement) => <p key={requirement}>{requirement}</p>)}</details>
+                      {j.result.reconstruction.limitations.map((limitation) => <p key={limitation}>{limitation}</p>)}
+                      <details><summary>{t('Processing resources')}</summary><p>{j.result.reconstruction.resourceMeasurement}</p>{j.result.reconstruction.resources.map((r) => <p key={r.stage}>{r.stage}: {r.seconds}s · {r.cpuSeconds} CPU s · {(r.peakRssKiB / 1024).toFixed(1)} MiB</p>)}</details>
+                    </>
                   )}
                   {j.result.fit && (
                     <>

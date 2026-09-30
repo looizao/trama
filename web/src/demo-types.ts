@@ -10,6 +10,7 @@ export type NativeSettings = {
   fitRounds: number
 }
 export type DemoState = {
+  colmapPreset?: string
   native?: NativeSettings
   candidate: string
   photoSetId: string
@@ -67,7 +68,7 @@ export type DemoJob = {
   status: string
   error: string
   progress: number
-  settings: { minimumWidth: number; native?: NativeSettings }
+  settings: { minimumWidth: number; native?: NativeSettings; colmapPreset?: string }
   createdAt: string
   result: {
     diagnostics?: string[]
@@ -76,6 +77,25 @@ export type DemoJob = {
     beard?: Record<string, string>
     retainedBytes?: number
     failure?: { error?: string }
+    reconstruction?: {
+      version: string
+      geometry: string
+      denseStatus: string
+      elapsedMs: number
+      retainedBytes: number
+      resourceMeasurement: string
+      features: { view: string; features: number }[]
+      pairs: { first: string; second: string; verifiedMatches: number }[]
+      trials: {
+        index: number
+        initialMinimumInliers: number
+        initialMinimumAngleDegrees: number
+        models: { model: string; registeredViews: string[]; points3D: number; meanReprojectionErrorPixels: number }[]
+      }[]
+      resources: { stage: string; seconds: number; cpuSeconds: number; peakRssKiB: number }[]
+      limitations: string[]
+      unmetRequirements: string[]
+    }
     fit?: {
       pairedLandmarks: number
       meanLandmarkErrorPixels: number

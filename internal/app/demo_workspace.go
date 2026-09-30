@@ -27,6 +27,7 @@ type DemoWorkspaceState struct {
 	Camera         DemoCamera         `json:"camera"`
 	MinimumWidth   int                `json:"minimumWidth"`
 	Native         NativeDemoSettings `json:"native"`
+	ColmapPreset   string             `json:"colmapPreset"`
 }
 type DemoOption struct {
 	ID        string             `json:"id"`
@@ -39,6 +40,12 @@ type DemoOption struct {
 
 func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) string {
 	client := r.PathValue("clientID")
+	if state.ColmapPreset == "" {
+		state.ColmapPreset = "standard"
+	}
+	if !validColmapPreset(state.ColmapPreset) {
+		return "unsupported COLMAP preset"
+	}
 	if message := state.Native.defaultsAndValidate(); message != "" {
 		return message
 	}

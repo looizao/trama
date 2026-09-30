@@ -20,7 +20,7 @@ def protect_stage():
     if ctypes.CDLL(None).prctl(1,signal.SIGKILL)!=0:os._exit(125)
     if os.getppid()!=stage_parent:os.kill(os.getpid(),signal.SIGKILL)
 os.umask(0o077)
-p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
+p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
 manifest=json.loads((directory/'manifest.json').read_text())
 expected={'front','left-three-quarter','right-three-quarter','left-profile','right-profile','back'}
 if len(manifest['inputs'])!=6 or {i['view'] for i in manifest['inputs']}!=expected:raise SystemExit('Exactly six labeled inputs required')
@@ -30,7 +30,7 @@ for item in manifest['inputs']:
 env=dict(os.environ,BLENDER_USER_RESOURCES=str(ROOT/'.scratch/private/blender-resources'),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4')
 metrics=[];started=time.monotonic()
 def stage(name,command):
-    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60}[name]}))
+    (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'colmap':5}[name]}))
     before=resource.getrusage(resource.RUSAGE_CHILDREN);start=time.monotonic()
     with (directory/(name+'.log')).open('w') as output:
         result=subprocess.run(command,env=env,stdout=output,stderr=subprocess.STDOUT,preexec_fn=protect_stage)
@@ -41,6 +41,14 @@ def stage(name,command):
     if result.returncode:raise RuntimeError(f'{name} failed with exit {result.returncode}; retained diagnostic log')
 blender=['blender','--background','--factory-startup','--offline-mode','--threads','4','--python-exit-code','1','--python',str(ROOT/'scripts/native-demos/blender-mpfb.py'),'--']
 try:
+    if args.candidate=='colmap':
+        stage('colmap',[sys.executable,str(ROOT/'scripts/native-demos/colmap.py'),str(directory)])
+        report=json.loads((directory/'colmap-report.json').read_text())
+        files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
+        report['retainedBytes']=sum(f['bytes'] for f in files)
+        report['artifacts']=files
+        (directory/'colmap-report.json').write_text(json.dumps(report,indent=2)+'\n')
+        raise RuntimeError('Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.')
     stage('prepare',blender+['prepare',str(directory)])
     stage('fit',[str(ROOT/'.scratch/private/native-demos/python/bin/python'),str(ROOT/'scripts/native-demos/fit-mpfb.py'),str(directory)])
     stage('export',blender+['export',str(directory)])

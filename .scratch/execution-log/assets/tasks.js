@@ -1,5 +1,5 @@
-window.executionLog={
-  "updated": "2026-09-30T02:04:10-03:00",
+window.executionLog = {
+  "updated": "2026-09-30T02:40:22-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1013,17 +1013,112 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "failed",
+      "changes": [
+        "Installed official PyCOLMAP 4.2.1 CPU wheel privately with retained BSD-3-Clause notice and registry distribution hashes. SIFT uses no learned model.",
+        "Added a real isolated COLMAP route: six copied source snapshots, CPU SIFT, exhaustive geometric matching, three bounded sparse mapping trials, native database retention and actual verified-match graph. Standard and sensitive declared-calibration presets are persisted."
+      ],
+      "limitations": [
+        "All six retained case/preset experiments and the browser repeat produced zero sparse models. The COLMAP route failed the head coverage and editable-head requirements on these synthetic six-view inputs. This does not establish failure on every real-person capture.",
+        "Dense reconstruction was not run because no sparse model was available. The available RTX 4050 was not used; installing the separate CUDA runtime would require its own license acceptance if a later sparse reconstruction makes dense evaluation meaningful.",
+        "No native head exists for compatible style fitting, clipping or 3D browser-performance measurement. Generic mannequin inspection remains explicitly separate and is not counted as candidate success. Current-hair/beard separation, refinement, expected selection and the full task 08 journey are unmet.",
+        "Declared calibration assumes shared 36 mm sensor, square pixels, centered principal point and no distortion. It is not measured calibration. Synthetic clay input texture and six-view overlap limit these results; no extra capture or ground-truth geometry was substituted.",
+        "Feature counts were stable in the browser repeat; verified-match counts varied slightly despite the declared random seed. No bitwise repeatability or reconstructed likeness is claimed. Peak RSS is cumulative process memory, not isolated per-stage memory."
+      ],
+      "verification": [
+        {
+          "command": "Initial Alex standard and sensitive CLI experiments",
+          "result": "Both extracted actual features and attempted all 15 pairs and three mapping trials. Neither retained a sparse model. Native databases and logs remain private."
+        },
+        {
+          "command": "Initial go test ./... after adding COLMAP state",
+          "result": "Failed workspace persistence fixture comparison because its expected state omitted the new default standard preset. Corrected fixture to include the documented default; rerun pending."
+        },
+        {
+          "command": "go test ./...",
+          "result": "Passed after normalizing the persistence fixture to the documented standard preset; internal/app completed in 0.764 seconds."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./internal/app -run 'Native|Demo|Colmap|Privacy|Permission'",
+          "result": "Passed in 3.273 seconds. Includes real subprocess termination-before-purge, failed reconstruction publication, failed-head selection rejection and dependent erasure."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "Passed, 181 modules. Demos chunk 669.57 kB / 170.20 kB gzip, existing size warning remains. This is not a mobile performance measurement."
+        },
+        {
+          "command": "python scripts/native-demos/populate.py colmap with both presets, then repeat",
+          "result": "Three fictional clients times two presets, six real native experiments and eighteen mapping trials. All zero sparse models. Repeat reused retained failed runs without creating jobs or restoring removed material."
+        },
+        {
+          "command": "python scripts/native-demos/verify-colmap.py",
+          "result": "Passed twice. Latest check waited for actual SIFT extractor startup before deleting the back source. Process output vanished, result cleared, no directory recreation, private/anonymous artifact denial, actual PNG decode and withdrawal verified."
+        },
+        {
+          "command": "Browser COLMAP selector, save workspace, reload and run reconstruction",
+          "result": "Sensitive preset, focal length 70 mm and original six source assignments survived reload. Browser button started actual running job 3735c097-2b42-4132-9fba-266a435d02cd, then displayed native failure, true features, match graph and three zero-model trials."
+        },
+        {
+          "command": "Source-image SHA-256 comparison against native MPFB runs",
+          "result": "Every original six-photo source hash matched for all three cases in both presets. No denser capture, learned model, ground-truth mesh or case morph values used."
+        },
+        {
+          "command": "Portable evidence HTTP and browser checks",
+          "result": "All 64 relative retained pictures/output links exist and returned HTTP 200. Browser task selector renders task 08a as failed and shows the retained evidence. Restored Alex’s previously chosen MPFB model and original independent styles after testing COLMAP settings."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/colmap-controls.png",
+          "caption": "2026-09-30: COLMAP selector and the six original synthetic views. The native reconstruction controls are below this viewport; shared mannequin inspection is not credited as COLMAP output.",
+          "date": "2026-09-30T02:39:01-03:00"
+        },
+        {
+          "src": "assets/colmap-failed-result.png",
+          "caption": "2026-09-30: actual browser-started COLMAP failure, retained native evidence and explicit absence of a sparse model. Dense processing did not run because its sparse prerequisite failed.",
+          "date": "2026-09-30T02:39:01-03:00"
+        },
+        {
+          "src": "assets/colmap-match-graph-app.png",
+          "caption": "2026-09-30: authenticated retained match graph loaded at 1200 by 820 pixels. Counts are verified feature matches, not measured surface coverage or likeness.",
+          "date": "2026-09-30T02:39:01-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/colmap-provenance.json",
+          "label": "Exact PyCOLMAP software license and acquisition provenance"
+        },
+        {
+          "href": "assets/colmap-populated-standard.json",
+          "label": "Three retained standard SIFT experiments"
+        },
+        {
+          "href": "assets/colmap-populated-sensitive-calibrated.json",
+          "label": "Three retained sensitive declared-calibration experiments"
+        },
+        {
+          "href": "assets/colmap-shared-input-check.json",
+          "label": "Source identity and six-run coverage comparison"
+        },
+        {
+          "href": "assets/colmap-live-verification.json",
+          "label": "Actual pipeline failure, artifact access and native erasure checks"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 08."
+        },
+        {
+          "date": "2026-09-30T02:04:11-03:00",
+          "text": "Begin exact COLMAP/PyCOLMAP license and six-photo processing evaluation. No denser capture or fallback reconstruction will be counted as this route."
+        },
+        {
+          "date": "2026-09-30T02:40:22-03:00",
+          "text": "Complete retained native experiment milestone with technical checks passing and reconstruction requirements failed. Keep COLMAP available as a runnable candidate and preserve all failure evidence; professional route selection remains pending."
         }
       ]
     },

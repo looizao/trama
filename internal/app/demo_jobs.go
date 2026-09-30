@@ -114,7 +114,7 @@ func (a *App) launchDemoJob(id string) {
 		if a.DB.QueryRowContext(ctx, "SELECT kind FROM demo_jobs WHERE run_id=$1", id).Scan(&kind) != nil {
 			return
 		}
-		if kind == "fit" {
+		if kind == "fit" || kind == "reconstruct" {
 			a.processNativeDemo(ctx, id)
 		} else {
 			a.processDemoInputs(ctx, id)
@@ -372,11 +372,13 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		Candidate    string             `json:"candidate"`
 		Kind         string             `json:"kind"`
 		Native       NativeDemoSettings `json:"native"`
+		ColmapPreset string             `json:"colmapPreset"`
 		PhotoSetID   string             `json:"photoSetId"`
 		MinimumWidth int                `json:"minimumWidth"`
 		PhotoViews   map[string]string  `json:"photoViews"`
 	}
 	in.Native = nativeDemoDefaults()
+	in.ColmapPreset = "standard"
 	if err = decodeJSON(r, &in); err != nil {
 		badRequest(w, err)
 		return
@@ -384,12 +386,16 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 	if in.Kind == "" {
 		in.Kind = "input-check"
 	}
-	if in.Kind != "input-check" && in.Kind != "fit" {
+	if !validColmapPreset(in.ColmapPreset) {
+		problem(w, 400, "unsupported COLMAP preset")
+		return
+	}
+	if in.Kind != "input-check" && in.Kind != "fit" && in.Kind != "reconstruct" {
 		problem(w, 400, "unsupported experiment kind")
 		return
 	}
-	if in.Kind == "fit" {
-		if in.Candidate != "blender-mpfb" {
+	if in.Kind == "fit" || in.Kind == "reconstruct" {
+		if !(in.Candidate == "blender-mpfb" && in.Kind == "fit" || in.Candidate == "colmap" && in.Kind == "reconstruct") {
 			problem(w, 400, "native route is not configured yet")
 			return
 		}
@@ -421,7 +427,7 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "photoViews": inputs})
+	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "colmapPreset": in.ColmapPreset, "photoViews": inputs})
 	x := DemoJob{ID: newID(), Candidate: in.Candidate, Kind: in.Kind, PhotoSetID: in.PhotoSetID, PhotoViews: inputs, Status: "queued", Settings: settings, Result: json.RawMessage("{}"), CreatedAt: now()}
 	tx, err := a.DB.BeginTx(r.Context(), nil)
 	if err != nil {

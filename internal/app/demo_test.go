@@ -29,7 +29,7 @@ func demoFixture(t *testing.T) privacyFixture {
 	return f
 }
 func demoState(set string) DemoWorkspaceState {
-	return DemoWorkspaceState{Candidate: "blender-mpfb", PhotoSetID: set, CurrentHairID: "sample", CurrentBeardID: "clean-shaven", HairID: "keep-current", BeardID: "sample", Camera: DemoCamera{Azimuth: .5, Elevation: .2, Distance: 1.1}, MinimumWidth: 512, Native: NativeDemoSettings{FocalLength: 70, CameraDistance: 1.6, CameraHeight: .04, FitRounds: 4}}
+	return DemoWorkspaceState{Candidate: "blender-mpfb", ColmapPreset: "standard", PhotoSetID: set, CurrentHairID: "sample", CurrentBeardID: "clean-shaven", HairID: "keep-current", BeardID: "sample", Camera: DemoCamera{Azimuth: .5, Elevation: .2, Distance: 1.1}, MinimumWidth: 512, Native: NativeDemoSettings{FocalLength: 70, CameraDistance: 1.6, CameraHeight: .04, FitRounds: 4}}
 }
 func demoCapture(t *testing.T, f privacyFixture, corrupt bool) PhotoSet {
 	w := f.request(t, "POST", "/api/clients/"+f.client+"/photo-sets", map[string]string{"title": "Diagnostic fixture"})
@@ -472,5 +472,74 @@ func TestNativeModelSelectionRequiresMatchingSourceSnapshot(t *testing.T) {
 	w = f.request(t, "PUT", "/api/clients/"+f.client+"/demo-workspace", map[string]any{"version": 0, "state": state})
 	if w.Code != 400 {
 		t.Fatal(w.Code, w.Body.String())
+	}
+}
+
+func TestColmapFailureRetainsEvidenceWithoutSelectableHead(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	s := demoCapture(t, f, false)
+	root := t.TempDir()
+	t.Setenv("LOCAL_DEMO_ROOT", root)
+	python := filepath.Join(root, ".scratch/private/native-demos/python/bin/python")
+	script := filepath.Join(root, "scripts/native-demos/run.py")
+	for _, path := range []string{python, script} {
+		if err := os.MkdirAll(filepath.Dir(path), 0700); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.WriteFile(python, []byte("#!/bin/sh\nexec /bin/sh \"$@\"\n"), 0700); err != nil {
+		t.Fatal(err)
+	}
+	// Exercise the publication boundary using a failed child, independently of
+	// SIFT behavior. Live six-photo processing is verified separately.
+	body := `#!/bin/sh
+echo '{"candidate":"colmap","geometry":"No triangulated geometry retained","trials":[{"models":[]}]}' > "$2/colmap-report.json"
+echo '{"error":"No sparse model"}' > "$2/failure.json"
+exit 1
+`
+	if err := os.WriteFile(script, []byte(body), 0700); err != nil {
+		t.Fatal(err)
+	}
+	base := "/api/clients/" + f.client
+	in := map[string]any{"candidate": "colmap", "kind": "reconstruct", "photoSetId": s.ID, "minimumWidth": 512, "colmapPreset": "unknown"}
+	if w := f.request(t, "POST", base+"/demo-jobs", in); w.Code != 400 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	in["colmapPreset"] = "sensitive-calibrated"
+	w := f.request(t, "POST", base+"/demo-jobs", in)
+	if w.Code != 202 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	job := responseRecord[DemoJob](t, w.Body.Bytes())
+	failed := waitDemoJob(t, f, job.ID, "failed")
+	var evidence map[string]any
+	if err := json.Unmarshal(failed.Result, &evidence); err != nil {
+		t.Fatal(err)
+	}
+	if evidence["reconstruction"] == nil || evidence["head"] != nil {
+		t.Fatal("failure evidence lost or fallback exposed", evidence)
+	}
+	artifact := base + "/demo-jobs/" + job.ID + "/artifacts/diagnostic/reconstruction"
+	if w = f.request(t, "GET", artifact, nil); w.Code != 200 || w.Header().Get("Cache-Control") != "private, no-store" {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	if w = f.request(t, "GET", base+"/demo-jobs/"+job.ID+"/artifacts/head/model", nil); w.Code != 404 {
+		t.Fatal("failed reconstruction exposed a head", w.Code)
+	}
+	state := demoState(s.ID)
+	state.Candidate = "colmap"
+	state.ModelRunID = job.ID
+	if w = f.request(t, "PUT", base+"/demo-workspace", map[string]any{"version": 0, "state": state}); w.Code != 400 {
+		t.Fatal("failed reconstruction was selectable", w.Code)
+	}
+	if w = f.request(t, "DELETE", "/api/assets/"+s.Views["back"], map[string]bool{"confirmed": true}); w.Code != 200 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	if w = f.request(t, "GET", artifact, nil); w.Code != 404 {
+		t.Fatal("erased input retained reconstruction diagnostics", w.Code)
+	}
+	if _, err := os.Stat(f.a.demoJobDirectory(f.client, job.ID)); !os.IsNotExist(err) {
+		t.Fatal("dependent native results not erased", err)
 	}
 }

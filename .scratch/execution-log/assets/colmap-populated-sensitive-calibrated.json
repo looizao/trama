@@ -1,0 +1,1068 @@
+{
+  "scope": "Actual six-view synthetic experiments; no ground-truth geometry or case morph parameters supplied. Failed reconstructions are retained without fallback. Saved MPFB explorations are not selected expected results. Refinement, expected results, professional review and full demo journey remain pending.",
+  "date": "2026-09-30T02:37:39-0300",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "colmap",
+      "jobId": "8e6fa7be-3520-4e08-a41c-a1b52cda06a9",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "elapsedMs": null,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "preset": "sensitive-calibrated",
+      "reconstruction": {
+        "artifacts": [
+          {
+            "bytes": 899,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 400,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 37,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 26560,
+            "path": "colmap.log"
+          },
+          {
+            "bytes": 647168,
+            "path": "colmap.db"
+          },
+          {
+            "bytes": 533,
+            "path": "colmap-resources.json"
+          },
+          {
+            "bytes": 5889,
+            "path": "colmap-report.json"
+          },
+          {
+            "bytes": 39524,
+            "path": "colmap-matches.png"
+          },
+          {
+            "bytes": 451,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 603370,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 618185,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 618223,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 621663,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 621706,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 626743,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 398590,
+            "path": "colmap-images/back.png"
+          },
+          {
+            "bytes": 408245,
+            "path": "colmap-images/front.png"
+          },
+          {
+            "bytes": 413051,
+            "path": "colmap-images/left-profile.png"
+          },
+          {
+            "bytes": 415732,
+            "path": "colmap-images/left-three-quarter.png"
+          },
+          {
+            "bytes": 414537,
+            "path": "colmap-images/right-profile.png"
+          },
+          {
+            "bytes": 417233,
+            "path": "colmap-images/right-three-quarter.png"
+          }
+        ],
+        "candidate": "colmap",
+        "cudaAvailable": false,
+        "denseStatus": "Not run: no sparse model available for dense processing.",
+        "elapsedMs": 1061,
+        "features": [
+          {
+            "features": 500,
+            "view": "front"
+          },
+          {
+            "features": 575,
+            "view": "back"
+          },
+          {
+            "features": 598,
+            "view": "left-three-quarter"
+          },
+          {
+            "features": 695,
+            "view": "left-profile"
+          },
+          {
+            "features": 559,
+            "view": "right-three-quarter"
+          },
+          {
+            "features": 707,
+            "view": "right-profile"
+          }
+        ],
+        "geometry": "No triangulated geometry retained. All three mapping trials failed to create a sparse model.",
+        "inputs": [
+          {
+            "height": 896,
+            "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+            "view": "back",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+            "view": "front",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+            "view": "left-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+            "view": "left-three-quarter",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+            "view": "right-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+            "view": "right-three-quarter",
+            "width": 768
+          }
+        ],
+        "limitations": [
+          "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+          "Six views may lack overlap and texture needed for connected reconstruction.",
+          "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+          "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+          "No mesh, compatible independent styles or verified likeness produced."
+        ],
+        "pairs": [
+          {
+            "first": "front",
+            "second": "back",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "left-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "right-three-quarter",
+            "verifiedMatches": 23
+          },
+          {
+            "first": "front",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "left-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "left-profile",
+            "verifiedMatches": 22
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "right-three-quarter",
+            "second": "right-profile",
+            "verifiedMatches": 40
+          }
+        ],
+        "resourceMeasurement": "Wall and CPU seconds per stage; peak RSS is the cumulative maximum of this COLMAP process.",
+        "resources": [
+          {
+            "cpuSeconds": 2.722,
+            "peakRssKiB": 785756,
+            "seconds": 0.953,
+            "stage": "features"
+          },
+          {
+            "cpuSeconds": 0.066,
+            "peakRssKiB": 785756,
+            "seconds": 0.051,
+            "stage": "matches"
+          },
+          {
+            "cpuSeconds": 0.005,
+            "peakRssKiB": 785756,
+            "seconds": 0.005,
+            "stage": "mapping-0"
+          },
+          {
+            "cpuSeconds": 0.015,
+            "peakRssKiB": 785756,
+            "seconds": 0.01,
+            "stage": "mapping-1"
+          },
+          {
+            "cpuSeconds": 0.018,
+            "peakRssKiB": 785756,
+            "seconds": 0.008,
+            "stage": "mapping-2"
+          }
+        ],
+        "retainedBytes": 6898739,
+        "settings": {
+          "affineShape": true,
+          "calibration": "Declared focal length and 36 mm sensor; square pixels, centered principal point, zero distortion. Assumptions, not measured calibration.",
+          "cameraModel": "PINHOLE",
+          "domainSizePooling": true,
+          "focalLengthMm": 70,
+          "focalPixels": 1742.2222222222222,
+          "mappingSecondsPerTrial": 35,
+          "maxFeatures": 8192,
+          "maxImageSize": 1600,
+          "minimumModelImages": 3,
+          "peakThreshold": 0.002,
+          "preset": "sensitive-calibrated",
+          "seed": 42,
+          "sensorMm": 36,
+          "sharedCamera": true,
+          "threads": 4
+        },
+        "trials": [
+          {
+            "index": 0,
+            "initialMinimumAngleDegrees": 16,
+            "initialMinimumInliers": 100,
+            "models": [],
+            "relaxedThresholds": false
+          },
+          {
+            "index": 1,
+            "initialMinimumAngleDegrees": 8,
+            "initialMinimumInliers": 50,
+            "models": [],
+            "relaxedThresholds": true
+          },
+          {
+            "index": 2,
+            "initialMinimumAngleDegrees": 5,
+            "initialMinimumInliers": 20,
+            "models": [],
+            "relaxedThresholds": true
+          }
+        ],
+        "unmetRequirements": [
+          "Complete six-view head coverage",
+          "Client-specific editable head mesh",
+          "Removal or separation of current hair and beard",
+          "Independent compatible hairstyle and beardstyle fitting",
+          "Refinement and expected-result journey on reconstructed geometry"
+        ],
+        "version": "4.2.1"
+      },
+      "failure": {
+        "elapsedMs": 2332,
+        "error": "Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/colmap.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/8e6fa7be-3520-4e08-a41c-a1b52cda06a9"
+            ],
+            "cpuSeconds": 4.401,
+            "exitCode": 0,
+            "peakRssKiB": 785756,
+            "seconds": 2.331,
+            "stage": "colmap"
+          }
+        ]
+      }
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "colmap",
+      "jobId": "7a47c557-6f13-436d-8520-a0ecf3c3a830",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "elapsedMs": null,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "preset": "sensitive-calibrated",
+      "reconstruction": {
+        "artifacts": [
+          {
+            "bytes": 899,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 400,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 37,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 15498,
+            "path": "colmap.log"
+          },
+          {
+            "bytes": 1056768,
+            "path": "colmap.db"
+          },
+          {
+            "bytes": 534,
+            "path": "colmap-resources.json"
+          },
+          {
+            "bytes": 5892,
+            "path": "colmap-report.json"
+          },
+          {
+            "bytes": 38604,
+            "path": "colmap-matches.png"
+          },
+          {
+            "bytes": 451,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 671991,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 671990,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 663566,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 668353,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 666523,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 674103,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 470593,
+            "path": "colmap-images/back.png"
+          },
+          {
+            "bytes": 468489,
+            "path": "colmap-images/front.png"
+          },
+          {
+            "bytes": 464590,
+            "path": "colmap-images/left-profile.png"
+          },
+          {
+            "bytes": 469071,
+            "path": "colmap-images/left-three-quarter.png"
+          },
+          {
+            "bytes": 467803,
+            "path": "colmap-images/right-profile.png"
+          },
+          {
+            "bytes": 470136,
+            "path": "colmap-images/right-three-quarter.png"
+          }
+        ],
+        "candidate": "colmap",
+        "cudaAvailable": false,
+        "denseStatus": "Not run: no sparse model available for dense processing.",
+        "elapsedMs": 1342,
+        "features": [
+          {
+            "features": 1003,
+            "view": "left-three-quarter"
+          },
+          {
+            "features": 1080,
+            "view": "back"
+          },
+          {
+            "features": 1078,
+            "view": "left-profile"
+          },
+          {
+            "features": 1053,
+            "view": "front"
+          },
+          {
+            "features": 967,
+            "view": "right-three-quarter"
+          },
+          {
+            "features": 1134,
+            "view": "right-profile"
+          }
+        ],
+        "geometry": "No triangulated geometry retained. All three mapping trials failed to create a sparse model.",
+        "inputs": [
+          {
+            "height": 896,
+            "sourceSha256": "555d225f996a7dce4aada261041c678fbf874a0309b336b5128f15c079e7b744",
+            "view": "back",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "a15961efee33bdbf1dcdbf35ad3af62d851b440c2509613c0aaa617284494947",
+            "view": "front",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "ddc618b70db6fbfb0d6036e09b4cde1695ffdc83fcebdf5a9167cb810845765c",
+            "view": "left-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "5325fd2b249ca399acc038ad34e5430f82525b2f2649a3303aa52cb0e72beb3e",
+            "view": "left-three-quarter",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "e03f3efc483c1aea4224cbd11d075eb5725ee40a1e290fc71d453bc0f448d943",
+            "view": "right-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "6e863e385c8f3cbbe2ebe025d8e862d69852dac9e8d8e33242ac6f3a21d74491",
+            "view": "right-three-quarter",
+            "width": 768
+          }
+        ],
+        "limitations": [
+          "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+          "Six views may lack overlap and texture needed for connected reconstruction.",
+          "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+          "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+          "No mesh, compatible independent styles or verified likeness produced."
+        ],
+        "pairs": [
+          {
+            "first": "left-three-quarter",
+            "second": "back",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "front",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "front",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "front",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "right-three-quarter",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          }
+        ],
+        "resourceMeasurement": "Wall and CPU seconds per stage; peak RSS is the cumulative maximum of this COLMAP process.",
+        "resources": [
+          {
+            "cpuSeconds": 3.666,
+            "peakRssKiB": 786048,
+            "seconds": 1.254,
+            "stage": "features"
+          },
+          {
+            "cpuSeconds": 0.137,
+            "peakRssKiB": 786048,
+            "seconds": 0.052,
+            "stage": "matches"
+          },
+          {
+            "cpuSeconds": 0.002,
+            "peakRssKiB": 786048,
+            "seconds": 0.002,
+            "stage": "mapping-0"
+          },
+          {
+            "cpuSeconds": 0.001,
+            "peakRssKiB": 786048,
+            "seconds": 0.001,
+            "stage": "mapping-1"
+          },
+          {
+            "cpuSeconds": 0.001,
+            "peakRssKiB": 786048,
+            "seconds": 0.001,
+            "stage": "mapping-2"
+          }
+        ],
+        "retainedBytes": 7946291,
+        "settings": {
+          "affineShape": true,
+          "calibration": "Declared focal length and 36 mm sensor; square pixels, centered principal point, zero distortion. Assumptions, not measured calibration.",
+          "cameraModel": "PINHOLE",
+          "domainSizePooling": true,
+          "focalLengthMm": 70,
+          "focalPixels": 1742.2222222222222,
+          "mappingSecondsPerTrial": 35,
+          "maxFeatures": 8192,
+          "maxImageSize": 1600,
+          "minimumModelImages": 3,
+          "peakThreshold": 0.002,
+          "preset": "sensitive-calibrated",
+          "seed": 42,
+          "sensorMm": 36,
+          "sharedCamera": true,
+          "threads": 4
+        },
+        "trials": [
+          {
+            "index": 0,
+            "initialMinimumAngleDegrees": 16,
+            "initialMinimumInliers": 100,
+            "models": [],
+            "relaxedThresholds": false
+          },
+          {
+            "index": 1,
+            "initialMinimumAngleDegrees": 8,
+            "initialMinimumInliers": 50,
+            "models": [],
+            "relaxedThresholds": true
+          },
+          {
+            "index": 2,
+            "initialMinimumAngleDegrees": 5,
+            "initialMinimumInliers": 20,
+            "models": [],
+            "relaxedThresholds": true
+          }
+        ],
+        "unmetRequirements": [
+          "Complete six-view head coverage",
+          "Client-specific editable head mesh",
+          "Removal or separation of current hair and beard",
+          "Independent compatible hairstyle and beardstyle fitting",
+          "Refinement and expected-result journey on reconstructed geometry"
+        ],
+        "version": "4.2.1"
+      },
+      "failure": {
+        "elapsedMs": 2583,
+        "error": "Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/colmap.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/7a47c557-6f13-436d-8520-a0ecf3c3a830"
+            ],
+            "cpuSeconds": 5.349,
+            "exitCode": 0,
+            "peakRssKiB": 786048,
+            "seconds": 2.582,
+            "stage": "colmap"
+          }
+        ]
+      }
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "colmap",
+      "jobId": "c0b82f1e-ad33-44b3-80dd-88a8658f802c",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "elapsedMs": null,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "preset": "sensitive-calibrated",
+      "reconstruction": {
+        "artifacts": [
+          {
+            "bytes": 899,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 400,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 37,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 26896,
+            "path": "colmap.log"
+          },
+          {
+            "bytes": 471040,
+            "path": "colmap.db"
+          },
+          {
+            "bytes": 533,
+            "path": "colmap-resources.json"
+          },
+          {
+            "bytes": 5889,
+            "path": "colmap-report.json"
+          },
+          {
+            "bytes": 39604,
+            "path": "colmap-matches.png"
+          },
+          {
+            "bytes": 451,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 594433,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 608112,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 595581,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 603933,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 605703,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 611226,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 387297,
+            "path": "colmap-images/back.png"
+          },
+          {
+            "bytes": 398430,
+            "path": "colmap-images/front.png"
+          },
+          {
+            "bytes": 388975,
+            "path": "colmap-images/left-profile.png"
+          },
+          {
+            "bytes": 395486,
+            "path": "colmap-images/left-three-quarter.png"
+          },
+          {
+            "bytes": 397859,
+            "path": "colmap-images/right-profile.png"
+          },
+          {
+            "bytes": 400573,
+            "path": "colmap-images/right-three-quarter.png"
+          }
+        ],
+        "candidate": "colmap",
+        "cudaAvailable": false,
+        "denseStatus": "Not run: no sparse model available for dense processing.",
+        "elapsedMs": 915,
+        "features": [
+          {
+            "features": 308,
+            "view": "back"
+          },
+          {
+            "features": 407,
+            "view": "front"
+          },
+          {
+            "features": 380,
+            "view": "left-three-quarter"
+          },
+          {
+            "features": 385,
+            "view": "left-profile"
+          },
+          {
+            "features": 498,
+            "view": "right-profile"
+          },
+          {
+            "features": 493,
+            "view": "right-three-quarter"
+          }
+        ],
+        "geometry": "No triangulated geometry retained. All three mapping trials failed to create a sparse model.",
+        "inputs": [
+          {
+            "height": 896,
+            "sourceSha256": "ce439466fbb1d75d145b72ef93dca904ba2e11b7a9fb6f8cec0ad8c63ee966d6",
+            "view": "back",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "06f1dd5ef6789d72a2853206562f6d1a74e1b6dba3cab49001c5854e7fb6531f",
+            "view": "front",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "c479cf3def0bb268c80c2ab34ed1495760767a7a628f4b7d860d9181e0edb516",
+            "view": "left-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "54e2714b9031592aaf4d7aa6de8421b2c81dbd14439c510bf251b33623a6a2bd",
+            "view": "left-three-quarter",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "e164ef0ecbcd904eef0b2f315b2b4b3152d4f7f1d38b4d4d94cfda4129fb8f24",
+            "view": "right-profile",
+            "width": 768
+          },
+          {
+            "height": 896,
+            "sourceSha256": "2ae51a125f9c8771db5cbe43979ce0e754ecc5f04480d7d61d436e0cf477c134",
+            "view": "right-three-quarter",
+            "width": 768
+          }
+        ],
+        "limitations": [
+          "Synthetic inputs demonstrate workflow only and do not validate real-person accuracy.",
+          "Six views may lack overlap and texture needed for connected reconstruction.",
+          "Current hair and beard remain part of observed geometry; independent replacement requires further work.",
+          "Sparse points are not a watertight head or usable hairstyle fitting surface.",
+          "No mesh, compatible independent styles or verified likeness produced."
+        ],
+        "pairs": [
+          {
+            "first": "back",
+            "second": "front",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "left-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "back",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "left-three-quarter",
+            "verifiedMatches": 16
+          },
+          {
+            "first": "front",
+            "second": "left-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "front",
+            "second": "right-three-quarter",
+            "verifiedMatches": 36
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "left-profile",
+            "verifiedMatches": 26
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-three-quarter",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-profile",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "left-profile",
+            "second": "right-three-quarter",
+            "verifiedMatches": 0
+          },
+          {
+            "first": "right-profile",
+            "second": "right-three-quarter",
+            "verifiedMatches": 33
+          }
+        ],
+        "resourceMeasurement": "Wall and CPU seconds per stage; peak RSS is the cumulative maximum of this COLMAP process.",
+        "resources": [
+          {
+            "cpuSeconds": 2.272,
+            "peakRssKiB": 785836,
+            "seconds": 0.803,
+            "stage": "features"
+          },
+          {
+            "cpuSeconds": 0.042,
+            "peakRssKiB": 785836,
+            "seconds": 0.052,
+            "stage": "matches"
+          },
+          {
+            "cpuSeconds": 0.011,
+            "peakRssKiB": 785836,
+            "seconds": 0.006,
+            "stage": "mapping-0"
+          },
+          {
+            "cpuSeconds": 0.02,
+            "peakRssKiB": 785836,
+            "seconds": 0.009,
+            "stage": "mapping-1"
+          },
+          {
+            "cpuSeconds": 0.026,
+            "peakRssKiB": 785836,
+            "seconds": 0.011,
+            "stage": "mapping-2"
+          }
+        ],
+        "retainedBytes": 6533357,
+        "settings": {
+          "affineShape": true,
+          "calibration": "Declared focal length and 36 mm sensor; square pixels, centered principal point, zero distortion. Assumptions, not measured calibration.",
+          "cameraModel": "PINHOLE",
+          "domainSizePooling": true,
+          "focalLengthMm": 70,
+          "focalPixels": 1742.2222222222222,
+          "mappingSecondsPerTrial": 35,
+          "maxFeatures": 8192,
+          "maxImageSize": 1600,
+          "minimumModelImages": 3,
+          "peakThreshold": 0.002,
+          "preset": "sensitive-calibrated",
+          "seed": 42,
+          "sensorMm": 36,
+          "sharedCamera": true,
+          "threads": 4
+        },
+        "trials": [
+          {
+            "index": 0,
+            "initialMinimumAngleDegrees": 16,
+            "initialMinimumInliers": 100,
+            "models": [],
+            "relaxedThresholds": false
+          },
+          {
+            "index": 1,
+            "initialMinimumAngleDegrees": 8,
+            "initialMinimumInliers": 50,
+            "models": [],
+            "relaxedThresholds": true
+          },
+          {
+            "index": 2,
+            "initialMinimumAngleDegrees": 5,
+            "initialMinimumInliers": 20,
+            "models": [],
+            "relaxedThresholds": true
+          }
+        ],
+        "unmetRequirements": [
+          "Complete six-view head coverage",
+          "Client-specific editable head mesh",
+          "Removal or separation of current hair and beard",
+          "Independent compatible hairstyle and beardstyle fitting",
+          "Refinement and expected-result journey on reconstructed geometry"
+        ],
+        "version": "4.2.1"
+      },
+      "failure": {
+        "elapsedMs": 2207,
+        "error": "Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/colmap.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/c0b82f1e-ad33-44b3-80dd-88a8658f802c"
+            ],
+            "cpuSeconds": 3.965,
+            "exitCode": 0,
+            "peakRssKiB": 785836,
+            "seconds": 2.205,
+            "stage": "colmap"
+          }
+        ]
+      }
+    }
+  ]
+}

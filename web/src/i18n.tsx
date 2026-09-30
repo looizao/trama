@@ -4,6 +4,28 @@ export type Locale = 'pt-BR' | 'en'
 export type Theme = 'light' | 'dark'
 
 const pt: Record<string, string> = {
+"Local reconstruction experiment available": "Experimento local de reconstrução disponível",
+"Run real SIFT extraction, exhaustive matching and three bounded mapping trials on the same six photos. Failed coverage and partial observations are retained. A mannequin does not count as a reconstructed head.": "Execute extração SIFT real, correspondências exaustivas e três tentativas limitadas de mapeamento nas mesmas seis fotos. Falhas de cobertura e observações parciais são preservadas. Um manequim não conta como cabeça reconstruída.",
+"COLMAP reconstruction settings": "Configurações de reconstrução COLMAP",
+"Reconstruction preset": "Predefinição de reconstrução",
+"Standard SIFT / unknown calibration": "SIFT padrão / calibração desconhecida",
+"Sensitive affine SIFT / declared calibration": "SIFT afim sensível / calibração declarada",
+"CPU processing, 8192 feature limit, exhaustive 15 image pairs, three mapping trials with progressively relaxed initialization. Six images remain the entire capture.": "Processamento em CPU, limite de 8192 características, 15 pares exaustivos e três tentativas de mapeamento com inicialização progressivamente flexibilizada. A captura inteira continua com seis imagens.",
+"Declared 36 mm sensor, square pixels and zero distortion. This is an assumption, not measured calibration.": "Sensor declarado de 36 mm, pixels quadrados e distorção zero. Esta é uma hipótese, não calibração medida.",
+"Local COLMAP reconstruction queued. Inspect actual matching and mapping evidence.": "Reconstrução local COLMAP na fila. Inspecione as evidências reais de correspondências e mapeamento.",
+"Reconstruct six views locally with COLMAP": "Reconstruir seis vistas localmente com COLMAP",
+"COLMAP six-view reconstruction experiment": "Experimento de reconstrução COLMAP com seis vistas",
+"Detected features": "Características detectadas",
+"Actual COLMAP verified-match graph": "Grafo real de correspondências verificadas pelo COLMAP",
+"Verified feature matches do not establish head coverage or likeness.": "Correspondências verificadas não comprovam cobertura da cabeça ou semelhança.",
+"Matching and mapping trials": "Correspondências e tentativas de mapeamento",
+"Trial": "Tentativa",
+"minimum inliers": "correspondências válidas mínimas",
+"retained sparse models": "modelos esparsos preservados",
+"observed points": "pontos observados",
+"Unmet reconstruction requirements": "Requisitos de reconstrução não atendidos",
+"Processing resources": "Recursos de processamento",
+
 "02 / FITTED HEAD INSPECTION":"02 / INSPEÇÃO DA CABEÇA AJUSTADA",
 "Catalog tiles use the shared mannequin. This fitting result supplies refitted mesh variants; inspect clipping before accepting them.":"As imagens do catálogo usam o manequim compartilhado. Este resultado fornece variantes de malha ajustadas; inspecione interseções antes de aceitá-las.",
 "Save the fitted head, selected style variants, shared camera and original six inputs. Refinement, revision history and selected expected results remain pending.":"Salve a cabeça ajustada, variantes de estilos, câmera compartilhada e seis entradas originais. Refinamento, histórico de revisões e resultados esperados selecionados permanecem pendentes.",
