@@ -19,6 +19,12 @@ type PhotoSet = {
   views: Record<string, string>
   missing: string[]
 }
+const nativeDefaults = {
+  focalLength: 70,
+  cameraDistance: 1.6,
+  cameraHeight: 0.04,
+  fitRounds: 4,
+}
 const views = [
   'front',
   'left-three-quarter',
@@ -107,11 +113,13 @@ function Catalog({
   styles,
   value,
   onChange,
+  fitted = false,
 }: {
   kind: 'hair' | 'beard'
   styles: DemoStyle[]
   value: string
   onChange: (id: string) => void
+  fitted?: boolean
 }) {
   const { t } = usePreferences(),
     [texture, setTexture] = useState(''),
@@ -312,11 +320,25 @@ function DemoSession({
           beardId: 'keep-current',
           camera: { azimuth: 0, elevation: 0.08, distance: 1.3 },
           minimumWidth: 512,
+          native: nativeDefaults,
         },
       )
       setVersion(workspace.data.version)
     }
   }, [state, authorized, workspace.data, sets.data, library])
+  useEffect(() => {
+    if (
+      state?.modelRunId &&
+      jobs.data?.some(
+        (j) => j.id === state.modelRunId && j.status === 'cancelled',
+      )
+    ) {
+      setState(undefined)
+      setVersion(0)
+      cache.invalidateQueries({ queryKey: ['demo-workspace', clientId] })
+      cache.invalidateQueries({ queryKey: ['demo-options', clientId] })
+    }
+  }, [state?.modelRunId, jobs.data, cache, clientId])
   function change(next: Partial<DemoState>) {
     setState((s) => (s ? { ...s, ...next } : s))
     setDirty(true)
@@ -351,7 +373,12 @@ function DemoSession({
     })
   }
   function reopen(option: DemoOption) {
-    setState(option.state)
+    setState({
+      ...option.state,
+      native: option.state.native?.focalLength
+        ? option.state.native
+        : nativeDefaults,
+    })
     setDirty(true)
     setMessage(
       'Explored option reopened. Save the workspace to retain it as your current exploration.',
@@ -385,16 +412,36 @@ function DemoSession({
           missing: views.filter((v) => !state.photoViews?.[v]),
         }
       : liveSet
-  const resolve = (styles: DemoStyle[], id: string, current: string) =>
-    styles.find((s) => s.id === (id === 'keep-current' ? current : id))
-      ?.modelUrl
+  const modelJob = jobs.data?.find(
+    (j) =>
+      j.id === state.modelRunId && j.kind === 'fit' && j.status === 'completed',
+  )
+  const fitted = !!state.modelRunId
+  const artifactURL = (jobId: string, kind: string, id: string) =>
+    `/api${base}/demo-jobs/${jobId}/artifacts/${kind}/${id}`
+  const headURL = fitted
+    ? artifactURL(state.modelRunId, 'head', 'model')
+    : library.headUrl
+  const nativeSettings = state.native || nativeDefaults
+  const resolve = (styles: DemoStyle[], id: string, current: string) => {
+    const chosen = id === 'keep-current' ? current : id
+    return styles.find((s) => s.id === chosen)
+      ? fitted
+        ? artifactURL(
+            state.modelRunId,
+            styles === library.hair ? 'hair' : 'beard',
+            chosen,
+          )
+        : styles.find((s) => s.id === chosen)?.modelUrl
+      : undefined
+  }
   const currentURLs = [
-    library.headUrl,
+    headURL,
     resolve(library.hair, state.currentHairId, ''),
     resolve(library.beard, state.currentBeardId, ''),
   ].filter(Boolean) as string[]
   const proposedURLs = [
-    library.headUrl,
+    headURL,
     resolve(library.hair, state.hairId, state.currentHairId),
     resolve(library.beard, state.beardId, state.currentBeardId),
   ].filter(Boolean) as string[]
@@ -420,7 +467,9 @@ function DemoSession({
           {t('Candidate')}
           <select
             value={state.candidate}
-            onChange={(e) => change({ candidate: e.target.value })}
+            onChange={(e) =>
+              change({ candidate: e.target.value, modelRunId: '' })
+            }
           >
             {library.candidates.map((c) => (
               <option key={c.id} value={c.id}>
@@ -431,14 +480,20 @@ function DemoSession({
         </label>
         <p>
           <strong>{candidate.name}</strong> · {t(candidate.role)} ·{' '}
-          {t('Candidate processing pending')}
+          {t(
+            candidate.id === 'blender-mpfb'
+              ? 'Local fitting experiment available'
+              : 'Candidate processing pending',
+          )}
         </p>
         {candidate.dependency && (
           <p className="notice">{t(candidate.dependency)}</p>
         )}
         <p>
           {t(
-            'This workspace currently runs shared input diagnostics and real mannequin asset inspection. These are not candidate reconstruction or fitting results.',
+            candidate.id === 'blender-mpfb'
+              ? 'Run the MPFB fitting experiment, inspect its retained evidence and select a completed fitted head. Hidden surfaces remain inferred and professional likeness review is pending.'
+              : 'This workspace currently runs shared input diagnostics and real mannequin asset inspection. These are not candidate reconstruction or fitting results.',
           )}
         </p>
         <label>
@@ -446,7 +501,11 @@ function DemoSession({
           <select
             value={state.photoSetId}
             onChange={(e) =>
-              change({ photoSetId: e.target.value, photoViews: {} })
+              change({
+                photoSetId: e.target.value,
+                photoViews: {},
+                modelRunId: '',
+              })
             }
           >
             <option value="">{t('Select a photo set')}</option>
@@ -529,6 +588,76 @@ function DemoSession({
             {t('Check six inputs locally')}
           </button>
         </div>
+        {candidate.id === 'blender-mpfb' && (
+          <fieldset className="demo-native-settings">
+            <legend>{t('MPFB fitting settings')}</legend>
+            <p>
+              {t(
+                'Assumed capture cameras: six labeled yaw angles, 36 mm sensor and shared focal length, distance and height. These values are not measured calibration. Inspect and adjust them for each capture.',
+              )}
+            </p>
+            {(
+              [
+                ['focalLength', 'Focal length (mm)', 20, 200, 1],
+                ['cameraDistance', 'Capture distance (m)', 0.5, 3, 0.05],
+                [
+                  'cameraHeight',
+                  'Camera height above head center (m)',
+                  -0.2,
+                  0.3,
+                  0.01,
+                ],
+                ['fitRounds', 'Fitting rounds', 1, 6, 1],
+              ] as const
+            ).map(([key, label, min, max, step]) => (
+              <label key={key}>
+                {t(label)}
+                <input
+                  type="number"
+                  min={min}
+                  max={max}
+                  step={step}
+                  value={nativeSettings[key]}
+                  onChange={(e) =>
+                    change({
+                      native: {
+                        ...nativeSettings,
+                        [key]: Number(e.target.value),
+                      },
+                    })
+                  }
+                />
+              </label>
+            ))}
+            <button
+              className="button primary"
+              disabled={busy || !selectedSet || !!selectedSet.missing.length}
+              onClick={() =>
+                action(async () => {
+                  await api(
+                    `${base}/demo-jobs`,
+                    json('POST', {
+                      candidate: state.candidate,
+                      kind: 'fit',
+                      photoSetId: state.photoSetId,
+                      photoViews: state.photoViews || {},
+                      minimumWidth: state.minimumWidth,
+                      native: nativeSettings,
+                    }),
+                  )
+                  await cache.invalidateQueries({
+                    queryKey: ['demo-jobs', clientId],
+                  })
+                  setMessage(
+                    'Local MPFB fitting queued. The retained experiment shows failures and inferred coverage.',
+                  )
+                })
+              }
+            >
+              {t('Fit head locally with MPFB')}
+            </button>
+          </fieldset>
+        )}
         {dirty && <p className="notice">{t('Unsaved workspace changes')}</p>}
         {message && <p role="status">{t(message)}</p>}
         {error && (
@@ -538,14 +667,41 @@ function DemoSession({
         )}
       </section>
       <section className="card demo-comparison">
-        <span className="eyebrow">{t('02 / SHARED ASSET INSPECTION')}</span>
+        <span className="eyebrow">
+          {t(
+            fitted
+              ? '02 / FITTED HEAD INSPECTION'
+              : '02 / SHARED ASSET INSPECTION',
+          )}
+        </span>
         <h2>{t('Synchronized 3D comparison')}</h2>
         <p className="notice">
-          {t(library.geometry)}.{' '}
           {t(
-            'Current styles are manually chosen reference assets. Hidden surfaces are generic inferred mannequin geometry; no client likeness is claimed.',
+            fitted
+              ? 'MPFB head fitted to detected image landmarks. Entire surface is fitted or inferred; no measured 3D surface or verified likeness is claimed.'
+              : library.geometry,
+          )}
+          {fitted ? ' ' : '. '}
+          {t(
+            fitted
+              ? 'Hair and beard assets are refitted independently to this head. Current styles remain manually chosen references. Inspect clipping and missing likeness.'
+              : 'Current styles are manually chosen reference assets. Hidden surfaces are generic inferred mannequin geometry; no client likeness is claimed.',
           )}
         </p>
+        <button
+          className="button ghost"
+          disabled={!fitted}
+          onClick={() => change({ modelRunId: '' })}
+        >
+          {t('Inspect shared mannequin')}
+        </button>
+        {fitted && !modelJob && (
+          <p role="status">
+            {t(
+              'Selected fitted result is loading or unavailable. Reopen a retained model before saving.',
+            )}
+          </p>
+        )}
         <div className="demo-current">
           <label>
             {t('Current hairstyle reference')}
@@ -649,12 +805,14 @@ function DemoSession({
         </div>
         <div className="demo-catalog-pair">
           <Catalog
+            fitted={fitted}
             kind="hair"
             styles={library.hair}
             value={state.hairId}
             onChange={(hairId) => change({ hairId })}
           />
           <Catalog
+            fitted={fitted}
             kind="beard"
             styles={library.beard}
             value={state.beardId}
@@ -736,7 +894,13 @@ function DemoSession({
               <div className="section-toolbar">
                 <div>
                   <span className={`status ${j.status}`}>{t(j.status)}</span>{' '}
-                  <strong>{t('Six-view input check')}</strong>
+                  <strong>
+                    {t(
+                      j.kind === 'fit'
+                        ? 'MPFB head fitting experiment'
+                        : 'Six-view input check',
+                    )}
+                  </strong>
                   <p>
                     {dateLabel(j.createdAt, locale)} · {j.progress}% ·{' '}
                     {t('Minimum image width')}: {j.settings.minimumWidth}
@@ -754,6 +918,16 @@ function DemoSession({
                         await cache.invalidateQueries({
                           queryKey: ['demo-jobs', clientId],
                         })
+                        if (state.modelRunId === j.id) {
+                          setState(undefined)
+                          setVersion(0)
+                          await cache.invalidateQueries({
+                            queryKey: ['demo-workspace', clientId],
+                          })
+                          await cache.invalidateQueries({
+                            queryKey: ['demo-options', clientId],
+                          })
+                        }
                       })
                     }
                   >
@@ -772,6 +946,159 @@ function DemoSession({
               )}
               {j.result.geometry && (
                 <p className="notice">{t(j.result.geometry)}</p>
+              )}
+              {j.kind === 'fit' && (
+                <>
+                  <p>{t(j.result.scope || '')}</p>
+                  {j.status === 'completed' && j.result.head && (
+                    <button
+                      className="button primary"
+                      onClick={() =>
+                        change({
+                          modelRunId: j.id,
+                          photoSetId: j.photoSetId,
+                          photoViews: j.photoViews || {},
+                          native: j.settings.native || nativeDefaults,
+                        })
+                      }
+                    >
+                      {t('Inspect this fitted head')}
+                    </button>
+                  )}
+                  {j.result.failure?.error && (
+                    <p className="error">{j.result.failure.error}</p>
+                  )}
+                  {j.result.fit && (
+                    <>
+                      <p>
+                        {t('Paired image landmarks')}:{' '}
+                        {j.result.fit.pairedLandmarks} ·{' '}
+                        {t(
+                          'Mean landmark error after framing alignment (pixels)',
+                        )}
+                        : {j.result.fit.meanLandmarkErrorPixels.toFixed(2)} ·{' '}
+                        {t('Evaluations')}: {j.result.fit.evaluations}.{' '}
+                        {t('Landmark agreement does not verify likeness.')}
+                      </p>
+                      <div className="demo-table-scroll">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>{t('View')}</th>
+                              <th>{t('Paired landmarks')}</th>
+                              <th>{t('Findings')}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {j.result.fit.views.map((v) => (
+                              <tr key={v.view}>
+                                <td>{t(v.view)}</td>
+                                <td>{v.matchedLandmarks}</td>
+                                <td>
+                                  {v.limitation ||
+                                    t(
+                                      'Detected 2D landmarks; model depth excluded',
+                                    )}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <details>
+                        <summary>
+                          {t('Fitting iterations and limitations')}
+                        </summary>
+                        {j.result.fit.iterations.map((i) => (
+                          <p key={i.iteration}>
+                            {i.iteration}: {i.loss.toExponential(5)}
+                          </p>
+                        ))}
+                        {j.result.fit.limitations.map((l) => (
+                          <p key={l}>{l}</p>
+                        ))}
+                      </details>
+                      <div className="demo-photo-strip">
+                        {j.result.fit.views.map((v) => (
+                          <figure key={v.view}>
+                            <img
+                              src={artifactURL(j.id, 'landmarks', v.view)}
+                              alt={`${t(v.view)} / ${t('Detected image landmarks')}`}
+                              loading="lazy"
+                            />
+                            <figcaption>
+                              {t(v.view)} · {v.matchedLandmarks}
+                            </figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                      <details>
+                        <summary>{t('Fitted head renders')}</summary>
+                        <div className="demo-photo-strip">
+                          {views.map((v) => (
+                            <figure key={v}>
+                              <img
+                                src={artifactURL(j.id, 'render', v)}
+                                alt={`${t(v)} / ${t('Fitted head')}`}
+                                loading="lazy"
+                              />
+                              <figcaption>{t(v)}</figcaption>
+                            </figure>
+                          ))}
+                        </div>
+                      </details>
+                    </>
+                  )}
+                  {j.result.resources && (
+                    <div className="demo-table-scroll">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>{t('Stage')}</th>
+                            <th>{t('Seconds')}</th>
+                            <th>{t('CPU seconds')}</th>
+                            <th>{t('Peak child memory so far (MiB)')}</th>
+                            <th>{t('Exit code')}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {j.result.resources.map((r) => (
+                            <tr key={r.stage}>
+                              <td>{r.stage}</td>
+                              <td>{r.seconds}</td>
+                              <td>{r.cpuSeconds}</td>
+                              <td>{(r.peakRssKiB / 1024).toFixed(1)}</td>
+                              <td>{r.exitCode}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                  {!!j.result.retainedBytes && (
+                    <p>
+                      {t('Retained output')}:{' '}
+                      {(j.result.retainedBytes / 1048576).toFixed(1)} MiB ·{' '}
+                      {j.result.elapsedMs} ms
+                    </p>
+                  )}
+                  {(j.status === 'completed' || j.status === 'failed') && (
+                    <details>
+                      <summary>{t('Retained processing diagnostics')}</summary>
+                      {(j.result.diagnostics || []).map((k) => (
+                        <p key={k}>
+                          <a
+                            href={artifactURL(j.id, 'diagnostic', k)}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {k}
+                          </a>
+                        </p>
+                      ))}
+                    </details>
+                  )}
+                </>
               )}
               {j.result.inputs && (
                 <details open>

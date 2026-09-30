@@ -39,6 +39,7 @@ type App struct {
 	demoContext       context.Context
 	demoCancel        context.CancelFunc
 	demoRuns          map[string]context.CancelFunc
+	demoProcesses     map[string]*demoProcess
 	demoSlots         chan struct{}
 	demoWait          sync.WaitGroup
 }

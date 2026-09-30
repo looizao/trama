@@ -19,16 +19,17 @@ import (
 )
 
 type DemoJob struct {
-	ID         string          `json:"id"`
-	Candidate  string          `json:"candidate"`
-	Kind       string          `json:"kind"`
-	PhotoSetID string          `json:"photoSetId"`
-	Status     string          `json:"status"`
-	Error      string          `json:"error"`
-	Progress   int             `json:"progress"`
-	Settings   json.RawMessage `json:"settings"`
-	Result     json.RawMessage `json:"result"`
-	CreatedAt  time.Time       `json:"createdAt"`
+	ID         string            `json:"id"`
+	Candidate  string            `json:"candidate"`
+	Kind       string            `json:"kind"`
+	PhotoSetID string            `json:"photoSetId"`
+	PhotoViews map[string]string `json:"photoViews"`
+	Status     string            `json:"status"`
+	Error      string            `json:"error"`
+	Progress   int               `json:"progress"`
+	Settings   json.RawMessage   `json:"settings"`
+	Result     json.RawMessage   `json:"result"`
+	CreatedAt  time.Time         `json:"createdAt"`
 }
 type demoInput struct{ View, ID, Key string }
 type DemoInputMetric struct {
@@ -54,6 +55,7 @@ func (a *App) startDemoProcessing() error {
 	a.demoMu.Lock()
 	a.demoContext, a.demoCancel = context.WithCancel(context.Background())
 	a.demoRuns = make(map[string]context.CancelFunc)
+	a.demoProcesses = make(map[string]*demoProcess)
 	a.demoSlots = make(chan struct{}, 2)
 	a.demoMu.Unlock()
 	// Interrupted work is never presented as successful or automatically restored.
@@ -108,16 +110,34 @@ func (a *App) launchDemoJob(id string) {
 		case <-ctx.Done():
 			return
 		}
-		a.processDemoInputs(ctx, id)
+		var kind string
+		if a.DB.QueryRowContext(ctx, "SELECT kind FROM demo_jobs WHERE run_id=$1", id).Scan(&kind) != nil {
+			return
+		}
+		if kind == "fit" {
+			a.processNativeDemo(ctx, id)
+		} else {
+			a.processDemoInputs(ctx, id)
+		}
 	}()
 }
 func (a *App) cancelLocalDemoRuns(ids []string) {
 	a.demoMu.Lock()
-	defer a.demoMu.Unlock()
+	processes := []*demoProcess{}
 	for _, id := range ids {
 		if cancel := a.demoRuns[id]; cancel != nil {
 			cancel()
 		}
+		if process := a.demoProcesses[id]; process != nil {
+			processes = append(processes, process)
+		}
+	}
+	a.demoMu.Unlock()
+	// Wait only for OS process termination, never for publication or the worker
+	// goroutine, which may be waiting for the media lock held by the eraser.
+	for _, process := range processes {
+		process.stop()
+		<-process.done
 	}
 }
 func (a *App) demoRunAllowed(ctx context.Context, id string) bool {
@@ -349,14 +369,38 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var in struct {
-		Candidate    string            `json:"candidate"`
-		PhotoSetID   string            `json:"photoSetId"`
-		MinimumWidth int               `json:"minimumWidth"`
-		PhotoViews   map[string]string `json:"photoViews"`
+		Candidate    string             `json:"candidate"`
+		Kind         string             `json:"kind"`
+		Native       NativeDemoSettings `json:"native"`
+		PhotoSetID   string             `json:"photoSetId"`
+		MinimumWidth int                `json:"minimumWidth"`
+		PhotoViews   map[string]string  `json:"photoViews"`
 	}
+	in.Native = nativeDemoDefaults()
 	if err = decodeJSON(r, &in); err != nil {
 		badRequest(w, err)
 		return
+	}
+	if in.Kind == "" {
+		in.Kind = "input-check"
+	}
+	if in.Kind != "input-check" && in.Kind != "fit" {
+		problem(w, 400, "unsupported experiment kind")
+		return
+	}
+	if in.Kind == "fit" {
+		if in.Candidate != "blender-mpfb" {
+			problem(w, 400, "native route is not configured yet")
+			return
+		}
+		if nativeDemoRoot() == "" {
+			problem(w, 503, "local native processing is not configured")
+			return
+		}
+		if message := in.Native.validate(); message != "" {
+			problem(w, 400, message)
+			return
+		}
 	}
 	if !validDemoCandidate(in.Candidate) || in.MinimumWidth < 64 || in.MinimumWidth > 4096 {
 		problem(w, 400, "select a demo candidate and minimum width between 64 and 4096")
@@ -377,7 +421,8 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	x := DemoJob{ID: newID(), Candidate: in.Candidate, Kind: "input-check", PhotoSetID: in.PhotoSetID, Status: "queued", Settings: rawJSON(map[string]int{"minimumWidth": in.MinimumWidth}), Result: json.RawMessage("{}"), CreatedAt: now()}
+	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "photoViews": inputs})
+	x := DemoJob{ID: newID(), Candidate: in.Candidate, Kind: in.Kind, PhotoSetID: in.PhotoSetID, PhotoViews: inputs, Status: "queued", Settings: settings, Result: json.RawMessage("{}"), CreatedAt: now()}
 	tx, err := a.DB.BeginTx(r.Context(), nil)
 	if err != nil {
 		problem(w, 500, "could not queue local input check")
@@ -386,7 +431,7 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 	defer tx.Rollback()
 	_, err = tx.ExecContext(r.Context(), "INSERT INTO generation_runs(id,organization_id,client_id,source_asset_id,prompt,model_id,quantity,status,created_by,created_at) VALUES($1,$2,$3,$4,'Six-view image diagnostics',$5,1,'queued',$6,$7)", x.ID, userFrom(r).OrganizationID, r.PathValue("clientID"), inputs["front"], "local-3d:"+in.Candidate, userFrom(r).ID, x.CreatedAt)
 	if err == nil {
-		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_jobs(run_id,candidate,kind,photo_set_id,settings)VALUES($1,$2,'input-check',$3,$4)", x.ID, x.Candidate, x.PhotoSetID, string(x.Settings))
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_jobs(run_id,candidate,kind,photo_set_id,settings)VALUES($1,$2,$3,$4,$5)", x.ID, x.Candidate, x.Kind, x.PhotoSetID, string(x.Settings))
 	}
 	for _, view := range requiredPhotoViews {
 		if err == nil {
@@ -428,6 +473,11 @@ func (a *App) listDemoJobs(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		x.Settings = json.RawMessage(settings)
+		var retained struct {
+			PhotoViews map[string]string `json:"photoViews"`
+		}
+		_ = json.Unmarshal([]byte(settings), &retained)
+		x.PhotoViews = retained.PhotoViews
 		x.Result = json.RawMessage(result)
 		items = append(items, x)
 	}
@@ -459,6 +509,8 @@ func (a *App) cancelDemoJob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	a.cancelLocalDemoRuns([]string{id})
+	_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM demo_workspace_states WHERE client_id=$1 AND json_extract(state,'$.modelRunId')=$2", r.PathValue("clientID"), id)
+	_, _ = a.DB.ExecContext(r.Context(), "DELETE FROM demo_options WHERE client_id=$1 AND json_extract(state,'$.modelRunId')=$2", r.PathValue("clientID"), id)
 	_, err = a.DB.ExecContext(r.Context(), "UPDATE demo_jobs SET result='{}' WHERE run_id=$1", id)
 	if err == nil {
 		err = os.RemoveAll(a.demoJobDirectory(r.PathValue("clientID"), id))

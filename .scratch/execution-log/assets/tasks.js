@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T00:47:04-03:00",
+  "updated": "2026-09-30T02:03:53-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -812,17 +812,185 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "verified",
+      "changes": [
+        "Actual offline MPFB target fitting script now reads six input photos, detects image-plane landmarks, optimizes bounded facial targets and exports a separate fitted head plus 11 hair and five beard meshes.",
+        "Native job integration queues real processing, retains camera assumptions and diagnostic files, snapshots all six source dependencies, and serves artifacts only to the authorized studio with active permission.",
+        "All three fictional cases now have real, distinct MPFB fitted heads and saved independent-style explorations. Repeated seeding retains the same job/option IDs and does not overwrite current workspace selections.",
+        "Processing uses kernel network isolation, a private process group, parent-death protection for runner and native stages, and an OS thread held for the child lifetime. Both direct fitting CLIs and the API enforce network isolation."
+      ],
+      "limitations": [
+        "First synthetic-only probe matched 56 landmarks in front and two three-quarter views; both profiles and back had no paired detections. Entire 3D surface remains a fitted or inferred MPFB prior. Pixel error does not prove likeness.",
+        "Initial synthetic-only CLI probe preceded network isolation. MediaPipe 1.0.1 NOTICE describes utilization metrics; integrated app processing now uses an isolated Linux network namespace.",
+        "Alex and Maya used 56 paired landmarks in three views; Noah used 37 in two views. Both profile views and back remain unobserved by this face detector. The fitted heads visibly retain strong generic-prior influence; likeness remains unverified.",
+        "No texture likeness is fitted. Hair and beard references remain manually chosen. Goatee boundaries and dense stubble still need catalog-quality refinement. Full editing, expected-result selection/revision history and complete candidate demos remain pending in their existing tasks.",
+        "Peak RSS is the cumulative maximum child-process memory through each stage, not isolated stage memory. Landmark pixel error is after framing translation and fixed neutral correspondence offsets; neither metric establishes likeness."
+      ],
+      "verification": [
+        {
+          "command": "Initial retained mpfb-alex-six experiment",
+          "result": "Prepare 24.090 s, fit 2.501 s, export 26.966 s; 53.560 s total; 107758627 retained bytes; 97 evaluations across four iterations; mean image landmark error 2.770 pixels; all native stages exited 0."
+        },
+        {
+          "command": "go test ./... first native integration attempt",
+          "result": "Failed: persisted default camera settings changed the expected test fixture. Corrected fixture to explicitly include the saved defaults; subsequent full suite passed."
+        },
+        {
+          "command": "Native subprocess erasure test first attempt",
+          "result": "Failed HTTP 400 because the test omitted the required confirmed deletion body. Corrected the test and verified whole-process-group termination before directory purge; no directory recreation."
+        },
+        {
+          "command": "go test ./... after corrections",
+          "result": "Passed all packages, including native validation, rejecting diagnostics as heads, and killing a real writing subprocess when a non-front input is erased."
+        },
+        {
+          "command": "npm --prefix web run build intermediate native UI edit",
+          "result": "Failed: the fitted catalog prop was missing its TypeScript declaration. Added the declaration, retained existing formatting, and rebuilt successfully."
+        },
+        {
+          "command": "Native verification immediately after server restart",
+          "result": "First request was refused before Go compilation finished. Waited for HTTP health readiness before retrying."
+        },
+        {
+          "command": "Native verification with multiple completed fits",
+          "result": "Initial test incorrectly expected the newest run to replace the saved selection. Corrected verification to inspect the retained chosen run; the app correctly preserved its earlier selection."
+        },
+        {
+          "command": "Full final MPFB pipeline with network and parent-death safeguards",
+          "result": "Completed in 51868 ms, 56 paired landmarks, 11 hair variants and five beard variants; repeated head.glb SHA256 identical to the previous fit of the same inputs."
+        },
+        {
+          "command": "python scripts/native-demos/verify-parent-death.py",
+          "result": "Passed: killing the launcher abruptly terminated the actual native runner and Blender stage; no app/client state changed."
+        },
+        {
+          "command": "python scripts/native-demos/verify-local.py",
+          "result": "Passed actual 17 fitted GLB reads, anonymous 401/unlisted path 404, fitted workspace and option reopening, actual no-face processing failure without fallback, live nonfront erasure during processing, no recreated directory, and withdrawal denial. Disposable fixture deleted."
+        },
+        {
+          "command": "python scripts/native-demos/populate.py blender-mpfb, repeated",
+          "result": "Passed three real synthetic fits and preserved previously retained job/option IDs. All eight full candidate journeys remain pending."
+        },
+        {
+          "command": "python scripts/verify-local-demos.py",
+          "result": "Passed existing shared-workspace and input diagnostics regression checks after native integration."
+        },
+        {
+          "command": "go test ./... final native source",
+          "result": "Passed all packages."
+        },
+        {
+          "command": "go test -race ./internal/app (Native, Demo, Privacy and Permission)",
+          "result": "Passed selected consequential behavior tests in 3.050 s."
+        },
+        {
+          "command": "npm --prefix web run build final native UI",
+          "result": "Passed 181 modules in 1.51 s; deferred demo chunk 665.40 KB with the existing size warning retained as a performance limitation."
+        },
+        {
+          "command": "Final browser native workflow",
+          "result": "All 11 hair and five beard mesh variants rendered on the actual fitted head; independent selection, synchronized front/profile camera, saved option reopening and workspace reload verified. Legacy options show declared 70 mm, 1.6 m, 0.04 m, four-round defaults. No app alert or new app console error; one earlier unrelated extension error remains in browser logs."
+        },
+        {
+          "command": "Latest running API invalid setting boundary",
+          "result": "Explicit zero focal length rejected HTTP 400 before native processing. Loopback service is running the latest source."
+        },
+        {
+          "command": "Portable HTML log validation",
+          "result": "All 55 then-linked relative pictures and retained outputs existed and returned HTTP 200; task selector and verified scoped entry loaded in the in-app browser. No model weights, source photo library, databases or credentials staged."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/mpfb-running.png",
+          "caption": "Actual MPFB process running at 5%; shared input checks are separately labeled.",
+          "date": "2026-09-30T01:59:26-03:00"
+        },
+        {
+          "src": "assets/mpfb-fitted-profile.png",
+          "caption": "Synchronized profile inspection of the actual fitted head with independent current/proposed meshes; hidden surfaces remain inferred and beard boundaries need refinement.",
+          "date": "2026-09-30T01:59:26-03:00"
+        },
+        {
+          "src": "assets/mpfb-six-view-evaluation.png",
+          "caption": "Six synthetic input views beside untextured fitted geometry. Three views supplied paired landmarks; both profiles and back did not. This is not real-person reconstruction accuracy or haircut evidence.",
+          "date": "2026-09-30T01:59:26-03:00"
+        },
+        {
+          "src": "assets/mpfb-final-front.png",
+          "caption": "Final browser view of the retained synthetic Alex fitted head with independently refitted current/proposed hair and beard; direct editing and expected-result selection remain pending.",
+          "date": "2026-09-30T02:01:57-03:00"
+        },
+        {
+          "src": "assets/mpfb-final-evidence.png",
+          "caption": "Completed actual six-view MPFB experiment with explicit fitted/inferred geometry labels, framing-aligned landmark error and retained diagnostic evidence.",
+          "date": "2026-09-30T02:01:57-03:00"
+        },
+        {
+          "src": "assets/mpfb-fitted-comparison.png",
+          "caption": "Intermediate browser render of the actual fitted head and independent style meshes before the final labeling and viewport capture corrections. Final screenshots below provide the complete inspection view.",
+          "date": "2026-09-30T02:03:53-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/native-mpfb-provenance.json",
+          "label": "Exact native runtime, model sources, hashes, licenses and bundled notices"
+        },
+        {
+          "href": "assets/mpfb-fit-results.json",
+          "label": "Three actual fit reports, coverage, resource use and distinct head hashes"
+        },
+        {
+          "href": "assets/mpfb-populated-native-results.json",
+          "label": "Retained fictional-case processing and saved option results"
+        },
+        {
+          "href": "assets/mpfb-live-verification.json",
+          "label": "Actual native API, failure, privacy and cancellation verification"
+        },
+        {
+          "href": "assets/mpfb-browser-style-checks.json",
+          "label": "Actual browser loading of all sixteen fitted style variants"
+        },
+        {
+          "href": "assets/mpfb-parent-death-check.json",
+          "label": "Abrupt-shutdown native process verification"
+        },
+        {
+          "href": "assets/mpfb-final-pipeline-check.json",
+          "label": "Reproduced final native processing settings and results"
+        },
+        {
+          "href": "http://127.0.0.1:8080/demos?client=a0b730e5-490f-488d-ae16-4f3812ee044f",
+          "label": "Reopen the retained fitted exploration in the local app"
+        },
+        {
+          "href": "assets/makehuman-core-provenance.json",
+          "label": "Exact Blender and MPFB versions, GPL code and separate CC0 core asset/target provenance"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 07."
+        },
+        {
+          "date": "2026-09-30T00:47:04-03:00",
+          "text": "Beginning actual MPFB six-photo fitting with explicit cameras/landmarks and bounded iterations. Shared mannequin asset generation from task 05 is not counted as a client fit. Full demo verification remains pending in task 07 after direct editing and expected-selection history."
+        },
+        {
+          "date": "2026-09-30T01:29:32-03:00",
+          "text": "Native workflow implemented; app/browser verification and local milestone commit remain pending."
+        },
+        {
+          "date": "2026-09-30T02:01:57-03:00",
+          "text": "Native experiment technical checks passed. Professional likeness/style assessment and the full candidate journey remain pending."
+        },
+        {
+          "date": "2026-09-30T02:02:34-03:00",
+          "text": "Verified the scoped native processing experiment. Full Blender demo task 07 stays pending until client editing, expected-result history and complete journey verification are delivered."
         }
       ]
     },

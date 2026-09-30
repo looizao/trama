@@ -30,6 +30,7 @@ func (a *App) Handler() http.Handler {
 	mux.HandleFunc("POST /api/clients/{clientID}/demo-options", a.authenticated(a.saveDemoOption))
 	mux.HandleFunc("GET /api/clients/{clientID}/demo-jobs", a.authenticated(a.listDemoJobs))
 	mux.HandleFunc("POST /api/clients/{clientID}/demo-jobs", a.authenticated(a.createDemoJob))
+	mux.HandleFunc("GET /api/clients/{clientID}/demo-jobs/{runID}/artifacts/{kind}/{artifactID}", a.authenticated(a.nativeDemoArtifact))
 	mux.HandleFunc("POST /api/clients/{clientID}/demo-jobs/{runID}/cancel", a.authenticated(a.cancelDemoJob))
 	mux.HandleFunc("GET /api/intake-templates", a.authenticated(a.listTemplates))
 	mux.HandleFunc("POST /api/intake-templates", a.authenticated(a.saveTemplate))

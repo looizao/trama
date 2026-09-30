@@ -29,7 +29,7 @@ func demoFixture(t *testing.T) privacyFixture {
 	return f
 }
 func demoState(set string) DemoWorkspaceState {
-	return DemoWorkspaceState{Candidate: "blender-mpfb", PhotoSetID: set, CurrentHairID: "sample", CurrentBeardID: "clean-shaven", HairID: "keep-current", BeardID: "sample", Camera: DemoCamera{Azimuth: .5, Elevation: .2, Distance: 1.1}, MinimumWidth: 512}
+	return DemoWorkspaceState{Candidate: "blender-mpfb", PhotoSetID: set, CurrentHairID: "sample", CurrentBeardID: "clean-shaven", HairID: "keep-current", BeardID: "sample", Camera: DemoCamera{Azimuth: .5, Elevation: .2, Distance: 1.1}, MinimumWidth: 512, Native: NativeDemoSettings{FocalLength: 70, CameraDistance: 1.6, CameraHeight: .04, FitRounds: 4}}
 }
 func demoCapture(t *testing.T, f privacyFixture, corrupt bool) PhotoSet {
 	w := f.request(t, "POST", "/api/clients/"+f.client+"/photo-sets", map[string]string{"title": "Diagnostic fixture"})
@@ -354,5 +354,123 @@ func TestDemoQueuedWorkResumesAfterLocalRestart(t *testing.T) {
 	var report DemoInputReport
 	if err = json.Unmarshal(result.Result, &report); err != nil || len(report.Inputs) != 6 {
 		t.Fatal("queued work did not resume with its original inputs", err)
+	}
+}
+
+func TestNativeDemoSettingsAndUnconfiguredRoutes(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	s := demoCapture(t, f, false)
+	t.Setenv("LOCAL_DEMO_ROOT", "")
+	in := map[string]any{"candidate": "blender-mpfb", "photoSetId": s.ID, "minimumWidth": 512, "kind": "fit"}
+	w := f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)
+	if w.Code != 503 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	t.Setenv("LOCAL_DEMO_ROOT", t.TempDir())
+	in["native"] = map[string]any{"fitRounds": 99}
+	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)
+	if w.Code != 400 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	in["native"] = map[string]any{"focalLength": 0}
+	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)
+	if w.Code != 400 {
+		t.Fatal("explicit zero focal length silently defaulted", w.Code, w.Body.String())
+	}
+	in["candidate"] = "colmap"
+	in["native"] = map[string]any{}
+	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", in)
+	if w.Code != 400 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+}
+func TestNativeDemoErasureTerminatesChildBeforePurging(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	s := demoCapture(t, f, false)
+	root := t.TempDir()
+	t.Setenv("LOCAL_DEMO_ROOT", root)
+	python := filepath.Join(root, ".scratch/private/native-demos/python/bin/python")
+	script := filepath.Join(root, "scripts/native-demos/run.py")
+	if err := os.MkdirAll(filepath.Dir(python), 0700); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.MkdirAll(filepath.Dir(script), 0700); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(python, []byte("#!/bin/sh\nexec /bin/sh \"$@\"\n"), 0700); err != nil {
+		t.Fatal(err)
+	}
+	// A real subprocess continuously writes into the job directory. Purging
+	// without terminating the whole group would recreate that directory.
+	body := `#!/bin/sh
+dir="$2"
+while true; do
+ mkdir -p "$dir"
+ echo diagnostic-fixture > "$dir/child-alive"
+ sleep .02
+done
+`
+	if err := os.WriteFile(script, []byte(body), 0700); err != nil {
+		t.Fatal(err)
+	}
+	w := f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", map[string]any{"candidate": "blender-mpfb", "photoSetId": s.ID, "minimumWidth": 512, "kind": "fit"})
+	if w.Code != 202 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	job := responseRecord[DemoJob](t, w.Body.Bytes())
+	dir := f.a.demoJobDirectory(f.client, job.ID)
+	deadline := time.Now().Add(3 * time.Second)
+	for {
+		if _, err := os.Stat(filepath.Join(dir, "child-alive")); err == nil {
+			break
+		}
+		if time.Now().After(deadline) {
+			t.Fatal("real child did not start")
+		}
+		time.Sleep(10 * time.Millisecond)
+	}
+	w = f.request(t, "DELETE", "/api/assets/"+s.Views["right-profile"], map[string]bool{"confirmed": true})
+	if w.Code != 200 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	time.Sleep(100 * time.Millisecond)
+	if _, err := os.Stat(dir); !os.IsNotExist(err) {
+		t.Fatal("child recreated deleted model directory", err)
+	}
+	var status, result string
+	if err := f.a.DB.QueryRow("SELECT r.status,j.result FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1", job.ID).Scan(&status, &result); err != nil {
+		t.Fatal(err)
+	}
+	if status != "cancelled" || result != "{}" {
+		t.Fatal(status, result)
+	}
+	w = f.request(t, "GET", "/api/clients/"+f.client+"/demo-jobs/"+job.ID+"/artifacts/head/model", nil)
+	if w.Code != 404 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+}
+func TestNativeModelSelectionRequiresMatchingSourceSnapshot(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	s := demoCapture(t, f, false)
+	state := demoState(s.ID)
+	state.ModelRunID = "unknown"
+	w := f.request(t, "PUT", "/api/clients/"+f.client+"/demo-workspace", map[string]any{"version": 0, "state": state})
+	if w.Code != 400 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	// Completed input diagnostics still cannot be selected as a fitted head.
+	w = f.request(t, "POST", "/api/clients/"+f.client+"/demo-jobs", map[string]any{"candidate": "blender-mpfb", "photoSetId": s.ID, "minimumWidth": 512})
+	if w.Code != 202 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	job := responseRecord[DemoJob](t, w.Body.Bytes())
+	waitDemoJob(t, f, job.ID, "completed")
+	state.ModelRunID = job.ID
+	w = f.request(t, "PUT", "/api/clients/"+f.client+"/demo-workspace", map[string]any{"version": 0, "state": state})
+	if w.Code != 400 {
+		t.Fatal(w.Code, w.Body.String())
 	}
 }

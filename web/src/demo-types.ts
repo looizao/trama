@@ -3,7 +3,14 @@ export type DemoCamera = {
   elevation: number
   distance: number
 }
+export type NativeSettings = {
+  focalLength: number
+  cameraDistance: number
+  cameraHeight: number
+  fitRounds: number
+}
 export type DemoState = {
+  native?: NativeSettings
   candidate: string
   photoSetId: string
   photoViews?: Record<string, string>
@@ -60,9 +67,38 @@ export type DemoJob = {
   status: string
   error: string
   progress: number
-  settings: { minimumWidth: number }
+  settings: { minimumWidth: number; native?: NativeSettings }
   createdAt: string
   result: {
+    diagnostics?: string[]
+    head?: string
+    hair?: Record<string, string>
+    beard?: Record<string, string>
+    retainedBytes?: number
+    failure?: { error?: string }
+    fit?: {
+      pairedLandmarks: number
+      meanLandmarkErrorPixels: number
+      evaluations: number
+      initialLoss: number
+      finalLoss: number
+      iterations: { iteration: number; loss: number }[]
+      views: {
+        view: string
+        targetFaces: number
+        neutralFaces: number
+        matchedLandmarks: number
+        limitation?: string
+      }[]
+      limitations: string[]
+    }
+    resources?: {
+      stage: string
+      seconds: number
+      cpuSeconds: number
+      peakRssKiB: number
+      exitCode: number
+    }[]
     scope?: string
     geometry?: string
     elapsedMs?: number

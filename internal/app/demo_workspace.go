@@ -16,16 +16,17 @@ type DemoCamera struct {
 	Distance  float64 `json:"distance"`
 }
 type DemoWorkspaceState struct {
-	Candidate      string            `json:"candidate"`
-	PhotoSetID     string            `json:"photoSetId"`
-	PhotoViews     map[string]string `json:"photoViews"`
-	ModelRunID     string            `json:"modelRunId"`
-	CurrentHairID  string            `json:"currentHairId"`
-	CurrentBeardID string            `json:"currentBeardId"`
-	HairID         string            `json:"hairId"`
-	BeardID        string            `json:"beardId"`
-	Camera         DemoCamera        `json:"camera"`
-	MinimumWidth   int               `json:"minimumWidth"`
+	Candidate      string             `json:"candidate"`
+	PhotoSetID     string             `json:"photoSetId"`
+	PhotoViews     map[string]string  `json:"photoViews"`
+	ModelRunID     string             `json:"modelRunId"`
+	CurrentHairID  string             `json:"currentHairId"`
+	CurrentBeardID string             `json:"currentBeardId"`
+	HairID         string             `json:"hairId"`
+	BeardID        string             `json:"beardId"`
+	Camera         DemoCamera         `json:"camera"`
+	MinimumWidth   int                `json:"minimumWidth"`
+	Native         NativeDemoSettings `json:"native"`
 }
 type DemoOption struct {
 	ID        string             `json:"id"`
@@ -38,6 +39,9 @@ type DemoOption struct {
 
 func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) string {
 	client := r.PathValue("clientID")
+	if message := state.Native.defaultsAndValidate(); message != "" {
+		return message
+	}
 	if !validDemoCandidate(state.Candidate) {
 		return "select one of the eight demo candidates"
 	}
@@ -56,7 +60,7 @@ func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) stri
 	}
 	// Personalized model selection becomes available only after a fitting route
 	// publishes an actual model. Input reports cannot masquerade as 3D results.
-	if state.ModelRunID != "" {
+	if state.ModelRunID != "" && !a.completedNativeModel(r, *state) {
 		return "a completed fitting result is required"
 	}
 	if state.MinimumWidth < 64 || state.MinimumWidth > 4096 {
@@ -201,7 +205,7 @@ func (a *App) listDemoOptions(w http.ResponseWriter, r *http.Request) {
 			problem(w, 500, "invalid saved option")
 			return
 		}
-		x.Geometry = "Shared synthetic mannequin asset inspection"
+		x.Geometry = nativeGeometry(x.State)
 		items = append(items, x)
 	}
 	if rows.Err() != nil {
@@ -237,7 +241,7 @@ func (a *App) saveDemoOption(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, message)
 		return
 	}
-	x := DemoOption{ID: newID(), Title: in.Title, Candidate: in.State.Candidate, Geometry: "Shared synthetic mannequin asset inspection", State: in.State, CreatedAt: now()}
+	x := DemoOption{ID: newID(), Title: in.Title, Candidate: in.State.Candidate, Geometry: nativeGeometry(in.State), State: in.State, CreatedAt: now()}
 	tx, err := a.DB.BeginTx(r.Context(), nil)
 	if err != nil {
 		problem(w, 500, "could not save explored asset option")

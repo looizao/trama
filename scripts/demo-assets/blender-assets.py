@@ -78,9 +78,10 @@ def setup_studio():
     return scene,camera
 
 
-def create_head(profile=None):
+def create_head(profile=None, *, neutral=False, fit_targets=None):
     macro = TargetService.get_default_macro_info_dict()
-    macro.update(gender=1.0,age=.32,weight=.47,muscle=.55)
+    if not neutral:
+        macro.update(gender=1.0,age=.32,weight=.47,muscle=.55)
     if profile:
         macro.update(profile['macro'])
     h = HumanService.create_human(macro_detail_dict=macro)
@@ -89,6 +90,8 @@ def create_head(profile=None):
             TargetService.load_target(h,str(PRIVATE/'tools/mpfb2/src/mpfb/data/targets'/target),weight=value)
         skin_path=AssetService.find_asset_absolute_path(profile['skin']+'.mhmat',asset_subdir='skins')
         HumanService.set_character_skin(skin_path,h,skin_type='GAMEENGINE')
+    for target,value in (fit_targets or {}).items():
+        TargetService.load_target(h,str(PRIVATE/'tools/mpfb2/src/mpfb/data/targets'/target),weight=value)
     helper_groups = json.loads((PRIVATE/'tools/mpfb2/src/mpfb/data/mesh_metadata/basemesh_vertex_groups.json').read_text())
     mask = h.modifiers.get('Hide helpers')
     mask.show_viewport = False
@@ -394,18 +397,23 @@ def fictional_cases():
         print('FICTIONAL_CASE',profile['id'],flush=True)
 
 
-if '--clients-only' in sys.argv:
-    fictional_cases()
-else:
-    scene,camera = setup_studio()
-    head,eyes,human,origin_z,markers = create_head()
-    export([head,eyes],OUT/'neutral-head.glb')
-    scene.render.filepath = str(OUT/'neutral-head-front.png')
-    bpy.ops.render.render(write_still=True)
-    bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'neutral-head.blend'))
-    if '--beard-only' not in sys.argv:
-        hair_catalog(human,origin_z,scene,camera,head)
-    beard_catalog(head,markers,scene,camera)
-    print(json.dumps({'phase':'neutral mannequin intermediate','vertices':len(head.data.vertices),
-                      'polygons':len(head.data.polygons),'synthetic':True,
-                      'limitations':['Browser and cross-route compatibility pending']}))
+def main():
+    if '--clients-only' in sys.argv:
+        fictional_cases()
+    else:
+        scene,camera = setup_studio()
+        head,eyes,human,origin_z,markers = create_head()
+        export([head,eyes],OUT/'neutral-head.glb')
+        scene.render.filepath = str(OUT/'neutral-head-front.png')
+        bpy.ops.render.render(write_still=True)
+        bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'neutral-head.blend'))
+        if '--beard-only' not in sys.argv:
+            hair_catalog(human,origin_z,scene,camera,head)
+        beard_catalog(head,markers,scene,camera)
+        print(json.dumps({'phase':'neutral mannequin intermediate','vertices':len(head.data.vertices),
+                          'polygons':len(head.data.polygons),'synthetic':True,
+                          'limitations':['Browser and cross-route compatibility pending']}))
+
+
+if __name__ == '__main__':
+    main()
