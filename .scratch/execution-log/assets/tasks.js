@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T13:16:17-03:00",
+  "updated": "2026-09-30T13:24:20-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -3432,19 +3432,102 @@ window.executionLog={
         "Integrated saved comparison journey; not labeled standalone photo reconstruction.",
         "Software/assets licenses and complete setup/processing effort recorded."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Completed native MeshLab processing of all three corrected MakeHuman primary fits, preserving the earlier experiments. Full browser journey saved independent keep-current/clean-shaven alternative, bounded written recipe, direct hair edit, six equal rendered cameras, immutable revision 3, consultation-specific synthetic expected result and exact reopening.",
+        "Fixed native diagnostic setting strings causing horizontal overflow. Job text now wraps, preserving readable filter parameters. Browser verified document width equals client width after reload; original failed layout picture retained."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "MeshLab remains an explicitly dependent supporting processor. No observed scan, raw-photo reconstruction or new anatomical detail is claimed. Sampled distances can miss local errors. Coarse shared beard geometry needs task 15 cleanup, and professional assessment is pending."
+      ],
+      "verification": [
+        {
+          "command": "populate-components.py meshlab --upstream makehuman --attempt visible-lips-v2 --source-style-version makehuman-visible-lips-v2",
+          "result": "PASS actual Alex/Maya/Noah CPU jobs completed. Alex 4.038s/142673195 bytes/0.267mm maximum surface deviation; Maya 3.420s/140782800 bytes/0.225mm; Noah 3.351s/138961107 bytes/0.257mm. Distances are against upstream fitted geometry, not actual people."
+        },
+        {
+          "command": "verify-components-assets.py --candidate meshlab --makehuman-style-version makehuman-visible-lips-v2",
+          "result": "PASS actual 153 GLBs, 54 native renders, nine same-six-photo snapshots, exact unchanged independent styles, native PLY round trips, real repair/simplification filters, sampled distances and provenance. Artificial topology fixture proves non-manifold repair without deleting valid faces, separate from client geometry."
+        },
+        {
+          "command": "Browser full journey and verify-local-candidate-journey.py meshlab",
+          "result": "PASS five actual native assets, anonymous 401, two actual JPEG browser pictures, immutable lineage, simulated expected selection version 1, workspace persistence, stale 409, unsupported mixed request atomic 400 and unlisted style 404. First direct stroke missed and left no change; successful visible hair hit retained one stroke, followed by all six matching cameras."
+        },
+        {
+          "command": "go test ./... and npm --prefix web run build",
+          "result": "PASS mise Go 1.26.0 packages cached; final build 1.57s after CSS correction, existing 707.14kB warning."
+        },
+        {
+          "command": "Final browser reload, layout and resource measurements",
+          "result": "PASS page/client width both 1265px at viewport 1280px. Current 227010 triangles/13.3MB/480ms/115.6 initial FPS; proposed 104572 triangles/7.1MB/306ms/115.6 initial FPS. One console rejection comes from the unrelated QuillBot browser extension, not Trama source; retained as a browser-environment limitation."
+        },
+        {
+          "command": "verify-execution-log.py",
+          "result": "PASS 267 actual linked resources HTTP 200 and byte-identical, 113 pictures decoded or XML-parsed, one active task."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/meshlab-journey-reopened-2026-09-30.png",
+          "caption": "Actual reopened independent styles and edits. Intermediate horizontal overflow visible; fixed and reverified in the later picture.",
+          "date": "2026-09-30T13:23:58-03:00"
+        },
+        {
+          "src": "assets/meshlab-journey-layout-fixed-2026-09-30.png",
+          "caption": "Final loaded synchronized MeshLab current/proposed views after wrapping long native parameters. Same synthetic fitting dependency, neutral head, real independent styles and saved recipe.",
+          "date": "2026-09-30T13:23:58-03:00"
+        },
+        {
+          "src": "assets/meshlab-journey-expected-result-2026-09-30.png",
+          "caption": "Simulated expected MeshLab choice retains separate Open3D and earlier candidate selections. Professional acceptance and route selection remain pending.",
+          "date": "2026-09-30T13:23:58-03:00"
+        },
+        {
+          "src": "assets/meshlab-three-upstream-comparison-makehuman-visible-lips-v2.png",
+          "caption": "Actual neutral upstream fitted heads above and native MeshLab processed heads below, using the same six fictional inputs.",
+          "date": "2026-09-30T13:23:58-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/meshlab-journey-camera-verification.json",
+          "label": "Actual all-angle rendered camera and direct editing checks"
+        },
+        {
+          "href": "assets/meshlab-journey-verification.json",
+          "label": "Actual persisted native journey and failure checks"
+        },
+        {
+          "href": "assets/meshlab-makehuman-populated-results-makehuman-visible-lips-v2.json",
+          "label": "Three actual corrected upstream experiments and resources"
+        },
+        {
+          "href": "assets/meshlab-output-verification-makehuman-visible-lips-v2.json",
+          "label": "Actual nine supporting experiments and independent assets"
+        },
+        {
+          "href": "assets/meshlab-native-filter-fixture-makehuman-visible-lips-v2.json",
+          "label": "Real native filters on an explicit artificial topology diagnostic"
+        },
+        {
+          "href": "assets/meshlab-provenance.json",
+          "label": "Exact software and dependency license provenance"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Full candidate journey verification follows actual native processing and shared editing/selection history. No approved feature removed."
+        },
+        {
+          "date": "2026-09-30T13:16:17-03:00",
+          "text": "Begin complete MeshLab / PyMeshLab supporting journey with real native processing of corrected MakeHuman primary fits. All earlier experiments retained, upstream reconstruction/fitting dependency explicit."
+        },
+        {
+          "date": "2026-09-30T13:23:58-03:00",
+          "text": "Expected panel locator was scoped to its exact synthetic consultation after ambiguity. Preserved historical artificial filter fixture; new verification writes a version-specific fixture rather than replacing earlier evidence."
         }
       ]
     },

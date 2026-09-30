@@ -1,0 +1,1752 @@
+{
+  "date": "2026-09-30T13:16:42-0300",
+  "scope": "Real supporting processing of identified fitted heads and unchanged six-photo inputs. No raw-photo reconstruction attributed to component, no measured scan or real likeness proof. Full editing/expected-result journeys and professional review remain pending.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "94508d2f-1243-4329-9d11-cae2038116c5",
+      "jobId": "c80f8b79-acfa-4f28-b2b1-a5cfa3979684",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 35433,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1669,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 319829,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795708,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 9362,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 98242,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 603370,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 618185,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 618223,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 621663,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 621706,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 626743,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852672,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501464,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 1811580,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9517596,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4115632,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 656176,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 9517604,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 58830,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49599,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 59006,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33008,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 47238,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19867,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501464,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 9517604,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 9517596,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4115632,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 656176,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 1811580,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "meshlab",
+        "completedAt": "2026-09-30T16:16:33.112075+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7212,
+              "vertices": 3746
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000577
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6.1e-05
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6.4e-05
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 9759
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.004991
+            },
+            {
+              "after": {
+                "triangles": 7212,
+                "vertices": 8556
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 9759
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7213
+              },
+              "returned": {},
+              "seconds": 0.027543
+            },
+            {
+              "after": {
+                "triangles": 7212,
+                "vertices": 3746
+              },
+              "before": {
+                "triangles": 7212,
+                "vertices": 8556
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000612
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.4989519665250555e-05,
+                "diag_mesh_0": 0.646600067615509,
+                "diag_mesh_1": 0.6465783676924965,
+                "max": 0.00026735119172371924,
+                "mean": 2.2689475372317247e-05,
+                "min": 0,
+                "n_samples": 4949
+              },
+              "requestedSamples": 4949
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.477085192571394e-05,
+                "diag_mesh_0": 0.6465783715248108,
+                "diag_mesh_1": 0.6466000908143555,
+                "max": 0.00023042022075969726,
+                "mean": 1.2898412933282088e-05,
+                "min": 0,
+                "n_samples": 3746
+              },
+              "requestedSamples": 3746
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7212,
+              "vertices": 3746
+            },
+            "before": {
+              "triangles": 9618,
+              "vertices": 4949
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.00023042022075969726,
+                "meanMetres": 1.2898412933282088e-05,
+                "rmsMetres": 3.477085192571394e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00026735119172371924,
+                "meanMetres": 2.2689475372317247e-05,
+                "rmsMetres": 4.4989519665250555e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7213
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "94508d2f-1243-4329-9d11-cae2038116c5"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "94508d2f-1243-4329-9d11-cae2038116c5",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "7de2b7e08a09b918f0977279425a54250d36f27b1b8f3fc48cd60f9f2074f547"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "ff107020f37f05178b6ff470159cbe82da2d03a4f9b6091b15ac3030faa0aed3"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "be62ce6ca9382c659ac0eec33817570bc6997a2c748f3d3dca02d49f2883e6f3"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "fddda071524561180e06c52e335e2e548949fddd739002379ff876748cbd2a1f"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "d198cb955e8ce8ea42503450634991c456f2b9765d6d929319bd84500f11413e"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4c6d03630b9bd4682bd6ee6ee16525899bb477a15d809a4812b0847cd3b6c3df"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "34b51b76cf3e2c92a6040089434ef6ceeed36da83bce7d8d2df93288da07f23a"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "a8789ac8c31f3fea762a8c4c4a10c97d68a358fdd5bc67b55e8f4158f09852ef"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "0116ac63cb043b2acd8ac9baf56b949a370905ebc1973cf4fcb2145e823ad701"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "e2f8e56381a144fc297fdcad781db4a482f29aaaa8fdea82a58da4607592ca23"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "e0c778a7adb2f5e7b36537aa1d2a74c9b41e192268a790c283d06499d465b1df"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "c9424b375bcaf3ec5b85eba403dd2f22b35cd9ee1a9a28303caaf04d60047367"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "bdd4f5954ca9f600aea2e107f716d8f360d953ed0ceef4b80e81e3224ce5c7bf"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "3b7ee2ccba012adaef3c25ccaf0c08e296c48341f6da8a9867cf7d12613f0416"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "b8d42996fc5fd7c7c464447f7aa991a32ea858c2667d0690ed1fb10c8c250e60"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "79d125ae6f11cb00d6743c7609150954de9117754bca9769db679d23f1127f5c"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 276,
+              "connected_components_number": 2,
+              "edges_number": 10956,
+              "faces_number": 7212,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3746
+            },
+            "before": {
+              "boundary_edges": 276,
+              "connected_components_number": 2,
+              "edges_number": 14565,
+              "faces_number": 9618,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4949
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "94508d2f-1243-4329-9d11-cae2038116c5"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "resources",
+          "meshlab",
+          "process",
+          "result",
+          "component",
+          "settings"
+        ],
+        "elapsedMs": 4038,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/c80f8b79-acfa-4f28-b2b1-a5cfa3979684"
+            ],
+            "cpuSeconds": 3.755,
+            "exitCode": 0,
+            "peakRssKiB": 161432,
+            "seconds": 4.035,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 142673195,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "1048ab0c-923a-4435-8e44-5a306a513ba4",
+      "jobId": "80eb1567-4b34-4c48-aef0-b219ba705e41",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 35648,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1667,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 322665,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 797188,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 9359,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 97535,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 671991,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 671990,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 663566,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 668353,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 666523,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 674103,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 854540,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 1812768,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9178352,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4340692,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 752276,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 9178360,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 57920,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49369,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 58278,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33219,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46610,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19730,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 9178360,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 9178352,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4340692,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 752276,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 1812768,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "meshlab",
+        "completedAt": "2026-09-30T16:16:37.653207+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7264,
+              "vertices": 3782
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000557
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6e-05
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6.7e-05
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 9837
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.005362
+            },
+            {
+              "after": {
+                "triangles": 7264,
+                "vertices": 8626
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 9837
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7264
+              },
+              "returned": {},
+              "seconds": 0.030332
+            },
+            {
+              "after": {
+                "triangles": 7264,
+                "vertices": 3782
+              },
+              "before": {
+                "triangles": 7264,
+                "vertices": 8626
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000642
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.3681364331860095e-05,
+                "diag_mesh_0": 0.6476314663887024,
+                "diag_mesh_1": 0.6476082258110213,
+                "max": 0.00022459453612100333,
+                "mean": 2.2295518647297285e-05,
+                "min": 0,
+                "n_samples": 4993
+              },
+              "requestedSamples": 4993
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.2514322811039165e-05,
+                "diag_mesh_0": 0.64760822057724,
+                "diag_mesh_1": 0.6476314912278931,
+                "max": 0.0002128546329913661,
+                "mean": 1.1994875421805773e-05,
+                "min": 0,
+                "n_samples": 3782
+              },
+              "requestedSamples": 3782
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7264,
+              "vertices": 3782
+            },
+            "before": {
+              "triangles": 9686,
+              "vertices": 4993
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.0002128546329913661,
+                "meanMetres": 1.1994875421805773e-05,
+                "rmsMetres": 3.2514322811039165e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00022459453612100333,
+                "meanMetres": 2.2295518647297285e-05,
+                "rmsMetres": 4.3681364331860095e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7264
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "1048ab0c-923a-4435-8e44-5a306a513ba4"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "1048ab0c-923a-4435-8e44-5a306a513ba4",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "69d2718dbff0f16affb35ad18a9e83149fc2016dd4da8feac9f1f302e329f0ba"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "35bf927aaa6f19a8f66ebc84988910c62d51500ee747bc54493e734d60a3bae2"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "fe0051a2811ac44434147fbf75cc030e1a79c0ee191c8869c936d66ba652f408"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "a07dad36494b764da032d2f10ee14daa90653fdece35dde88af002fbae382971"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "cb3f1f198553d75c3ae86f49bf0a540145e8069ea7c244f8d1248e7d37ee71d8"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "2facfa7b937516b49455214acb8fbf572d9094388ebe48e55a144236518cb03e"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "43bb9c38123cb102114513dd8ed20fe538d1fcd0f4564bfb35db91adbeccb434"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "bfeefbc24e4e2345979c2afdc5f4c839d73eba17e7d80c18fdc4be4bfd8f35a1"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "c925085fcd71b4c9c5827483bf414c6314cdd8bc8f9f938e2bffc26bbe130817"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "98a218065ecf3d3ad372c297b6bba0756651bffbe76f5ac15e7d47257b567ef4"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "80032fdcd3e211cd01664f584f165530b76b974ad8ccbca4c6c604d864b57ccf"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "018a3bc8d58feeb0f58adbd749d154df840600eb72cec90c414c1a8efa3cff64"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "88f70bb8450932974a34d9162d5d80ecc511d3104730baf7d0706cb1ec8f1730"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "2f940e066f2619b9bc367adebb0f028986c6310dfc961c7ccfd03d49522b3ad2"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "c0bf861e31be36f348ef3121660a045fa9019b484ad010c758632b33ba358277"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "77802c125e6335f127ded2308f581611dca106063ea14c54083653345c8b98d2"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 296,
+              "connected_components_number": 2,
+              "edges_number": 11044,
+              "faces_number": 7264,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3782
+            },
+            "before": {
+              "boundary_edges": 296,
+              "connected_components_number": 2,
+              "edges_number": 14677,
+              "faces_number": 9686,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4993
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "1048ab0c-923a-4435-8e44-5a306a513ba4"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "process",
+          "resources",
+          "settings",
+          "component",
+          "meshlab",
+          "result"
+        ],
+        "elapsedMs": 3420,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/80eb1567-4b34-4c48-aef0-b219ba705e41"
+            ],
+            "cpuSeconds": 3.663,
+            "exitCode": 0,
+            "peakRssKiB": 161664,
+            "seconds": 3.416,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 140782800,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "68956936-e1f1-4a0b-80cd-93b7609ea71b",
+      "jobId": "2d609f85-3fb1-48b8-95df-d57eed3d1d3f",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 31700,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1667,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 318987,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795276,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 9357,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 96121,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 594433,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 608112,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 595581,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 603933,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 605703,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 611226,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852100,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917840,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 1683932,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8968208,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4257668,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 805468,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 8968220,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 56666,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 48580,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 57796,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 32794,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46502,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19827,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917840,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 8968220,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 8968208,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4257668,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 805468,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 1683932,
+            "path": "upstream/beard/chinstrap.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "meshlab",
+        "completedAt": "2026-09-30T16:16:41.672157+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7198,
+              "vertices": 3735
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000494
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 7.8e-05
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6e-05
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 9735
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.004472
+            },
+            {
+              "after": {
+                "triangles": 7198,
+                "vertices": 8535
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 9735
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7198
+              },
+              "returned": {},
+              "seconds": 0.027375
+            },
+            {
+              "after": {
+                "triangles": 7198,
+                "vertices": 3735
+              },
+              "before": {
+                "triangles": 7198,
+                "vertices": 8535
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000606
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.3739808461396024e-05,
+                "diag_mesh_0": 0.6432738900184631,
+                "diag_mesh_1": 0.6432523684083506,
+                "max": 0.00025732300127856433,
+                "mean": 2.20610381802544e-05,
+                "min": 0,
+                "n_samples": 4935
+              },
+              "requestedSamples": 4935
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.2761250622570515e-05,
+                "diag_mesh_0": 0.6432523727416992,
+                "diag_mesh_1": 0.6432739138064109,
+                "max": 0.0002200892340624705,
+                "mean": 1.2112001968489494e-05,
+                "min": 0,
+                "n_samples": 3735
+              },
+              "requestedSamples": 3735
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7198,
+              "vertices": 3735
+            },
+            "before": {
+              "triangles": 9598,
+              "vertices": 4935
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.0002200892340624705,
+                "meanMetres": 1.2112001968489494e-05,
+                "rmsMetres": 3.2761250622570515e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00025732300127856433,
+                "meanMetres": 2.20610381802544e-05,
+                "rmsMetres": 4.3739808461396024e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7198
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "68956936-e1f1-4a0b-80cd-93b7609ea71b"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "68956936-e1f1-4a0b-80cd-93b7609ea71b",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "32a1c0e4c8c1f5ba378236db738c3472111dcc057b0bcce911956a43d47bb50b"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "6926e257e98ce8908e4ffcc4610fbf4c145e6c81edfa53ed7992b347adf15ff4"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "22cfbd2e8dc8c21bdd6b27f4b21364ba55fddf0f165993a323f78f5a0a550e32"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "049af3f20a636f1900b5ed3f0a59ce7ca2292fe6107b05e186c3d9ea096a4bad"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "9475a2b38d91889b28701aec575c4e9b32c7b1d25d3e7e0f5e444e41bc323c08"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4ed0e0b1e70687f62318b3e734db0083b484457c199c0ed0b7157c4299e09af2"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "bb9a0696e37916d0baabc6ad43d99135c3f3459798eea884de797545c5b60db3"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "8a6fbf60f08fa3f1ac34cfd77315e945f6d0810fcba91fffa85c59f49f99ec08"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "ba3160adec3480fad5223b226b1066b5e2c7fb5b9bffa92a58b6037dfd6ecf65"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "c6eb1d6204fa7e0586fa33e4da4567c09068906d9b24e74e2b29654b124fd435"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "0a3e05fa4f657a0583001a8c24de219ec2a59b8935857ede2b57a469963b4fc7"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "ad9e15a790d92b09cf031bf51649067fb02cb2a206865c05414ac735b3a3761d"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "1909d482b66b0b0f2c105ef84ec2b1643b8f64004908b8c0091c6afdcbf6f93f"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "e32bef7b40577ebf40ea67a5110be90911db39389de30dd985a380e00450c808"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "36ed359f316db46fdc285f43b8bf3050440c61bdb1fef83b9fa1da4171b8ae4f"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "aea2a2e8e67b94bf3333206bedd89b1b6ae8cbe7594b4e52a5166ae3f7c39e33"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 268,
+              "connected_components_number": 2,
+              "edges_number": 10931,
+              "faces_number": 7198,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3735
+            },
+            "before": {
+              "boundary_edges": 268,
+              "connected_components_number": 2,
+              "edges_number": 14531,
+              "faces_number": 9598,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4935
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "68956936-e1f1-4a0b-80cd-93b7609ea71b"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "process",
+          "result",
+          "component",
+          "settings",
+          "meshlab",
+          "resources"
+        ],
+        "elapsedMs": 3351,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/2d609f85-3fb1-48b8-95df-d57eed3d1d3f"
+            ],
+            "cpuSeconds": 3.596,
+            "exitCode": 0,
+            "peakRssKiB": 162080,
+            "seconds": 3.346,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 138961107,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    }
+  ]
+}

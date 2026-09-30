@@ -8,6 +8,7 @@ import open3d as o3d
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[2]
 p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab','cloudcompare'],default='open3d');p.add_argument('--makehuman-style-version',choices=['makehuman-visible-lips-v2'],default='');args=p.parse_args();candidate=args.candidate
+output_suffix='-'+args.makehuman_style_version if args.makehuman_style_version else ''
 if candidate=='meshlab':import pymeshlab as ml
 if candidate=='cloudcompare':
  spec=importlib.util.spec_from_file_location('cloudcompare_native',ROOT/'scripts/native-demos/process-cloudcompare.py');cc=importlib.util.module_from_spec(spec);spec.loader.exec_module(cc)
@@ -29,7 +30,7 @@ if candidate=='meshlab':
  after_topology=fixture.get_topological_measures();assert after_topology['non_two_manifold_edges']==0
  assert fixture.current_mesh().face_number()==3 and fixture.current_mesh().vertex_number()>5 and triangle_coordinates(fixture.current_mesh())==before_faces
  native_fixture={'date':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Artificial native filter diagnostic only, not client geometry or a fitted-head substitute. Three faces share one edge, with one duplicate face, one zero-area face and one unreferenced vertex injected.','nativeFilters':native_filters,'beforeRepair':before_topology,'afterRepair':after_topology,'allNondegenerateFaceCoordinatesPreserved':True,'nonManifoldEdgesSplitWithoutFaceDeletion':True}
- (ROOT/'.scratch/execution-log/assets/meshlab-native-filter-fixture.json').write_text(json.dumps(native_fixture,indent=2)+'\n')
+ (ROOT/f'.scratch/execution-log/assets/meshlab-native-filter-fixture{output_suffix}.json').write_text(json.dumps(native_fixture,indent=2)+'\n')
 log=ROOT/'.scratch/execution-log/assets';runtime=ROOT/'.scratch/private/runtime'
 def inspect_glb(path):
     data = path.read_bytes()
