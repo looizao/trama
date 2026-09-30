@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T10:32:04-03:00",
+  "updated": "2026-09-30T10:36:39-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2627,7 +2627,9 @@ window.executionLog={
           "date": "2026-09-30T10:29:59-03:00"
         }
       ],
-      "commits": [],
+      "commits": [
+        "c1f348bbe008ca04567bbaba7dc1b71df7ff6b0d"
+      ],
       "outputs": [
         {
           "href": "assets/expected-live-verification.json",
