@@ -9,7 +9,7 @@ export type NativeSettings = {
   cameraHeight: number
   fitRounds: number
 }
-export type ComponentSettings = { sourceRunId: string; triangleRatio: number; voxelSize: number; samplePoints: number }
+export type ComponentSettings = { sourceRunId: string; referenceRunId?: string; triangleRatio: number; voxelSize: number; samplePoints: number; icpIterations?: number; icpOverlap?: number }
 export type DemoState = {
   component?: ComponentSettings
   colmapPreset?: string
@@ -80,7 +80,8 @@ export type DemoJob = {
  pointProcessing?: { sampled: number; voxelized: number; retainedAfterOutlierFilter: number; role: string };
  alignment?: { input: string; fitness: number; inlierRmseMetres: number; maximumIterations: number; actualIterations?: number; iterations?: { iteration:number; fitness:number; inlierRmseMetres:number }[]; recoveredPointMaximumErrorMetres: number };
  filters?: { filter: string; parameters: unknown; seconds: number; before: {vertices:number;triangles:number}; after: {vertices:number;triangles:number} }[];
- topology?: unknown; measurements?: unknown; conversion?: unknown;
+ topology?: unknown; measurements?: unknown; conversion?: unknown; distanceSamples?: unknown; commands?: unknown;
+ comparison?: {referenceRunId:string;referenceCandidate:string;beforeAlignment:{meanMetres:number;maximumMetres:number};afterAlignment:{meanMetres:number;maximumMetres:number};scope:string;previewEffect:string;surfaceCoverage:string;nativeTrace:string;nativeMatrix:number[][]};
  provenance: { upstreamCandidate: string; upstreamProvenance: unknown }; limitations: string[]
  };
     diagnostics?: string[]

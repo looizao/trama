@@ -187,6 +187,15 @@ CREATE TABLE IF NOT EXISTS demo_job_sources (
   CHECK(run_id <> source_run_id)
 );
 CREATE INDEX IF NOT EXISTS demo_job_sources_parent_idx ON demo_job_sources(source_run_id);
+CREATE TABLE IF NOT EXISTS demo_job_references (
+  run_id text PRIMARY KEY REFERENCES demo_jobs(run_id) ON DELETE CASCADE,
+  source_run_id text NOT NULL REFERENCES demo_jobs(run_id) ON DELETE CASCADE,
+  CHECK(run_id <> source_run_id)
+);
+CREATE INDEX IF NOT EXISTS demo_job_references_parent_idx ON demo_job_references(source_run_id);
+CREATE VIEW IF NOT EXISTS demo_job_dependencies AS
+SELECT run_id,source_run_id FROM demo_job_sources
+UNION SELECT run_id,source_run_id FROM demo_job_references;
 CREATE TABLE IF NOT EXISTS demo_options (
   id text PRIMARY KEY,
   organization_id text NOT NULL REFERENCES organizations(id),

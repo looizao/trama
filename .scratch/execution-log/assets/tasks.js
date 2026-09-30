@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T07:10:13-03:00",
+  "updated": "2026-09-30T08:29:05-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2179,8 +2179,9 @@ window.executionLog={
       "id": "14a",
       "title": "CloudCompare component processing experiment",
       "depends": [
-        "07a",
-        "08a"
+        "07b",
+        "10a",
+        "11a"
       ],
       "requirement": "Align and compare shared outputs with named upstream reconstruction/fitting route. Retain actual processing success or failure; the full candidate journey remains in task 14.",
       "criteria": [
@@ -2189,17 +2190,174 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "verified",
+      "changes": [
+        "Built private pinned CloudCompare 2.13.2 CPU CLI with only Core I/O, native ICP trace, binary PLY conversion, actual surface sampling/C2M/C2C distances and known-transform registration. Actual browser controls support sample count, iteration limit and overlap.",
+        "Added optional native comparison reference from the same client and six immutable photos. Both source and reference are live dependencies checked at queue, publication, artifact access and saved-state validation; reference-only deletion cancels and removes dependent copies, workspaces and options.",
+        "Completed native CloudCompare v2 cross-route evaluation of all three synthetic cases with MakeHuman, MPFB and FLAME upstream fits. Optional second fit uses the same immutable six photos; both live dependencies guard processing, publication, previews, options and derived-media access."
+      ],
+      "limitations": [
+        "CloudCompare requires the explicitly named fitted upstream. The preview preserves that fit; native cross-route matrices affect diagnostic clouds only. Template agreement does not establish observed anatomy, reconstruction accuracy or client likeness.",
+        "Native random surface samples and model-mesh sampling have no seed control in this pinned CLI. Retained samples/settings/scripts make the experiment reproducible, but random point positions and cross-route ICP results may vary.",
+        "Common direct/written refinements, expected-result selection/history and professional style/likeness review remain pending. Existing catalog has coarse beard borders and long-hair below the cropped bust, to be refined in task 15.",
+        "Native surface sampling and mesh-reference ICP use internal randomness without CLI seed control. Metrics are retained actual results, not claimed byte-deterministic samples. Catalog beard boundaries remain coarse; professional style and likeness acceptance and full editing/expected-result journeys are pending."
+      ],
+      "verification": [
+        {
+          "command": "cmake source build (4 parallel jobs)",
+          "result": "Passed: 108.98 seconds wall, 403.31 seconds CPU, peak child RSS 867756 KiB. Private CloudCompare 2.13.2 with only Core I/O plugin."
+        },
+        {
+          "command": "verify-components-assets.py --candidate cloudcompare",
+          "result": "Passed actual 153 GLBs and 54 renders from nine native v2 jobs, both same-six-photo source snapshots, unchanged 16 styles per job, coordinate conversion error zero, and all 45 mesh/cloud PLY exports reopened by CloudCompare with coordinate/topology/scalar-field equality."
+        },
+        {
+          "command": "verify-components.py --candidate cloudcompare",
+          "result": "Passed actual disposable primary and reference MakeHuman fits, native CloudCompare processing, 24 owned artifacts, corrupt upstream failure/no fallback, cross-client rejection, running-child cancellation and reference-only transitive erasure. Primary fit, six source photos and permission survived reference removal; withdrawn diagnostics denied; deleted reference cannot be reused."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; mise exec go@1.26.0 -- go test -race ./internal/app; npm --prefix web run build",
+          "result": "PASS: all Go packages and app race tests (5.795 s); frontend production build (1.62 s). Existing demo chunk size warning remains."
+        },
+        {
+          "command": "@Browser: 48 real style loads across three upstreams; six named synchronized angles; independent keep-current and clean-shaven; save, reload and native download",
+          "result": "PASS: actual asset URLs and measured mesh keys; retained native job ea0e181b-0061-4e1a-9a69-418197718bc4, selected hair short01, beard goatee, shared angle pi/4 and zoom 1.19 survive reload. No console errors or warnings. Owned downloaded comparison-aligned.ply is byte-identical to retained output; native CloudCompare reopens identical vertices and actual distance scalar fields with complete dual-source provenance. English and Portuguese settings verified."
+        },
+        {
+          "command": "Portable HTML relative-asset audit and @Browser local HTTP log",
+          "result": "PASS: 183 existing relative assets decode; all five CloudCompare pictures loaded in the local log. Lazy offscreen pictures initially had no natural width; scrolling and waiting verified each. App instructions and settings render in both English and Portuguese."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/cloudcompare-browser-cross-route-settings.png",
+          "caption": "Actual browser settings for an identified primary fit and a separate same-six-photo comparison reference; local native processing controls.",
+          "date": "2026-09-30T08:26:19-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-browser-reopened.png",
+          "caption": "Reloaded actual MakeHuman head processed by CloudCompare, with independent swept hair and goatee and synchronized current/proposed views. Coarse beard boundaries remain pending catalog refinement; synthetic input and fitted anatomy do not establish real accuracy.",
+          "date": "2026-09-30T08:26:19-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-browser-portuguese.png",
+          "caption": "Portuguese controls for actual surface sampling and rigid ICP. Native diagnostic report text remains technical English.",
+          "date": "2026-09-30T08:26:19-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-three-upstream-comparison.png",
+          "caption": "Actual upstream and CloudCompare converted GLB renders for MPFB, MakeHuman and FLAME. Conversion preserves geometry and preview; CloudCompare is a supporting component, not a photo reconstructor.",
+          "date": "2026-09-30T08:26:19-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-native-distance-traces.png",
+          "caption": "Actual native distance fields before and after cross-fit registration plus native RMS traces. Template disagreement and cropped neck surfaces contribute to distances; neither fitted template is measured ground truth.",
+          "date": "2026-09-30T08:26:19-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/cloudcompare-initial-failed-results.json",
+          "label": "Actual initial failure results, no fallback head"
+        },
+        {
+          "href": "assets/cloudcompare-ascii-precision-failed-results.json",
+          "label": "Actual ASCII conversion failures and retained resources"
+        },
+        {
+          "href": "assets/cloudcompare-provenance.json",
+          "label": "Separate pinned software, native and Qt licensing, acquisition and build metadata"
+        },
+        {
+          "href": "assets/cloudcompare-output-verification.json",
+          "label": "Nine actual cross-route outputs and 153 real GLB checks"
+        },
+        {
+          "href": "assets/cloudcompare-live-verification.json",
+          "label": "Actual native behavior, failure and reference erasure checks"
+        },
+        {
+          "href": "assets/cloudcompare-browser-native-result.json",
+          "label": "Browser-queued custom settings and native comparison result"
+        },
+        {
+          "href": "assets/cloudcompare-browser-style-loading.json",
+          "label": "48 actual independent style loads with browser performance measurements"
+        },
+        {
+          "href": "assets/cloudcompare-browser-camera-choices.json",
+          "label": "Synchronized named angles and independent keep-current/clean-shaven checks"
+        },
+        {
+          "href": "assets/cloudcompare-browser-persistence.json",
+          "label": "Actual persisted option and workspace"
+        },
+        {
+          "href": "assets/cloudcompare-browser-reload-download.json",
+          "label": "Browser reload, downloaded PLY hash and native reader verification"
+        },
+        {
+          "href": "assets/cloudcompare-makehuman-populated-results.json",
+          "label": "Three MakeHuman upstream experiments compared to MPFB"
+        },
+        {
+          "href": "assets/cloudcompare-blender-mpfb-populated-results.json",
+          "label": "Three MPFB upstream experiments compared to MakeHuman"
+        },
+        {
+          "href": "assets/cloudcompare-flame-populated-results.json",
+          "label": "Three FLAME upstream experiments compared to MakeHuman"
+        },
+        {
+          "href": "assets/cloudcompare-v1-output-verification.json",
+          "label": "Retained earlier known-transform-only native evaluation"
+        },
+        {
+          "href": "assets/open3d-provenance.json",
+          "label": "Exact Matplotlib 3.11.2 plotting dependency license and primary package provenance"
+        },
+        {
+          "href": "assets/cloudcompare-log-asset-audit.json",
+          "label": "Portable log asset audit"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 14."
+        },
+        {
+          "date": "2026-09-30T07:10:13-03:00",
+          "text": "Begin CloudCompare native supporting alignment and comparison with an explicit fitted upstream dependency. Inspect approved candidate scope, current source, actual local CLI availability and primary current licenses before acquiring or changing the route."
+        },
+        {
+          "date": "2026-09-30T07:21:15-03:00",
+          "text": "Stable CloudCompare 2.13.2 source pinned to 49dbbb662f296c7780aae717897c85b3cb3764ed. Native prerequisites are Qt 5.15.19. Initial CMake attempts failed on missing Qt5Svg, then Qt5LinguistTools. Private dependency extraction/build in progress; no system packages or production changed."
+        },
+        {
+          "date": "2026-09-30T07:33:01-03:00",
+          "text": "Frontend check initially failed because the optional ICP fields were absent from the inferred fallback TypeScript type. Explicit ComponentSettings annotation applied before rerunning the required build."
+        },
+        {
+          "date": "2026-09-30T07:33:52-03:00",
+          "text": "First three actual CloudCompare runs failed: MAX_TCOUNT is a per-distance/ICP option in pinned 2.13.2, not a global command. No head published. Failed runs and summary retained; option moved into each actual native stage before new attempts."
+        },
+        {
+          "date": "2026-09-30T07:36:01-03:00",
+          "text": "Second actual native attempts completed sampling and cloud-to-mesh distances but failed the conversion publication gate: pinned RPly ASCII output rounded coordinates. Changed to binary little-endian PLY with strict typed decoding, exact triangle ordering and coordinate checks. No failed output is offered as a native head."
+        },
+        {
+          "date": "2026-09-30T07:50:52-03:00",
+          "text": "Adding an optional real cross-route fitted reference exposed the existing one-primary-source schema constraint: the queue and new regression test failed with HTTP 500. No run was retained. Added a distinct optional reference dependency table and unified recursive dependency view, preserving all existing source rows without replacement or backup flow."
+        },
+        {
+          "date": "2026-09-30T08:26:19-03:00",
+          "text": "Completed actual browser reload and download verification. A nonfocusable heading keyboard action timed out, then a focusable catalog filter provided the complete screenshot. One guessed Portuguese label did not match; the actual DOM label was used and verified. These automation failures did not change processing outcomes."
+        },
+        {
+          "date": "2026-09-30T08:29:05-03:00",
+          "text": "Native processing acceptance criteria verified. Full candidate journey remains pending task 14 with shared editing and expected-result history; professional acceptance and final route selection remain pending."
         }
       ]
     },

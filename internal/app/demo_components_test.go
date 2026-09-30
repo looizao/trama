@@ -9,6 +9,87 @@ import (
 	"testing"
 )
 
+func TestComponentICPSettingsBoundsAndLegacyDefaults(t *testing.T) {
+	for _, tc := range []struct {
+		iterations, overlap int
+		valid               bool
+	}{{0, 0, true}, {80, 100, true}, {10, 50, true}, {200, 100, true}, {9, 100, false}, {201, 100, false}, {80, 49, false}, {80, 101, false}, {-1, 100, false}} {
+		s := componentDemoDefaults()
+		s.SourceRunID = newID()
+		s.ICPIterations, s.ICPOverlap = tc.iterations, tc.overlap
+		if (s.validate() == "") != tc.valid {
+			t.Fatalf("ICP bounds %d/%d returned %q", tc.iterations, tc.overlap, s.validate())
+		}
+	}
+	if !componentCandidate("cloudcompare") || componentCandidate("unregistered-processor") {
+		t.Fatal("incorrect supporting candidate allowlist")
+	}
+}
+
+func TestCloudCompareReferenceIsASecondLiveDependency(t *testing.T) {
+	f := demoFixture(t)
+	f.acknowledge(t)
+	set := demoCapture(t, f, false)
+	primary, reference := completedComponentParent(t, f, set), completedComponentParent(t, f, set)
+	t.Setenv("LOCAL_DEMO_ROOT", t.TempDir())
+	f.a.demoSlots <- struct{}{}
+	f.a.demoSlots <- struct{}{}
+	defer func() { <-f.a.demoSlots; <-f.a.demoSlots }()
+	base := "/api/clients/" + f.client
+	settings := componentDemoDefaults()
+	settings.SourceRunID, settings.ReferenceRunID = primary.ID, reference.ID
+	payload := map[string]any{"candidate": "cloudcompare", "kind": "process", "minimumWidth": 512, "photoSetId": set.ID, "photoViews": set.Views, "component": settings}
+	for _, invalid := range []string{primary.ID, newID()} {
+		bad := settings
+		bad.ReferenceRunID = invalid
+		payload["component"] = bad
+		if w := f.request(t, "POST", base+"/demo-jobs", payload); w.Code != 400 {
+			t.Fatal("invalid comparison reference accepted", w.Code)
+		}
+	}
+	payload["component"] = settings
+	w := f.request(t, "POST", base+"/demo-jobs", payload)
+	if w.Code != 202 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	child := responseRecord[DemoJob](t, w.Body.Bytes())
+	if !f.a.nativeParentsAvailable(context.Background(), child.ID) {
+		t.Fatal("valid two-parent comparison denied")
+	}
+	f.a.DB.Exec("DELETE FROM demo_job_references WHERE run_id=$1 AND source_run_id=$2", child.ID, reference.ID)
+	if f.a.nativeParentsAvailable(context.Background(), child.ID) {
+		t.Fatal("missing reference dependency accepted")
+	}
+	f.a.DB.Exec("INSERT INTO demo_job_references(run_id,source_run_id) VALUES($1,$2)", child.ID, reference.ID)
+	state := demoState(set.ID)
+	state.Candidate, state.PhotoViews, state.Component = "cloudcompare", set.Views, settings
+	if w = f.request(t, "PUT", base+"/demo-workspace", map[string]any{"state": state, "version": 0}); w.Code != 200 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	if w = f.request(t, "POST", base+"/demo-options", map[string]any{"state": state, "title": "Two-parent input settings fixture"}); w.Code != 201 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	if w = f.request(t, "POST", base+"/demo-jobs/"+reference.ID+"/cancel", nil); w.Code != 200 {
+		t.Fatal(w.Code, w.Body.String())
+	}
+	if !f.a.nativeParentsAvailable(context.Background(), primary.ID) || f.a.nativeParentsAvailable(context.Background(), child.ID) {
+		t.Fatal("reference erasure removed primary or retained derived access")
+	}
+	for _, table := range []string{"demo_options", "demo_workspace_states"} {
+		var count int
+		f.a.DB.QueryRow("SELECT count(*) FROM "+table+" WHERE client_id=$1", f.client).Scan(&count)
+		if count != 0 {
+			t.Fatal("reference-dependent state survived", table)
+		}
+	}
+	if w = f.request(t, "POST", base+"/demo-jobs", payload); w.Code != 400 {
+		t.Fatal("erased reference recreated", w.Code)
+	}
+	if !f.a.hasPermission(context.Background(), f.client) {
+		t.Fatal("reference removal withdrew permission")
+	}
+}
+
 // Test-only retained model files exercise ownership and transitive erasure, not
 // native geometry. Actual Open3D processing is verified by the local CLI flow.
 func completedComponentParent(t *testing.T, f privacyFixture, set PhotoSet) DemoJob {

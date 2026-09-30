@@ -438,6 +438,10 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 			problem(w, 400, "upstream head must be completed, owned by this client and dependent on the same six photos")
 			return
 		}
+		if in.Component.ReferenceRunID != "" && (in.Candidate != "cloudcompare" || !a.validateComponentSource(r, in.Component.ReferenceRunID, in.PhotoSetID, inputs)) {
+			problem(w, 400, "CloudCompare reference must be completed, owned and dependent on the same six photos")
+			return
+		}
 	}
 	settings := rawJSON(map[string]any{"minimumWidth": in.MinimumWidth, "native": in.Native, "colmapPreset": in.ColmapPreset, "component": in.Component, "photoViews": inputs})
 	x := DemoJob{ID: newID(), Candidate: in.Candidate, Kind: in.Kind, PhotoSetID: in.PhotoSetID, PhotoViews: inputs, Status: "queued", Settings: settings, Result: json.RawMessage("{}"), CreatedAt: now()}
@@ -453,6 +457,9 @@ func (a *App) createDemoJob(w http.ResponseWriter, r *http.Request) {
 	}
 	if err == nil && in.Kind == "process" {
 		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_job_sources(run_id,source_run_id) VALUES($1,$2)", x.ID, in.Component.SourceRunID)
+	}
+	if err == nil && in.Kind == "process" && in.Component.ReferenceRunID != "" {
+		_, err = tx.ExecContext(r.Context(), "INSERT INTO demo_job_references(run_id,source_run_id) VALUES($1,$2)", x.ID, in.Component.ReferenceRunID)
 	}
 	for _, view := range requiredPhotoViews {
 		if err == nil {

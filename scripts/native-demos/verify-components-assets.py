@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Validate actual retained component meshes and unchanged upstream dependencies."""
-import argparse,datetime,hashlib,io,json,struct
+import argparse,datetime,hashlib,io,json,struct,os,subprocess,importlib.util
 from pathlib import Path
 import numpy as np
 import open3d as o3d
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[2]
-p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab'],default='open3d');candidate=p.parse_args().candidate
+p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab','cloudcompare'],default='open3d');candidate=p.parse_args().candidate
 if candidate=='meshlab':import pymeshlab as ml
+if candidate=='cloudcompare':
+ spec=importlib.util.spec_from_file_location('cloudcompare_native',ROOT/'scripts/native-demos/process-cloudcompare.py');cc=importlib.util.module_from_spec(spec);spec.loader.exec_module(cc)
 if candidate=='meshlab':
  # A declared artificial topology fixture verifies real repair behavior when
  # the fitted heads themselves already have no non-manifold edges.
@@ -74,8 +76,8 @@ def inspect_glb(path):
 
 imports=json.loads((runtime/'demo-asset-imports.json').read_text());results=[]
 sheet=Image.new('RGB',(1152,1040),'#e2e8ea');draw=ImageDraw.Draw(sheet)
-draw.text((15,10),('Open3D CPU 0.20.0' if candidate=='open3d' else 'PyMeshLab 2025.7.post1')+' | three fitted upstream routes | synthetic inputs',fill='#17313d',font_size=22)
-draw.text((15,42),'25% triangle reduction. Upper: upstream / lower: processed. Same local CPU renderer. No observed scan.',fill='#17313d',font_size=17)
+draw.text((15,10),('Open3D CPU 0.20.0' if candidate=='open3d' else 'CloudCompare 2.13.2' if candidate=='cloudcompare' else 'PyMeshLab 2025.7.post1')+' | three fitted upstream routes | synthetic inputs',fill='#17313d',font_size=22)
+draw.text((15,42),('Native conversion, unchanged triangles.' if candidate=='cloudcompare' else '25% triangle reduction.')+' Upper: upstream / lower: processed. Same local CPU renderer. No observed scan.',fill='#17313d',font_size=17)
 from flame import read_shared_glb
 from geometry import render,camera
 for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
@@ -83,13 +85,19 @@ for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
  for case in report['results']:
   client=imports['cases'][case['fictionalCase']]['clientId'];directory=runtime/'processing'/client/case['jobId']
   manifest=json.loads((directory/'manifest.json').read_text());component=json.loads((directory/'component-report.json').read_text())
-  assert component['processingVersion']=={'open3d':'open3d-cpu-upstream-v5','meshlab':'meshlab-native-upstream-v1'}[candidate]
+  assert component['processingVersion']=={'open3d':'open3d-cpu-upstream-v5','meshlab':'meshlab-native-upstream-v1','cloudcompare':'cloudcompare-native-upstream-v2'}[candidate]
   if candidate=='open3d':assert component['alignment']['actualIterations']==len(component['alignment']['iterations'])>0
-  else:
+  elif candidate=='meshlab':
    assert {'meshing_remove_duplicate_faces','meshing_remove_null_faces','meshing_repair_non_manifold_edges','meshing_decimation_quadric_edge_collapse'}.issubset({f['filter'] for f in component['filters']})
    assert component['conversion']['reopenedCounts']==component['mesh']['after']
    assert all(m['nativeResult']['n_samples']>100 for m in component['measurements'])
    assert component['conversion']['maximumCoordinateErrorMetres']<.000001
+  elif candidate=='cloudcompare':
+   assert component['alignment']['actualIterations']==len(component['alignment']['iterations'])-1>0
+   assert component['alignment']['recoveredPointMaximumErrorMetres']<.00001
+   assert component['conversion']['maximumCoordinateErrorMetres']==0
+   assert component['conversion']['reopenedCounts']==component['mesh']['after']==component['mesh']['before']
+   assert all(c['exitCode']==0 for c in component['commands'])
   assert len(manifest['inputs'])==6 and component['upstream']['candidate']==parent
   parent_dir=runtime/'processing'/client/component['upstream']['runId'];parent_manifest=json.loads((parent_dir/'manifest.json').read_text())
   current={i['view']:hashlib.sha256((directory/i['path']).read_bytes()).hexdigest() for i in manifest['inputs']}
@@ -111,15 +119,33 @@ for column,parent in enumerate(['blender-mpfb','makehuman','flame']):
   assert component['mesh']['after']['triangles']<=component['mesh']['before']['triangles']
   assert component['mesh']['deviation']['upstreamVerticesToProcessedSurface']['maximumMetres']<.001
   if candidate=='open3d':assert component['alignment']['fitness']>.99 and component['alignment']['recoveredPointMaximumErrorMetres']<.00001
-  for name in (['upstream-sampled.ply','processed-points.ply','processed-skin.ply'] if candidate=='open3d' else ['processed-skin.ply']):
+  ply_names=(['upstream-sampled.ply','processed-points.ply','processed-skin.ply'] if candidate in ['open3d','cloudcompare'] else ['processed-skin.ply'])
+  if candidate=='cloudcompare' and component.get('comparison'):ply_names+=['comparison-before.ply','comparison-aligned.ply']
+  for name in ply_names:
    header=(directory/name).read_bytes().split(b'end_header\n',1)[0]
    notices=[line.split(b' ',5)[5] for line in header.splitlines() if line.startswith(b'comment Trama provenance part ')]
    assert all(len(line)<256 for line in header.splitlines())
    assert json.loads(b''.join(notices))==component['provenance']
-   if candidate=='meshlab':
+   if candidate=='cloudcompare':
+    verification=directory/'verification-native-reader';verification.mkdir(exist_ok=True)
+    destination=verification/name
+    env=dict(os.environ,QT_QPA_PLATFORM='offscreen',QT_PLUGIN_PATH='/usr/lib/qt/plugins',LD_LIBRARY_PATH=str(ROOT/'.scratch/private/native-demos/cloudcompare-qt/usr/lib'),XDG_CONFIG_HOME=str(verification/'config'),XDG_DATA_HOME=str(verification/'data'),XDG_CACHE_HOME=str(verification/'cache'),XDG_DATA_DIRS=str(ROOT/'.scratch/private/native-demos/cloudcompare/share'))
+    command=['unshare','--user','--map-root-user','--net','--',str(ROOT/'.scratch/private/native-demos/cloudcompare/bin/CloudCompare'),'-SILENT','-AUTO_SAVE','OFF','-NO_TIMESTAMP','-C_EXPORT_FMT','PLY','-M_EXPORT_FMT','PLY','-PLY_EXPORT_FMT','BINARY_LE','-O',str(directory/name),'-SAVE_MESHES' if name=='processed-skin.ply' else '-SAVE_CLOUDS','FILE',str(destination)]
+    with (verification/(name+'.log')).open('w') as output:subprocess.run(command,env=env,cwd=verification,stdout=output,stderr=subprocess.STDOUT,check=True)
+    actual=cc.read_ply(directory/name);reopened=cc.read_ply(destination)
+    assert np.array_equal(actual[0],reopened[0]) and np.array_equal(actual[1],reopened[1]) and actual[2].keys()==reopened[2].keys()
+    assert all(np.array_equal(actual[2][k],reopened[2][k]) for k in actual[2])
+   elif candidate=='meshlab':
     reopened=ml.MeshSet();reopened.load_new_mesh(str(directory/name));assert reopened.current_mesh().face_number()==component['mesh']['after']['triangles']
    elif name=='processed-skin.ply':assert len(o3d.io.read_triangle_mesh(str(directory/name)).triangles)==component['mesh']['after']['triangles']
    else:assert len(o3d.io.read_point_cloud(str(directory/name)).points)>0
+  if candidate=='cloudcompare' and component.get('comparison'):
+   reference=manifest['upstream']['reference'];ref_dir=runtime/'processing'/client/reference['runId']
+   ref_manifest=json.loads((ref_dir/'manifest.json').read_text());assert {i['view']:hashlib.sha256((ref_dir/i['path']).read_bytes()).hexdigest() for i in ref_manifest['inputs']}==current
+   assert hashlib.sha256((ref_dir/'head.glb').read_bytes()).hexdigest()==component['comparison']['referenceHeadSha256']==reference['sha256']['head.glb']
+   actual_before=cc.read_ply(directory/'comparison-before.ply');actual_after=cc.read_ply(directory/'comparison-aligned.ply')
+   for label,value in [('beforeAlignment',actual_before),('afterAlignment',actual_after)]:
+    distance=next(v for k,v in value[2].items() if 'distance' in k.lower());assert np.isclose(distance.mean(),component['comparison'][label]['meanMetres']) and np.isclose(distance.max(),component['comparison'][label]['maximumMetres'])
   results.append({'fictionalCase':case['fictionalCase'],'upstream':parent,'jobId':case['jobId'],'sameSixOriginalInputSha256':current,'allSixSameAsParent':True,'stylesExactlySameAsParent':True,'actualNativeComponent':component,'glbChecks':checks})
   if case['fictionalCase']=='alex-ramos':
    cache=directory/'verification-textures';cache.mkdir(exist_ok=True)

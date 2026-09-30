@@ -1,0 +1,6 @@
+{
+  "date": "2026-09-30T11:26:44.720208+00:00",
+  "result": "PASS",
+  "relativeAssetsVerified": 183,
+  "scope": "Portable relative links, image decoding and one active implementation task. Local HTTP browser rendering checked separately."
+}

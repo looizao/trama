@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-30T11:11:18.826Z",
+  "scope": "Actual same-model current/proposed camera synchronization, keep-current hair and independent clean-shaven choice. Technical exploration, not selected expected result.",
+  "angles": [
+    {
+      "label": "Front",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "0.000000",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "0.000000",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Left three-quarter",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "0.785398",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "0.785398",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Right three-quarter",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "-0.785398",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "-0.785398",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Left profile",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "1.570796",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "1.570796",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Right profile",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "-1.570796",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "-1.570796",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "label": "Back",
+      "views": [
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "3.141593",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        },
+        {
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "3.141593",
+          "distance": "1.190000",
+          "elevation": "0.080000"
+        }
+      ]
+    }
+  ],
+  "keepCurrentHair": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+  "cleanShaven": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02"
+}

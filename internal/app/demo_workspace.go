@@ -73,6 +73,9 @@ func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) stri
 		if !a.validateComponentSource(r, state.Component.SourceRunID, state.PhotoSetID, state.PhotoViews) {
 			return "upstream source is no longer available"
 		}
+		if state.Component.ReferenceRunID != "" && (state.Candidate != "cloudcompare" || !a.validateComponentSource(r, state.Component.ReferenceRunID, state.PhotoSetID, state.PhotoViews)) {
+			return "CloudCompare comparison reference is no longer available"
+		}
 	}
 	// Personalized model selection becomes available only after a fitting route
 	// publishes an actual model. Input reports cannot masquerade as 3D results.

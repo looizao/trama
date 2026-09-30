@@ -363,10 +363,10 @@ func (a *App) applyErasure(ctx context.Context, e erasureEvent) error {
 		}
 	}
 	for _, id := range e.Runs {
-		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_workspace_states WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2)", e.ClientID, id); err != nil {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_workspace_states WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2 OR json_extract(state,'$.component.referenceRunId')=$2)", e.ClientID, id); err != nil {
 			return err
 		}
-		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2)", e.ClientID, id); err != nil {
+		if _, err = tx.ExecContext(ctx, "DELETE FROM demo_options WHERE client_id=$1 AND (json_extract(state,'$.modelRunId')=$2 OR json_extract(state,'$.component.sourceRunId')=$2 OR json_extract(state,'$.component.referenceRunId')=$2)", e.ClientID, id); err != nil {
 			return err
 		}
 		if _, err = tx.ExecContext(ctx, "INSERT OR IGNORE INTO privacy_tombstones(subject_type,subject_id) VALUES('run',$1)", id); err != nil {

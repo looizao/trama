@@ -11,6 +11,7 @@ import type {
   DemoOption,
   DemoJob,
   DemoCamera,
+  ComponentSettings,
 } from './demo-types'
 
 type PhotoSet = {
@@ -25,7 +26,7 @@ const nativeDefaults = {
   cameraHeight: 0.04,
   fitRounds: 4,
 }
-const componentDefaults = { sourceRunId: '', triangleRatio: .75, voxelSize: .003, samplePoints: 12000 }
+const componentDefaults: ComponentSettings = { sourceRunId: '', triangleRatio: .75, voxelSize: .003, samplePoints: 12000 }
 const views = [
   'front',
   'left-three-quarter',
@@ -336,9 +337,9 @@ function DemoSession({
   }, [state, authorized, workspace.data, sets.data, library])
   useEffect(() => {
     if (
-      state?.modelRunId &&
+      (state?.modelRunId || state?.component?.sourceRunId || state?.component?.referenceRunId) &&
       jobs.data?.some(
-        (j) => (j.id === state.modelRunId || j.id === state.component?.sourceRunId) && j.status === 'cancelled',
+        (j) => (j.id === state?.modelRunId || j.id === state?.component?.sourceRunId || j.id === state?.component?.referenceRunId) && j.status === 'cancelled',
       )
     ) {
       setState(undefined)
@@ -346,7 +347,7 @@ function DemoSession({
       cache.invalidateQueries({ queryKey: ['demo-workspace', clientId] })
       cache.invalidateQueries({ queryKey: ['demo-options', clientId] })
     }
-  }, [state?.modelRunId, state?.component?.sourceRunId, jobs.data, cache, clientId])
+  }, [state?.modelRunId, state?.component?.sourceRunId, state?.component?.referenceRunId, jobs.data, cache, clientId])
   function change(next: Partial<DemoState>) {
     setState((s) => (s ? { ...s, ...next } : s))
     setDirty(true)
@@ -439,6 +440,7 @@ function DemoSession({
   const componentRoute = ({
     open3d: { settings: 'Open3D supporting processing settings', button: 'Process upstream head locally with Open3D', job: 'Open3D upstream head processing experiment', description: 'Process a retained native fitted head with Open3D CPU. Mesh cleanup, decimation, point filtering and synthetic rigid-transform recovery are evaluated against the upstream fitted geometry. Open3D does not reconstruct a head from these photos.' },
     meshlab: { settings: 'MeshLab supporting processing settings', button: 'Process upstream head locally with MeshLab', job: 'MeshLab upstream head processing experiment', description: 'Apply actual MeshLab cleanup, edge repair, simplification and conversion to an identified fitted head. Inspect native bidirectional distance samples and topology changes. MeshLab does not reconstruct a head from these photos.' },
+    cloudcompare: { settings: 'CloudCompare supporting evaluation settings', button: 'Evaluate upstream head locally with CloudCompare', job: 'CloudCompare upstream head evaluation experiment', description: 'Use actual CloudCompare mesh conversion, surface sampling, cloud-to-mesh distances and ICP on a known synthetic perturbation of the selected fitted head. The preview retains the converted upstream fit. CloudCompare does not reconstruct a head from these photos.' },
   } as Record<string,{settings:string;button:string;job:string;description:string}>)[candidate.id]
   const componentSettings = state.component || componentDefaults
   const upstreamJobs = jobs.data?.filter((j) => (j.kind === 'fit' || j.kind === 'process') && j.status === 'completed' && j.result.head && (!j.result.targetBasisCheck || j.result.targetBasisCheck.passed)) || []
@@ -526,7 +528,7 @@ function DemoSession({
               : 'This workspace currently runs shared input diagnostics and real mannequin asset inspection. These are not candidate reconstruction or fitting results.',
           )}
         </p>
-        {(candidate.id === 'flame' || modelJob?.result.component?.upstream.candidate === 'flame') && <p className="notice">
+        {(candidate.id === 'flame' || modelJob?.result.component?.upstream.candidate === 'flame' || modelJob?.result.component?.comparison?.referenceCandidate === 'flame') && <p className="notice">
           FLAME 2023 Open · Max Planck Institute for Intelligent Systems / Max-Planck-Gesellschaft ·{' '}
           <a href="https://flame.is.tue.mpg.de/modellicense.html" target="_blank" rel="noreferrer">{t('Model terms')}</a> ·{' '}
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC-BY-4.0</a> ·{' '}
@@ -701,7 +703,7 @@ function DemoSession({
           <label>{t('Upstream native head experiment')}
             <select value={componentSettings.sourceRunId} onChange={(e) => {
               const parent = upstreamJobs.find((j) => j.id === e.target.value)
-              change({ component: { ...componentSettings, sourceRunId: e.target.value }, modelRunId: '', ...(parent ? { photoSetId: parent.photoSetId, photoViews: parent.photoViews, native: parent.settings.native || nativeDefaults } : {}) })
+              change({ component: { ...componentSettings, sourceRunId: e.target.value, referenceRunId: '' }, modelRunId: '', ...(parent ? { photoSetId: parent.photoSetId, photoViews: parent.photoViews, native: parent.settings.native || nativeDefaults } : {}) })
             }}>
               <option value="">{t('Select a completed native head')}</option>
               {upstreamJobs.map((j) => <option key={j.id} value={j.id}>{library.candidates.find((c) => c.id === j.candidate)?.name} · {dateLabel(j.createdAt, locale)} · {j.result.fit?.basisVersion || j.result.component?.processingVersion || ''} · {j.id}{historicalNativeFit(j) ? ' · '+t('Historical experiment with known limitations') : ''}</option>)}
@@ -709,11 +711,24 @@ function DemoSession({
           </label>
           {historicalNativeFit(upstreamJobs.find((j) => j.id === componentSettings.sourceRunId)) && <p className="error">{t('Historical upstream experiment has known fitting or shading limitations. Supporting processing does not repair those limitations.')}</p>}
           <p>{t('The selected upstream experiment and its same six photos remain live dependencies. Removing its output cancels processing and removes all derived copies and saved options. Hair and beard assets retain the upstream adaptation and licenses.')}</p>
-          {([
+          {candidate.id !== 'cloudcompare' && ([
             ['triangleRatio', 'Retained triangle fraction', .25, 1, .05],
             ['voxelSize', 'Diagnostic voxel size (m)', .001, .01, .001],
             ['samplePoints', candidate.id === 'meshlab' ? 'Maximum vertex distance samples per direction' : 'Sampled diagnostic points', 2000, 50000, 1000],
           ] as const).filter(([key]) => candidate.id === 'open3d' || key !== 'voxelSize').map(([key,label,min,max,step]) => <label key={key}>{t(label)}<input type="number" min={min} max={max} step={step} value={componentSettings[key]} onChange={(e) => change({ component: { ...componentSettings, [key]: Number(e.target.value) } })}/></label>)}
+          {candidate.id === 'cloudcompare' && <>
+            <label>{t('Optional fitted comparison reference')}<select value={componentSettings.referenceRunId || ''} onChange={(e) => change({component:{...componentSettings,referenceRunId:e.target.value}})}>
+              <option value="">{t('Known-transform diagnostic only')}</option>
+              {upstreamJobs.filter((j) => j.id !== componentSettings.sourceRunId && j.photoSetId === state.photoSetId && views.every((view) => j.photoViews?.[view] === state.photoViews?.[view])).map((j) => <option key={j.id} value={j.id}>{library.candidates.find((c) => c.id === j.candidate)?.name} · {j.result.fit?.basisVersion || j.result.component?.processingVersion || ''} · {j.id}{historicalNativeFit(j) ? ' · '+t('Historical experiment with known limitations') : ''}</option>)}
+            </select></label>
+            <p>{t('Both fitted experiments remain live dependencies. Cross-route distances compare template fits and inferred surfaces, not real-client accuracy. Registration changes only diagnostic clouds; the proposed head retains its selected source fit.')}</p>
+            {([
+              ['samplePoints', 'Native surface samples', 2000, 50000, 1000, 12000],
+              ['icpIterations', 'Maximum ICP iterations', 10, 200, 10, 80],
+              ['icpOverlap', 'ICP retained overlap (%)', 50, 100, 5, 100],
+            ] as const).map(([key,label,min,max,step,fallback]) => <label key={key}>{t(label)}<input type="number" min={min} max={max} step={step} value={componentSettings[key] ?? fallback} onChange={(e) => change({ component: { ...componentSettings, [key]: Number(e.target.value) } })}/></label>)}
+            <p>{t('ICP tests a known 8 degree rotation and 5,-3,4 mm translation of the same fitted vertices. No scale adjustment or new anatomy is inferred. Native surface samples are random and retained; the pinned CLI has no seed control.')}</p>
+          </>}
           {candidate.id === 'meshlab' && <p>{t('Repair splits non-manifold edges without deleting faces. Simplification preserves topology, boundaries and normals; missing surfaces are not filled. Distance sampling uses up to the requested number of actual vertices in each direction.')}</p>}
           <button className="button primary" disabled={busy || !componentSettings.sourceRunId || !selectedSet || !!selectedSet.missing.length} onClick={() => action(async () => {
             await api(`${base}/demo-jobs`, json('POST', { candidate: state.candidate, kind: 'process', photoSetId: state.photoSetId, photoViews: state.photoViews || {}, minimumWidth: state.minimumWidth, native: nativeSettings, component: componentSettings }))
@@ -1077,13 +1092,26 @@ function DemoSession({
                     {historicalNativeFit(jobs.data?.find((source) => source.id === j.result.component?.upstream.runId)) && <p className="error">{t('Historical upstream experiment has known fitting or shading limitations. Supporting processing does not repair those limitations.')}</p>}
                     <p><strong>{candidate.name} {j.result.component.version}</strong> {j.result.component.engineVersion} · {t('Upstream route')}: {library.candidates.find((c) => c.id === j.result.component?.upstream.candidate)?.name} · <code>{j.result.component.upstream.runId}</code></p>
                     <p>{t('Triangles')}: {j.result.component.mesh.before.triangles} → {j.result.component.mesh.after.triangles} · {t('Vertices')}: {j.result.component.mesh.before.vertices} → {j.result.component.mesh.after.vertices}</p>
-                    <p>{t('Deviation from upstream fitted surface')}: {t('mean')} {(j.result.component.mesh.deviation.upstreamVerticesToProcessedSurface.meanMetres*1000).toFixed(4)} mm · {t('maximum')} {(j.result.component.mesh.deviation.upstreamVerticesToProcessedSurface.maximumMetres*1000).toFixed(4)} mm</p>
+                    <p>{t(j.candidate === 'cloudcompare' ? 'Native conversion coordinate error' : 'Deviation from upstream fitted surface')}: {t('mean')} {(j.result.component.mesh.deviation.upstreamVerticesToProcessedSurface.meanMetres*1000).toFixed(4)} mm · {t('maximum')} {(j.result.component.mesh.deviation.upstreamVerticesToProcessedSurface.maximumMetres*1000).toFixed(4)} mm</p>
                     {j.result.component.pointProcessing && <p>{t('Diagnostic points')}: {j.result.component.pointProcessing.sampled} → {j.result.component.pointProcessing.voxelized} → {j.result.component.pointProcessing.retainedAfterOutlierFilter}. {j.result.component.pointProcessing.role}</p>}
                     {j.result.component.alignment && <p>{j.result.component.alignment.input}</p>}
-                    {j.result.component.processingVersion === 'open3d-cpu-upstream-v5' ? <p>{[['sampled-cloud','Sampled upstream cloud'],['filtered-cloud','Filtered diagnostic cloud'],['processed-skin','Processed skin mesh']].map(([id,label]) => <a style={{marginRight:'1rem'}} key={id} href={artifactURL(j.id,'geometry',id)}>{t(label)} (PLY)</a>)}</p> : j.result.component.processingVersion === 'meshlab-native-upstream-v1' ? <p><a href={artifactURL(j.id,'geometry','processed-skin')}>{t('Processed skin mesh')} (PLY)</a></p> : <p className="notice">{t('Historical PLY exports have not passed native-reader compatibility checks. Use the current verified processing version for downloads.')}</p>}
+                    {['open3d-cpu-upstream-v5','cloudcompare-native-upstream-v1','cloudcompare-native-upstream-v2'].includes(j.result.component.processingVersion) ? <p>{[['sampled-cloud','Sampled upstream cloud'],['filtered-cloud',j.candidate === 'cloudcompare' ? 'Aligned diagnostic cloud' : 'Filtered diagnostic cloud'],['processed-skin','Processed skin mesh']].map(([id,label]) => <a style={{marginRight:'1rem'}} key={id} href={artifactURL(j.id,'geometry',id)}>{t(label)} (PLY)</a>)}</p> : j.result.component.processingVersion === 'meshlab-native-upstream-v1' ? <p><a href={artifactURL(j.id,'geometry','processed-skin')}>{t('Processed skin mesh')} (PLY)</a></p> : <p className="notice">{t('Historical PLY exports have not passed native-reader compatibility checks. Use the current verified processing version for downloads.')}</p>}
                     {j.result.component.alignment && <p>ICP {t('fitness')}: {j.result.component.alignment.fitness.toFixed(6)} · RMSE {(j.result.component.alignment.inlierRmseMetres*1000).toFixed(6)} mm · {t('Recovered-point maximum error')} {(j.result.component.alignment.recoveredPointMaximumErrorMetres*1000).toFixed(6)} mm · {j.result.component.alignment.actualIterations !== undefined ? `${j.result.component.alignment.actualIterations} / ` : ''}{j.result.component.alignment.maximumIterations} {t('actual / maximum iterations')}</p>}
                     {j.result.component.alignment?.iterations && <details><summary>{t('Actual registration iterations')}</summary>{j.result.component.alignment.iterations.map((i) => <p key={i.iteration}>{i.iteration+1}: {t('fitness')} {i.fitness.toFixed(6)} · RMSE {(i.inlierRmseMetres*1000).toFixed(6)} mm</p>)}</details>}
                     {j.result.component.filters && <details open><summary>{t('Actual MeshLab filters and topology changes')}</summary>{j.result.component.filters.map((f,i) => <p key={i}><code>{f.filter}</code>: {f.before.vertices} → {f.after.vertices} {t('Vertices')}, {f.before.triangles} → {f.after.triangles} {t('Triangles')} · {f.seconds}s · {JSON.stringify(f.parameters)}</p>)}<pre style={{whiteSpace:'pre-wrap'}}>{JSON.stringify({topology:j.result.component.topology,distanceSamples:j.result.component.measurements,conversion:j.result.component.conversion},null,2)}</pre></details>}
+                    {j.candidate === 'cloudcompare' && <>
+                      <p className="notice">{t('ICP fitness is the native final matched vertex fraction of this same-geometry diagnostic. It is not measured client coverage. The trace includes the initial and stopping evaluation states; actual iterations count updates between these states.')}</p>
+                      <p>{[['cloudcompare-icp','Native ICP log'],['cloudcompare-trace','Native iteration trace'],['cloudcompare-matrix','Native registration matrix'],['cloudcompare-sampling','Native sampling and distance log']].map(([id,label]) => <a key={id} style={{marginRight:'1rem'}} href={artifactURL(j.id,'diagnostic',id)}>{t(label)}</a>)}</p>
+                      <details><summary>{t('Actual CloudCompare commands, distances and conversion')}</summary><pre style={{whiteSpace:'pre-wrap'}}>{JSON.stringify({commands:j.result.component.commands,distanceSamples:j.result.component.distanceSamples,conversion:j.result.component.conversion},null,2)}</pre></details>
+                      {j.result.component.comparison && <section aria-label={t('Native cross-route comparison')}>
+                        <p>{j.result.component.comparison.scope}</p><p>{t('Comparison reference')}: {j.result.component.comparison.referenceCandidate} · <code>{j.result.component.comparison.referenceRunId}</code></p>
+                        <p>{t('Before rigid alignment')}: {t('mean')} {(j.result.component.comparison.beforeAlignment.meanMetres*1000).toFixed(3)} mm · {t('maximum')} {(j.result.component.comparison.beforeAlignment.maximumMetres*1000).toFixed(3)} mm</p>
+                        <p>{t('After rigid alignment')}: {t('mean')} {(j.result.component.comparison.afterAlignment.meanMetres*1000).toFixed(3)} mm · {t('maximum')} {(j.result.component.comparison.afterAlignment.maximumMetres*1000).toFixed(3)} mm</p>
+                        <p>{j.result.component.comparison.previewEffect}</p><p>{j.result.component.comparison.surfaceCoverage}</p>
+                        <p><a href={artifactURL(j.id,'geometry','comparison-before')}>{t('Before alignment diagnostic cloud')} (PLY)</a> · <a href={artifactURL(j.id,'geometry','comparison-aligned')}>{t('Aligned cross-route diagnostic cloud')} (PLY)</a></p>
+                        <details><summary>{t('Native cross-route trace and matrix')}</summary><pre>{j.result.component.comparison.nativeTrace}</pre><pre>{JSON.stringify(j.result.component.comparison.nativeMatrix,null,2)}</pre></details>
+                      </section>}
+                    </>}
                     <figure><img style={{maxWidth:'100%'}} src={artifactURL(j.id,'evaluation','geometry')} alt={t('Actual supporting mesh processing evaluation')} loading="lazy"/><figcaption>{t('Measurements compare retained fitted geometry. No independent scan or real-client accuracy evidence.')}</figcaption></figure>
                     {j.result.component.limitations.map((l) => <p key={l}>{l}</p>)}
                     <details><summary>{t('Upstream license and change notices')}</summary><pre style={{whiteSpace:'pre-wrap'}}>{JSON.stringify(j.result.component.provenance,null,2)}</pre></details>

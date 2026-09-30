@@ -1,0 +1,2928 @@
+{
+  "date": "2026-09-30T07:51:37-0300",
+  "scope": "Real supporting processing of identified fitted heads and unchanged six-photo inputs. No raw-photo reconstruction attributed to component, no measured scan or real likeness proof. Full editing/expected-result journeys and professional review remain pending.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+      "jobId": "aa80257e-9101-47db-8bb6-194f860e977c",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 28778,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 420,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 39,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 5045,
+            "path": "cloudcompare.log"
+          },
+          {
+            "bytes": 186274,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 193793,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 81024,
+            "path": "comparison-before.ply"
+          },
+          {
+            "bytes": 81024,
+            "path": "comparison-aligned.ply"
+          },
+          {
+            "bytes": 81024,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 853936,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 19218,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 92971,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 471,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 603370,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 618185,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 618223,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 621663,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 621706,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 626743,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852672,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 834900,
+            "path": "reference-upstream/head.glb"
+          },
+          {
+            "bytes": 396530,
+            "path": "cloudcompare-native/upstream.ply"
+          },
+          {
+            "bytes": 3127,
+            "path": "cloudcompare-native/sample-convert-distance.log"
+          },
+          {
+            "bytes": 240941,
+            "path": "cloudcompare-native/known-transform.ply"
+          },
+          {
+            "bytes": 239657,
+            "path": "cloudcompare-native/reference.ply"
+          },
+          {
+            "bytes": 470,
+            "path": "cloudcompare-native/registration_trace_log.csv"
+          },
+          {
+            "bytes": 245,
+            "path": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"
+          },
+          {
+            "bytes": 79483,
+            "path": "cloudcompare-native/aligned.ply"
+          },
+          {
+            "bytes": 59642,
+            "path": "cloudcompare-native/reference-export.ply"
+          },
+          {
+            "bytes": 3600,
+            "path": "cloudcompare-native/icp.log"
+          },
+          {
+            "bytes": 3310,
+            "path": "cloudcompare-native/cross-route-distance-before.log"
+          },
+          {
+            "bytes": 3551,
+            "path": "cloudcompare-native/cross-route-alignment.log"
+          },
+          {
+            "bytes": 186274,
+            "path": "cloudcompare-native/reopened.ply"
+          },
+          {
+            "bytes": 4231,
+            "path": "cloudcompare-native/native-reopen.log"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501464,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 2336544,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8809152,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 2882224,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 792264,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 8809160,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 59111,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49731,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 59294,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33151,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 47350,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19867,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501464,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 8809160,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 8809152,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 2882224,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 792264,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 2336544,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "reference-upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "reference-upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "reference-upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "reference-upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "reference-upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "reference-upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "reference-upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "reference-upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "reference-upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902044,
+            "path": "reference-upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9695036,
+            "path": "reference-upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 18181940,
+            "path": "reference-upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 18181932,
+            "path": "reference-upstream/beard/full.glb"
+          },
+          {
+            "bytes": 7702768,
+            "path": "reference-upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1172312,
+            "path": "reference-upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3408440,
+            "path": "reference-upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 239657,
+            "path": "cloudcompare-native/cross-route/compared-vertices.ply"
+          },
+          {
+            "bytes": 397848,
+            "path": "cloudcompare-native/cross-route/reference-skin.ply"
+          },
+          {
+            "bytes": 1191,
+            "path": "cloudcompare-native/cross-route/registration_trace_log.csv"
+          },
+          {
+            "bytes": 244,
+            "path": "cloudcompare-native/cross-route/compared-vertices_REGISTRATION_MATRIX.txt"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "cloudcompare",
+        "completedAt": "2026-09-30T10:51:23.643883+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 15,
+            "fitness": 1,
+            "fitnessMeaning": "Native final point count divided by input vertex count, not independent surface coverage.",
+            "inlierRmseMetres": 1.48882e-08,
+            "input": "Known synthetic 8 degree Z rotation and 5,-3,4 mm translation of the same fitted skin vertices. Reference is the same geometry, not a second scan or measured client.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00959850037168,
+                "iteration": 0,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00812820060613,
+                "iteration": 1,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00714676737085,
+                "iteration": 2,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00622075725738,
+                "iteration": 3,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00536046446176,
+                "iteration": 4,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00461628611644,
+                "iteration": 5,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00401645143732,
+                "iteration": 6,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00348326773114,
+                "iteration": 7,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00287158573861,
+                "iteration": 8,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00208528047714,
+                "iteration": 9,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00128643401176,
+                "iteration": 10,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.000409465689441,
+                "iteration": 11,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.39556072185e-05,
+                "iteration": 12,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.48886406116e-08,
+                "iteration": 13,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.4888245479e-08,
+                "iteration": 14,
+                "pointCount": 4949
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.4889241513e-08,
+                "iteration": 15,
+                "pointCount": 4949
+              }
+            ],
+            "knownTransform": {
+              "rotation": [
+                [
+                  0.9902680687415704,
+                  -0.13917310096006544,
+                  0
+                ],
+                [
+                  0.13917310096006544,
+                  0.9902680687415704,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "translationMetres": [
+                0.005,
+                -0.003,
+                0.004
+              ]
+            },
+            "maximumIterations": 80,
+            "nativeMatrixOutputMaximumErrorMetres": 1.845558658675195e-08,
+            "nativeRecoveredTransform": [
+              [
+                0.990268051624,
+                0.139173105359,
+                3.65e-10,
+                -0.004533821251
+              ],
+              [
+                -0.139173105359,
+                0.990268051624,
+                6.91e-10,
+                0.003666666569
+              ],
+              [
+                -2.65e-10,
+                -7.35e-10,
+                1,
+                -0.003999998793
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "recoveredPointMaximumErrorMetres": 1.862645149230957e-08,
+            "traceStates": 16
+          },
+          "candidate": "cloudcompare",
+          "commands": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/upstream.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/processed-skin.ply",
+                "-SAMPLE_MESH",
+                "POINTS",
+                "12000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/upstream-sampled.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.324471,
+              "stage": "sample-convert-distance"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/known-transform.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/reference.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2C_DIST",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/aligned.ply /home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/reference-export.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.351915,
+              "stage": "icp"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/cross-route/reference-skin.ply",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/comparison-before.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.326275,
+              "stage": "cross-route-distance-before"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/cross-route/reference-skin.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/comparison-aligned.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 1.158073,
+              "stage": "cross-route-alignment"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/processed-skin.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c/cloudcompare-native/reopened.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.268805,
+              "stage": "native-reopen"
+            }
+          ],
+          "comparison": {
+            "afterAlignment": {
+              "count": 4949,
+              "maximumMetres": 0.008791401982307434,
+              "meanMetres": 0.0005089159240014851,
+              "rmsMetres": 0.0006584063521586359
+            },
+            "beforeAlignment": {
+              "count": 4949,
+              "maximumMetres": 0.00933979731053114,
+              "meanMetres": 0.0026423661038279533,
+              "rmsMetres": 0.0034476995933800936
+            },
+            "nativeFinalRmsMetres": 0.000658406,
+            "nativeMatrix": [
+              [
+                1,
+                2.0818081e-05,
+                1.1336396e-05,
+                5.036689e-06
+              ],
+              [
+                -2.0773145e-05,
+                0.999992191792,
+                -0.003949638456,
+                -0.000881135406
+              ],
+              [
+                -1.1418531e-05,
+                0.003949638456,
+                0.999992191792,
+                0.008887574077
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "nativeTrace": "Iteration; RMS; Point count;\n0; 0.0034476995098; 4949;\n1; 0.00305068444211; 4949;\n2; 0.00270889128953; 4949;\n3; 0.00242054959994; 4949;\n4; 0.00214150131888; 4949;\n5; 0.00187889911719; 4949;\n6; 0.00163829874403; 4949;\n7; 0.00141313811313; 4949;\n8; 0.00121861904837; 4949;\n9; 0.00105861495144; 4949;\n10; 0.000934570783989; 4949;\n11; 0.000840571810112; 4949;\n12; 0.000774545385451; 4949;\n13; 0.000731450521126; 4949;\n14; 0.000703603442664; 4949;\n15; 0.000686026437325; 4949;\n16; 0.00067529822453; 4949;\n17; 0.000668637625824; 4949;\n18; 0.000664599711538; 4949;\n19; 0.000662144047153; 4949;\n20; 0.000660661087696; 4949;\n21; 0.000659755991512; 4949;\n22; 0.00065918617482; 4949;\n23; 0.000658872320782; 4949;\n24; 0.000658703849649; 4949;\n25; 0.000658604170382; 4949;\n26; 0.000658536284913; 4949;\n27; 0.000658485743887; 4949;\n28; 0.000658455551219; 4949;\n29; 0.00065843556589; 4949;\n30; 0.000658423004606; 4949;\n31; 0.000658415061952; 4949;\n32; 0.00065841091792; 4949;\n33; 0.000658408802727; 4949;\n34; 0.000658407615626; 4949;\n35; 0.0006584069897; 4949;\n36; 0.000658406665944; 4949;\n37; 0.000658406493275; 4949;\n38; 0.000658406450107; 4949;\n39; 0.000658406385356; 4949;\n40; 0.000658406471691; 4949;\n",
+            "previewEffect": "Evaluation only. Cross-route alignment does not change the retained source preview or its styles.",
+            "referenceCandidate": "blender-mpfb",
+            "referenceHeadSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+            "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+            "scope": "Actual native CloudCompare rigid registration and unsigned vertex-to-mesh distances between two fitted heads from the same six synthetic photos. No independently observed geometry or real-client accuracy.",
+            "surfaceCoverage": "Distances include the cropped fitted skin and neck surfaces. Different templates and inferred hidden surfaces can dominate disagreement."
+          },
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "CloudCompare PLY",
+            "nativeWriter": "CloudCompare PLY",
+            "reopenedCounts": {
+              "triangles": 9618,
+              "vertices": 4949
+            }
+          },
+          "distanceSamples": {
+            "alignedVerticesToOriginalVertices": {
+              "count": 4949,
+              "maximumMetres": 1.862645149230957e-08,
+              "meanMetres": 4.985419632674848e-09
+            },
+            "nativeSurfaceSampling": {
+              "actual": 11997,
+              "randomSeed": "CloudCompare internal random sampling has no seed control in this pinned CLI; outputs retained for reproducibility, sample coordinates may vary on rerun.",
+              "requested": 12000
+            },
+            "sampledCloudToConvertedMesh": {
+              "count": 11997,
+              "maximumMetres": 1.5966008959367173e-08,
+              "meanMetres": 1.9270272044735748e-09
+            }
+          },
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 9618,
+              "vertices": 4949
+            },
+            "before": {
+              "triangles": 9618,
+              "vertices": 4949
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              }
+            },
+            "triangleTarget": 9618
+          },
+          "processingVersion": "cloudcompare-native-upstream-v2",
+          "provenance": {
+            "comparisonReference": {
+              "candidate": "blender-mpfb",
+              "changeNotice": "Native CloudCompare rigid registration and distances, with transformed diagnostic clouds only. The source preview and independent styles are unchanged.",
+              "headSha256": "c8713c751bc621667d8e2bed3abb49e28e6f39dd36d2df52cf4be54a82cc8795",
+              "runId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+              "upstreamProvenance": {}
+            },
+            "component": "CloudCompare 2.13.2 native CLI / GPL-3.0-or-later combined build",
+            "componentLicenseUrl": "https://github.com/CloudCompare/CloudCompare/blob/49dbbb662f296c7780aae717897c85b3cb3764ed/license.txt",
+            "componentModifications": "Native mesh conversion, surface sampling, unsigned cloud-to-mesh distances, known synthetic transform ICP and cloud-to-cloud distances. Existing ICP Release trace enabled at 12 significant digits. Returned preview uses actual converted upstream skin, with original eyes/materials and all independent styles.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d"
+          },
+          "settings": {
+            "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+            "samplePoints": 12000,
+            "sourceRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged upstream style GLBs and actual native converted skin; no new fitting or anatomy inferred.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "d1d51126da094ec56b0c378fa015e57aa29913ae492e136e0bda8af1244effa4"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "e958349640cd6123790b4a2c65ce3da9c59b32bfcfab9419ac6e72ee0530daca"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "c042541df112f1c5a2ac7c3f3a882352dfff92d42e2beeffc200a61b3375c34f"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "51231fc3e71929372d93c02dc31ffa26811e2875aa128fdbc5ed63f26fbe4cb4"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "0c689b95411bf40f8e1e893260557b78653f803827e4237b43fad48bc83012ff"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4c6d03630b9bd4682bd6ee6ee16525899bb477a15d809a4812b0847cd3b6c3df"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "34b51b76cf3e2c92a6040089434ef6ceeed36da83bce7d8d2df93288da07f23a"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "a8789ac8c31f3fea762a8c4c4a10c97d68a358fdd5bc67b55e8f4158f09852ef"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "0116ac63cb043b2acd8ac9baf56b949a370905ebc1973cf4fcb2145e823ad701"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "e2f8e56381a144fc297fdcad781db4a482f29aaaa8fdea82a58da4607592ca23"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "e0c778a7adb2f5e7b36537aa1d2a74c9b41e192268a790c283d06499d465b1df"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "c9424b375bcaf3ec5b85eba403dd2f22b35cd9ee1a9a28303caaf04d60047367"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "bdd4f5954ca9f600aea2e107f716d8f360d953ed0ceef4b80e81e3224ce5c7bf"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "3b7ee2ccba012adaef3c25ccaf0c08e296c48341f6da8a9867cf7d12613f0416"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "b8d42996fc5fd7c7c464447f7aa991a32ea858c2667d0690ed1fb10c8c250e60"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "79d125ae6f11cb00d6743c7609150954de9117754bca9769db679d23f1127f5c"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "e979cacf-a165-47b9-91f0-a4b53881ab0d"
+          },
+          "version": "2.13.2"
+        },
+        "diagnostics": [
+          "settings",
+          "cloudcompare-icp",
+          "cloudcompare-sampling",
+          "component",
+          "cloudcompare",
+          "cloudcompare-matrix",
+          "process",
+          "resources",
+          "result",
+          "cloudcompare-trace"
+        ],
+        "elapsedMs": 5770,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/aa80257e-9101-47db-8bb6-194f860e977c"
+            ],
+            "cpuSeconds": 7.713,
+            "exitCode": 0,
+            "peakRssKiB": 156412,
+            "seconds": 5.766,
+            "stage": "cloudcompare"
+          }
+        ],
+        "retainedBytes": 234330786,
+        "scope": "cloudcompare supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "69c66910-ed6b-4036-b802-ec562148efe5",
+      "jobId": "c27d98be-a410-45e2-ad0a-ee232b6ab6e3",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 28941,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 418,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 39,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 5044,
+            "path": "cloudcompare.log"
+          },
+          {
+            "bytes": 187686,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 193921,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 81728,
+            "path": "comparison-before.ply"
+          },
+          {
+            "bytes": 81728,
+            "path": "comparison-aligned.ply"
+          },
+          {
+            "bytes": 81728,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 855804,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 19173,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 92027,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 469,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 671991,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 671990,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 663566,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 668353,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 666523,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 674103,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 854540,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 836608,
+            "path": "reference-upstream/head.glb"
+          },
+          {
+            "bytes": 399441,
+            "path": "cloudcompare-native/upstream.ply"
+          },
+          {
+            "bytes": 3126,
+            "path": "cloudcompare-native/sample-convert-distance.log"
+          },
+          {
+            "bytes": 242702,
+            "path": "cloudcompare-native/known-transform.ply"
+          },
+          {
+            "bytes": 241412,
+            "path": "cloudcompare-native/reference.ply"
+          },
+          {
+            "bytes": 443,
+            "path": "cloudcompare-native/registration_trace_log.csv"
+          },
+          {
+            "bytes": 246,
+            "path": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"
+          },
+          {
+            "bytes": 80187,
+            "path": "cloudcompare-native/aligned.ply"
+          },
+          {
+            "bytes": 60170,
+            "path": "cloudcompare-native/reference-export.ply"
+          },
+          {
+            "bytes": 3600,
+            "path": "cloudcompare-native/icp.log"
+          },
+          {
+            "bytes": 3309,
+            "path": "cloudcompare-native/cross-route-distance-before.log"
+          },
+          {
+            "bytes": 3551,
+            "path": "cloudcompare-native/cross-route-alignment.log"
+          },
+          {
+            "bytes": 187686,
+            "path": "cloudcompare-native/reopened.ply"
+          },
+          {
+            "bytes": 4231,
+            "path": "cloudcompare-native/native-reopen.log"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 2323208,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8625008,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 3184896,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 723360,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 8625020,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 58080,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49386,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 58507,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33205,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46679,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19730,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 8625020,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 8625008,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 3184896,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 723360,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 2323208,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "reference-upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632468,
+            "path": "reference-upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "reference-upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347336,
+            "path": "reference-upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "reference-upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442672,
+            "path": "reference-upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "reference-upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "reference-upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "reference-upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902040,
+            "path": "reference-upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9349820,
+            "path": "reference-upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 17430472,
+            "path": "reference-upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 17430468,
+            "path": "reference-upstream/beard/full.glb"
+          },
+          {
+            "bytes": 8218864,
+            "path": "reference-upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1255148,
+            "path": "reference-upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3450024,
+            "path": "reference-upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 241412,
+            "path": "cloudcompare-native/cross-route/compared-vertices.ply"
+          },
+          {
+            "bytes": 400849,
+            "path": "cloudcompare-native/cross-route/reference-skin.ply"
+          },
+          {
+            "bytes": 1279,
+            "path": "cloudcompare-native/cross-route/registration_trace_log.csv"
+          },
+          {
+            "bytes": 244,
+            "path": "cloudcompare-native/cross-route/compared-vertices_REGISTRATION_MATRIX.txt"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "cloudcompare",
+        "completedAt": "2026-09-30T10:51:30.328946+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 14,
+            "fitness": 1,
+            "fitnessMeaning": "Native final point count divided by input vertex count, not independent surface coverage.",
+            "inlierRmseMetres": 1.43815e-08,
+            "input": "Known synthetic 8 degree Z rotation and 5,-3,4 mm translation of the same fitted skin vertices. Reference is the same geometry, not a second scan or measured client.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00976704907465,
+                "iteration": 0,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00809322660318,
+                "iteration": 1,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00699980707006,
+                "iteration": 2,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00602843930222,
+                "iteration": 3,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00513769023141,
+                "iteration": 4,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00441025200242,
+                "iteration": 5,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00380418377724,
+                "iteration": 6,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00319436568416,
+                "iteration": 7,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00244542848536,
+                "iteration": 8,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.0016946923417,
+                "iteration": 9,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.000873822827418,
+                "iteration": 10,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.000138697318857,
+                "iteration": 11,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.43859169708e-08,
+                "iteration": 12,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.43814557109e-08,
+                "iteration": 13,
+                "pointCount": 4993
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.43862164242e-08,
+                "iteration": 14,
+                "pointCount": 4993
+              }
+            ],
+            "knownTransform": {
+              "rotation": [
+                [
+                  0.9902680687415704,
+                  -0.13917310096006544,
+                  0
+                ],
+                [
+                  0.13917310096006544,
+                  0.9902680687415704,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "translationMetres": [
+                0.005,
+                -0.003,
+                0.004
+              ]
+            },
+            "maximumIterations": 80,
+            "nativeMatrixOutputMaximumErrorMetres": 2.1863714283476554e-08,
+            "nativeRecoveredTransform": [
+              [
+                0.990268051624,
+                0.139173105359,
+                -2.78e-10,
+                -0.004533820786
+              ],
+              [
+                -0.139173105359,
+                0.990268051624,
+                -7.863e-09,
+                0.003666674253
+              ],
+              [
+                -8.19e-10,
+                7.826e-09,
+                1,
+                -0.003999999724
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "recoveredPointMaximumErrorMetres": 2.2660056941958828e-08,
+            "traceStates": 15
+          },
+          "candidate": "cloudcompare",
+          "commands": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/upstream.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/processed-skin.ply",
+                "-SAMPLE_MESH",
+                "POINTS",
+                "12000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/upstream-sampled.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.343585,
+              "stage": "sample-convert-distance"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/known-transform.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/reference.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2C_DIST",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/aligned.ply /home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/reference-export.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.363458,
+              "stage": "icp"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/cross-route/reference-skin.ply",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/comparison-before.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.340911,
+              "stage": "cross-route-distance-before"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/cross-route/reference-skin.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/comparison-aligned.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 1.160802,
+              "stage": "cross-route-alignment"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/processed-skin.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3/cloudcompare-native/reopened.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.25843,
+              "stage": "native-reopen"
+            }
+          ],
+          "comparison": {
+            "afterAlignment": {
+              "count": 4993,
+              "maximumMetres": 0.010644912719726562,
+              "meanMetres": 0.0001370968238916248,
+              "rmsMetres": 0.00025335318059660494
+            },
+            "beforeAlignment": {
+              "count": 4993,
+              "maximumMetres": 0.010708991438150406,
+              "meanMetres": 0.002969639841467142,
+              "rmsMetres": 0.003923436161130667
+            },
+            "nativeFinalRmsMetres": 0.000253353,
+            "nativeMatrix": [
+              [
+                1,
+                6.113282e-06,
+                3.260393e-06,
+                1.339049e-06
+              ],
+              [
+                -6.110216e-06,
+                0.999999582767,
+                -0.000939571008,
+                -0.000237987071
+              ],
+              [
+                -3.266135e-06,
+                0.000939571008,
+                0.999999582767,
+                0.010664512403
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "nativeTrace": "Iteration; RMS; Point count;\n0; 0.00392343630528; 4993;\n1; 0.00359891441806; 4993;\n2; 0.00330180063533; 4993;\n3; 0.00300280756213; 4993;\n4; 0.00269417948382; 4993;\n5; 0.00236073201775; 4993;\n6; 0.00205795404617; 4993;\n7; 0.00178823470815; 4993;\n8; 0.00153430549103; 4993;\n9; 0.00128519410669; 4993;\n10; 0.00106090149007; 4993;\n11; 0.000869330407245; 4993;\n12; 0.000710949851249; 4993;\n13; 0.000583465602387; 4993;\n14; 0.000485142485386; 4993;\n15; 0.000412642073289; 4993;\n16; 0.000359732080061; 4993;\n17; 0.00032198360698; 4993;\n18; 0.000297060639824; 4993;\n19; 0.000280468856384; 4993;\n20; 0.000269955509766; 4993;\n21; 0.000263450601515; 4993;\n22; 0.000259465858158; 4993;\n23; 0.000257053667075; 4993;\n24; 0.00025556115464; 4993;\n25; 0.000254662419491; 4993;\n26; 0.000254139555353; 4993;\n27; 0.000253832746413; 4993;\n28; 0.00025364432857; 4993;\n29; 0.000253528298748; 4993;\n30; 0.000253458377824; 4993;\n31; 0.00025341635152; 4993;\n32; 0.000253390274326; 4993;\n33; 0.000253374388354; 4993;\n34; 0.000253365526549; 4993;\n35; 0.000253360604749; 4993;\n36; 0.000253357758194; 4993;\n37; 0.000253356089509; 4993;\n38; 0.000253355009765; 4993;\n39; 0.000253354224494; 4993;\n40; 0.000253353817835; 4993;\n41; 0.00025335348129; 4993;\n42; 0.000253353284971; 4993;\n43; 0.000253353355085; 4993;\n",
+            "previewEffect": "Evaluation only. Cross-route alignment does not change the retained source preview or its styles.",
+            "referenceCandidate": "blender-mpfb",
+            "referenceHeadSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+            "referenceRunId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+            "scope": "Actual native CloudCompare rigid registration and unsigned vertex-to-mesh distances between two fitted heads from the same six synthetic photos. No independently observed geometry or real-client accuracy.",
+            "surfaceCoverage": "Distances include the cropped fitted skin and neck surfaces. Different templates and inferred hidden surfaces can dominate disagreement."
+          },
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "CloudCompare PLY",
+            "nativeWriter": "CloudCompare PLY",
+            "reopenedCounts": {
+              "triangles": 9686,
+              "vertices": 4993
+            }
+          },
+          "distanceSamples": {
+            "alignedVerticesToOriginalVertices": {
+              "count": 4993,
+              "maximumMetres": 2.2660056941958828e-08,
+              "meanMetres": 6.2940612721718026e-09
+            },
+            "nativeSurfaceSampling": {
+              "actual": 12005,
+              "randomSeed": "CloudCompare internal random sampling has no seed control in this pinned CLI; outputs retained for reproducibility, sample coordinates may vary on rerun.",
+              "requested": 12000
+            },
+            "sampledCloudToConvertedMesh": {
+              "count": 12005,
+              "maximumMetres": 1.8221697928311187e-08,
+              "meanMetres": 1.8780426103148784e-09
+            }
+          },
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 9686,
+              "vertices": 4993
+            },
+            "before": {
+              "triangles": 9686,
+              "vertices": 4993
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              }
+            },
+            "triangleTarget": 9686
+          },
+          "processingVersion": "cloudcompare-native-upstream-v2",
+          "provenance": {
+            "comparisonReference": {
+              "candidate": "blender-mpfb",
+              "changeNotice": "Native CloudCompare rigid registration and distances, with transformed diagnostic clouds only. The source preview and independent styles are unchanged.",
+              "headSha256": "1709d10d48ab948d2a139dad2d2909cf079393129d669587d75f35aba2a6d728",
+              "runId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+              "upstreamProvenance": {}
+            },
+            "component": "CloudCompare 2.13.2 native CLI / GPL-3.0-or-later combined build",
+            "componentLicenseUrl": "https://github.com/CloudCompare/CloudCompare/blob/49dbbb662f296c7780aae717897c85b3cb3764ed/license.txt",
+            "componentModifications": "Native mesh conversion, surface sampling, unsigned cloud-to-mesh distances, known synthetic transform ICP and cloud-to-cloud distances. Existing ICP Release trace enabled at 12 significant digits. Returned preview uses actual converted upstream skin, with original eyes/materials and all independent styles.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "69c66910-ed6b-4036-b802-ec562148efe5"
+          },
+          "settings": {
+            "referenceRunId": "bf78983d-1eed-477e-88a9-f63db001b22a",
+            "samplePoints": 12000,
+            "sourceRunId": "69c66910-ed6b-4036-b802-ec562148efe5",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged upstream style GLBs and actual native converted skin; no new fitting or anatomy inferred.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "ca7a25ce98451a72c5bcbec1a8cf6509235897e8912121c016fc3554f59d60b2"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "da2933c8ddf2fc7dbfdd015f5000e4a5c2f39886d1303fdbf6b7c230fc9872ad"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "6d5e3508183623e7818f13daf6f38d919f53e098345a4dec00a3d5415c615971"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "43e4438b8964346560527706f20d280bd186f764569bc7987ce8361b21bc7cba"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "56cb9ac0540fa2bb89c44b11b0aa27b1c38e12646e0cc2c246b4a3edb59b5987"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "2facfa7b937516b49455214acb8fbf572d9094388ebe48e55a144236518cb03e"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "43bb9c38123cb102114513dd8ed20fe538d1fcd0f4564bfb35db91adbeccb434"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "bfeefbc24e4e2345979c2afdc5f4c839d73eba17e7d80c18fdc4be4bfd8f35a1"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "c925085fcd71b4c9c5827483bf414c6314cdd8bc8f9f938e2bffc26bbe130817"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "98a218065ecf3d3ad372c297b6bba0756651bffbe76f5ac15e7d47257b567ef4"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "80032fdcd3e211cd01664f584f165530b76b974ad8ccbca4c6c604d864b57ccf"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "018a3bc8d58feeb0f58adbd749d154df840600eb72cec90c414c1a8efa3cff64"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "88f70bb8450932974a34d9162d5d80ecc511d3104730baf7d0706cb1ec8f1730"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "2f940e066f2619b9bc367adebb0f028986c6310dfc961c7ccfd03d49522b3ad2"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "c0bf861e31be36f348ef3121660a045fa9019b484ad010c758632b33ba358277"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "77802c125e6335f127ded2308f581611dca106063ea14c54083653345c8b98d2"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "69c66910-ed6b-4036-b802-ec562148efe5"
+          },
+          "version": "2.13.2"
+        },
+        "diagnostics": [
+          "resources",
+          "settings",
+          "cloudcompare-trace",
+          "cloudcompare-matrix",
+          "process",
+          "result",
+          "component",
+          "cloudcompare",
+          "cloudcompare-icp",
+          "cloudcompare-sampling"
+        ],
+        "elapsedMs": 6103,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/c27d98be-a410-45e2-ad0a-ee232b6ab6e3"
+            ],
+            "cpuSeconds": 8.054,
+            "exitCode": 0,
+            "peakRssKiB": 154596,
+            "seconds": 6.1,
+            "stage": "cloudcompare"
+          }
+        ],
+        "retainedBytes": 231665297,
+        "scope": "cloudcompare supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
+      "jobId": "09c3eb5b-b487-4fea-9596-b4b5dd2acdd8",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 29223,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 420,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 39,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 5044,
+            "path": "cloudcompare.log"
+          },
+          {
+            "bytes": 185846,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 194049,
+            "path": "upstream-sampled.ply"
+          },
+          {
+            "bytes": 80800,
+            "path": "comparison-before.ply"
+          },
+          {
+            "bytes": 80800,
+            "path": "comparison-aligned.ply"
+          },
+          {
+            "bytes": 80800,
+            "path": "processed-points.ply"
+          },
+          {
+            "bytes": 853360,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 19300,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 91257,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 471,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 594433,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 608112,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 595581,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 603933,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 605703,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 611226,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852100,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 834860,
+            "path": "reference-upstream/head.glb"
+          },
+          {
+            "bytes": 395643,
+            "path": "cloudcompare-native/upstream.ply"
+          },
+          {
+            "bytes": 3127,
+            "path": "cloudcompare-native/sample-convert-distance.log"
+          },
+          {
+            "bytes": 240402,
+            "path": "cloudcompare-native/known-transform.ply"
+          },
+          {
+            "bytes": 239110,
+            "path": "cloudcompare-native/reference.ply"
+          },
+          {
+            "bytes": 470,
+            "path": "cloudcompare-native/registration_trace_log.csv"
+          },
+          {
+            "bytes": 245,
+            "path": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"
+          },
+          {
+            "bytes": 79259,
+            "path": "cloudcompare-native/aligned.ply"
+          },
+          {
+            "bytes": 59474,
+            "path": "cloudcompare-native/reference-export.ply"
+          },
+          {
+            "bytes": 3599,
+            "path": "cloudcompare-native/icp.log"
+          },
+          {
+            "bytes": 3310,
+            "path": "cloudcompare-native/cross-route-distance-before.log"
+          },
+          {
+            "bytes": 3551,
+            "path": "cloudcompare-native/cross-route-alignment.log"
+          },
+          {
+            "bytes": 185846,
+            "path": "cloudcompare-native/reopened.ply"
+          },
+          {
+            "bytes": 4231,
+            "path": "cloudcompare-native/native-reopen.log"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-0.png"
+          },
+          {
+            "bytes": 4917840,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 2302220,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8414208,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 3263836,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 713068,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 8414216,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 56709,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 48524,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 57909,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 32742,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46531,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19827,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4917840,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 8414216,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 8414208,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 3263836,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 713068,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 2302220,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 2475272,
+            "path": "reference-upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3632472,
+            "path": "reference-upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2439004,
+            "path": "reference-upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2347332,
+            "path": "reference-upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 4469716,
+            "path": "reference-upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3442668,
+            "path": "reference-upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 3047336,
+            "path": "reference-upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 2799028,
+            "path": "reference-upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 4069228,
+            "path": "reference-upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 4902044,
+            "path": "reference-upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 9232892,
+            "path": "reference-upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 16937308,
+            "path": "reference-upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 16937304,
+            "path": "reference-upstream/beard/full.glb"
+          },
+          {
+            "bytes": 7866820,
+            "path": "reference-upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 1261464,
+            "path": "reference-upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 3243384,
+            "path": "reference-upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 239110,
+            "path": "cloudcompare-native/cross-route/compared-vertices.ply"
+          },
+          {
+            "bytes": 397820,
+            "path": "cloudcompare-native/cross-route/reference-skin.ply"
+          },
+          {
+            "bytes": 1275,
+            "path": "cloudcompare-native/cross-route/registration_trace_log.csv"
+          },
+          {
+            "bytes": 244,
+            "path": "cloudcompare-native/cross-route/compared-vertices_REGISTRATION_MATRIX.txt"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb"
+        },
+        "candidate": "cloudcompare",
+        "completedAt": "2026-09-30T10:51:37.536848+00:00",
+        "component": {
+          "alignment": {
+            "actualIterations": 15,
+            "fitness": 1,
+            "fitnessMeaning": "Native final point count divided by input vertex count, not independent surface coverage.",
+            "inlierRmseMetres": 1.40383e-08,
+            "input": "Known synthetic 8 degree Z rotation and 5,-3,4 mm translation of the same fitted skin vertices. Reference is the same geometry, not a second scan or measured client.",
+            "iterations": [
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00966012789083,
+                "iteration": 0,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00797425031753,
+                "iteration": 1,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00692507464352,
+                "iteration": 2,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00599559865959,
+                "iteration": 3,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00511648466065,
+                "iteration": 4,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00440836754794,
+                "iteration": 5,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.0038317643082,
+                "iteration": 6,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00327497439482,
+                "iteration": 7,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00256244036758,
+                "iteration": 8,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00182628040213,
+                "iteration": 9,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.00100161475342,
+                "iteration": 10,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 0.000204111839501,
+                "iteration": 11,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 9.03068223039e-08,
+                "iteration": 12,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.40386651403e-08,
+                "iteration": 13,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.40382658819e-08,
+                "iteration": 14,
+                "pointCount": 4935
+              },
+              {
+                "fitness": 1,
+                "inlierRmseMetres": 1.4040181936e-08,
+                "iteration": 15,
+                "pointCount": 4935
+              }
+            ],
+            "knownTransform": {
+              "rotation": [
+                [
+                  0.9902680687415704,
+                  -0.13917310096006544,
+                  0
+                ],
+                [
+                  0.13917310096006544,
+                  0.9902680687415704,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "translationMetres": [
+                0.005,
+                -0.003,
+                0.004
+              ]
+            },
+            "maximumIterations": 80,
+            "nativeMatrixOutputMaximumErrorMetres": 2.587203581927433e-08,
+            "nativeRecoveredTransform": [
+              [
+                0.990268051624,
+                0.139173105359,
+                3.8e-10,
+                -0.004533820786
+              ],
+              [
+                -0.139173105359,
+                0.990268051624,
+                -8.755e-09,
+                0.003666670527
+              ],
+              [
+                -1.595e-09,
+                8.617e-09,
+                1,
+                -0.003999999724
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "recoveredPointMaximumErrorMetres": 3.003425064207477e-08,
+            "traceStates": 16
+          },
+          "candidate": "cloudcompare",
+          "commands": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/upstream.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/processed-skin.ply",
+                "-SAMPLE_MESH",
+                "POINTS",
+                "12000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/upstream-sampled.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.332947,
+              "stage": "sample-convert-distance"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/known-transform.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/reference.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2C_DIST",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/aligned.ply /home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/reference-export.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.347044,
+              "stage": "icp"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/cross-route/reference-skin.ply",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/comparison-before.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.315398,
+              "stage": "cross-route-distance-before"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/cross-route/compared-vertices.ply",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/cross-route/reference-skin.ply",
+                "-ICP",
+                "-MAX_TCOUNT",
+                "4",
+                "-ITER",
+                "80",
+                "-OVERLAP",
+                "100",
+                "-RANDOM_SAMPLING_LIMIT",
+                "50000",
+                "-C2M_DIST",
+                "-UNSIGNED",
+                "-MAX_TCOUNT",
+                "4",
+                "-SAVE_CLOUDS",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/comparison-aligned.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 1.32419,
+              "stage": "cross-route-alignment"
+            },
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/cloudcompare/bin/CloudCompare",
+                "-SILENT",
+                "-AUTO_SAVE",
+                "OFF",
+                "-NO_TIMESTAMP",
+                "-C_EXPORT_FMT",
+                "PLY",
+                "-M_EXPORT_FMT",
+                "PLY",
+                "-PLY_EXPORT_FMT",
+                "BINARY_LE",
+                "-O",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/processed-skin.ply",
+                "-SAVE_MESHES",
+                "FILE",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8/cloudcompare-native/reopened.ply"
+              ],
+              "exitCode": 0,
+              "seconds": 0.242451,
+              "stage": "native-reopen"
+            }
+          ],
+          "comparison": {
+            "afterAlignment": {
+              "count": 4935,
+              "maximumMetres": 0.010739535093307495,
+              "meanMetres": 0.0003396489773876965,
+              "rmsMetres": 0.000455252273241058
+            },
+            "beforeAlignment": {
+              "count": 4935,
+              "maximumMetres": 0.01152061391621828,
+              "meanMetres": 0.0029866299591958523,
+              "rmsMetres": 0.0039537264965474606
+            },
+            "nativeFinalRmsMetres": 0.000455252,
+            "nativeMatrix": [
+              [
+                1,
+                1.8147788e-05,
+                7.107024e-06,
+                2.810438e-06
+              ],
+              [
+                -1.8134702e-05,
+                0.99999833107,
+                -0.001836828655,
+                -0.00050949282
+              ],
+              [
+                -7.140346e-06,
+                0.001836828538,
+                0.99999833107,
+                0.010786328465
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "nativeTrace": "Iteration; RMS; Point count;\n0; 0.00395372668993; 4935;\n1; 0.00361434601769; 4935;\n2; 0.00328620643493; 4935;\n3; 0.00298331993369; 4935;\n4; 0.0026935707626; 4935;\n5; 0.00238290151339; 4935;\n6; 0.00209237383836; 4935;\n7; 0.00183763575545; 4935;\n8; 0.00159952108871; 4935;\n9; 0.00136437143686; 4935;\n10; 0.00115228091464; 4935;\n11; 0.000974227852199; 4935;\n12; 0.000829116094748; 4935;\n13; 0.000714913564534; 4935;\n14; 0.00062844315438; 4935;\n15; 0.000567950213271; 4935;\n16; 0.000527251219425; 4935;\n17; 0.00050031546609; 4935;\n18; 0.000483485617636; 4935;\n19; 0.000472950833804; 4935;\n20; 0.000466352286725; 4935;\n21; 0.000462336904616; 4935;\n22; 0.00045979260965; 4935;\n23; 0.000458165733526; 4935;\n24; 0.000457083409596; 4935;\n25; 0.000456390768359; 4935;\n26; 0.000455947357753; 4935;\n27; 0.0004556644382; 4935;\n28; 0.000455495731511; 4935;\n29; 0.000455394558632; 4935;\n30; 0.000455333922139; 4935;\n31; 0.000455298763006; 4935;\n32; 0.000455279208172; 4935;\n33; 0.000455267768283; 4935;\n34; 0.0004552611352; 4935;\n35; 0.000455257139697; 4935;\n36; 0.000455254892211; 4935;\n37; 0.00045525359678; 4935;\n38; 0.000455252910044; 4935;\n39; 0.000455252410599; 4935;\n40; 0.000455252145269; 4935;\n41; 0.000455252020407; 4935;\n42; 0.000455251911153; 4935;\n43; 0.000455252020407; 4935;\n",
+            "previewEffect": "Evaluation only. Cross-route alignment does not change the retained source preview or its styles.",
+            "referenceCandidate": "blender-mpfb",
+            "referenceHeadSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+            "referenceRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+            "scope": "Actual native CloudCompare rigid registration and unsigned vertex-to-mesh distances between two fitted heads from the same six synthetic photos. No independently observed geometry or real-client accuracy.",
+            "surfaceCoverage": "Distances include the cropped fitted skin and neck surfaces. Different templates and inferred hidden surfaces can dominate disagreement."
+          },
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "CloudCompare PLY",
+            "nativeWriter": "CloudCompare PLY",
+            "reopenedCounts": {
+              "triangles": 9598,
+              "vertices": 4935
+            }
+          },
+          "distanceSamples": {
+            "alignedVerticesToOriginalVertices": {
+              "count": 4935,
+              "maximumMetres": 3.003425064207477e-08,
+              "meanMetres": 3.929100600430502e-09
+            },
+            "nativeSurfaceSampling": {
+              "actual": 12013,
+              "randomSeed": "CloudCompare internal random sampling has no seed control in this pinned CLI; outputs retained for reproducibility, sample coordinates may vary on rerun.",
+              "requested": 12000
+            },
+            "sampledCloudToConvertedMesh": {
+              "count": 12013,
+              "maximumMetres": 1.6048492312847884e-08,
+              "meanMetres": 1.8238697219175037e-09
+            }
+          },
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "CloudCompare is a supporting alignment/evaluation/conversion tool dependent on the named fitted route. It does not reconstruct a head from six photos.",
+            "The returned preview remains the converted upstream fit. ICP evaluates a known perturbation of that same geometry; no head correction or real client accuracy is inferred.",
+            "Reported preview deviation is coordinate conversion error with identical topology, not a Hausdorff surface error or observed likeness measurement.",
+            "Native surface samples are random and retained. Internal seed control is unavailable; compare distances/statistics rather than byte-identical samples.",
+            "ICP can stop before the configured limit on increasing RMS or exact convergence. The trace includes the initial and stopping evaluation states; actualIterations is their count minus one.",
+            "Style quality, missing surfaces, clipping and professional acceptance remain properties of the upstream fit and catalog. Full refinements/expected-result journeys remain pending common workflow tasks."
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 9598,
+              "vertices": 4935
+            },
+            "before": {
+              "triangles": 9598,
+              "vertices": 4935
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0,
+                "meanMetres": 0
+              }
+            },
+            "triangleTarget": 9598
+          },
+          "processingVersion": "cloudcompare-native-upstream-v2",
+          "provenance": {
+            "comparisonReference": {
+              "candidate": "blender-mpfb",
+              "changeNotice": "Native CloudCompare rigid registration and distances, with transformed diagnostic clouds only. The source preview and independent styles are unchanged.",
+              "headSha256": "2acfe4c1b3f86e390f4b8cfdcc87e8431f57529469f5533626991bab0abd8fbf",
+              "runId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+              "upstreamProvenance": {}
+            },
+            "component": "CloudCompare 2.13.2 native CLI / GPL-3.0-or-later combined build",
+            "componentLicenseUrl": "https://github.com/CloudCompare/CloudCompare/blob/49dbbb662f296c7780aae717897c85b3cb3764ed/license.txt",
+            "componentModifications": "Native mesh conversion, surface sampling, unsigned cloud-to-mesh distances, known synthetic transform ICP and cloud-to-cloud distances. Existing ICP Release trace enabled at 12 significant digits. Returned preview uses actual converted upstream skin, with original eyes/materials and all independent styles.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c"
+          },
+          "settings": {
+            "referenceRunId": "5709afce-0ce2-4a4f-bd60-3180f4f72ece",
+            "samplePoints": 12000,
+            "sourceRunId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged upstream style GLBs and actual native converted skin; no new fitting or anatomy inferred.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "db290dcc7dc9bac18c649b912b63d1f05338aee4218cc789682c62afa94bffda"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "417db2f09c4e2f69e25bd97c018b0321870a013466722ddea26aed2d5e087a23"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "796c261b804bfd250eab47afed3d483b9a08b784c485fd138aadaae398e2620b"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "455664234f5ee8b25ec76063993e27dd499c3d622ec64046b05c96c2a3f2fbf3"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "07d1ce2ccda192ebb6cd3b0339e726206a4aa3602b3dc365cb447ee35960185d"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4ed0e0b1e70687f62318b3e734db0083b484457c199c0ed0b7157c4299e09af2"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "bb9a0696e37916d0baabc6ad43d99135c3f3459798eea884de797545c5b60db3"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "8a6fbf60f08fa3f1ac34cfd77315e945f6d0810fcba91fffa85c59f49f99ec08"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "ba3160adec3480fad5223b226b1066b5e2c7fb5b9bffa92a58b6037dfd6ecf65"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "c6eb1d6204fa7e0586fa33e4da4567c09068906d9b24e74e2b29654b124fd435"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "0a3e05fa4f657a0583001a8c24de219ec2a59b8935857ede2b57a469963b4fc7"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "ad9e15a790d92b09cf031bf51649067fb02cb2a206865c05414ac735b3a3761d"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "1909d482b66b0b0f2c105ef84ec2b1643b8f64004908b8c0091c6afdcbf6f93f"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "e32bef7b40577ebf40ea67a5110be90911db39389de30dd985a380e00450c808"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "36ed359f316db46fdc285f43b8bf3050440c61bdb1fef83b9fa1da4171b8ae4f"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "aea2a2e8e67b94bf3333206bedd89b1b6ae8cbe7594b4e52a5166ae3f7c39e33"
+              }
+            ]
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c"
+          },
+          "version": "2.13.2"
+        },
+        "diagnostics": [
+          "cloudcompare-trace",
+          "result",
+          "process",
+          "settings",
+          "component",
+          "cloudcompare-icp",
+          "cloudcompare-sampling",
+          "resources",
+          "cloudcompare",
+          "cloudcompare-matrix"
+        ],
+        "elapsedMs": 6179,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/09c3eb5b-b487-4fea-9596-b4b5dd2acdd8"
+            ],
+            "cpuSeconds": 8.325,
+            "exitCode": 0,
+            "peakRssKiB": 154584,
+            "seconds": 6.175,
+            "stage": "cloudcompare"
+          }
+        ],
+        "retainedBytes": 228582349,
+        "scope": "cloudcompare supporting processing of identified upstream fitted geometry. Full refinement and expected-result journey remain pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    }
+  ]
+}

@@ -9,13 +9,14 @@ import sys
 import time
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from local_demo_http import LocalDemoAPI
-p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab'],default='open3d');candidate=p.parse_args().candidate
+p=argparse.ArgumentParser();p.add_argument('--candidate',choices=['open3d','meshlab','cloudcompare'],default='open3d');candidate=p.parse_args().candidate
 api=LocalDemoAPI();check=api.expect
 cid='a0b730e5-490f-488d-ae16-4f3812ee044f';base='/clients/'+cid
 summary=json.loads((ROOT/f'.scratch/execution-log/assets/{candidate}-makehuman-populated-results.json').read_text())
 job_id=summary['results'][0]['jobId'];job=next(j for j in check(200,api.request(base+'/demo-jobs'),'retained actual processing') if j['id']==job_id)
 assert job['status']=='completed' and job['kind']=='process'
-paths=['head/model','evaluation/geometry','diagnostic/component','geometry/processed-skin']+(['geometry/sampled-cloud','geometry/filtered-cloud'] if candidate=='open3d' else [])+[kind+'/'+x for kind in ['hair','beard'] for x in job['result'][kind]]
+paths=['head/model','evaluation/geometry','diagnostic/component','geometry/processed-skin']+(['geometry/sampled-cloud','geometry/filtered-cloud'] if candidate in ['open3d','cloudcompare'] else [])+[kind+'/'+x for kind in ['hair','beard'] for x in job['result'][kind]]
+if job['result'].get('component',{}).get('comparison'):paths+=['geometry/comparison-before','geometry/comparison-aligned']
 loaded=0
 for path in paths:
  artifact=check(200,api.request(base+'/demo-jobs/'+job_id+'/artifacts/'+path),'actual artifact '+path);loaded+=len(artifact)
@@ -28,7 +29,7 @@ saved=check(200,api.request(base+'/demo-workspace',{'state':option['state'],'ver
 assert check(200,api.request(base+'/demo-workspace'),'reopen processed state')['state']==saved['state']
 if previous['state']:check(200,api.request(base+'/demo-workspace',{'state':previous['state'],'version':saved['version']},'PUT'),'restore previous technical workspace')
 fixture=check(201,api.request('/clients',{'name':'Disposable synthetic '+candidate+' privacy fixture','notes':'Fictional copied synthetic photo workflow; no real-person data.'}),'disposable fictional client');fid=fixture['id'];fb='/clients/'+fid
-fixture_runs=[]
+fixture_runs=[];fixture_reference=None
 def poll(run,timeout=100):
  deadline=time.monotonic()+timeout
  while time.monotonic()<deadline:
@@ -38,6 +39,7 @@ def poll(run,timeout=100):
  raise RuntimeError('Actual job did not finish')
 def queue_component(parent,snapshot,settings=None):
  payload={'candidate':candidate,'kind':'process','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'native':parent['settings']['native'],'component':{'sourceRunId':parent['id'],'triangleRatio':.75,'voxelSize':.003,'samplePoints':12000,**(settings or {})}}
+ if fixture_reference:payload['component']['referenceRunId']=fixture_reference['id']
  result=check(202,api.request(fb+'/demo-jobs',payload),'queue real native dependent processing');fixture_runs.append(result['id']);return result
 try:
  link=check(201,api.request(fb+'/permission-link',{}),'fixture permission link')['path']
@@ -52,6 +54,8 @@ try:
   body+=f'--{boundary}\r\nContent-Disposition: form-data; name="image"; filename="synthetic.png"\r\nContent-Type: image/png\r\n\r\n'.encode()+image+f'\r\n--{boundary}--\r\n'.encode()
   snapshot[view]=check(201,api.request(fb+'/assets',body=body,content_type='multipart/form-data; boundary='+boundary),'synthetic view '+view)['id']
  parent=check(202,api.request(fb+'/demo-jobs',{'candidate':'makehuman','kind':'fit','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'native':{'focalLength':70,'cameraDistance':1.6,'cameraHeight':.04,'fitRounds':1}}),'actual disposable upstream fitting');fixture_runs.append(parent['id']);parent=poll(parent['id']);assert parent['status']=='completed'
+ if candidate=='cloudcompare':
+  fixture_reference=check(202,api.request(fb+'/demo-jobs',{'candidate':'makehuman','kind':'fit','photoSetId':capture['id'],'photoViews':snapshot,'minimumWidth':512,'native':{'focalLength':70,'cameraDistance':1.6,'cameraHeight':.04,'fitRounds':2}}),'actual disposable second fitted reference');fixture_runs.append(fixture_reference['id']);fixture_reference=poll(fixture_reference['id']);assert fixture_reference['status']=='completed'
  child=queue_component(parent,snapshot);child=poll(child['id']);assert child['status']=='completed'
  state={**option['state'],'modelRunId':child['id'],'photoSetId':capture['id'],'photoViews':snapshot,'native':parent['settings']['native'],'component':child['settings']['component']}
  check(201,api.request(fb+'/demo-options',{'title':'Disposable dependent option','state':state}),'real dependent saved option')
@@ -78,11 +82,14 @@ try:
  assert native_log.exists() and candidate.upper()+'_RENDER front' in native_log.read_text(errors='replace'),'Actual native component processing did not start'
  # Removing only the parent output must remove completed AND live children,
  # saved options and copies, without withdrawing permission or deleting photos.
- response=check(200,api.request(fb+'/demo-jobs/'+parent['id']+'/cancel',method='POST'),'remove upstream output while child native process is running')
+ removed_parent=fixture_reference or parent
+ response=check(200,api.request(fb+'/demo-jobs/'+removed_parent['id']+'/cancel',method='POST'),'remove upstream output while child native process is running')
  assert response['removedExperiments']==4
  time.sleep(.3)
  jobs=api.request(fb+'/demo-jobs')[1]
  for id in fixture_runs:
+  if fixture_reference and id==parent['id']:
+   current=next(j for j in jobs if j['id']==id);assert current['status']=='completed';check(200,api.request(fb+'/demo-jobs/'+id+'/artifacts/head/model'),'primary fit survives reference-only removal');continue
   current=next(j for j in jobs if j['id']==id);assert current['status']=='cancelled' and current['result']=={}
   assert not (ROOT/'.scratch/private/runtime/processing'/fid/id).exists(),'Deleted private native copy recreated'
   check(404,api.request(fb+'/demo-jobs/'+id+'/artifacts/head/model'),'dependent head denied '+id)
@@ -92,7 +99,7 @@ try:
  check(400,api.request(fb+'/demo-jobs',denied),'deleted upstream cannot recreate processing')
  check(200,api.request(fb+'/withdraw',{'confirmed':True}),'withdraw fictional fixture permission')
  check(403,api.request(fb+'/demo-jobs/'+child['id']+'/artifacts/diagnostic/component'),'withdrawal denies retained diagnostics')
- evidence={'date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'candidate':candidate,'upstreamRoute':'standalone MakeHuman','scope':'Actual local upstream fitting, native '+candidate+' processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.','actualArtifactsRead':len(paths),'actualBytesRead':loaded,'processedStateReopened':True,'actualCorruptUpstreamFailure':failure_evidence,'anonymousAndCrossClientDenied':True,'privateUpstreamPathDenied':True,'parentRemovalPurgedCompletedAndRunningChildren':True,'removedExperiments':response['removedExperiments'],'sameSixSourcePhotosPreservedUntilWithdrawal':True,'permissionPreservedOnExperimentRemoval':True,'dependentWorkspaceAndOptionsRemoved':True,'deletedParentReprocessingDenied':True,'deletedDirectoriesDidNotReappear':True,'withdrawalDeniedDiagnostics':True}
+ evidence={'date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'candidate':candidate,'upstreamRoute':'standalone MakeHuman','removedParentRole':'comparison reference' if fixture_reference else 'primary upstream','secondActualFittedReference':bool(fixture_reference),'scope':'Actual local upstream fitting, native '+candidate+' processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.','actualArtifactsRead':len(paths),'actualBytesRead':loaded,'processedStateReopened':True,'actualCorruptUpstreamFailure':failure_evidence,'anonymousAndCrossClientDenied':True,'privateUpstreamPathDenied':True,'parentRemovalPurgedCompletedAndRunningChildren':True,'removedExperiments':response['removedExperiments'],'sameSixSourcePhotosPreservedUntilWithdrawal':True,'permissionPreservedOnExperimentRemoval':True,'dependentWorkspaceAndOptionsRemoved':True,'deletedParentReprocessingDenied':True,'deletedDirectoriesDidNotReappear':True,'withdrawalDeniedDiagnostics':True}
  (ROOT/f'.scratch/execution-log/assets/{candidate}-live-verification.json').write_text(json.dumps(evidence,indent=2)+'\n')
 finally:
  check(200,api.request(fb,{'confirmed':True},'DELETE'),'remove disposable synthetic fixture')

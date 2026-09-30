@@ -1,0 +1,132 @@
+{
+  "date": "2026-09-30T07:33:54-0300",
+  "scope": "Real supporting processing of identified fitted heads and unchanged six-photo inputs. No raw-photo reconstruction attributed to component, no measured scan or real likeness proof. Full editing/expected-result journeys and professional review remain pending.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+      "jobId": "cd2c893e-b93a-42f6-9add-59409bfb92a7",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "result": {
+        "diagnostics": [
+          "process",
+          "resources",
+          "cloudcompare-sampling",
+          "cloudcompare",
+          "settings",
+          "failure"
+        ],
+        "failure": {
+          "elapsedMs": 501,
+          "error": "cloudcompare failed with exit 1; retained diagnostic log",
+          "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/cd2c893e-b93a-42f6-9add-59409bfb92a7"
+              ],
+              "cpuSeconds": 0.784,
+              "exitCode": 1,
+              "peakRssKiB": 154824,
+              "seconds": 0.501,
+              "stage": "cloudcompare"
+            }
+          ]
+        },
+        "geometry": "No verified fitted result retained",
+        "scope": "Failed native experiment. No fallback counted as candidate success."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "69c66910-ed6b-4036-b802-ec562148efe5",
+      "jobId": "2c6c3af4-f5b8-48a9-bac0-ac908919afeb",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "result": {
+        "diagnostics": [
+          "failure",
+          "cloudcompare-sampling",
+          "process",
+          "resources",
+          "settings",
+          "cloudcompare"
+        ],
+        "failure": {
+          "elapsedMs": 484,
+          "error": "cloudcompare failed with exit 1; retained diagnostic log",
+          "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/2c6c3af4-f5b8-48a9-bac0-ac908919afeb"
+              ],
+              "cpuSeconds": 0.767,
+              "exitCode": 1,
+              "peakRssKiB": 154308,
+              "seconds": 0.484,
+              "stage": "cloudcompare"
+            }
+          ]
+        },
+        "geometry": "No verified fitted result retained",
+        "scope": "Failed native experiment. No fallback counted as candidate success."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "cloudcompare",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "efb2c2e1-4c2b-4688-bed6-5420a6156f1c",
+      "jobId": "1e79478d-825a-4ccc-8dce-ee23e1af08bc",
+      "status": "failed",
+      "error": "Native processing failed; retained diagnostics describe the failure",
+      "result": {
+        "diagnostics": [
+          "cloudcompare",
+          "settings",
+          "cloudcompare-sampling",
+          "process",
+          "resources",
+          "failure"
+        ],
+        "failure": {
+          "elapsedMs": 501,
+          "error": "cloudcompare failed with exit 1; retained diagnostic log",
+          "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+          "resources": [
+            {
+              "command": [
+                "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+                "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+                "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/1e79478d-825a-4ccc-8dce-ee23e1af08bc"
+              ],
+              "cpuSeconds": 0.789,
+              "exitCode": 1,
+              "peakRssKiB": 154792,
+              "seconds": 0.501,
+              "stage": "cloudcompare"
+            }
+          ]
+        },
+        "geometry": "No verified fitted result retained",
+        "scope": "Failed native experiment. No fallback counted as candidate success."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    }
+  ]
+}

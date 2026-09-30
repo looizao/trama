@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-30T11:24:26.930097+00:00",
+  "jobId": "ea0e181b-0061-4e1a-9a69-418197718bc4",
+  "downloadName": "comparison-aligned.ply",
+  "sha256": "4e22eb8d73e4f034c59364776e4ef856e7967111700de0416a1b9a20f1c94326",
+  "bytes": 81024,
+  "vertices": 4949,
+  "scalarFields": [
+    "scalar_C2M_absolute_distances"
+  ],
+  "browserConsoleErrorsAndWarnings": [],
+  "downloadMatchesRetainedResult": true,
+  "completePrimaryAndReferenceProvenance": true,
+  "nativeCloudCompareReopenedIdenticalPositionsAndDistanceFields": true,
+  "reloadRestoredHeadHairBeardAndSynchronizedCamera": true,
+  "scope": "Owned local synthetic example; native cross-fit disagreement is not real reconstruction accuracy."
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-30T07:53:47-0300",
+  "candidate": "cloudcompare",
+  "upstreamRoute": "standalone MakeHuman",
+  "removedParentRole": "comparison reference",
+  "secondActualFittedReference": true,
+  "scope": "Actual local upstream fitting, native cloudcompare processing, completed child and still-running native child. Synthetic photos only; no real-client likeness claim.",
+  "actualArtifactsRead": 24,
+  "actualBytesRead": 67585580,
+  "processedStateReopened": true,
+  "actualCorruptUpstreamFailure": {
+    "elapsedMs": 124,
+    "error": "cloudcompare failed with exit 1; retained diagnostic log",
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/process-cloudcompare.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/d5a7c02d-a874-40a3-8673-b9cd1b448e42/40edafa2-908a-4a47-a665-9e0bc4085818"
+        ],
+        "cpuSeconds": 0.396,
+        "exitCode": 1,
+        "peakRssKiB": 48240,
+        "seconds": 0.124,
+        "stage": "cloudcompare"
+      }
+    ]
+  },
+  "anonymousAndCrossClientDenied": true,
+  "privateUpstreamPathDenied": true,
+  "parentRemovalPurgedCompletedAndRunningChildren": true,
+  "removedExperiments": 4,
+  "sameSixSourcePhotosPreservedUntilWithdrawal": true,
+  "permissionPreservedOnExperimentRemoval": true,
+  "dependentWorkspaceAndOptionsRemoved": true,
+  "deletedParentReprocessingDenied": true,
+  "deletedDirectoriesDidNotReappear": true,
+  "withdrawalDeniedDiagnostics": true
+}

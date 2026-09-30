@@ -384,7 +384,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		relative = nativeDiagnostics()[artifactID]
 	}
 	if artifactKind == "geometry" && kind == "process" && status == "completed" {
-		relative = map[string]string{"sampled-cloud": "upstream-sampled.ply", "filtered-cloud": "processed-points.ply", "processed-skin": "processed-skin.ply"}[artifactID]
+		relative = map[string]string{"sampled-cloud": "upstream-sampled.ply", "filtered-cloud": "processed-points.ply", "processed-skin": "processed-skin.ply", "comparison-before": "comparison-before.ply", "comparison-aligned": "comparison-aligned.ply"}[artifactID]
 	}
 	if artifactKind == "evaluation" && artifactID == "geometry" && kind == "process" {
 		relative = "component-evaluation.png"
@@ -416,7 +416,7 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, file)
 }
 func nativeDiagnostics() map[string]string {
-	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log"}
+	return map[string]string{"prepare": "prepare.log", "fit": "fit.log", "export": "export.log", "process": "processing.log", "resources": "resources.json", "settings": "manifest.json", "result": "result.json", "failure": "failure.json", "colmap": "colmap.log", "reconstruction": "colmap-report.json", "colmap-resources": "colmap-resources.json", "makehuman-shape": "makehuman-shape.json", "flame-shape": "flame-shape.json", "flame-styles": "flame-style-adaptation.json", "flame-attribution": "flame-attribution.json", "target-basis": "target-basis-check.json", "component": "component-report.json", "meshlab": "meshlab.log", "cloudcompare": "cloudcompare.log", "cloudcompare-icp": "cloudcompare-native/icp.log", "cloudcompare-sampling": "cloudcompare-native/sample-convert-distance.log", "cloudcompare-trace": "cloudcompare-native/registration_trace_log.csv", "cloudcompare-matrix": "cloudcompare-native/known-transform_REGISTRATION_MATRIX.txt"}
 }
 func (a *App) completedNativeModel(r *http.Request, state DemoWorkspaceState) bool {
 	var candidate, status, kind string
