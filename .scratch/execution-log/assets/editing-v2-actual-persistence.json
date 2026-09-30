@@ -1,0 +1,244 @@
+{
+  "date": "2026-09-30T12:19:55.272294+00:00",
+  "workspace": {
+    "state": {
+      "candidate": "cloudcompare",
+      "photoSetId": "4c42188f-9b65-4634-affe-08a34019895a",
+      "photoViews": {
+        "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+        "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+        "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+        "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+        "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+        "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+        "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+        "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+      },
+      "modelRunId": "ea0e181b-0061-4e1a-9a69-418197718bc4",
+      "currentHairId": "short02",
+      "currentBeardId": "stubble",
+      "hairId": "short01",
+      "beardId": "goatee",
+      "camera": {
+        "azimuth": 3.141592653589793,
+        "elevation": 0.08,
+        "distance": 1.19
+      },
+      "minimumWidth": 512,
+      "native": {
+        "focalLength": 70,
+        "cameraDistance": 1.6,
+        "cameraHeight": 0.04,
+        "fitRounds": 4
+      },
+      "component": {
+        "sourceRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+        "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+        "triangleRatio": 0.75,
+        "voxelSize": 0.003,
+        "samplePoints": 10000,
+        "icpIterations": 40,
+        "icpOverlap": 95
+      },
+      "colmapPreset": "standard",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 85,
+          "widthPercent": 100,
+          "volumeMm": 8,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": [
+          {
+            "kind": "hair",
+            "center": [
+              -0.023820426960087456,
+              0.16507794092768174,
+              0.09365027318313346
+            ],
+            "normal": [
+              -0.37158729983584265,
+              0.8962201069669152,
+              0.24230641441967327
+            ],
+            "radiusMm": 20,
+            "strengthMm": 3
+          }
+        ]
+      },
+      "revisionNote": "Synthetic Alex: attachment-preserving v2 correction of the earlier failed nape shortening; hair length 85%, crown volume 8mm, brown goatee width 90%, retained local hair stroke. Professional review pending."
+    },
+    "version": 44
+  },
+  "correctedRevision": {
+    "id": "c5ea9ce3-397f-47c8-b069-320d8d9ff342",
+    "title": "Edited proposal / 2026-09-30T12:18:12.336Z / short01 + goatee",
+    "candidate": "cloudcompare",
+    "geometry": "cloudcompare processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending",
+    "state": {
+      "candidate": "cloudcompare",
+      "photoSetId": "4c42188f-9b65-4634-affe-08a34019895a",
+      "photoViews": {
+        "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+        "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+        "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+        "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+        "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+        "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+        "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+        "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+      },
+      "modelRunId": "ea0e181b-0061-4e1a-9a69-418197718bc4",
+      "currentHairId": "short02",
+      "currentBeardId": "stubble",
+      "hairId": "short01",
+      "beardId": "goatee",
+      "camera": {
+        "azimuth": 3.141592653589793,
+        "elevation": 0.08,
+        "distance": 1.19
+      },
+      "minimumWidth": 512,
+      "native": {
+        "focalLength": 70,
+        "cameraDistance": 1.6,
+        "cameraHeight": 0.04,
+        "fitRounds": 4
+      },
+      "component": {
+        "sourceRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+        "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+        "triangleRatio": 0.75,
+        "voxelSize": 0.003,
+        "samplePoints": 10000,
+        "icpIterations": 40,
+        "icpOverlap": 95
+      },
+      "colmapPreset": "standard",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 85,
+          "widthPercent": 100,
+          "volumeMm": 8,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": [
+          {
+            "kind": "hair",
+            "center": [
+              -0.023820426960087456,
+              0.16507794092768174,
+              0.09365027318313346
+            ],
+            "normal": [
+              -0.37158729983584265,
+              0.8962201069669152,
+              0.24230641441967327
+            ],
+            "radiusMm": 20,
+            "strengthMm": 3
+          }
+        ]
+      },
+      "revisionNote": "Synthetic Alex: attachment-preserving v2 correction of the earlier failed nape shortening; hair length 85%, crown volume 8mm, brown goatee width 90%, retained local hair stroke. Professional review pending."
+    },
+    "createdAt": "2026-09-30T12:18:12.341939286Z"
+  },
+  "historicalFailedRevision": {
+    "id": "625c2487-a938-45b9-b14c-36046fdd9533",
+    "title": "Edited proposal / 2026-09-30T11:47:58.638Z / short01 + goatee",
+    "candidate": "cloudcompare",
+    "geometry": "cloudcompare processing of an explicitly identified upstream fitted head; inferred hidden surfaces; professional review pending",
+    "state": {
+      "candidate": "cloudcompare",
+      "photoSetId": "4c42188f-9b65-4634-affe-08a34019895a",
+      "photoViews": {
+        "back": "23c64c28-1a74-4d39-a9db-f5e9d14299af",
+        "crown": "846331dc-6e20-45c6-b734-a7f60284fa61",
+        "front": "35d0f67c-2763-4f31-8f7a-7ab029f6d579",
+        "left-profile": "405363e2-49c2-4402-af8e-4ca20be54e06",
+        "left-three-quarter": "d415a9d8-7dd8-4b7d-894a-7b45633420b4",
+        "right-profile": "d8e0be17-0dfd-4829-a344-6403058e5eed",
+        "right-three-quarter": "1437cbf7-ae7b-4ee4-b04b-d86a5821b7a4",
+        "under-chin": "14f27593-e019-42b0-bd6f-23d89c554ccf"
+      },
+      "modelRunId": "ea0e181b-0061-4e1a-9a69-418197718bc4",
+      "currentHairId": "short02",
+      "currentBeardId": "stubble",
+      "hairId": "short01",
+      "beardId": "goatee",
+      "camera": {
+        "azimuth": 0,
+        "elevation": 0.08,
+        "distance": 1.19
+      },
+      "minimumWidth": 512,
+      "native": {
+        "focalLength": 70,
+        "cameraDistance": 1.6,
+        "cameraHeight": 0.04,
+        "fitRounds": 4
+      },
+      "component": {
+        "sourceRunId": "e979cacf-a165-47b9-91f0-a4b53881ab0d",
+        "referenceRunId": "e90fa4b1-492c-4b76-af70-dd96257bdb84",
+        "triangleRatio": 0.75,
+        "voxelSize": 0.003,
+        "samplePoints": 10000,
+        "icpIterations": 40,
+        "icpOverlap": 95
+      },
+      "colmapPreset": "standard",
+      "refinement": {
+        "hair": {
+          "lengthPercent": 85,
+          "widthPercent": 100,
+          "volumeMm": 8,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": [
+          {
+            "kind": "hair",
+            "center": [
+              -0.023820426960087456,
+              0.16507794092768174,
+              0.09365027318313346
+            ],
+            "normal": [
+              -0.37158729983584265,
+              0.8962201069669152,
+              0.24230641441967327
+            ],
+            "radiusMm": 20,
+            "strengthMm": 3
+          }
+        ]
+      },
+      "revisionNote": "Synthetic Alex: shorter swept hair, more crown volume, narrower brown goatee, plus one localized hair brush correction. Professional review pending."
+    },
+    "createdAt": "2026-09-30T11:47:58.642606227Z"
+  },
+  "historicalRecipePreservedExactly": true,
+  "sourceHeadSha256": "edaee4ec3fef1fdbd69930f5278b319d38eb732cc19bde401fd4444d79209734",
+  "scope": "Authorized synthetic example, professional review pending."
+}

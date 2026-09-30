@@ -1,0 +1,119 @@
+{
+  "date": "2026-09-30T12:21:29.760Z",
+  "measurements": [
+    {
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+      "azimuth": "3.141593",
+      "edits": {
+        "beard": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "strokes": [],
+        "version": "style-mesh-v2"
+      },
+      "measurements": {
+        "beard": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "4fee1322",
+              "mesh": "stubble",
+              "original": "4fee1322"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 266908
+        },
+        "hair": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "04a13e3b",
+              "mesh": "short02",
+              "original": "04a13e3b"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 2061
+        }
+      },
+      "version": "style-mesh-v2"
+    },
+    {
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+      "azimuth": "3.141593",
+      "edits": {
+        "beard": {
+          "color": "brown",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 90
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 85,
+          "volumeMm": 8,
+          "widthPercent": 100
+        },
+        "strokes": [
+          {
+            "center": [
+              -0.023820426960087456,
+              0.16507794092768174,
+              0.09365027318313346
+            ],
+            "kind": "hair",
+            "normal": [
+              -0.37158729983584265,
+              0.8962201069669152,
+              0.2423064144196733
+            ],
+            "radiusMm": 20,
+            "strengthMm": 3
+          }
+        ],
+        "version": "style-mesh-v2"
+      },
+      "measurements": {
+        "beard": {
+          "changedSincePrevious": 87302,
+          "changedVertices": 87303,
+          "fingerprints": [
+            {
+              "edited": "ff57433f",
+              "mesh": "goatee",
+              "original": "33bf4a40"
+            }
+          ],
+          "maximumDisplacementMm": 4.003715142607687,
+          "vertices": 87304
+        },
+        "hair": {
+          "changedSincePrevious": 2930,
+          "changedVertices": 2930,
+          "fingerprints": [
+            {
+              "edited": "82afc9d2",
+              "mesh": "short01",
+              "original": "72621683"
+            }
+          ],
+          "maximumDisplacementMm": 14.525503258645266,
+          "vertices": 3177
+        }
+      },
+      "version": "style-mesh-v2"
+    }
+  ]
+}

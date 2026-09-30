@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-30T11:44:58.114Z",
+  "request": "shorter hair; more crown volume; narrower beard; beard color brown",
+  "measurements": [
+    {
+      "appliedRefinement": {
+        "beard": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "strokes": []
+      },
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+      "changedVertices": 0,
+      "maximumDisplacementMm": 0
+    },
+    {
+      "appliedRefinement": {
+        "beard": {
+          "color": "brown",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 90
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 85,
+          "volumeMm": 8,
+          "widthPercent": 100
+        },
+        "strokes": []
+      },
+      "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+      "changedVertices": 90480,
+      "maximumDisplacementMm": 17.154447
+    }
+  ]
+}

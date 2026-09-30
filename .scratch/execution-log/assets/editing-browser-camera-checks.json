@@ -1,0 +1,419 @@
+{
+  "date": "2026-09-30T12:06:05.722Z",
+  "checks": [
+    {
+      "name": "Front",
+      "views": [
+        {
+          "azimuth": "0.000000",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "0.000000",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Left three-quarter",
+      "views": [
+        {
+          "azimuth": "0.785398",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "0.785398",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Right three-quarter",
+      "views": [
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Left profile",
+      "views": [
+        {
+          "azimuth": "1.570796",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "1.570796",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Right profile",
+      "views": [
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Back",
+      "views": [
+        {
+          "azimuth": "3.141593",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "4fee1322",
+                  "mesh": "stubble",
+                  "original": "4fee1322"
+                }
+              ],
+              "maximumDisplacementMm": 6.9388939039072276e-15,
+              "vertices": 266908
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          }
+        },
+        {
+          "azimuth": "3.141593",
+          "distance": "1.190000",
+          "geometry": {
+            "beard": {
+              "changedSincePrevious": 87302,
+              "changedVertices": 87303,
+              "fingerprints": [
+                {
+                  "edited": "ff57433f",
+                  "mesh": "goatee",
+                  "original": "33bf4a40"
+                }
+              ],
+              "maximumDisplacementMm": 4.003715142607687,
+              "vertices": 87304
+            },
+            "hair": {
+              "changedSincePrevious": 3177,
+              "changedVertices": 3177,
+              "fingerprints": [
+                {
+                  "edited": "d1981598",
+                  "mesh": "short01",
+                  "original": "72621683"
+                }
+              ],
+              "maximumDisplacementMm": 17.154446532949812,
+              "vertices": 3177
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

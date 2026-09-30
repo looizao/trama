@@ -4,6 +4,8 @@ import { api, json, imageURL, dateLabel, type Client } from './api'
 import { usePreferences } from './i18n'
 import type { Permission } from './privacy'
 import { DemoViewer } from './demo-viewer'
+import { defaultRefinement } from './demo-editing'
+import { ProposalEditor, type ProposalBrush } from './proposal-editor'
 import type {
   DemoLibrary,
   DemoState,
@@ -301,7 +303,8 @@ function DemoSession({
     [title, setTitle] = useState(''),
     [error, setError] = useState(''),
     [message, setMessage] = useState(''),
-    [busy, setBusy] = useState(false)
+    [busy, setBusy] = useState(false),
+    [brush,setBrush]=useState<ProposalBrush>()
   useEffect(() => {
     if (!authorized) {
       setState(undefined)
@@ -349,7 +352,18 @@ function DemoSession({
     }
   }, [state?.modelRunId, state?.component?.sourceRunId, state?.component?.referenceRunId, jobs.data, cache, clientId])
   function change(next: Partial<DemoState>) {
-    setState((s) => (s ? { ...s, ...next } : s))
+    setState((s) => {
+      if(!s)return s
+      const updated={...s,...next}
+      if (('modelRunId' in next && next.modelRunId!==s.modelRunId)||('candidate' in next && next.candidate!==s.candidate)||('photoSetId' in next&&next.photoSetId!==s.photoSetId)) {
+        updated.refinement=undefined;updated.revisionNote='';setBrush(undefined)
+      } else if((next.hairId!==undefined&&next.hairId!==s.hairId)||(next.beardId!==undefined&&next.beardId!==s.beardId)) {
+        const kind=next.hairId!==undefined&&next.hairId!==s.hairId?'hair':'beard'
+        if(s.refinement){updated.refinement={...s.refinement,strokes:s.refinement.strokes.filter(stroke=>stroke.kind!==kind)};updated.refinement[kind]=defaultRefinement()[kind]}
+        setBrush(undefined)
+      }
+      return updated
+    })
     setDirty(true)
     setMessage('')
   }
@@ -382,6 +396,7 @@ function DemoSession({
     })
   }
   function reopen(option: DemoOption) {
+    setBrush(undefined)
     setState({
       ...option.state,
       native: option.state.native?.focalLength
@@ -534,6 +549,7 @@ function DemoSession({
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC-BY-4.0</a> ·{' '}
           <a href="https://doi.org/10.1145/3130800.3130813" target="_blank" rel="noreferrer">Li, Bolkart, Black, Li &amp; Romero (2017)</a>.
           {' '}{t('Changes: bounded identity fitting, coordinate conversion, procedural eye materials, shared style attachment and export. Additional published model usage terms apply. Synthetic examples are labeled simulations.')}
+          {state.refinement&&<>{' '}{t('This revision also includes retained local style geometry or material refinements. Original source geometry and license notices are preserved.')}</>}
         </p>}
         <label>
           {t('Authorized photo set')}
@@ -909,8 +925,17 @@ function DemoSession({
             urls={proposedURLs}
             camera={state.camera}
             onCamera={camera}
+            refinement={state.refinement}
+            brush={brush}
+            onStroke={stroke=>{const edits=state.refinement||defaultRefinement();if(edits.strokes.length<64)change({refinement:{...edits,strokes:[...edits.strokes,stroke]}})}}
           />
         </div>
+        {fitted && modelJob && <ProposalEditor error={error} message={message} value={state.refinement} note={state.revisionNote} onChange={refinement=>change({refinement})} onNote={revisionNote=>change({revisionNote})} brush={brush} onBrush={setBrush} disabled={busy} hairAvailable={!['none','keep-current'].includes(state.hairId)} beardAvailable={!['clean-shaven','keep-current'].includes(state.beardId)} onWritten={request=>action(async()=>{
+          const result=await api<{state:DemoState;changes:string[]}>(`${base}/demo-refinements`,json('POST',{state,request}));change({refinement:result.state.refinement,revisionNote:result.state.revisionNote});setMessage('Applied geometry changes: '+result.changes.join('; '))
+        })} onSave={()=>action(async()=>{
+          const revisionTitle=`Edited proposal / ${new Date().toISOString()} / ${state.hairId} + ${state.beardId}`
+          await api<DemoOption>(`${base}/demo-options`,json('POST',{state,title:revisionTitle}));await cache.invalidateQueries({queryKey:['demo-options',clientId]});setBrush(undefined);setMessage('Edited revision saved as a new option. Earlier options are preserved. Save workspace to reopen this revision on reload.')
+        })}/>}
         <div className="demo-catalog-pair">
           <Catalog
             fitted={fitted}

@@ -28,6 +28,7 @@ func (a *App) Handler() http.Handler {
 	mux.HandleFunc("PUT /api/clients/{clientID}/demo-workspace", a.authenticated(a.saveDemoWorkspace))
 	mux.HandleFunc("GET /api/clients/{clientID}/demo-options", a.authenticated(a.listDemoOptions))
 	mux.HandleFunc("POST /api/clients/{clientID}/demo-options", a.authenticated(a.saveDemoOption))
+	mux.HandleFunc("POST /api/clients/{clientID}/demo-refinements", a.authenticated(a.refineDemoProposal))
 	mux.HandleFunc("GET /api/clients/{clientID}/demo-jobs", a.authenticated(a.listDemoJobs))
 	mux.HandleFunc("POST /api/clients/{clientID}/demo-jobs", a.authenticated(a.createDemoJob))
 	mux.HandleFunc("GET /api/clients/{clientID}/demo-jobs/{runID}/artifacts/{kind}/{artifactID}", a.authenticated(a.nativeDemoArtifact))

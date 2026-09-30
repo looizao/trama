@@ -11,6 +11,8 @@ export type NativeSettings = {
 }
 export type ComponentSettings = { sourceRunId: string; referenceRunId?: string; triangleRatio: number; voxelSize: number; samplePoints: number; icpIterations?: number; icpOverlap?: number }
 export type DemoState = {
+  refinement?: DemoRefinement
+  revisionNote?: string
   component?: ComponentSettings
   colmapPreset?: string
   native?: NativeSettings
@@ -25,6 +27,9 @@ export type DemoState = {
   camera: DemoCamera
   minimumWidth: number
 }
+export type StyleEdit = { lengthPercent: number; widthPercent: number; volumeMm: number; color: string }
+export type BrushStroke = { kind: 'hair' | 'beard'; center: [number,number,number]; normal: [number,number,number]; radiusMm: number; strengthMm: number }
+export type DemoRefinement = { version?:string; hair: StyleEdit; beard: StyleEdit; strokes: BrushStroke[] }
 export type DemoStyle = {
   id: string
   kind: string

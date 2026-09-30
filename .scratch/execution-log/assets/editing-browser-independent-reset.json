@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-30T12:00:56.313Z",
+  "measurements": [
+    {
+      "edits": {
+        "beard": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "strokes": []
+      },
+      "measurements": {
+        "beard": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "4fee1322",
+              "mesh": "stubble",
+              "original": "4fee1322"
+            }
+          ],
+          "maximumDisplacementMm": 6.9388939039072276e-15,
+          "vertices": 266908
+        },
+        "hair": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "04a13e3b",
+              "mesh": "short02",
+              "original": "04a13e3b"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 2061
+        }
+      }
+    },
+    {
+      "edits": {
+        "beard": {
+          "color": "brown",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 90
+        },
+        "hair": {
+          "color": "original",
+          "lengthPercent": 100,
+          "volumeMm": 0,
+          "widthPercent": 100
+        },
+        "strokes": []
+      },
+      "measurements": {
+        "beard": {
+          "changedSincePrevious": 0,
+          "changedVertices": 87303,
+          "fingerprints": [
+            {
+              "edited": "ff57433f",
+              "mesh": "goatee",
+              "original": "33bf4a40"
+            }
+          ],
+          "maximumDisplacementMm": 4.003715142607687,
+          "vertices": 87304
+        },
+        "hair": {
+          "changedSincePrevious": 3177,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "72621683",
+              "mesh": "short01",
+              "original": "72621683"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 3177
+        }
+      }
+    }
+  ]
+}

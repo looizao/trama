@@ -29,6 +29,8 @@ type DemoWorkspaceState struct {
 	Native         NativeDemoSettings    `json:"native"`
 	Component      ComponentDemoSettings `json:"component"`
 	ColmapPreset   string                `json:"colmapPreset"`
+	Refinement     *DemoRefinement       `json:"refinement,omitempty"`
+	RevisionNote   string                `json:"revisionNote,omitempty"`
 }
 type DemoOption struct {
 	ID        string             `json:"id"`
@@ -41,6 +43,28 @@ type DemoOption struct {
 
 func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) string {
 	client := r.PathValue("clientID")
+	if len(state.RevisionNote) > 2000 {
+		return "revision note exceeds 2000 bytes"
+	}
+	if state.Refinement != nil {
+		if state.ModelRunID == "" {
+			return "refine a completed client head before saving"
+		}
+		if message := state.Refinement.validate(); message != "" {
+			return message
+		}
+		defaults := defaultDemoRefinement()
+		hairUnavailable := state.HairID == "none" || state.HairID == "keep-current"
+		beardUnavailable := state.BeardID == "clean-shaven" || state.BeardID == "keep-current"
+		if (hairUnavailable && state.Refinement.Hair != defaults.Hair) || (beardUnavailable && state.Refinement.Beard != defaults.Beard) {
+			return "choose a proposed style before editing it"
+		}
+		for _, stroke := range state.Refinement.Strokes {
+			if (stroke.Kind == "hair" && hairUnavailable) || (stroke.Kind == "beard" && beardUnavailable) {
+				return "brush target style is absent or retained unchanged"
+			}
+		}
+	}
 	if state.ColmapPreset == "" {
 		state.ColmapPreset = "standard"
 	}

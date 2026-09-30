@@ -1,0 +1,173 @@
+{
+  "date": "2026-09-30T12:32:42.153Z",
+  "angles": [
+    {
+      "name": "Front",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "0.000000",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "0.000000",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    },
+    {
+      "name": "Left three-quarter",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "0.785398",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "0.785398",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    },
+    {
+      "name": "Right three-quarter",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "-0.785398",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "-0.785398",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    },
+    {
+      "name": "Left profile",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "1.570796",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "1.570796",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    },
+    {
+      "name": "Right profile",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "-1.570796",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "-1.570796",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    },
+    {
+      "name": "Back",
+      "views": [
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble",
+          "azimuth": "3.141593",
+          "changedVertices": "0",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":266908,\"fingerprints\":[{\"mesh\":\"stubble\",\"original\":\"4fee1322\",\"edited\":\"4fee1322\"}]},\"hair\":{\"changedVertices\":0,\"changedSincePrevious\":0,\"maximumDisplacementMm\":0,\"vertices\":2061,\"fingerprints\":[{\"mesh\":\"short02\",\"original\":\"04a13e3b\",\"edited\":\"04a13e3b\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "0.000000",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/stubble"
+        },
+        {
+          "appliedRefinement": "{\"version\":\"style-mesh-v2\",\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[{\"kind\":\"hair\",\"center\":[-0.023820426960087456,0.16507794092768174,0.09365027318313346],\"normal\":[-0.37158729983584265,0.8962201069669152,0.24230641441967327],\"radiusMm\":20,\"strengthMm\":3}]}",
+          "assets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee",
+          "azimuth": "3.141593",
+          "brushFeedback": "Localized style stroke applied",
+          "changedVertices": "90233",
+          "distance": "1.190000",
+          "editMeasurements": "{\"beard\":{\"changedVertices\":87303,\"changedSincePrevious\":0,\"maximumDisplacementMm\":4.003715142607687,\"vertices\":87304,\"fingerprints\":[{\"mesh\":\"goatee\",\"original\":\"33bf4a40\",\"edited\":\"ff57433f\"}]},\"hair\":{\"changedVertices\":2930,\"changedSincePrevious\":0,\"maximumDisplacementMm\":14.525503258645266,\"vertices\":3177,\"fingerprints\":[{\"mesh\":\"short01\",\"original\":\"72621683\",\"edited\":\"82afc9d2\"}]}}",
+          "elevation": "0.080000",
+          "maximumDisplacementMm": "14.525503",
+          "measuredAssets": "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/hair/short01|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/ea0e181b-0061-4e1a-9a69-418197718bc4/artifacts/beard/goatee"
+        }
+      ]
+    }
+  ]
+}

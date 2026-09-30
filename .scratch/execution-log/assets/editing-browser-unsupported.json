@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-30T11:45:36.412Z",
+  "request": "shorter hair; remove nose",
+  "error": "unsupported request \"remove nose\"; use the listed requests or hair/beard length, width, volume and color",
+  "measurements": [
+    {
+      "changed": "0",
+      "edits": "{\"hair\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":100,\"volumeMm\":0,\"color\":\"original\"},\"strokes\":[]}",
+      "maxMm": "0.000000"
+    },
+    {
+      "changed": "90480",
+      "edits": "{\"hair\":{\"lengthPercent\":85,\"widthPercent\":100,\"volumeMm\":8,\"color\":\"original\"},\"beard\":{\"lengthPercent\":100,\"widthPercent\":90,\"volumeMm\":0,\"color\":\"brown\"},\"strokes\":[]}",
+      "maxMm": "17.154447"
+    }
+  ]
+}

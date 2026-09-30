@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import type { DemoCamera } from './demo-types'
+import type { BrushStroke, DemoCamera, DemoRefinement } from './demo-types'
+import { defaultRefinement, editStyle, styleKind } from './demo-editing'
 import { usePreferences } from './i18n'
 
 type Inspection = {
@@ -42,11 +43,17 @@ export function DemoViewer({
   urls,
   camera,
   onCamera,
+  refinement,
+  brush,
+  onStroke,
 }: {
   title: string
   urls: string[]
   camera: DemoCamera
   onCamera: (value: DemoCamera) => void
+  refinement?: DemoRefinement
+  brush?: {kind:'hair'|'beard';radiusMm:number;strengthMm:number}
+  onStroke?: (stroke:BrushStroke)=>void
 }) {
   const { t } = usePreferences(),
     host = useRef<HTMLDivElement>(null)
@@ -54,12 +61,16 @@ export function DemoViewer({
     camera: THREE.PerspectiveCamera
     controls: OrbitControls
     updating: boolean
+    applyEdits: () => void
   } | null>(null)
   const cameraRef = useRef(camera),
     changeRef = useRef(onCamera)
+  const editRef=useRef(refinement), brushRef=useRef(brush), strokeRef=useRef(onStroke)
+  editRef.current=refinement;brushRef.current=brush;strokeRef.current=onStroke
   cameraRef.current = camera
   changeRef.current = onCamera
   const [error, setError] = useState(''),
+    [brushMessage,setBrushMessage]=useState(''),
     [loading, setLoading] = useState(true),
     [inspection, setInspection] = useState<Inspection>()
   const key = urls.join('|')
@@ -95,7 +106,24 @@ export function DemoViewer({
     controls.maxDistance = 3
     controls.minPolarAngle = Math.PI / 2 - 1.45
     controls.maxPolarAngle = Math.PI / 2 + 1.45
-    const instance = { camera: viewCamera, controls, updating: false }
+    const applyEdits=()=>{
+      const edits=editRef.current||defaultRefinement()
+      let changedVertices=0,maximumDisplacementMm=0
+      const measurements:Record<string,unknown>={}
+      model.children.forEach(child=>{
+        const kind=child.userData.styleKind as 'hair'|'beard'|undefined
+        if(!kind)return
+        const m=editStyle(child,kind,edits[kind],edits.strokes,edits.version||'style-mesh-v1')
+        measurements[kind]=m
+        changedVertices+=m.changedVertices;maximumDisplacementMm=Math.max(maximumDisplacementMm,m.maximumDisplacementMm)
+      })
+      element.dataset.changedVertices=String(changedVertices)
+      element.dataset.maximumDisplacementMm=maximumDisplacementMm.toFixed(6)
+      element.dataset.appliedRefinement=JSON.stringify(edits)
+      element.dataset.editMeasurements=JSON.stringify(measurements)
+      controls.enabled=!brushRef.current
+    }
+    const instance = { camera: viewCamera, controls, updating: false, applyEdits }
     active.current = instance
     const measuredCamera = () => {
       element.dataset.azimuth = controls.getAzimuthalAngle().toFixed(6)
@@ -128,6 +156,23 @@ export function DemoViewer({
         })
     }
     controls.addEventListener('change', changed)
+    const stroke=(event:PointerEvent)=>{
+      const settings=brushRef.current
+      if(!settings||event.button!==0||!loaded)return
+      const bounds=renderer.domElement.getBoundingClientRect(),ray=new THREE.Raycaster()
+      ray.setFromCamera(new THREE.Vector2((event.clientX-bounds.left)/bounds.width*2-1,-(event.clientY-bounds.top)/bounds.height*2+1),viewCamera)
+      const hit=ray.intersectObjects(model.children,true)[0]
+      let root=hit?.object
+      while(root?.parent&&root.parent!==model)root=root.parent
+      // A ray must hit the visible chosen style first. Clicking the forehead
+      // must not edit hair hidden behind the client head or the other style.
+      if(!hit?.face||root?.userData.styleKind!==settings.kind){element.dataset.brushFeedback='No selected style surface under pointer';setBrushMessage('No selected style surface under pointer. Click the chosen hair or beard, or change the viewing angle.');return}
+      const normal=hit.face.normal.clone().applyNormalMatrix(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize()
+      strokeRef.current?.({kind:settings.kind,center:hit.point.toArray(),normal:normal.toArray(),radiusMm:settings.radiusMm,strengthMm:settings.strengthMm})
+      element.dataset.brushFeedback='Localized style stroke applied'
+      setBrushMessage('Localized style stroke applied. Inspect the proposal from the other angles before saving.')
+    }
+    renderer.domElement.addEventListener('pointerdown',stroke)
     scene.add(new THREE.HemisphereLight(0xffffff, 0x70716c, 2))
     const keyLight = new THREE.DirectionalLight(0xffffff, 3)
     keyLight.position.set(-2, 3, 4)
@@ -172,12 +217,14 @@ export function DemoViewer({
           disposeModel(gltf.scene)
           return
         }
+        gltf.scene.userData.styleKind=styleKind(url)
         model.add(gltf.scene)
       }),
     )
       .then(() => {
         if (!destroyed) {
           loaded = true
+          applyEdits()
           measuredAt = performance.now()
           setLoading(false)
         }
@@ -218,6 +265,7 @@ export function DemoViewer({
       cancelAnimationFrame(frame)
       resize.disconnect()
       controls.removeEventListener('change', changed)
+      renderer.domElement.removeEventListener('pointerdown',stroke)
       controls.dispose()
       disposeModel(model)
       renderer.dispose()
@@ -227,6 +275,7 @@ export function DemoViewer({
     }
     // Model changes rebuild the scene. Camera changes synchronize the existing scene.
   }, [key, t, title])
+  useEffect(()=>{active.current?.applyEdits();if(host.current)host.current.style.cursor=brush?'crosshair':'grab';if(!brush)setBrushMessage('')},[refinement,brush])
   useEffect(() => {
     const instance = active.current
     if (!instance) return
@@ -259,6 +308,7 @@ export function DemoViewer({
         data-measured-assets={inspection?.assets}
       />
       {loading && <p role="status">{t('Loading actual 3D meshes…')}</p>}
+      {brush && brushMessage && <p role="status">{t(brushMessage)}</p>}
       {error && (
         <p role="alert" className="error">
           {error}

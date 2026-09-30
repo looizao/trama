@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T08:29:29-03:00",
+  "updated": "2026-09-30T09:36:07-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -2368,14 +2368,9 @@ window.executionLog={
       "title": "Client-specific refinements and direct editing",
       "depends": [
         "06",
-        "07a",
-        "08a",
-        "09a",
+        "07b",
         "10a",
-        "11a",
-        "12a",
-        "13a",
-        "14a"
+        "11a"
       ],
       "requirement": "Provide meaningful written refinements and direct 3D changes within evaluated routes.",
       "criteria": [
@@ -2383,16 +2378,149 @@ window.executionLog={
         "Direct edits preserved in new revisions; synchronized client comparison and style independence retained.",
         "Missing coverage, likeness and clipping visible and checked; unmet quality requirements not marked complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Dependency correction: shared editing depends on the common viewer and viable fitted heads, not a failed photogrammetry route or the pending CUDA acceptance. Failed and blocked candidates remain retained and are not counted as completed demos.",
+        "Implemented typed independent hair/beard mesh proportions, bounded crown/skin-normal volume and material tint, localized raycast brush with undo/reset, explicit written requests in English and Portuguese, and new immutable edited options. Current geometry and anatomy are excluded from editing.",
+        "Added read-only native geometry verification using the exact TypeScript editor on retained GLBs. Moved brush centers/normals and world matrices out of the per-vertex loop to reduce repeated matrix updates and allocations. Current/reference original normals and vertex positions restore exactly when edits reset.",
+        "Versioned deformation recipes preserve the failed v1 revision exactly. Corrected style-mesh-v2 protects the nape/temple attachment band and feathers crown/free-tip proportion changes. A real back-view defect was fixed and the corrected draft saved separately.",
+        "Completed native-head editing, atomic supported written interpretation, independent style reset, immutable save/reopen and visible-surface brush occlusion. New edits use versioned attachment-preserving recipes; historical failed revisions remain inspectable."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Professional likeness, actual cut feasibility and acceptance remain pending. The fitted head includes inferred hidden surfaces. Current styles are manually selected references; edits reshape proposal style meshes and do not alter anatomy.",
+        "Written interpretation has documented English/Portuguese requests and exact values. Unsupported requests reject atomically. It is a local deterministic interpreter rather than an unrestricted language model.",
+        "The representative catalog still has coarse beard silhouettes and clipping limitations requiring task 15. Brush hits visible mesh geometry; transparent hair-card texels are not individually sampled for hit testing. A stroke can cross nearby overlapping style surfaces inside its bounded radius.",
+        "Formal revision lineage, selected expected results and selection history remain task 17. Task 16 verifies immutable edited recipes and reload/reopen, not those unfinished workflows."
+      ],
+      "verification": [
+        {
+          "command": "Go focused written/brush/auth/revision tests and go test ./...; npm --prefix web run build",
+          "result": "PASS. First test compile incorrectly treated fixture user ID as a user struct; corrected to a separate test studio/session and verified 404 isolation. Unsupported mixed requests reject atomically, styles/strokes bounds validate, earlier options are preserved, and source erasure removes edited revisions."
+        },
+        {
+          "command": "@Browser initial written-request and direct brush checks",
+          "result": "Actual style vertex displacement observed: 90480 changed proposed vertices, maximum 17.154447mm; current reference has zero changed vertices. Mixed request shorter hair; remove nose returns unsupported explanation and leaves the geometry unchanged. Actual pointer raycast produces a localized hair stroke with retained point/normal. Full save/reload/compatibility checks still in progress."
+        },
+        {
+          "command": "node scripts/verify-proposal-edits.mjs",
+          "result": "PASS: 288 real native style assets from 18 jobs, actual vertex/normals/topology/UV checks, protected root band, localized brush, deterministic replay, 64-stroke 25mm cap, exact reset and unchanged source heads. Initial v1 mathematical checks passed but visual back-view verification exposed a nape gap; v2 includes protected-band checks and corrected visual verification."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; go test -race ./internal/app; npm --prefix web run build",
+          "result": "PASS all checks after the final occlusion change. Frontend retains the existing large demo bundle warning (699.60 kB); no build error."
+        },
+        {
+          "command": "@Browser final v2 editing flow",
+          "result": "PASS saved recipe reload; actual proposed 90233 changed vertices, maximum 14.525503mm; current 0. Forehead click missed and retained one stroke; visible hair hit changed 40 vertices and undo restored exact prior recipe. All six camera angles matched across views and retained geometry fingerprints. Console errors/warnings empty on final reload."
+        },
+        {
+          "command": "node scripts/verify-proposal-edits.mjs",
+          "result": "PASS exact app deformation on 288 native style GLBs from 18 jobs in 24.356s. Sources and heads unchanged; protected attachment band, deterministic replay, bounded brush displacement, reset normals/positions, preserved UV/topology. This is geometry verification, not observed client accuracy."
+        },
+        {
+          "command": "Portable HTML asset audit",
+          "result": "Initial audit used incompatible system Python; retried with the private Python 3.12 environment. Log server had stopped; restarted on loopback. Final PASS: all relative referenced assets exist, image decoding succeeds and HTTP returns 200."
+        },
+        {
+          "command": "@Browser HTML log reload and selector",
+          "result": "PASS current verified task 16 and all four linked pictures complete with natural width 1331. A heading focus attempt timed out; ordinary page scrolling loaded the final lazy image."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/editing-browser-back.png",
+          "caption": "Failed v1 shortening exposes a nape gap in the actual proposed hair. Geometry change was real but this attachment defect is not accepted as completed quality.",
+          "date": "2026-09-30T09:10:42-03:00"
+        },
+        {
+          "src": "assets/editing-browser-back-reset.png",
+          "caption": "Resetting only the hair restores the original attachment at the same back angle while preserving the independently narrowed brown beard. This isolates the gap to the v1 deformation.",
+          "date": "2026-09-30T09:10:42-03:00"
+        },
+        {
+          "src": "assets/editing-browser-v2-back.png",
+          "caption": "Corrected v2 preserves the nape attachment at the same back angle. The failed v1 remains retained separately.",
+          "date": "2026-09-30T09:34:03-03:00"
+        },
+        {
+          "src": "assets/editing-browser-v2-final.png",
+          "caption": "Actual synchronized edited proposal after reload, visible-surface brush checks and undo. Hair 85% length with 8mm crown adjustment; independent brown beard at 90% width. Synthetic client and inferred fitted geometry; professional review pending.",
+          "date": "2026-09-30T09:34:03-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/editing-browser-written.json",
+          "label": "Initial actual written geometry measurements"
+        },
+        {
+          "href": "assets/editing-browser-unsupported.json",
+          "label": "Unsupported request and unchanged edit state"
+        },
+        {
+          "href": "assets/editing-native-geometry-verification.json",
+          "label": "Corrected v2 actual native geometry and attachment checks"
+        },
+        {
+          "href": "assets/editing-native-geometry-v1-verification.json",
+          "label": "Historical v1 numeric verification, before visual gap discovery"
+        },
+        {
+          "href": "assets/editing-v2-actual-persistence.json",
+          "label": "Separate corrected v2 and failed v1 saved revisions with original head hash"
+        },
+        {
+          "href": "assets/editing-browser-v2-reloaded.json",
+          "label": "Actual corrected geometry after browser reload"
+        },
+        {
+          "href": "assets/editing-browser-v2-occlusion.json",
+          "label": "Actual face miss, visible hair hit and exact undo measurements"
+        },
+        {
+          "href": "assets/editing-browser-v2-camera-checks.json",
+          "label": "Six synchronized v2 angles and actual geometry fingerprints"
+        },
+        {
+          "href": "assets/editing-browser-independent-reset.json",
+          "label": "Independent hair reset preserves beard edit"
+        },
+        {
+          "href": "assets/editing-browser-undo.json",
+          "label": "Initial localized brush undo measurements"
+        },
+        {
+          "href": "assets/editing-browser-option-reopened.json",
+          "label": "Original edited option reopened in browser"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T08:31:10-03:00",
+          "text": "Starting typed independent geometry/material refinements, written-request interpretation with explicit supported scope, direct localized 3D brush and immutable saved edited revisions."
+        },
+        {
+          "date": "2026-09-30T08:47:40-03:00",
+          "text": "Browser reload responded slowly and initial reported FPS was zero during background verification, with 18.5/39s load readings. Retained as an observed limitation, not used as a responsive browser performance claim. Native accessibility restored inspection; no alternative browser or raw CDP used."
+        },
+        {
+          "date": "2026-09-30T08:59:46-03:00",
+          "text": "Initial full geometry verification exercised 64 strokes on every style and took minutes. Optimized real brush evaluation before repeating checks; did not use that long verification as a browser performance result."
+        },
+        {
+          "date": "2026-09-30T09:10:42-03:00",
+          "text": "Six synchronized angle checks exposed a v1 hair attachment gap at the nape. Preserving the existing immutable failed revision and versioning a corrected deformation that protects the root band while changing crown proportions and free long tips. No failed revision is silently rewritten."
+        },
+        {
+          "date": "2026-09-30T09:23:15-03:00",
+          "text": "Latest browser reload observed 293/381ms mesh loads and 150/165 initial FPS. Earlier slow reloads and zero-FPS background measurements remain retained; this short measurement is not a device stress benchmark. Added occlusion guard so a click on visible head anatomy cannot edit hidden hair behind it."
+        },
+        {
+          "date": "2026-09-30T09:34:03-03:00",
+          "text": "Task 16 technical acceptance verified locally. Preserved failed attachment revision and corrected separate v2; next task is the expected-result gallery and selection history."
+        }
+      ]
     },
     {
       "id": "17",
