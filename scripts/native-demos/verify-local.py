@@ -4,7 +4,7 @@ import argparse,json,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from local_demo_http import LocalDemoAPI,diagnostic_png
-parser=argparse.ArgumentParser();parser.add_argument('--candidate',choices=['blender-mpfb','makehuman'],default='blender-mpfb');parser.add_argument('--job-id',default='');args=parser.parse_args();candidate=args.candidate
+parser=argparse.ArgumentParser();parser.add_argument('--candidate',choices=['blender-mpfb','makehuman','flame'],default='blender-mpfb');parser.add_argument('--job-id',default='');args=parser.parse_args();candidate=args.candidate
 api=LocalDemoAPI();check=api.expect;library=check(200,api.request('/demo-library'),'shared asset catalog')
 base='/clients/a0b730e5-490f-488d-ae16-4f3812ee044f'
 jobs=check(200,api.request(base+'/demo-jobs'),'existing synthetic '+candidate+' run')
@@ -55,7 +55,7 @@ try:
     fixture_job=check(202,api.request(base+'/demo-jobs',payload),'real cancellation experiment')
     directory=ROOT/'.scratch/private/runtime/processing'/cid/fixture_job['id'];deadline=time.monotonic()+10
     while time.monotonic()<deadline:
-        started=(directory/'prepare.log').exists() and (candidate!='makehuman' or 'MAKEHUMAN_RENDER front' in (directory/'prepare.log').read_text(errors='replace'))
+        started=(directory/'prepare.log').exists() and (candidate not in ['makehuman','flame'] or ('FLAME_RENDER front' if candidate=='flame' else 'MAKEHUMAN_RENDER front') in (directory/'prepare.log').read_text(errors='replace'))
         if started and (directory/'progress.json').exists():break
         time.sleep(.05)
     assert started and (directory/'progress.json').exists(),'actual native prepare stage did not start'
@@ -66,7 +66,7 @@ try:
     check(200,api.request(base+'/withdraw',{'confirmed':True}),'withdraw fixture permission')
     check(403,api.request(base+'/demo-jobs/'+failure['id']+'/artifacts/diagnostic/fit'),'withdrawal denies previous retained diagnostics')
     evidence={'date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'scope':'Real local native pipeline and privacy checks. Diagnostic squares cannot produce a fitted head. The chosen candidate synthetic Alex fitted artifacts were actually read. No real-person accuracy or professional acceptance claimed.','candidate':candidate,'fittedArtifactsRead':len(paths),'fittedBytesRead':loaded,'fittedWorkspaceAndOptionReopened':True,'anonymousAndPrivatePathDenied':True,'failureExperiment':failureEvidence,'nonfrontDeletionKilledRealNativeProcess':True,'erasedDirectoryDidNotReappear':True,'withdrawalDeniedRetainedArtifacts':True}
-    filename='makehuman-live-verification.json' if candidate=='makehuman' else ('mpfb-corrected-live-verification.json' if args.job_id else 'mpfb-live-verification.json')
+    filename=candidate+'-live-verification.json' if candidate in ['makehuman','flame'] else ('mpfb-corrected-live-verification.json' if args.job_id else 'mpfb-live-verification.json')
     (ROOT/'.scratch/execution-log/assets'/filename).write_text(json.dumps(evidence,indent=2)+'\n')
 finally:
     if fixture_job:api.request(base+'/demo-jobs/'+fixture_job['id']+'/cancel',method='POST')

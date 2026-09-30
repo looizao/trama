@@ -20,7 +20,7 @@ def protect_stage():
     if ctypes.CDLL(None).prctl(1,signal.SIGKILL)!=0:os._exit(125)
     if os.getppid()!=stage_parent:os.kill(os.getpid(),signal.SIGKILL)
 os.umask(0o077)
-p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
+p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman','flame']);p.add_argument('directory',type=Path);args=p.parse_args();directory=args.directory.resolve()
 manifest=json.loads((directory/'manifest.json').read_text())
 manifest['candidate']=args.candidate
 (directory/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
@@ -51,7 +51,7 @@ try:
         report['artifacts']=files
         (directory/'colmap-report.json').write_text(json.dumps(report,indent=2)+'\n')
         raise RuntimeError('Six-photo COLMAP experiment did not produce a complete editable head with independent compatible styles. See actual reconstruction report; no fallback used.')
-    fitter=[sys.executable,str(ROOT/'scripts/native-demos/makehuman.py')] if args.candidate=='makehuman' else blender
+    fitter=[sys.executable,str(ROOT/('scripts/native-demos/'+args.candidate+'.py'))] if args.candidate in ['makehuman','flame'] else blender
     stage('prepare',fitter+['prepare',str(directory)])
     stage('fit',[str(ROOT/'.scratch/private/native-demos/python/bin/python'),str(ROOT/'scripts/native-demos/fit-mpfb.py'),str(directory)])
     stage('export',fitter+['export',str(directory)])
@@ -59,6 +59,10 @@ try:
     files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
     report={'candidate':args.candidate,'kind':'fit','geometry':fit['geometry'],'scope':'Six-view '+args.candidate+' fitting experiment. Full refinement and expected-result journey remain pending.','fit':fit,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
     if args.candidate=='makehuman':report['nativeShape']=json.loads((directory/'makehuman-shape.json').read_text())
+    if args.candidate=='flame':
+        report['nativeShape']=json.loads((directory/'flame-shape.json').read_text())
+        report['styleAdaptation']=json.loads((directory/'flame-style-adaptation.json').read_text())
+        report['provenance']=json.loads((directory/'flame-attribution.json').read_text())
     report['targetBasisCheck']=json.loads((directory/'target-basis-check.json').read_text())
     (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n');print('EXPERIMENT_COMPLETE',json.dumps({'elapsedMs':report['elapsedMs'],'retainedBytes':report['retainedBytes']}),flush=True)
 except Exception as e:

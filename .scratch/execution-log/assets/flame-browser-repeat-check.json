@@ -1,0 +1,1483 @@
+{
+  "date": "2026-09-30T05:14:11-0300",
+  "jobId": "42081481-092d-4da4-8412-45f6f9a5952c",
+  "actualResult": {
+    "artifacts": [
+      {
+        "bytes": 1163,
+        "path": "manifest.json"
+      },
+      {
+        "bytes": 1220,
+        "path": "processing.log"
+      },
+      {
+        "bytes": 34,
+        "path": "progress.json"
+      },
+      {
+        "bytes": 155,
+        "path": "prepare.log"
+      },
+      {
+        "bytes": 2865,
+        "path": "cameras.json"
+      },
+      {
+        "bytes": 5697733,
+        "path": "basis.npz"
+      },
+      {
+        "bytes": 1015,
+        "path": "flame-attribution.json"
+      },
+      {
+        "bytes": 1381,
+        "path": "resources.json"
+      },
+      {
+        "bytes": 1136,
+        "path": "fit.log"
+      },
+      {
+        "bytes": 398590,
+        "path": "back-landmarks.png"
+      },
+      {
+        "bytes": 412346,
+        "path": "front-landmarks.png"
+      },
+      {
+        "bytes": 413051,
+        "path": "left-profile-landmarks.png"
+      },
+      {
+        "bytes": 418758,
+        "path": "left-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 414537,
+        "path": "right-profile-landmarks.png"
+      },
+      {
+        "bytes": 421136,
+        "path": "right-three-quarter-landmarks.png"
+      },
+      {
+        "bytes": 1711,
+        "path": "observations.json"
+      },
+      {
+        "bytes": 22080,
+        "path": "fit.json"
+      },
+      {
+        "bytes": 155,
+        "path": "export.log"
+      },
+      {
+        "bytes": 440,
+        "path": "target-basis-check.json"
+      },
+      {
+        "bytes": 246000,
+        "path": "head.glb"
+      },
+      {
+        "bytes": 5166,
+        "path": "flame-style-adaptation.json"
+      },
+      {
+        "bytes": 1906,
+        "path": "flame-shape.json"
+      },
+      {
+        "bytes": 603370,
+        "path": "inputs/back.image"
+      },
+      {
+        "bytes": 618185,
+        "path": "inputs/front.image"
+      },
+      {
+        "bytes": 618223,
+        "path": "inputs/left-profile.image"
+      },
+      {
+        "bytes": 621663,
+        "path": "inputs/left-three-quarter.image"
+      },
+      {
+        "bytes": 621706,
+        "path": "inputs/right-profile.image"
+      },
+      {
+        "bytes": 626743,
+        "path": "inputs/right-three-quarter.image"
+      },
+      {
+        "bytes": 49165,
+        "path": "neutral-renders/front.png"
+      },
+      {
+        "bytes": 39588,
+        "path": "neutral-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 50556,
+        "path": "neutral-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 27175,
+        "path": "neutral-renders/left-profile.png"
+      },
+      {
+        "bytes": 42182,
+        "path": "neutral-renders/right-profile.png"
+      },
+      {
+        "bytes": 14854,
+        "path": "neutral-renders/back.png"
+      },
+      {
+        "bytes": 610817,
+        "path": "shared-textures/neutral-head-0.png"
+      },
+      {
+        "bytes": 4817185,
+        "path": "shared-textures/afro01-0.png"
+      },
+      {
+        "bytes": 4243598,
+        "path": "shared-textures/bob01-0.png"
+      },
+      {
+        "bytes": 3373723,
+        "path": "shared-textures/bob02-0.png"
+      },
+      {
+        "bytes": 2615248,
+        "path": "shared-textures/braid01-0.png"
+      },
+      {
+        "bytes": 2915253,
+        "path": "shared-textures/long01-0.png"
+      },
+      {
+        "bytes": 3910782,
+        "path": "shared-textures/ponytail01-0.png"
+      },
+      {
+        "bytes": 2354146,
+        "path": "shared-textures/short01-0.png"
+      },
+      {
+        "bytes": 3553543,
+        "path": "shared-textures/short02-0.png"
+      },
+      {
+        "bytes": 2392930,
+        "path": "shared-textures/short03-0.png"
+      },
+      {
+        "bytes": 2308132,
+        "path": "shared-textures/short04-0.png"
+      },
+      {
+        "bytes": 4916264,
+        "path": "hair/afro01.glb"
+      },
+      {
+        "bytes": 4521616,
+        "path": "hair/bob01.glb"
+      },
+      {
+        "bytes": 3457216,
+        "path": "hair/bob02.glb"
+      },
+      {
+        "bytes": 2833188,
+        "path": "hair/braid01.glb"
+      },
+      {
+        "bytes": 3073036,
+        "path": "hair/long01.glb"
+      },
+      {
+        "bytes": 4102388,
+        "path": "hair/ponytail01.glb"
+      },
+      {
+        "bytes": 9495672,
+        "path": "hair/rounded-coils.glb"
+      },
+      {
+        "bytes": 2498396,
+        "path": "hair/short01.glb"
+      },
+      {
+        "bytes": 3653592,
+        "path": "hair/short02.glb"
+      },
+      {
+        "bytes": 2451588,
+        "path": "hair/short03.glb"
+      },
+      {
+        "bytes": 2354688,
+        "path": "hair/short04.glb"
+      },
+      {
+        "bytes": 1509232,
+        "path": "beard/chinstrap.glb"
+      },
+      {
+        "bytes": 5697716,
+        "path": "beard/full.glb"
+      },
+      {
+        "bytes": 1553968,
+        "path": "beard/goatee.glb"
+      },
+      {
+        "bytes": 312908,
+        "path": "beard/moustache.glb"
+      },
+      {
+        "bytes": 5697724,
+        "path": "beard/stubble.glb"
+      },
+      {
+        "bytes": 46580,
+        "path": "fitted-renders/front.png"
+      },
+      {
+        "bytes": 36078,
+        "path": "fitted-renders/left-three-quarter.png"
+      },
+      {
+        "bytes": 47615,
+        "path": "fitted-renders/right-three-quarter.png"
+      },
+      {
+        "bytes": 24327,
+        "path": "fitted-renders/left-profile.png"
+      },
+      {
+        "bytes": 39400,
+        "path": "fitted-renders/right-profile.png"
+      },
+      {
+        "bytes": 13552,
+        "path": "fitted-renders/back.png"
+      }
+    ],
+    "beard": {
+      "chinstrap": "beard/chinstrap.glb",
+      "full": "beard/full.glb",
+      "goatee": "beard/goatee.glb",
+      "moustache": "beard/moustache.glb",
+      "stubble": "beard/stubble.glb"
+    },
+    "candidate": "flame",
+    "completedAt": "2026-09-30T08:12:45.165298+00:00",
+    "diagnostics": [
+      "process",
+      "resources",
+      "settings",
+      "flame-styles",
+      "flame-attribution",
+      "result",
+      "flame-shape",
+      "prepare",
+      "fit",
+      "target-basis",
+      "export"
+    ],
+    "elapsedMs": 23559,
+    "fit": {
+      "basisVersion": "flame-2023-open-neutral-rig-v4",
+      "evaluations": 161,
+      "finalLoss": 1.18762359249413e-05,
+      "framingTranslations": {
+        "front": [
+          -0.0017054380780781337,
+          0.008734182491951056
+        ],
+        "left-three-quarter": [
+          -0.0019922882863896317,
+          0.009685038510578997
+        ],
+        "right-three-quarter": [
+          0.0004114949945826701,
+          0.010006103372224854
+        ]
+      },
+      "geometry": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "initialLoss": 3.8343362604636626e-05,
+      "iterations": [
+        {
+          "acceptedChanges": 15,
+          "iteration": 1,
+          "loss": 1.302890191008191e-05,
+          "step": 1
+        },
+        {
+          "acceptedChanges": 12,
+          "iteration": 2,
+          "loss": 1.2285778914477756e-05,
+          "step": 0.5
+        },
+        {
+          "acceptedChanges": 15,
+          "iteration": 3,
+          "loss": 1.1987903009600421e-05,
+          "step": 0.25
+        },
+        {
+          "acceptedChanges": 13,
+          "iteration": 4,
+          "loss": 1.18762359249413e-05,
+          "step": 0.125
+        }
+      ],
+      "limitations": [
+        "Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.",
+        "No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.",
+        "Camera yaw, focal length, distance and height are assumptions supplied with this experiment.",
+        "Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.",
+        "No texture likeness or inferred demographic labels. Professional likeness review pending."
+      ],
+      "lossDefinition": "Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.",
+      "meanLandmarkErrorPixels": 3.368906935225548,
+      "pairedLandmarks": 60,
+      "seconds": 13.203636582999025,
+      "semanticCorrespondences": [
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 3668,
+          "neutralImageXY": [
+            0.4990549385547638,
+            0.49055957794189453
+          ],
+          "targetImageXY": [
+            0.5014261603355408,
+            0.48856115341186523
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 3564,
+          "neutralImageXY": [
+            0.49906301498413086,
+            0.48273006081581116
+          ],
+          "targetImageXY": [
+            0.501499354839325,
+            0.48120763897895813
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 3518,
+          "neutralImageXY": [
+            0.4992736577987671,
+            0.4492531418800354
+          ],
+          "targetImageXY": [
+            0.5019219517707825,
+            0.44599759578704834
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 2440,
+          "neutralImageXY": [
+            0.4304708242416382,
+            0.44266214966773987
+          ],
+          "targetImageXY": [
+            0.43798214197158813,
+            0.43823617696762085
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 3615,
+          "neutralImageXY": [
+            0.4735029339790344,
+            0.4451151192188263
+          ],
+          "targetImageXY": [
+            0.4755024313926697,
+            0.4420244097709656
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 1195,
+          "neutralImageXY": [
+            0.568386435508728,
+            0.4425807595252991
+          ],
+          "targetImageXY": [
+            0.5639988780021667,
+            0.43790125846862793
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 1370,
+          "neutralImageXY": [
+            0.5258328914642334,
+            0.44533994793891907
+          ],
+          "targetImageXY": [
+            0.5267914533615112,
+            0.4420049786567688
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 2820,
+          "neutralImageXY": [
+            0.4598742127418518,
+            0.531674861907959
+          ],
+          "targetImageXY": [
+            0.4637908339500427,
+            0.5228866338729858
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 1714,
+          "neutralImageXY": [
+            0.5385262966156006,
+            0.5302981734275818
+          ],
+          "targetImageXY": [
+            0.5379133820533752,
+            0.5232872366905212
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 3531,
+          "neutralImageXY": [
+            0.4993719458580017,
+            0.5307052135467529
+          ],
+          "targetImageXY": [
+            0.5011776685714722,
+            0.5234443545341492
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 3504,
+          "neutralImageXY": [
+            0.49977681040763855,
+            0.5313671827316284
+          ],
+          "targetImageXY": [
+            0.5012153387069702,
+            0.5238271951675415
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 3400,
+          "neutralImageXY": [
+            0.49744027853012085,
+            0.5871515274047852
+          ],
+          "targetImageXY": [
+            0.5010037422180176,
+            0.5717079639434814
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 856,
+          "neutralImageXY": [
+            0.39216557145118713,
+            0.469644159078598
+          ],
+          "targetImageXY": [
+            0.4020601809024811,
+            0.4591803550720215
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 2009,
+          "neutralImageXY": [
+            0.6055868864059448,
+            0.46907398104667664
+          ],
+          "targetImageXY": [
+            0.598493218421936,
+            0.45927274227142334
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 2617,
+          "neutralImageXY": [
+            0.3943583369255066,
+            0.48940640687942505
+          ],
+          "targetImageXY": [
+            0.4027225971221924,
+            0.4758704602718353
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 566,
+          "neutralImageXY": [
+            0.603626012802124,
+            0.48887258768081665
+          ],
+          "targetImageXY": [
+            0.5972104668617249,
+            0.4759901463985443
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 3388,
+          "neutralImageXY": [
+            0.4132455289363861,
+            0.5490508079528809
+          ],
+          "targetImageXY": [
+            0.41868019104003906,
+            0.5303632616996765
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 3584,
+          "neutralImageXY": [
+            0.5831315517425537,
+            0.5477980375289917
+          ],
+          "targetImageXY": [
+            0.5813431739807129,
+            0.5299456715583801
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 337,
+          "neutralImageXY": [
+            0.4336659610271454,
+            0.4139132797718048
+          ],
+          "targetImageXY": [
+            0.44200560450553894,
+            0.41595983505249023
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 27,
+          "neutralImageXY": [
+            0.5638404488563538,
+            0.41517144441604614
+          ],
+          "targetImageXY": [
+            0.5623217225074768,
+            0.41500645875930786
+          ],
+          "view": "front"
+        },
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 3618,
+          "neutralImageXY": [
+            0.3111354112625122,
+            0.4905893802642822
+          ],
+          "targetImageXY": [
+            0.31805017590522766,
+            0.48441725969314575
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 3564,
+          "neutralImageXY": [
+            0.31061509251594543,
+            0.48317280411720276
+          ],
+          "targetImageXY": [
+            0.317247599363327,
+            0.4775155782699585
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 739,
+          "neutralImageXY": [
+            0.3362768590450287,
+            0.45057857036590576
+          ],
+          "targetImageXY": [
+            0.3386450409889221,
+            0.4454818069934845
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 4597,
+          "neutralImageXY": [
+            0.32401221990585327,
+            0.4428715407848358
+          ],
+          "targetImageXY": [
+            0.3210069537162781,
+            0.4396328330039978
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 702,
+          "neutralImageXY": [
+            0.33866584300994873,
+            0.4444325566291809
+          ],
+          "targetImageXY": [
+            0.33961227536201477,
+            0.4412781596183777
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 4271,
+          "neutralImageXY": [
+            0.40458226203918457,
+            0.4423496723175049
+          ],
+          "targetImageXY": [
+            0.4089716076850891,
+            0.439473032951355
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 1358,
+          "neutralImageXY": [
+            0.3739875853061676,
+            0.4456353485584259
+          ],
+          "targetImageXY": [
+            0.375136137008667,
+            0.4420228898525238
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 2831,
+          "neutralImageXY": [
+            0.3192068338394165,
+            0.5275382995605469
+          ],
+          "targetImageXY": [
+            0.3267357349395752,
+            0.5179450511932373
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 1704,
+          "neutralImageXY": [
+            0.3700237274169922,
+            0.5300868153572083
+          ],
+          "targetImageXY": [
+            0.3761179447174072,
+            0.5214716792106628
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 2937,
+          "neutralImageXY": [
+            0.3280501663684845,
+            0.5294907689094543
+          ],
+          "targetImageXY": [
+            0.336080938577652,
+            0.5193202495574951
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 2937,
+          "neutralImageXY": [
+            0.3277033567428589,
+            0.5293515920639038
+          ],
+          "targetImageXY": [
+            0.3363596498966217,
+            0.520000696182251
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 3397,
+          "neutralImageXY": [
+            0.33456942439079285,
+            0.5853771567344666
+          ],
+          "targetImageXY": [
+            0.35116809606552124,
+            0.5646848082542419
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 2053,
+          "neutralImageXY": [
+            0.3481518626213074,
+            0.4665224254131317
+          ],
+          "targetImageXY": [
+            0.35851776599884033,
+            0.45925259590148926
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 1530,
+          "neutralImageXY": [
+            0.5108434557914734,
+            0.46643462777137756
+          ],
+          "targetImageXY": [
+            0.5033603310585022,
+            0.4596302807331085
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 2064,
+          "neutralImageXY": [
+            0.34790244698524475,
+            0.483778178691864
+          ],
+          "targetImageXY": [
+            0.36108964681625366,
+            0.4742733836174011
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 1480,
+          "neutralImageXY": [
+            0.5093865990638733,
+            0.48818936944007874
+          ],
+          "targetImageXY": [
+            0.5039750933647156,
+            0.477946400642395
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 1865,
+          "neutralImageXY": [
+            0.3373252749443054,
+            0.5383361577987671
+          ],
+          "targetImageXY": [
+            0.3565405011177063,
+            0.5237388610839844
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 3581,
+          "neutralImageXY": [
+            0.4671716094017029,
+            0.5552011132240295
+          ],
+          "targetImageXY": [
+            0.4741291403770447,
+            0.5360369682312012
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 3154,
+          "neutralImageXY": [
+            0.3145504891872406,
+            0.4171738028526306
+          ],
+          "targetImageXY": [
+            0.309592604637146,
+            0.4191579520702362
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 18,
+          "neutralImageXY": [
+            0.39949291944503784,
+            0.4122730791568756
+          ],
+          "targetImageXY": [
+            0.3933897018432617,
+            0.41466987133026123
+          ],
+          "view": "left-three-quarter"
+        },
+        {
+          "landmarkIndex": 1,
+          "nativeVertexIndex": 3618,
+          "neutralImageXY": [
+            0.6843326091766357,
+            0.49094539880752563
+          ],
+          "targetImageXY": [
+            0.6827729344367981,
+            0.4862006902694702
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 4,
+          "nativeVertexIndex": 2922,
+          "neutralImageXY": [
+            0.6849062442779541,
+            0.4825809597969055
+          ],
+          "targetImageXY": [
+            0.6847320795059204,
+            0.47917163372039795
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 6,
+          "nativeVertexIndex": 2220,
+          "neutralImageXY": [
+            0.6620818972587585,
+            0.4477040469646454
+          ],
+          "targetImageXY": [
+            0.665614128112793,
+            0.4471313953399658
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 33,
+          "nativeVertexIndex": 2428,
+          "neutralImageXY": [
+            0.5892629623413086,
+            0.44437259435653687
+          ],
+          "targetImageXY": [
+            0.5960655212402344,
+            0.44024360179901123
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 133,
+          "nativeVertexIndex": 3615,
+          "neutralImageXY": [
+            0.6255109310150146,
+            0.44567200541496277
+          ],
+          "targetImageXY": [
+            0.6281828880310059,
+            0.44206690788269043
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 263,
+          "nativeVertexIndex": 3967,
+          "neutralImageXY": [
+            0.678107500076294,
+            0.4409599006175995
+          ],
+          "targetImageXY": [
+            0.6788063049316406,
+            0.4365181028842926
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 362,
+          "nativeVertexIndex": 2193,
+          "neutralImageXY": [
+            0.6579982042312622,
+            0.4438193440437317
+          ],
+          "targetImageXY": [
+            0.6617546081542969,
+            0.438391774892807
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 61,
+          "nativeVertexIndex": 2820,
+          "neutralImageXY": [
+            0.6279951333999634,
+            0.5312617421150208
+          ],
+          "targetImageXY": [
+            0.6212683320045471,
+            0.5235915780067444
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 291,
+          "nativeVertexIndex": 1670,
+          "neutralImageXY": [
+            0.6773918867111206,
+            0.5276706218719482
+          ],
+          "targetImageXY": [
+            0.6706595420837402,
+            0.520900547504425
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 13,
+          "nativeVertexIndex": 3531,
+          "neutralImageXY": [
+            0.6685446500778198,
+            0.5286046862602234
+          ],
+          "targetImageXY": [
+            0.6608220934867859,
+            0.5218488574028015
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 14,
+          "nativeVertexIndex": 3531,
+          "neutralImageXY": [
+            0.6689109802246094,
+            0.5282202363014221
+          ],
+          "targetImageXY": [
+            0.6596386432647705,
+            0.522506594657898
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 152,
+          "nativeVertexIndex": 3400,
+          "neutralImageXY": [
+            0.6608787178993225,
+            0.5821893215179443
+          ],
+          "targetImageXY": [
+            0.6416468620300293,
+            0.5695235729217529
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 234,
+          "nativeVertexIndex": 1935,
+          "neutralImageXY": [
+            0.4895247519016266,
+            0.47145938873291016
+          ],
+          "targetImageXY": [
+            0.49646511673927307,
+            0.4563506841659546
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 454,
+          "nativeVertexIndex": 3087,
+          "neutralImageXY": [
+            0.6506345272064209,
+            0.46865564584732056
+          ],
+          "targetImageXY": [
+            0.6477260589599609,
+            0.45485731959342957
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 93,
+          "nativeVertexIndex": 1853,
+          "neutralImageXY": [
+            0.49106207489967346,
+            0.4920409619808197
+          ],
+          "targetImageXY": [
+            0.49418705701828003,
+            0.4752005636692047
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 323,
+          "nativeVertexIndex": 3100,
+          "neutralImageXY": [
+            0.6506896018981934,
+            0.48610252141952515
+          ],
+          "targetImageXY": [
+            0.6449903249740601,
+            0.46999236941337585
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 172,
+          "nativeVertexIndex": 3385,
+          "neutralImageXY": [
+            0.5333417654037476,
+            0.552854597568512
+          ],
+          "targetImageXY": [
+            0.5226809978485107,
+            0.5361112952232361
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 397,
+          "nativeVertexIndex": 2948,
+          "neutralImageXY": [
+            0.6602327823638916,
+            0.5384982824325562
+          ],
+          "targetImageXY": [
+            0.6484915018081665,
+            0.5202639102935791
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 105,
+          "nativeVertexIndex": 337,
+          "neutralImageXY": [
+            0.6025452613830566,
+            0.41373181343078613
+          ],
+          "targetImageXY": [
+            0.6116048693656921,
+            0.41400018334388733
+          ],
+          "view": "right-three-quarter"
+        },
+        {
+          "landmarkIndex": 334,
+          "nativeVertexIndex": 16,
+          "neutralImageXY": [
+            0.687644362449646,
+            0.4143562614917755
+          ],
+          "targetImageXY": [
+            0.6926375031471252,
+            0.41578274965286255
+          ],
+          "view": "right-three-quarter"
+        }
+      ],
+      "signedParameters": {
+        "shape_00": -1.25,
+        "shape_01": 0.875,
+        "shape_02": 1.25,
+        "shape_03": -1.375,
+        "shape_04": 1.125,
+        "shape_05": -0.625,
+        "shape_06": 1.375,
+        "shape_07": 0.875,
+        "shape_08": -1.125,
+        "shape_09": 1.875,
+        "shape_10": -1.75,
+        "shape_11": 0.125,
+        "shape_12": -0.625,
+        "shape_13": -0.75,
+        "shape_14": 0.25,
+        "shape_15": 1.875,
+        "shape_16": -1.375,
+        "shape_17": 0.25,
+        "shape_18": 1.25,
+        "shape_19": 1.375
+      },
+      "targets": {
+        "shape_00_negative": 1.25,
+        "shape_01_positive": 0.875,
+        "shape_02_positive": 1.25,
+        "shape_03_negative": 1.375,
+        "shape_04_positive": 1.125,
+        "shape_05_negative": 0.625,
+        "shape_06_positive": 1.375,
+        "shape_07_positive": 0.875,
+        "shape_08_negative": 1.125,
+        "shape_09_positive": 1.875,
+        "shape_10_negative": 1.75,
+        "shape_11_positive": 0.125,
+        "shape_12_negative": 0.625,
+        "shape_13_negative": 0.75,
+        "shape_14_positive": 0.25,
+        "shape_15_positive": 1.875,
+        "shape_16_negative": 1.375,
+        "shape_17_positive": 0.25,
+        "shape_18_positive": 1.25,
+        "shape_19_positive": 1.375
+      },
+      "views": [
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "2f3139a377779af7e09061b36dfea054f49b4f0b7f29c82c988e0f3dfccacbf2",
+          "targetFaces": 0,
+          "view": "back"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "884943db051f8df95f5cd7683da9ef661e140b4bb019c664e0c1eee3cc0fb45c",
+          "targetFaces": 1,
+          "view": "front"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "930deb6177a0b929843695a039ed6450961c84068139a25397b6f8297f893a46",
+          "targetFaces": 0,
+          "view": "left-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "a336e16708f12852504c851765d1a1ff58f65e44946f6c6d91d1d6465ead221a",
+          "targetFaces": 1,
+          "view": "left-three-quarter"
+        },
+        {
+          "depthUsed": false,
+          "limitation": "No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.",
+          "matchedLandmarks": 0,
+          "neutralFaces": 0,
+          "sourceSha256": "71ea64c9845b11f235ead7d9e4d903a43b8b31f07d0483925b1e915121501648",
+          "targetFaces": 0,
+          "view": "right-profile"
+        },
+        {
+          "depthUsed": false,
+          "matchedLandmarks": 20,
+          "neutralFaces": 1,
+          "sourceSha256": "fbf8bf626b30d769b022079b36ac4d255fff5200e16ecab2c3c5a533176aab72",
+          "targetFaces": 1,
+          "view": "right-three-quarter"
+        }
+      ]
+    },
+    "geometry": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+    "hair": {
+      "afro01": "hair/afro01.glb",
+      "bob01": "hair/bob01.glb",
+      "bob02": "hair/bob02.glb",
+      "braid01": "hair/braid01.glb",
+      "long01": "hair/long01.glb",
+      "ponytail01": "hair/ponytail01.glb",
+      "rounded-coils": "hair/rounded-coils.glb",
+      "short01": "hair/short01.glb",
+      "short02": "hair/short02.glb",
+      "short03": "hair/short03.glb",
+      "short04": "hair/short04.glb"
+    },
+    "head": "head.glb",
+    "kind": "fit",
+    "nativeShape": {
+      "canonicalYTranslationMetres": -0.1,
+      "crownOriginMetres": -0.046771848294610674,
+      "expressions": "100 zero",
+      "fittedIdentityComponents": [
+        -1.25,
+        0.875,
+        1.25,
+        -1.375,
+        1.125,
+        -0.625,
+        1.375,
+        0.875,
+        -1.125,
+        1.875,
+        -1.75,
+        0.125,
+        -0.625,
+        -0.75,
+        0.25,
+        1.875,
+        -1.375,
+        0.25,
+        1.25,
+        1.375
+      ],
+      "jointRotations": "5 identity rotations",
+      "modelMetres": true,
+      "modelSha256": "e75a0990728ba038c7da2a420ae4396f7ddd7781366c13026066c5b24f127623",
+      "provenance": {
+        "citation": "Li, Bolkart, Black, Li and Romero (2017), Learning a model of facial shape and expression from 4D scans, DOI 10.1145/3130800.3130813",
+        "creativeCommonsUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "creator": "Max Planck Institute for Intelligent Systems / Max-Planck-Gesellschaft",
+        "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence.",
+        "license": "CC-BY-4.0 with additional published usage terms",
+        "licenseUrl": "https://flame.is.tue.mpg.de/modellicense.html",
+        "model": "FLAME 2023 Open",
+        "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export."
+      },
+      "remainingIdentityComponents": "280 zero",
+      "translationRationale": "Original neutral FLAME eye plane is canonical Y approximately -0.024 m; shared neutral mannequin eye plane is -0.128 m. Fixed -0.10 m coordinate alignment, not a fitted demographic or client ground-truth parameter.",
+      "triangles": 9976,
+      "vertices": 5023
+    },
+    "provenance": {
+      "citation": "Li, Bolkart, Black, Li and Romero (2017), Learning a model of facial shape and expression from 4D scans, DOI 10.1145/3130800.3130813",
+      "creativeCommonsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": "Max Planck Institute for Intelligent Systems / Max-Planck-Gesellschaft",
+      "geometry": "Fitted template and inferred hidden surfaces, not observed 3D geometry. Synthetic photo inputs are labeled workflow examples, not likeness accuracy evidence.",
+      "license": "CC-BY-4.0 with additional published usage terms",
+      "licenseUrl": "https://flame.is.tue.mpg.de/modellicense.html",
+      "model": "FLAME 2023 Open",
+      "modifications": "Bounded fitting of first 20 identity components, coordinate conversion with -0.10 m canonical Y translation to align neutral eyeball planes with the shared mannequin, crown recentering, separate procedural eye materials, shared CC0 hairstyle radial-cage adaptation, same procedural beard definitions sampled on native fitted skin, and GLB export."
+    },
+    "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+    "resources": [
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+          "prepare",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/42081481-092d-4da4-8412-45f6f9a5952c"
+        ],
+        "cpuSeconds": 3.314,
+        "exitCode": 0,
+        "peakRssKiB": 123200,
+        "seconds": 3.055,
+        "stage": "prepare"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/42081481-092d-4da4-8412-45f6f9a5952c"
+        ],
+        "cpuSeconds": 15.811,
+        "exitCode": 0,
+        "peakRssKiB": 253552,
+        "seconds": 15.451,
+        "stage": "fit"
+      },
+      {
+        "command": [
+          "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+          "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+          "export",
+          "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/42081481-092d-4da4-8412-45f6f9a5952c"
+        ],
+        "cpuSeconds": 6.573,
+        "exitCode": 0,
+        "peakRssKiB": 253552,
+        "seconds": 5.05,
+        "stage": "export"
+      }
+    ],
+    "retainedBytes": 103828089,
+    "scope": "Six-view flame fitting experiment. Full refinement and expected-result journey remain pending.",
+    "styleAdaptation": {
+      "attachmentLimitMetres": 0.025,
+      "boundedCageRays": 239,
+      "centerMetres": [
+        0,
+        -0.065,
+        0.04
+      ],
+      "limitations": [
+        "Coarse radial attachment is approximate; concavities, sideburns, lips and long hair require clipping inspection and later direct editing.",
+        "This adapts shared assets; it does not infer the client current hairstyle or beard from photographs."
+      ],
+      "method": "Hairstyles: bilinear 64x32 radial cage from actual neutral shared skin and fitted FLAME skin ray intersections, bounded to 25 mm and smoothed twice over a 3x3 neighborhood. Deformation fades below scalp and on long free ends. Preserve shared topology, material and strand standoff. Unsupported rays leave the initial cage displacement zero. Beards: shared deterministic procedural definitions resampled on actual fitted FLAME skin; lip semantic correspondences define coverage height.",
+      "styles": [
+        {
+          "id": "afro01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.013076694775053152,
+          "sourceSha256": "d38a89ee63dcab99e316853ba1d224b683cded5cd632b80a66e818065ba30da0"
+        },
+        {
+          "id": "bob01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.013273535815990072,
+          "sourceSha256": "80f51feffb389fcd9b88768d7e3ca9aa6f037845add09b837ba1091f0c538345"
+        },
+        {
+          "id": "bob02",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012752387852189137,
+          "sourceSha256": "d7665a2930c810171d41a67b6aadd5b25059547032e665eb835b52d691348886"
+        },
+        {
+          "id": "braid01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012956342353785457,
+          "sourceSha256": "5c702f2d178f717c322a880c5d9d82a5e3b483e0b809cf3f1d094cf0807493ff"
+        },
+        {
+          "id": "long01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.01298377801632533,
+          "sourceSha256": "c6c268aaf245c617bed8aef43c11529b70a0ce5dfe4877aef267f5fd93463d27"
+        },
+        {
+          "id": "ponytail01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.01283890026661158,
+          "sourceSha256": "664d0cf144f412e24afe51aea426b1c10cfd3157d0363fa1906a37b444b22016"
+        },
+        {
+          "id": "rounded-coils",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012794543733694097,
+          "sourceSha256": "1930e374724d385aad0823498bc576101000a48d8403299a4888651e4ceb3af7"
+        },
+        {
+          "id": "short01",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012979221798920451,
+          "sourceSha256": "c150004b9f9625efe70539824de3de64bd72dad9bf6abbf95a705082d816009a"
+        },
+        {
+          "id": "short02",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012960466529427691,
+          "sourceSha256": "03c8e5f1a2dd5db92a50dd8b9057161e1d38793752f71d194df5f11b56433043"
+        },
+        {
+          "id": "short03",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.012891198784935751,
+          "sourceSha256": "21d00085ee47ee2818c8c4605886f366a21bd65a673bd6ca8e30c1397f7b957d"
+        },
+        {
+          "id": "short04",
+          "kind": "hair",
+          "maximumDisplacementMetres": 0.013053839824514324,
+          "sourceSha256": "c414ea5175b019e25a676937009ec77d8948dbe024958b8d681a63507441c924"
+        },
+        {
+          "id": "chinstrap",
+          "kind": "beard",
+          "method": "Same deterministic CC0 strand and coverage definition resampled on actual native FLAME lower-face surface using fitted lip semantic correspondences. No original mannequin face or beard skin baked into the output.",
+          "sourceSha256": "aee8eb4f730446405154fc4c41c43fc056d7120e263bee42d3ea134d3d10063a"
+        },
+        {
+          "id": "full",
+          "kind": "beard",
+          "method": "Same deterministic CC0 strand and coverage definition resampled on actual native FLAME lower-face surface using fitted lip semantic correspondences. No original mannequin face or beard skin baked into the output.",
+          "sourceSha256": "aaf585d368e353e70f56e43726c6405de7a5a0b4ad6ff8cd6ddf6be84e2d9e87"
+        },
+        {
+          "id": "goatee",
+          "kind": "beard",
+          "method": "Same deterministic CC0 strand and coverage definition resampled on actual native FLAME lower-face surface using fitted lip semantic correspondences. No original mannequin face or beard skin baked into the output.",
+          "sourceSha256": "730d93f022dda14130df7ba496c9fef4a13a8cf91d17ce3f55cea965f51ca77d"
+        },
+        {
+          "id": "moustache",
+          "kind": "beard",
+          "method": "Same deterministic CC0 strand and coverage definition resampled on actual native FLAME lower-face surface using fitted lip semantic correspondences. No original mannequin face or beard skin baked into the output.",
+          "sourceSha256": "bb14637373707feb7dcb6c9b2e85848e00ec36707b882f5adcef091e6ba1821c"
+        },
+        {
+          "id": "stubble",
+          "kind": "beard",
+          "method": "Same deterministic CC0 strand and coverage definition resampled on actual native FLAME lower-face surface using fitted lip semantic correspondences. No original mannequin face or beard skin baked into the output.",
+          "sourceSha256": "08b1f18e5723f8ce89b4770cebe1f2eeeea86d9b859b38e724dee32c4889bf76"
+        }
+      ],
+      "totalCageRays": 2048,
+      "unboundedMaximumDifferenceMetres": 0.25764045154388376,
+      "validCageRays": 1896
+    },
+    "targetBasisCheck": {
+      "basisVersion": "flame-2023-open-neutral-rig-v4",
+      "mappedVertices": 5023,
+      "maximumErrorMetres": 1.415262216750919e-16,
+      "meanErrorMetres": 3.965068859175343e-17,
+      "measurement": "Optimizer basis compared against direct evaluation of the accepted Open model identity tensor and actual crown recentering. Neutral rig makes skinning identity; expressions and all poses fixed to zero.",
+      "passed": true,
+      "toleranceMetres": 1e-05
+    }
+  },
+  "sameHeadSha256": true,
+  "headSha256": "23f9bc2ebb56e8a8c6e53fde15049e2f0e024d634a97b81b56b2cc15115cc51b",
+  "repeatedJob": "7b5ffea9-ba32-4b1c-8f37-4e6a0d1d4c80",
+  "browserQueued": true,
+  "workspaceReopenedAcrossReload": true,
+  "chosenSavedJob": "7b5ffea9-ba32-4b1c-8f37-4e6a0d1d4c80",
+  "savedStyleSelection": "rounded-coils and clean-shaven",
+  "savedAngle": "left profile",
+  "expectedResultSelection": "pending",
+  "professionalAssessment": "pending"
+}

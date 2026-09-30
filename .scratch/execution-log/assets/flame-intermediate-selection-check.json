@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-30T08:15:58.209058+00:00",
+  "scope": "Local fictional fixture title correction only. Real persisted selections remain unchanged and are retained as an intermediate failed browser check. This is not a delivered option-renaming UI or selection-history feature.",
+  "optionId": "05e551b6-ac99-4203-a384-b61ea037be19",
+  "originalTitle": "Alex / FLAME Open fitted coils and clean-shaven / synthetic exploration",
+  "correctedTitle": "Alex / initial browser test actually saved full beard / synthetic exploration",
+  "actualBeardId": "full",
+  "correctedVerifiedOption": "Alex / verified FLAME Open coils and clean-shaven / synthetic exploration",
+  "finding": "Rapid browser sequence saved full beard while its typed title said clean-shaven. Fresh DOM inspection and repeated clean-shaven selection, save, workspace persistence and reload passed. No source-level state-loss defect reproduced."
+}

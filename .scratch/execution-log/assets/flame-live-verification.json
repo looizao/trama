@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-30T05:07:56-0300",
+  "scope": "Real local native pipeline and privacy checks. Diagnostic squares cannot produce a fitted head. The chosen candidate synthetic Alex fitted artifacts were actually read. No real-person accuracy or professional acceptance claimed.",
+  "candidate": "flame",
+  "fittedArtifactsRead": 17,
+  "fittedBytesRead": 58375192,
+  "fittedWorkspaceAndOptionReopened": true,
+  "anonymousAndPrivatePathDenied": true,
+  "failureExperiment": {
+    "status": "failed",
+    "error": "Native processing failed; retained diagnostics describe the failure",
+    "failure": {
+      "elapsedMs": 3952,
+      "error": "fit failed with exit 1; retained diagnostic log",
+      "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.",
+      "resources": [
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/flame.py",
+            "prepare",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0ff85e6-9b98-4350-ac36-cc0e4154c1d7/ad5985d9-65e5-4423-a1a0-d96e5486e651"
+          ],
+          "cpuSeconds": 3.582,
+          "exitCode": 0,
+          "peakRssKiB": 122964,
+          "seconds": 3.322,
+          "stage": "prepare"
+        },
+        {
+          "command": [
+            "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+            "/home/looizao/Projects/trama/scripts/native-demos/fit-mpfb.py",
+            "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0ff85e6-9b98-4350-ac36-cc0e4154c1d7/ad5985d9-65e5-4423-a1a0-d96e5486e651"
+          ],
+          "cpuSeconds": 1.062,
+          "exitCode": 1,
+          "peakRssKiB": 235884,
+          "seconds": 0.629,
+          "stage": "fit"
+        }
+      ]
+    },
+    "modelAvailable": false
+  },
+  "nonfrontDeletionKilledRealNativeProcess": true,
+  "erasedDirectoryDidNotReappear": true,
+  "withdrawalDeniedRetainedArtifacts": true
+}

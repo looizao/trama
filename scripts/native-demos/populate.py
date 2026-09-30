@@ -4,8 +4,8 @@ import argparse,json,os,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts'))
 from local_demo_http import LocalDemoAPI
-os.umask(0o077);p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman']);p.add_argument('--preset',choices=['standard','sensitive-calibrated'],default='standard');p.add_argument('--basis-version',choices=['mpfb-metre-z-up-v2','makehuman-metre-z-up-v2'],default='');args=p.parse_args()
-if args.basis_version and {'blender-mpfb':'mpfb-metre-z-up-v2','makehuman':'makehuman-metre-z-up-v2'}.get(args.candidate)!=args.basis_version:raise SystemExit('Select the native basis version belonging to this candidate')
+os.umask(0o077);p=argparse.ArgumentParser();p.add_argument('candidate',choices=['blender-mpfb','colmap','makehuman','flame']);p.add_argument('--preset',choices=['standard','sensitive-calibrated'],default='standard');p.add_argument('--basis-version',choices=['mpfb-metre-z-up-v2','makehuman-metre-z-up-v2','flame-2023-open-neutral-rig-v4'],default='');args=p.parse_args()
+if args.basis_version and {'blender-mpfb':'mpfb-metre-z-up-v2','makehuman':'makehuman-metre-z-up-v2','flame':'flame-2023-open-neutral-rig-v4'}.get(args.candidate)!=args.basis_version:raise SystemExit('Select the native basis version belonging to this candidate')
 kind='reconstruct' if args.candidate=='colmap' else 'fit'
 checkpoint_key=args.candidate+(':'+args.preset if args.candidate=='colmap' else (':'+args.basis_version if args.basis_version else ''))
 api=LocalDemoAPI();check=api.expect;runtime=ROOT/'.scratch/private/runtime'
@@ -37,7 +37,7 @@ for profile in profiles:
     item={'fictionalCase':profile['id'],'candidate':args.candidate,'jobId':job['id'],'status':job['status'],'error':job['error'],'elapsedMs':job['result'].get('elapsedMs'),'expectedResultSelection':'pending','professionalLikeness':'pending'}
     if args.candidate=='colmap':
         item.update(preset=args.preset,reconstruction=job['result'].get('reconstruction'),failure=job['result'].get('failure'))
-    if job['status']=='completed' and args.candidate in ['blender-mpfb','makehuman']:
+    if job['status']=='completed' and args.candidate in ['blender-mpfb','makehuman','flame']:
         state={'candidate':args.candidate,'photoSetId':sid,'photoViews':job['photoViews'],'modelRunId':job['id'],'currentHairId':profile['current']['hair'],'currentBeardId':profile['current']['beard'],'hairId':profile['proposal']['hair'],'beardId':profile['proposal']['beard'],'camera':{'azimuth':0,'elevation':.08,'distance':1.3},'minimumWidth':512,'native':job['settings']['native']}
         options=api.request(base+'/demo-options')[1]
         if entry.get('optionId') and not any(o['id']==entry['optionId'] for o in options):raise RuntimeError('Known fitted option removed; no automatic recreation')
@@ -46,6 +46,6 @@ for profile in profiles:
         entry['optionId']=option['id'];retain();item['pairedLandmarks']=job['result']['fit']['pairedLandmarks'];item['meanLandmarkErrorPixels']=job['result']['fit']['meanLandmarkErrorPixels'];item['retainedBytes']=job['result']['retainedBytes']
     summary.append(item);print('NATIVE_CASE',json.dumps(item),flush=True)
 report={'scope':'Actual six-view synthetic experiments; no ground-truth geometry or case morph parameters supplied. Failed reconstructions are retained without fallback. Saved fitted explorations are not selected expected results. Refinement, expected results, professional review and full demo journey remain pending.','date':time.strftime('%Y-%m-%dT%H:%M:%S%z'),'results':summary}
-filename={'blender-mpfb':'mpfb-populated-native-results.json','makehuman':'makehuman-populated-native-results.json'}.get(args.candidate,'colmap-populated-'+args.preset+'.json')
-if args.basis_version:filename='mpfb-populated-corrected-results.json' if args.candidate=='blender-mpfb' else 'makehuman-populated-validated-results.json'
+filename={'blender-mpfb':'mpfb-populated-native-results.json','makehuman':'makehuman-populated-native-results.json','flame':'flame-populated-native-results.json'}.get(args.candidate,'colmap-populated-'+args.preset+'.json')
+if args.basis_version:filename='mpfb-populated-corrected-results.json' if args.candidate=='blender-mpfb' else ('flame-populated-native-results.json' if args.candidate=='flame' else 'makehuman-populated-validated-results.json')
 (ROOT/'.scratch/execution-log/assets'/filename).write_text(json.dumps(report,indent=2)+'\n')

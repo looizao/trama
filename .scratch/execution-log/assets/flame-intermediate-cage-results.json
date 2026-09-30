@@ -1,0 +1,45 @@
+{
+  "scope": "Actual six-view synthetic experiments; no ground-truth geometry or case morph parameters supplied. Failed reconstructions are retained without fallback. Saved fitted explorations are not selected expected results. Refinement, expected results, professional review and full demo journey remain pending.",
+  "date": "2026-09-30T04:54:34-0300",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "flame",
+      "jobId": "6c2de7a6-a5ed-4338-a7f6-4e93586f63d8",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23363,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 3.368906935225548,
+      "retainedBytes": 137090055
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "flame",
+      "jobId": "7ff0e543-6172-4c5b-9010-90fb7d780d39",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23287,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 3.0281916442299357,
+      "retainedBytes": 137741619
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "flame",
+      "jobId": "8c5eaa57-34b7-4e3b-ad6e-9d4272034724",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23275,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 40,
+      "meanLandmarkErrorPixels": 3.5182885435317095,
+      "retainedBytes": 136900005
+    }
+  ]
+}

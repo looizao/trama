@@ -11,10 +11,10 @@ import mediapipe as mp
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[2]
 parser=argparse.ArgumentParser();parser.add_argument('directory',type=Path);args=parser.parse_args();d=args.directory
-manifest=json.loads((d/'manifest.json').read_text());prior='Standalone MakeHuman' if manifest.get('candidate')=='makehuman' else 'MPFB';basis=np.load(d/'basis.npz');cameras=json.loads((d/'cameras.json').read_text())
+manifest=json.loads((d/'manifest.json').read_text());prior={'makehuman':'Standalone MakeHuman','flame':'FLAME 2023 Open'}.get(manifest.get('candidate'),'MPFB');basis=np.load(d/'basis.npz');cameras=json.loads((d/'cameras.json').read_text())
 model=ROOT/'.scratch/private/models/mediapipe/face_landmarker.task'
 indices=[1,4,6,33,133,263,362,61,291,13,14,152,234,454,93,323,172,397,105,334]
-observations=[];points=[];observed=[];neutral_semantic=[];view_groups=[]
+observations=[];points=[];observed=[];neutral_semantic=[];view_groups=[];correspondences=[]
 xyz,tri=basis['xyz'],basis['tri'];vertices=xyz[tri];e1=vertices[:,1]-vertices[:,0];e2=vertices[:,2]-vertices[:,0]
 def project(points,matrix):
     p=np.column_stack([points,np.ones(len(points))])@matrix.T
@@ -43,6 +43,7 @@ for item in manifest['inputs']:
             n=neutral.face_landmarks[0][i];vtx=correspondence(np.array([n.x,n.y]),matrix)
             if vtx is None:continue
             t=target.face_landmarks[0][i];group.append(len(points));points.append(vtx);observed.append([t.x,t.y]);neutral_semantic.append([n.x,n.y]);view_groups.append(matrix)
+            correspondences.append({'view':view,'landmarkIndex':i,'nativeVertexIndex':vtx,'targetImageXY':[t.x,t.y],'neutralImageXY':[n.x,n.y]})
             x,y=t.x*overlay.width,t.y*overlay.height;draw.ellipse((x-3,y-3,x+3,y+3),fill='#37edab');draw.text((x+3,y),str(i),fill='white')
         record['matchedLandmarks']=len(group)
     else:record['limitation']='No unique paired face detection. Back or profile coverage cannot be inferred from missing facial landmarks.'
@@ -58,7 +59,7 @@ neutral_projected=np.stack([project(base[i:i+1],m)[0] for i,m in enumerate(matri
 semantic_offset=np.array(neutral_semantic)-neutral_projected
 # Bounded nonlinear coordinate descent; no synthetic client profile is read.
 n=len(basis['params']);weights=np.zeros(n);trace=[];evaluations=0
-regularization=.00008
+regularization=.0000008 if manifest.get('candidate')=='flame' else .00008
 
 def projected(w):
     coords=base.copy()
@@ -84,13 +85,13 @@ def loss(w):
     global evaluations;evaluations+=1
     r=residual(w);return float(np.mean(np.minimum(r*r,.03**2))+regularization*np.mean(w*w))
 started=time.monotonic();initial=loss(weights);best=initial
-rounds=int(manifest['settings'].get('fitRounds',4));steps=[.4,.2,.1,.05,.025,.0125][:rounds]
+rounds=int(manifest['settings'].get('fitRounds',4));flame=manifest.get('candidate')=='flame';bound=2.5 if flame else .8;steps=([1,.5,.25,.125,.0625,.03125] if flame else [.4,.2,.1,.05,.025,.0125])[:rounds]
 for iteration,step in enumerate(steps):
     accepted=0
     for i in range(n):
         chosen=weights.copy()
         for offset in [-step,step]:
-            trial=weights.copy();trial[i]=np.clip(trial[i]+offset,-.8,.8);score=loss(trial)
+            trial=weights.copy();trial[i]=np.clip(trial[i]+offset,-bound,bound);score=loss(trial)
             if score<best:best=score;chosen=trial;accepted+=1
         weights=chosen
     trace.append({'iteration':iteration+1,'step':step,'loss':best,'acceptedChanges':accepted});print('FIT_ITERATION',json.dumps(trace[-1]),flush=True)
@@ -99,5 +100,6 @@ for i,w in enumerate(weights):
     if abs(w)>1e-8:targets[str(basis['names'][2*i+(1 if w>=0 else 0)])]=float(abs(w))
 result={'targets':targets,'signedParameters':dict(zip(basis['params'].tolist(),weights.tolist())),'initialLoss':initial,'finalLoss':best,'iterations':trace,'evaluations':evaluations,'seconds':time.monotonic()-started,'pairedLandmarks':len(points),'views':observations,'lossDefinition':'Capped image-plane squared error after per-view framing translation, plus bounded target regularization. Neutral mesh correspondence offsets are held fixed. This is not 3D surface error or likeness.', 'framingTranslations':{view:np.clip(np.mean((projected(weights)+semantic_offset-observed)[view_names==view],axis=0),-.06,.06).tolist() for view in set(view_names)},'meanLandmarkErrorPixels':float(np.mean(np.linalg.norm(residual(weights)*np.array([768,896]),axis=1))),'geometry':prior+' prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.','limitations':['Photo landmark detector was trained primarily on front-facing real camera images; synthetic detection is not real-person accuracy evidence.','No unique facial landmarks on the back; hairstyle obscures scalp and silhouette.','Camera yaw, focal length, distance and height are assumptions supplied with this experiment.','Only framing translation is removed per view; landmark correspondence and shape prior can limit likeness.','No texture likeness or inferred demographic labels. Professional likeness review pending.']}
 result['basisVersion']=str(basis['basisVersion']) if 'basisVersion' in basis else 'unversioned'
+result['semanticCorrespondences']=correspondences
 (d/'fit.json').write_text(json.dumps(result,indent=2)+'\n')
 print('FIT_COMPLETE',json.dumps({k:result[k] for k in ['pairedLandmarks','meanLandmarkErrorPixels','evaluations','seconds']}),flush=True)

@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T04:35:51-03:00",
+  "updated": "2026-09-30T05:18:14-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1559,13 +1559,151 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "in progress",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "verified",
+      "changes": [
+        "Exact accepted Open model loaded with a restricted numeric pickle reader: 5,023 vertices, 9,976 triangles, 300 identity components and 100 Open expression components. An original NumPy implementation evaluates neutral-pose identity fitting and renders six real template views locally. Official linked PyTorch repository downloaded at its pinned commit for inspection; its file headers and SMPL-X dependency differ from the root MIT notice, so that implementation and dependencies are not executed or used by this route.",
+        "App now queues exact Open head fitting with six retained authorized inputs, native status and allowlisted shape/style/attribution diagnostics. An approximate 64 by 32 radial cage adapts the same 11 hairstyle and five beardstyle GLBs independently, preserving their real topology and textures. Open attribution, citation, change notices and license links are visible in the candidate workflow and embedded in GLBs.",
+        "Final version-4 FLAME uses a declared canonical face-plane alignment, bounded/smoothed scalp attachment and the shared deterministic beard definitions sampled directly on actual fitted native skin. Versioned historical runs remain available with visible known-limitation notices. All three validated cases have actual 17-asset outputs and saved options, without automatic expected-result selection."
+      ],
+      "limitations": [
+        "This processing arm fits the first 20 identity components with all expression and rig parameters neutral. Remaining identity components and texture likeness are not evidence of success; coverage, clipping and likeness must be evaluated from the retained actual outputs.",
+        "This native milestone is a prerequisite to full candidate demo task 11. Written and direct editing, chosen expected-result history, broader catalog refinement and full integrated journeys remain pending. Professional likeness, clipping and style acceptance are pending.",
+        "All geometry is fitted/inferred, with no measured 3D surface claim. Face detections paired three views for Alex/Maya and two for Noah; back and profiles lack paired face landmarks. First 20/300 identity components fit, all 100 expressions and five rig poses are neutral. No FLAME texture space or client texture likeness supplied.",
+        "Hairstyle cage is approximate: 1,796 to 1,896 of 2,048 rays had usable intersections; 139 to 239 rays required a 25 mm limit before smoothing. Long hair below the Open model neck remains original free geometry and has no torso underneath. Beard boundaries remain coarse for task 15 refinement; the observed spikes were corrected.",
+        "Version-4 native runs took 23.329 to 23.450 seconds and retained 98.7 to 100.5 MiB privately, with 161 optimizer evaluations each. Camera calibration is assumed, not recovered. Initial browser FPS and load timing are short diagnostic measurements, not a sustained benchmark."
+      ],
+      "verification": [
+        {
+          "command": "Pinned setup and neutral Open model CPU render",
+          "result": "Passed exact model SHA-256, restricted numeric loader, all 5,023 template vertices and 9,976 triangles, finite identity tensors and neutral-rig weight sums. Six actual neutral renders retained privately."
+        },
+        {
+          "command": "go test ./... and npm --prefix web run build",
+          "result": "Passed internal/app 0.740 seconds; build 1.64 seconds with existing 672.06 kB demo chunk warning. Native processing verification remains in progress."
+        },
+        {
+          "command": "python scripts/native-demos/verify-flame-assets.py",
+          "result": "Passed 51 actual GLBs with finite positions, valid indices, normals, textures and full embedded Open model attribution/change notices; 18 actual fitted renders; same six-photo SHA-256 snapshots as MPFB; exact 5,023-vertex Open identity evaluation; all direct native-basis errors below 10 micrometres. Injected 20 mm corruption was rejected before head publication."
+        },
+        {
+          "command": "python scripts/native-demos/verify-local.py --candidate flame --job-id 7b5ffea9-ba32-4b1c-8f37-4e6a0d1d4c80",
+          "result": "Passed all 17 authenticated native outputs, anonymous/unlisted artifact denial, saved option/workspace reload, permission gate, actual no-face failure with no head, nonfront erasure during real native processing, killed process group, dependent purge, no recreation, and withdrawal. Disposable diagnostic fixture deleted."
+        },
+        {
+          "command": "IAB actual candidate flow, v4",
+          "result": "All 11 hairstyle and five beardstyle exports loaded at actual v4 native URLs. Six named cameras synchronized both views, keyboard zoom synchronized, saved coils plus clean-shaven option and workspace reloaded with the same head/style URLs and profile angle. Browser-queued repeat 42081481-092d-4da4-8412-45f6f9a5952c completed in 23.559 seconds with byte-identical head GLB. No newest-run auto-selection."
+        },
+        {
+          "command": "Population rerun with flame-2023-open-neutral-rig-v4",
+          "result": "Reused all three validated jobs and options; did not regenerate or change expected-result selection."
+        },
+        {
+          "command": "go test ./...; go test -race ./...; npm --prefix web run build",
+          "result": "Passed. Latest race internal/app 4.346 seconds. Frontend build passed with the retained demo chunk warning; final text-only warning update is rebuilding."
+        },
+        {
+          "command": "Final frontend build and portable evidence log",
+          "result": "Passed final npm build in 1.51 seconds. 117 linked outputs/pictures or intentional local app links pass file/HTTP checks; all raster images decode. IAB task selector and all nine FLAME intermediate/final pictures loaded successfully."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/flame-first-aligned-comparison.png",
+          "caption": "2026-09-30 actual intermediate FLAME version-2 comparison: beard cage produced visible stretched strands above the ears. Native geometry and persistence checks alone did not catch this visual defect.",
+          "date": "2026-09-30T05:01:43-03:00"
+        },
+        {
+          "src": "assets/flame-intermediate-cage-clipping.png",
+          "caption": "2026-09-30 isolated clean-shaven comparison removed the stretched beard strands, locating the defect in beard attachment rather than native head or hair fitting.",
+          "date": "2026-09-30T05:01:43-03:00"
+        },
+        {
+          "src": "assets/flame-style-bob02.png",
+          "caption": "2026-09-30 intermediate version-3 bob hairstyle: residual radial cage spikes above the ears require corrected attachment, despite successful actual GLB loading.",
+          "date": "2026-09-30T05:07:13-03:00"
+        },
+        {
+          "src": "assets/flame-style-long01.png",
+          "caption": "2026-09-30 intermediate version-3 long hairstyle: unbounded cage deformation and original long cards below the head are visible; retained as failure evidence.",
+          "date": "2026-09-30T05:07:13-03:00"
+        },
+        {
+          "src": "assets/flame-final-style-bob02.png",
+          "caption": "2026-09-30 Corrected bounded/smoothed bob attachment on actual FLAME fitted head; no observed spikes. Synthetic input, inferred geometry, professional assessment pending.",
+          "date": "2026-09-30T05:15:59-03:00"
+        },
+        {
+          "src": "assets/flame-final-style-long01.png",
+          "caption": "2026-09-30 Corrected long hairstyle attachment. Original long free cards extend below the FLAME neck; absence of a torso is a retained display limitation.",
+          "date": "2026-09-30T05:15:59-03:00"
+        },
+        {
+          "src": "assets/flame-final-reopened-profile.png",
+          "caption": "2026-09-30 Actual saved coils and clean-shaven exploration reopened with the same fitted native head and synchronized profile cameras. Not a selected client expected result.",
+          "date": "2026-09-30T05:15:59-03:00"
+        },
+        {
+          "src": "assets/flame-final-native-evidence.png",
+          "caption": "2026-09-30 Actual retained exact Open model basis check, missing-view coverage and processing evidence. Native coefficient evaluation is not a likeness assessment.",
+          "date": "2026-09-30T05:15:59-03:00"
+        },
+        {
+          "src": "assets/flame-six-fitted-renders.png",
+          "caption": "2026-09-30 Six actual fitted Open model CPU renders, attributed to Max Planck and Li, Bolkart, Black, Li and Romero (2017), DOI 10.1145/3130800.3130813. CC-BY-4.0 plus published model terms; fitting, frame/material changes and inferred surfaces explicitly declared.",
+          "date": "2026-09-30T05:15:59-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/flame-native-provenance.json",
+          "label": "Separate exact model, original processing code, inspected reference repository and shared asset terms"
+        },
+        {
+          "href": "assets/flame-initial-origin-results.json",
+          "label": "Retained initial coordinate-frame experiment and larger actual 2D residuals"
+        },
+        {
+          "href": "assets/flame-populated-native-results.json",
+          "label": "Aligned native Open model runs on the three fictional shared cases"
+        },
+        {
+          "href": "assets/flame-intermediate-cage-results.json",
+          "label": "Retained version-2 head fitting with defective radial beard adaptation"
+        },
+        {
+          "href": "assets/flame-intermediate-unbounded-hair-results.json",
+          "label": "Version-3 native runs with remaining unbounded hairstyle attachment defects"
+        },
+        {
+          "href": "assets/flame-output-verification.json",
+          "label": "Actual Open outputs, attribution, source hashes and corruption rejection"
+        },
+        {
+          "href": "assets/flame-live-verification.json",
+          "label": "Actual local permission, failure, cancellation, persistence and erasure checks"
+        },
+        {
+          "href": "assets/flame-browser-style-checks.json",
+          "label": "All 16 actual final native styles loaded in IAB"
+        },
+        {
+          "href": "assets/flame-browser-camera-checks.json",
+          "label": "Six synchronized named angles and shared zoom measurements"
+        },
+        {
+          "href": "assets/flame-browser-repeat-check.json",
+          "label": "Real browser-queued repeat and retained head checksum"
+        },
+        {
+          "href": "assets/flame-intermediate-browser-styles.json",
+          "label": "Historical version-3 actual load checks before visual hair corrections"
+        },
+        {
+          "href": "assets/flame-intermediate-selection-check.json",
+          "label": "Retained intermediate browser selection mismatch and fictional fixture title correction"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
@@ -1574,6 +1712,30 @@ window.executionLog={
         {
           "date": "2026-09-30T04:35:51-03:00",
           "text": "Begin exact FLAME 2023 Open native fitting with the downloaded, explicitly accepted model. Keep its model terms separate from software and shared style licenses, and keep all model weights private."
+        },
+        {
+          "date": "2026-09-30T04:45:27-03:00",
+          "text": "Initial neutral CPU render passed. No academic model, FLAME texture space, RingNet embedding or separately trained fitting shortcut acquired. Prior guessed GitHub repository URLs returned 404; followed the actual official project link and pinned the correct upstream source."
+        },
+        {
+          "date": "2026-09-30T04:55:25-03:00",
+          "text": "First three neutral-origin runs completed in 23.160 to 23.383 seconds, with 11.64 to 20.28 pixel mean landmark errors. Inspection found neutral FLAME eyeball plane canonical Y about -0.024 m, versus shared neutral mannequin -0.128 m. Declared fixed -0.10 m canonical Y alignment and cage center -0.065 m, without reading any client morph ground truth. Version 2 reruns now complete in 23.275 to 23.363 seconds, with 3.03 to 3.52 pixel errors. Both settings arms and outputs remain retained; this does not verify likeness."
+        },
+        {
+          "date": "2026-09-30T05:01:43-03:00",
+          "text": "Actual browser inspection found that a passing GLB decode and native-basis check did not imply good style attachment: radial beard warping stretched individual strand vertices into visible spikes. Isolating clean-shaven current/proposed views removed the spikes. Version-2 outputs and screenshot are retained as defective style-adaptation evidence. Version 3 preserves native FLAME head fitting and hair cage, but resamples the same shared procedural beard definitions directly on fitted FLAME skin using detected neutral-front lip correspondences. No mannequin head is substituted."
+        },
+        {
+          "date": "2026-09-30T05:07:13-03:00",
+          "text": "All 16 version-3 native assets loaded, but broader visual inspection found spikes in some bob and long hairstyle cards. The unbounded radial field crossed mouth/neck topology with displacements above 20 cm. Version 4 bounds attachment to 25 mm, smooths its cage twice, and fades deformation below scalp and on long free ends. Shared topology/materials remain real; the same native fitted head and resampled beard definitions remain in use. Version-3 evidence is retained and is not final compatibility proof."
+        },
+        {
+          "date": "2026-09-30T05:15:59-03:00",
+          "text": "An intermediate rapid browser sequence saved a full beard while its typed option title said clean-shaven. Fresh DOM inspection, repeat clean-shaven selection, save and reload passed; no source state-loss bug reproduced. Corrected only the misleading local fictional fixture title using local SQLite, preserving its actual state, and retained a separate verified clean-shaven option. This fixture correction is not credited as a delivered renaming/history workflow."
+        },
+        {
+          "date": "2026-09-30T05:18:14-03:00",
+          "text": "Verified native prerequisite 11a. Current fictional Alex workspace retains the tested version-4 FLAME profile exploration to show reopening; this is a reversible technical fixture view, not professional approval or selection of the final route. Full demo task 11 remains pending."
         }
       ]
     },

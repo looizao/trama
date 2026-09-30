@@ -26,6 +26,8 @@ def export(path, meshes):
     document = {'asset': {'version': '2.0', 'generator': 'Trama local triangle exporter'},
                 'scene': 0, 'scenes': [{'nodes': []}], 'nodes': [], 'meshes': [],
                 'materials': [], 'accessors': [], 'bufferViews': [], 'buffers': []}
+    if meshes[0].get('provenance'):
+        document['asset']['extras'] = meshes[0]['provenance']
     chunks = bytearray()
 
     def view(data, target=None):

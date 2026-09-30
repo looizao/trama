@@ -423,7 +423,12 @@ function DemoSession({
     ? artifactURL(state.modelRunId, 'head', 'model')
     : library.headUrl
   const nativeSettings = state.native || nativeDefaults
-  const nativeFit = candidate.id === 'blender-mpfb' || candidate.id === 'makehuman'
+  const fitRoute = ({
+    'blender-mpfb': { settings: 'MPFB fitting settings', button: 'Fit head locally with MPFB', job: 'MPFB head fitting experiment' },
+    makehuman: { settings: 'MakeHuman fitting settings', button: 'Fit head locally with MakeHuman', job: 'Standalone MakeHuman head fitting experiment' },
+    flame: { settings: 'FLAME Open fitting settings', button: 'Fit head locally with FLAME Open', job: 'FLAME 2023 Open head fitting experiment' },
+  } as Record<string, { settings: string; button: string; job: string }>)[candidate.id]
+  const nativeFit = !!fitRoute
   const resolve = (styles: DemoStyle[], id: string, current: string) => {
     const chosen = id === 'keep-current' ? current : id
     return styles.find((s) => s.id === chosen)
@@ -494,7 +499,9 @@ function DemoSession({
         )}
         <p>
           {t(
-            candidate.id === 'makehuman'
+            candidate.id === 'flame'
+              ? 'Fit the exact FLAME 2023 Open identity basis locally with a neutral expression and rig. Shared styles are attached with an approximate radial cage. Hidden surfaces, texture likeness and professional assessment remain explicit limitations.'
+              : candidate.id === 'makehuman'
               ? 'Run standalone MakeHuman target fitting and native hair refitting without Blender. The CPU renders and retained parameters show a fitted template, with inferred hidden surfaces and pending professional likeness review.'
               : candidate.id === 'blender-mpfb'
               ? 'Run the MPFB fitting experiment, inspect its retained evidence and select a completed fitted head. Hidden surfaces remain inferred and professional likeness review is pending.'
@@ -503,6 +510,13 @@ function DemoSession({
               : 'This workspace currently runs shared input diagnostics and real mannequin asset inspection. These are not candidate reconstruction or fitting results.',
           )}
         </p>
+        {candidate.id === 'flame' && <p className="notice">
+          FLAME 2023 Open · Max Planck Institute for Intelligent Systems / Max-Planck-Gesellschaft ·{' '}
+          <a href="https://flame.is.tue.mpg.de/modellicense.html" target="_blank" rel="noreferrer">{t('Model terms')}</a> ·{' '}
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC-BY-4.0</a> ·{' '}
+          <a href="https://doi.org/10.1145/3130800.3130813" target="_blank" rel="noreferrer">Li, Bolkart, Black, Li &amp; Romero (2017)</a>.
+          {' '}{t('Changes: bounded identity fitting, coordinate conversion, procedural eye materials, shared style attachment and export. Additional published model usage terms apply. Synthetic examples are labeled simulations.')}
+        </p>}
         <label>
           {t('Authorized photo set')}
           <select
@@ -597,7 +611,7 @@ function DemoSession({
         </div>
         {nativeFit && (
           <fieldset className="demo-native-settings">
-            <legend>{t(candidate.id === 'makehuman' ? 'MakeHuman fitting settings' : 'MPFB fitting settings')}</legend>
+            <legend>{t(fitRoute.settings)}</legend>
             <p>
               {t(
                 'Assumed capture cameras: six labeled yaw angles, 36 mm sensor and shared focal length, distance and height. These values are not measured calibration. Inspect and adjust them for each capture.',
@@ -661,7 +675,7 @@ function DemoSession({
                 })
               }
             >
-              {t(candidate.id === 'makehuman' ? 'Fit head locally with MakeHuman' : 'Fit head locally with MPFB')}
+              {t(fitRoute.button)}
             </button>
           </fieldset>
         )}
@@ -709,6 +723,7 @@ function DemoSession({
         {modelJob?.candidate === 'blender-mpfb' && modelJob.result.fit?.basisVersion !== 'mpfb-metre-z-up-v2' && (
           <p className="notice">{t('Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.')}</p>
         )}
+        {modelJob?.candidate === 'flame' && modelJob.result.fit?.basisVersion !== 'flame-2023-open-neutral-rig-v4' && <p className="error" role="alert">{t('Historical FLAME experiment: earlier coordinate alignment or style attachment has known limitations. Retained for comparison; use the latest validated experiment for evaluation.')}</p>}
         <p className="notice">
           {t(
             fitted
@@ -931,7 +946,7 @@ function DemoSession({
                   <strong>
                     {t(
                       j.kind === 'fit'
-                        ? j.candidate === 'makehuman' ? 'Standalone MakeHuman head fitting experiment' : 'MPFB head fitting experiment'
+                        ? fitRoute?.job || 'Head fitting experiment'
                         : j.kind === 'reconstruct'
                           ? 'COLMAP six-view reconstruction experiment'
                         : 'Six-view input check',
@@ -978,6 +993,7 @@ function DemoSession({
               {j.candidate === 'blender-mpfb' && j.result.fit && j.result.fit.basisVersion !== 'mpfb-metre-z-up-v2' && (
                 <p className="notice">{t('Historical MPFB fit: its optimization basis used incorrect target units and axes. Retained for history; use a corrected experiment for evaluation.')}</p>
               )}
+              {j.candidate === 'flame' && j.result.fit && j.result.fit.basisVersion !== 'flame-2023-open-neutral-rig-v4' && <p className="error">{t('Historical FLAME experiment: earlier coordinate alignment or style attachment has known limitations. Retained for comparison; use the latest validated experiment for evaluation.')}</p>}
               {j.result.targetBasisCheck && (
                 <p>{t('Native target-basis validation')}: {j.result.targetBasisCheck.mappedVertices} {t('vertices')} · {t('Maximum prediction error')} {(j.result.targetBasisCheck.maximumErrorMetres * 1000000).toFixed(2)} µm · {t(j.result.targetBasisCheck.passed ? 'passed' : 'failed')}</p>
               )}

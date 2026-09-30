@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-30T08:10:05.588Z",
+  "checks": [
+    {
+      "name": "Front",
+      "views": [
+        {
+          "azimuth": "0.000000",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "0.000000",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Left three-quarter",
+      "views": [
+        {
+          "azimuth": "0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Right three-quarter",
+      "views": [
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "-0.785398",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Left profile",
+      "views": [
+        {
+          "azimuth": "1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Right profile",
+      "views": [
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "-1.570796",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Back",
+      "views": [
+        {
+          "azimuth": "3.141593",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "3.141593",
+          "distance": "1.300000",
+          "elevation": "0.080000"
+        }
+      ]
+    },
+    {
+      "name": "Keyboard zoom",
+      "views": [
+        {
+          "azimuth": "3.141593",
+          "distance": "1.290000",
+          "elevation": "0.080000"
+        },
+        {
+          "azimuth": "3.141593",
+          "distance": "1.290000",
+          "elevation": "0.080000"
+        }
+      ]
+    }
+  ]
+}

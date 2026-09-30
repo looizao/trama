@@ -1,0 +1,45 @@
+{
+  "scope": "Historical first FLAME experiment before neutral coordinate-frame alignment. Native outputs are real and retained; higher 2D residuals are not evidence of likeness. Evaluate the version-2 aligned coordinate experiment separately.",
+  "date": "2026-09-30T04:51:58-0300",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "flame",
+      "jobId": "62e8ff34-ef39-416f-b44b-1ef12ac15d02",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23289,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 20.283244996711,
+      "retainedBytes": 137105200
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "flame",
+      "jobId": "9231a81f-ff19-4837-88a7-701b29d06478",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23383,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 11.636413491465309,
+      "retainedBytes": 137758349
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "flame",
+      "jobId": "10926df4-f734-43cb-9b23-291742cc1601",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 23160,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 40,
+      "meanLandmarkErrorPixels": 11.90581431703706,
+      "retainedBytes": 136918646
+    }
+  ]
+}
