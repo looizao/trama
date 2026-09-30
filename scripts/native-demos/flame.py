@@ -147,6 +147,7 @@ def radius_field(meshes, directions, center):
 
 
 def adapt_styles(directory, head, mouth_z):
+    from catalog_styles import load_catalog, hair_meshes, beard_meshes
     source = ROOT / '.scratch/private/demo-assets'; cache = directory / 'shared-textures'; cache.mkdir(exist_ok=True)
     reference = [m for m in read_shared_glb(source / 'neutral-head.glb', cache) if 'head' in m['name'].lower()]
     center = np.array([0., -.065, .04]); nlon, nlat = 64, 32
@@ -167,7 +168,14 @@ def adapt_styles(directory, head, mouth_z):
     records = []
     for kind in ['hair', 'beard']:
         output = directory / kind; output.mkdir(exist_ok=True)
-        for path in sorted((source / kind).glob('*.glb')):
+        for style in load_catalog(directory,kind):
+            path = source / kind / (style['id']+'.glb')
+            if style.get('recipe'):
+                meshes = hair_meshes(head[0],style['recipe'],style['id']) if kind=='hair' else beard_meshes(head[0],mouth_z,style['recipe'],style['id'])
+                meshes[0]['provenance'] = {**ATTRIBUTION,'styleCreator':style['creator'],'styleLicense':style['license'],'styleRecipe':style['recipe']}
+                export(output/path.name,meshes)
+                records.append({'kind':kind,'id':style['id'],'sourceSha256':hashlib.sha256(path.read_bytes()).hexdigest(),'method':'Same original CC0 style recipe sampled directly on actual fitted native skin, preserving source recipe and separate FLAME model provenance.'})
+                continue
             if kind == 'beard':
                 lengths = {'stubble':.0017,'full':.012,'goatee':.009,'moustache':.007,'chinstrap':.006}
                 from procedural_styles import beard_mesh

@@ -4,6 +4,7 @@ import { api, json, imageURL, dateLabel, type Client } from './api'
 import { usePreferences } from './i18n'
 import type { Permission } from './privacy'
 import { PhotoTextureEvaluation } from './photo-texture-evaluation'
+import { StyleReferences } from './style-references'
 import { DemoViewer } from './demo-viewer'
 import { ExpectedResults, OptionPicture } from './expected-results'
 import { defaultRefinement } from './demo-editing'
@@ -137,7 +138,9 @@ function Catalog({
   const { t } = usePreferences(),
     [texture, setTexture] = useState(''),
     [maintenance, setMaintenance] = useState(''),
-    [length, setLength] = useState('')
+    [length, setLength] = useState(''),
+    [density,setDensity] = useState(''),
+    [coverage,setCoverage] = useState('')
   const styleLength = (s: DemoStyle) =>
     s.length ||
     (s.lengthMm <= 3 ? 'short' : s.lengthMm <= 15 ? 'medium' : 'long')
@@ -145,7 +148,10 @@ function Catalog({
     (s) =>
       (!texture || s.texture === texture) &&
       (!maintenance || s.maintenance === maintenance) &&
-      (!length || styleLength(s) === length),
+      (!length || styleLength(s) === length) &&
+      (!density || s.density === density) &&
+      (!coverage || s.coverage === coverage) &&
+      (!s.deprecated || s.id===value || !styles.some(s=>!s.deprecated)),
   )
   return (
     <section
@@ -158,6 +164,7 @@ function Catalog({
         {t(kind === 'hair' ? 'Proposed hairstyle' : 'Proposed beardstyle')}
       </h3>
       <div className="demo-filters">
+        {[{label:'Density',value:density,change:setDensity,key:'density' as const},{label:'Coverage',value:coverage,change:setCoverage,key:'coverage' as const}].map(filter=><label key={filter.key}>{t(filter.label)}<select value={filter.value} onChange={event=>filter.change(event.target.value)}><option value="">{t('All')}</option>{[...new Set(styles.map(s=>s[filter.key]).filter(Boolean))].map(value=><option key={value} value={value}>{t(value)}</option>)}</select></label>)}
         <label>
           {t('Length')}
           <select value={length} onChange={(e) => setLength(e.target.value)}>
@@ -233,6 +240,7 @@ function Catalog({
         ))}
       </div>
       {!filtered.length && <p>{t('No styles match these filters.')}</p>}
+      {styles.find(s=>s.id===value)?.views?.length&&<details open><summary>{t('Selected mannequin angles')}</summary><div className="demo-photo-strip">{styles.find(s=>s.id===value)?.views?.map(view=><figure key={view.view}><a href={view.renderUrl}><img src={view.renderUrl} alt={t(view.view)} loading="lazy"/></a><figcaption>{t(view.view)}</figcaption></figure>)}</div></details>}
       <details>
         <summary>{t('Asset provenance and professional review')}</summary>
         <p>
@@ -244,6 +252,8 @@ function Catalog({
           <p key={s.id}>
             {s.label}: {s.creator} · {s.license} ·{' '}
             {(s.bytes / 1048576).toFixed(1)} MB ·{' '}
+            {s.acquisitionDate} · {s.licenseVersion} · {s.attributionRequirement} · {s.modifications?.join('; ')} ·{' '}
+            {s.licenseUrl&&<a href={s.licenseUrl} target="_blank" rel="noreferrer">{t('License terms')}</a>} ·{' '}
             {s.sourceUrl.startsWith('https://') ? (
               <a href={s.sourceUrl} target="_blank" rel="noreferrer">
                 {t('Primary source')}
@@ -474,6 +484,8 @@ function DemoSession({
   const componentSettings = state.component || componentDefaults
   const upstreamJobs = jobs.data?.filter((j) => (j.kind === 'fit' || j.kind === 'process') && j.status === 'completed' && j.result.head && (!j.result.targetBasisCheck || j.result.targetBasisCheck.passed)) || []
   const nativeFit = !!fitRoute
+  const availableHair=fitted?library.hair.filter(s=>Object.hasOwn(modelJob?.result.hair||{},s.id)):library.hair
+  const availableBeard=fitted?library.beard.filter(s=>Object.hasOwn(modelJob?.result.beard||{},s.id)):library.beard
   const resolve = (styles: DemoStyle[], id: string, current: string) => {
     const chosen = id === 'keep-current' ? current : id
     return styles.find((s) => s.id === chosen)
@@ -853,7 +865,7 @@ function DemoSession({
               onChange={(e) => change({ currentHairId: e.target.value })}
             >
               <option value="none">{t('No hairstyle asset')}</option>
-              {library.hair.map((s) => (
+              {availableHair.map((s) => (
                 <option key={s.id} value={s.id}>
                   {t(s.label)}
                 </option>
@@ -867,7 +879,7 @@ function DemoSession({
               onChange={(e) => change({ currentBeardId: e.target.value })}
             >
               <option value="clean-shaven">{t('Clean-shaven')}</option>
-              {library.beard.map((s) => (
+              {availableBeard.map((s) => (
                 <option key={s.id} value={s.id}>
                   {t(s.label)}
                 </option>
@@ -956,23 +968,25 @@ function DemoSession({
           const revisionTitle=`Edited proposal / ${new Date().toISOString()} / ${state.hairId} + ${state.beardId}`
           const preview=capture.current?.();if(!preview)throw new Error('Wait for the actual proposed meshes to load before saving.');const saved=await api<DemoOption>(`${base}/demo-options`,json('POST',{state,title:revisionTitle,parentId:openedOption,preview}));setOpenedOption(saved.id);setSelectedOption(saved.id);await cache.invalidateQueries({queryKey:['demo-options',clientId]});setBrush(undefined);setMessage('Edited revision saved as a new option. Earlier options are preserved. Save workspace to reopen this revision on reload.')
         })}/>}
+        {fitted && availableHair.length < library.hair.length && <p className="notice">{t('This retained head contains its original style catalog. Run a new fit to use newly added styles.')}</p>}
         <div className="demo-catalog-pair">
           <Catalog
             fitted={fitted}
             kind="hair"
-            styles={library.hair}
+            styles={availableHair}
             value={state.hairId}
             onChange={(hairId) => change({ hairId })}
           />
           <Catalog
             fitted={fitted}
             kind="beard"
-            styles={library.beard}
+            styles={availableBeard}
             value={state.beardId}
             onChange={(beardId) => change({ beardId })}
           />
         </div>
       </section>
+      <StyleReferences clientId={clientId} hair={availableHair} beard={availableBeard} choose={(kind, id) => change(kind === 'hair' ? { hairId: id } : { beardId: id })} />
       <section className="card demo-saved">
         <span className="eyebrow">{t('03 / RETAIN AND REOPEN')}</span>
         <h2>{t('Explored asset options')}</h2>

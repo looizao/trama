@@ -38,6 +38,15 @@ export type DemoStyle = {
   lengthMm: number
   texture: string
   maintenance: string
+  density: string
+  coverage: string
+  deprecated?: boolean
+  views?: {view:string;renderUrl:string}[]
+  licenseUrl?:string
+  licenseVersion?:string
+  acquisitionDate?:string
+  attributionRequirement?:string
+  modifications?:string[]
   license: string
   creator: string
   sourceUrl: string

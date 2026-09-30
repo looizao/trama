@@ -1,0 +1,66 @@
+{
+  "scope": "Actual six-view synthetic experiments; no ground-truth geometry or case morph parameters supplied. Failed reconstructions are retained without fallback. Saved fitted explorations are not selected expected results. Refinement, expected results, professional review and full demo journey remain pending.",
+  "date": "2026-09-30T14:24:54-0300",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "makehuman",
+      "jobId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 17174,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 2.862841441891599,
+      "retainedBytes": 153279477,
+      "catalog": {
+        "beardCount": 25,
+        "hairCount": 51,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+        "snapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+        "version": "trama-surface-styles-v1"
+      }
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "makehuman",
+      "jobId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 16251,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 60,
+      "meanLandmarkErrorPixels": 2.890643062174007,
+      "retainedBytes": 151970227,
+      "catalog": {
+        "beardCount": 25,
+        "hairCount": 51,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+        "snapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+        "version": "trama-surface-styles-v1"
+      }
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "makehuman",
+      "jobId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+      "status": "completed",
+      "error": "",
+      "elapsedMs": 16710,
+      "expectedResultSelection": "pending",
+      "professionalLikeness": "pending",
+      "pairedLandmarks": 40,
+      "meanLandmarkErrorPixels": 4.402043033369274,
+      "retainedBytes": 149803202,
+      "catalog": {
+        "beardCount": 25,
+        "hairCount": 51,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+        "snapshotSha256": "c110690ee0f2e7d62843e370a372c36542efeed0d0289d024c316aa6a5ba18cf",
+        "version": "trama-surface-styles-v1"
+      }
+    }
+  ]
+}

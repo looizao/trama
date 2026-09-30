@@ -10,13 +10,15 @@ import {defaultRefinement,editStyle} from '../web/src/demo-editing.ts'
 const root=path.resolve(import.meta.dirname,'..'),log=path.join(root,'.scratch/execution-log/assets'),runtime=path.join(root,'.scratch/private/runtime')
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),sha=data=>crypto.createHash('sha256').update(data).digest('hex')
 const imports=read(path.join(runtime,'demo-asset-imports.json')),directories=new Map()
+const expanded=process.argv.includes('--expanded-catalog')
+const componentReport=(candidate,parent)=>`${candidate}-${parent}-populated-results${expanded?(parent==='makehuman'?'-makehuman-visible-lips-v2':'')+'-trama-surface-styles-v1':''}.json`
 for(const parent of ['makehuman','blender-mpfb','flame']) {
- for(const c of read(path.join(log,`cloudcompare-${parent}-populated-results.json`)).results) {
+ for(const c of read(path.join(log,componentReport('cloudcompare',parent))).results) {
   const client=imports.cases[c.fictionalCase].clientId,dir=path.join(runtime,'processing',client,c.jobId),report=read(path.join(dir,'component-report.json'))
   directories.set(path.join(runtime,'processing',client,report.upstream.runId),{candidate:parent,fictionalCase:c.fictionalCase})
  }
  for(const candidate of ['open3d','meshlab','cloudcompare']) {
-  const c=read(path.join(log,`${candidate}-${parent}-populated-results.json`)).results.find(c=>c.fictionalCase==='alex-ramos')
+  const c=read(path.join(log,componentReport(candidate,parent))).results.find(c=>c.fictionalCase==='alex-ramos')
   directories.set(path.join(runtime,'processing',imports.cases[c.fictionalCase].clientId,c.jobId),{candidate,upstream:parent,fictionalCase:c.fictionalCase})
  }
 }
@@ -73,6 +75,6 @@ for(const [directory,caseInfo] of directories) {
  }
  console.log('Verified actual mesh edits:',caseInfo.candidate,caseInfo.upstream||'',caseInfo.fictionalCase)
 }
-const report={date:new Date().toISOString(),deformationVersion:'style-mesh-v2',scope:'Exact app deformation implementation on 288 actual retained native style GLBs from 18 fitted/supporting jobs. Protected attachment band, positions/normals/UV/topology, independent recipes, real brush effects, determinism, cap, reset and unchanged source head/files verified. This CLI check does not test browser rendering, texture color appearance, physical cut feasibility or professional acceptance.',threeVersion:THREE.REVISION,seconds:(performance.now()-started)/1000,results}
-fs.writeFileSync(path.join(log,'editing-native-geometry-verification.json'),JSON.stringify(report,null,2)+'\n')
+const report={date:new Date().toISOString(),deformationVersion:'style-mesh-v2',catalogVersion:expanded?'trama-surface-styles-v1':'legacy',scope:`Exact app deformation implementation on ${results.length} actual retained native style GLBs from ${directories.size} fitted/supporting jobs. Protected attachment band, positions/normals/UV/topology, independent recipes, real brush effects, determinism, cap, reset and unchanged source head/files verified. This CLI check does not test browser rendering, texture color appearance, physical cut feasibility or professional acceptance.`,threeVersion:THREE.REVISION,seconds:(performance.now()-started)/1000,results}
+fs.writeFileSync(path.join(log,expanded?'editing-expanded-catalog-verification.json':'editing-native-geometry-verification.json'),JSON.stringify(report,null,2)+'\n')
 console.log('PASS',directories.size,'native jobs;',results.length,'actual style meshes; geometry edits, brush, deterministic replay, cap, exact reset, immutable heads and inputs.')

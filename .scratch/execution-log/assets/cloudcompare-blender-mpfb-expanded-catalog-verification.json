@@ -1,0 +1,1938 @@
+{
+  "date": "2026-09-30T17:46:56.840537+00:00",
+  "candidate": "cloudcompare",
+  "upstream": "blender-mpfb",
+  "version": "trama-surface-styles-v1",
+  "checks": "Actual GLB headers, finite positions, bounded metre scale, unit normals, indexed triangles, all 40 new hair and 20 new beard IDs plus preserved legacy assets. Four actual render angles per case. Browser persistence and professional clipping review remain separate checks.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "jobId": "feea4b83-bf89-4a15-b1be-57d3ebc4abc9",
+      "catalog": {
+        "version": "trama-surface-styles-v1",
+        "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+        "hairCount": 51,
+        "beardCount": 25,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry."
+      },
+      "nativeElapsedMs": 6709,
+      "retainedBytesAtProcessing": 484361631,
+      "decodedStyleMeshes": [
+        {
+          "kind": "hair",
+          "id": "afro01",
+          "bytes": 4902044,
+          "sha256": "0dd8e784c0a62818be5760c6e24d31f11403cddf834021d3d6b79f22e31ac1b1",
+          "vertices": 2196,
+          "triangles": 2192
+        },
+        {
+          "kind": "hair",
+          "id": "bob01",
+          "bytes": 4469716,
+          "sha256": "a97312536acc9cd1350311a07ffe96c1221f80370b32d874e216b5c07098e325",
+          "vertices": 5432,
+          "triangles": 8474
+        },
+        {
+          "kind": "hair",
+          "id": "bob02",
+          "bytes": 3442672,
+          "sha256": "1774ab50dbd8a1fe686755ad299b19be01dff545acb206b85130d1976206c86a",
+          "vertices": 1688,
+          "triangles": 2248
+        },
+        {
+          "kind": "hair",
+          "id": "braid01",
+          "bytes": 2799028,
+          "sha256": "504c3bab5b13f68f9d4fea03c0d39b557c24d71fd36bad102a1aed06c095abff",
+          "vertices": 4663,
+          "triangles": 5518
+        },
+        {
+          "kind": "hair",
+          "id": "long01",
+          "bytes": 3047336,
+          "sha256": "1c23463adaf560b1ec2bb32b059c75da48a037c6f6782e46e7faba7f05aabfc3",
+          "vertices": 3312,
+          "triangles": 4108
+        },
+        {
+          "kind": "hair",
+          "id": "ponytail01",
+          "bytes": 4069228,
+          "sha256": "2c4029c0c0081caa1209ce3493c7de2b23d71d2a72d9cb1aad40355347a2dcdf",
+          "vertices": 3902,
+          "triangles": 5352
+        },
+        {
+          "kind": "hair",
+          "id": "rounded-coils",
+          "bytes": 9695036,
+          "sha256": "23c2ddbbee484627fa3e666f2b460875ffc128ad79e9d32e0047204dc83a5616",
+          "vertices": 208920,
+          "triangles": 389984
+        },
+        {
+          "kind": "hair",
+          "id": "short01",
+          "bytes": 2475272,
+          "sha256": "5bc0067a44eb4c933b27baa6452e092c27acc2463c5663a59c4ce1951e62a389",
+          "vertices": 3050,
+          "triangles": 3678
+        },
+        {
+          "kind": "hair",
+          "id": "short02",
+          "bytes": 3632472,
+          "sha256": "d9adc45755706d8e48d42091d68eed4fe8394e4a8643255924190dc4b4aa38b5",
+          "vertices": 1794,
+          "triangles": 3344
+        },
+        {
+          "kind": "hair",
+          "id": "short03",
+          "bytes": 2439004,
+          "sha256": "68f75965b28d848ae910bc0a9e1ef8366b16ca593432b5374c1dcefc6f1f0559",
+          "vertices": 1034,
+          "triangles": 1922
+        },
+        {
+          "kind": "hair",
+          "id": "short04",
+          "bytes": 2347336,
+          "sha256": "db9d23f7b021ca1c6de3b025dece5d5e9c2a6aca936a0bd838ba76f0d4785a60",
+          "vertices": 983,
+          "triangles": 1050
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-coily",
+          "bytes": 930168,
+          "sha256": "7a454782eb27b24c4e75561031548492ee2639c7b9501597f541094c478ffcec",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-curly",
+          "bytes": 930164,
+          "sha256": "f10f84cddb5be8d55cb0c39f6fae5ac516e725c28243736a986c1664c76db634",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-straight",
+          "bytes": 614540,
+          "sha256": "dfc5c2237e3d11d135372a564136ed77fce106804613aaa7d968f1b9c177406e",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-wavy",
+          "bytes": 614512,
+          "sha256": "5580328b3e1945486101d369458a6d7bb8e0a3be92dd5cf78ca63f2d2b04079d",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-coily",
+          "bytes": 930164,
+          "sha256": "5c79b8f88702f8fecbb61fb21e06e4f3cef2bed3515736e9081302232cb34bd4",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-curly",
+          "bytes": 930168,
+          "sha256": "1afe21ac2eea17d8b5a51400dd96b24f5cb666bcd76d25d8409488addcce9f66",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-straight",
+          "bytes": 614540,
+          "sha256": "e0d7d4f5f0c8445238039b24affa4948e8b2365af03ba2ae51b99c4b2a0ef10d",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-wavy",
+          "bytes": 614508,
+          "sha256": "e764ef33f85b074273991042abfe65c2748cc94976ca8c10c086bd84607f5bcb",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-coily",
+          "bytes": 930168,
+          "sha256": "27f0bbdd560abe371f9bb736285faee40dd1197b0566956b282f7af9199d9e2f",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-curly",
+          "bytes": 930168,
+          "sha256": "bc871b4cd5613c707782b571a6d46f12ba049353d17a4100872eff81adac7483",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-straight",
+          "bytes": 614544,
+          "sha256": "00a130b05eefaf5e618d4737743207a640b65c5090801e29aecc6de92c93c3ae",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-wavy",
+          "bytes": 614512,
+          "sha256": "26ec7f7f21071770be27660ad39e748253699bfe67f3b1924c7ec689565c157e",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-coily",
+          "bytes": 930156,
+          "sha256": "c818e19323ed8e2d57a675e908a5a08ae1246410e5706b401daa8ddf1f00d7ba",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-curly",
+          "bytes": 930160,
+          "sha256": "6ea86efbe5187ef740902d772029ccb78fa75b6e79a0d6afba5c06418b24f44f",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-straight",
+          "bytes": 297876,
+          "sha256": "f75a7e89e956caabd95da46cee69c9916287dd8ca585b529ff9b13d4a6b8dd18",
+          "vertices": 6561,
+          "triangles": 11486
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-wavy",
+          "bytes": 614500,
+          "sha256": "d5371936acba43db98bc91d85f54d51c4e37a624457dcbd22b585239fbfe9ef2",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-coily",
+          "bytes": 1383912,
+          "sha256": "e5b588b4b0866a0ee4edfecfe136ef950b991cad4f04587612be45cb935ab708",
+          "vertices": 30035,
+          "triangles": 55042
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-curly",
+          "bytes": 1383912,
+          "sha256": "924ea9b064dd3bc86834de254a3c49d26a82e19b8f5c4db4f2f436beb578dbfc",
+          "vertices": 30035,
+          "triangles": 55042
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-straight",
+          "bytes": 910460,
+          "sha256": "ffc25b2b2d8bc715c7c9f7d13500533bcd3318307284bc1aff4498ef9bd20dcb",
+          "vertices": 20171,
+          "triangles": 35314
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-wavy",
+          "bytes": 910432,
+          "sha256": "9ec89d52f86aa0e675c334cfcc74f97773e378bbc5184d1342f2f64a835a64bd",
+          "vertices": 20171,
+          "triangles": 35314
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-coily",
+          "bytes": 930200,
+          "sha256": "898f7ee0711e350f5f3c2fbea03871fcb4a12f555c72fe70db0178dc776b30d6",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-curly",
+          "bytes": 930200,
+          "sha256": "717d27e410ba8da15ede07fa772e58d59e7aeb1e598a56c12ce02ddb7a15ce13",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-straight",
+          "bytes": 614568,
+          "sha256": "f171f5bcd1b486787afaf390e26f320cd39c4548d999b0249a56bb61f8cd0373",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-wavy",
+          "bytes": 614540,
+          "sha256": "1c9c7fc5917554e23ece64d7ef4d7c3d3db1800ebed5595267b4a5a843e4001b",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-coily",
+          "bytes": 930176,
+          "sha256": "fbb6a12522bc2f0c312497cac6f5275f2eedd5788e3fe2b63eee204a659c524b",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-curly",
+          "bytes": 930172,
+          "sha256": "96cbfd5a55d872fa5d64d53070d2beaccc1ce4d155b42777e4d7043047827ccc",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-straight",
+          "bytes": 614548,
+          "sha256": "c22b6b591cf6edb450ab0730c6cb220513e6c7ade93b792f4e0146520d85546f",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-wavy",
+          "bytes": 614516,
+          "sha256": "cf9f3abdf93ad6c1750c225d46166b8dbcae75daef2ce54790847b6a74ade6e0",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-coily",
+          "bytes": 1383912,
+          "sha256": "8cb53f5f12368d0081692397bc5a25d087fcca58db1b30b5bb9dbae4f1219db3",
+          "vertices": 30035,
+          "triangles": 55042
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-curly",
+          "bytes": 1383912,
+          "sha256": "e87f465dd61a3f10cba05c32b55989a15818c3d06b915f5e6b74f98a156bc44f",
+          "vertices": 30035,
+          "triangles": 55042
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-straight",
+          "bytes": 910460,
+          "sha256": "2c44dbc2585b87232807e68c4c14514e707aacdb37c0b68c09024b92ef97b350",
+          "vertices": 20171,
+          "triangles": 35314
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-wavy",
+          "bytes": 910432,
+          "sha256": "26532e8e6dd0d2aabae0e71742846f2d96e455b70d4b64b7980cfa7bc2ae0da6",
+          "vertices": 20171,
+          "triangles": 35314
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-coily",
+          "bytes": 930200,
+          "sha256": "ea426d4dccc66e6ef24f556d3717616481a6448e688985cb2278b969b3bf2dd5",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-curly",
+          "bytes": 930200,
+          "sha256": "f0647ea3094613e20b4d2c37e884fcbc71eb4203be383887df702f2e9148ec57",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-straight",
+          "bytes": 614576,
+          "sha256": "d11bd9113d5d293d9344c7b4c4201fb0e387968f5c8c2bba7b7f9a5827d9f927",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-wavy",
+          "bytes": 614544,
+          "sha256": "3f651f48876a1d8581b9396a320a4aba9772b228099d5a1cef3454986742c812",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-coily",
+          "bytes": 930172,
+          "sha256": "c283fea1fc03075afb35ea2bcbf6c1118315344aabf5078f335a97c8b40c13f2",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-curly",
+          "bytes": 930172,
+          "sha256": "5961c3d3d92cadc94d3f6d248dd00398379d8e41e876190cc13a2bfe5ea0b805",
+          "vertices": 20171,
+          "triangles": 36958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-straight",
+          "bytes": 614548,
+          "sha256": "f9a5c3fc8917dc07094512b03551ed513ec45c58bbd8bb442d252de7f15244a4",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-wavy",
+          "bytes": 614512,
+          "sha256": "b6a016ac5037a1b59bb3745b89410b95e64c3f9dbad969d0ffb3187e7159c4b4",
+          "vertices": 13595,
+          "triangles": 23806
+        },
+        {
+          "kind": "beard",
+          "id": "chinstrap",
+          "bytes": 3408440,
+          "sha256": "98702b7ccff661f7aa4ba0ad24710133ab18f72c5a308de29dea2d6ea79b1711",
+          "vertices": 121689,
+          "triangles": 40563
+        },
+        {
+          "kind": "beard",
+          "id": "full",
+          "bytes": 18181932,
+          "sha256": "764e4ce14c573b76359b42c4d59999820ccd0a48a1779b8608ed2e1e9fb36ce6",
+          "vertices": 649314,
+          "triangles": 216438
+        },
+        {
+          "kind": "beard",
+          "id": "goatee",
+          "bytes": 7702768,
+          "sha256": "4c142758b0acff567c862866eeab2a7685ebfabd2c5cf34253f7f27cb39763cf",
+          "vertices": 275058,
+          "triangles": 91686
+        },
+        {
+          "kind": "beard",
+          "id": "moustache",
+          "bytes": 1172312,
+          "sha256": "f173b384b7aeae7d151d0fa75143e1859e2026befd70f7ff8ad0cb2267bd6945",
+          "vertices": 45045,
+          "triangles": 15015
+        },
+        {
+          "kind": "beard",
+          "id": "stubble",
+          "bytes": 18181940,
+          "sha256": "bf97a0db3368ad9444e7b77f464197fb972030db8b9f85b4d3e9f832c4a539df",
+          "vertices": 649314,
+          "triangles": 216438
+        },
+        {
+          "kind": "beard",
+          "id": "trama-anchor",
+          "bytes": 1168912,
+          "sha256": "0f628f12c67e7bd13ec08391cbfae8b9e788435236821637bfd3f2882caf8bca",
+          "vertices": 26532,
+          "triangles": 44220
+        },
+        {
+          "kind": "beard",
+          "id": "trama-beardstache",
+          "bytes": 3052316,
+          "sha256": "e76e1f02bb0e4d3ec67fe7d8fb5051ad4823b30a4afc11dce43e1812f4a7cf5c",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chevron",
+          "bytes": 167820,
+          "sha256": "581a35eb8c08a700d96761d09ff3f02be3ca3e3eda6c3e4c2f257bf67053141b",
+          "vertices": 3780,
+          "triangles": 6300
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chinstrap",
+          "bytes": 574928,
+          "sha256": "97603feb9fe80393861c2981e3f34a608caa247766fa0fcc1b1775a498891d45",
+          "vertices": 13032,
+          "triangles": 21720
+        },
+        {
+          "kind": "beard",
+          "id": "trama-circle",
+          "bytes": 1460368,
+          "sha256": "7eafabd0778bfb9f46225cd0d9461250a4f088fcbc21432331a39e9e8118ec7e",
+          "vertices": 33156,
+          "triangles": 55260
+        },
+        {
+          "kind": "beard",
+          "id": "trama-coily-full",
+          "bytes": 3052300,
+          "sha256": "c5c3c874ca7049c23eccfeeef88bee53b9af02287ad756e8acb93c0e983fad7c",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-curly-full",
+          "bytes": 3052300,
+          "sha256": "00b8a54d49e32e49c4dc5fe412087ebb282a9ee3121f493a2779e81a5855094f",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-goatee",
+          "bytes": 1176832,
+          "sha256": "3fd8a51b6bfd31fd005c93614d025cc2f4d9e2fa8583d758184e72c3b707556a",
+          "vertices": 26712,
+          "triangles": 44520
+        },
+        {
+          "kind": "beard",
+          "id": "trama-heavy-stubble",
+          "bytes": 3052316,
+          "sha256": "75b404f8b3843e5b424021207e1f51f6fdc9b50b59ec47b2080afd6a55d87914",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-light-stubble",
+          "bytes": 3052316,
+          "sha256": "a6bb01266d0e288b1d4961e2a4700aabac226634761b103942ab00645c18a9f3",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-limited-coverage",
+          "bytes": 1959364,
+          "sha256": "40aa2aba249b4b454a98bbee8879aeaaa9a68bf0a5efa0401128ad2cf415cd91",
+          "vertices": 44496,
+          "triangles": 74160
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-curly",
+          "bytes": 3052304,
+          "sha256": "d99153628fe5a4c29e18f3d4c056f098ff246d2f1936d2bf346675740925e043",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-tapered",
+          "bytes": 3052316,
+          "sha256": "9b8ceef90e028f57aa7b2af3a8db39d40aebabcec44a6bd149d4fce9425fce47",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-medium-rounded",
+          "bytes": 3052324,
+          "sha256": "b53e32d9d7bb7061e1fa43d544eeb0140f4e2667c7158bc60e958e6747367a95",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-moustache",
+          "bytes": 167828,
+          "sha256": "aafc8e8d724acfea0fc769c40bd1364f2188db99852018b8518dae3840ca4d1a",
+          "vertices": 3780,
+          "triangles": 6300
+        },
+        {
+          "kind": "beard",
+          "id": "trama-rounded-full",
+          "bytes": 3052308,
+          "sha256": "b68d9c7c227291fc5241a7517a0e9f7ef1dfa02b849efdcc1c37d2b11bee5c2a",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-short-boxed",
+          "bytes": 2831340,
+          "sha256": "300b482284aab46dc26338169772d74e2f76556e44b323a6f729b46a930cb546",
+          "vertices": 64314,
+          "triangles": 107190
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soft-stubble",
+          "bytes": 3052308,
+          "sha256": "e78a5720cfb6342137bbfbe574cf329b6557ef7abc1ac93e78a26be9d7df7feb",
+          "vertices": 69336,
+          "triangles": 115560
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soul-patch",
+          "bytes": 147244,
+          "sha256": "8f632f15e87e0331cb018368fdcdd80ebe543ff044ae8ca22995ae874b05e73c",
+          "vertices": 3312,
+          "triangles": 5520
+        },
+        {
+          "kind": "beard",
+          "id": "trama-van-dyke",
+          "bytes": 1343160,
+          "sha256": "920fe6e01b03ac537ae9b742fd4a2206971ed37ccb0e2862b320255e760efcec",
+          "vertices": 30492,
+          "triangles": 50820
+        }
+      ],
+      "actualRepresentativeRenders": [
+        {
+          "view": "front",
+          "sha256": "c80b6f4f94fe0093d1798f2746be2d0d2c711dbc336bbbb84459deed2bf34ed7"
+        },
+        {
+          "view": "three-quarter",
+          "sha256": "bfe09d2aeb3fe37d510b0e96ed931ab5af0f0ea426162a52fde2047176db9fbe"
+        },
+        {
+          "view": "profile",
+          "sha256": "3fa79102e86db48776dae7cb9a082bca2953665da3fac2a98f6dca6b6a144ca9"
+        },
+        {
+          "view": "back",
+          "sha256": "61364df0df0fac6224a63d46c57547880438335f97d5b0199ffc2b260a08363d"
+        }
+      ],
+      "picture": "cloudcompare-blender-mpfb-catalog-alex-ramos.png",
+      "fitInputScope": "Same authorized six labeled synthetic photos; geometry fitted or inferred, not measured."
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "jobId": "3368119e-18d1-45da-98d0-b314a6be0d68",
+      "catalog": {
+        "version": "trama-surface-styles-v1",
+        "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+        "hairCount": 51,
+        "beardCount": 25,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry."
+      },
+      "nativeElapsedMs": 6567,
+      "retainedBytesAtProcessing": 479549782,
+      "decodedStyleMeshes": [
+        {
+          "kind": "hair",
+          "id": "afro01",
+          "bytes": 4902040,
+          "sha256": "22ea3b214d355c3938d83f64b6f5ebf5f0a6b1e6c80e66602c6631304882539e",
+          "vertices": 2196,
+          "triangles": 2192
+        },
+        {
+          "kind": "hair",
+          "id": "bob01",
+          "bytes": 4469716,
+          "sha256": "8a47c07e7031584312f5cc25e68f3d2a24d7f32dd54cf82d63d1fd48094e8e72",
+          "vertices": 5432,
+          "triangles": 8474
+        },
+        {
+          "kind": "hair",
+          "id": "bob02",
+          "bytes": 3442672,
+          "sha256": "11c4b05542679882d1492a5456a9a3482385a98b61840317bdbbd60f43449d16",
+          "vertices": 1688,
+          "triangles": 2248
+        },
+        {
+          "kind": "hair",
+          "id": "braid01",
+          "bytes": 2799028,
+          "sha256": "aa143f370f2789a583558a9b3f9e570992fcaf0f0fb0eb23fc3a4305fe3236cb",
+          "vertices": 4663,
+          "triangles": 5518
+        },
+        {
+          "kind": "hair",
+          "id": "long01",
+          "bytes": 3047336,
+          "sha256": "3e4ddd0c39bd6c862301142c1724066e663d146796b244bedd67b006440622f6",
+          "vertices": 3312,
+          "triangles": 4108
+        },
+        {
+          "kind": "hair",
+          "id": "ponytail01",
+          "bytes": 4069228,
+          "sha256": "cbf1211bc9dd8fd7ae741e6f86c47a4a2a7c6d48b54bd77f7da0e83d934aa8c1",
+          "vertices": 3902,
+          "triangles": 5352
+        },
+        {
+          "kind": "hair",
+          "id": "rounded-coils",
+          "bytes": 9349820,
+          "sha256": "a4ce4522cbd073cbcfeaa7dbdab9b37d63ef04c98da0f6d0a8b19889a7035f29",
+          "vertices": 201480,
+          "triangles": 376096
+        },
+        {
+          "kind": "hair",
+          "id": "short01",
+          "bytes": 2475272,
+          "sha256": "bb0b30cab6a293f0e3bd770282d4c6e5be50e5f3f913a350aac7fc40e9ac68e0",
+          "vertices": 3050,
+          "triangles": 3678
+        },
+        {
+          "kind": "hair",
+          "id": "short02",
+          "bytes": 3632468,
+          "sha256": "9122e3bfe7a524f9539ca5e1d2e8a00ceb5eb0da6fdf18c82debd52b326f66fe",
+          "vertices": 1794,
+          "triangles": 3344
+        },
+        {
+          "kind": "hair",
+          "id": "short03",
+          "bytes": 2439004,
+          "sha256": "8a4f4138dddeb28d03ff686bdf88efaba04291a68f069b068c5f035551a159ac",
+          "vertices": 1034,
+          "triangles": 1922
+        },
+        {
+          "kind": "hair",
+          "id": "short04",
+          "bytes": 2347336,
+          "sha256": "f5debad98ed9906af8c422c3c1a6dcea378ee4b05580bb6fbcac00ce45975a7b",
+          "vertices": 983,
+          "triangles": 1050
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-coily",
+          "bytes": 946320,
+          "sha256": "cf55b3f688794b6a2ec86998f0ad42e31c8a86723e8193deaec7e2fe723f58ef",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-curly",
+          "bytes": 946324,
+          "sha256": "169f6de7059f1bc80532e8b133dffd1490f390dc65875e9f49b9258e046e1ef8",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-straight",
+          "bytes": 626664,
+          "sha256": "69070ae03f32cdf2bfac41b5034fb93268b394511d5b1db004fbcdb389198523",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-wavy",
+          "bytes": 626636,
+          "sha256": "2ad3957e21e7572d487266548d8d6cc21de718f380c8c6c5e935ba502d41df71",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-coily",
+          "bytes": 946320,
+          "sha256": "8ab022da3c2d6fbc183fdba29146f82d9be556ca05ec26e0b4142126c6ea43c2",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-curly",
+          "bytes": 946316,
+          "sha256": "7ef9d6ab4f7a2ec20a8cec8f9da35907cd6be945f3ce24618fe39a08a4259efd",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-straight",
+          "bytes": 626656,
+          "sha256": "412487e93184ae24ec9dbf0ac5f533b18bd85709f39862f8da5a4bd26550fb2f",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-wavy",
+          "bytes": 626632,
+          "sha256": "1d3160c6edc576aada6f47d4ab4081d32c6ca4db40a60012c2d81bc4e99b3057",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-coily",
+          "bytes": 946320,
+          "sha256": "aea59dc3ea5865c8b35eabf22157d97c7cc7a58b6aedd1079a1797ff12351957",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-curly",
+          "bytes": 946324,
+          "sha256": "5b3303fa5c6f02fbc7d61e26b0f6ecafa4e6316878eeb9c46b4f711b479d3a81",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-straight",
+          "bytes": 626668,
+          "sha256": "e51d44a762659e62046c07e9ee1827be7c9e9aad41e931cbe93f55329ca618d9",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-wavy",
+          "bytes": 626632,
+          "sha256": "16727a5e22bf8eed7205119cda777b1a37f45562b48d1bdc102e5c1aaf3fb973",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-coily",
+          "bytes": 946312,
+          "sha256": "4815a4bc76620cb1bf965e06d5510bad8783aa23c51068c9235e4b6b351f0c79",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-curly",
+          "bytes": 946308,
+          "sha256": "75cf4ee2c0778e815e497e50dc28e04d4acd25095a35fcd2db718a7433115783",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-straight",
+          "bytes": 303204,
+          "sha256": "06e775c92ca163d6a94990f8e5316c53881357f9cbaac8608dac16634711bef0",
+          "vertices": 6678,
+          "triangles": 11696
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-wavy",
+          "bytes": 626628,
+          "sha256": "d203bd60c7de11c0a93bca37231c9ea059f2d2a8e1fe5bd0783a00135a417e60",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-coily",
+          "bytes": 1406688,
+          "sha256": "748d20a95978284d6bed6236d3115601057369b59ba5eb7a005581e4fc2cfe9f",
+          "vertices": 30530,
+          "triangles": 55950
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-curly",
+          "bytes": 1406688,
+          "sha256": "8d6a69d5107e0e57f14b57cc5f31ea281cb0e9eb6183d3eddc657186a6747d42",
+          "vertices": 30530,
+          "triangles": 55950
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-straight",
+          "bytes": 926904,
+          "sha256": "10a976c98a16de2fe7c2e95bf0fcc0f4f4b95280a4cf58d9760e63341c68960e",
+          "vertices": 20534,
+          "triangles": 35958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-wavy",
+          "bytes": 926868,
+          "sha256": "c9c2b42246d4780b74ff210817b8b82a474c75a6bb58c5746ab185ea7744ae41",
+          "vertices": 20534,
+          "triangles": 35958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-coily",
+          "bytes": 946356,
+          "sha256": "bc41350ccea7841b6636632b0174a748cacd3f926f154e735f879c3ccaf5e64e",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-curly",
+          "bytes": 946348,
+          "sha256": "036c50bfb2146563d32e99d6b799a4379e540c5de675b19bbcb571407f5892d9",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-straight",
+          "bytes": 626692,
+          "sha256": "119ed648e7318a3cf2aff30aece16ecebdc8a785cb04372664dca7c06eb94b7d",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-wavy",
+          "bytes": 626664,
+          "sha256": "d32bedf8647ac22709340aa01a99882af789153c691f5aa0988ef2ca42a2f2e7",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-coily",
+          "bytes": 946328,
+          "sha256": "170058d334d328539ba637a0b2f886485a89fe0593de96aa0d698f55fa2d9ecf",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-curly",
+          "bytes": 946328,
+          "sha256": "82b20c85a658dc76b13f0f2acb2a0151e93d34d3cd4e690721ed7df80a3bfdb7",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-straight",
+          "bytes": 626668,
+          "sha256": "060eeae8448dc859a958efc36d36fd71c2bf5b3440b439ac72a37e1be1979760",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-wavy",
+          "bytes": 626636,
+          "sha256": "2e1b32c5599c06f80fb88e1cfc3c567387ea42c0969053ed37a4df1ab04b6e5f",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-coily",
+          "bytes": 1406688,
+          "sha256": "88d982602d4fc818826643369d22d15b52898c0b143af229617f7ce237a65e4a",
+          "vertices": 30530,
+          "triangles": 55950
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-curly",
+          "bytes": 1406688,
+          "sha256": "8d469384d2144012f00c4b6f053c13c2c5cd5409b868d891d02114b7c0a3ca53",
+          "vertices": 30530,
+          "triangles": 55950
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-straight",
+          "bytes": 926904,
+          "sha256": "1fbb78d45bc2b673d1d6577c05a727798f4de8e2e3e0c616112de300010a0fd6",
+          "vertices": 20534,
+          "triangles": 35958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-wavy",
+          "bytes": 926868,
+          "sha256": "4c9b602aef8973168132f6b2c52336ef732ae22532bf984adc69d60414ffb0db",
+          "vertices": 20534,
+          "triangles": 35958
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-coily",
+          "bytes": 946348,
+          "sha256": "c21e958fb68f30b59a43c87b912c3dca7e79c117063c6ff5d08c80f9a891ee9a",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-curly",
+          "bytes": 946356,
+          "sha256": "f52bb0b97c1a9eb9f222db76b9c8875a75f5adb3e0f196c35b77034c74e523d4",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-straight",
+          "bytes": 626696,
+          "sha256": "f0813f45f5335e2bf7b17a0f3adc174a8d2185e18da9c87eb31b6541fce6a212",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-wavy",
+          "bytes": 626660,
+          "sha256": "18238ccca35d9b9fe6bfc93f34d370e6ced09e063dafb0bea47ec03ac8997fa3",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-coily",
+          "bytes": 946324,
+          "sha256": "6a4699e6212833c3425dba9b3f31eb782539d04e956da030f776680e39563525",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-curly",
+          "bytes": 946324,
+          "sha256": "75e64bbed6cc9d76a901fae3be0ceb8823902feedb6ed5fbf802b8b05ccf02af",
+          "vertices": 20522,
+          "triangles": 37602
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-straight",
+          "bytes": 626668,
+          "sha256": "3907ad8bd9e7dbaeccfa0f26394d19e611b4b8c56a21b6c6f9046fe311d36d7d",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-wavy",
+          "bytes": 626632,
+          "sha256": "e77a9bed62fdc64843eb9c2dbe4b754b218a022172407eaaae8fefa70fbf0f93",
+          "vertices": 13862,
+          "triangles": 24282
+        },
+        {
+          "kind": "beard",
+          "id": "chinstrap",
+          "bytes": 3450024,
+          "sha256": "548a278661378eeaf82b162f12420faccb3f2ffb2486ceb734b052d1aeb5eb24",
+          "vertices": 123174,
+          "triangles": 41058
+        },
+        {
+          "kind": "beard",
+          "id": "full",
+          "bytes": 17430468,
+          "sha256": "c13de59f9b6419057160aa350669d1969fd3b99cb2b8f559a915eddec0c3bc2d",
+          "vertices": 622476,
+          "triangles": 207492
+        },
+        {
+          "kind": "beard",
+          "id": "goatee",
+          "bytes": 8218864,
+          "sha256": "ef79a7a788390077a25b46af6feeb2096eeb36cd3c473471e510bfd4bbd37e2a",
+          "vertices": 293490,
+          "triangles": 97830
+        },
+        {
+          "kind": "beard",
+          "id": "moustache",
+          "bytes": 1255148,
+          "sha256": "da74650e541488f146a8548990c018e966c0b2a23816d046fb4fcd909ade68be",
+          "vertices": 48231,
+          "triangles": 16077
+        },
+        {
+          "kind": "beard",
+          "id": "stubble",
+          "bytes": 17430472,
+          "sha256": "0b7936b6889233fbfe7ba96994a3cc25bc68ff307db2c1dde02fb155673e935d",
+          "vertices": 622476,
+          "triangles": 207492
+        },
+        {
+          "kind": "beard",
+          "id": "trama-anchor",
+          "bytes": 1160992,
+          "sha256": "c5d1e0aae874def08ba0b04647d53327d5e88b756c39b4622d7190dc7c8c99d9",
+          "vertices": 26352,
+          "triangles": 43920
+        },
+        {
+          "kind": "beard",
+          "id": "trama-beardstache",
+          "bytes": 2969156,
+          "sha256": "584e2daf825566ee1cff6588542b169c597342cf9fb39777f63300abf0432b16",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chevron",
+          "bytes": 187624,
+          "sha256": "0e3b8255c0a00e773f6c7bdd96c69188623b428640ddec7dbfedbf76f199a3a3",
+          "vertices": 4230,
+          "triangles": 7050
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chinstrap",
+          "bytes": 509984,
+          "sha256": "58354f002c52ba60fe273f717b50ce1f979e7af1e426d6ec3c0dda00741bfc8f",
+          "vertices": 11556,
+          "triangles": 19260
+        },
+        {
+          "kind": "beard",
+          "id": "trama-circle",
+          "bytes": 1513436,
+          "sha256": "b8c7f2f1e9e14494aeff5b5143fc33eb279671ceeb68c0a0caa6f7228ed37848",
+          "vertices": 34362,
+          "triangles": 57270
+        },
+        {
+          "kind": "beard",
+          "id": "trama-coily-full",
+          "bytes": 2969144,
+          "sha256": "4de7cf8ec67fd3b41d4620772a67c550023a1d6a028e62d4f3a9c1eda37d4641",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-curly-full",
+          "bytes": 2969144,
+          "sha256": "f4edd926579a47244c3dda1a4d4e5f5d46369bd683316d9ac14f6e496457bf84",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-goatee",
+          "bytes": 1190296,
+          "sha256": "3290a28290b3a74454f788a121139b2b7dd0069f8dfecfe908facd6b9a85afb5",
+          "vertices": 27018,
+          "triangles": 45030
+        },
+        {
+          "kind": "beard",
+          "id": "trama-heavy-stubble",
+          "bytes": 2969156,
+          "sha256": "18f4b105fcc1ece52191c624224158a5f510f9bad31e4103078b9d776afe7efa",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-light-stubble",
+          "bytes": 2969156,
+          "sha256": "7b340c826aef869d9e3299734738d4ddd8e026ab89d328d6777e59387d7c9a2d",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-limited-coverage",
+          "bytes": 2008468,
+          "sha256": "4efb6d7a53ce10e401da22c5de435a917d1cc66c5fc6ea5d71cb65e7a8a0c4eb",
+          "vertices": 45612,
+          "triangles": 76020
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-curly",
+          "bytes": 2969144,
+          "sha256": "6ffdbb54fe754c9676308880fb4d51cdce1e549aae3b344223895dfad448d8a5",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-tapered",
+          "bytes": 2969156,
+          "sha256": "5d882728c2d7820550ce21b5a51f58280b536d495eb743c3acc5ef287e7a0d9b",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-medium-rounded",
+          "bytes": 2969160,
+          "sha256": "41b44de9e96a0755e6df5863b3f6058c21f0311259d76584d802dfe383abb55a",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-moustache",
+          "bytes": 187632,
+          "sha256": "dfddc9eb867243fe36a1107d58120915d54dd20b0bae7fa904320057ec3eac3f",
+          "vertices": 4230,
+          "triangles": 7050
+        },
+        {
+          "kind": "beard",
+          "id": "trama-rounded-full",
+          "bytes": 2969148,
+          "sha256": "da00d751ac5cc59fab5531ac17174976afd13224df0161761b180c7b5a37f9c6",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-short-boxed",
+          "bytes": 2752140,
+          "sha256": "c14d4ce1314368a8864b2c3ca1a7c3ed9304f8ffdd7de6eae4f70df4ea3a21ae",
+          "vertices": 62514,
+          "triangles": 104190
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soft-stubble",
+          "bytes": 2969148,
+          "sha256": "7d79298451e26ede9305edfea49600cc555e0aa4136c70d5360acf4076eea0e8",
+          "vertices": 67446,
+          "triangles": 112410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soul-patch",
+          "bytes": 142496,
+          "sha256": "4b8b432816367404a24747e1029b96940c020ff808cd36739bd15db9acc6a37a",
+          "vertices": 3204,
+          "triangles": 5340
+        },
+        {
+          "kind": "beard",
+          "id": "trama-van-dyke",
+          "bytes": 1375636,
+          "sha256": "7df4a4fd2c2535babc36d156f3f3575be89b7a3c68dcc5323913652470e183ef",
+          "vertices": 31230,
+          "triangles": 52050
+        }
+      ],
+      "actualRepresentativeRenders": [
+        {
+          "view": "front",
+          "sha256": "fdd7eacd9f159c1f4fc92c6a1308616c5c4ebf6aabd9c49292666a4d17088a63"
+        },
+        {
+          "view": "three-quarter",
+          "sha256": "239c6207760bad779bc13db0f303fbdf7211f725b005b8330a6c44410be58e72"
+        },
+        {
+          "view": "profile",
+          "sha256": "67ec4ac7e07e6ccaaf472413a7e98e1e20150f06b54b92f6b81d3e3f34f6de04"
+        },
+        {
+          "view": "back",
+          "sha256": "8acd184e1330f8ea991d064f414b0561ddf5b7d449659420e5b7c720f649c0bc"
+        }
+      ],
+      "picture": "cloudcompare-blender-mpfb-catalog-maya-costa.png",
+      "fitInputScope": "Same authorized six labeled synthetic photos; geometry fitted or inferred, not measured."
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "jobId": "b1206231-fd6b-4506-9457-f38ecd20c0d8",
+      "catalog": {
+        "version": "trama-surface-styles-v1",
+        "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+        "hairCount": 51,
+        "beardCount": 25,
+        "scope": "Actual immutable exported catalog; original styles retain their historical source geometry."
+      },
+      "nativeElapsedMs": 6497,
+      "retainedBytesAtProcessing": 473519199,
+      "decodedStyleMeshes": [
+        {
+          "kind": "hair",
+          "id": "afro01",
+          "bytes": 4902044,
+          "sha256": "09cc8ce1090b1d757078cc508ab69cb5d305e9f474814ff5f1acc239cb495958",
+          "vertices": 2196,
+          "triangles": 2192
+        },
+        {
+          "kind": "hair",
+          "id": "bob01",
+          "bytes": 4469716,
+          "sha256": "d1988db717e52c5507bef5ba3cb58c398f58e3a7d0e25831a23a751838c6bb03",
+          "vertices": 5432,
+          "triangles": 8474
+        },
+        {
+          "kind": "hair",
+          "id": "bob02",
+          "bytes": 3442668,
+          "sha256": "adc58dfa28a02f14e8041d670b625911610c94f868b1a74a05c6e7f4f73e66f4",
+          "vertices": 1688,
+          "triangles": 2248
+        },
+        {
+          "kind": "hair",
+          "id": "braid01",
+          "bytes": 2799028,
+          "sha256": "f9c5b306f7cd4732258166e859f63c0745e3f8ee0c5de61c688dbade24d2b6ff",
+          "vertices": 4663,
+          "triangles": 5518
+        },
+        {
+          "kind": "hair",
+          "id": "long01",
+          "bytes": 3047336,
+          "sha256": "67578fe157806fd6518d6b0e0ca59142f0a5ed58fbefade51f97e4b05b507edb",
+          "vertices": 3312,
+          "triangles": 4108
+        },
+        {
+          "kind": "hair",
+          "id": "ponytail01",
+          "bytes": 4069228,
+          "sha256": "e871f208e8521426da18fafe9901e69efe9ec8fc2e52239edeb1c5aea9ebd2d1",
+          "vertices": 3902,
+          "triangles": 5352
+        },
+        {
+          "kind": "hair",
+          "id": "rounded-coils",
+          "bytes": 9232892,
+          "sha256": "5987928bb77eb2e477aa2bb43f477fb70182821b87c548e611b207bbb992a2b6",
+          "vertices": 198960,
+          "triangles": 371392
+        },
+        {
+          "kind": "hair",
+          "id": "short01",
+          "bytes": 2475272,
+          "sha256": "4f717cbd2aab56311b7d868b0ff16b467277e746b8a9fc90a557792fbdfdb6be",
+          "vertices": 3050,
+          "triangles": 3678
+        },
+        {
+          "kind": "hair",
+          "id": "short02",
+          "bytes": 3632472,
+          "sha256": "a700d6e9455fb6dce46adfef13465ed90cb8d0a3a20933c33a05704c1dd93c81",
+          "vertices": 1794,
+          "triangles": 3344
+        },
+        {
+          "kind": "hair",
+          "id": "short03",
+          "bytes": 2439004,
+          "sha256": "d0a9e0d9db7575e887699e2512a9013c33bd811c0f12cc6f1d7bcffaa90ad984",
+          "vertices": 1034,
+          "triangles": 1922
+        },
+        {
+          "kind": "hair",
+          "id": "short04",
+          "bytes": 2347332,
+          "sha256": "e29911a548e62307660c959fc8e8043dc904d69fe788b467ecf61db05c6632d4",
+          "vertices": 983,
+          "triangles": 1050
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-coily",
+          "bytes": 927744,
+          "sha256": "25796d29d82489a5452ceb9fba70211694db526de517f921fce546daf2553b0b",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-curly",
+          "bytes": 927748,
+          "sha256": "3a581b8e87808090f7030da7a609d500140ad792037a2afc798b024cdd0c8f15",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-straight",
+          "bytes": 613848,
+          "sha256": "1db8034a9fa20f92dd391157cc46fed08315d98b03df53046a77fa277ded9804",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-buzz-wavy",
+          "bytes": 613816,
+          "sha256": "e7704c594a7c99c46b490f3d0c550aa147479fa18e426e30ff61f0dc11f320e5",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-coily",
+          "bytes": 927744,
+          "sha256": "1d1dcc8dc4039787e60732dda59ddd61a7e57a17966a90c37ab8bff288442b32",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-curly",
+          "bytes": 927740,
+          "sha256": "a83aa295f516727841239a2243e5742ee184b8ff4bbf408550fed0cca67ef1ae",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-straight",
+          "bytes": 613844,
+          "sha256": "72ad75968be110a370d3328403817fdce25fcf2b2c451c123a86a90b2cfd1e3f",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crew-wavy",
+          "bytes": 613816,
+          "sha256": "ca55b059cd245f995c7610cedfc88f9437fc877dd42d2fc7925d20a7a510a525",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-coily",
+          "bytes": 927744,
+          "sha256": "e7fc4a16f1f35955c2c6e9137dad1da18c5d5384bc021dc43842e9d3636269f0",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-curly",
+          "bytes": 927744,
+          "sha256": "1a9f493e78bd78f327073ec55924d408b23ce6d605bb91be06fb49b6e24d5ed2",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-straight",
+          "bytes": 613848,
+          "sha256": "f6895605ab2a23a78401fc29be45fe079a6c60b092fc338170b205b03ec5f6eb",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-crop-wavy",
+          "bytes": 613816,
+          "sha256": "bbfc98ede02b788af9e04c9b4f48d7ddfa49586c571bd1864e32369d2e94a6e0",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-coily",
+          "bytes": 927736,
+          "sha256": "1ba276688b272fd13eccba3af860aa0deae37568d234ee3710a58f2e37f39443",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-curly",
+          "bytes": 927736,
+          "sha256": "6bee635e3f6f94c70bb5fb0c95d542c7faa93cbe2533fa36a64237b1622ca160",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-straight",
+          "bytes": 299460,
+          "sha256": "5a0d7f636f8f6dccad74b1be579678adf4503c7741fe700c6d9090cbdfc52db6",
+          "vertices": 6593,
+          "triangles": 11554
+        },
+        {
+          "kind": "hair",
+          "id": "trama-ivy-wavy",
+          "bytes": 613808,
+          "sha256": "6fd43c8f858394717826cf6d8a0fc7789693bdafa331bd6df888ad42f4407721",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-coily",
+          "bytes": 1378172,
+          "sha256": "2cc02b38a0921e1d858ed92d7b81ca15ae606a70ee291f10fdc7448b6c8b7869",
+          "vertices": 29909,
+          "triangles": 54816
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-curly",
+          "bytes": 1378176,
+          "sha256": "10821a2c0a7c284554956480fad6e9df5746da7d138b6b85ec56e27321a8d48b",
+          "vertices": 29909,
+          "triangles": 54816
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-straight",
+          "bytes": 907604,
+          "sha256": "8844b195c895cb6d57129a558ebcdc41de27ee213b2cd3c1a6e84af0c67fff03",
+          "vertices": 20105,
+          "triangles": 35208
+        },
+        {
+          "kind": "hair",
+          "id": "trama-long-wavy",
+          "bytes": 907576,
+          "sha256": "d048c9bbad1c79f5ae046d348c0a16d48750524397d48b85f6e69c62ec9634bc",
+          "vertices": 20105,
+          "triangles": 35208
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-coily",
+          "bytes": 927776,
+          "sha256": "06ac191e8a8c0f180c5c5f17191ef317e6729235656b323122be0745592ca5f9",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-curly",
+          "bytes": 927780,
+          "sha256": "793ba8332cca68443cd800feabad879fbda98f5caabafa46224f3eb9f4b91e39",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-straight",
+          "bytes": 613880,
+          "sha256": "ca2be4ff4b54b54763e8b9454ef45b816ca14a9dc07c0c99b7cb604771cae497",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-pompadour-wavy",
+          "bytes": 613848,
+          "sha256": "1ffa27ec754541dd47ca4b03023a5d1d97e07decb00eb029dd84b0e2bd06affa",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-coily",
+          "bytes": 927752,
+          "sha256": "4b6887ea1637be0b16196c269f903424304165cc1096de5dcf0791116c10b61d",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-curly",
+          "bytes": 927752,
+          "sha256": "7d9d46a9d732d489836e8540f3abaf439d1b852f1b26316d6295fdd27e91b1fe",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-straight",
+          "bytes": 613852,
+          "sha256": "7256a4fc89af72ac227faf0c86d362c0a0358590f7bd7abefd0b1b4c04519489",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-quiff-wavy",
+          "bytes": 613820,
+          "sha256": "04389c393f8ea5275d60840c58950f323b83adb21aa2804df922d2f5fd7aaa9a",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-coily",
+          "bytes": 1378176,
+          "sha256": "5d1bf68e19b4e36ddd56715ba587abdbc5dab40a6878ac71a63ad79e04c87c25",
+          "vertices": 29909,
+          "triangles": 54816
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-curly",
+          "bytes": 1378180,
+          "sha256": "760fffd39edd1506a2cb369d06f12512d7a9ee992049fcea28005d84f8b00fe5",
+          "vertices": 29909,
+          "triangles": 54816
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-straight",
+          "bytes": 907608,
+          "sha256": "a338bb4ac7da75705360ab0f4659b5891597505dfdee1ccd7a4f3701d3c98d63",
+          "vertices": 20105,
+          "triangles": 35208
+        },
+        {
+          "kind": "hair",
+          "id": "trama-shag-wavy",
+          "bytes": 907576,
+          "sha256": "6bca600516285d2be9f4ea0e1f91e3737dbff8e28be2de4178b3401ce89460b5",
+          "vertices": 20105,
+          "triangles": 35208
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-coily",
+          "bytes": 927776,
+          "sha256": "5e6dfb6aa103d91125170b71943f11eaf8ba1785ccaf0038daca4cf288d4a7f4",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-curly",
+          "bytes": 927776,
+          "sha256": "f1e0427cfde484629ff0988de11ce113112fbc2f1cd24ab17ea4cca2a38677d9",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-straight",
+          "bytes": 613884,
+          "sha256": "416a700cac6f0c4384e4d011168781f678436b820aad2d132c166a4ef637a326",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-side-part-wavy",
+          "bytes": 613848,
+          "sha256": "6eca1ebc85536c6b80d598646677e46defb8b75460eff1c0649cbcd85726d108",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-coily",
+          "bytes": 927748,
+          "sha256": "0579296733c159ff7ceb549dc97bab6e84a72d09e469d1c432551c21f7f7c075",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-curly",
+          "bytes": 927752,
+          "sha256": "48d5abe1e13555f4b5ad27560eaf8825b9d32338d4739ddc17c7c5661e8d768f",
+          "vertices": 20117,
+          "triangles": 36864
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-straight",
+          "bytes": 613848,
+          "sha256": "aa7e0ac6bb8702d6575b48477e292ee863b33effb8d1581dbac03935bba40999",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "hair",
+          "id": "trama-slick-wavy",
+          "bytes": 613824,
+          "sha256": "1e0c4a163cceec143fff1ff773c46cbf2b2d036a321bbaf2493482a34fcde09c",
+          "vertices": 13577,
+          "triangles": 23784
+        },
+        {
+          "kind": "beard",
+          "id": "chinstrap",
+          "bytes": 3243384,
+          "sha256": "e986e71f5dd24ecf7bd5baf855944b620b2c3bc6cedef0f4ef1864a63b20fe88",
+          "vertices": 115794,
+          "triangles": 38598
+        },
+        {
+          "kind": "beard",
+          "id": "full",
+          "bytes": 16937304,
+          "sha256": "e70c4d630d2f30770e51907b5ab7e9c4cbaa6856e92948593b48c86fcedf1a95",
+          "vertices": 604863,
+          "triangles": 201621
+        },
+        {
+          "kind": "beard",
+          "id": "goatee",
+          "bytes": 7866820,
+          "sha256": "5602b2d1f53453121a79d53d72d716719a0b52855cd7fea4be3beee38c2dfc12",
+          "vertices": 280917,
+          "triangles": 93639
+        },
+        {
+          "kind": "beard",
+          "id": "moustache",
+          "bytes": 1261464,
+          "sha256": "7decb8ae90805b0b6ce18655f286ca6c9d882b6ac6a52c3ad32d4e0e18b08576",
+          "vertices": 48474,
+          "triangles": 16158
+        },
+        {
+          "kind": "beard",
+          "id": "stubble",
+          "bytes": 16937308,
+          "sha256": "1fd1a747a9808f180650e81369f4d2caa805218c4ebc38f5a8048775bd389576",
+          "vertices": 604863,
+          "triangles": 201621
+        },
+        {
+          "kind": "beard",
+          "id": "trama-anchor",
+          "bytes": 1180792,
+          "sha256": "691ae911381452f5cf089db9fdfc07ff2315d4e406783fa2fa887d8355cdad6c",
+          "vertices": 26802,
+          "triangles": 44670
+        },
+        {
+          "kind": "beard",
+          "id": "trama-beardstache",
+          "bytes": 2967572,
+          "sha256": "6e98e25293e9617bd05141a8942df1896e970c24f04ab0244e5c100790d268d3",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chevron",
+          "bytes": 197128,
+          "sha256": "a529340cfb06039b65158cf1bfc38fd39759506150193aa63409783147d0b197",
+          "vertices": 4446,
+          "triangles": 7410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-chinstrap",
+          "bytes": 521072,
+          "sha256": "73e5898c99aaeee5b5d6faa4bbd84a164a1ed477af7b94245b684c30107b80ab",
+          "vertices": 11808,
+          "triangles": 19680
+        },
+        {
+          "kind": "beard",
+          "id": "trama-circle",
+          "bytes": 1512636,
+          "sha256": "17a38b1059c15c7804974c05ed03cd8d62d028d7ce688b1d6a13ba19a9a74cc2",
+          "vertices": 34344,
+          "triangles": 57240
+        },
+        {
+          "kind": "beard",
+          "id": "trama-coily-full",
+          "bytes": 2967556,
+          "sha256": "d453e9fc14e9f58adf972f0a483fdbc3ae71593eaaa25fb23a2c5c284d231a15",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-curly-full",
+          "bytes": 2967556,
+          "sha256": "b183faf0f8d31c7573e6ee9f6e68ce721ddb504f4087d1c07fd0dccb92185066",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-goatee",
+          "bytes": 1159408,
+          "sha256": "22d683725f91ff29a2cfb188812dde00d2a129382de59d373e7cd3e10d622ff9",
+          "vertices": 26316,
+          "triangles": 43860
+        },
+        {
+          "kind": "beard",
+          "id": "trama-heavy-stubble",
+          "bytes": 2967572,
+          "sha256": "8eb6ae1cfe4ba78cf5c067b710c553689f43e401a1ab62c67c475c5c68d02d81",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-light-stubble",
+          "bytes": 2967572,
+          "sha256": "44cf0354e6e2abda3405f3b3c9cc2aa45090645a7a9feb42d35f55892a76f6c7",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-limited-coverage",
+          "bytes": 2023520,
+          "sha256": "7be26aaf792b2273586585394fdf9055382088323baa3f86604f5cea5a0bc42d",
+          "vertices": 45954,
+          "triangles": 76590
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-curly",
+          "bytes": 2967556,
+          "sha256": "3f82270700bcc0d6356d3bc23a8c9ac997f48091bd054ac4f7de97ffd1b64238",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-long-tapered",
+          "bytes": 2967572,
+          "sha256": "b3dfd53d97e0c10006f9f2f7e368ecbd75ab450156d89fc7ab725d91b241b97e",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-medium-rounded",
+          "bytes": 2967576,
+          "sha256": "1fdd5699173ebf8ae08395586f60870c261c90f2a88cd803bebb213651314370",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-moustache",
+          "bytes": 197132,
+          "sha256": "d74957368444f6d09649fd6ce4227cb58a07a114844758d37c3efea43abce158",
+          "vertices": 4446,
+          "triangles": 7410
+        },
+        {
+          "kind": "beard",
+          "id": "trama-rounded-full",
+          "bytes": 2967564,
+          "sha256": "8b356819cbda45bb5159fbf1b0f61d9d103f5831b8f7e211196011a75844f43a",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-short-boxed",
+          "bytes": 2751348,
+          "sha256": "5bb2e8f03fd5c63852b33d86406b1ed0100e3952780a75d9333341fbe690d566",
+          "vertices": 62496,
+          "triangles": 104160
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soft-stubble",
+          "bytes": 2967564,
+          "sha256": "a36ca7e03b242cb2379454383705708b41f947d675a1042a3e32dde332dbf811",
+          "vertices": 67410,
+          "triangles": 112350
+        },
+        {
+          "kind": "beard",
+          "id": "trama-soul-patch",
+          "bytes": 142492,
+          "sha256": "465b0962f75faa6c3d40ded9e42058bccaf48138a8d8585a140561acc24e09ed",
+          "vertices": 3204,
+          "triangles": 5340
+        },
+        {
+          "kind": "beard",
+          "id": "trama-van-dyke",
+          "bytes": 1355044,
+          "sha256": "ceb647962c38248fa70e7f604197332dd1eecbea24db247f80b139b54053cfb3",
+          "vertices": 30762,
+          "triangles": 51270
+        }
+      ],
+      "actualRepresentativeRenders": [
+        {
+          "view": "front",
+          "sha256": "c73d6f53e818873d8e9ffffcc285f14dbba27b52f6678ff807c30d80a809eea0"
+        },
+        {
+          "view": "three-quarter",
+          "sha256": "07f9c63c034a74764d924f7db432b0a9cc4e683cf6a5606439912f751df8010a"
+        },
+        {
+          "view": "profile",
+          "sha256": "5c1c7604e6c3f16355fd84885c499cf0c7db1170c3bfffdfda2ada189871e0d9"
+        },
+        {
+          "view": "back",
+          "sha256": "a55eedcce0e69698ddcc80904cf3c481fda3d2ebf7eeefd300e8d561511d3b2e"
+        }
+      ],
+      "picture": "cloudcompare-blender-mpfb-catalog-noah-kim.png",
+      "fitInputScope": "Same authorized six labeled synthetic photos; geometry fitted or inferred, not measured."
+    }
+  ]
+}

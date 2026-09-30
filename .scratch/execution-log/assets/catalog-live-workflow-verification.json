@@ -1,0 +1,1820 @@
+{
+  "date": "2026-09-30T18:03:43.403063+00:00",
+  "scope": "Actual HTTP catalog, 60 models and 240 renders, native-file access, six real saved browser revisions and decoded private pictures, original client-scoped professional references, synthetic expected selection history. Native decoded geometry/edit and browser camera/reload checks are separate retained outputs. Professional acceptance and final route selection remain pending.",
+  "provenance": [
+    {
+      "id": "trama-buzz-straight",
+      "kind": "hair",
+      "label": "Close buzz / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-wavy",
+      "kind": "hair",
+      "label": "Close buzz / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-curly",
+      "kind": "hair",
+      "label": "Close buzz / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-coily",
+      "kind": "hair",
+      "label": "Close buzz / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-straight",
+      "kind": "hair",
+      "label": "Graduated crew / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-wavy",
+      "kind": "hair",
+      "label": "Graduated crew / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-curly",
+      "kind": "hair",
+      "label": "Graduated crew / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-coily",
+      "kind": "hair",
+      "label": "Graduated crew / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-straight",
+      "kind": "hair",
+      "label": "Ivy side sweep / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "straight",
+        "density": "sparse",
+        "hairline": "receding"
+      }
+    },
+    {
+      "id": "trama-ivy-wavy",
+      "kind": "hair",
+      "label": "Ivy side sweep / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-curly",
+      "kind": "hair",
+      "label": "Ivy side sweep / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-coily",
+      "kind": "hair",
+      "label": "Ivy side sweep / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-straight",
+      "kind": "hair",
+      "label": "Textured forward crop / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-wavy",
+      "kind": "hair",
+      "label": "Textured forward crop / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-curly",
+      "kind": "hair",
+      "label": "Textured forward crop / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-coily",
+      "kind": "hair",
+      "label": "Textured forward crop / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-straight",
+      "kind": "hair",
+      "label": "Defined side part / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-wavy",
+      "kind": "hair",
+      "label": "Defined side part / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-curly",
+      "kind": "hair",
+      "label": "Defined side part / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-coily",
+      "kind": "hair",
+      "label": "Defined side part / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-straight",
+      "kind": "hair",
+      "label": "Slicked back layers / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-wavy",
+      "kind": "hair",
+      "label": "Slicked back layers / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-curly",
+      "kind": "hair",
+      "label": "Slicked back layers / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-coily",
+      "kind": "hair",
+      "label": "Slicked back layers / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-straight",
+      "kind": "hair",
+      "label": "Raised front quiff / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "straight",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-wavy",
+      "kind": "hair",
+      "label": "Raised front quiff / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "wavy",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-curly",
+      "kind": "hair",
+      "label": "Raised front quiff / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "curly",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-coily",
+      "kind": "hair",
+      "label": "Raised front quiff / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-straight",
+      "kind": "hair",
+      "label": "Rounded pompadour / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "straight",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-wavy",
+      "kind": "hair",
+      "label": "Rounded pompadour / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "wavy",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-curly",
+      "kind": "hair",
+      "label": "Rounded pompadour / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "curly",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-coily",
+      "kind": "hair",
+      "label": "Rounded pompadour / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-straight",
+      "kind": "hair",
+      "label": "Layered medium shag / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-wavy",
+      "kind": "hair",
+      "label": "Layered medium shag / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-curly",
+      "kind": "hair",
+      "label": "Layered medium shag / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-coily",
+      "kind": "hair",
+      "label": "Layered medium shag / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-straight",
+      "kind": "hair",
+      "label": "Long flowing layers / straight",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-wavy",
+      "kind": "hair",
+      "label": "Long flowing layers / wavy",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-curly",
+      "kind": "hair",
+      "label": "Long flowing layers / curly",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-coily",
+      "kind": "hair",
+      "label": "Long flowing layers / coily",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-light-stubble",
+      "kind": "beard",
+      "label": "Light even stubble",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 1,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-heavy-stubble",
+      "kind": "beard",
+      "label": "Heavy stubble",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 3,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-soft-stubble",
+      "kind": "beard",
+      "label": "Soft wavy stubble",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 4,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-short-boxed",
+      "kind": "beard",
+      "label": "Short boxed beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "boxed",
+        "lengthMm": 9,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-rounded-full",
+      "kind": "beard",
+      "label": "Rounded short full beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 14,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-curly-full",
+      "kind": "beard",
+      "label": "Curly full beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 22,
+        "texture": "curly"
+      }
+    },
+    {
+      "id": "trama-coily-full",
+      "kind": "beard",
+      "label": "Coily full beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 26,
+        "texture": "coily"
+      }
+    },
+    {
+      "id": "trama-medium-rounded",
+      "kind": "beard",
+      "label": "Medium rounded beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 35,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-long-tapered",
+      "kind": "beard",
+      "label": "Long tapered beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "tapered",
+        "lengthMm": 65,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-long-curly",
+      "kind": "beard",
+      "label": "Long curly beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "tapered",
+        "lengthMm": 58,
+        "texture": "curly"
+      }
+    },
+    {
+      "id": "trama-circle",
+      "kind": "beard",
+      "label": "Connected circle beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "circle",
+        "lengthMm": 8,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-goatee",
+      "kind": "beard",
+      "label": "Rounded chin goatee",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "goatee",
+        "lengthMm": 12,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-anchor",
+      "kind": "beard",
+      "label": "Anchor beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "anchor",
+        "lengthMm": 9,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-van-dyke",
+      "kind": "beard",
+      "label": "Van Dyke beard and moustache",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "van-dyke",
+        "lengthMm": 14,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-moustache",
+      "kind": "beard",
+      "label": "Natural full moustache",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "moustache",
+        "lengthMm": 8,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-chevron",
+      "kind": "beard",
+      "label": "Chevron moustache",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "moustache",
+        "lengthMm": 13,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-beardstache",
+      "kind": "beard",
+      "label": "Moustache with short beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "beardstache",
+        "lengthMm": 5,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-chinstrap",
+      "kind": "beard",
+      "label": "Soft jawline chinstrap",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "chinstrap",
+        "lengthMm": 6,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-soul-patch",
+      "kind": "beard",
+      "label": "Small rounded soul patch",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "soul-patch",
+        "lengthMm": 5,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-limited-coverage",
+      "kind": "beard",
+      "label": "Limited cheek coverage beard",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "creator": "Trama original procedural asset generator",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "limited",
+        "lengthMm": 9,
+        "texture": "wavy"
+      }
+    }
+  ],
+  "retainedOptions": [
+    {
+      "candidate": "makehuman",
+      "optionId": "293b8f12-35b0-4ace-85c2-7a782c027f5f",
+      "parentId": "d2841cdc-0ebe-460b-9a8d-e6a2428e9473",
+      "revision": 2,
+      "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 5,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": [
+          {
+            "kind": "hair",
+            "center": [
+              -0.020571142867129983,
+              0.17789406569366203,
+              0.13999289493923084
+            ],
+            "normal": [
+              -0.2631549752353186,
+              0.7097919471799585,
+              0.653410170358085
+            ],
+            "radiusMm": 20,
+            "strengthMm": 3
+          }
+        ]
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "Standalone MakeHuman prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "supportDependency": null
+    },
+    {
+      "candidate": "blender-mpfb",
+      "optionId": "ea2830df-4dae-4d0e-b5fc-3ba7c4bc9c4d",
+      "parentId": "df8a19a1-e9b9-4f86-bcaa-25208655d3e4",
+      "revision": 2,
+      "runId": "3f6c06ee-7406-45f1-af00-6fb2d18cd714",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 0,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": []
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "MPFB prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "supportDependency": null
+    },
+    {
+      "candidate": "flame",
+      "optionId": "1fff849b-b3b4-448c-9f89-05c87fa89ef4",
+      "parentId": "e927c800-a0db-4b92-b453-26253ccf24dd",
+      "revision": 2,
+      "runId": "0c1e51d4-b944-4c8a-bb00-9cd66b9efc67",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 0,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": []
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "FLAME 2023 Open prior fitted to detected 2D photo landmarks. Entire surface is fitted or inferred, not measured 3D geometry. Hidden scalp, back and occluded face retain that prior.",
+      "supportDependency": null
+    },
+    {
+      "candidate": "open3d",
+      "optionId": "13ced3f4-e66d-4867-8ad0-220bc2ee6cbb",
+      "parentId": "1978e741-1dc3-4344-a01b-5e23553bb832",
+      "revision": 2,
+      "runId": "e333f024-9d23-4441-8c52-2bdd8abc91e7",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 0,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": []
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+      "supportDependency": {
+        "candidate": "makehuman",
+        "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+        "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+      }
+    },
+    {
+      "candidate": "meshlab",
+      "optionId": "a4dcc7d4-be8a-4a29-ac6e-5ca5e2f31f57",
+      "parentId": "9464f2d6-540e-43c4-aa1f-22f846c82574",
+      "revision": 2,
+      "runId": "60051f77-5a99-425f-a589-39c370fa6355",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 0,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": []
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+      "supportDependency": {
+        "candidate": "makehuman",
+        "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+        "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+      }
+    },
+    {
+      "candidate": "cloudcompare",
+      "optionId": "39e5ef61-5d01-4f10-94eb-96717d7cbbae",
+      "parentId": "e0cdd72e-ee2a-4d1d-a0b3-6c4dd335dd94",
+      "revision": 2,
+      "runId": "e51f43a4-2a48-41eb-89f6-4cd342a4a4d0",
+      "refinement": {
+        "version": "style-mesh-v2",
+        "hair": {
+          "lengthPercent": 90,
+          "widthPercent": 100,
+          "volumeMm": 0,
+          "color": "original"
+        },
+        "beard": {
+          "lengthPercent": 100,
+          "widthPercent": 90,
+          "volumeMm": 0,
+          "color": "brown"
+        },
+        "strokes": []
+      },
+      "picturePixels": [
+        400,
+        327
+      ],
+      "headScope": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+      "supportDependency": {
+        "candidate": "makehuman",
+        "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+        "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+      }
+    }
+  ],
+  "professionalReferences": [
+    {
+      "id": "285ac8f1-a952-454d-a156-3f8b466312cf",
+      "clientId": "a0b730e5-490f-488d-ae16-4f3812ee044f",
+      "assetId": "4c13d57a-6cf0-47ad-9d4a-6364e0b99901",
+      "kind": "beard",
+      "styleId": "trama-short-boxed",
+      "title": "Original synthetic short boxed beard reference",
+      "notes": "Original locally generated mannequin and independent reusable beard mesh, trama-surface-styles-v1 CC0 output. Synthetic style example; no actual haircut outcome or professional acceptance claimed.",
+      "creator": "Trama original procedural generator",
+      "license": "professional-owned",
+      "sourceUrl": "",
+      "createdAt": "2026-09-30T17:52:51.440688798Z"
+    },
+    {
+      "id": "bf6ec1b7-2974-44a4-9ebb-382aebd9a166",
+      "clientId": "a0b730e5-490f-488d-ae16-4f3812ee044f",
+      "assetId": "21a050c4-c909-4ad3-9076-0fa7f79e159b",
+      "kind": "hair",
+      "styleId": "trama-quiff-wavy",
+      "title": "Original synthetic wavy quiff reference",
+      "notes": "Original locally generated mannequin, CC0 output from trama-surface-styles-v1. Fictional style reference, not a client photograph or actual haircut. Reusable matching 3D asset; professional suitability pending.",
+      "creator": "Trama original procedural generator",
+      "license": "professional-owned",
+      "sourceUrl": "",
+      "createdAt": "2026-09-30T17:51:49.934365394Z"
+    }
+  ],
+  "syntheticSelectionVersion": 2,
+  "privacyChecks": "Anonymous saved proposal pictures, references and uploaded reference images denied. Studio isolation, source erasure/withdrawal and nonrecreation are verified by meaningful Go tests."
+}

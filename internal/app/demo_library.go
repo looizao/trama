@@ -38,21 +38,36 @@ func validDemoCandidate(id string) bool {
 }
 
 type DemoStyle struct {
-	ID          string  `json:"id"`
-	Kind        string  `json:"kind"`
-	Label       string  `json:"label"`
-	Length      string  `json:"length"`
-	LengthMm    float64 `json:"lengthMm"`
-	Texture     string  `json:"texture"`
-	Maintenance string  `json:"maintenance"`
-	License     string  `json:"license"`
-	Creator     string  `json:"creator"`
-	SourceURL   string  `json:"sourceUrl"`
-	ModelURL    string  `json:"modelUrl"`
-	RenderURL   string  `json:"renderUrl"`
-	Bytes       int64   `json:"bytes"`
-	Glb         string  `json:"-"`
-	Render      string  `json:"-"`
+	ID                     string          `json:"id"`
+	Kind                   string          `json:"kind"`
+	Label                  string          `json:"label"`
+	Length                 string          `json:"length"`
+	LengthMm               float64         `json:"lengthMm"`
+	Texture                string          `json:"texture"`
+	Maintenance            string          `json:"maintenance"`
+	Density                string          `json:"density"`
+	Coverage               string          `json:"coverage"`
+	Deprecated             bool            `json:"deprecated,omitempty"`
+	Recipe                 json.RawMessage `json:"recipe,omitempty"`
+	LicenseURL             string          `json:"licenseUrl,omitempty"`
+	LicenseVersion         string          `json:"licenseVersion,omitempty"`
+	AcquisitionDate        string          `json:"acquisitionDate,omitempty"`
+	AttributionRequirement string          `json:"attributionRequirement,omitempty"`
+	Modifications          []string        `json:"modifications,omitempty"`
+	Views                  []DemoStyleView `json:"views,omitempty"`
+	License                string          `json:"license"`
+	Creator                string          `json:"creator"`
+	SourceURL              string          `json:"sourceUrl"`
+	ModelURL               string          `json:"modelUrl"`
+	RenderURL              string          `json:"renderUrl"`
+	Bytes                  int64           `json:"bytes"`
+	Glb                    string          `json:"-"`
+	Render                 string          `json:"-"`
+}
+type DemoStyleView struct {
+	View      string `json:"view"`
+	Render    string `json:"render"`
+	RenderURL string `json:"renderUrl"`
 }
 
 func demoAssetRoot() string { return strings.TrimSpace(os.Getenv("DEMO_ASSET_DIR")) }
@@ -87,6 +102,9 @@ func readDemoStyles(kind string) ([]DemoStyle, error) {
 		s.Kind = kind
 		s.ModelURL = "/api/demo-library/" + kind + "/" + s.ID + "/model"
 		s.RenderURL = "/api/demo-library/" + kind + "/" + s.ID + "/render"
+		for i, view := range s.Views {
+			s.Views[i].RenderURL = "/api/demo-library/" + kind + "/" + s.ID + "/render-" + view.View
+		}
 		styles = append(styles, s)
 	}
 	return styles, nil
@@ -112,6 +130,7 @@ func (a *App) demoLibraryContent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	file := ""
+	expectedFile := ""
 	if kind == "head" && id == "neutral" && format == "model" {
 		file = "neutral-head.glb"
 	} else {
@@ -124,18 +143,23 @@ func (a *App) demoLibraryContent(w http.ResponseWriter, r *http.Request) {
 			if s.ID == id {
 				if format == "model" {
 					file = s.Glb
+					expectedFile = kind + "/" + id + ".glb"
 				} else if format == "render" {
 					file = s.Render
+					expectedFile = kind + "/" + id + ".png"
+				} else {
+					for _, view := range s.Views {
+						if format == "render-"+view.View && (view.View == "front" || view.View == "three-quarter" || view.View == "profile" || view.View == "back") {
+							file = view.Render
+							expectedFile = kind + "/" + id + "-" + view.View + ".png"
+						}
+					}
 				}
 			}
 		}
 	}
 	if kind == "hair" || kind == "beard" {
-		extension := ".glb"
-		if format == "render" {
-			extension = ".png"
-		}
-		if file != kind+"/"+id+extension {
+		if expectedFile == "" || file != expectedFile {
 			problem(w, 404, "catalog asset not found")
 			return
 		}

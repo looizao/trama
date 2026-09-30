@@ -1,0 +1,4125 @@
+{
+  "date": "2026-09-30T14:40:15-0300",
+  "scope": "Real supporting processing of identified fitted heads and unchanged six-photo inputs. No raw-photo reconstruction attributed to component, no measured scan or real likeness proof. Full editing/expected-result journeys and professional review remain pending.",
+  "results": [
+    {
+      "fictionalCase": "alex-ramos",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+      "jobId": "60051f77-5a99-425f-a589-39c370fa6355",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 102433,
+            "path": "style-catalog.json"
+          },
+          {
+            "bytes": 48845,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1669,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 319829,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795708,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 18271,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 98242,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 603370,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 618185,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 618223,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 621663,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 621706,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 626743,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852672,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501464,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 556840,
+            "path": "hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 556808,
+            "path": "hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 843664,
+            "path": "hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 556844,
+            "path": "hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 843660,
+            "path": "hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 843664,
+            "path": "hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 270800,
+            "path": "hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 556804,
+            "path": "hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1256012,
+            "path": "hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 825764,
+            "path": "hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 825732,
+            "path": "hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 843700,
+            "path": "hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 843704,
+            "path": "hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 556872,
+            "path": "hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 843672,
+            "path": "hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 556856,
+            "path": "hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 825764,
+            "path": "hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 825732,
+            "path": "hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 843704,
+            "path": "hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 843700,
+            "path": "hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 556872,
+            "path": "hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 556852,
+            "path": "hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 556820,
+            "path": "hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1811580,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9517596,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4115632,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 656176,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 9517604,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 1175248,
+            "path": "beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 176540,
+            "path": "beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 580472,
+            "path": "beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1449280,
+            "path": "beard/trama-circle.glb"
+          },
+          {
+            "bytes": 3028540,
+            "path": "beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 3028544,
+            "path": "beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1163368,
+            "path": "beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 1939564,
+            "path": "beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 3028560,
+            "path": "beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 176540,
+            "path": "beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2808376,
+            "path": "beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 136952,
+            "path": "beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1338412,
+            "path": "beard/trama-van-dyke.glb"
+          },
+          {
+            "bytes": 58830,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49599,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 59006,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33008,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 47238,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19867,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 4537548,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 2835656,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 8470876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501464,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "upstream/hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "upstream/hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "upstream/hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "upstream/hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "upstream/hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "upstream/hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 556840,
+            "path": "upstream/hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 556808,
+            "path": "upstream/hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 843664,
+            "path": "upstream/hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 843668,
+            "path": "upstream/hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 556844,
+            "path": "upstream/hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "upstream/hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 843660,
+            "path": "upstream/hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 843664,
+            "path": "upstream/hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 270800,
+            "path": "upstream/hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 556804,
+            "path": "upstream/hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "upstream/hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1256012,
+            "path": "upstream/hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 825764,
+            "path": "upstream/hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 825732,
+            "path": "upstream/hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 843700,
+            "path": "upstream/hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 843704,
+            "path": "upstream/hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 556872,
+            "path": "upstream/hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "upstream/hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "upstream/hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 843672,
+            "path": "upstream/hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 556856,
+            "path": "upstream/hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 556816,
+            "path": "upstream/hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "upstream/hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1256016,
+            "path": "upstream/hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 825764,
+            "path": "upstream/hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 825732,
+            "path": "upstream/hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 843704,
+            "path": "upstream/hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 843700,
+            "path": "upstream/hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 556872,
+            "path": "upstream/hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 556848,
+            "path": "upstream/hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "upstream/hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 843676,
+            "path": "upstream/hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 556852,
+            "path": "upstream/hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 556820,
+            "path": "upstream/hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1811580,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9517596,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4115632,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 656176,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 9517604,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 1175248,
+            "path": "upstream/beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "upstream/beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 176540,
+            "path": "upstream/beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 580472,
+            "path": "upstream/beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1449280,
+            "path": "upstream/beard/trama-circle.glb"
+          },
+          {
+            "bytes": 3028540,
+            "path": "upstream/beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 3028544,
+            "path": "upstream/beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1163368,
+            "path": "upstream/beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "upstream/beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "upstream/beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 1939564,
+            "path": "upstream/beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "upstream/beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 3028556,
+            "path": "upstream/beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 3028560,
+            "path": "upstream/beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 176540,
+            "path": "upstream/beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "upstream/beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2808376,
+            "path": "upstream/beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 3028548,
+            "path": "upstream/beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 136952,
+            "path": "upstream/beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1338412,
+            "path": "upstream/beard/trama-van-dyke.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb",
+          "trama-anchor": "beard/trama-anchor.glb",
+          "trama-beardstache": "beard/trama-beardstache.glb",
+          "trama-chevron": "beard/trama-chevron.glb",
+          "trama-chinstrap": "beard/trama-chinstrap.glb",
+          "trama-circle": "beard/trama-circle.glb",
+          "trama-coily-full": "beard/trama-coily-full.glb",
+          "trama-curly-full": "beard/trama-curly-full.glb",
+          "trama-goatee": "beard/trama-goatee.glb",
+          "trama-heavy-stubble": "beard/trama-heavy-stubble.glb",
+          "trama-light-stubble": "beard/trama-light-stubble.glb",
+          "trama-limited-coverage": "beard/trama-limited-coverage.glb",
+          "trama-long-curly": "beard/trama-long-curly.glb",
+          "trama-long-tapered": "beard/trama-long-tapered.glb",
+          "trama-medium-rounded": "beard/trama-medium-rounded.glb",
+          "trama-moustache": "beard/trama-moustache.glb",
+          "trama-rounded-full": "beard/trama-rounded-full.glb",
+          "trama-short-boxed": "beard/trama-short-boxed.glb",
+          "trama-soft-stubble": "beard/trama-soft-stubble.glb",
+          "trama-soul-patch": "beard/trama-soul-patch.glb",
+          "trama-van-dyke": "beard/trama-van-dyke.glb"
+        },
+        "candidate": "meshlab",
+        "catalog": {
+          "beardCount": 25,
+          "hairCount": 51,
+          "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+          "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "version": "trama-surface-styles-v1"
+        },
+        "completedAt": "2026-09-30T17:40:06.320763+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7212,
+              "vertices": 3746
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000518
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 5.7e-05
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6.9e-05
+            },
+            {
+              "after": {
+                "triangles": 9618,
+                "vertices": 9759
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 4949
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.005023
+            },
+            {
+              "after": {
+                "triangles": 7212,
+                "vertices": 8556
+              },
+              "before": {
+                "triangles": 9618,
+                "vertices": 9759
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7213
+              },
+              "returned": {},
+              "seconds": 0.028102
+            },
+            {
+              "after": {
+                "triangles": 7212,
+                "vertices": 3746
+              },
+              "before": {
+                "triangles": 7212,
+                "vertices": 8556
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000631
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.4989519665250555e-05,
+                "diag_mesh_0": 0.646600067615509,
+                "diag_mesh_1": 0.6465783676924965,
+                "max": 0.00026735119172371924,
+                "mean": 2.2689475372317247e-05,
+                "min": 0,
+                "n_samples": 4949
+              },
+              "requestedSamples": 4949
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.477085192571394e-05,
+                "diag_mesh_0": 0.6465783715248108,
+                "diag_mesh_1": 0.6466000908143555,
+                "max": 0.00023042022075969726,
+                "mean": 1.2898412933282088e-05,
+                "min": 0,
+                "n_samples": 3746
+              },
+              "requestedSamples": 3746
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7212,
+              "vertices": 3746
+            },
+            "before": {
+              "triangles": 9618,
+              "vertices": 4949
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.00023042022075969726,
+                "meanMetres": 1.2898412933282088e-05,
+                "rmsMetres": 3.477085192571394e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00026735119172371924,
+                "meanMetres": 2.2689475372317247e-05,
+                "rmsMetres": 4.4989519665250555e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7213
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "7de2b7e08a09b918f0977279425a54250d36f27b1b8f3fc48cd60f9f2074f547"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "ff107020f37f05178b6ff470159cbe82da2d03a4f9b6091b15ac3030faa0aed3"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "be62ce6ca9382c659ac0eec33817570bc6997a2c748f3d3dca02d49f2883e6f3"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "fddda071524561180e06c52e335e2e548949fddd739002379ff876748cbd2a1f"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "d198cb955e8ce8ea42503450634991c456f2b9765d6d929319bd84500f11413e"
+              },
+              {
+                "path": "beard/trama-anchor.glb",
+                "sha256": "1bc9830df0324b99734e36e9f2f0a5ba8b626672c3ebee78d109469207ed8611"
+              },
+              {
+                "path": "beard/trama-beardstache.glb",
+                "sha256": "9f74b751fadd7086864690d877e3fac417603d2ac53bcb7c7200345e09d91ef5"
+              },
+              {
+                "path": "beard/trama-chevron.glb",
+                "sha256": "d8bef1555a8240d2b7980e3f07c6d2d7db0ff24a655672ce29a1c27e72d005e4"
+              },
+              {
+                "path": "beard/trama-chinstrap.glb",
+                "sha256": "849846c635b65a95be621f81429fdc9fbedc796535208082f756e3add303abbf"
+              },
+              {
+                "path": "beard/trama-circle.glb",
+                "sha256": "5b0b97642720cc78a73331e5f21be1058c3ba7f62e65edbdb50b35c541512f73"
+              },
+              {
+                "path": "beard/trama-coily-full.glb",
+                "sha256": "2a2422c1390cddc062048ec5a893efba36309a6162021ef9de61954b97d3566f"
+              },
+              {
+                "path": "beard/trama-curly-full.glb",
+                "sha256": "7f029e2f6bc83a9cc9451961a43e54a97ad6eea480867504296a58518c07ac1e"
+              },
+              {
+                "path": "beard/trama-goatee.glb",
+                "sha256": "872fc0f509c1abac6c336137e123437cf9c1a257edb66d9b5515b2b60ad177a5"
+              },
+              {
+                "path": "beard/trama-heavy-stubble.glb",
+                "sha256": "a5fa51e5e7a60d453e05b50b37a3a10798ad9e5e58cb92d3f309ac51432d7f79"
+              },
+              {
+                "path": "beard/trama-light-stubble.glb",
+                "sha256": "cfcdc51efb36c373ce0279b46d94f06cf3f55894e15aac4d55eb1aa76f0e8fc9"
+              },
+              {
+                "path": "beard/trama-limited-coverage.glb",
+                "sha256": "c268a65eddfda043cbf9157682bd1360fc885f5b1c78152f9d87c96d8bce1c79"
+              },
+              {
+                "path": "beard/trama-long-curly.glb",
+                "sha256": "4b929592fca99f2e0cf6e8b58b4f9fd9c74809363a4299ec3806e6d07452a085"
+              },
+              {
+                "path": "beard/trama-long-tapered.glb",
+                "sha256": "3e81726bde2008799c2d4bfc59803fa9512058189b6d18173bbf1f6c24a9c962"
+              },
+              {
+                "path": "beard/trama-medium-rounded.glb",
+                "sha256": "da71a6495346603fc952e087de341d0f5b8feb44b8fb77dacb7317f35f54b52a"
+              },
+              {
+                "path": "beard/trama-moustache.glb",
+                "sha256": "a2cdbf34c4fcce3adf4dafd73bbdb6071f47f2666e3a89e6fd5319284a6630a6"
+              },
+              {
+                "path": "beard/trama-rounded-full.glb",
+                "sha256": "adbbe787b04b540b246ee31206e1743e091ed7fb0b457070b7c16d713761fccd"
+              },
+              {
+                "path": "beard/trama-short-boxed.glb",
+                "sha256": "d2ae9c88efea2a60f94f867391fa17a840b0109068c1ea82d1c3f30246668e93"
+              },
+              {
+                "path": "beard/trama-soft-stubble.glb",
+                "sha256": "74267ab990aa0ea37035facd1c2eb05216d3bee560f20a4b38682f609bc6755d"
+              },
+              {
+                "path": "beard/trama-soul-patch.glb",
+                "sha256": "6f8d26f2a6cea1b37b936c4133bb6c0b38fcec2a96216717c8b667555aac2213"
+              },
+              {
+                "path": "beard/trama-van-dyke.glb",
+                "sha256": "da75c307e57490fc4a68f26f0fb546f320a49330de94755fd74b1ec40484e523"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4c6d03630b9bd4682bd6ee6ee16525899bb477a15d809a4812b0847cd3b6c3df"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "34b51b76cf3e2c92a6040089434ef6ceeed36da83bce7d8d2df93288da07f23a"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "a8789ac8c31f3fea762a8c4c4a10c97d68a358fdd5bc67b55e8f4158f09852ef"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "0116ac63cb043b2acd8ac9baf56b949a370905ebc1973cf4fcb2145e823ad701"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "e2f8e56381a144fc297fdcad781db4a482f29aaaa8fdea82a58da4607592ca23"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "e0c778a7adb2f5e7b36537aa1d2a74c9b41e192268a790c283d06499d465b1df"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "c9424b375bcaf3ec5b85eba403dd2f22b35cd9ee1a9a28303caaf04d60047367"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "bdd4f5954ca9f600aea2e107f716d8f360d953ed0ceef4b80e81e3224ce5c7bf"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "3b7ee2ccba012adaef3c25ccaf0c08e296c48341f6da8a9867cf7d12613f0416"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "b8d42996fc5fd7c7c464447f7aa991a32ea858c2667d0690ed1fb10c8c250e60"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "79d125ae6f11cb00d6743c7609150954de9117754bca9769db679d23f1127f5c"
+              },
+              {
+                "path": "hair/trama-buzz-coily.glb",
+                "sha256": "df48a6de7135dbc872ebc8edd96b81da8da9ec98e11234fefed1c767c3e0410a"
+              },
+              {
+                "path": "hair/trama-buzz-curly.glb",
+                "sha256": "3a12eaf0644dfc9da6c48700a1d3ed6ad9288f83a1b45ee4a53da476efef5c52"
+              },
+              {
+                "path": "hair/trama-buzz-straight.glb",
+                "sha256": "8346bb8e0e2dab642f47b8c7c5d56e72977860b5d8b770961caa1ee901c935cf"
+              },
+              {
+                "path": "hair/trama-buzz-wavy.glb",
+                "sha256": "5e518fe26e746d24846b338a03a98d663c830d879183ea60c82ac7d7177a7152"
+              },
+              {
+                "path": "hair/trama-crew-coily.glb",
+                "sha256": "f750e865b00818c4a07af657c36d58e0316180db29f0193f34125730232b5ae7"
+              },
+              {
+                "path": "hair/trama-crew-curly.glb",
+                "sha256": "ba8b0b14429cad9bc035948781a6586af9d114c807cf79e6a2120b7291901401"
+              },
+              {
+                "path": "hair/trama-crew-straight.glb",
+                "sha256": "5a78ad719b37ef1bd40fa12c17f023b4f5d4f27be3287adc6a7a987c233e2bf6"
+              },
+              {
+                "path": "hair/trama-crew-wavy.glb",
+                "sha256": "c71c5ff90f759312ebc2c6c040ecb4bd08749e13c8e1d387c8de3a92c648a02c"
+              },
+              {
+                "path": "hair/trama-crop-coily.glb",
+                "sha256": "6b5185711c7ebdddf1845cb66a1ab8573cf5523b32382d27110f624d80b90fad"
+              },
+              {
+                "path": "hair/trama-crop-curly.glb",
+                "sha256": "61ecc0b019f2e0ec603e16862de15ee1c3662ed1601e18ec7398db139f39d5d4"
+              },
+              {
+                "path": "hair/trama-crop-straight.glb",
+                "sha256": "eb6caf1665f689e1030991b63cc921b6ff113fa03a16c26735e63f9c3030d8df"
+              },
+              {
+                "path": "hair/trama-crop-wavy.glb",
+                "sha256": "613ceff0764b08cfa673f35e3dc59f1f6444bdf32bf91081c66a8f98a038a70a"
+              },
+              {
+                "path": "hair/trama-ivy-coily.glb",
+                "sha256": "7673f6224b8a65e9830f3a794777acc6091ba8c72ea7a636f1a22d229a20c3fb"
+              },
+              {
+                "path": "hair/trama-ivy-curly.glb",
+                "sha256": "5335380f1e4adcb5968af5f4105493ff2536344f9829b2a94afad85d63f6438f"
+              },
+              {
+                "path": "hair/trama-ivy-straight.glb",
+                "sha256": "7f6837fdefac26115bba77bba26028cc4399cc3d789e3adb8772d8d2b617f94c"
+              },
+              {
+                "path": "hair/trama-ivy-wavy.glb",
+                "sha256": "38b413fb7dfd427de902a24e69b2b75ff183b08bbe3ef000fdefabda6966b91f"
+              },
+              {
+                "path": "hair/trama-long-coily.glb",
+                "sha256": "f83ec4dfda33c154b8d61bf21da4acce96218ada16cf4d994c9d08d4e1031bc0"
+              },
+              {
+                "path": "hair/trama-long-curly.glb",
+                "sha256": "bf3e1ed8a1ae9b1d05da226602063bef9e2d66e56c672418246bf2ecff40f83f"
+              },
+              {
+                "path": "hair/trama-long-straight.glb",
+                "sha256": "1f724119a7991ff5b4777b8ba6f7f1b3d7adebe836d00a36f7ffe7c6f5b5ebca"
+              },
+              {
+                "path": "hair/trama-long-wavy.glb",
+                "sha256": "f26ca34a09a833556ee4ac47a3c39ccfca624a89f1bf2761490dc3c10c6a2aa0"
+              },
+              {
+                "path": "hair/trama-pompadour-coily.glb",
+                "sha256": "e62583314e5e25b21e2eb8ed9ff60c1c616c810a2de4e96bc2f17f28242b3655"
+              },
+              {
+                "path": "hair/trama-pompadour-curly.glb",
+                "sha256": "4dea80473107509e1f341f5ef36d0511c67072c51ca2fb55a7a3bc379fac09e3"
+              },
+              {
+                "path": "hair/trama-pompadour-straight.glb",
+                "sha256": "48da7656499ac2724bf9829de1da1a8ca2f857ce802065bb875801cd07f47f83"
+              },
+              {
+                "path": "hair/trama-pompadour-wavy.glb",
+                "sha256": "a03d5f37bda525231de5b60f73f2cb4941f32f15255b2262c8c5866a9b799b31"
+              },
+              {
+                "path": "hair/trama-quiff-coily.glb",
+                "sha256": "bfb7e2fa70a0cc5ac173a86b58b8aaeae22ca40337cbdd37d27cd212b2c83ffc"
+              },
+              {
+                "path": "hair/trama-quiff-curly.glb",
+                "sha256": "3022d1d3e1aece42acd9a8349fd4865c1328a7d9cd41a4471ca27cfd80e155ba"
+              },
+              {
+                "path": "hair/trama-quiff-straight.glb",
+                "sha256": "e76a4897f2810a260268805c5cea8eb8c62a47412093986d1997bd6e78fd32b4"
+              },
+              {
+                "path": "hair/trama-quiff-wavy.glb",
+                "sha256": "dab9c70a49a22b4eb565dc06dbe58fc7fba58ac41db94f626e7eee61d0f4367a"
+              },
+              {
+                "path": "hair/trama-shag-coily.glb",
+                "sha256": "f0a0832840a687d2f9b273f081e5d8092d1ec0b759a5d4fa3a721c2233a5892e"
+              },
+              {
+                "path": "hair/trama-shag-curly.glb",
+                "sha256": "1b0c415360ea72c2056915e628d3193716cb0f2f3f50f91865e418123c424dcb"
+              },
+              {
+                "path": "hair/trama-shag-straight.glb",
+                "sha256": "d62d8d570fbd0eb269690a98c71f6b8cc9d36df1ece9724607210479ea92b1e6"
+              },
+              {
+                "path": "hair/trama-shag-wavy.glb",
+                "sha256": "c852c23c7a128d0d12687a1e07f6e409832216739fc519efad21a9dcd70c1bac"
+              },
+              {
+                "path": "hair/trama-side-part-coily.glb",
+                "sha256": "2f76f19432e5892c24021628d39694c17df4af7e40f43bed7c8ee44249ff202e"
+              },
+              {
+                "path": "hair/trama-side-part-curly.glb",
+                "sha256": "cea7822feea178493a73034677d265288afcf84e3ea500083f6f32ff74afc706"
+              },
+              {
+                "path": "hair/trama-side-part-straight.glb",
+                "sha256": "2af31af7e36846562a573bc27f2971de67936c5fe42a43c2184c81e08ada553c"
+              },
+              {
+                "path": "hair/trama-side-part-wavy.glb",
+                "sha256": "662d718fc4627b76dfaab4cbe1c4c02a98aa1ea67ec4f98912d67cbed1c53975"
+              },
+              {
+                "path": "hair/trama-slick-coily.glb",
+                "sha256": "3f2c3520e3bbd6ea9aaf13b4113a3bd88592832bc29a0ee2629eb0691f4380af"
+              },
+              {
+                "path": "hair/trama-slick-curly.glb",
+                "sha256": "79216becaef2bc8902e49ca0b29afb0508927eea48a5cd842afd9852c858a31e"
+              },
+              {
+                "path": "hair/trama-slick-straight.glb",
+                "sha256": "a03cc419ce200aa1c46a74429a02dc565d044ce2e619f9a734f8af472c4a1a32"
+              },
+              {
+                "path": "hair/trama-slick-wavy.glb",
+                "sha256": "91786a3254396d954f0d65cd6f334ca7d6fcc9b1916ca3293d3e2b54c4851d36"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 276,
+              "connected_components_number": 2,
+              "edges_number": 10956,
+              "faces_number": 7212,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3746
+            },
+            "before": {
+              "boundary_edges": 276,
+              "connected_components_number": 2,
+              "edges_number": 14565,
+              "faces_number": 9618,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4949
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "4db0f03d5dbd16f80d8c70e36929197c5952349bef153672ba97d1319d8bcac2",
+            "runId": "6dd5fa76-9909-4127-9b8d-85b3a4861d5c"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "meshlab",
+          "process",
+          "settings",
+          "result",
+          "component",
+          "resources"
+        ],
+        "elapsedMs": 3163,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb",
+          "trama-buzz-coily": "hair/trama-buzz-coily.glb",
+          "trama-buzz-curly": "hair/trama-buzz-curly.glb",
+          "trama-buzz-straight": "hair/trama-buzz-straight.glb",
+          "trama-buzz-wavy": "hair/trama-buzz-wavy.glb",
+          "trama-crew-coily": "hair/trama-crew-coily.glb",
+          "trama-crew-curly": "hair/trama-crew-curly.glb",
+          "trama-crew-straight": "hair/trama-crew-straight.glb",
+          "trama-crew-wavy": "hair/trama-crew-wavy.glb",
+          "trama-crop-coily": "hair/trama-crop-coily.glb",
+          "trama-crop-curly": "hair/trama-crop-curly.glb",
+          "trama-crop-straight": "hair/trama-crop-straight.glb",
+          "trama-crop-wavy": "hair/trama-crop-wavy.glb",
+          "trama-ivy-coily": "hair/trama-ivy-coily.glb",
+          "trama-ivy-curly": "hair/trama-ivy-curly.glb",
+          "trama-ivy-straight": "hair/trama-ivy-straight.glb",
+          "trama-ivy-wavy": "hair/trama-ivy-wavy.glb",
+          "trama-long-coily": "hair/trama-long-coily.glb",
+          "trama-long-curly": "hair/trama-long-curly.glb",
+          "trama-long-straight": "hair/trama-long-straight.glb",
+          "trama-long-wavy": "hair/trama-long-wavy.glb",
+          "trama-pompadour-coily": "hair/trama-pompadour-coily.glb",
+          "trama-pompadour-curly": "hair/trama-pompadour-curly.glb",
+          "trama-pompadour-straight": "hair/trama-pompadour-straight.glb",
+          "trama-pompadour-wavy": "hair/trama-pompadour-wavy.glb",
+          "trama-quiff-coily": "hair/trama-quiff-coily.glb",
+          "trama-quiff-curly": "hair/trama-quiff-curly.glb",
+          "trama-quiff-straight": "hair/trama-quiff-straight.glb",
+          "trama-quiff-wavy": "hair/trama-quiff-wavy.glb",
+          "trama-shag-coily": "hair/trama-shag-coily.glb",
+          "trama-shag-curly": "hair/trama-shag-curly.glb",
+          "trama-shag-straight": "hair/trama-shag-straight.glb",
+          "trama-shag-wavy": "hair/trama-shag-wavy.glb",
+          "trama-side-part-coily": "hair/trama-side-part-coily.glb",
+          "trama-side-part-curly": "hair/trama-side-part-curly.glb",
+          "trama-side-part-straight": "hair/trama-side-part-straight.glb",
+          "trama-side-part-wavy": "hair/trama-side-part-wavy.glb",
+          "trama-slick-coily": "hair/trama-slick-coily.glb",
+          "trama-slick-curly": "hair/trama-slick-curly.glb",
+          "trama-slick-straight": "hair/trama-slick-straight.glb",
+          "trama-slick-wavy": "hair/trama-slick-wavy.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a0b730e5-490f-488d-ae16-4f3812ee044f/60051f77-5a99-425f-a589-39c370fa6355"
+            ],
+            "cpuSeconds": 3.319,
+            "exitCode": 0,
+            "peakRssKiB": 161780,
+            "seconds": 3.155,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 286156973,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "maya-costa",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+      "jobId": "d4499efd-df43-481c-95d6-cf75b1fe578f",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 102433,
+            "path": "style-catalog.json"
+          },
+          {
+            "bytes": 49059,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1668,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 322665,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 797188,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 18269,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 97535,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 671991,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 671990,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 663566,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 668353,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 666523,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 674103,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 854540,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 830372,
+            "path": "hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 830372,
+            "path": "hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 549276,
+            "path": "hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 549312,
+            "path": "hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 549276,
+            "path": "hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 268668,
+            "path": "hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 549272,
+            "path": "hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1234436,
+            "path": "hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1234440,
+            "path": "hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 812832,
+            "path": "hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 812792,
+            "path": "hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 830400,
+            "path": "hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 549344,
+            "path": "hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 830380,
+            "path": "hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 830384,
+            "path": "hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 549316,
+            "path": "hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1234436,
+            "path": "hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1234440,
+            "path": "hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 812832,
+            "path": "hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 812796,
+            "path": "hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 549344,
+            "path": "hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 549316,
+            "path": "hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 830380,
+            "path": "hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 549320,
+            "path": "hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1812768,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9178352,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4340692,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 752276,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 9178360,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 1164164,
+            "path": "beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 193172,
+            "path": "beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 503648,
+            "path": "beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1503932,
+            "path": "beard/trama-circle.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1162576,
+            "path": "beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 2952528,
+            "path": "beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 1992628,
+            "path": "beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 2952528,
+            "path": "beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 193176,
+            "path": "beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2735508,
+            "path": "beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 143288,
+            "path": "beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1353456,
+            "path": "beard/trama-van-dyke.glb"
+          },
+          {
+            "bytes": 57920,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 49369,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 58278,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 33219,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46610,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19730,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 4917836,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 3072108,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 4106100,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7726876,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661140,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353952,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "upstream/hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "upstream/hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "upstream/hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "upstream/hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 830372,
+            "path": "upstream/hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 830372,
+            "path": "upstream/hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "upstream/hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 549276,
+            "path": "upstream/hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "upstream/hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "upstream/hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 549312,
+            "path": "upstream/hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 549276,
+            "path": "upstream/hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "upstream/hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 830368,
+            "path": "upstream/hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 268668,
+            "path": "upstream/hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 549272,
+            "path": "upstream/hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1234436,
+            "path": "upstream/hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1234440,
+            "path": "upstream/hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 812832,
+            "path": "upstream/hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 812792,
+            "path": "upstream/hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 830400,
+            "path": "upstream/hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "upstream/hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 549344,
+            "path": "upstream/hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 549308,
+            "path": "upstream/hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 830380,
+            "path": "upstream/hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 830384,
+            "path": "upstream/hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 549316,
+            "path": "upstream/hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "upstream/hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1234436,
+            "path": "upstream/hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1234440,
+            "path": "upstream/hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 812832,
+            "path": "upstream/hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 812796,
+            "path": "upstream/hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "upstream/hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 830408,
+            "path": "upstream/hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 549344,
+            "path": "upstream/hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 549316,
+            "path": "upstream/hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 830376,
+            "path": "upstream/hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 830380,
+            "path": "upstream/hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 549320,
+            "path": "upstream/hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 549284,
+            "path": "upstream/hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1812768,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 9178352,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4340692,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 752276,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 9178360,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 1164164,
+            "path": "upstream/beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "upstream/beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 193172,
+            "path": "upstream/beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 503648,
+            "path": "upstream/beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1503932,
+            "path": "upstream/beard/trama-circle.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "upstream/beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "upstream/beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1162576,
+            "path": "upstream/beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "upstream/beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 2952528,
+            "path": "upstream/beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 1992628,
+            "path": "upstream/beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "upstream/beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 2952524,
+            "path": "upstream/beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 2952528,
+            "path": "upstream/beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 193176,
+            "path": "upstream/beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "upstream/beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2735508,
+            "path": "upstream/beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 2952512,
+            "path": "upstream/beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 143288,
+            "path": "upstream/beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1353456,
+            "path": "upstream/beard/trama-van-dyke.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb",
+          "trama-anchor": "beard/trama-anchor.glb",
+          "trama-beardstache": "beard/trama-beardstache.glb",
+          "trama-chevron": "beard/trama-chevron.glb",
+          "trama-chinstrap": "beard/trama-chinstrap.glb",
+          "trama-circle": "beard/trama-circle.glb",
+          "trama-coily-full": "beard/trama-coily-full.glb",
+          "trama-curly-full": "beard/trama-curly-full.glb",
+          "trama-goatee": "beard/trama-goatee.glb",
+          "trama-heavy-stubble": "beard/trama-heavy-stubble.glb",
+          "trama-light-stubble": "beard/trama-light-stubble.glb",
+          "trama-limited-coverage": "beard/trama-limited-coverage.glb",
+          "trama-long-curly": "beard/trama-long-curly.glb",
+          "trama-long-tapered": "beard/trama-long-tapered.glb",
+          "trama-medium-rounded": "beard/trama-medium-rounded.glb",
+          "trama-moustache": "beard/trama-moustache.glb",
+          "trama-rounded-full": "beard/trama-rounded-full.glb",
+          "trama-short-boxed": "beard/trama-short-boxed.glb",
+          "trama-soft-stubble": "beard/trama-soft-stubble.glb",
+          "trama-soul-patch": "beard/trama-soul-patch.glb",
+          "trama-van-dyke": "beard/trama-van-dyke.glb"
+        },
+        "candidate": "meshlab",
+        "catalog": {
+          "beardCount": 25,
+          "hairCount": 51,
+          "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+          "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "version": "trama-surface-styles-v1"
+        },
+        "completedAt": "2026-09-30T17:40:10.503313+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7264,
+              "vertices": 3782
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000558
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 5.8e-05
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 6.5e-05
+            },
+            {
+              "after": {
+                "triangles": 9686,
+                "vertices": 9837
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 4993
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.005018
+            },
+            {
+              "after": {
+                "triangles": 7264,
+                "vertices": 8626
+              },
+              "before": {
+                "triangles": 9686,
+                "vertices": 9837
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7264
+              },
+              "returned": {},
+              "seconds": 0.02837
+            },
+            {
+              "after": {
+                "triangles": 7264,
+                "vertices": 3782
+              },
+              "before": {
+                "triangles": 7264,
+                "vertices": 8626
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000624
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.3681364331860095e-05,
+                "diag_mesh_0": 0.6476314663887024,
+                "diag_mesh_1": 0.6476082258110213,
+                "max": 0.00022459453612100333,
+                "mean": 2.2295518647297285e-05,
+                "min": 0,
+                "n_samples": 4993
+              },
+              "requestedSamples": 4993
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.2514322811039165e-05,
+                "diag_mesh_0": 0.64760822057724,
+                "diag_mesh_1": 0.6476314912278931,
+                "max": 0.0002128546329913661,
+                "mean": 1.1994875421805773e-05,
+                "min": 0,
+                "n_samples": 3782
+              },
+              "requestedSamples": 3782
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7264,
+              "vertices": 3782
+            },
+            "before": {
+              "triangles": 9686,
+              "vertices": 4993
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.0002128546329913661,
+                "meanMetres": 1.1994875421805773e-05,
+                "rmsMetres": 3.2514322811039165e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00022459453612100333,
+                "meanMetres": 2.2295518647297285e-05,
+                "rmsMetres": 4.3681364331860095e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7264
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "69d2718dbff0f16affb35ad18a9e83149fc2016dd4da8feac9f1f302e329f0ba"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "35bf927aaa6f19a8f66ebc84988910c62d51500ee747bc54493e734d60a3bae2"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "fe0051a2811ac44434147fbf75cc030e1a79c0ee191c8869c936d66ba652f408"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "a07dad36494b764da032d2f10ee14daa90653fdece35dde88af002fbae382971"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "cb3f1f198553d75c3ae86f49bf0a540145e8069ea7c244f8d1248e7d37ee71d8"
+              },
+              {
+                "path": "beard/trama-anchor.glb",
+                "sha256": "9ab0cb9ed6b7ad87a0f335502750a18f4a2ee3115c87ab20740e5cbb226d9fe3"
+              },
+              {
+                "path": "beard/trama-beardstache.glb",
+                "sha256": "4ae00c53647877bc342d28bd48d311f80101de74beef9bb2a94f06ce4c7e1676"
+              },
+              {
+                "path": "beard/trama-chevron.glb",
+                "sha256": "e8741ba8a42e5ae964cfc9981834f8421b9826e5f76c4e6cd2dcd8e61064eebc"
+              },
+              {
+                "path": "beard/trama-chinstrap.glb",
+                "sha256": "821764714e5fd908fdf3119c96cc264c6cc048103d9a25b51be6be45c521f132"
+              },
+              {
+                "path": "beard/trama-circle.glb",
+                "sha256": "a14ced3397face65ad8bc1e4aaeb4971965a0aa0335b4d1e67366c84c80f439e"
+              },
+              {
+                "path": "beard/trama-coily-full.glb",
+                "sha256": "19567934cccb09723690dfe307018f8e3fd6ad4197c1b30cc1407643d09ba97c"
+              },
+              {
+                "path": "beard/trama-curly-full.glb",
+                "sha256": "c4f083afff3d704740ee3c9d56d2e1d0c5da9234219b4cd5b4efca5bbd180c6a"
+              },
+              {
+                "path": "beard/trama-goatee.glb",
+                "sha256": "03e3cea888b518b7057953e7a9b6db373beea5453708e33953dc23cdc552ace3"
+              },
+              {
+                "path": "beard/trama-heavy-stubble.glb",
+                "sha256": "d3745a109823c0bb905d75fb2d4a9f21db1685723ea1cb0830dfe37b88b8a02b"
+              },
+              {
+                "path": "beard/trama-light-stubble.glb",
+                "sha256": "ff9bd7e0392cff79ecb798d1e3fe9e56057ffd31f431d611fd289b1051089f11"
+              },
+              {
+                "path": "beard/trama-limited-coverage.glb",
+                "sha256": "9233edf700a1556f0b5b61d91b6d875797640e474e4f5aed8416a3c6804e3d39"
+              },
+              {
+                "path": "beard/trama-long-curly.glb",
+                "sha256": "d75a2a76808ec2e097d5a9b30272135dde870f164c2cc04f10c4291b44a6085b"
+              },
+              {
+                "path": "beard/trama-long-tapered.glb",
+                "sha256": "3cdbbb081e48435ea8d75bdd31f02795f17d833d935ff6577018fee12099c014"
+              },
+              {
+                "path": "beard/trama-medium-rounded.glb",
+                "sha256": "cf0899a4a2299b8d81f96f055a75c4787f043acac98f43fc702190021ea59a89"
+              },
+              {
+                "path": "beard/trama-moustache.glb",
+                "sha256": "52cd50f4fe0d23387c063abd0d663c37bbd3d217b91f2c8c09e959c61efe999c"
+              },
+              {
+                "path": "beard/trama-rounded-full.glb",
+                "sha256": "943883d9c7244f79b4c4c2a45b4261f35010910e3a2190f96eb8af14cee7cca0"
+              },
+              {
+                "path": "beard/trama-short-boxed.glb",
+                "sha256": "f3b54f3e986e229ba6094ac589f8dd4611c11e39828b34ffb2ec90fa2875fc76"
+              },
+              {
+                "path": "beard/trama-soft-stubble.glb",
+                "sha256": "0c5a9a15f32b14542075fc288abd2208d9f6445b8fcec21b09a0f19eed2f30ab"
+              },
+              {
+                "path": "beard/trama-soul-patch.glb",
+                "sha256": "d35cfb95141a3d3da079aa6e8faf2695d897979451b8cba0737fae5d227141dc"
+              },
+              {
+                "path": "beard/trama-van-dyke.glb",
+                "sha256": "cd9f60f12ca4efd58ff75bff982324f4ecf7a18d70a5b15f11f1b15b2b5f7ea9"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "2facfa7b937516b49455214acb8fbf572d9094388ebe48e55a144236518cb03e"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "43bb9c38123cb102114513dd8ed20fe538d1fcd0f4564bfb35db91adbeccb434"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "bfeefbc24e4e2345979c2afdc5f4c839d73eba17e7d80c18fdc4be4bfd8f35a1"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "c925085fcd71b4c9c5827483bf414c6314cdd8bc8f9f938e2bffc26bbe130817"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "98a218065ecf3d3ad372c297b6bba0756651bffbe76f5ac15e7d47257b567ef4"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "80032fdcd3e211cd01664f584f165530b76b974ad8ccbca4c6c604d864b57ccf"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "018a3bc8d58feeb0f58adbd749d154df840600eb72cec90c414c1a8efa3cff64"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "88f70bb8450932974a34d9162d5d80ecc511d3104730baf7d0706cb1ec8f1730"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "2f940e066f2619b9bc367adebb0f028986c6310dfc961c7ccfd03d49522b3ad2"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "c0bf861e31be36f348ef3121660a045fa9019b484ad010c758632b33ba358277"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "77802c125e6335f127ded2308f581611dca106063ea14c54083653345c8b98d2"
+              },
+              {
+                "path": "hair/trama-buzz-coily.glb",
+                "sha256": "5d4ba665bbf2e7c16d6561afe98112612679cf39ae8200cc6d4f261d143d18e5"
+              },
+              {
+                "path": "hair/trama-buzz-curly.glb",
+                "sha256": "6da47e1736fc5a1ee043bb9eb12da95b7e7031373f95fe759c45f4aca8ded1cb"
+              },
+              {
+                "path": "hair/trama-buzz-straight.glb",
+                "sha256": "5b1787f804fb1bc4aac977c607b8f3c03a3f3038d6294ade8b3351267f32ad09"
+              },
+              {
+                "path": "hair/trama-buzz-wavy.glb",
+                "sha256": "3b399f1703a6f7f78dd1b597c6aeedf62b435219008a667f4a5de6fb08d9c31f"
+              },
+              {
+                "path": "hair/trama-crew-coily.glb",
+                "sha256": "00c5fada53682e88ef9f36aec4088396f9634db17d038c4d51e562a66ba2988d"
+              },
+              {
+                "path": "hair/trama-crew-curly.glb",
+                "sha256": "d306874bea32ffa975d84a1f3fc1bb0b2c25ec6a10c62eaf60e765063bdb73a2"
+              },
+              {
+                "path": "hair/trama-crew-straight.glb",
+                "sha256": "b8d1c8f6e37ee4f7a06d1f50071f739d0b14c28c46e466e68bb0cacc7e01a728"
+              },
+              {
+                "path": "hair/trama-crew-wavy.glb",
+                "sha256": "0c7e30f1269d14a298dc8d0d23fc5a96b3d09c0dbec2b2f780ddb7c4d9baa1f8"
+              },
+              {
+                "path": "hair/trama-crop-coily.glb",
+                "sha256": "d109b0286136f60da8a958d4365006bf5335903ec395e07e0e3b05418d316a22"
+              },
+              {
+                "path": "hair/trama-crop-curly.glb",
+                "sha256": "1dde8265cfd339676425a61e5ec35a44ddddf52025319f496b12f237512af8c3"
+              },
+              {
+                "path": "hair/trama-crop-straight.glb",
+                "sha256": "6f03c1f654139aaabec5a78b6c0613572b320f338db989e756d459854a3e8a5d"
+              },
+              {
+                "path": "hair/trama-crop-wavy.glb",
+                "sha256": "c448c1c118a9d4c1be05f8b0853e4af62a799d67e0e6e93fb13ccf21a2968c6e"
+              },
+              {
+                "path": "hair/trama-ivy-coily.glb",
+                "sha256": "16c8b294409b3fb214a3e1326a5c06d154de706958083a640ed2df62f26c90eb"
+              },
+              {
+                "path": "hair/trama-ivy-curly.glb",
+                "sha256": "fcce153d63e0302cb740ac4821cdce95a254116437c46e00146716ff70a5b4b3"
+              },
+              {
+                "path": "hair/trama-ivy-straight.glb",
+                "sha256": "399747b340f588ffe7808869d7b6cd5b91b23391e6112cf24b4f2c51df1ecd86"
+              },
+              {
+                "path": "hair/trama-ivy-wavy.glb",
+                "sha256": "5f31cd91a4bfd631207c53ebf08eebaaeb581ff3c7408827ba4d3e1d8bf1ea6c"
+              },
+              {
+                "path": "hair/trama-long-coily.glb",
+                "sha256": "a0523237c06ebe5d47be02e76ef6d93279b4ac2006882eba35ecdd4c5675b34f"
+              },
+              {
+                "path": "hair/trama-long-curly.glb",
+                "sha256": "9d943d406dd5952d4cd364226cb93a216775656bb6f27c765b1e67d8369a7a8c"
+              },
+              {
+                "path": "hair/trama-long-straight.glb",
+                "sha256": "f5d84717650877ea47c36b43d8a77586c237187847f15a110d4df12d4f6be7c4"
+              },
+              {
+                "path": "hair/trama-long-wavy.glb",
+                "sha256": "123ab9da1864b9fd369ebad8fa0d53368c1080cd322d5d449156bba03e7510ec"
+              },
+              {
+                "path": "hair/trama-pompadour-coily.glb",
+                "sha256": "a24f7b0beaab86f64851784b46318f83354f794dd2a55f4f2bf2b7a2d0fd5546"
+              },
+              {
+                "path": "hair/trama-pompadour-curly.glb",
+                "sha256": "4c94988271a9a2140f95f4a3a8eabedd29c3c29cf266f6d3c096bed1f7fd8bf4"
+              },
+              {
+                "path": "hair/trama-pompadour-straight.glb",
+                "sha256": "e6ee4b5984e2277570b2c6158ea75e6fe8d168022167d7079bffd3292e846885"
+              },
+              {
+                "path": "hair/trama-pompadour-wavy.glb",
+                "sha256": "39092dbce538d4c0bb9689ca10688fe079232a8c727cf53ae93a206d7bf55f7d"
+              },
+              {
+                "path": "hair/trama-quiff-coily.glb",
+                "sha256": "d4b8805d9a2502f8104e9c509aa5dc24986ca9269b2fc01749fb78135611d905"
+              },
+              {
+                "path": "hair/trama-quiff-curly.glb",
+                "sha256": "c2828a8a90e7d13ea7828620fa875be3eff293e359fd76e18609714e513a48e7"
+              },
+              {
+                "path": "hair/trama-quiff-straight.glb",
+                "sha256": "71baf2b5eea6ee28e55cb67de9243bd6fd7e231fed2a9d6bcacb990f79f2f75b"
+              },
+              {
+                "path": "hair/trama-quiff-wavy.glb",
+                "sha256": "831b6b08a8dacc19cac787278cd1a7a60bb8bbc57a733d504eeedf4032e72ffc"
+              },
+              {
+                "path": "hair/trama-shag-coily.glb",
+                "sha256": "de7d0a5339dfb68eb557b6cb59a28170c11f2ce9aaf39b0cb771261cfa54d0c3"
+              },
+              {
+                "path": "hair/trama-shag-curly.glb",
+                "sha256": "4ead8ea3091954c7c5505da1f499fd62995a025ea958e2008c64b9eee4d43c8c"
+              },
+              {
+                "path": "hair/trama-shag-straight.glb",
+                "sha256": "ee2d4efa4ef9921848f7b2d2e2bca87c96e3697987b79991561c743bbc60d42b"
+              },
+              {
+                "path": "hair/trama-shag-wavy.glb",
+                "sha256": "d0603e063f0c16311c46cdfc14fa9fe6c9075ca3b718e4780ad95f635ffed089"
+              },
+              {
+                "path": "hair/trama-side-part-coily.glb",
+                "sha256": "a357f56b6db4da5e7610fbf46b31b4cd25423dc8db29f99c4468d42d7138cb09"
+              },
+              {
+                "path": "hair/trama-side-part-curly.glb",
+                "sha256": "33aee44cae89eaef5d375128975f5ec52f7ab10376ac7cc6a4c00149d4a9c245"
+              },
+              {
+                "path": "hair/trama-side-part-straight.glb",
+                "sha256": "70b80c647b4ca04070387a15f33c9010e7da29b054b5d6ff56b1966584853ef3"
+              },
+              {
+                "path": "hair/trama-side-part-wavy.glb",
+                "sha256": "b496949f801d41fb54a32dce964ca3bafa4a059caab828c640f75cc6ba944bc6"
+              },
+              {
+                "path": "hair/trama-slick-coily.glb",
+                "sha256": "c1845fcf09b6c7e8bd7c3977ebb60ffc07aaf177d4be2210b4e7009d250dc58f"
+              },
+              {
+                "path": "hair/trama-slick-curly.glb",
+                "sha256": "78edb79cd917d8e0102631276c4afe69c327ba21dae6d8644d42d4b81d0838b4"
+              },
+              {
+                "path": "hair/trama-slick-straight.glb",
+                "sha256": "ab4402a87b0f0336318e9f0e9f8c963eb6a343e2e680c0c3989bd523767f5930"
+              },
+              {
+                "path": "hair/trama-slick-wavy.glb",
+                "sha256": "6d50dfb5451391a55a6f85f9bd99416f1ec1a2f5c03d6a01d21e493b7420df39"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 296,
+              "connected_components_number": 2,
+              "edges_number": 11044,
+              "faces_number": 7264,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3782
+            },
+            "before": {
+              "boundary_edges": 296,
+              "connected_components_number": 2,
+              "edges_number": 14677,
+              "faces_number": 9686,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4993
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "23e7a6caa72271f32b38bea61e4edfc46e40f77b630584cd7d9ed068106ba279",
+            "runId": "786fc4fc-f613-46c2-9b61-f2e47174ba4e"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "resources",
+          "result",
+          "settings",
+          "component",
+          "process",
+          "meshlab"
+        ],
+        "elapsedMs": 3273,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb",
+          "trama-buzz-coily": "hair/trama-buzz-coily.glb",
+          "trama-buzz-curly": "hair/trama-buzz-curly.glb",
+          "trama-buzz-straight": "hair/trama-buzz-straight.glb",
+          "trama-buzz-wavy": "hair/trama-buzz-wavy.glb",
+          "trama-crew-coily": "hair/trama-crew-coily.glb",
+          "trama-crew-curly": "hair/trama-crew-curly.glb",
+          "trama-crew-straight": "hair/trama-crew-straight.glb",
+          "trama-crew-wavy": "hair/trama-crew-wavy.glb",
+          "trama-crop-coily": "hair/trama-crop-coily.glb",
+          "trama-crop-curly": "hair/trama-crop-curly.glb",
+          "trama-crop-straight": "hair/trama-crop-straight.glb",
+          "trama-crop-wavy": "hair/trama-crop-wavy.glb",
+          "trama-ivy-coily": "hair/trama-ivy-coily.glb",
+          "trama-ivy-curly": "hair/trama-ivy-curly.glb",
+          "trama-ivy-straight": "hair/trama-ivy-straight.glb",
+          "trama-ivy-wavy": "hair/trama-ivy-wavy.glb",
+          "trama-long-coily": "hair/trama-long-coily.glb",
+          "trama-long-curly": "hair/trama-long-curly.glb",
+          "trama-long-straight": "hair/trama-long-straight.glb",
+          "trama-long-wavy": "hair/trama-long-wavy.glb",
+          "trama-pompadour-coily": "hair/trama-pompadour-coily.glb",
+          "trama-pompadour-curly": "hair/trama-pompadour-curly.glb",
+          "trama-pompadour-straight": "hair/trama-pompadour-straight.glb",
+          "trama-pompadour-wavy": "hair/trama-pompadour-wavy.glb",
+          "trama-quiff-coily": "hair/trama-quiff-coily.glb",
+          "trama-quiff-curly": "hair/trama-quiff-curly.glb",
+          "trama-quiff-straight": "hair/trama-quiff-straight.glb",
+          "trama-quiff-wavy": "hair/trama-quiff-wavy.glb",
+          "trama-shag-coily": "hair/trama-shag-coily.glb",
+          "trama-shag-curly": "hair/trama-shag-curly.glb",
+          "trama-shag-straight": "hair/trama-shag-straight.glb",
+          "trama-shag-wavy": "hair/trama-shag-wavy.glb",
+          "trama-side-part-coily": "hair/trama-side-part-coily.glb",
+          "trama-side-part-curly": "hair/trama-side-part-curly.glb",
+          "trama-side-part-straight": "hair/trama-side-part-straight.glb",
+          "trama-side-part-wavy": "hair/trama-side-part-wavy.glb",
+          "trama-slick-coily": "hair/trama-slick-coily.glb",
+          "trama-slick-curly": "hair/trama-slick-curly.glb",
+          "trama-slick-straight": "hair/trama-slick-straight.glb",
+          "trama-slick-wavy": "hair/trama-slick-wavy.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/a83ec874-3249-4185-a028-26933b0de6da/d4499efd-df43-481c-95d6-cf75b1fe578f"
+            ],
+            "cpuSeconds": 3.468,
+            "exitCode": 0,
+            "peakRssKiB": 161932,
+            "seconds": 3.266,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 281815715,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    },
+    {
+      "fictionalCase": "noah-kim",
+      "candidate": "meshlab",
+      "upstreamCandidate": "makehuman",
+      "upstreamJobId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+      "jobId": "4343be43-9788-4fb2-a464-276f94f6dca7",
+      "status": "completed",
+      "error": "",
+      "result": {
+        "artifacts": [
+          {
+            "bytes": 102433,
+            "path": "style-catalog.json"
+          },
+          {
+            "bytes": 45114,
+            "path": "manifest.json"
+          },
+          {
+            "bytes": 410,
+            "path": "processing.log"
+          },
+          {
+            "bytes": 34,
+            "path": "progress.json"
+          },
+          {
+            "bytes": 1670,
+            "path": "meshlab.log"
+          },
+          {
+            "bytes": 318987,
+            "path": "processed-skin.ply"
+          },
+          {
+            "bytes": 795276,
+            "path": "head.glb"
+          },
+          {
+            "bytes": 18269,
+            "path": "component-report.json"
+          },
+          {
+            "bytes": 96121,
+            "path": "component-evaluation.png"
+          },
+          {
+            "bytes": 461,
+            "path": "resources.json"
+          },
+          {
+            "bytes": 594433,
+            "path": "inputs/back.image"
+          },
+          {
+            "bytes": 608112,
+            "path": "inputs/front.image"
+          },
+          {
+            "bytes": 595581,
+            "path": "inputs/left-profile.image"
+          },
+          {
+            "bytes": 603933,
+            "path": "inputs/left-three-quarter.image"
+          },
+          {
+            "bytes": 605703,
+            "path": "inputs/right-profile.image"
+          },
+          {
+            "bytes": 611226,
+            "path": "inputs/right-three-quarter.image"
+          },
+          {
+            "bytes": 852100,
+            "path": "upstream/head.glb"
+          },
+          {
+            "bytes": 610817,
+            "path": "textures/head-1.png"
+          },
+          {
+            "bytes": 4917840,
+            "path": "hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "hair/short04.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 542272,
+            "path": "hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 542248,
+            "path": "hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 820456,
+            "path": "hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 820464,
+            "path": "hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 542272,
+            "path": "hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 820464,
+            "path": "hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 542276,
+            "path": "hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 820452,
+            "path": "hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 820456,
+            "path": "hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 267200,
+            "path": "hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 542232,
+            "path": "hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1219560,
+            "path": "hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1219556,
+            "path": "hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 802556,
+            "path": "hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 802524,
+            "path": "hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 820492,
+            "path": "hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 542308,
+            "path": "hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 542280,
+            "path": "hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 542284,
+            "path": "hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1219556,
+            "path": "hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1219560,
+            "path": "hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 802556,
+            "path": "hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 802524,
+            "path": "hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 542312,
+            "path": "hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 542276,
+            "path": "hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 542284,
+            "path": "hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 542252,
+            "path": "hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1683932,
+            "path": "beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8968208,
+            "path": "beard/full.glb"
+          },
+          {
+            "bytes": 4257668,
+            "path": "beard/goatee.glb"
+          },
+          {
+            "bytes": 805468,
+            "path": "beard/moustache.glb"
+          },
+          {
+            "bytes": 8968220,
+            "path": "beard/stubble.glb"
+          },
+          {
+            "bytes": 1184752,
+            "path": "beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 204260,
+            "path": "beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 514736,
+            "path": "beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1525312,
+            "path": "beard/trama-circle.glb"
+          },
+          {
+            "bytes": 2954092,
+            "path": "beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 2954092,
+            "path": "beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1170492,
+            "path": "beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 2954096,
+            "path": "beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 2020348,
+            "path": "beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 2954096,
+            "path": "beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 2954112,
+            "path": "beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 204264,
+            "path": "beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 2954100,
+            "path": "beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2742636,
+            "path": "beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 2954100,
+            "path": "beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 148040,
+            "path": "beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1372464,
+            "path": "beard/trama-van-dyke.glb"
+          },
+          {
+            "bytes": 56666,
+            "path": "fitted-renders/front.png"
+          },
+          {
+            "bytes": 48580,
+            "path": "fitted-renders/left-three-quarter.png"
+          },
+          {
+            "bytes": 57796,
+            "path": "fitted-renders/right-three-quarter.png"
+          },
+          {
+            "bytes": 32794,
+            "path": "fitted-renders/left-profile.png"
+          },
+          {
+            "bytes": 46502,
+            "path": "fitted-renders/right-profile.png"
+          },
+          {
+            "bytes": 19827,
+            "path": "fitted-renders/back.png"
+          },
+          {
+            "bytes": 4917840,
+            "path": "upstream/hair/afro01.glb"
+          },
+          {
+            "bytes": 4537552,
+            "path": "upstream/hair/bob01.glb"
+          },
+          {
+            "bytes": 3458496,
+            "path": "upstream/hair/bob02.glb"
+          },
+          {
+            "bytes": 2835652,
+            "path": "upstream/hair/braid01.glb"
+          },
+          {
+            "bytes": 3072112,
+            "path": "upstream/hair/long01.glb"
+          },
+          {
+            "bytes": 4106104,
+            "path": "upstream/hair/ponytail01.glb"
+          },
+          {
+            "bytes": 7601916,
+            "path": "upstream/hair/rounded-coils.glb"
+          },
+          {
+            "bytes": 2501468,
+            "path": "upstream/hair/short01.glb"
+          },
+          {
+            "bytes": 3661136,
+            "path": "upstream/hair/short02.glb"
+          },
+          {
+            "bytes": 2451784,
+            "path": "upstream/hair/short03.glb"
+          },
+          {
+            "bytes": 2353956,
+            "path": "upstream/hair/short04.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "upstream/hair/trama-buzz-coily.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "upstream/hair/trama-buzz-curly.glb"
+          },
+          {
+            "bytes": 542272,
+            "path": "upstream/hair/trama-buzz-straight.glb"
+          },
+          {
+            "bytes": 542248,
+            "path": "upstream/hair/trama-buzz-wavy.glb"
+          },
+          {
+            "bytes": 820456,
+            "path": "upstream/hair/trama-crew-coily.glb"
+          },
+          {
+            "bytes": 820464,
+            "path": "upstream/hair/trama-crew-curly.glb"
+          },
+          {
+            "bytes": 542272,
+            "path": "upstream/hair/trama-crew-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "upstream/hair/trama-crew-wavy.glb"
+          },
+          {
+            "bytes": 820460,
+            "path": "upstream/hair/trama-crop-coily.glb"
+          },
+          {
+            "bytes": 820464,
+            "path": "upstream/hair/trama-crop-curly.glb"
+          },
+          {
+            "bytes": 542276,
+            "path": "upstream/hair/trama-crop-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "upstream/hair/trama-crop-wavy.glb"
+          },
+          {
+            "bytes": 820452,
+            "path": "upstream/hair/trama-ivy-coily.glb"
+          },
+          {
+            "bytes": 820456,
+            "path": "upstream/hair/trama-ivy-curly.glb"
+          },
+          {
+            "bytes": 267200,
+            "path": "upstream/hair/trama-ivy-straight.glb"
+          },
+          {
+            "bytes": 542232,
+            "path": "upstream/hair/trama-ivy-wavy.glb"
+          },
+          {
+            "bytes": 1219560,
+            "path": "upstream/hair/trama-long-coily.glb"
+          },
+          {
+            "bytes": 1219556,
+            "path": "upstream/hair/trama-long-curly.glb"
+          },
+          {
+            "bytes": 802556,
+            "path": "upstream/hair/trama-long-straight.glb"
+          },
+          {
+            "bytes": 802524,
+            "path": "upstream/hair/trama-long-wavy.glb"
+          },
+          {
+            "bytes": 820492,
+            "path": "upstream/hair/trama-pompadour-coily.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "upstream/hair/trama-pompadour-curly.glb"
+          },
+          {
+            "bytes": 542308,
+            "path": "upstream/hair/trama-pompadour-straight.glb"
+          },
+          {
+            "bytes": 542280,
+            "path": "upstream/hair/trama-pompadour-wavy.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "upstream/hair/trama-quiff-coily.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "upstream/hair/trama-quiff-curly.glb"
+          },
+          {
+            "bytes": 542284,
+            "path": "upstream/hair/trama-quiff-straight.glb"
+          },
+          {
+            "bytes": 542244,
+            "path": "upstream/hair/trama-quiff-wavy.glb"
+          },
+          {
+            "bytes": 1219556,
+            "path": "upstream/hair/trama-shag-coily.glb"
+          },
+          {
+            "bytes": 1219560,
+            "path": "upstream/hair/trama-shag-curly.glb"
+          },
+          {
+            "bytes": 802556,
+            "path": "upstream/hair/trama-shag-straight.glb"
+          },
+          {
+            "bytes": 802524,
+            "path": "upstream/hair/trama-shag-wavy.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "upstream/hair/trama-side-part-coily.glb"
+          },
+          {
+            "bytes": 820496,
+            "path": "upstream/hair/trama-side-part-curly.glb"
+          },
+          {
+            "bytes": 542312,
+            "path": "upstream/hair/trama-side-part-straight.glb"
+          },
+          {
+            "bytes": 542276,
+            "path": "upstream/hair/trama-side-part-wavy.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "upstream/hair/trama-slick-coily.glb"
+          },
+          {
+            "bytes": 820468,
+            "path": "upstream/hair/trama-slick-curly.glb"
+          },
+          {
+            "bytes": 542284,
+            "path": "upstream/hair/trama-slick-straight.glb"
+          },
+          {
+            "bytes": 542252,
+            "path": "upstream/hair/trama-slick-wavy.glb"
+          },
+          {
+            "bytes": 1683932,
+            "path": "upstream/beard/chinstrap.glb"
+          },
+          {
+            "bytes": 8968208,
+            "path": "upstream/beard/full.glb"
+          },
+          {
+            "bytes": 4257668,
+            "path": "upstream/beard/goatee.glb"
+          },
+          {
+            "bytes": 805468,
+            "path": "upstream/beard/moustache.glb"
+          },
+          {
+            "bytes": 8968220,
+            "path": "upstream/beard/stubble.glb"
+          },
+          {
+            "bytes": 1184752,
+            "path": "upstream/beard/trama-anchor.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "upstream/beard/trama-beardstache.glb"
+          },
+          {
+            "bytes": 204260,
+            "path": "upstream/beard/trama-chevron.glb"
+          },
+          {
+            "bytes": 514736,
+            "path": "upstream/beard/trama-chinstrap.glb"
+          },
+          {
+            "bytes": 1525312,
+            "path": "upstream/beard/trama-circle.glb"
+          },
+          {
+            "bytes": 2954092,
+            "path": "upstream/beard/trama-coily-full.glb"
+          },
+          {
+            "bytes": 2954092,
+            "path": "upstream/beard/trama-curly-full.glb"
+          },
+          {
+            "bytes": 1170492,
+            "path": "upstream/beard/trama-goatee.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "upstream/beard/trama-heavy-stubble.glb"
+          },
+          {
+            "bytes": 2954096,
+            "path": "upstream/beard/trama-light-stubble.glb"
+          },
+          {
+            "bytes": 2020348,
+            "path": "upstream/beard/trama-limited-coverage.glb"
+          },
+          {
+            "bytes": 2954096,
+            "path": "upstream/beard/trama-long-curly.glb"
+          },
+          {
+            "bytes": 2954108,
+            "path": "upstream/beard/trama-long-tapered.glb"
+          },
+          {
+            "bytes": 2954112,
+            "path": "upstream/beard/trama-medium-rounded.glb"
+          },
+          {
+            "bytes": 204264,
+            "path": "upstream/beard/trama-moustache.glb"
+          },
+          {
+            "bytes": 2954100,
+            "path": "upstream/beard/trama-rounded-full.glb"
+          },
+          {
+            "bytes": 2742636,
+            "path": "upstream/beard/trama-short-boxed.glb"
+          },
+          {
+            "bytes": 2954100,
+            "path": "upstream/beard/trama-soft-stubble.glb"
+          },
+          {
+            "bytes": 148040,
+            "path": "upstream/beard/trama-soul-patch.glb"
+          },
+          {
+            "bytes": 1372464,
+            "path": "upstream/beard/trama-van-dyke.glb"
+          }
+        ],
+        "beard": {
+          "chinstrap": "beard/chinstrap.glb",
+          "full": "beard/full.glb",
+          "goatee": "beard/goatee.glb",
+          "moustache": "beard/moustache.glb",
+          "stubble": "beard/stubble.glb",
+          "trama-anchor": "beard/trama-anchor.glb",
+          "trama-beardstache": "beard/trama-beardstache.glb",
+          "trama-chevron": "beard/trama-chevron.glb",
+          "trama-chinstrap": "beard/trama-chinstrap.glb",
+          "trama-circle": "beard/trama-circle.glb",
+          "trama-coily-full": "beard/trama-coily-full.glb",
+          "trama-curly-full": "beard/trama-curly-full.glb",
+          "trama-goatee": "beard/trama-goatee.glb",
+          "trama-heavy-stubble": "beard/trama-heavy-stubble.glb",
+          "trama-light-stubble": "beard/trama-light-stubble.glb",
+          "trama-limited-coverage": "beard/trama-limited-coverage.glb",
+          "trama-long-curly": "beard/trama-long-curly.glb",
+          "trama-long-tapered": "beard/trama-long-tapered.glb",
+          "trama-medium-rounded": "beard/trama-medium-rounded.glb",
+          "trama-moustache": "beard/trama-moustache.glb",
+          "trama-rounded-full": "beard/trama-rounded-full.glb",
+          "trama-short-boxed": "beard/trama-short-boxed.glb",
+          "trama-soft-stubble": "beard/trama-soft-stubble.glb",
+          "trama-soul-patch": "beard/trama-soul-patch.glb",
+          "trama-van-dyke": "beard/trama-van-dyke.glb"
+        },
+        "candidate": "meshlab",
+        "catalog": {
+          "beardCount": 25,
+          "hairCount": 51,
+          "scope": "Actual immutable exported catalog; original styles retain their historical source geometry.",
+          "snapshotSha256": "dc3cbd874e6193082a4b526017a69e6bb4f437170f2880aae4c525594e8fb497",
+          "version": "trama-surface-styles-v1"
+        },
+        "completedAt": "2026-09-30T17:40:14.484159+00:00",
+        "component": {
+          "candidate": "meshlab",
+          "conversion": {
+            "fullLicenseProvenanceEmbedded": true,
+            "maximumCoordinateErrorMetres": 0,
+            "nativeReader": "PyMeshLab PLY",
+            "nativeWriter": "PyMeshLab PLY",
+            "reopenedCounts": {
+              "triangles": 7198,
+              "vertices": 3735
+            }
+          },
+          "engineVersion": "MeshLab 2025.07d",
+          "filters": [
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_duplicate_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000796
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_null_faces",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000125
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.00012
+            },
+            {
+              "after": {
+                "triangles": 9598,
+                "vertices": 9735
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 4935
+              },
+              "filter": "meshing_repair_non_manifold_edges",
+              "parameters": {
+                "method": "Split Vertices"
+              },
+              "returned": {},
+              "seconds": 0.006807
+            },
+            {
+              "after": {
+                "triangles": 7198,
+                "vertices": 8535
+              },
+              "before": {
+                "triangles": 9598,
+                "vertices": 9735
+              },
+              "filter": "meshing_decimation_quadric_edge_collapse",
+              "parameters": {
+                "autoclean": false,
+                "boundaryweight": 10,
+                "optimalplacement": true,
+                "preserveboundary": true,
+                "preservenormal": true,
+                "preservetopology": true,
+                "qualitythr": 0.3,
+                "targetfacenum": 7198
+              },
+              "returned": {},
+              "seconds": 0.027794
+            },
+            {
+              "after": {
+                "triangles": 7198,
+                "vertices": 3735
+              },
+              "before": {
+                "triangles": 7198,
+                "vertices": 8535
+              },
+              "filter": "meshing_remove_unreferenced_vertices",
+              "parameters": {},
+              "returned": {},
+              "seconds": 0.000607
+            }
+          ],
+          "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+          "limitations": [
+            "MeshLab is a supporting processor requiring the named upstream fitting route; no six-photo reconstruction is attributed to MeshLab.",
+            "Distances are native sampled vertex-to-surface checks against a fitted mesh, not a real client or an independent scan. Reduced sampling can miss local errors.",
+            "Missing surfaces are not filled. Intentional normal seams and disconnected eyes remain. Repair splits vertices rather than deleting anatomical faces.",
+            "The same independent style assets retain their upstream adaptation and licenses. Simplification may change clipping and professional assessment is pending.",
+            "Full written refinements, direct editing and expected-result history remain pending common workflow tasks."
+          ],
+          "measurements": [
+            {
+              "direction": "upstreamVerticesToProcessedSurface",
+              "nativeResult": {
+                "RMS": 4.3739808461396024e-05,
+                "diag_mesh_0": 0.6432738900184631,
+                "diag_mesh_1": 0.6432523684083506,
+                "max": 0.00025732300127856433,
+                "mean": 2.20610381802544e-05,
+                "min": 0,
+                "n_samples": 4935
+              },
+              "requestedSamples": 4935
+            },
+            {
+              "direction": "processedVerticesToUpstreamSurface",
+              "nativeResult": {
+                "RMS": 3.2761250622570515e-05,
+                "diag_mesh_0": 0.6432523727416992,
+                "diag_mesh_1": 0.6432739138064109,
+                "max": 0.0002200892340624705,
+                "mean": 1.2112001968489494e-05,
+                "min": 0,
+                "n_samples": 3735
+              },
+              "requestedSamples": 3735
+            }
+          ],
+          "mesh": {
+            "after": {
+              "triangles": 7198,
+              "vertices": 3735
+            },
+            "before": {
+              "triangles": 9598,
+              "vertices": 4935
+            },
+            "deviation": {
+              "processedVerticesToUpstreamSurface": {
+                "maximumMetres": 0.0002200892340624705,
+                "meanMetres": 1.2112001968489494e-05,
+                "rmsMetres": 3.2761250622570515e-05
+              },
+              "upstreamVerticesToProcessedSurface": {
+                "maximumMetres": 0.00025732300127856433,
+                "meanMetres": 2.20610381802544e-05,
+                "rmsMetres": 4.3739808461396024e-05
+              }
+            },
+            "preservesCoincidentNormalSeams": true,
+            "triangleTarget": 7198
+          },
+          "processingVersion": "meshlab-native-upstream-v1",
+          "provenance": {
+            "component": "PyMeshLab 2025.7.post1 / MeshLab 2025.07d / GPL-3.0 software",
+            "componentLicenseUrl": "https://github.com/cnr-isti-vclab/PyMeshLab/blob/v2025.7.post1/LICENSE",
+            "componentModifications": "Native cleanup, non-manifold edge split repair, topology/boundary/normal-preserving quadric simplification, bidirectional sampled vertex distances and PLY conversion. Original eyes/materials and independent style meshes retained.",
+            "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+            "professionalReview": "pending",
+            "sourceHeadSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "upstreamCandidate": "makehuman",
+            "upstreamProvenance": {},
+            "upstreamRunId": "fa809343-10df-4e8d-a5d6-e835404f9745"
+          },
+          "settings": {
+            "samplePoints": 12000,
+            "sourceRunId": "fa809343-10df-4e8d-a5d6-e835404f9745",
+            "triangleRatio": 0.75,
+            "voxelSize": 0.003
+          },
+          "styleCompatibility": {
+            "method": "Exact unchanged independent upstream style GLBs. Simplification clipping remains subject to actual visual review.",
+            "styles": [
+              {
+                "path": "beard/chinstrap.glb",
+                "sha256": "32a1c0e4c8c1f5ba378236db738c3472111dcc057b0bcce911956a43d47bb50b"
+              },
+              {
+                "path": "beard/full.glb",
+                "sha256": "6926e257e98ce8908e4ffcc4610fbf4c145e6c81edfa53ed7992b347adf15ff4"
+              },
+              {
+                "path": "beard/goatee.glb",
+                "sha256": "22cfbd2e8dc8c21bdd6b27f4b21364ba55fddf0f165993a323f78f5a0a550e32"
+              },
+              {
+                "path": "beard/moustache.glb",
+                "sha256": "049af3f20a636f1900b5ed3f0a59ce7ca2292fe6107b05e186c3d9ea096a4bad"
+              },
+              {
+                "path": "beard/stubble.glb",
+                "sha256": "9475a2b38d91889b28701aec575c4e9b32c7b1d25d3e7e0f5e444e41bc323c08"
+              },
+              {
+                "path": "beard/trama-anchor.glb",
+                "sha256": "ccd6a254247354c292a8ce9796366509a0b940e543be34487fcbefd49e599cb1"
+              },
+              {
+                "path": "beard/trama-beardstache.glb",
+                "sha256": "31f11261bd3fb05bca4c5cab7d74e6844e4ab5f0a2a9390fe80e07549a6abbe5"
+              },
+              {
+                "path": "beard/trama-chevron.glb",
+                "sha256": "f4eec254da18d0432e7a56c2d0a139d00296c18c49f373be6ed82c7d7272bce3"
+              },
+              {
+                "path": "beard/trama-chinstrap.glb",
+                "sha256": "5baacccd7258a70535b0b8bc111e38940e92592fb62cc0c5477fc9de80f92086"
+              },
+              {
+                "path": "beard/trama-circle.glb",
+                "sha256": "f2bdeb59af59780cdc483064e7da7ed9d7180d932a28e094af970d958bff1f6e"
+              },
+              {
+                "path": "beard/trama-coily-full.glb",
+                "sha256": "51a3469490db4db1667b9ea1c9ab84f958ce2fd9a919c20efe2f34cc7e4a3848"
+              },
+              {
+                "path": "beard/trama-curly-full.glb",
+                "sha256": "a2c5711c8251df9f06a7f5199bc8c55714f88db94dc654f9e59fa3560892056f"
+              },
+              {
+                "path": "beard/trama-goatee.glb",
+                "sha256": "0c32fee9c24eb764dc9b47507534e9d97473afde1477a46141677c5befacf3d0"
+              },
+              {
+                "path": "beard/trama-heavy-stubble.glb",
+                "sha256": "153760f223c4aef8c5be5a8c49f5e18d136b134f32ae1857807db389189eb529"
+              },
+              {
+                "path": "beard/trama-light-stubble.glb",
+                "sha256": "4a44b2c8f45a6dd16a3d0808326a53b17861a6a2bb3f79e3a14a6889b60b2afb"
+              },
+              {
+                "path": "beard/trama-limited-coverage.glb",
+                "sha256": "e363608bc186c056624ea3e653e1a7644f4740e5c663c776f4271fcb2cc1e7fc"
+              },
+              {
+                "path": "beard/trama-long-curly.glb",
+                "sha256": "427c13e21a825640938230706e2e77ed6e763b22cc1eae2dc8297e9e56d0de9e"
+              },
+              {
+                "path": "beard/trama-long-tapered.glb",
+                "sha256": "3a2810b3027aee9abac07af33c40d2d57607dcc82a88dc1d3bc3d045f9fef722"
+              },
+              {
+                "path": "beard/trama-medium-rounded.glb",
+                "sha256": "890711df5b7f90e40791bdbe91a0035c15a59ac6b001b8f2505f952deca62001"
+              },
+              {
+                "path": "beard/trama-moustache.glb",
+                "sha256": "e1da0dff89c00fe66ed6fb9c7a03d83ae331524e076696927a40d7550ec83a39"
+              },
+              {
+                "path": "beard/trama-rounded-full.glb",
+                "sha256": "94a69741fd1db1cdee4b81b3f1ff07468df696aa5397ce588e82a745ba926f8c"
+              },
+              {
+                "path": "beard/trama-short-boxed.glb",
+                "sha256": "bc16ea5b9f6a46de23cb96e23f39c37ce106878f32a79f62e9081d844e4cf25b"
+              },
+              {
+                "path": "beard/trama-soft-stubble.glb",
+                "sha256": "a26b750cd4adbd00deebc743fda31359f2b8fa6fe89373afd1498df9cabad270"
+              },
+              {
+                "path": "beard/trama-soul-patch.glb",
+                "sha256": "bab67cce0a68422adc98e9e5f503b8766d1c10fdbc2f700e514d574e1887321e"
+              },
+              {
+                "path": "beard/trama-van-dyke.glb",
+                "sha256": "0cf73d8bf7f7ce93aa633bc993b2b110efe3d1fbd9bbc1cdc86375cb52814911"
+              },
+              {
+                "path": "hair/afro01.glb",
+                "sha256": "4ed0e0b1e70687f62318b3e734db0083b484457c199c0ed0b7157c4299e09af2"
+              },
+              {
+                "path": "hair/bob01.glb",
+                "sha256": "bb9a0696e37916d0baabc6ad43d99135c3f3459798eea884de797545c5b60db3"
+              },
+              {
+                "path": "hair/bob02.glb",
+                "sha256": "8a6fbf60f08fa3f1ac34cfd77315e945f6d0810fcba91fffa85c59f49f99ec08"
+              },
+              {
+                "path": "hair/braid01.glb",
+                "sha256": "ba3160adec3480fad5223b226b1066b5e2c7fb5b9bffa92a58b6037dfd6ecf65"
+              },
+              {
+                "path": "hair/long01.glb",
+                "sha256": "c6eb1d6204fa7e0586fa33e4da4567c09068906d9b24e74e2b29654b124fd435"
+              },
+              {
+                "path": "hair/ponytail01.glb",
+                "sha256": "0a3e05fa4f657a0583001a8c24de219ec2a59b8935857ede2b57a469963b4fc7"
+              },
+              {
+                "path": "hair/rounded-coils.glb",
+                "sha256": "ad9e15a790d92b09cf031bf51649067fb02cb2a206865c05414ac735b3a3761d"
+              },
+              {
+                "path": "hair/short01.glb",
+                "sha256": "1909d482b66b0b0f2c105ef84ec2b1643b8f64004908b8c0091c6afdcbf6f93f"
+              },
+              {
+                "path": "hair/short02.glb",
+                "sha256": "e32bef7b40577ebf40ea67a5110be90911db39389de30dd985a380e00450c808"
+              },
+              {
+                "path": "hair/short03.glb",
+                "sha256": "36ed359f316db46fdc285f43b8bf3050440c61bdb1fef83b9fa1da4171b8ae4f"
+              },
+              {
+                "path": "hair/short04.glb",
+                "sha256": "aea2a2e8e67b94bf3333206bedd89b1b6ae8cbe7594b4e52a5166ae3f7c39e33"
+              },
+              {
+                "path": "hair/trama-buzz-coily.glb",
+                "sha256": "8e1e5740281f968a966817ef35fd25ccb682697ce6b54369b724e47fac8e5757"
+              },
+              {
+                "path": "hair/trama-buzz-curly.glb",
+                "sha256": "e901b0cbbf7cc57e34a6be0f61bbd3fe3ab9e2bf11582803e1708dba75aecad1"
+              },
+              {
+                "path": "hair/trama-buzz-straight.glb",
+                "sha256": "0a86e4ae70e16e32e0c082b2aaf74ef21ff34b52331efd8588a6dc2ec6f86dd0"
+              },
+              {
+                "path": "hair/trama-buzz-wavy.glb",
+                "sha256": "c5db520b730e0d63dc457a70d320d27866a8e44f209598d94526c8050b1e5a76"
+              },
+              {
+                "path": "hair/trama-crew-coily.glb",
+                "sha256": "47a0cfd36931d9a4bb3795ee5f05ff4243ae9f9d3f857b4350bac5f80389be3c"
+              },
+              {
+                "path": "hair/trama-crew-curly.glb",
+                "sha256": "dadf557d11f1e7e9133a0c4cd0afbe6a4e697f66b65c88708ad834556f7dfc96"
+              },
+              {
+                "path": "hair/trama-crew-straight.glb",
+                "sha256": "a7bee7c46e7c7648262088258d91e5f129b7cf2381e738ff3628f1330d1e9a9c"
+              },
+              {
+                "path": "hair/trama-crew-wavy.glb",
+                "sha256": "5b2d7a91f6f14cf010cf50c97bcf306c5ed54927fa60d1ef7f7e146b2d83f694"
+              },
+              {
+                "path": "hair/trama-crop-coily.glb",
+                "sha256": "a0ff6c04b9cd11c29065aa7266eb45b349de8e3ea07ba9ff6c5ceefd72558e11"
+              },
+              {
+                "path": "hair/trama-crop-curly.glb",
+                "sha256": "f0f16d4c1678935625087a49bdaf60ad0a199799c3b563a802676e271e020027"
+              },
+              {
+                "path": "hair/trama-crop-straight.glb",
+                "sha256": "81229f9aa07752cc46ed808ee034c87bcf64a4f77fbe777a213e52336a15aab6"
+              },
+              {
+                "path": "hair/trama-crop-wavy.glb",
+                "sha256": "1c20e8d542af43f1ce20945535fd37a9c9e8251c950d2cc64d8d0bc557ee7d8e"
+              },
+              {
+                "path": "hair/trama-ivy-coily.glb",
+                "sha256": "0eb50d6d94b69b9ff7dda57d467c570713ca6b33521bc770533757dc57c963db"
+              },
+              {
+                "path": "hair/trama-ivy-curly.glb",
+                "sha256": "152524a96648110ad1779956f9fc89232d1625020097cdafe69525d084a2569b"
+              },
+              {
+                "path": "hair/trama-ivy-straight.glb",
+                "sha256": "51f9cfa230482ac6fbd39254d5fd07c696b43d0b1bbd9c78c8925c5b2a11ac8a"
+              },
+              {
+                "path": "hair/trama-ivy-wavy.glb",
+                "sha256": "bc115bcf58855b8b5d3509c83f23db8c1cd268ffc5e9c07fb63970dd2cb95222"
+              },
+              {
+                "path": "hair/trama-long-coily.glb",
+                "sha256": "dabffd2b9fb53dae2784bed29309e9a7d1672f1be42a5537780b58b8727b1209"
+              },
+              {
+                "path": "hair/trama-long-curly.glb",
+                "sha256": "83ac81774e02c0083b249a3d6d8236e0f3bb228c63766bf6524e21f8d1ea77a4"
+              },
+              {
+                "path": "hair/trama-long-straight.glb",
+                "sha256": "aad34b0a56e6fbe4fd0f907b08a688e22628b96737bf3d711e5e29b90a89694a"
+              },
+              {
+                "path": "hair/trama-long-wavy.glb",
+                "sha256": "27808b5850b47f267ba8d7e4796ae20c629a68af691b70452a32aed1a30df74b"
+              },
+              {
+                "path": "hair/trama-pompadour-coily.glb",
+                "sha256": "68f69888fb5296918d28c6335fddc6cd9553aed5d719db2162619230081c7540"
+              },
+              {
+                "path": "hair/trama-pompadour-curly.glb",
+                "sha256": "a7b49bd07770b46e7ca05981cbd40c02cbe3c61007ed9c35df95caacebb5e934"
+              },
+              {
+                "path": "hair/trama-pompadour-straight.glb",
+                "sha256": "0f55d707d5da712c2ddcbc0f85f85c02caccbd5dec3d09b39a664e568e525e57"
+              },
+              {
+                "path": "hair/trama-pompadour-wavy.glb",
+                "sha256": "4c15e521c11257f9201d29dd3b4d5ac3a03e10639be24d968d3dfeeb2d654627"
+              },
+              {
+                "path": "hair/trama-quiff-coily.glb",
+                "sha256": "eea695a926b528c66fcb57693336e849076315c4c8730659af2cd4df475f2964"
+              },
+              {
+                "path": "hair/trama-quiff-curly.glb",
+                "sha256": "3a8df3d2bbe6983626e730641f8016d7b007cf6ddca7178c7c7a77185a3a7728"
+              },
+              {
+                "path": "hair/trama-quiff-straight.glb",
+                "sha256": "f4988b1ed08c07641ccef5c670a5a628e81c093914c65dded2c829aaebb8d449"
+              },
+              {
+                "path": "hair/trama-quiff-wavy.glb",
+                "sha256": "fbfd4034aafab8a524a0a9824a73d6000457a7c3e122d0991a1670d57cd4acc2"
+              },
+              {
+                "path": "hair/trama-shag-coily.glb",
+                "sha256": "a4a9c4792bf201600a2ba484ffc6c15e4a9e79647f549add634c42f32a569fae"
+              },
+              {
+                "path": "hair/trama-shag-curly.glb",
+                "sha256": "d7bd61accaa3f29e6f69878928383a4f3d435a03227604d8f98912180e728db6"
+              },
+              {
+                "path": "hair/trama-shag-straight.glb",
+                "sha256": "f6a74ef9cdbf897cc3d71a427a65319b89b69a49c9b97db1c8675f4cb5450444"
+              },
+              {
+                "path": "hair/trama-shag-wavy.glb",
+                "sha256": "82652ee139e528d3c9754cde1464e2a13a86491b942b36124076da7f3827cf86"
+              },
+              {
+                "path": "hair/trama-side-part-coily.glb",
+                "sha256": "4d9ea73eeacf7f323634bd35992e96f794fc65b80667c9bfea2568ac1ed93e96"
+              },
+              {
+                "path": "hair/trama-side-part-curly.glb",
+                "sha256": "3cd9ee425ac5cf997abc3a4d400fe744ad53bd627a6cb3b5be7e100d470442c1"
+              },
+              {
+                "path": "hair/trama-side-part-straight.glb",
+                "sha256": "dc5acc572e791f695d50aeff47f254e05cb3bbdb2e40167c570cc57110e32a09"
+              },
+              {
+                "path": "hair/trama-side-part-wavy.glb",
+                "sha256": "5e8a85bdbb52d2aa147491d51e1ecab043852280d51f424bb230d2273c326d48"
+              },
+              {
+                "path": "hair/trama-slick-coily.glb",
+                "sha256": "a91df3ebbbdeab459a6d3d3b92b610f7a9b5f6ea3502c792517eadc549ca4312"
+              },
+              {
+                "path": "hair/trama-slick-curly.glb",
+                "sha256": "bf56ee114234d70c9405f5d7d234766332ef7d2d79e3c331c418481bfd7c5b8a"
+              },
+              {
+                "path": "hair/trama-slick-straight.glb",
+                "sha256": "7c0a2911fe5d237e0237de05e1d1b844ccad53d11a2209f97f1d646dff1c4557"
+              },
+              {
+                "path": "hair/trama-slick-wavy.glb",
+                "sha256": "4abea4c05ec36bc0544e062fbe096fd545883c21f74631637d4ea1f2fcd3c238"
+              }
+            ]
+          },
+          "topology": {
+            "after": {
+              "boundary_edges": 268,
+              "connected_components_number": 2,
+              "edges_number": 10931,
+              "faces_number": 7198,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 3735
+            },
+            "before": {
+              "boundary_edges": 268,
+              "connected_components_number": 2,
+              "edges_number": 14531,
+              "faces_number": 9598,
+              "genus": 0,
+              "incident_faces_on_non_two_manifold_edges": 0,
+              "incident_faces_on_non_two_manifold_vertices": 0,
+              "is_mesh_two_manifold": true,
+              "non_two_manifold_edges": 0,
+              "non_two_manifold_vertices": 0,
+              "number_holes": 2,
+              "unreferenced_vertices": 0,
+              "vertices_number": 4935
+            }
+          },
+          "upstream": {
+            "candidate": "makehuman",
+            "headSha256": "52dd7804b3fbe42ed13bac7a71f0f40659256df9e8fed6780648034d00aa4d25",
+            "runId": "fa809343-10df-4e8d-a5d6-e835404f9745"
+          },
+          "version": "2025.7.post1"
+        },
+        "diagnostics": [
+          "resources",
+          "settings",
+          "result",
+          "meshlab",
+          "process",
+          "component"
+        ],
+        "elapsedMs": 3179,
+        "geometry": "Processed fitted geometry with inferred hidden surfaces; upstream fit is not observed 3D geometry.",
+        "hair": {
+          "afro01": "hair/afro01.glb",
+          "bob01": "hair/bob01.glb",
+          "bob02": "hair/bob02.glb",
+          "braid01": "hair/braid01.glb",
+          "long01": "hair/long01.glb",
+          "ponytail01": "hair/ponytail01.glb",
+          "rounded-coils": "hair/rounded-coils.glb",
+          "short01": "hair/short01.glb",
+          "short02": "hair/short02.glb",
+          "short03": "hair/short03.glb",
+          "short04": "hair/short04.glb",
+          "trama-buzz-coily": "hair/trama-buzz-coily.glb",
+          "trama-buzz-curly": "hair/trama-buzz-curly.glb",
+          "trama-buzz-straight": "hair/trama-buzz-straight.glb",
+          "trama-buzz-wavy": "hair/trama-buzz-wavy.glb",
+          "trama-crew-coily": "hair/trama-crew-coily.glb",
+          "trama-crew-curly": "hair/trama-crew-curly.glb",
+          "trama-crew-straight": "hair/trama-crew-straight.glb",
+          "trama-crew-wavy": "hair/trama-crew-wavy.glb",
+          "trama-crop-coily": "hair/trama-crop-coily.glb",
+          "trama-crop-curly": "hair/trama-crop-curly.glb",
+          "trama-crop-straight": "hair/trama-crop-straight.glb",
+          "trama-crop-wavy": "hair/trama-crop-wavy.glb",
+          "trama-ivy-coily": "hair/trama-ivy-coily.glb",
+          "trama-ivy-curly": "hair/trama-ivy-curly.glb",
+          "trama-ivy-straight": "hair/trama-ivy-straight.glb",
+          "trama-ivy-wavy": "hair/trama-ivy-wavy.glb",
+          "trama-long-coily": "hair/trama-long-coily.glb",
+          "trama-long-curly": "hair/trama-long-curly.glb",
+          "trama-long-straight": "hair/trama-long-straight.glb",
+          "trama-long-wavy": "hair/trama-long-wavy.glb",
+          "trama-pompadour-coily": "hair/trama-pompadour-coily.glb",
+          "trama-pompadour-curly": "hair/trama-pompadour-curly.glb",
+          "trama-pompadour-straight": "hair/trama-pompadour-straight.glb",
+          "trama-pompadour-wavy": "hair/trama-pompadour-wavy.glb",
+          "trama-quiff-coily": "hair/trama-quiff-coily.glb",
+          "trama-quiff-curly": "hair/trama-quiff-curly.glb",
+          "trama-quiff-straight": "hair/trama-quiff-straight.glb",
+          "trama-quiff-wavy": "hair/trama-quiff-wavy.glb",
+          "trama-shag-coily": "hair/trama-shag-coily.glb",
+          "trama-shag-curly": "hair/trama-shag-curly.glb",
+          "trama-shag-straight": "hair/trama-shag-straight.glb",
+          "trama-shag-wavy": "hair/trama-shag-wavy.glb",
+          "trama-side-part-coily": "hair/trama-side-part-coily.glb",
+          "trama-side-part-curly": "hair/trama-side-part-curly.glb",
+          "trama-side-part-straight": "hair/trama-side-part-straight.glb",
+          "trama-side-part-wavy": "hair/trama-side-part-wavy.glb",
+          "trama-slick-coily": "hair/trama-slick-coily.glb",
+          "trama-slick-curly": "hair/trama-slick-curly.glb",
+          "trama-slick-straight": "hair/trama-slick-straight.glb",
+          "trama-slick-wavy": "hair/trama-slick-wavy.glb"
+        },
+        "head": "head.glb",
+        "kind": "process",
+        "resourceMeasurement": "Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.",
+        "resources": [
+          {
+            "command": [
+              "/home/looizao/Projects/trama/.scratch/private/native-demos/python/bin/python",
+              "/home/looizao/Projects/trama/scripts/native-demos/process-meshlab.py",
+              "/home/looizao/Projects/trama/.scratch/private/runtime/processing/4e10027c-664d-4c35-b96e-5f486ebe948e/4343be43-9788-4fb2-a464-276f94f6dca7"
+            ],
+            "cpuSeconds": 3.421,
+            "exitCode": 0,
+            "peakRssKiB": 166068,
+            "seconds": 3.169,
+            "stage": "meshlab"
+          }
+        ],
+        "retainedBytes": 279576789,
+        "scope": "meshlab supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending."
+      },
+      "expectedResultSelection": "pending",
+      "professionalAssessment": "pending"
+    }
+  ]
+}

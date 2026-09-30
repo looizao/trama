@@ -1,0 +1,1054 @@
+{
+  "version": "trama-surface-styles-v1",
+  "date": "2026-09-30T17:18:30.774520+00:00",
+  "checks": "60 actual GLB containers, decoded finite geometry and valid topology, exact recorded mesh counts and SHA256; 240 real decoded four-angle renders. Original catalog files preserved; legacy entries retained for saved histories.",
+  "hairCount": 40,
+  "beardCount": 20,
+  "originalHairCount": 11,
+  "originalBeardCount": 5,
+  "nativeCompatibility": "pending",
+  "browserReopen": "pending",
+  "professionalAcceptance": "pending",
+  "assets": [
+    {
+      "id": "trama-buzz-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "6b0f59bebc16d153916e6f225d3e7237b456260550c246bfad24cf2f3e9d2bb9",
+      "bytes": 601132,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "7e061391023be6db2a4baab1ec41c5ad6ba9bb724c3cd39e709ea5390b8049ac",
+      "bytes": 601112,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "a43bf219a5969a38cd480af7774e781728f7c246b6e06c6c3654271134c6536c",
+      "bytes": 909280,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-buzz-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "6279a6b6e679aed341f0bc4172171103a051c6568f281420115446ee8ac29c30",
+      "bytes": 909280,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "490ba30a8fe970f0bf3b0ab1758c099659ec17f5dcae1fbb4845624a045c002f",
+      "bytes": 601140,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "498f259f8fd9b817afc5e6bec24b7aea35c186534eb7321c055269e13b1ac680",
+      "bytes": 601112,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "7b600ee3c06542be362dd0371409e98ef20d0ab42f8bd349779a7c0bbf9da3ee",
+      "bytes": 909280,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crew-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "117de5fd1ba558da673684b6145eda1060aeb0658368985e74d45af983f03979",
+      "bytes": 909276,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "crew",
+        "lengthMm": 16,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-straight",
+      "kind": "hair",
+      "vertices": 6424,
+      "triangles": 11216,
+      "sha256": "b1c58901015a43f8f7f2e9abbe2ce44b5d5a29a1474ceb031b8352ed29d7f2a6",
+      "bytes": 291908,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "straight",
+        "density": "sparse",
+        "hairline": "receding"
+      }
+    },
+    {
+      "id": "trama-ivy-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "d3614041c603d3f018acf0c69544f70db3bb816541ae1ffac0a164a322381111",
+      "bytes": 601104,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "c8a46b95016d0a4dd0ff7b47427ba0ef46f96f0775db3662b893545ebc0165c4",
+      "bytes": 909272,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-ivy-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "ca480b57e9341458f85e26e2fe4d8f70f09f522ee929a8ad5e87fffe4c7a6cb1",
+      "bytes": 909272,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 28,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "bcab80e3c8e06e8799a222c8fd3de528c554bc6e329c7f0055f2b08cceca0907",
+      "bytes": 601136,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "05304313697459f4cce1a18a1250735c8f4570f9d14f6e12d1e095de5f60a86a",
+      "bytes": 601108,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "b3cdc1ca7856149eff35d940718f2fcb9e625ef654af240ecda4f5161a11b205",
+      "bytes": 909280,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-crop-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "e6b658bec555f819175c8352031a330a8f570e33119451e1d7c71ff61ecddee3",
+      "bytes": 909280,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "fringe",
+        "lengthMm": 32,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "3d860a75095808efb7a70553053719f766d7d41d2a6e6f913029982f6ce4433c",
+      "bytes": 601164,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "6a2ae91e8cbc0ef73d23601010bae7a5b7240409a5784cd94c556c547b389f71",
+      "bytes": 601140,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "343316462d1021ead22024a38d7d26fcbedfa2bd4b04c63400aac08d4f34579b",
+      "bytes": 909312,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-side-part-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "c75c540a2bcca9cd05b4f9978622196e8e23b83915097a31cfd105c46142b7b5",
+      "bytes": 909308,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "part",
+        "lengthMm": 48,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "f6611c3accfeaeeea4ae8d71e3670429c7e919fe4b15dd760d259cf95a4fb7b0",
+      "bytes": 601140,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "d02f6cd9b48ee74b8b28924907da13227bcd67596866dac1dad31119d02af39a",
+      "bytes": 601116,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "64a2869d6cda02df5eb908d0af2a00204f6db21b4244234aab5a7b495d10ad54",
+      "bytes": 909284,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-slick-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "444737012c2b902c4cb632c12eca12c07b2bc833bf61e88c6726650c66c5b5c8",
+      "bytes": 909284,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "back",
+        "lengthMm": 65,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "6ee317b97ef090632f55d3f25a8e5c6b2021789b52a19437d9cc19d522aa7df9",
+      "bytes": 601144,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "straight",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "3fa72f5a150292faf163d3b8bbe833e47b5ea70c60f0c0bc4a6c61a0636b7f52",
+      "bytes": 601120,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "wavy",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "c92c4dfbf94f1e6bdfcb389f4699004b428dc718ad66f024630472aa79c023ff",
+      "bytes": 909284,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "curly",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-quiff-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "f117c36795129fc678117d58d68b6609c7d0dd082bb068fe872b9007008fbf20",
+      "bytes": 909268,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-straight",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "c04d73828281ee987279fc70f27a5e8bbe9709eeba680813a25c92ef31d8565e",
+      "bytes": 601160,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "straight",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-wavy",
+      "kind": "hair",
+      "vertices": 13292,
+      "triangles": 23248,
+      "sha256": "0a949bbdf8c6cc31eca7cdc9000fb9ac8ff9d90f1ce74615f65dd947ff07714e",
+      "bytes": 601140,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "wavy",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-curly",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "5ad6182e63115e0fb84f5f9007dd624e1c034c5c6ebf0c521358ae49c43ffce2",
+      "bytes": 909308,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "curly",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-pompadour-coily",
+      "kind": "hair",
+      "vertices": 19712,
+      "triangles": 36088,
+      "sha256": "d09767961c36f4ea64c7e4abee75e3b5e4b14bc89999d64c0fdb5b35727b76bb",
+      "bytes": 909312,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "pomp",
+        "lengthMm": 90,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-straight",
+      "kind": "hair",
+      "vertices": 19700,
+      "triangles": 34462,
+      "sha256": "1e3c2a92834428751b9fbeb634c04b5e05e8945e81e0d8a10c3898f7cdb24839",
+      "bytes": 889496,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-wavy",
+      "kind": "hair",
+      "vertices": 19700,
+      "triangles": 34462,
+      "sha256": "6c443083382753e29d81a2af01751d5c6a886ab01ccaff0589cae7249c89a219",
+      "bytes": 889472,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-curly",
+      "kind": "hair",
+      "vertices": 29324,
+      "triangles": 53710,
+      "sha256": "d3ca2877bd37b35982664d396dd759ba7106648e55f54f34f20f92e03cb75192",
+      "bytes": 1351432,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-shag-coily",
+      "kind": "hair",
+      "vertices": 29324,
+      "triangles": 53710,
+      "sha256": "7e9c395df663a1bc5aab3d571c3f02392d00c71d05ff69ebc63e287e03e709d2",
+      "bytes": 1351432,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-straight",
+      "kind": "hair",
+      "vertices": 19700,
+      "triangles": 34462,
+      "sha256": "127503730864f4050f9b97d369eca8c99e3f31a9c9a629a8dc51fb4e8c77e660",
+      "bytes": 889492,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-wavy",
+      "kind": "hair",
+      "vertices": 19700,
+      "triangles": 34462,
+      "sha256": "b61f7bae7cff52ae01411c6bbac83d02bfc910231373b60ea1875d93cc927aa1",
+      "bytes": 889472,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "wavy",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-curly",
+      "kind": "hair",
+      "vertices": 29324,
+      "triangles": 53710,
+      "sha256": "01f7acfa9414002e91f711881f8ab1f8499d40a44fd7eb83979e133d57fe33c4",
+      "bytes": 1351432,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-long-coily",
+      "kind": "hair",
+      "vertices": 29324,
+      "triangles": 53710,
+      "sha256": "4b92d083dab0ba53ed579e79b452036c559adcbcd24d703b4a074d3373dc8cd7",
+      "bytes": 1351428,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      }
+    },
+    {
+      "id": "trama-light-stubble",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "d00c749a90c0fd00135514c2a08c7c8aed66021a5b238eb0e05e8c0a4359e705",
+      "bytes": 2921448,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 1,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-heavy-stubble",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "4ccab91a2232b8cfadceebf4d11d162613bedaf8a99832121479f8e96448ab18",
+      "bytes": 2921448,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 3,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-soft-stubble",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "54c059f09e4eb637ce52dcf241b323dbe4744228490cea92d8de67aa267ea175",
+      "bytes": 2921440,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 4,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-short-boxed",
+      "kind": "beard",
+      "vertices": 61452,
+      "triangles": 102420,
+      "sha256": "6897a478db8f6bf627ec3faae6f448da30a5065d3cb2d42bd00d04cfb6e99453",
+      "bytes": 2706016,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "boxed",
+        "lengthMm": 9,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-rounded-full",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "ead4aa01e44b25a75f295945456affbf8cca6a7843fdc8e4dc2ba7f71f03f790",
+      "bytes": 2921444,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 14,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-curly-full",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "e8d9250f319d52738ae551e76fa6ac17c2f4b9c9612aa4ffe2e8cd4f21525fe2",
+      "bytes": 2921436,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 22,
+        "texture": "curly"
+      }
+    },
+    {
+      "id": "trama-coily-full",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "a98ce356cf97776f51d9ac24b458f905469e02c2ea0a4146401bae535d41a804",
+      "bytes": 2921440,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 26,
+        "texture": "coily"
+      }
+    },
+    {
+      "id": "trama-medium-rounded",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "517709cc4b3f700252676a5a0101868def3a3007f5c321d7c740c095ef2c749a",
+      "bytes": 2921448,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "full",
+        "lengthMm": 35,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-long-tapered",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "e25e462973192439ea413714cbfa85258a3b2e35d5e8000b6c8d33f3571a0961",
+      "bytes": 2921444,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "tapered",
+        "lengthMm": 65,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-long-curly",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "c9b6e52691c6250af1bdf087959cff812eb1bdd7242ee8851eefbb26f987474b",
+      "bytes": 2921436,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "tapered",
+        "lengthMm": 58,
+        "texture": "curly"
+      }
+    },
+    {
+      "id": "trama-circle",
+      "kind": "beard",
+      "vertices": 32778,
+      "triangles": 54630,
+      "sha256": "7755c362f272d17b997cfd711289aecb71c18458adae0a9547299852f549d6f0",
+      "bytes": 1444348,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "circle",
+        "lengthMm": 8,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-goatee",
+      "kind": "beard",
+      "vertices": 25740,
+      "triangles": 42900,
+      "sha256": "ead9feecef98ae8efee2513fdb02b5b5de8acb4b6d6ca09ebe067a6eacc1f159",
+      "bytes": 1134676,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "goatee",
+        "lengthMm": 12,
+        "texture": "wavy"
+      }
+    },
+    {
+      "id": "trama-anchor",
+      "kind": "beard",
+      "vertices": 25938,
+      "triangles": 43230,
+      "sha256": "78667d7b4247e50422127ad573e3c126590bdab4e079f6edb76f3a0ce30be03f",
+      "bytes": 1143384,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "anchor",
+        "lengthMm": 9,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-van-dyke",
+      "kind": "beard",
+      "vertices": 29700,
+      "triangles": 49500,
+      "sha256": "86ad001662fdaafbed527e0c87e5bc6487982c0eb96ed0fbf8a3762ecf5fe017",
+      "bytes": 1308920,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "van-dyke",
+        "lengthMm": 14,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-moustache",
+      "kind": "beard",
+      "vertices": 3960,
+      "triangles": 6600,
+      "sha256": "9205424e150abe257225ecaf2d3becc682c7ed42ee588e51d5a2d34bb5e07a29",
+      "bytes": 176352,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "moustache",
+        "lengthMm": 8,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-chevron",
+      "kind": "beard",
+      "vertices": 3960,
+      "triangles": 6600,
+      "sha256": "c101f87a2b65fec2c395b5479a99c74285779e52c0406814bb53eba79e9eeac5",
+      "bytes": 176348,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "moustache",
+        "lengthMm": 13,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-beardstache",
+      "kind": "beard",
+      "vertices": 66348,
+      "triangles": 110580,
+      "sha256": "13634db4d3008047375d8b9b0b3b6efad32cab2eb23cdde161fcad4c1ae71bc6",
+      "bytes": 2921440,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "beardstache",
+        "lengthMm": 5,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-chinstrap",
+      "kind": "beard",
+      "vertices": 12042,
+      "triangles": 20070,
+      "sha256": "e0e57835806dc725e9285b2c1b3d8ca54675b69ef1bb158e9ff05155057f6cec",
+      "bytes": 531968,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "chinstrap",
+        "lengthMm": 6,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-soul-patch",
+      "kind": "beard",
+      "vertices": 3060,
+      "triangles": 5100,
+      "sha256": "44c97fae690167d52fcbd1c027729ce67a6fc4155278f62e45825013b0171947",
+      "bytes": 136760,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "soul-patch",
+        "lengthMm": 5,
+        "texture": "straight"
+      }
+    },
+    {
+      "id": "trama-limited-coverage",
+      "kind": "beard",
+      "vertices": 43578,
+      "triangles": 72630,
+      "sha256": "86734401d572435e46b53b4d39adb177f1be53ea8c7ac0cbe1b27c2d1f9ef360",
+      "bytes": 1919576,
+      "license": "CC0-1.0",
+      "creator": "Trama original procedural asset generator",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "limited",
+        "lengthMm": 9,
+        "texture": "wavy"
+      }
+    }
+  ]
+}

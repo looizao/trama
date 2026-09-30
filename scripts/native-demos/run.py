@@ -30,6 +30,16 @@ for item in manifest['inputs']:
     path=(directory/item['path']).resolve()
     if not path.is_relative_to(directory) or not path.is_file():raise SystemExit('Input outside private job directory or unavailable')
 env=dict(os.environ,BLENDER_USER_RESOURCES=str(ROOT/'.scratch/private/blender-resources'),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4')
+def catalog_metadata():
+    import hashlib
+    path = directory / 'style-catalog.json'
+    if not path.exists(): return {'version':'legacy-retained-catalog'}
+    raw = path.read_bytes(); snapshot = json.loads(raw)
+    versions = {s['recipe']['version'] for kind in ['hair','beard'] for s in snapshot[kind] if s.get('recipe')}
+    return {'version': next(iter(versions)) if len(versions)==1 else 'legacy-retained-catalog',
+            'snapshotSha256': hashlib.sha256(raw).hexdigest(),
+            'hairCount': len(snapshot['hair']), 'beardCount': len(snapshot['beard']),
+            'scope': 'Actual immutable exported catalog; original styles retain their historical source geometry.'}
 metrics=[];started=time.monotonic()
 def stage(name,command):
     (directory/'progress.json').write_text(json.dumps({'stage':name,'percent':{'prepare':5,'fit':40,'export':60,'silhouette':90,'colmap':5,'open3d':5,'meshlab':5,'cloudcompare':5}[name]}))
@@ -55,7 +65,7 @@ try:
         stage(args.candidate,[sys.executable,str(ROOT/('scripts/native-demos/process-'+args.candidate+'.py')),str(directory)])
         component=json.loads((directory/'component-report.json').read_text())
         files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
-        report={'candidate':args.candidate,'kind':'process','geometry':component['geometry'],'scope':args.candidate+' supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','component':component,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
+        report={'catalog':catalog_metadata(),'candidate':args.candidate,'kind':'process','geometry':component['geometry'],'scope':args.candidate+' supporting processing of identified upstream fitted geometry. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','component':component,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
         (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n');print('EXPERIMENT_COMPLETE',json.dumps({'elapsedMs':report['elapsedMs'],'retainedBytes':report['retainedBytes']}),flush=True)
         raise SystemExit(0)
     fitter=[sys.executable,str(ROOT/('scripts/native-demos/'+args.candidate+'.py'))] if args.candidate in ['makehuman','flame'] else blender
@@ -65,7 +75,7 @@ try:
     stage('silhouette',[sys.executable,str(ROOT/'scripts/native-demos/evaluate-silhouettes.py'),str(directory)])
     fit=json.loads((directory/'fit.json').read_text())
     files=[{'path':str(f.relative_to(directory)),'bytes':f.stat().st_size} for f in directory.rglob('*') if f.is_file()]
-    report={'candidate':args.candidate,'kind':'fit','geometry':fit['geometry'],'scope':'Six-view '+args.candidate+' fitting experiment. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','fit':fit,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
+    report={'catalog':catalog_metadata(),'candidate':args.candidate,'kind':'fit','geometry':fit['geometry'],'scope':'Six-view '+args.candidate+' fitting experiment. Native processing report only; explored refinements and expected selections are retained separately in the consultation journey. Professional review remains pending.','fit':fit,'resources':metrics,'resourceMeasurement':'Wall and CPU seconds are per stage. Peak RSS is the cumulative maximum child-process RSS through that stage, not isolated stage memory.','elapsedMs':round((time.monotonic()-started)*1000),'completedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'artifacts':files,'retainedBytes':sum(f['bytes'] for f in files),'head':'head.glb','hair':{f.stem:str(f.relative_to(directory)) for f in (directory/'hair').glob('*.glb')},'beard':{f.stem:str(f.relative_to(directory)) for f in (directory/'beard').glob('*.glb')}}
     if args.candidate=='makehuman':report['nativeShape']=json.loads((directory/'makehuman-shape.json').read_text())
     if args.candidate=='flame':
         report['nativeShape']=json.loads((directory/'flame-shape.json').read_text())

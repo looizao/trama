@@ -103,7 +103,39 @@ func completedComponentParent(t *testing.T, f privacyFixture, set PhotoSet) Demo
 	if err := os.WriteFile(filepath.Join(dir, "head.glb"), []byte("glTF test-only fixture"), 0600); err != nil {
 		t.Fatal(err)
 	}
+	addTestRetainedStyles(t, f, j.ID)
 	return j
+}
+
+func addTestRetainedStyles(t *testing.T, f privacyFixture, id string) {
+	t.Helper()
+	var raw string
+	f.a.DB.QueryRow("SELECT result FROM demo_jobs WHERE run_id=$1", id).Scan(&raw)
+	var result map[string]any
+	if err := json.Unmarshal([]byte(raw), &result); err != nil {
+		t.Fatal(err)
+	}
+	for _, kind := range []string{"hair", "beard"} {
+		styles, err := readDemoStyles(kind)
+		if err != nil {
+			t.Fatal(err)
+		}
+		entries := map[string]any{}
+		dir := filepath.Join(f.a.demoJobDirectory(f.client, id), kind)
+		if err = os.MkdirAll(dir, 0700); err != nil {
+			t.Fatal(err)
+		}
+		for _, style := range styles {
+			entries[style.ID] = kind + "/" + style.ID + ".glb"
+			if err = os.WriteFile(filepath.Join(dir, style.ID+".glb"), []byte("glTF test-only style bytes"), 0600); err != nil {
+				t.Fatal(err)
+			}
+		}
+		result[kind] = entries
+	}
+	if _, err := f.a.DB.Exec("UPDATE demo_jobs SET result=$1 WHERE run_id=$2", string(rawJSON(result)), id); err != nil {
+		t.Fatal(err)
+	}
 }
 func TestComponentSourceOwnershipSnapshotAndErasure(t *testing.T) {
 	f := demoFixture(t)
@@ -161,6 +193,7 @@ func TestComponentSourceOwnershipSnapshotAndErasure(t *testing.T) {
 	childDir := f.a.demoJobDirectory(f.client, child.ID)
 	os.MkdirAll(childDir, 0700)
 	os.WriteFile(filepath.Join(childDir, "head.glb"), []byte("glTF test-only fixture"), 0600)
+	addTestRetainedStyles(t, f, child.ID)
 	// Export routing must preserve privacy and reject files outside the job.
 	os.WriteFile(filepath.Join(childDir, "processed-skin.ply"), []byte("ply\ncomment test-only export\nend_header\n"), 0600)
 	w = f.request(t, "GET", base+"/demo-jobs/"+child.ID+"/artifacts/geometry/processed-skin", nil)

@@ -137,6 +137,9 @@ func (a *App) processNativeDemo(parent context.Context, id string) {
 	if err == nil && componentCandidate(candidate) {
 		upstream, err = a.copyComponentSource(ctx, client, id, dir)
 	}
+	if err == nil && candidate != "colmap" {
+		err = writeNativeCatalogSnapshot(dir, upstream)
+	}
 	if err == nil {
 		err = os.WriteFile(filepath.Join(dir, "manifest.json"), rawJSON(map[string]any{"inputs": manifestInputs, "settings": in.Native, "colmapPreset": in.ColmapPreset, "component": in.Component, "upstream": upstream, "notice": "Authorized six-photo input snapshot; camera parameters are declared assumptions, not measured calibration."}), 0600)
 	}
@@ -301,6 +304,15 @@ func validateNativeArtifacts(dir string, result map[string]any) error {
 		if err != nil {
 			return err
 		}
+		if raw, e := os.ReadFile(filepath.Join(dir, "style-catalog.json")); e == nil {
+			var snapshot map[string][]DemoStyle
+			if json.Unmarshal(raw, &snapshot) != nil || len(snapshot[kind]) == 0 {
+				return errors.New("invalid immutable style snapshot")
+			}
+			styles = snapshot[kind]
+		} else if !os.IsNotExist(e) {
+			return e
+		}
 		entries, ok := result[kind].(map[string]any)
 		if !ok || len(entries) != len(styles) {
 			return errors.New("missing fitted independent styles")
@@ -361,9 +373,9 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	id, client := r.PathValue("runID"), r.PathValue("clientID")
-	var status, kind, candidate string
+	var status, kind, candidate, resultRaw string
 	var count int
-	err = a.DB.QueryRowContext(r.Context(), "SELECT r.status,j.kind,j.candidate,(SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=r.id) FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, client, userFrom(r).OrganizationID).Scan(&status, &kind, &candidate, &count)
+	err = a.DB.QueryRowContext(r.Context(), "SELECT r.status,j.kind,j.candidate,j.result,(SELECT count(*) FROM demo_job_inputs i JOIN assets s ON s.id=i.asset_id WHERE i.run_id=r.id) FROM generation_runs r JOIN demo_jobs j ON j.run_id=r.id WHERE r.id=$1 AND r.client_id=$2 AND r.organization_id=$3", id, client, userFrom(r).OrganizationID).Scan(&status, &kind, &candidate, &resultRaw, &count)
 	if err != nil || (status != "completed" && status != "failed") || count != 6 || !a.nativeParentsAvailable(r.Context(), id) {
 		problem(w, 404, "retained artifact not found")
 		return
@@ -389,10 +401,13 @@ func (a *App) nativeDemoArtifact(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if (artifactKind == "hair" || artifactKind == "beard") && nativeModelKind(kind) && status == "completed" {
-		styles, _ := readDemoStyles(artifactKind)
-		for _, s := range styles {
-			if s.ID == artifactID {
-				relative = artifactKind + "/" + s.ID + ".glb"
+		var result map[string]any
+		if json.Unmarshal([]byte(resultRaw), &result) == nil {
+			ids, _ := retainedStyleIDs(result, artifactKind)
+			for _, styleID := range ids {
+				if styleID == artifactID {
+					relative = artifactKind + "/" + styleID + ".glb"
+				}
 			}
 		}
 	}

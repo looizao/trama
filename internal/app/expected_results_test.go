@@ -146,6 +146,7 @@ func TestExpectedRejectsHistoricalPrimaryAndReferenceThroughComponent(t *testing
 	if _, err := f.a.DB.Exec("UPDATE demo_jobs SET candidate='cloudcompare',kind='process',settings=$1,result='{"+`"component":{"processingVersion":"cloudcompare-native-upstream-v2"}`+"}' WHERE run_id=$2", string(raw), child.ID); err != nil {
 		t.Fatal(err)
 	}
+	addTestRetainedStyles(t, f, child.ID)
 	f.a.DB.Exec("INSERT INTO demo_job_sources(run_id,source_run_id) VALUES($1,$2)", child.ID, primary.ID)
 	f.a.DB.Exec("INSERT INTO demo_job_references(run_id,source_run_id) VALUES($1,$2)", child.ID, reference.ID)
 	f.a.DB.Exec(`UPDATE demo_jobs SET result=json_set(result,'$.fit.basisVersion','makehuman-metre-z-up-v2','$.nativeShape.styleAttachment.version','makehuman-visible-lips-v2') WHERE run_id IN ($1,$2)`, primary.ID, reference.ID)

@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-30T17:56:03.192Z",
+  "scope": "Synthetic MakeHuman expanded catalog. Actual rendered camera synchronization, saved bounded written refinements and one real hair brush stroke, browser reload and two private original mannequin references. Not reconstruction accuracy or professional acceptance.",
+  "angles": [
+    {
+      "cameras": [
+        "{\"position\":[0,0.10388910215992411,1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[0,0.10388910215992411,1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Front"
+    },
+    {
+      "cameras": [
+        "{\"position\":[0.9162988198323722,0.10388910215992411,0.9162988198323723],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[0.9162988198323722,0.10388910215992411,0.9162988198323723],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Left three-quarter"
+    },
+    {
+      "cameras": [
+        "{\"position\":[-0.9162988198323722,0.10388910215992411,0.9162988198323723],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[-0.9162988198323722,0.10388910215992411,0.9162988198323723],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Right three-quarter"
+    },
+    {
+      "cameras": [
+        "{\"position\":[1.295842218193402,0.10388910215992411,7.934745123552779e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[1.295842218193402,0.10388910215992411,7.934745123552779e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Left profile"
+    },
+    {
+      "cameras": [
+        "{\"position\":[-1.295842218193402,0.10388910215992411,7.934745123552779e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[-1.295842218193402,0.10388910215992411,7.934745123552779e-17],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Right profile"
+    },
+    {
+      "cameras": [
+        "{\"position\":[1.5869490247105558e-16,0.10388910215992411,-1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+        "{\"position\":[1.5869490247105558e-16,0.10388910215992411,-1.295842218193402],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+      ],
+      "name": "Back"
+    }
+  ],
+  "reopened": {
+    "assets": [
+      "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/stubble",
+      "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/6dd5fa76-9909-4127-9b8d-85b3a4861d5c/artifacts/beard/trama-short-boxed"
+    ],
+    "edits": [
+      {
+        "beard": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "04413a0c",
+              "mesh": "stubble",
+              "original": "04413a0c"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 288376
+        },
+        "hair": {
+          "changedSincePrevious": 0,
+          "changedVertices": 0,
+          "fingerprints": [
+            {
+              "edited": "04a13e3b",
+              "mesh": "short02",
+              "original": "04a13e3b"
+            }
+          ],
+          "maximumDisplacementMm": 0,
+          "vertices": 2061
+        }
+      },
+      {
+        "beard": {
+          "changedSincePrevious": 63792,
+          "changedVertices": 63792,
+          "fingerprints": [
+            {
+              "edited": "4f8fa6cb",
+              "mesh": "trama-short-boxed",
+              "original": "367fe021"
+            }
+          ],
+          "maximumDisplacementMm": 6.461486220359802,
+          "vertices": 63792
+        },
+        "hair": {
+          "changedSincePrevious": 11010,
+          "changedVertices": 11017,
+          "fingerprints": [
+            {
+              "edited": "2ef8c67a",
+              "mesh": "trama-quiff-wavy-scalp",
+              "original": "1fb6b9a3"
+            },
+            {
+              "edited": "bf47b25f",
+              "mesh": "trama-quiff-wavy-strands",
+              "original": "480a9fdd"
+            }
+          ],
+          "maximumDisplacementMm": 15.593085484301206,
+          "vertices": 12316
+        }
+      }
+    ],
+    "performance": [
+      "229,416 triangles · 13.4 MB · 17935 ms · 133.9 initial FPS",
+      "137,666 triangles · 4.0 MB · 8748 ms · 133.9 initial FPS"
+    ],
+    "references": [
+      "Original synthetic short boxed beard referenceOriginal locally generated mannequin and independent reusable beard mesh, trama-surface-styles-v1 CC0 output. Synthetic style example; no actual haircut outcome or professional acceptance claimed.Trama original procedural generator / professional-ownedShort boxed beardInspect associated 3D styleRemove reference association",
+      "Original synthetic wavy quiff referenceOriginal locally generated mannequin, CC0 output from trama-surface-styles-v1. Fictional style reference, not a client photograph or actual haircut. Reusable matching 3D asset; professional suitability pending.Trama original procedural generator / professional-ownedRaised front quiff / wavyInspect associated 3D styleRemove reference association"
+    ]
+  },
+  "foregroundIAB": true
+}

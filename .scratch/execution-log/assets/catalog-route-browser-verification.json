@@ -1,0 +1,382 @@
+{
+  "date": "2026-09-30T18:01:19.582Z",
+  "scope": "Actual new expanded style GLBs chosen independently, written edits applied, rendered revision saved, workspace saved and reopened for five additional viable candidates. Native MakeHuman and its actual brush/expected history are recorded separately. These synthetic cases do not establish accuracy, realistic cutting constraints or professional approval.",
+  "routes": [
+    {
+      "candidate": "blender-mpfb",
+      "reopened": {
+        "assets": [
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/stubble",
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/3f6c06ee-7406-45f1-af00-6fb2d18cd714/artifacts/beard/trama-short-boxed"
+        ],
+        "edits": [
+          {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "34e21cba",
+                  "mesh": "stubble",
+                  "original": "34e21cba"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 649314
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "6a1d9fee",
+                  "mesh": "short02",
+                  "original": "6a1d9fee"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 1794
+            }
+          },
+          {
+            "beard": {
+              "changedSincePrevious": 64313,
+              "changedVertices": 64314,
+              "fingerprints": [
+                {
+                  "edited": "6df72e3b",
+                  "mesh": "trama-short-boxed",
+                  "original": "89f4d907"
+                }
+              ],
+              "maximumDisplacementMm": 6.436919420957567,
+              "vertices": 64314
+            },
+            "hair": {
+              "changedSincePrevious": 12241,
+              "changedVertices": 12253,
+              "fingerprints": [
+                {
+                  "edited": "db82b788",
+                  "mesh": "trama-quiff-wavy-scalp",
+                  "original": "6600ee3a"
+                },
+                {
+                  "edited": "59e6e1a8",
+                  "mesh": "trama-quiff-wavy-strands",
+                  "original": "f4e11296"
+                }
+              ],
+              "maximumDisplacementMm": 13.579061031341544,
+              "vertices": 13595
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": "flame",
+      "reopened": {
+        "assets": [
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/stubble",
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/0c1e51d4-b944-4c8a-bb00-9cd66b9efc67/artifacts/beard/trama-short-boxed"
+        ],
+        "cameras": [
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+        ],
+        "edits": [
+          {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "af04506a",
+                  "mesh": "stubble",
+                  "original": "af04506a"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 172592
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "bf5d259a",
+                  "mesh": "short02",
+                  "original": "bf5d259a"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 1794
+            }
+          },
+          {
+            "beard": {
+              "changedSincePrevious": 43506,
+              "changedVertices": 43506,
+              "fingerprints": [
+                {
+                  "edited": "71867509",
+                  "mesh": "trama-short-boxed",
+                  "original": "3c38d469"
+                }
+              ],
+              "maximumDisplacementMm": 6.501729786396022,
+              "vertices": 43506
+            },
+            "hair": {
+              "changedSincePrevious": 11721,
+              "changedVertices": 11732,
+              "fingerprints": [
+                {
+                  "edited": "5f4cc0a3",
+                  "mesh": "trama-quiff-wavy-scalp",
+                  "original": "83658e19"
+                },
+                {
+                  "edited": "80ca0ac9",
+                  "mesh": "trama-quiff-wavy-strands",
+                  "original": "cad805ff"
+                }
+              ],
+              "maximumDisplacementMm": 13.623296618461596,
+              "vertices": 13085
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": "open3d",
+      "reopened": {
+        "assets": [
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/stubble",
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e333f024-9d23-4441-8c52-2bdd8abc91e7/artifacts/beard/trama-short-boxed"
+        ],
+        "cameras": [
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+        ],
+        "edits": [
+          {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          {
+            "beard": {
+              "changedSincePrevious": 63792,
+              "changedVertices": 63792,
+              "fingerprints": [
+                {
+                  "edited": "4f8fa6cb",
+                  "mesh": "trama-short-boxed",
+                  "original": "367fe021"
+                }
+              ],
+              "maximumDisplacementMm": 6.461486220359802,
+              "vertices": 63792
+            },
+            "hair": {
+              "changedSincePrevious": 11003,
+              "changedVertices": 11014,
+              "fingerprints": [
+                {
+                  "edited": "e695a68f",
+                  "mesh": "trama-quiff-wavy-scalp",
+                  "original": "1fb6b9a3"
+                },
+                {
+                  "edited": "11eb2f6f",
+                  "mesh": "trama-quiff-wavy-strands",
+                  "original": "480a9fdd"
+                }
+              ],
+              "maximumDisplacementMm": 12.846953570842729,
+              "vertices": 12316
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": "meshlab",
+      "reopened": {
+        "assets": [
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/stubble",
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/60051f77-5a99-425f-a589-39c370fa6355/artifacts/beard/trama-short-boxed"
+        ],
+        "cameras": [
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+        ],
+        "edits": [
+          {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          {
+            "beard": {
+              "changedSincePrevious": 63792,
+              "changedVertices": 63792,
+              "fingerprints": [
+                {
+                  "edited": "4f8fa6cb",
+                  "mesh": "trama-short-boxed",
+                  "original": "367fe021"
+                }
+              ],
+              "maximumDisplacementMm": 6.461486220359802,
+              "vertices": 63792
+            },
+            "hair": {
+              "changedSincePrevious": 11003,
+              "changedVertices": 11014,
+              "fingerprints": [
+                {
+                  "edited": "e695a68f",
+                  "mesh": "trama-quiff-wavy-scalp",
+                  "original": "1fb6b9a3"
+                },
+                {
+                  "edited": "11eb2f6f",
+                  "mesh": "trama-quiff-wavy-strands",
+                  "original": "480a9fdd"
+                }
+              ],
+              "maximumDisplacementMm": 12.846953570842729,
+              "vertices": 12316
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": "cloudcompare",
+      "reopened": {
+        "assets": [
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/hair/short02|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/beard/stubble",
+          "/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/head/model|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/hair/trama-quiff-wavy|/api/clients/a0b730e5-490f-488d-ae16-4f3812ee044f/demo-jobs/e51f43a4-2a48-41eb-89f6-4cd342a4a4d0/artifacts/beard/trama-short-boxed"
+        ],
+        "cameras": [
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}",
+          "{\"position\":[0,0.10388910215992438,1.2958422181934053],\"target\":[0,0,0],\"fov\":30,\"aspect\":1.2230769230769232}"
+        ],
+        "edits": [
+          {
+            "beard": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04413a0c",
+                  "mesh": "stubble",
+                  "original": "04413a0c"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 288376
+            },
+            "hair": {
+              "changedSincePrevious": 0,
+              "changedVertices": 0,
+              "fingerprints": [
+                {
+                  "edited": "04a13e3b",
+                  "mesh": "short02",
+                  "original": "04a13e3b"
+                }
+              ],
+              "maximumDisplacementMm": 0,
+              "vertices": 2061
+            }
+          },
+          {
+            "beard": {
+              "changedSincePrevious": 63792,
+              "changedVertices": 63792,
+              "fingerprints": [
+                {
+                  "edited": "4f8fa6cb",
+                  "mesh": "trama-short-boxed",
+                  "original": "367fe021"
+                }
+              ],
+              "maximumDisplacementMm": 6.461486220359802,
+              "vertices": 63792
+            },
+            "hair": {
+              "changedSincePrevious": 11003,
+              "changedVertices": 11014,
+              "fingerprints": [
+                {
+                  "edited": "e695a68f",
+                  "mesh": "trama-quiff-wavy-scalp",
+                  "original": "1fb6b9a3"
+                },
+                {
+                  "edited": "11eb2f6f",
+                  "mesh": "trama-quiff-wavy-strands",
+                  "original": "480a9fdd"
+                }
+              ],
+              "maximumDisplacementMm": 12.846953570842729,
+              "vertices": 12316
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

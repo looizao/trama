@@ -16,6 +16,7 @@ if any(interface != 'lo' for interface in interfaces):
 os.umask(0o077)
 import numpy as np
 from geometry import export, render, camera
+from catalog_styles import load_catalog, hair_meshes, beard_meshes, style_provenance
 
 PRIVATE = ROOT / '.scratch/private'
 SOURCE = PRIVATE / 'tools/makehuman-source/makehuman'
@@ -294,11 +295,15 @@ def main():
     else:
         export(directory / 'head.glb', [head, eyes])
         (directory / 'hair').mkdir(exist_ok=True); (directory / 'beard').mkdir(exist_ok=True)
-        styles = json.loads((PRIVATE / 'demo-assets/hair-catalog.json').read_text())
+        styles = load_catalog(directory, 'hair')
         for style in styles:
             name = style['id']
-            mesh = coils_mesh(head) if name == 'rounded-coils' else proxy_mesh(h, name, 'hair', origin)
-            export(directory / 'hair' / (name + '.glb'), [mesh])
+            if style.get('recipe'):
+                meshes = hair_meshes(head, style['recipe'], name)
+                meshes[0]['provenance'] = style_provenance(style)
+            else:
+                meshes = [coils_mesh(head) if name == 'rounded-coils' else proxy_mesh(h, name, 'hair', origin)]
+            export(directory / 'hair' / (name + '.glb'), meshes)
         # The original shared beard definitions are sampled on the actual
         # fitted lower face. These are new compatible meshes, not canned ones.
         lip_points=[c['nativeVertexIndex'] for c in json.loads((directory/'fit.json').read_text())['semanticCorrespondences'] if c['view']=='front' and c['landmarkIndex'] in [13,14]]
@@ -314,10 +319,16 @@ def main():
         (directory/'makehuman-style-attachment.json').write_text(json.dumps(attachment,indent=2)+'\n')
         for kind, length in {'stubble': .0017, 'full': .012, 'goatee': .009, 'moustache': .007, 'chinstrap': .006}.items():
             export(directory / 'beard' / (kind + '.glb'), [beard_mesh(head, mouth_z, kind, length)])
+        beard_styles = load_catalog(directory,'beard')
+        for style in beard_styles:
+            if style.get('recipe'):
+                meshes = beard_meshes(head,mouth_z,style['recipe'],style['id'])
+                meshes[0]['provenance'] = style_provenance(style)
+                export(directory/'beard'/(style['id']+'.glb'), meshes)
         (directory / 'makehuman-shape.json').write_text(json.dumps({
             'software': 'MakeHuman 1.3.0', 'sourceCommit': '1f508f6083b2f823dab15de924b3bde72e08d77c',
             'nativeHumanVertices': len(full), 'headVertices': len(head['xyz']), 'headTriangles': len(head['tri']),
-            'hair': len(styles), 'beard': 5, 'units': 'metres', 'interchange': 'GLB Y up, face +Z', 'styleAttachment':attachment,
+            'hair': len(styles), 'beard': len(beard_styles), 'units': 'metres', 'interchange': 'GLB Y up, face +Z', 'styleAttachment':attachment,
             'processing': 'Native Human.applyAllTargets and proxy.getCoords; CPU triangle rasterizer; no Blender.',
             'limitations': ['Neck ends at an artificial clipped plane with a flat cap, not reconstructed underside anatomy.', 'Hair uses the native unsmoothed MHCLO topology; clipping and professional acceptance must be reviewed.',
                             'Head is entirely fitted or inferred from a CC0 prior; hidden surfaces are not observed geometry.']}, indent=2) + '\n')

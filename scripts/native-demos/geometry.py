@@ -10,7 +10,6 @@ import struct
 from pathlib import Path
 
 import numpy as np
-from PIL import Image
 
 
 def normals(xyz, tri):
@@ -109,6 +108,7 @@ def camera(yaw, settings, width=768, height=896):
 
 
 def render(path, meshes, matrix, width=768, height=896):
+    from PIL import Image
     """Perspective-correct UVs, smooth lighting, actual depth and alpha tests."""
     pixels = np.full((height, width, 3), [218, 225, 228], dtype=np.uint8)
     depth = np.full((height, width), np.inf)

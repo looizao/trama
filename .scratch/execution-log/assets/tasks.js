@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T13:31:40-03:00",
+  "updated": "2026-09-30T15:06:46-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -3649,13 +3649,13 @@ window.executionLog={
       "depends": [
         "05",
         "07",
-        "08",
-        "09",
         "10",
         "11",
         "12",
         "13",
-        "14"
+        "14",
+        "16",
+        "17"
       ],
       "requirement": "Expand toward roughly 40 hairstyles and 20 beardstyles, with professional-added references.",
       "criteria": [
@@ -3663,16 +3663,526 @@ window.executionLog={
         "Consistent renders and visible structured license provenance; professional import works privately.",
         "Assets load, render, combine, save/reopen across viable routes; incompatibilities recorded; professional review pending."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [
-        "Not implemented or verified."
+      "status": "verified",
+      "changes": [
+        "Creating original CC0 dedicated geometry on the actual neutral skin, with 40 distinct hairstyle recipes across straight/wavy/curly/coily families and 20 beard coverage recipes. Continuous scalp mesh and separate solid strands address sparse coverage; curved lip/cheek boundaries replace rectangular masks for new assets. Existing 16 identifiers and meshes remain untouched.",
+        "Added immutable per-job catalog snapshots and actual retained-style checks for serving, component copies, and saved options. Catalog expansion preserves older fitted jobs and historical proposals; unexported styles are rejected.",
+        "Created and decoded 40 original CC0 reusable hairstyle meshes and 20 beardstyle meshes, with 240 actual matched mannequin renders. Published private catalog preserves all 11 earlier hair and 5 earlier beard assets and marks them historical rather than replacing their geometry.",
+        "Added private professional reference records: authorized client media, existing real 3D style, creator, licensed source, reuse-rights affirmation and observations. References stay within their client journey to honor the existing permission notice; source erasure and withdrawal cascade to them.",
+        "Completed browser save/reopen checks for all six viable native routes with the new wavy quiff and boxed beard. Real retained pictures and bounded written edits accompany immutable revisions. MakeHuman also retains an actual direct brush stroke and synthetic expected-result revision history. Client-scoped professional references use existing reusable 3D styles and never imply photo reconstruction."
       ],
-      "verification": [],
-      "pictures": [],
+      "limitations": [
+        "Not implemented or verified.",
+        "COLMAP failed the standard six-photo experiment and Meshroom native runtime remains blocked on CUDA terms. These are evidence and compatibility limitations, not real prerequisites for producing shared commercially usable assets for the viable fitting interfaces. Neither route is removed or relabeled successful.",
+        "New catalog remains private staging. Native export compatibility, actual browser reloads, all 40 hairstyle and 20 beardstyle assets, and professional-added reference workflow are not yet verified.",
+        "Catalog technical creation verified; full native fitting compatibility and actual browser save/reopen of expanded styles remain pending. Assets are stylized geometric proposals, not photorealistic haircut predictions. Professional feasibility and aesthetic acceptance remain pending.",
+        "The first browser performance sample was captured while the IAB surface was hidden, although document.hidden was false. Its 1.9 FPS and 35.5/10.2-second load samples are retained; the earlier foreground caption was inaccurate. A visibly presented reload is required before reporting foreground performance.",
+        "Assets are stylized procedural surfaces with simple materials. Synthetic cases cannot establish real client likeness, haircut outcomes, texture realism or professional suitability. Published geometry is immutable; later mesh corrections require a new version. COLMAP failed six-photo reconstruction and Meshroom remains blocked by CUDA terms; neither is presented as successful catalog reconstruction."
+      ],
+      "verification": [
+        {
+          "command": "mise exec go@1.26.0 -- go test ./internal/app",
+          "result": "Initial failure exposed a test fixture that overwrote its retained style manifest; repaired that fixture. Final result passed in 1.197s, including preservation and unexported-style rejection."
+        },
+        {
+          "command": "npm --prefix web run build",
+          "result": "Passed in 1.57s. Existing large demo chunk warning remains (708.45 kB before gzip)."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/demo-assets/expand-catalog.py",
+          "result": "Actual full generation completed: 547.376s wall time, peak RSS 852736 KiB, retained staged outputs 91210563 bytes. 40 hair and 20 beard meshes; 4 actual native renders per style."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/demo-assets/publish-catalog.py",
+          "result": "Passed: decoded all 60 actual GLBs, finite vertices, indexed topology, exact recorded mesh counts and SHA256; all 240 actual renders decoded with matching checksums. Earlier geometry bytes preserved."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...",
+          "result": "Passed: cmd/api 0.007s, internal/app 1.070s. Private reference tests cover affirmative rights, licensed source, unsafe URL, studio isolation, source erasure, withdrawal and denied recreation."
+        },
+        {
+          "command": "npm --prefix web run build (latest localization pass)",
+          "result": "Initial failure: duplicate pre-existing Choose an image translation. Removed duplicate and rebuilding; final result pending."
+        },
+        {
+          "command": "npm --prefix web run build (localization and references)",
+          "result": "Passed after removing the duplicate translation: 1.45s. Demo chunk 714.17 kB before gzip; warning retained."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/verify-execution-log.py",
+          "result": "Passed: 288 relative linked resources returned HTTP 200 and exact bytes; 127 pictures decoded; only task 15 active."
+        },
+        {
+          "command": "Native catalog fitting: MakeHuman / six shared synthetic photos per case",
+          "result": "All 3 real jobs completed with immutable 51-hair/25-beard snapshots. Alex 17.174s / 153279477 bytes; Maya 16.251s / 151970227 bytes; Noah 16.710s / 149803202 bytes. Native geometry compatibility still requires complete decoded inspection and browser reopen."
+        },
+        {
+          "command": "In-app browser recovery",
+          "result": "Initial tab 10 Runtime.evaluate timeout, fresh tab 11 focus timeout and no-match label failure; accessibility showed actions eventually applied. Closed stale agent tab 10, then semantic DOM read resumed. Native role-based texture filter successfully selected wavy. Screenshot/action verification remains in progress."
+        },
+        {
+          "command": "MakeHuman expanded catalog decoded inspection",
+          "result": "Passed: all 76 actual native style GLBs decoded per case (228 total), bounded metre coordinates, finite geometry, unit normals and triangle indices; four actual representative views rendered for each fictional case."
+        },
+        {
+          "command": "FLAME and Blender + MPFB expanded catalog processing",
+          "result": "All 3 cases per route completed with 51-hair/25-beard immutable exports. FLAME 32.234-32.712s, Blender 53.151-54.155s. Actual native geometry matrix inspection is now running sequentially."
+        },
+        {
+          "command": "native-demos/catalog-matrix.py plus resumed CloudCompare FLAME population and verification",
+          "result": "36 completed real native runs across 3 fictional cases: 3 fitters plus 3 supporting components with each fitter; all 76 retained styles decoded per run with finite metre-scale geometry, valid indices and unit normals; four actual representative native renders per case. Initial HTTP 429 retained; final combination resumed without weakening login protections."
+        },
+        {
+          "command": "node --experimental-strip-types scripts/verify-proposal-edits.mjs --expanded-catalog",
+          "result": "PASS: exact application deformation on 1368 actual native style GLBs from 18 jobs. Independent written recipes, actual localized strokes, protected roots, 25mm cap, deterministic replay, exact reset and immutable heads/source files."
+        },
+        {
+          "command": "local_demo_http.py session reuse",
+          "result": "PASS /me remains demo@trama.local, reusable cookie stored privately with 0600 mode; script requests remain loopback only."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test -race ./...",
+          "result": "PASS cmd/api 1.034s, internal/app 9.794s. Meaningful studio/source/withdrawal/nonrecreation and immutable job catalog tests included."
+        },
+        {
+          "command": "mise exec go@1.26.0 -- go test ./...; npm --prefix web run build",
+          "result": "PASS in the task 15 implementation checks: cmd/api 0.007s, internal/app 1.070s; Vite build 1.45s. Existing large chunk warning retained (714.17kB demo bundle). No source changes after the successful build."
+        },
+        {
+          "command": ".scratch/private/native-demos/python/bin/python scripts/verify-local-catalog.py",
+          "result": "PASS 60 actual new catalog GLBs and 240 decoded four-angle renders served by the app, complete provenance; six actual browser revision pictures and native styles; anonymous access denied; two private original references; synthetic MakeHuman selected version 2 preserves its prior event."
+        },
+        {
+          "command": "scripts/verify-execution-log.py",
+          "result": "PASS 360 actual linked local resources HTTP 200 with exact byte equality; 171 pictures decoded; at most one task active."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/catalog-buzz-ear-coverage-failed.png",
+          "caption": "Failed intermediate original buzz geometry: scalp sampling incorrectly extended over the ear. This actual rendered defect prevents catalog publication; later mask correction must pass visual review.",
+          "date": "2026-09-30T13:44:02-03:00"
+        },
+        {
+          "src": "assets/catalog-long-face-coverage-intermediate.png",
+          "caption": "Intermediate real eight-style render check: long front strands covered the face and rear coverage was thin. Retained as failed visual evidence; short front guides and thicker strand groups are being evaluated.",
+          "date": "2026-09-30T14:07:56-03:00"
+        },
+        {
+          "src": "assets/catalog-representative-renders.png",
+          "caption": "Current representative original 3D assets rendered from four actual mannequin angles. Iteration still in progress; native fitted compatibility and professional acceptance remain pending.",
+          "date": "2026-09-30T14:07:56-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-01.png",
+          "caption": "Full original 3D asset library, group 1/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-02.png",
+          "caption": "Full original 3D asset library, group 2/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-03.png",
+          "caption": "Full original 3D asset library, group 3/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-04.png",
+          "caption": "Full original 3D asset library, group 4/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-05.png",
+          "caption": "Full original 3D asset library, group 5/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-06.png",
+          "caption": "Full original 3D asset library, group 6/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:35-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-07.png",
+          "caption": "Full original 3D asset library, group 7/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:36-03:00"
+        },
+        {
+          "src": "assets/catalog-mannequin-set-08.png",
+          "caption": "Full original 3D asset library, group 8/8. Four actual mannequin angles per asset; approximate geometric styling and professional acceptance pending.",
+          "date": "2026-09-30T14:22:36-03:00"
+        },
+        {
+          "src": "assets/catalog-makehuman-browser-initial.png",
+          "caption": "Actual new MakeHuman fitted-head comparison: independently selected wavy quiff and short boxed beard. Initial measured load 35.464s current / 10.186s proposed, both 1.9 foreground FPS. Retained as slow browser evidence, not a passed performance claim.",
+          "date": "2026-09-30T14:36:12-03:00"
+        },
+        {
+          "src": "assets/catalog-makehuman-browser-reopened.png",
+          "caption": "Foreground IAB after reload: independent native wavy quiff and boxed beard; actual written changes and retained localized stroke. 133.9 initial FPS; current 13.4MB/17935ms and proposed 4.0MB/8748ms. Synthetic fitted/inferred geometry, stylized assets and achievable style suitability await professional review.",
+          "date": "2026-09-30T14:58:20-03:00"
+        },
+        {
+          "src": "assets/catalog-professional-references-browser.png",
+          "caption": "Two original locally generated mannequin references uploaded through the actual client UI, retained privately with creator, rights and observations; independent hair/beard associations survived reload.",
+          "date": "2026-09-30T14:58:20-03:00"
+        },
+        {
+          "src": "assets/blender-mpfb-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: blender-mpfb-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/blender-mpfb-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: blender-mpfb-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/blender-mpfb-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: blender-mpfb-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-blender-mpfb-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-blender-mpfb-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-blender-mpfb-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-blender-mpfb-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-blender-mpfb-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-blender-mpfb-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-flame-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-flame-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-flame-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-flame-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-flame-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-flame-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-makehuman-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-makehuman-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-makehuman-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-makehuman-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/cloudcompare-makehuman-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: cloudcompare-makehuman-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/flame-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: flame-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/flame-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: flame-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/flame-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: flame-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/makehuman-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: makehuman-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/makehuman-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: makehuman-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/makehuman-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: makehuman-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-blender-mpfb-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-blender-mpfb-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-blender-mpfb-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-blender-mpfb-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-blender-mpfb-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-blender-mpfb-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-flame-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-flame-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-flame-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-flame-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-flame-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-flame-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-makehuman-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-makehuman-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-makehuman-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-makehuman-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/meshlab-makehuman-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: meshlab-makehuman-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-blender-mpfb-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-blender-mpfb-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-blender-mpfb-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-blender-mpfb-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-blender-mpfb-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-blender-mpfb-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-flame-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-flame-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-flame-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-flame-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-flame-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-flame-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-makehuman-catalog-alex-ramos.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-makehuman-catalog-alex-ramos. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-makehuman-catalog-maya-costa.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-makehuman-catalog-maya-costa. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/open3d-makehuman-catalog-noah-kim.png",
+          "caption": "Actual native four-angle renders with the new independently fitted representative hair and beard: open3d-makehuman-catalog-noah-kim. Synthetic inputs; fitted/inferred head, not reconstruction accuracy or actual outcome. Professional suitability pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-mpfb-browser.png",
+          "caption": "Actual mpfb browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-flame-browser.png",
+          "caption": "Actual flame browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-open3d-browser.png",
+          "caption": "Actual open3d browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-meshlab-browser.png",
+          "caption": "Actual meshlab browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-cloudcompare-browser.png",
+          "caption": "Actual cloudcompare browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
+          "date": "2026-09-30T15:05:18-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
-      "events": []
+      "outputs": [
+        {
+          "href": "assets/catalog-expansion-representative.json",
+          "label": "Actual representative mesh measurements and structured CC0 provenance"
+        },
+        {
+          "href": "assets/catalog-expansion-creation.json",
+          "label": "Complete real asset creation measurements, recipes and license provenance"
+        },
+        {
+          "href": "assets/catalog-publication-verification.json",
+          "label": "Decoded full catalog and preservation verification"
+        },
+        {
+          "href": "assets/makehuman-populated-trama-surface-styles-v1.json",
+          "label": "Actual expanded-catalog MakeHuman jobs for three fictional cases"
+        },
+        {
+          "href": "assets/makehuman-expanded-catalog-verification.json",
+          "label": "Actual complete native MakeHuman mesh inspection and representative renders"
+        },
+        {
+          "href": "assets/flame-populated-trama-surface-styles-v1.json",
+          "label": "Actual expanded-catalog FLAME jobs for three fictional cases"
+        },
+        {
+          "href": "assets/blender-mpfb-populated-trama-surface-styles-v1.json",
+          "label": "Actual expanded-catalog MPFB jobs for three fictional cases"
+        },
+        {
+          "href": "assets/catalog-browser-verification.json",
+          "label": "Actual browser camera, deformation, reload, references and performance evidence"
+        },
+        {
+          "href": "assets/editing-expanded-catalog-verification.json",
+          "label": "Exact application edit checks on 1368 actual expanded native meshes"
+        },
+        {
+          "href": "assets/blender-mpfb-expanded-catalog-verification.json",
+          "label": "blender mpfb expanded catalog verification"
+        },
+        {
+          "href": "assets/cloudcompare-blender-mpfb-expanded-catalog-verification.json",
+          "label": "cloudcompare blender mpfb expanded catalog verification"
+        },
+        {
+          "href": "assets/cloudcompare-flame-expanded-catalog-verification.json",
+          "label": "cloudcompare flame expanded catalog verification"
+        },
+        {
+          "href": "assets/cloudcompare-makehuman-expanded-catalog-verification.json",
+          "label": "cloudcompare makehuman expanded catalog verification"
+        },
+        {
+          "href": "assets/flame-expanded-catalog-verification.json",
+          "label": "flame expanded catalog verification"
+        },
+        {
+          "href": "assets/meshlab-blender-mpfb-expanded-catalog-verification.json",
+          "label": "meshlab blender mpfb expanded catalog verification"
+        },
+        {
+          "href": "assets/meshlab-flame-expanded-catalog-verification.json",
+          "label": "meshlab flame expanded catalog verification"
+        },
+        {
+          "href": "assets/meshlab-makehuman-expanded-catalog-verification.json",
+          "label": "meshlab makehuman expanded catalog verification"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-expanded-catalog-verification.json",
+          "label": "open3d blender mpfb expanded catalog verification"
+        },
+        {
+          "href": "assets/open3d-flame-expanded-catalog-verification.json",
+          "label": "open3d flame expanded catalog verification"
+        },
+        {
+          "href": "assets/open3d-makehuman-expanded-catalog-verification.json",
+          "label": "open3d makehuman expanded catalog verification"
+        },
+        {
+          "href": "assets/cloudcompare-blender-mpfb-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: cloudcompare-blender-mpfb-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/cloudcompare-flame-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: cloudcompare-flame-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/cloudcompare-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: cloudcompare-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/meshlab-blender-mpfb-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: meshlab-blender-mpfb-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/meshlab-flame-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: meshlab-flame-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/meshlab-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: meshlab-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/open3d-blender-mpfb-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: open3d-blender-mpfb-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/open3d-flame-populated-results-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: open3d-flame-populated-results-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/open3d-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1.json",
+          "label": "Actual expanded native runs: open3d-makehuman-populated-results-makehuman-visible-lips-v2-trama-surface-styles-v1"
+        },
+        {
+          "href": "assets/catalog-live-workflow-verification.json",
+          "label": "catalog live workflow verification"
+        },
+        {
+          "href": "assets/catalog-route-browser-verification.json",
+          "label": "catalog route browser verification"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30T13:31:40-03:00",
+          "text": "Begin ample separate catalogs and professional-added references. Use actual shared native fitting interfaces, preserve earlier option asset geometry and versions, create reusable original varied assets with structured provenance, and verify all viable routes. Correct scalp gaps and coarse beard outlines as implementation defects before professional review."
+        },
+        {
+          "date": "2026-09-30T13:41:38-03:00",
+          "text": "Initial private representative generator stopped before creation because the texture extraction cache directory had not been created. Added cache creation and reran. New assets remain in a staging directory until actual render and compatibility checks pass."
+        },
+        {
+          "date": "2026-09-30T13:44:02-03:00",
+          "text": "Stopped the first representative generation after real renders exposed ear coverage. Earlier three heavy hairstyles had 119552-186488 triangles and 18.6-33.4s rendering effort each. Corrected continuous forehead/temple/nape boundary with explicit outer-ear exclusion and sampled one third of deterministic roots; new generation follows."
+        },
+        {
+          "date": "2026-09-30T14:50:13-03:00",
+          "text": "Catalog matrix stopped before the final CloudCompare/FLAME combination: eight sequential successful verification logins exhausted the real 8-per-10-minute local login limit (HTTP 429). No native failure or fallback was claimed. Private loopback verification session reuse now checks the mandated demo account identity; authentication protections remain intact."
+        },
+        {
+          "date": "2026-09-30T15:06:46-03:00",
+          "text": "Technical catalog milestone verified locally. All six viable route browser examples retain new independent styles and edited pictures; the 36-run native matrix and 1368 exact edit checks passed. Professional acceptance and final candidate selection remain explicitly pending."
+        }
+      ]
     },
     {
       "id": "18",

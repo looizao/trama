@@ -145,6 +145,37 @@ func (a *App) validateDemoState(r *http.Request, state *DemoWorkspaceState) stri
 	if !exists(state.CurrentHairID, hair, "none") || !exists(state.HairID, hair, "none", "keep-current") || !exists(state.CurrentBeardID, beard, "clean-shaven") || !exists(state.BeardID, beard, "clean-shaven", "keep-current") {
 		return "select compatible independent hair and beard assets"
 	}
+	if state.ModelRunID != "" {
+		var raw string
+		var result map[string]any
+		if a.DB.QueryRowContext(r.Context(), "SELECT result FROM demo_jobs WHERE run_id=$1", state.ModelRunID).Scan(&raw) != nil || json.Unmarshal([]byte(raw), &result) != nil {
+			return "retained style snapshot is unavailable"
+		}
+		for kind, selected := range map[string][]string{"hair": {state.CurrentHairID, state.HairID}, "beard": {state.CurrentBeardID, state.BeardID}} {
+			ids, err := retainedStyleIDs(result, kind)
+			if err != nil {
+				return "retained style snapshot is unavailable"
+			}
+			for _, id := range selected {
+				if id == "none" || id == "clean-shaven" || id == "keep-current" {
+					continue
+				}
+				found := false
+				for _, available := range ids {
+					if available == id {
+						found = true
+						break
+					}
+				}
+				if !found {
+					return "this retained head does not contain the selected style; run a new fit for the expanded catalog"
+				}
+				if _, err := safeNativeFile(a.demoJobDirectory(client, state.ModelRunID), kind+"/"+id+".glb"); err != nil {
+					return "retained style artifact is unavailable"
+				}
+			}
+		}
+	}
 	return ""
 }
 func (a *App) authorizeDemoClient(w http.ResponseWriter, r *http.Request) bool {

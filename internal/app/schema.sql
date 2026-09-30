@@ -166,6 +166,22 @@ CREATE TABLE IF NOT EXISTS photo_views (
   UNIQUE(set_id,asset_id)
 );
 
+CREATE TABLE IF NOT EXISTS style_references (
+  id text PRIMARY KEY,
+  organization_id text NOT NULL REFERENCES organizations(id),
+  client_id text NOT NULL REFERENCES clients(id) ON DELETE CASCADE,
+  asset_id text NOT NULL REFERENCES assets(id) ON DELETE CASCADE,
+  kind text NOT NULL CHECK(kind IN ('hair','beard')),
+  style_id text NOT NULL,
+  title text NOT NULL,
+  notes text NOT NULL,
+  creator text NOT NULL,
+  license text NOT NULL,
+  source_url text NOT NULL,
+  created_by text NOT NULL REFERENCES users(id),
+  created_at timestamp NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS demo_jobs (
   run_id text PRIMARY KEY REFERENCES generation_runs(id) ON DELETE CASCADE,
   candidate text NOT NULL,

@@ -1,0 +1,603 @@
+{
+  "date": "2026-09-30T17:08:32.256550+00:00",
+  "scope": "Original real CC0 meshes, not generated reference pictures or exact physical cut predictions.",
+  "version": "trama-surface-styles-v1",
+  "representativeOnly": true,
+  "hairCount": 4,
+  "beardCount": 4,
+  "seconds": 85.835,
+  "cpuSeconds": 89.098,
+  "peakRssKiB": 852736,
+  "retainedBytes": 14291192,
+  "provenance": {
+    "creator": "Trama original procedural asset generator",
+    "license": "CC0-1.0",
+    "licenseVersion": "1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+    "acquisitionDate": "2026-09-30",
+    "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+    "dependencyProvenance": "assets/makehuman-core-provenance.json",
+    "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+    "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+    "generationVersion": "trama-surface-styles-v1",
+    "professionalAcceptance": "pending",
+    "modifications": [
+      "Deterministic actual surface root sampling",
+      "Continuous scalp coverage mesh",
+      "Independent solid strand geometry",
+      "Normalized metre GLB export",
+      "Matched four-angle native renders"
+    ]
+  },
+  "assets": [
+    {
+      "id": "trama-buzz-straight",
+      "kind": "hair",
+      "label": "Close buzz / straight",
+      "length": "short",
+      "lengthMm": 3,
+      "texture": "straight",
+      "density": "medium",
+      "coverage": "natural",
+      "maintenance": "low",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "uniform",
+        "lengthMm": 3,
+        "texture": "straight",
+        "density": "medium",
+        "hairline": "natural"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "hair/trama-buzz-straight.glb",
+      "render": "hair/trama-buzz-straight.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "hair/trama-buzz-straight-front.png",
+          "sha256": "0f7d4ad1e399a0cdcca4c719c9b50367bbb776cac323cfbd6ca42903adae5fda"
+        },
+        {
+          "view": "three-quarter",
+          "render": "hair/trama-buzz-straight-three-quarter.png",
+          "sha256": "95f0af16e668fcaf8df4b23545aa77c65a342c23ed6d58b2d11ba274ff91561a"
+        },
+        {
+          "view": "profile",
+          "render": "hair/trama-buzz-straight-profile.png",
+          "sha256": "154b592e85ac9e81755aad63ce8f417b532330ff4cdbfbf45b483b108529aa65"
+        },
+        {
+          "view": "back",
+          "render": "hair/trama-buzz-straight-back.png",
+          "sha256": "1297bdd84e64c8393e1515eca1956ddef4d56878b09d1baee0f752fd17fbd2b1"
+        }
+      ],
+      "bytes": 601132,
+      "sha256": "6b0f59bebc16d153916e6f225d3e7237b456260550c246bfad24cf2f3e9d2bb9",
+      "vertices": 13292,
+      "triangles": 23248,
+      "creationSeconds": 6.011,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-quiff-wavy",
+      "kind": "hair",
+      "label": "Raised front quiff / wavy",
+      "length": "medium",
+      "lengthMm": 72,
+      "texture": "wavy",
+      "density": "dense",
+      "coverage": "natural",
+      "maintenance": "high",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "quiff",
+        "lengthMm": 72,
+        "texture": "wavy",
+        "density": "dense",
+        "hairline": "natural"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "hair/trama-quiff-wavy.glb",
+      "render": "hair/trama-quiff-wavy.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "hair/trama-quiff-wavy-front.png",
+          "sha256": "8919898bfc8c6270afffb66ce7aecd5bca425808f6f124e002e1f2887e42378e"
+        },
+        {
+          "view": "three-quarter",
+          "render": "hair/trama-quiff-wavy-three-quarter.png",
+          "sha256": "d47a10bbb3a4c8d3725b1375eec69dd02e93846ce8fbdbb4c74df46ecc55d79c"
+        },
+        {
+          "view": "profile",
+          "render": "hair/trama-quiff-wavy-profile.png",
+          "sha256": "4d880104fe306d22386a9ac4f519ab3329bec80587c551d0937a2a4b09b114a2"
+        },
+        {
+          "view": "back",
+          "render": "hair/trama-quiff-wavy-back.png",
+          "sha256": "4f3ab6f3235e4664fd1c4ed4a09c078f3330700da8d9746239ba76d4c09f7c66"
+        }
+      ],
+      "bytes": 601120,
+      "sha256": "3fa72f5a150292faf163d3b8bbe833e47b5ea70c60f0c0bc4a6c61a0636b7f52",
+      "vertices": 13292,
+      "triangles": 23248,
+      "creationSeconds": 5.971,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-shag-curly",
+      "kind": "hair",
+      "label": "Layered medium shag / curly",
+      "length": "medium",
+      "lengthMm": 115,
+      "texture": "curly",
+      "density": "medium",
+      "coverage": "natural",
+      "maintenance": "moderate",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "shag",
+        "lengthMm": 115,
+        "texture": "curly",
+        "density": "medium",
+        "hairline": "natural"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "hair/trama-shag-curly.glb",
+      "render": "hair/trama-shag-curly.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "hair/trama-shag-curly-front.png",
+          "sha256": "b6cbef370c5299d05fefef0e01e08b7c5b61232b77bdc2f46babcba6d4ebaee6"
+        },
+        {
+          "view": "three-quarter",
+          "render": "hair/trama-shag-curly-three-quarter.png",
+          "sha256": "5cc0ed577d6afcb3c746266cb0bebefefacc59164ea856d12c735513397dbabd"
+        },
+        {
+          "view": "profile",
+          "render": "hair/trama-shag-curly-profile.png",
+          "sha256": "e248eab00b592aae76a33c21963f25c5eb64e43ee6b862054b04b58bb603e601"
+        },
+        {
+          "view": "back",
+          "render": "hair/trama-shag-curly-back.png",
+          "sha256": "8b74291f5bec50c8b2de58596e6784eab28a43f8e53bbe2bdd40545ae8d9cdaa"
+        }
+      ],
+      "bytes": 1351432,
+      "sha256": "e98240e13255268b19ea0c73340549081569f2de065f65ce010824c6f519a7d3",
+      "vertices": 29324,
+      "triangles": 53710,
+      "creationSeconds": 11.276,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-long-coily",
+      "kind": "hair",
+      "label": "Long flowing layers / coily",
+      "length": "long",
+      "lengthMm": 235,
+      "texture": "coily",
+      "density": "dense",
+      "coverage": "natural",
+      "maintenance": "high",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "long",
+        "lengthMm": 235,
+        "texture": "coily",
+        "density": "dense",
+        "hairline": "natural"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "hair/trama-long-coily.glb",
+      "render": "hair/trama-long-coily.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "hair/trama-long-coily-front.png",
+          "sha256": "7a5291f5978f504fc77cb315ba42a7c25037dd3bd43ac736208d697dfd5257cd"
+        },
+        {
+          "view": "three-quarter",
+          "render": "hair/trama-long-coily-three-quarter.png",
+          "sha256": "9c8d214bf3c2be289cc1fcce29ea1e502d5ab4ac7e79b85d203af04a17575df1"
+        },
+        {
+          "view": "profile",
+          "render": "hair/trama-long-coily-profile.png",
+          "sha256": "e6e5cf4ba0ff9643c4ab0df5895a8a36bba377c27c4057241c414fe31feabb6a"
+        },
+        {
+          "view": "back",
+          "render": "hair/trama-long-coily-back.png",
+          "sha256": "2e3854a80150f6768952fe20c135d08d42ede8be60334223aff5f935ac5c91d7"
+        }
+      ],
+      "bytes": 1351432,
+      "sha256": "4088728d3c307ba5f139aa27c80908039ff323d131c1c783044b2f620ec9d791",
+      "vertices": 29324,
+      "triangles": 53710,
+      "creationSeconds": 12.268,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-short-boxed",
+      "kind": "beard",
+      "label": "Short boxed beard",
+      "length": "medium",
+      "lengthMm": 9,
+      "texture": "straight",
+      "density": "medium",
+      "coverage": "boxed",
+      "maintenance": "moderate",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "boxed",
+        "lengthMm": 9,
+        "texture": "straight"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "beard/trama-short-boxed.glb",
+      "render": "beard/trama-short-boxed.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "beard/trama-short-boxed-front.png",
+          "sha256": "a2d8e8629430d8f4f20cba353d20b3345a47eb96488258123440f61e3354db69"
+        },
+        {
+          "view": "three-quarter",
+          "render": "beard/trama-short-boxed-three-quarter.png",
+          "sha256": "9a416c2a6f5bdef118627e07bfa002c9a8f3e95df18a57340abfc276f551ed74"
+        },
+        {
+          "view": "profile",
+          "render": "beard/trama-short-boxed-profile.png",
+          "sha256": "49ac4be46469a9f500de8a21e5b815b54182833bcfb92b0e485a67f1445e0a39"
+        },
+        {
+          "view": "back",
+          "render": "beard/trama-short-boxed-back.png",
+          "sha256": "121961f3ac66714241a421927ea1b956ec48f3e2de1381d5082922e6344444e7"
+        }
+      ],
+      "bytes": 2706016,
+      "sha256": "6897a478db8f6bf627ec3faae6f448da30a5065d3cb2d42bd00d04cfb6e99453",
+      "vertices": 61452,
+      "triangles": 102420,
+      "creationSeconds": 17.151,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-long-curly",
+      "kind": "beard",
+      "label": "Long curly beard",
+      "length": "long",
+      "lengthMm": 58,
+      "texture": "curly",
+      "density": "medium",
+      "coverage": "tapered",
+      "maintenance": "high",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "tapered",
+        "lengthMm": 58,
+        "texture": "curly"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "beard/trama-long-curly.glb",
+      "render": "beard/trama-long-curly.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "beard/trama-long-curly-front.png",
+          "sha256": "581c8ce89c02d9293e77ac38885c2a9a9a717d87534255564eb4acc2abc18447"
+        },
+        {
+          "view": "three-quarter",
+          "render": "beard/trama-long-curly-three-quarter.png",
+          "sha256": "50b36a4e5d45d9f580ae4272b6056aebab0ef054e5d003be2a14bb36ec0289ec"
+        },
+        {
+          "view": "profile",
+          "render": "beard/trama-long-curly-profile.png",
+          "sha256": "326c27f68b609bcb76095ff077a0c8eb5724d1f7b13e2873753bc3779caf7bf9"
+        },
+        {
+          "view": "back",
+          "render": "beard/trama-long-curly-back.png",
+          "sha256": "ed639c9f38dc40c23fb1977b9ccf81aabfacdfba4291dd4c3c6bfa31e847f67e"
+        }
+      ],
+      "bytes": 2921436,
+      "sha256": "c9b6e52691c6250af1bdf087959cff812eb1bdd7242ee8851eefbb26f987474b",
+      "vertices": 66348,
+      "triangles": 110580,
+      "creationSeconds": 19.674,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-circle",
+      "kind": "beard",
+      "label": "Connected circle beard",
+      "length": "medium",
+      "lengthMm": 8,
+      "texture": "straight",
+      "density": "medium",
+      "coverage": "circle",
+      "maintenance": "moderate",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "circle",
+        "lengthMm": 8,
+        "texture": "straight"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "beard/trama-circle.glb",
+      "render": "beard/trama-circle.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "beard/trama-circle-front.png",
+          "sha256": "4f5fd7a5d915aaf61f5f20ded557177b4b3c52a565b93a384e82cfe736063514"
+        },
+        {
+          "view": "three-quarter",
+          "render": "beard/trama-circle-three-quarter.png",
+          "sha256": "ff409860ce8afbc19ac941252b7feda1de539c9f7f801d3368bacc7b3ac670e3"
+        },
+        {
+          "view": "profile",
+          "render": "beard/trama-circle-profile.png",
+          "sha256": "70797fa58dea9fbf0c6250c38a91d98972114f809d2323dd3b404833d8c37285"
+        },
+        {
+          "view": "back",
+          "render": "beard/trama-circle-back.png",
+          "sha256": "ef663d9be6c9fc61a2c527c61baaa9ea403b34c3271f9cd3aee863623f61f463"
+        }
+      ],
+      "bytes": 1444348,
+      "sha256": "7755c362f272d17b997cfd711289aecb71c18458adae0a9547299852f549d6f0",
+      "vertices": 32778,
+      "triangles": 54630,
+      "creationSeconds": 10.128,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    },
+    {
+      "id": "trama-moustache",
+      "kind": "beard",
+      "label": "Natural full moustache",
+      "length": "medium",
+      "lengthMm": 8,
+      "texture": "straight",
+      "density": "medium",
+      "coverage": "moustache",
+      "maintenance": "moderate",
+      "recipe": {
+        "version": "trama-surface-styles-v1",
+        "family": "moustache",
+        "lengthMm": 8,
+        "texture": "straight"
+      },
+      "creator": "Trama original procedural asset generator",
+      "license": "CC0-1.0",
+      "licenseVersion": "1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceUrl": "local:scripts/native-demos/catalog_styles.py",
+      "acquisitionDate": "2026-09-30",
+      "sourceDependency": "CC0 MakeHuman/MPFB shared skin topology, normalized metres",
+      "dependencyProvenance": "assets/makehuman-core-provenance.json",
+      "attributionRequirement": "None for CC0 generated geometry; underlying software licenses remain separate.",
+      "software": "Original GPL-3.0-or-later Python/NumPy geometry code; generated output separately dedicated to CC0-1.0.",
+      "generationVersion": "trama-surface-styles-v1",
+      "professionalAcceptance": "pending",
+      "modifications": [
+        "Deterministic actual surface root sampling",
+        "Continuous scalp coverage mesh",
+        "Independent solid strand geometry",
+        "Normalized metre GLB export",
+        "Matched four-angle native renders"
+      ],
+      "glb": "beard/trama-moustache.glb",
+      "render": "beard/trama-moustache.png",
+      "views": [
+        {
+          "view": "front",
+          "render": "beard/trama-moustache-front.png",
+          "sha256": "9c502a18e4fc97d56586e22fde5925799302f9f1fcf5242d5bbe4df037d7d8b9"
+        },
+        {
+          "view": "three-quarter",
+          "render": "beard/trama-moustache-three-quarter.png",
+          "sha256": "b0df0e08cbc04662aa1c938ae1dddca77c2a95cdcada8e7b496c62b0181e920e"
+        },
+        {
+          "view": "profile",
+          "render": "beard/trama-moustache-profile.png",
+          "sha256": "eddb1b8819cae904f332e70e405c036f16dbed38a4aa1a5058f495b410e878e0"
+        },
+        {
+          "view": "back",
+          "render": "beard/trama-moustache-back.png",
+          "sha256": "ef663d9be6c9fc61a2c527c61baaa9ea403b34c3271f9cd3aee863623f61f463"
+        }
+      ],
+      "bytes": 176352,
+      "sha256": "9205424e150abe257225ecaf2d3becc682c7ed42ee588e51d5a2d34bb5e07a29",
+      "vertices": 3960,
+      "triangles": 6600,
+      "creationSeconds": 3.353,
+      "compatibility": {
+        "sharedMannequinExport": "passed",
+        "actualNativeFitting": "pending",
+        "browserLoadAndReopen": "pending"
+      }
+    }
+  ]
+}

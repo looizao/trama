@@ -176,8 +176,12 @@ func (a *App) copyComponentModel(ctx context.Context, client, source, dir, relat
 		return nil, err
 	}
 	files := []string{"head.glb"}
+	var parent map[string]any
+	if err = json.Unmarshal([]byte(result), &parent); err != nil {
+		return nil, err
+	}
 	for _, kind := range []string{"hair", "beard"} {
-		styles, e := readDemoStyles(kind)
+		styles, e := retainedStyleIDs(parent, kind)
 		if e != nil {
 			return nil, e
 		}
@@ -185,7 +189,7 @@ func (a *App) copyComponentModel(ctx context.Context, client, source, dir, relat
 			return nil, err
 		}
 		for _, style := range styles {
-			files = append(files, kind+"/"+style.ID+".glb")
+			files = append(files, kind+"/"+style+".glb")
 		}
 	}
 	hashes := map[string]string{}

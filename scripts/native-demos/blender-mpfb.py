@@ -82,9 +82,18 @@ else:
     a.export([head,eyes],directory/'head.glb')
     human.hide_viewport=True
     (directory/'hair').mkdir(exist_ok=True);(directory/'beard').mkdir(exist_ok=True)
-    hair=json.loads((a.OUT/'hair-catalog.json').read_text())
+    sys.path.insert(0,str(ROOT/'scripts/native-demos'))
+    from catalog_styles import load_catalog,hair_meshes,beard_meshes,style_provenance
+    from geometry import export as export_triangles
+    head.data.calc_loop_triangles()
+    skin={'name':'native-mpfb-skin','xyz':np.array([list(v.co) for v in head.data.vertices]),'tri':np.array([list(t.vertices) for t in head.data.loop_triangles])}
+    hair=load_catalog(directory,'hair')
     for style in hair:
         identifier=style['id']
+        if style.get('recipe'):
+            meshes=hair_meshes(skin,style['recipe'],identifier);meshes[0]['provenance']=style_provenance(style)
+            export_triangles(directory/'hair'/(identifier+'.glb'),meshes)
+            continue
         if identifier=='rounded-coils':obj=a.create_coils(head)
         else:
             source=a.HumanService.add_mhclo_asset(a.AssetService.find_asset_absolute_path(identifier+'.mhclo',asset_subdir='hair'),human,asset_type='Hair',material_type='GAMEENGINE',subdiv_levels=1)
@@ -92,5 +101,10 @@ else:
         a.export([obj],directory/'hair'/(identifier+'.glb'));bpy.data.objects.remove(obj,do_unlink=True)
     for identifier,length in {'stubble':.0017,'full':.012,'goatee':.009,'moustache':.007,'chinstrap':.006}.items():
         obj=a.create_beard(head,markers,identifier,length);a.export([obj],directory/'beard'/(identifier+'.glb'));bpy.data.objects.remove(obj,do_unlink=True)
+    beard=load_catalog(directory,'beard')
+    for style in beard:
+        if style.get('recipe'):
+            meshes=beard_meshes(skin,markers['lips'].z,style['recipe'],style['id']);meshes[0]['provenance']=style_provenance(style)
+            export_triangles(directory/'beard'/(style['id']+'.glb'),meshes)
     bpy.ops.wm.save_as_mainfile(filepath=str(directory/'fitted-head.blend'))
-    print('NATIVE_EXPORT_COMPLETE',json.dumps({'headVertices':len(head.data.vertices),'hair':len(hair),'beard':5}),flush=True)
+    print('NATIVE_EXPORT_COMPLETE',json.dumps({'headVertices':len(head.data.vertices),'hair':len(hair),'beard':len(beard)}),flush=True)
