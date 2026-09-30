@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1075" viewBox="0 0 1100 1075">
+<rect width="100%" height="100%" fill="#111827"/>
+<g font-family="sans-serif" fill="#f9fafb">
+<text x="35" y="42" font-size="25">Meshroom / AliceVision: actual prepared node graph</text>
+<text x="35" y="77" font-size="19" fill="#fbbf24">Native processing has not run. Runtime agreement acceptance pending.</text>
+<path d="M550 162 L550 193" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 687 L550 718" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 612 L550 643" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M360 590 C208 590,208 890,360 890" stroke="#374151" fill="none"/>
+<path d="M360 215 C243 215,243 365,360 365" stroke="#374151" fill="none"/>
+<path d="M550 237 L550 268" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 387 L550 418" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 312 L550 343" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 837 L550 868" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 762 L550 793" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M360 740 C194 740,194 890,360 890" stroke="#374151" fill="none"/>
+<path d="M550 537 L550 568" stroke="#6b7280" fill="none" stroke-width="2"/>
+<path d="M550 462 L550 493" stroke="#6b7280" fill="none" stroke-width="2"/>
+<rect x="360" y="118" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="147" text-anchor="middle" font-size="20">CameraInit</text>
+<rect x="360" y="193" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="222" text-anchor="middle" font-size="20">FeatureExtraction</text>
+<rect x="360" y="268" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="297" text-anchor="middle" font-size="20">ImageMatching</text>
+<rect x="360" y="343" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="372" text-anchor="middle" font-size="20">FeatureMatching</text>
+<rect x="360" y="418" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="447" text-anchor="middle" font-size="20">StructureFromMotion</text>
+<rect x="360" y="493" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="522" text-anchor="middle" font-size="20">PrepareDenseScene</text>
+<rect x="360" y="568" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="597" text-anchor="middle" font-size="20">DepthMap</text>
+<rect x="360" y="643" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="672" text-anchor="middle" font-size="20">DepthMapFilter</text>
+<rect x="360" y="718" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="747" text-anchor="middle" font-size="20">Meshing</text>
+<rect x="360" y="793" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="822" text-anchor="middle" font-size="20">MeshFiltering</text>
+<rect x="360" y="868" width="380" height="44" rx="8" fill="#1f2937" stroke="#9ca3af"/>
+<text x="550" y="897" text-anchor="middle" font-size="20">Texturing</text>
+<text x="35" y="1010" font-size="18">11 real pipeline nodes. SIFT features and exhaustive pairing use no learned weights.</text>
+<text x="35" y="1040" font-size="18">Graph registration and serialization are verified; head coverage and styles remain untested.</text>
+</g></svg>

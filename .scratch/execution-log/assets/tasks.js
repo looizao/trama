@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T02:43:02-03:00",
+  "updated": "2026-09-30T03:03:29-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -1141,17 +1141,85 @@ window.executionLog={
         "Observed, fitted and hidden inferred geometry distinguished; iterations, resource use, sizes, coverage, likeness/clipping limitations and failures retained. No fallback counted as candidate success.",
         "This processing milestone does not mark editing, expected selections, complete demos or professional acceptance complete."
       ],
-      "status": "pending",
-      "changes": [],
-      "limitations": [],
-      "verification": [],
-      "pictures": [],
+      "status": "blocked",
+      "changes": [
+        "Verified current official releases: Meshroom 2025.1.0 and AliceVision 3.3.0. Both core projects are MPL-2.0, with separate third-party notices. Official Linux build configuration uses CUDA 12.1.1; separate NVIDIA agreement acceptance is pending.",
+        "Prepared exact private source checkouts Meshroom 2025.1.0 at 024b6f398c67bec4968a29a2c5744e49e2bab9b8 and AliceVision 3.3.0 at 928bac2689461ffb6f0174609f983a16bdbd2b30. Pinned a separate Python 3.12.14 / PySide6 6.8.3 CLI environment; no native CUDA distribution acquired.",
+        "Registered and serialized the real eleven-node photogrammetry graph. Configured classical SIFT and exhaustive pairing so no vocabulary tree or learned segmentation/matching model is needed. This is preparation only, not processing or geometry evidence."
+      ],
+      "limitations": [
+        "AliceVision runtime download and execution are awaiting the user’s CUDA 12.1.1 agreement acceptance. Open-source CLI preparation proceeds independently.",
+        "The required CUDA 12.1.1 acceptance answer has not arrived. Source/CLI preparation is verified, but the native archive has neither been downloaded nor executed. This route is blocked, not completed or demonstrated successfully."
+      ],
+      "verification": [
+        {
+          "command": "Official release and tagged build configuration inspection",
+          "result": "Meshroom latest release links a 14.3 GB bundle on Zenodo; AliceVision offers a separate 1.505 GB Linux archive with published SHA-256 f43f498312859af627f2f7f65a6d33c2a3411b37989b8b680c04c8c690dcb640. Preparing pinned Meshroom source plus the smaller native distribution avoids unrelated optional AI assets."
+        },
+        {
+          "command": "python scripts/native-demos/setup-meshroom.py",
+          "result": "Passed: exact source hashes, pinned package installation, CLI help containing photogrammetry templates and kernel network namespace availability. The native acquisition flag refuses download without explicit CUDA agreement acceptance."
+        },
+        {
+          "command": "Meshroom graph API inspection",
+          "result": "Initial inspection used a nonexistent nodesDesc attribute and failed. Corrected to the current registered Graph API; scripts/native-demos/inspect-meshroom.py serialized eleven actual nodes and thirteen dependency edges without native execution."
+        },
+        {
+          "command": "Private Meshroom Python provenance inspection",
+          "result": "Retained primary PyPI package metadata, versioned wheel hashes and installed license/notices for thirteen dependencies. Qt/PySide uses its free LGPL option; native CUDA terms remain separate and pending."
+        },
+        {
+          "command": "Native acquisition without acceptance negative check",
+          "result": "Executed setup-meshroom.py --acquire-native without the acceptance flag. It exited before source/setup/download actions; the AliceVision native archive does not exist."
+        },
+        {
+          "command": "Browser HTML log selector and SVG rendering",
+          "result": "Task 09a shows blocked, exact license requirement and pending native processing. Inline graph loaded at 1100 by 1075 pixels; its retained SVG opened and rendered successfully. Clicking its linked image navigated to the SVG, so a subsequent image-selector query found no HTML image until returning to the log; this was navigation, not an asset-loading failure."
+        }
+      ],
+      "pictures": [
+        {
+          "src": "assets/meshroom-prepared-graph.svg",
+          "caption": "2026-09-30: diagram derived from actual registered Meshroom and AliceVision node dependencies. Every stage remains unexecuted; this picture does not show a reconstructed head or processing success.",
+          "date": "2026-09-30T03:00:08-03:00"
+        },
+        {
+          "src": "assets/meshroom-prepared-graph-browser.png",
+          "caption": "2026-09-30: actual in-app browser rendering of the prepared graph. Native runtime agreement is pending; there are no processing results or geometry.",
+          "date": "2026-09-30T03:03:29-03:00"
+        }
+      ],
       "commits": [],
-      "outputs": [],
+      "outputs": [
+        {
+          "href": "assets/meshroom-setup-provenance.json",
+          "label": "Pinned project source and pending native runtime provenance"
+        },
+        {
+          "href": "assets/meshroom-python-provenance.json",
+          "label": "Separate private CLI package licenses and wheel metadata"
+        },
+        {
+          "href": "assets/meshroom-prepared-graph.json",
+          "label": "Actual unexecuted configured native graph"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-30T00:28:45-03:00",
           "text": "Separated native processing from full-demo verification to remove the dependency cycle through common editing and expected-selection history. Original full journey requirements remain in task 09."
+        },
+        {
+          "date": "2026-09-30T02:43:02-03:00",
+          "text": "Begin official Meshroom/AliceVision setup and exact license review. Use the same authorized six-view captures, retaining native failures without fallback."
+        },
+        {
+          "date": "2026-09-30T03:00:08-03:00",
+          "text": "Native acquisition remains gated by the pending CUDA agreement answer. No agreement inferred from FLAME acceptance or from installed NVIDIA graphics drivers."
+        },
+        {
+          "date": "2026-09-30T03:01:40-03:00",
+          "text": "Record concrete legal-runtime blocker and continue with the next independent candidate after committing the preparation milestone. All six-photo processing, persistence, styles, geometry and full journey checks remain pending for this candidate."
         }
       ]
     },
