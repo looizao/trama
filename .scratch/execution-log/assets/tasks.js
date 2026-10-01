@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T17:52:57-03:00",
+  "updated": "2026-09-30T23:59:55-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4032,6 +4032,11 @@ window.executionLog={
           "src": "assets/catalog-cloudcompare-browser.png",
           "caption": "Actual cloudcompare browser rendering of newly generated independent styles on its retained native head. Saved edited revision and workspace reopened; supporting components explicitly depend on MakeHuman fitting. Synthetic example, professional review pending.",
           "date": "2026-09-30T15:05:18-03:00"
+        },
+        {
+          "src": "assets/catalog-all-style-renders.png",
+          "caption": "Retained full contact sheet from the original procedural catalog generator: 40 hair and 20 beard assets rendered from four angles on fictional mannequins. Reusable native geometry and provenance are verified separately; professional acceptance remains pending.",
+          "date": "2026-09-30T23:58:55-03:00"
         }
       ],
       "commits": [
@@ -4183,6 +4188,10 @@ window.executionLog={
         {
           "date": "2026-09-30T15:06:46-03:00",
           "text": "Technical catalog milestone verified locally. All six viable route browser examples retain new independent styles and edited pictures; the 36-run native matrix and 1368 exact edit checks passed. Professional acceptance and final candidate selection remain explicitly pending."
+        },
+        {
+          "date": "2026-09-30T23:58:55-03:00",
+          "text": "Included the previously untracked full generated catalog contact sheet in response to the user’s instruction to push all work. No source photos, model bundles or private geometry outputs added."
         }
       ]
     },
@@ -4637,6 +4646,10 @@ window.executionLog={
         {
           "command": "Final portable log audit",
           "result": "PASS 409 relative resources HTTP 200 and exact local byte equality, 202 pictures decoded, no active tasks. Blocked Meshroom and failed COLMAP remain explicit."
+        },
+        {
+          "command": "Publication safety scan; scripts/verify-execution-log.py",
+          "result": "PASS 828 outgoing/staged blobs checked; local credential section excluded and working file preserved. PASS 410 portable resources HTTP 200 and byte-identical; 203 pictures decoded. No app source changed during push preparation."
         }
       ],
       "pictures": [
@@ -4735,6 +4748,14 @@ window.executionLog={
         {
           "date": "2026-09-30T17:52:57-03:00",
           "text": "Committed the verified comparison UI, read-only final verifier and safe evidence locally as 88a067c50fd8389a0423533095e8b45ab2af32ee. Credentials, model bundles, databases and private generation outputs remain unstaged. No push or deploy."
+        },
+        {
+          "date": "2026-09-30T23:58:55-03:00",
+          "text": "User explicitly authorized pushing all work. Preparing the current local/visagist-mvp branch for GitHub, including safe remaining evidence and backup-deferral instructions. The local credential section, private runtime/media/model files and databases remain excluded. Deployment is still outside the authorized scope."
+        },
+        {
+          "date": "2026-09-30T23:59:55-03:00",
+          "text": "Publication audit scanned 828 unique outgoing historical/staged blobs (62291800 bytes) and found no known local credential or private upload bearer; no private runtime paths were tracked. The log HTTP check initially failed because its local server had stopped, then passed after restarting the loopback-only server."
         }
       ]
     }
