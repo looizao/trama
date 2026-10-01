@@ -1,5 +1,5 @@
 window.executionLog={
-  "updated": "2026-09-30T23:59:55-03:00",
+  "updated": "2026-10-01T00:00:34-03:00",
   "defaults": [
     "Local-only work; no pushes, deployment, production data or infrastructure access.",
     "Six-photo experiment only. No dense capture arm approved or implied.",
@@ -4650,6 +4650,10 @@ window.executionLog={
         {
           "command": "Publication safety scan; scripts/verify-execution-log.py",
           "result": "PASS 828 outgoing/staged blobs checked; local credential section excluded and working file preserved. PASS 410 portable resources HTTP 200 and byte-identical; 203 pictures decoded. No app source changed during push preparation."
+        },
+        {
+          "command": "git push --set-upstream origin local/visagist-mvp; git ls-remote origin refs/heads/local/visagist-mvp",
+          "result": "PASS push succeeded and remote SHA exactly matched local caac3c059610dce38b3fac635c2285a844e9c0f5. Published instructions exclude the private credentials section; local file still contains it."
         }
       ],
       "pictures": [
@@ -4700,7 +4704,8 @@ window.executionLog={
         }
       ],
       "commits": [
-        "88a067c50fd8389a0423533095e8b45ab2af32ee"
+        "88a067c50fd8389a0423533095e8b45ab2af32ee",
+        "caac3c059610dce38b3fac635c2285a844e9c0f5"
       ],
       "outputs": [
         {
@@ -4726,6 +4731,10 @@ window.executionLog={
         {
           "href": "assets/final-native-browser-verification.json",
           "label": "Actual final native proposal reloads, mesh edit fingerprints, cameras and qualified browser performance"
+        },
+        {
+          "href": "https://github.com/looizao/trama/tree/local/visagist-mvp",
+          "label": "Published implementation branch and safe execution evidence"
         }
       ],
       "events": [
@@ -4756,6 +4765,14 @@ window.executionLog={
         {
           "date": "2026-09-30T23:59:55-03:00",
           "text": "Publication audit scanned 828 unique outgoing historical/staged blobs (62291800 bytes) and found no known local credential or private upload bearer; no private runtime paths were tracked. The log HTTP check initially failed because its local server had stopped, then passed after restarting the loopback-only server."
+        },
+        {
+          "date": "2026-10-01T00:00:34-03:00",
+          "text": "Pushed all implementation milestones and safe remaining evidence to origin/local/visagist-mvp. Verified the remote branch exactly matched caac3c059610dce38b3fac635c2285a844e9c0f5. Private credentials, runtime databases/media/model bundles remain local. Native Meshroom blocker and COLMAP failures remain unchanged; no deployment performed."
+        },
+        {
+          "date": "2026-10-01T00:00:34-03:00",
+          "text": "Initial publication log update rejected a verification argument missing its command/result separator; no file was written. Corrected the argument and recorded the actual successful push."
         }
       ]
     }
